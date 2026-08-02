@@ -167,3 +167,11 @@ export const EngineRuleSchema = z.object({
   conditions: z.array(RuleConditionSchema),
   metadata: z.record(z.string(), z.unknown()).optional(),
 });
+
+export const RecommendationRuleSchema = z.object({
+  id: z.string(),
+  decisionId: z.string(),
+  recommendationType: z.string(),
+  target: z.string(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
