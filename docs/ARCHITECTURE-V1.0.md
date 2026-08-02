@@ -61,6 +61,20 @@ Search is an education acquisition channel, not a reason to create thin or misle
 
 Use a TypeScript monorepo: Next.js App Router, Tailwind CSS, shadcn/ui, Supabase PostgreSQL/Auth/Storage, and Vercel. Put pure scoring/rules/insights in a reusable `assessment-engine` package. Keep UI, content, persistence, and privileged operations in separate packages/adapters. This is elaborated in the Development Bible and Database Blueprint.
 
+## Intelligence Engine Architecture
+
+The Intelligence Layer architecture is explicitly designed as a deterministic, mathematically pure execution pipeline entirely decoupled from the UI and persistence layers. It is governed by the following strict rules:
+
+- **Frozen State:** The Intelligence Layer architecture is frozen. From this point forward, it receives only bug fixes, performance improvements, and security patches. New features require an Architecture Version 2.0 discussion.
+- **Compiled Configuration:** The Kernel will consume `CompiledConfiguration` rather than raw JSON `EngineConfiguration`.
+- **Separation of Concerns:** Configuration parsing and validation are completely separated from execution. A dedicated Configuration Compiler is responsible for transforming raw JSON into compiled memory references.
+- **Validation Pipeline:** Structural validation (via Zod) and Referential Integrity validation (ensuring cross-engine IDs match) occur as distinct, sequential phases inside the Configuration Compiler.
+- **Pure Execution:** The Kernel acts strictly as a pure execution engine without any awareness of configuration parsing or validation logic.
+- **Fail Fast:** Configuration errors (structural or referential) must fail during compilation (startup/deployment). The engine must never fail during a user's assessment execution due to a misconfigured rule.
+- **Zero-Downtime Updates:** Runtime configuration updates (e.g., from a CMS webhook) will follow a strict pipeline: compile → validate → atomic swap, ensuring that active assessments complete flawlessly.
+- **Pipeline Preservation:** The Facts Engine is retained as an explicit abstraction layer mapping Raw Answers to Normalized Constants before Insights are derived.
+- **Versioning:** Manifest Versioning is adopted for V1. Rather than independent rule versions, the entire execution payload is versioned cohesively to guarantee absolute reproducibility of any historical assessment.
+
 ## Change control
 
 Architecture V1.0 is frozen. If a sprint exposes a real architectural need, stop work on that change, document context/alternatives/consequences in an ADR, request approval, and then implement only the approved decision. Never silently alter this design.
