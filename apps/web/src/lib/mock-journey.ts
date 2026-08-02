@@ -59,7 +59,7 @@ export const mockEngineConfig: kernel.EngineConfiguration = {
   insightRules: mockAssessmentResult.insights.map(insight => ({
     id: `rule-${insight.id}`,
     insightId: insight.id,
-    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as unknown as kernel.InsightRule['conditions']
+    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
   })),
   scoreCategories: [],
   scoreRules: [],
@@ -70,6 +70,6 @@ export const mockEngineConfig: kernel.EngineConfiguration = {
     decisionId: `dec-${rec.id}`,
     recommendationType: rec.type,
     target: 'general' as const,
-    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as unknown as kernel.RecommendationRule['conditions']
+    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
   }))
 };

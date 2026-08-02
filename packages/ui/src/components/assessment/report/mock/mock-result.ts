@@ -51,7 +51,7 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
     {
       id: 'rec_sleep_routine',
       type: 'ACTION',
-      target: 'action_consistent_bedtime',
+      target: 'guide-morning-energy',
       priority: 'HIGH',
       confidence: 90,
       reasons: ['insight_inconsistent_sleep'],

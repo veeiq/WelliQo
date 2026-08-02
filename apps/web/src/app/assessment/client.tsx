@@ -20,7 +20,7 @@ export function AssessmentClient() {
 
   useEffect(() => {
     if (runtimeState === 'IDLE') {
-      initialize(mockEngineConfig, mockJourney as unknown as typeof journey);
+      initialize(mockEngineConfig, mockJourney as unknown as any);
     }
   }, [runtimeState, initialize]);
 
