@@ -3,3 +3,4 @@ export * from './validation';
 export * from './navigation';
 export * from './registry';
 export * as journey from './journey';
+export * as config from './config';
