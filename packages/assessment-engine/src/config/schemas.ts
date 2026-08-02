@@ -126,3 +126,21 @@ export const InsightRuleSchema = z.object({
   excludeFacts: z.array(z.string()).optional(),
   anyFacts: z.array(z.string()).optional(),
 });
+
+export const ScoreCategorySchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  baseScore: z.number(),
+  minScore: z.number(),
+  maxScore: z.number(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
+
+export const ScoreRuleSchema = z.object({
+  id: z.string(),
+  categoryId: z.string(),
+  targetId: z.string(),
+  targetType: z.enum(['fact', 'insight']),
+  weight: z.number(),
+});

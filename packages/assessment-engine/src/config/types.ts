@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { JourneySchema, SectionSchema, QuestionGroupSchema, QuestionSchema, FactSchema, FactRuleSchema, InsightSchema, InsightRuleSchema } from './schemas';
+import { JourneySchema, SectionSchema, QuestionGroupSchema, QuestionSchema, FactSchema, FactRuleSchema, InsightSchema, InsightRuleSchema, ScoreCategorySchema, ScoreRuleSchema } from './schemas';
 
 export type ValidatedJourney = z.infer<typeof JourneySchema>;
 export type ValidatedSection = z.infer<typeof SectionSchema>;
@@ -9,3 +9,5 @@ export type ValidatedFact = z.infer<typeof FactSchema>;
 export type ValidatedFactRule = z.infer<typeof FactRuleSchema>;
 export type ValidatedInsight = z.infer<typeof InsightSchema>;
 export type ValidatedInsightRule = z.infer<typeof InsightRuleSchema>;
+export type ValidatedScoreCategory = z.infer<typeof ScoreCategorySchema>;
+export type ValidatedScoreRule = z.infer<typeof ScoreRuleSchema>;
