@@ -5,6 +5,7 @@
   "exports": {
     "./components/button": "./src/components/button.tsx",
     "./components/skip-link": "./src/components/skip-link.tsx",
+    "./components/assessment": "./src/components/assessment/index.ts",
     "./lib/utils": "./src/lib/utils.ts",
     "./styles/tokens.css": "./src/styles/tokens.css"
   },
@@ -12,6 +13,7 @@
     "react": "^19.0.0"
   },
   "dependencies": {
+    "@welliqo/assessment-engine": "workspace:*",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "tailwind-merge": "3.4.0"

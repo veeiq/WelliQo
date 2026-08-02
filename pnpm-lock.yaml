@@ -38,6 +38,9 @@ importers:
       '@supabase/supabase-js':
         specifier: 2.95.3
         version: 2.95.3
+      '@welliqo/assessment-engine':
+        specifier: workspace:*
+        version: link:../../packages/assessment-engine
       '@welliqo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -59,6 +62,9 @@ importers:
       zod:
         specifier: 4.3.6
         version: 4.3.6
+      zustand:
+        specifier: ^5.0.14
+        version: 5.0.14(@types/react@19.2.8)(react@19.2.3)
     devDependencies:
       '@eslint/eslintrc':
         specifier: 3.3.3
@@ -102,6 +108,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@welliqo/assessment-engine':
+        specifier: workspace:*
+        version: link:../assessment-engine
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -2667,6 +2676,24 @@ packages:
 
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
+  zustand@5.0.14:
+    resolution: {integrity: sha512-/8tAspM5LMPr28b3fwLYrtdj77ECpfZviaP75CMTnwO8ISyaE4GDIG/9rDDYq/cH9D2Xw2A2RXglLInmVBQB/g==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -5300,3 +5327,8 @@ snapshots:
       zod: 4.3.6
 
   zod@4.3.6: {}
+
+  zustand@5.0.14(@types/react@19.2.8)(react@19.2.3):
+    optionalDependencies:
+      '@types/react': 19.2.8
+      react: 19.2.3
