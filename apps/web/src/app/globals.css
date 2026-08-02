@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+@import '@welliqo/ui/styles/tokens.css';
+
+@theme inline {
+  --color-background: var(--color-surface-canvas);
+  --color-foreground: var(--color-text-primary);
+  --color-card: var(--color-surface-raised);
+  --color-muted: var(--color-text-secondary);
+  --color-border: var(--color-border-subtle);
+  --color-brand: var(--color-brand-primary);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  border-color: var(--color-border-subtle);
+}
+
+html {
+  color-scheme: light;
+  background: var(--color-surface-canvas);
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-surface-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+.pnpm-store/
+.next/
+coverage/
+dist/
+
+# Environment and deployment
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Logs and local tooling
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Supabase local runtime
+supabase/.temp/
+supabase/.branches/

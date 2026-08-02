@@ -1,0 +1,29 @@
+{
+  "name": "welliqo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.13.0",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @welliqo/web dev",
+    "build": "pnpm --filter @welliqo/web build",
+    "lint": "pnpm --filter @welliqo/web lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.8",
+    "@types/react-dom": "19.2.3",
+    "@vitest/coverage-v8": "4.0.18",
+    "prettier": "3.8.2",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  }
+}

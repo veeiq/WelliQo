@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Request a general conversation with WelliQo." />
+    <title>Contact | WelliQo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="index.html"
+          ><img src="assets/welliqo-mark.svg" width="34" height="34" alt="" /><span
+            >Welli<span style="color: #1f7656; font-weight: 900">Q</span>o</span
+          ></a
+        ><button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          Menu
+        </button>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="index.html#guides">Guides</a><a href="index.html#recipes">Recipes</a
+          ><a href="index.html#wellness">Wellness</a
+          ><a class="button small" aria-current="page" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="form-shell">
+      <span class="eyebrow">Contact</span>
+      <h1>Request a general conversation</h1>
+      <p class="lead">
+        Tell us how you would prefer to be contacted. This starter form does not send or store
+        information.
+      </p>
+      <form class="form-card" data-contact-form>
+        <label for="name">First name</label
+        ><input id="name" name="name" autocomplete="given-name" required /><label for="channel"
+          >Preferred contact method</label
+        ><select id="channel" name="channel" required>
+          <option value="">Choose one</option>
+          <option>Email</option>
+          <option>Phone</option>
+          <option>WhatsApp</option></select
+        ><label for="contact">Your email address or phone number</label
+        ><input id="contact" name="contact" autocomplete="email" required /><label for="topic"
+          >What would you like to discuss? <span class="meta">(optional)</span></label
+        ><textarea id="topic" name="topic"></textarea>
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox" required /><label for="consent"
+            >I agree that WelliQo may use the contact details I provide to respond to this request.
+            I understand how to withdraw this permission.
+            <a href="#">Read the privacy notice</a>.</label
+          >
+        </div>
+        <button class="button" type="submit">Send request</button>
+        <p class="form-status" aria-live="polite" hidden></p>
+      </form>
+      <p class="meta">
+        Before launch, replace this placeholder with the legal operator’s identity, approved privacy
+        notice, data-retention details, and the relevant independent-distributor disclosure.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="index.html"
+              ><img src="assets/welliqo-mark.svg" width="34" height="34" alt="" /><span
+                >Welli<span style="color: #1f7656; font-weight: 900">Q</span>o</span
+              ></a
+            >
+          </div>
+          <div class="footer-links"><a href="index.html#faqs">FAQs</a><a href="#">Privacy</a></div>
+        </div>
+        <p class="fine-print">Starter form only. No information is transmitted or stored.</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
