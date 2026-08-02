@@ -6,6 +6,7 @@
     "./components/button": "./src/components/button.tsx",
     "./components/skip-link": "./src/components/skip-link.tsx",
     "./components/assessment": "./src/components/assessment/index.ts",
+    "./components/action-hub": "./src/components/action-hub/index.ts",
     "./lib/utils": "./src/lib/utils.ts",
     "./styles/tokens.css": "./src/styles/tokens.css"
   },
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "@welliqo/assessment-engine": "workspace:*",
+    "@welliqo/content": "workspace:*",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.475.0",

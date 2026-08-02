@@ -9,9 +9,16 @@ export default function HomePage() {
           WelliQo is being built with care.
         </h1>
         <p className="mt-5 text-lg text-muted">
-          Sprint 1 establishes the platform foundation. Assessment and educational experiences will
-          be introduced only in their approved implementation sprints.
+          Sprint 1 establishes the platform foundation. The complete architecture is now wired up, and the assessment is ready to use.
         </p>
+        <div className="mt-8">
+          <a
+            href="/assessment"
+            className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-emerald-700 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-emerald-500/30"
+          >
+            Start Assessment
+          </a>
+        </div>
       </div>
     </section>
   );

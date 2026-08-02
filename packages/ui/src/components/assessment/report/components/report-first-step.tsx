@@ -45,9 +45,10 @@ export function ReportFirstStep({ firstStep }: ReportFirstStepProps) {
             </div>
           )}
 
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/30 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
-            Commit to this step
-          </button>
+          {/* In Sprint 5, we link to the Playbook instead of generic commit */}
+          <a href={`/action-hub/guide-morning-energy`} className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/30 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
+            Open Your Playbook
+          </a>
         </div>
       </div>
     </section>
