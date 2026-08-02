@@ -98,3 +98,31 @@ export const JourneySchema = z.object({
   metadata: JourneyMetadataSchema.optional(),
   sections: z.array(SectionSchema),
 });
+
+export const FactSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
+
+export const FactRuleSchema = z.object({
+  id: z.string(),
+  factId: z.string(),
+  conditions: z.array(NavigationConditionSchema),
+});
+
+export const InsightSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
+
+export const InsightRuleSchema = z.object({
+  id: z.string(),
+  insightId: z.string(),
+  requireFacts: z.array(z.string()).optional(),
+  excludeFacts: z.array(z.string()).optional(),
+  anyFacts: z.array(z.string()).optional(),
+});
