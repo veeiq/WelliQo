@@ -144,3 +144,26 @@ export const ScoreRuleSchema = z.object({
   targetType: z.enum(['fact', 'insight']),
   weight: z.number(),
 });
+
+export const DecisionPrioritySchema = z.enum(['LOW', 'MEDIUM', 'HIGH', 'CRITICAL']);
+
+export const RuleConditionOperatorSchema = z.enum([
+  'equals', 'not-equals', 'greater-than', 'less-than', 'contains', 'in', 'exists', 'not-exists'
+]);
+
+export const RuleConditionSchema = z.object({
+  targetId: z.string(),
+  targetType: z.enum(['fact', 'insight', 'score']),
+  operator: RuleConditionOperatorSchema,
+  value: z.unknown().optional(),
+});
+
+export const EngineRuleSchema = z.object({
+  id: z.string(),
+  decisionId: z.string(),
+  decisionType: z.string(),
+  priority: DecisionPrioritySchema,
+  baseConfidence: z.number(),
+  conditions: z.array(RuleConditionSchema),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});

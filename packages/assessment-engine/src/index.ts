@@ -7,3 +7,4 @@ export * as config from './config';
 export * as facts from './facts';
 export * as insights from './insights';
 export * as scores from './scores';
+export * as rules from './rules';
