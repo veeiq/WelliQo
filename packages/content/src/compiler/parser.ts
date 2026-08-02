@@ -27,7 +27,7 @@ export function parseContentFiles(dataDirectory: string): ParsedFile[] {
         const { data, content: rawBody } = matter(fileContents);
         
         try {
-          const validatedData = BaseContentSchema.parse(data);
+          const validatedData = BaseContentSchema.parse({ ...data, rawBody });
           parsedFiles.push({
             content: validatedData,
             rawBody,

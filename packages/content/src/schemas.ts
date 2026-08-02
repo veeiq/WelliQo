@@ -55,7 +55,10 @@ export const BaseContentSchema = z.object({
   
   // SEO
   seoTitle: z.string().optional(),
-  seoDescription: z.string().optional()
+  seoDescription: z.string().optional(),
+  
+  // Compiled Data
+  rawBody: z.string().optional()
 });
 
 export type BaseContent = z.infer<typeof BaseContentSchema>;

@@ -59,6 +59,7 @@ export const mockEngineConfig: kernel.EngineConfiguration = {
   insightRules: mockAssessmentResult.insights.map(insight => ({
     id: `rule-${insight.id}`,
     insightId: insight.id,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
   })),
   scoreCategories: [],
@@ -70,6 +71,7 @@ export const mockEngineConfig: kernel.EngineConfiguration = {
     decisionId: `dec-${rec.id}`,
     recommendationType: rec.type,
     target: 'general' as const,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
   }))
 };

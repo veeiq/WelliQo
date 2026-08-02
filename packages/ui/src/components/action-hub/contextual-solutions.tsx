@@ -7,9 +7,11 @@ import { Clock, Zap } from 'lucide-react';
 interface ContextualSolutionsProps {
   foodFirst: BaseContent | null;
   accelerator: BaseContent | null;
+  foodFirstBody?: React.ReactNode;
+  acceleratorBody?: React.ReactNode;
 }
 
-export function ContextualSolutions({ foodFirst, accelerator }: ContextualSolutionsProps) {
+export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acceleratorBody }: ContextualSolutionsProps) {
   const [activeTab, setActiveTab] = useState<'food' | 'accelerator'>('food');
 
   if (!foodFirst && !accelerator) return null;
@@ -65,11 +67,9 @@ export function ContextualSolutions({ foodFirst, accelerator }: ContextualSoluti
           </span>
         </div>
         
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-          {activeTab === 'food' 
-            ? 'A high-protein breakfast stabilizes your blood sugar. If you usually eat toast or cereal, your blood sugar crashes by 10:30 AM, causing intense fatigue and cravings. This simple scramble prevents the crash.'
-            : 'Healthy food is always the best foundation, but some mornings you simply don’t have 15 minutes. This shake provides the exact same blood-sugar stabilization in under two minutes.'}
-        </p>
+        <div className="mb-6">
+          {activeTab === 'food' ? foodFirstBody : acceleratorBody}
+        </div>
 
         <button className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline underline-offset-4">
           View full recipe →

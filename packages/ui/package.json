@@ -19,6 +19,7 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.475.0",
+    "next-mdx-remote": "^6.0.0",
     "tailwind-merge": "3.4.0",
     "zod": "4.3.6"
   },

@@ -5,6 +5,7 @@ import { PlaybookHero } from './playbook-hero';
 import { OneNextStep } from './one-next-step';
 import { ContextualSolutions } from './contextual-solutions';
 import { ExploreFurther } from './explore-further';
+import { MDXRenderer } from './mdx-renderer';
 
 interface ActionHubContainerProps {
   actionHub: ActionHub;
@@ -31,7 +32,12 @@ export function ActionHubContainer({ actionHub }: ActionHubContainerProps) {
       <OneNextStep habit={habit} />
 
       {/* 3. Contextual Solutions (Food vs Accelerator) */}
-      <ContextualSolutions foodFirst={foodFirst} accelerator={accelerator} />
+      <ContextualSolutions 
+        foodFirst={foodFirst} 
+        accelerator={accelerator} 
+        foodFirstBody={foodFirst ? <MDXRenderer source={foodFirst.rawBody || ''} /> : null}
+        acceleratorBody={accelerator ? <MDXRenderer source={accelerator.rawBody || ''} /> : null}
+      />
 
       {/* 4. Knowledge Discovery (Science Bridge) */}
       <ExploreFurther concepts={actionHub.explanations} />

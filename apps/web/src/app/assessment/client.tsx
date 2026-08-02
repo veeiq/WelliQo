@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import type { config } from '@welliqo/assessment-engine';
 import { useRouter } from 'next/navigation';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { mockJourney, mockEngineConfig } from '@/lib/mock-journey';
@@ -20,7 +21,7 @@ export function AssessmentClient() {
 
   useEffect(() => {
     if (runtimeState === 'IDLE') {
-      initialize(mockEngineConfig, mockJourney as unknown as any);
+      initialize(mockEngineConfig, mockJourney as config.ValidatedJourney);
     }
   }, [runtimeState, initialize]);
 

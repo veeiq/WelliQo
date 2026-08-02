@@ -1,14 +1,15 @@
-import React from 'react';
 import { contentAdapter } from '@/lib/content';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { BookOpen, ArrowLeft } from 'lucide-react';
+import { MDXRenderer } from '@welliqo/ui/components/action-hub';
 
 export default async function LearnPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   
   // The content adapter resolves the knowledge node
-  const node = contentAdapter.getNode(slug);
+  const node = contentAdapter.getContentById(slug);
   
   if (!node) {
     notFound();
@@ -20,10 +21,10 @@ export default async function LearnPage({ params }: { params: Promise<{ slug: st
       {/* Navigation Bar */}
       <nav className="w-full border-b border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center">
-          <a href="/" className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors flex items-center gap-2 text-sm font-medium">
+          <Link href="/" className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors flex items-center gap-2 text-sm font-medium">
             <ArrowLeft className="w-4 h-4" />
             Back to Dashboard
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -42,18 +43,10 @@ export default async function LearnPage({ params }: { params: Promise<{ slug: st
         </h1>
       </section>
 
-      {/* Content Section (Sprint 6 will render MDX here) */}
+      {/* Content Section (Sprint 6 MDX Rendering) */}
       <section className="w-full max-w-3xl mx-auto px-6 pb-24">
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
-          <p className="lead text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-            This is a placeholder for the rich MDX content. In Sprint 6, this page will beautifully render the authored markdown, including embedded components, diagrams, and typography.
-          </p>
-          <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800">
-            <h3 className="text-lg font-medium mb-2">Technical Note for Sprint 5.1</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm m-0">
-              The Knowledge Graph has successfully resolved node: <code className="bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded text-indigo-600 dark:text-indigo-400">{slug}</code>. We can access its frontmatter and relationships instantly.
-            </p>
-          </div>
+          <MDXRenderer source={node.rawBody || ''} />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { BaseContent } from '@welliqo/content';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MDXRenderer } from './mdx-renderer';
 
 interface OneNextStepProps {
   habit: BaseContent | null;
@@ -23,10 +24,9 @@ export function OneNextStep({ habit }: OneNextStepProps) {
           {habit.title}
         </h3>
         
-        {/* We would typically render MDX here. For Sprint 5 we mock the raw text to focus on UX */}
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
-          Tomorrow morning, within 30 minutes of waking up, step outside for 5 minutes. That's it. Do not look at your phone first. Let the natural light hit your eyes.
-        </p>
+        <div className="mb-10 text-lg">
+          <MDXRenderer source={habit.rawBody || ''} />
+        </div>
 
         <button className="group flex items-center justify-center gap-2 w-full md:w-auto bg-slate-900 hover:bg-slate-800 dark:bg-slate-50 dark:hover:bg-white text-white dark:text-slate-900 text-lg font-medium py-4 px-8 rounded-full transition-all duration-300">
           I'll Try This
