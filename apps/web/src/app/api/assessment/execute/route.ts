@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { ConversationOrchestrator, ScoredQuestion } from './orchestrator';
 // import { kernel } from '@welliqo/assessment-engine';
-// import { MasterEngineConfig } from '@welliqo/intelligence';
+import { MasterEngineConfig } from '@welliqo/intelligence';
 
 export async function POST(request: Request) {
   try {
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     // 3. Orchestrate the conversation
     const orchestrator = new ConversationOrchestrator(currentLayer || null, answeredQuestionIds || []);
-    const { nextQuestion, isNewLayer, newLayerName } = orchestrator.selectNextQuestion(mockRankedQuestions);
+    const { nextQuestion, isNewLayer, newLayerName } = orchestrator.selectNextQuestion(mockRankedQuestions, MasterEngineConfig.questions);
     const confidences = [{ domain: 'energy', confidence: 45 }];
 
     // 4. Stop Early Rule

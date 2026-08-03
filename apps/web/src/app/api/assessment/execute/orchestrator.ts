@@ -18,6 +18,18 @@ export class ConversationOrchestrator {
   private currentLayer: string | null;
   private answeredQuestionIds: Set<string>;
   
+  // The strict 8-step sequence required before dynamic routing begins
+  private static readonly BASELINE_SEQUENCE = [
+    'q:master:greeting',
+    'q:master:goal',
+    'q:master:age',
+    'q:master:gender',
+    'q:master:height',
+    'q:master:weight',
+    'q:master:exercise',
+    'q:master:sleep_hours'
+  ];
+
   constructor(currentLayer: string | null, answeredQuestionIds: string[]) {
     this.currentLayer = currentLayer;
     this.answeredQuestionIds = new Set(answeredQuestionIds);
@@ -41,12 +53,26 @@ export class ConversationOrchestrator {
   }
 
   /**
-   * Rule 2: Layers Are Flexible.
-   * Given a list of questions ranked strictly by the Engine's information gain,
-   * select the best question that keeps the user in the CURRENT layer, 
-   * UNLESS there are no high-value questions left in that layer.
+   * Selects the next question by first enforcing the Baseline Sequence, 
+   * and only then falling back to dynamic Layer management.
    */
-  public selectNextQuestion(rankedQuestions: ScoredQuestion[]): { nextQuestion: EngineQuestion | null, isNewLayer: boolean, newLayerName: string | null } {
+  public selectNextQuestion(
+    rankedQuestions: ScoredQuestion[], 
+    allQuestions: EngineQuestion[]
+  ): { nextQuestion: EngineQuestion | null, isNewLayer: boolean, newLayerName: string | null } {
+    
+    // 1. Enforce Baseline Sequence first
+    for (const baselineId of ConversationOrchestrator.BASELINE_SEQUENCE) {
+      if (!this.answeredQuestionIds.has(baselineId)) {
+        const question = allQuestions.find(q => q.id === baselineId);
+        if (question) {
+          const layer = this.extractLayer(question);
+          return { nextQuestion: question, isNewLayer: layer !== this.currentLayer, newLayerName: layer };
+        }
+      }
+    }
+
+    // 2. Baseline complete, switch to dynamic Engine routing
     const unasked = this.filterAnswered(rankedQuestions);
     
     if (unasked.length === 0) {
@@ -63,7 +89,6 @@ export class ConversationOrchestrator {
     }
 
     // Try to find the highest-scoring question that belongs to the CURRENT layer
-    // (We only consider it if its score is reasonably high, e.g., > 10, to avoid asking useless questions just to stay in the layer)
     const currentLayerQuestions = unasked.filter(rq => 
       this.extractLayer(rq.question) === this.currentLayer && rq.informationGain > 10
     );

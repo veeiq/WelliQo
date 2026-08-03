@@ -1,6 +1,6 @@
 "use strict";
 // SYSTEM GENERATED FILE - DO NOT EDIT MANUALLY
-// Compiled on 2026-08-03T13:29:49.960Z
+// Compiled on 2026-08-03T13:41:35.441Z
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -1824,6 +1824,87 @@ exports.MasterEngineConfig = {
             "expectedConfidenceGain": 10
         },
         {
+            "id": "q:master:greeting",
+            "purpose": "Establish absolute emotional safety.",
+            "label": "Welcome to WelliQo. I'm genuinely glad you're here today. How are you feeling about starting this journey?",
+            "type": "single-choice",
+            "tags": [
+                "master",
+                "identity",
+                "baseline"
+            ],
+            "options": [
+                {
+                    "id": "opt:master:greet:excited",
+                    "label": "Excited",
+                    "value": "excited"
+                },
+                {
+                    "id": "opt:master:greet:nervous",
+                    "label": "A bit nervous",
+                    "value": "nervous"
+                },
+                {
+                    "id": "opt:master:greet:overwhelmed",
+                    "label": "Overwhelmed",
+                    "value": "overwhelmed"
+                }
+            ],
+            "coachThinking": "If I start firing clinical questions immediately, they will put their walls up. I need them to know they aren't being judged.",
+            "humanMoment": "Take a deep breath. You're in a safe place. We're going to do this together.",
+            "createsFacts": [
+                "fact:master:emotional_state"
+            ],
+            "supportsScores": [],
+            "supportsInsights": [],
+            "supportsDecisions": [],
+            "supportsRecommendations": [],
+            "expectedConfidenceGain": 10
+        },
+        {
+            "id": "q:master:goal",
+            "purpose": "Discover the emotional anchor driving the desire to change.",
+            "label": "What is the main reason you want to focus on your health right now?",
+            "type": "single-choice",
+            "tags": [
+                "master",
+                "identity",
+                "baseline"
+            ],
+            "options": [
+                {
+                    "id": "opt:master:goal:health",
+                    "label": "To feel healthier",
+                    "value": "health"
+                },
+                {
+                    "id": "opt:master:goal:energy",
+                    "label": "To have more energy",
+                    "value": "energy"
+                },
+                {
+                    "id": "opt:master:goal:confidence",
+                    "label": "To feel more confident",
+                    "value": "confidence"
+                },
+                {
+                    "id": "opt:master:goal:event",
+                    "label": "For an upcoming event",
+                    "value": "event"
+                }
+            ],
+            "coachThinking": "Nobody just wants to 'lose 10 kilos.' They want to stop feeling breathless playing with their kids. I need to find the anchor.",
+            "humanMoment": "Understanding why you are here is more important than any number on a scale.",
+            "createsFacts": [
+                "fact:master:primary_goal"
+            ],
+            "supportsScores": [],
+            "supportsInsights": [],
+            "supportsDecisions": [],
+            "supportsRecommendations": [],
+            "expectedConfidenceGain": 20
+        },
+        {
             "id": "q:master:age",
             "purpose": "Know WHO the person is. Do NOT make assumptions.",
             "label": "How old are you?",
@@ -1833,6 +1914,8 @@ exports.MasterEngineConfig = {
                 "identity",
                 "baseline"
             ],
+            "coachThinking": "I need their age to calculate their BMR and TDEE, but I shouldn't linger on this. It's just a starting line.",
+            "humanMoment": "To help me understand your body's baseline needs, I'm going to ask a few quick numbers.",
             "createsFacts": [
                 "fact:master:age",
                 "fact:master:age_group"
@@ -1870,6 +1953,8 @@ exports.MasterEngineConfig = {
                     "value": "prefer_not"
                 }
             ],
+            "coachThinking": "Biological sex impacts BMR calculations and hormonal profiles.",
+            "humanMoment": "Just capturing the basics so we can give you the right biological baseline.",
             "createsFacts": [
                 "fact:master:gender"
             ],
@@ -1889,6 +1974,8 @@ exports.MasterEngineConfig = {
                 "identity",
                 "measurements"
             ],
+            "coachThinking": "Required for accurate BMI and metabolic calculations.",
+            "humanMoment": "Almost done with the numbers.",
             "createsFacts": [
                 "fact:master:height"
             ],
@@ -1908,6 +1995,8 @@ exports.MasterEngineConfig = {
                 "identity",
                 "measurements"
             ],
+            "coachThinking": "The primary metabolic variable. Must capture without triggering shame.",
+            "humanMoment": "Your current measurements simply give us a starting point. Many successful wellness journeys begin exactly where you are today.",
             "createsFacts": [
                 "fact:master:weight",
                 "fact:master:bmi",
@@ -2153,6 +2242,8 @@ exports.MasterEngineConfig = {
                 "lifestyle",
                 "sleep"
             ],
+            "coachThinking": "Sleep dictates cortisol and recovery. Without enough sleep, weight loss is biochemically blocked.",
+            "humanMoment": "Sleep is the foundation of everything. How much rest is your body actually getting?",
             "createsFacts": [
                 "fact:master:sleep_duration"
             ],
@@ -2321,6 +2412,8 @@ exports.MasterEngineConfig = {
                     "value": "never"
                 }
             ],
+            "coachThinking": "Assess baseline metabolic demand from activity.",
+            "humanMoment": "Any movement counts. We just need to know where you are starting from.",
             "createsFacts": [
                 "fact:master:exercise_frequency"
             ],
