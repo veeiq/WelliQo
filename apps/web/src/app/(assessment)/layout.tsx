@@ -39,8 +39,12 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
               href="/"
               className="flex items-center gap-3 group opacity-80 hover:opacity-100 transition-opacity"
             >
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-                W
+              <div className="relative h-11 w-11 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <img 
+                  src="/logo.jpg" 
+                  alt="WelliQo" 
+                  className="w-full h-full object-contain rounded-xl shadow-lg"
+                />
               </div>
             </Link>
           </div>
