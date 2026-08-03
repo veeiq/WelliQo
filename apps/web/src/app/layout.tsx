@@ -31,17 +31,22 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           </main>
           
           {/* Global Herbalife Compliance Footer */}
-          <footer className="w-full bg-slate-900 text-slate-400 py-8 px-4 text-center text-xs leading-relaxed border-t border-slate-800 mt-auto">
-            <div className="max-w-4xl mx-auto space-y-2">
-              <p>
-                <strong>Independent Herbalife Associates:</strong> Coach Alok, Coach Priya, Coach Dipti.
-              </p>
-              <p>
-                These products are not intended to diagnose, treat, cure, or prevent any disease. Results are not typical. Individual results will vary depending on starting point, goals, and effort. 
-              </p>
-              <p>
-                © {new Date().getFullYear()} WelliQo. All rights reserved. This website is operated by independent associates and is not the official Herbalife corporate website.
-              </p>
+          <footer className="w-full bg-slate-900 text-slate-400 py-8 px-4 text-xs leading-relaxed border-t border-slate-800 mt-auto">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+              <div className="space-y-2 max-w-3xl text-left">
+                <p>
+                  <strong>Independent Herbalife Associate:</strong> Alok Kumar Mahapatra
+                </p>
+                <p>
+                  These products are not intended to diagnose, treat, cure, or prevent any disease. Results are not typical. Individual results will vary depending on starting point, goals, and effort. 
+                </p>
+                <p>
+                  © {new Date().getFullYear()} WelliQo. All rights reserved. This website is operated by independent associates and is not the official Herbalife corporate website.
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-slate-500 md:text-right">
+                <p>Built with ❤️ in India by <a href="https://veeiq.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:text-emerald-400 font-medium">VeeiQ</a>.</p>
+              </div>
             </div>
           </footer>
         </ThemeProvider>

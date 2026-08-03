@@ -8,12 +8,20 @@ export function WeightInput({ value, onChangeValue, disabled }: Readonly<NumberI
   const currentKg = value ? Math.round(value) : 70; // default 70kg
   const currentLb = value ? Math.round(value * 2.20462) : 154; // default 154lbs
 
-  const handleKgChange = (kg: number) => {
+  const handleKgChange = (kg: number | undefined) => {
+    if (kg === undefined) {
+      onChangeValue(undefined);
+      return;
+    }
     onChangeValue(kg);
   };
 
-  const handleLbChange = (lb: number) => {
-    onChangeValue(Math.round(lb / 2.20462));
+  const handleLbChange = (lb: number | undefined) => {
+    if (lb === undefined) {
+      onChangeValue(undefined);
+      return;
+    }
+    onChangeValue(lb / 2.20462);
   };
 
   return (
