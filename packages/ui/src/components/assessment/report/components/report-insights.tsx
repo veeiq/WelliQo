@@ -13,10 +13,10 @@ export function ReportInsights({ insights }: ReportInsightsProps) {
     <section className="w-full max-w-3xl mx-auto py-16 px-6">
       <div className="mb-10 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
         <h2 className="text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-3">
-          Core Insights
+          Gentle Observations
         </h2>
         <p className="text-slate-600 dark:text-slate-400">
-          Here are some patterns we noticed in your daily routine.
+          Here are a few patterns we noticed in how you approach your days.
         </p>
       </div>
       <div className="space-y-4">
