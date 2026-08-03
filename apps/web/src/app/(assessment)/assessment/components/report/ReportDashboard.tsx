@@ -42,7 +42,7 @@ export function ReportDashboard() {
         <PositivesAndNegatives answers={answers} data={data} />
 
         {/* The Solution & Call to Action */}
-        <CoachCallToAction data={data} />
+        <CoachCallToAction />
 
       </div>
 
