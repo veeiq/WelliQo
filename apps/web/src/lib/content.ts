@@ -1,6 +1,6 @@
 import { ContentAdapter } from '@welliqo/content';
 // Ensure the compiler has run and dist/index.json exists
-import compiledIndex from '@welliqo/content/dist/index.json';
+import compiledIndex from '@welliqo/content/data';
 
 // Assert the correct type (since TS imports JSON as a generic object)
 import type { CompiledContentIndex } from '@welliqo/content';

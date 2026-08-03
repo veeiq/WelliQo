@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "pnpm --filter @welliqo/web dev",
-    "build": "pnpm --filter @welliqo/web build",
+    "build": "pnpm -r build",
     "lint": "pnpm --filter @welliqo/web lint",
     "typecheck": "pnpm -r --if-present typecheck",
     "test": "vitest run",

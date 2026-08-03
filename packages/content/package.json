@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./data": "./dist/index.json"
+  },
   "scripts": {
+    "build": "tsx scripts/compile.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
+    "esbuild": "^0.28.1",
     "tsx": "^4.23.1"
   },
   "dependencies": {

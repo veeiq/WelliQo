@@ -9,6 +9,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     nodes: {},
     byType: {},
     byDomain: {},
+    byGoal: {},
   };
 
   const nodesByType: Record<string, number> = {};
@@ -38,6 +39,16 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
       index.byDomain[content.domain] = [];
     }
     index.byDomain[content.domain]!.push(content.id);
+
+    // Group by Goals
+    if (content.goals) {
+      for (const goal of content.goals) {
+        if (!index.byGoal[goal]) {
+          index.byGoal[goal] = [];
+        }
+        index.byGoal[goal]!.push(content.id);
+      }
+    }
   }
 
   // 2. Referential Integrity Validation
