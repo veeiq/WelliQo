@@ -3,8 +3,8 @@ import { useAssessmentStore, AssessmentData } from '../../../../../store/assessm
 import { PhoneCall } from 'lucide-react';
 import { Button } from '@welliqo/ui/components/button';
 
-export function CoachCallToAction({ data }: { data?: AssessmentData }) {
-  const { goal, answers, weight, targetWeight, height, age, gender } = useAssessmentStore();
+export function CoachCallToAction() {
+  const { data, answers, calculatedMetrics } = useAssessmentStore();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -33,13 +33,13 @@ export function CoachCallToAction({ data }: { data?: AssessmentData }) {
           fullName: formData.name,
           phoneNumber: formData.phone,
           coachSelected: formData.coach,
-          primaryGoal: goal || 'Not Selected',
+          primaryGoal: data.goal || 'Not Selected',
           assessmentData: {
-            weight,
-            targetWeight,
-            height,
-            age,
-            gender,
+            weight: data.weight,
+            targetWeight: calculatedMetrics?.idealWeight || 'Unknown',
+            height: data.height,
+            age: data.age,
+            gender: data.gender,
             answers
           }
         }),
