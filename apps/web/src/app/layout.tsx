@@ -43,7 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                     />
                   </div>
                   <span className="font-semibold text-xl tracking-tight text-white">
-                    WelliQo
+                    Welli<span className="text-emerald-500">Q</span>o
                   </span>
                 </div>
                 <p className="text-sm font-medium text-emerald-400">Intelligent Nutrition, Guided by Experts.</p>

@@ -14,7 +14,7 @@ export function SiteHeader() {
             />
           </div>
           <span className="font-semibold text-2xl tracking-tight text-slate-900 dark:text-white hidden sm:inline-block">
-            WelliQo
+            Welli<span className="text-emerald-500">Q</span>o
           </span>
         </Link>
 
