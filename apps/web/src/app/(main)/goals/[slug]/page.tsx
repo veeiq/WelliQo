@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { contentAdapter } from '@/lib/content';
 
 const GOALS: Record<string, { title: string; description: string }> = {
   'better-sleep': {
@@ -61,8 +60,6 @@ export default async function GoalPage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  const nodes = contentAdapter.getNodesByGoal(slug);
-
   return (
     <div className="container py-12 max-w-5xl mx-auto">
       <Link
@@ -84,67 +81,37 @@ export default async function GoalPage({ params }: { params: Promise<{ slug: str
           Discover Content
         </h2>
 
-        {nodes.length === 0 ? (
-          <div className="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 rounded-3xl p-10 text-center flex flex-col items-center justify-center min-h-[300px]">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                <path d="M12 8v4l3 3" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mb-3">
-              Your Journey is Growing
-            </h3>
-            <p className="text-emerald-700 dark:text-emerald-300 max-w-md mx-auto mb-6">
-              Our clinical and wellness teams are actively developing premium, evidence-based
-              content for {goalInfo.title}.
-            </p>
-            <Link
-              href="/coaches"
-              className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-full transition-colors shadow-sm"
+        <div className="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 rounded-3xl p-10 text-center flex flex-col items-center justify-center min-h-[300px]">
+          <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              Speak to a Coach Meanwhile
-            </Link>
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="M12 8v4l3 3" />
+            </svg>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {nodes.map((node) => (
-              <Link
-                key={node.id}
-                href={`/action-hub/${node.slug}`}
-                className="flex flex-col bg-[var(--color-background-secondary)] rounded-xl border border-[var(--color-border-subtle)] p-5 hover:border-[var(--color-accent-primary)] hover:shadow-md transition-all group"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold px-2 py-1 bg-[var(--color-background-tertiary)] text-[var(--color-text-secondary)] rounded-md capitalize">
-                    {node.type}
-                  </span>
-                  <span className="text-xs text-[var(--color-text-tertiary)]">
-                    {node.difficulty && `• ${node.difficulty}`}
-                  </span>
-                </div>
-
-                <h3 className="font-bold text-lg text-[var(--color-text-primary)] mb-2 group-hover:text-[var(--color-accent-primary)] transition-colors line-clamp-2">
-                  {node.title}
-                </h3>
-
-                <div className="mt-auto pt-4 flex items-center justify-between text-xs text-[var(--color-text-secondary)]">
-                  <span>{node.domain}</span>
-                  {node.readingTimeMinutes && <span>{node.readingTimeMinutes} min read</span>}
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+          <h3 className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mb-3">
+            Your Journey is Growing
+          </h3>
+          <p className="text-emerald-700 dark:text-emerald-300 max-w-md mx-auto mb-6">
+            Our clinical and wellness teams are actively developing premium, evidence-based
+            content for {goalInfo.title}.
+          </p>
+          <Link
+            href="/coaches"
+            className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-full transition-colors shadow-sm"
+          >
+            Speak to a Coach Meanwhile
+          </Link>
+        </div>
       </div>
     </div>
   );

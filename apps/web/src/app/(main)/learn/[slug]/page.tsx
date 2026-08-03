@@ -1,19 +1,9 @@
-import { contentAdapter } from '@/lib/content';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { BookOpen, ArrowLeft } from 'lucide-react';
-import { MDXRenderer } from '@welliqo/ui/components/action-hub';
 
 export default async function LearnPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-
-  // The content adapter resolves the knowledge node
-  const node = contentAdapter.getContentById(slug);
-
-  if (!node) {
-    notFound();
-  }
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-50 selection:bg-indigo-200 dark:selection:bg-indigo-900">
@@ -37,18 +27,29 @@ export default async function LearnPage({ params }: { params: Promise<{ slug: st
         </div>
 
         <span className="text-sm font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4 block">
-          {node.topic || node.type}
+          Topic: {slug.replace(/-/g, ' ')}
         </span>
 
-        <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white mb-6 text-balance tracking-tight">
-          {node.title}
+        <h1 className="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white mb-6 text-balance tracking-tight capitalize">
+          {slug.replace(/-/g, ' ')}
         </h1>
       </section>
 
-      {/* Content Section (Sprint 6 MDX Rendering) */}
+      {/* Empty State for Future Supabase Content */}
       <section className="w-full max-w-3xl mx-auto px-6 pb-24">
-        <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
-          <MDXRenderer source={node.rawBody || ''} />
+        <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50 rounded-3xl p-10 text-center flex flex-col items-center justify-center">
+          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-3">
+            Content Coming Soon
+          </h3>
+          <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-6">
+            We are preparing premium, evidence-based content for this topic. Check back soon or connect with a coach to learn more.
+          </p>
+          <Link
+            href="/coaches"
+            className="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-full transition-colors shadow-sm"
+          >
+            Speak to a Coach
+          </Link>
         </div>
       </section>
     </main>

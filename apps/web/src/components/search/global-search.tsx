@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { SearchIndexNode } from '@welliqo/content';
+// import { SearchIndexNode } from '@welliqo/content';
 
 export function GlobalSearch() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchIndexNode[]>([]);
+  const [results, setResults] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
