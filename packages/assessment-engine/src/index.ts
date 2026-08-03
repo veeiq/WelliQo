@@ -10,3 +10,4 @@ export * as scores from './scores';
 export * as rules from './rules';
 export * as recommendations from './recommendations';
 export * as kernel from './kernel';
+export * from './reports/ReportGenerator';

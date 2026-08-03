@@ -1,62 +1,672 @@
-- id: "fact:sleep:severe_deprivation"
-  description: "User gets less than 5 hours of sleep per night."
-  generatedFrom: ["q:energy:sleep_duration"]
-  tags: ["sleep", "energy", "stress"]
-  usedBy: ["decision:energy:sleep_deprivation", "score:energy:recovery"]
-  confidenceImpact: 40
-
-- id: "fact:sleep:mild_deprivation"
-  description: "User gets 5-6 hours of sleep per night."
-  generatedFrom: ["q:energy:sleep_duration"]
-  tags: ["sleep", "energy"]
-  usedBy: ["decision:energy:sleep_deprivation", "score:energy:recovery"]
-  confidenceImpact: 20
-
-- id: "fact:sleep:optimal"
-  description: "User gets 7-8 hours of sleep per night."
-  generatedFrom: ["q:energy:sleep_duration"]
-  tags: ["sleep", "energy"]
-  usedBy: ["score:energy:recovery"]
-  confidenceImpact: 30
-
-- id: "fact:sleep:excessive"
-  description: "User gets more than 8 hours of sleep per night."
-  generatedFrom: ["q:energy:sleep_duration"]
-  tags: ["sleep", "energy"]
-  usedBy: ["score:energy:recovery"]
-  confidenceImpact: 10
-
-- id: "fact:energy:frequent_crash"
-  description: "User experiences severe energy crashes almost every afternoon."
-  generatedFrom: ["q:energy:afternoon_crash"]
-  tags: ["energy", "nutrition"]
-  usedBy: ["decision:energy:glycemic_control", "insight:energy:sugar_crash", "score:energy:sustained"]
-  confidenceImpact: 35
-
-- id: "fact:energy:lunch_crash"
-  description: "User experiences energy crashes occasionally, tied to heavy meals."
-  generatedFrom: ["q:energy:afternoon_crash"]
-  tags: ["energy", "nutrition"]
-  usedBy: ["decision:energy:glycemic_control", "insight:energy:sugar_crash", "score:energy:sustained"]
-  confidenceImpact: 20
-
-- id: "fact:energy:steady"
-  description: "User maintains steady energy throughout the afternoon."
-  generatedFrom: ["q:energy:afternoon_crash"]
-  tags: ["energy"]
-  usedBy: ["score:energy:sustained"]
-  confidenceImpact: 25
-
-- id: "fact:baseline:age"
-  description: "User's biological age in years."
-  generatedFrom: ["q:baseline:age"]
-  tags: ["baseline"]
-  usedBy: ["decision:energy:aging_impact", "score:energy:baseline"]
-  confidenceImpact: 10
-
-- id: "fact:baseline:gender"
-  description: "User's biological sex."
-  generatedFrom: ["q:baseline:gender"]
-  tags: ["baseline"]
-  usedBy: ["decision:energy:hormonal", "score:energy:baseline"]
-  confidenceImpact: 10
+[
+  {
+    "id": "fact:eng:eng_1:struggle",
+    "description": "Morning Energy - Waking up exhausted",
+    "generatedFrom": [
+      "q:eng:eng_1:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_1:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_1:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_2:struggle",
+    "description": "Morning Energy - Caffeine dependence",
+    "generatedFrom": [
+      "q:eng:eng_2:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_2:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_2:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_3:struggle",
+    "description": "Morning Energy - Snooze button reliance",
+    "generatedFrom": [
+      "q:eng:eng_3:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_3:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_3:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_4:struggle",
+    "description": "Morning Energy - Morning Brain Fog",
+    "generatedFrom": [
+      "q:eng:eng_4:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_4:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_4:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_5:struggle",
+    "description": "Morning Energy - Dreading the day",
+    "generatedFrom": [
+      "q:eng:eng_5:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_5:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_5:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_6:struggle",
+    "description": "Afternoon Energy - The 3 PM Crash",
+    "generatedFrom": [
+      "q:eng:eng_6:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_6:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_6:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_7:struggle",
+    "description": "Afternoon Energy - Sugar cravings for energy",
+    "generatedFrom": [
+      "q:eng:eng_7:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_7:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_7:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_8:struggle",
+    "description": "Afternoon Energy - Afternoon Screen Fatigue",
+    "generatedFrom": [
+      "q:eng:eng_8:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_8:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_8:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_9:struggle",
+    "description": "Afternoon Energy - Sluggish Digestion",
+    "generatedFrom": [
+      "q:eng:eng_9:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_9:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_9:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_10:struggle",
+    "description": "Afternoon Energy - Meeting Fatigue",
+    "generatedFrom": [
+      "q:eng:eng_10:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_10:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_10:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_11:struggle",
+    "description": "Evening Energy - Nothing left for personal life",
+    "generatedFrom": [
+      "q:eng:eng_11:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_11:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_11:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_12:struggle",
+    "description": "Evening Energy - Revenge Bedtime Procrastination",
+    "generatedFrom": [
+      "q:eng:eng_12:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_12:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_12:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_13:struggle",
+    "description": "Evening Energy - Couch Lock",
+    "generatedFrom": [
+      "q:eng:eng_13:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_13:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_13:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_14:struggle",
+    "description": "Evening Energy - Alcohol for relaxation",
+    "generatedFrom": [
+      "q:eng:eng_14:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_14:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_14:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_15:struggle",
+    "description": "Evening Energy - Second Wind",
+    "generatedFrom": [
+      "q:eng:eng_15:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_15:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_15:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_16:struggle",
+    "description": "Sleep & Recovery - Racing mind at night",
+    "generatedFrom": [
+      "q:eng:eng_16:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_16:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_16:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_17:struggle",
+    "description": "Sleep & Recovery - Waking up in the middle of the night",
+    "generatedFrom": [
+      "q:eng:eng_17:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_17:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_17:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_18:struggle",
+    "description": "Sleep & Recovery - Hot flashes or night sweats",
+    "generatedFrom": [
+      "q:eng:eng_18:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_18:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_18:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_19:struggle",
+    "description": "Sleep & Recovery - Partner snoring or restlessness",
+    "generatedFrom": [
+      "q:eng:eng_19:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_19:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_19:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_20:struggle",
+    "description": "Sleep & Recovery - Mouth breathing",
+    "generatedFrom": [
+      "q:eng:eng_20:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_20:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_20:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_21:struggle",
+    "description": "Sleep & Recovery - Irregular sleep schedule",
+    "generatedFrom": [
+      "q:eng:eng_21:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_21:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_21:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_22:struggle",
+    "description": "Food & Hydration - Skipping meals",
+    "generatedFrom": [
+      "q:eng:eng_22:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_22:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_22:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_23:struggle",
+    "description": "Food & Hydration - Chronic dehydration",
+    "generatedFrom": [
+      "q:eng:eng_23:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_23:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_23:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_24:struggle",
+    "description": "Food & Hydration - Heavy Carb Coma",
+    "generatedFrom": [
+      "q:eng:eng_24:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_24:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_24:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_25:struggle",
+    "description": "Food & Hydration - Under-eating for weight loss",
+    "generatedFrom": [
+      "q:eng:eng_25:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_25:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_25:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_26:struggle",
+    "description": "Food & Hydration - Iron deficiency symptoms",
+    "generatedFrom": [
+      "q:eng:eng_26:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_26:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_26:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_27:struggle",
+    "description": "Work & Lifestyle - Burnout and Overwhelm",
+    "generatedFrom": [
+      "q:eng:eng_27:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_27:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_27:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_28:struggle",
+    "description": "Work & Lifestyle - Shift Work / Jetlag",
+    "generatedFrom": [
+      "q:eng:eng_28:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_28:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_28:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_29:struggle",
+    "description": "Work & Lifestyle - High-stress environment",
+    "generatedFrom": [
+      "q:eng:eng_29:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_29:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_29:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_30:struggle",
+    "description": "Work & Lifestyle - Sedentary lethargy",
+    "generatedFrom": [
+      "q:eng:eng_30:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_30:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_30:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_31:struggle",
+    "description": "Work & Lifestyle - Constant Context Switching",
+    "generatedFrom": [
+      "q:eng:eng_31:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_31:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_31:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_32:struggle",
+    "description": "Women's Energy - Hormonal Energy Dips",
+    "generatedFrom": [
+      "q:eng:eng_32:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_32:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_32:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_33:struggle",
+    "description": "Women's Energy - Perimenopause fatigue",
+    "generatedFrom": [
+      "q:eng:eng_33:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_33:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_33:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_34:struggle",
+    "description": "Women's Energy - Pregnancy Exhaustion",
+    "generatedFrom": [
+      "q:eng:eng_34:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_34:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_34:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_35:struggle",
+    "description": "Women's Energy - Postpartum depletion",
+    "generatedFrom": [
+      "q:eng:eng_35:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_35:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_35:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_36:struggle",
+    "description": "Medical Safety - Unexplained Chronic Fatigue",
+    "generatedFrom": [
+      "q:eng:eng_36:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_36:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_36:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_37:struggle",
+    "description": "Medical Safety - Loud snoring or gasping at night",
+    "generatedFrom": [
+      "q:eng:eng_37:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_37:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_37:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:eng_38:struggle",
+    "description": "Medical Safety - Depression-linked low energy",
+    "generatedFrom": [
+      "q:eng:eng_38:primary"
+    ],
+    "tags": [
+      "energy",
+      "barrier"
+    ],
+    "usedBy": [
+      "insight:eng:eng_38:impact",
+      "score:eng:vitality",
+      "dec:eng:eng_38:clinical"
+    ],
+    "confidenceImpact": 15
+  },
+  {
+    "id": "fact:eng:special:best_time",
+    "description": "Peak energy window",
+    "generatedFrom": [
+      "q:eng:special:best_time"
+    ],
+    "tags": [
+      "energy"
+    ],
+    "usedBy": [],
+    "confidenceImpact": 5
+  },
+  {
+    "id": "fact:eng:special:biggest_drain",
+    "description": "Biggest energy drain",
+    "generatedFrom": [
+      "q:eng:special:biggest_drain"
+    ],
+    "tags": [
+      "energy"
+    ],
+    "usedBy": [],
+    "confidenceImpact": 10
+  }
+]

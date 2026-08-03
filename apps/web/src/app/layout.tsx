@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { AppShell } from '@/components/layout/app-shell';
 import { ThemeProvider } from '@/components/theme-provider';
-import { FloatingWhatsApp } from '@/components/layout/floating-whatsapp';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,8 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <AppShell>{children}</AppShell>
-          <FloatingWhatsApp />
+          {children}
         </ThemeProvider>
       </body>
     </html>

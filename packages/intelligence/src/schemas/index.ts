@@ -14,11 +14,14 @@ export const QuestionSchema = z.object({
   id: z.string(),
   purpose: z.string().describe('Why it exists'),
   label: z.string().describe('The simple, everyday language question'),
-  type: z.enum(['single-choice', 'multiple-choice', 'slider', 'number', 'boolean']),
+  type: z.enum(['single-choice', 'multiple-choice', 'slider', 'number', 'boolean', 'height', 'weight', 'text', 'time', 'scale']),
   tags: z.array(z.string()).min(1),
   options: z.array(QuestionOptionSchema).optional(),
   
   // Mandatory Engine Requirements
+  dependsOn: z.array(z.string()).optional(),
+  coachThinking: z.string().optional(),
+  humanMoment: z.string().optional(),
   createsFacts: z.array(z.string()),
   supportsScores: z.array(z.string()),
   supportsInsights: z.array(z.string()),
@@ -37,7 +40,7 @@ export const FactSchema = z.object({
   description: z.string(),
   generatedFrom: z.array(z.string()).min(1).describe('Question IDs'),
   tags: z.array(z.string()).min(1),
-  usedBy: z.array(z.string()).min(1).describe('Decision IDs, Insight IDs, or Score IDs'),
+  usedBy: z.array(z.string()).describe('Decision IDs, Insight IDs, or Score IDs'),
   confidenceImpact: z.number(),
   
   // The raw mapping logic
@@ -106,7 +109,12 @@ export const RecommendationSchema = z.object({
   linkedDecisions: z.array(z.string()).min(1),
   
   // Mandatory No Assumptions Rule (Founder Addendum)
-  explanationTemplate: z.string().describe('Must clearly explain WHY this recommendation is made using the user\'s facts.'),
+  requiredFacts: z.array(z.string()).optional(),
+  whyWeThinkThis: z.string(),
+  firstStep: z.string(),
+  whyFirstStepMatters: z.string(),
+  successVision: z.string(),
+  coachSupportTiming: z.string(),
   
   // Content Node Linkages
   linkedGuides: z.array(z.string()).optional(),

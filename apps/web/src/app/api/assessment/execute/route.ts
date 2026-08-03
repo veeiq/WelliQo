@@ -1,25 +1,32 @@
 import { NextResponse } from 'next/server';
-// Assuming assessment-engine kernel and intelligence database are available on the server
+import { ConversationOrchestrator, ScoredQuestion } from './orchestrator';
 // import { kernel } from '@welliqo/assessment-engine';
 // import { MasterEngineConfig } from '@welliqo/intelligence';
 
 export async function POST(request: Request) {
   try {
-    const { answers, knownFacts, answeredQuestionIds } = await request.json();
+    const { answers, knownFacts, answeredQuestionIds, currentLayer } = await request.json();
 
     // 1. Calculate the final Report based on current answers
     // const report = kernel.executeAssessment(answers, MasterEngineConfig);
-    const mockReport = { isComplete: false, recommendations: [] }; // Mocking for now as kernel integration requires full package link
+    const mockReport = { isComplete: false, recommendations: [] }; // Mocking for now
 
-    // 2. Initialize the Question Selection Engine
+    // 2. Initialize the Question Selection Engine (mocked output for now)
     // const selector = new QuestionSelectionEngine(MasterEngineConfig);
-    // const confidences = selector.calculateConfidence({ answeredQuestionIds, knownFacts });
-    // const nextQuestion = selector.selectNextQuestion({ answeredQuestionIds, knownFacts });
-    const confidences = [{ domain: 'energy', confidence: 45 }];
-    const nextQuestion = { id: 'q:energy:sleep_duration', label: 'How many hours do you usually sleep at night?' };
+    // const rankedQuestions = selector.rankAllQuestions({ answeredQuestionIds, knownFacts });
+    const mockRankedQuestions: ScoredQuestion[] = [
+      {
+        question: { id: 'q:energy:sleep_duration', label: 'How many hours do you usually sleep at night?', tags: ['energy'], humanMoment: 'Great. Now I\'d like to understand your sleep. Many people don\'t realise how much sleep affects energy and weight.' },
+        informationGain: 45
+      }
+    ];
 
-    // 3. Stop Early Rule
-    // const allConfident = confidences.every(c => c.confidence >= 85);
+    // 3. Orchestrate the conversation
+    const orchestrator = new ConversationOrchestrator(currentLayer || null, answeredQuestionIds || []);
+    const { nextQuestion, isNewLayer, newLayerName } = orchestrator.selectNextQuestion(mockRankedQuestions);
+    const confidences = [{ domain: 'energy', confidence: 45 }];
+
+    // 4. Stop Early Rule
     const allConfident = false;
 
     if (allConfident || !nextQuestion) {
@@ -33,6 +40,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       action: 'ASK',
       nextQuestion,
+      isNewLayer,
+      newLayerName,
       currentReportPreview: mockReport,
       confidences
     });

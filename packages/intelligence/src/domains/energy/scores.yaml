@@ -1,33 +1,250 @@
-- id: "score:energy:recovery"
-  name: "Recovery Score"
-  description: "Measures the quality and duration of your restorative rest."
-  baseValue: 80
-  rules:
-    - requiredFacts: ["fact:sleep:severe_deprivation"]
-      valueModifier: -40
-    - requiredFacts: ["fact:sleep:mild_deprivation"]
-      valueModifier: -15
-    - requiredFacts: ["fact:sleep:optimal"]
-      valueModifier: 15
-
-- id: "score:energy:sustained"
-  name: "Sustained Energy Score"
-  description: "Measures how stable your energy remains throughout the day."
-  baseValue: 70
-  rules:
-    - requiredFacts: ["fact:energy:frequent_crash"]
-      valueModifier: -30
-    - requiredFacts: ["fact:energy:lunch_crash"]
-      valueModifier: -10
-    - requiredFacts: ["fact:energy:steady"]
-      valueModifier: 20
-
-- id: "score:energy:baseline"
-  name: "Baseline Vitality"
-  description: "A foundational metric of biological energy capacity."
-  baseValue: 75
-  rules:
-    - requiredFacts: ["fact:baseline:age"]
-      valueModifier: -5
-    - requiredFacts: ["fact:baseline:gender"]
-      valueModifier: 0
+[
+  {
+    "id": "score:eng:vitality",
+    "name": "Vitality & Restoration Score",
+    "description": "Measures overall energy levels and recovery capacity.",
+    "baseValue": 80,
+    "rules": [
+      {
+        "requiredFacts": [
+          "fact:eng:eng_1:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_2:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_3:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_4:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_5:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_6:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_7:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_8:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_9:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_10:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_11:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_12:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_13:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_14:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_15:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_16:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_17:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_18:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_19:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_20:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_21:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_22:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_23:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_24:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_25:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_26:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_27:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_28:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_29:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_30:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_31:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_32:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_33:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_34:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_35:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_36:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_37:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:eng_38:struggle"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:special:best_time"
+        ],
+        "valueModifier": -2
+      },
+      {
+        "requiredFacts": [
+          "fact:eng:special:biggest_drain"
+        ],
+        "valueModifier": -2
+      }
+    ]
+  }
+]

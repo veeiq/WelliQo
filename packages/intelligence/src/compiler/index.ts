@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
-import { DomainSchema, IntelligenceDomain } from '../schemas';
+import { DomainSchema, type IntelligenceDomain } from '../schemas';
 import { IntelligenceValidator } from '../validators';
 
 const DOMAINS_DIR = path.join(__dirname, '../domains');
@@ -94,6 +94,7 @@ function run() {
 // Compiled on ${new Date().toISOString()}
 
 import type { IntelligenceDomain } from './schemas';
+export * from './schemas';
 
 export const MasterEngineConfig: IntelligenceDomain = ${JSON.stringify(validatedDomain, null, 2)};
 `;

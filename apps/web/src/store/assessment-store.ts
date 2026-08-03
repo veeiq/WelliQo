@@ -1,12 +1,11 @@
 import { create } from 'zustand';
-import { journey as journeyEngine, kernel } from '@welliqo/assessment-engine';
+import type { MasterQuestion } from '@welliqo/intelligence';
 
 export type AssessmentRuntimeState =
   | 'IDLE'
-  | 'STARTING'
-  | 'ASSESSMENT'
-  | 'VALIDATING'
-  | 'EXECUTING'
+  | 'LOADING'
+  | 'ASKING'
+  | 'TRANSITIONING'
   | 'GENERATING_REPORT'
   | 'REPORT_READY'
   | 'ERROR';
@@ -14,56 +13,40 @@ export type AssessmentRuntimeState =
 export interface AssessmentState {
   runtimeState: AssessmentRuntimeState;
 
-  // Static Configuration
-  configuration: kernel.EngineConfiguration | null;
-  journey: journeyEngine.Journey | null;
-
-  // Volatile Session
-  progress: journeyEngine.JourneyProgress | null;
+  // Single Question Loop
+  currentQuestion: MasterQuestion | null;
+  confidences: any[];
   answers: Record<string, unknown>;
 
   // Deterministic Result
-  result: kernel.AssessmentResult | null;
+  result: any | null; // The final report or preview
+
+  // Flow Control
+  currentLayer: string | null;
 
   // Errors
   error: Error | null;
 
   // Actions
-  initialize: (configuration: kernel.EngineConfiguration, journey: journeyEngine.Journey) => void;
+  start: () => void;
   recordAnswer: (questionId: string, value: unknown) => void;
-  nextStep: () => void;
-  execute: () => void;
+  submitAnswer: () => void;
+  continueFromTransition: () => void;
   reset: () => void;
 }
 
 export const useAssessmentStore = create<AssessmentState>((set, get) => ({
   runtimeState: 'IDLE',
-  configuration: null,
-  journey: null,
-  progress: null,
+  currentQuestion: null,
+  confidences: [],
   answers: {},
+  currentLayer: null,
   result: null,
   error: null,
 
-  initialize: (configuration, journey) => {
-    set({ runtimeState: 'STARTING', error: null });
-    try {
-      const progress = journeyEngine.initializeProgress(journey);
-
-      set({
-        runtimeState: 'ASSESSMENT',
-        configuration,
-        journey,
-        progress,
-        answers: {},
-        result: null,
-      });
-    } catch (error) {
-      set({
-        runtimeState: 'ERROR',
-        error: error instanceof Error ? error : new Error('Unknown error during initialization'),
-      });
-    }
+  start: async () => {
+    set({ runtimeState: 'LOADING', error: null });
+    get().submitAnswer();
   },
 
   recordAnswer: (questionId, value) => {
@@ -75,48 +58,42 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     }));
   },
 
-  nextStep: () => {
-    const { journey, progress, answers, runtimeState } = get();
-    if (runtimeState !== 'ASSESSMENT' || !journey || !progress) return;
+  submitAnswer: async () => {
+    const { answers } = get();
+    set({ runtimeState: 'LOADING' });
 
-    set({ runtimeState: 'VALIDATING' });
     try {
-      // In a real app we'd run Zod validation for the current group here.
-      // For now, we assume valid and determine the next step.
-      const nextProgress = journeyEngine.determineNextStep(journey, progress, answers);
-
-      set({
-        progress: nextProgress,
-        runtimeState: nextProgress.isComplete ? 'EXECUTING' : 'ASSESSMENT',
+      // Execute the assessment kernel securely on the server
+      const response = await fetch('/api/assessment/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          answers, 
+          knownFacts: [], // Will be computed server-side from answers
+          answeredQuestionIds: Object.keys(answers),
+          currentLayer: get().currentLayer
+        }),
       });
+      
+      if (!response.ok) throw new Error('Server execution failed');
+      const data = await response.json();
 
-      if (nextProgress.isComplete) {
-        get().execute();
+      if (data.action === 'ASK') {
+        set({
+          currentQuestion: data.nextQuestion,
+          confidences: data.confidences || [],
+          result: data.currentReportPreview,
+          currentLayer: data.newLayerName || get().currentLayer,
+          runtimeState: data.isNewLayer ? 'TRANSITIONING' : 'ASKING',
+        });
+      } else if (data.action === 'FINISH') {
+        set({
+          currentQuestion: null,
+          confidences: data.confidences || [],
+          result: data.report,
+          runtimeState: 'REPORT_READY',
+        });
       }
-    } catch (error) {
-      set({
-        runtimeState: 'ERROR',
-        error: error instanceof Error ? error : new Error('Unknown error during navigation'),
-      });
-    }
-  },
-
-  execute: () => {
-    const { configuration, journey, answers, runtimeState } = get();
-    if (runtimeState !== 'EXECUTING' || !configuration || !journey) return;
-
-    try {
-      // Execute the assessment kernel synchronously
-      const result = kernel.executeAssessment({
-        journey,
-        answers,
-        configuration,
-      });
-
-      set({
-        result,
-        runtimeState: 'REPORT_READY',
-      });
     } catch (error) {
       set({
         runtimeState: 'ERROR',
@@ -125,11 +102,17 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     }
   },
 
+  continueFromTransition: () => {
+    set({ runtimeState: 'ASKING' });
+  },
+
   reset: () => {
     set({
       runtimeState: 'IDLE',
-      progress: null,
+      currentQuestion: null,
+      confidences: [],
       answers: {},
+      currentLayer: null,
       result: null,
       error: null,
     });

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "insight:slp:q001_wake_feeling:impact",
+    "name": "Waking exhaustion Barrier",
+    "meaning": "Indicates that Waking exhaustion is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q001_wake_feeling:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q001_wake_feeling:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q002_fall_asleep_time:impact",
+    "name": "Sleep onset latency Barrier",
+    "meaning": "Indicates that Sleep onset latency is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q002_fall_asleep_time:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q002_fall_asleep_time:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q003_wake_frequency:impact",
+    "name": "Sleep fragmentation Barrier",
+    "meaning": "Indicates that Sleep fragmentation is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q003_wake_frequency:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q003_wake_frequency:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q004_fall_asleep_again:impact",
+    "name": "Return to sleep latency Barrier",
+    "meaning": "Indicates that Return to sleep latency is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q004_fall_asleep_again:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q004_fall_asleep_again:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q005_early_waking:impact",
+    "name": "Terminal insomnia Barrier",
+    "meaning": "Indicates that Terminal insomnia is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q005_early_waking:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q005_early_waking:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q006_phone_in_bed:impact",
+    "name": "Device usage Barrier",
+    "meaning": "Indicates that Device usage is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q006_phone_in_bed:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q006_phone_in_bed:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q007_racing_thoughts:impact",
+    "name": "Racing thoughts Barrier",
+    "meaning": "Indicates that Racing thoughts is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q007_racing_thoughts:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q007_racing_thoughts:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q008_stress_bedtime:impact",
+    "name": "Bedtime stress Barrier",
+    "meaning": "Indicates that Bedtime stress is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q008_stress_bedtime:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q008_stress_bedtime:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q009_tv_before_bed:impact",
+    "name": "TV consumption Barrier",
+    "meaning": "Indicates that TV consumption is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q009_tv_before_bed:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q009_tv_before_bed:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q010_regular_bedtime:impact",
+    "name": "Bedtime consistency Barrier",
+    "meaning": "Indicates that Bedtime consistency is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q010_regular_bedtime:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q010_regular_bedtime:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q011_bedroom_noise:impact",
+    "name": "Noise levels Barrier",
+    "meaning": "Indicates that Noise levels is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q011_bedroom_noise:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q011_bedroom_noise:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q012_disturbances:impact",
+    "name": "Partner/Pet disturbance Barrier",
+    "meaning": "Indicates that Partner/Pet disturbance is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q012_disturbances:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q012_disturbances:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q013_snoring:impact",
+    "name": "Snoring Barrier",
+    "meaning": "Indicates that Snoring is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q013_snoring:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q013_snoring:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q014_dry_mouth:impact",
+    "name": "Mouth breathing Barrier",
+    "meaning": "Indicates that Mouth breathing is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q014_dry_mouth:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q014_dry_mouth:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q015_room_temp:impact",
+    "name": "Temperature regulation Barrier",
+    "meaning": "Indicates that Temperature regulation is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q015_room_temp:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q015_room_temp:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q016_last_meal:impact",
+    "name": "Late meals Barrier",
+    "meaning": "Indicates that Late meals is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q016_last_meal:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q016_last_meal:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q017_coffee_timing:impact",
+    "name": "Caffeine timing Barrier",
+    "meaning": "Indicates that Caffeine timing is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q017_coffee_timing:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q017_coffee_timing:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q018_alcohol_night:impact",
+    "name": "Alcohol before bed Barrier",
+    "meaning": "Indicates that Alcohol before bed is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q018_alcohol_night:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q018_alcohol_night:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q019_hungry_sleep:impact",
+    "name": "Hunger at bedtime Barrier",
+    "meaning": "Indicates that Hunger at bedtime is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q019_hungry_sleep:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q019_hungry_sleep:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q020_daytime_water:impact",
+    "name": "Hydration impact Barrier",
+    "meaning": "Indicates that Hydration impact is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q020_daytime_water:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q020_daytime_water:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q021_wake_time:impact",
+    "name": "Wake time consistency Barrier",
+    "meaning": "Indicates that Wake time consistency is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q021_wake_time:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q021_wake_time:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q022_bed_time:impact",
+    "name": "Bedtime alignment Barrier",
+    "meaning": "Indicates that Bedtime alignment is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q022_bed_time:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q022_bed_time:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q023_sleep_consistency:impact",
+    "name": "Sleep consistency Barrier",
+    "meaning": "Indicates that Sleep consistency is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q023_sleep_consistency:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q023_sleep_consistency:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q024_naps:impact",
+    "name": "Daytime naps Barrier",
+    "meaning": "Indicates that Daytime naps is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q024_naps:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q024_naps:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q025_nap_length:impact",
+    "name": "Nap duration Barrier",
+    "meaning": "Indicates that Nap duration is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q025_nap_length:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q025_nap_length:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q026_morning_sunlight:impact",
+    "name": "Circadian light exposure Barrier",
+    "meaning": "Indicates that Circadian light exposure is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q026_morning_sunlight:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q026_morning_sunlight:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q027_first_coffee:impact",
+    "name": "Caffeine timing Barrier",
+    "meaning": "Indicates that Caffeine timing is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q027_first_coffee:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q027_first_coffee:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q028_morning_sleepy:impact",
+    "name": "Morning fatigue Barrier",
+    "meaning": "Indicates that Morning fatigue is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q028_morning_sleepy:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q028_morning_sleepy:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q029_caffeine_dependent:impact",
+    "name": "Caffeine dependence Barrier",
+    "meaning": "Indicates that Caffeine dependence is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q029_caffeine_dependent:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q029_caffeine_dependent:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q030_afternoon_slump:impact",
+    "name": "Post-lunch sleepiness Barrier",
+    "meaning": "Indicates that Post-lunch sleepiness is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q030_afternoon_slump:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q030_afternoon_slump:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q031_meeting_struggle:impact",
+    "name": "Daytime alertness Barrier",
+    "meaning": "Indicates that Daytime alertness is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q031_meeting_struggle:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q031_meeting_struggle:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q032_sleepy_driving:impact",
+    "name": "Microsleep risk Barrier",
+    "meaning": "Indicates that Microsleep risk is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q032_sleepy_driving:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q032_sleepy_driving:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q033_yawning:impact",
+    "name": "Chronic yawning Barrier",
+    "meaning": "Indicates that Chronic yawning is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q033_yawning:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q033_yawning:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q034_night_shift:impact",
+    "name": "Shift work Barrier",
+    "meaning": "Indicates that Shift work is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q034_night_shift:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q034_night_shift:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q035_jet_lag:impact",
+    "name": "Jet lag Barrier",
+    "meaning": "Indicates that Jet lag is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q035_jet_lag:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q035_jet_lag:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q036_weekend_sleep:impact",
+    "name": "Weekend sleep variation Barrier",
+    "meaning": "Indicates that Weekend sleep variation is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q036_weekend_sleep:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q036_weekend_sleep:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q037_sleep_change:impact",
+    "name": "Recent sleep changes Barrier",
+    "meaning": "Indicates that Recent sleep changes is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q037_sleep_change:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q037_sleep_change:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q038_menstrual_cycle:impact",
+    "name": "Menstrual cycle sleep Barrier",
+    "meaning": "Indicates that Menstrual cycle sleep is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q038_menstrual_cycle:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q038_menstrual_cycle:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q039_pregnancy_sleep:impact",
+    "name": "Pregnancy sleep Barrier",
+    "meaning": "Indicates that Pregnancy sleep is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q039_pregnancy_sleep:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q039_pregnancy_sleep:clinical"
+    ]
+  },
+  {
+    "id": "insight:slp:q040_menopause_sleep:impact",
+    "name": "Menopause symptoms Barrier",
+    "meaning": "Indicates that Menopause symptoms is an active roadblock for their sleep quality.",
+    "requiredFacts": [
+      "fact:slp:q040_menopause_sleep:struggle"
+    ],
+    "confidence": 80,
+    "linkedScores": [
+      "score:slp:restoration"
+    ],
+    "linkedDecisions": [
+      "dec:slp:q040_menopause_sleep:clinical"
+    ]
+  }
+]

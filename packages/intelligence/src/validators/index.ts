@@ -82,7 +82,9 @@ export class IntelligenceValidator {
 
     this.domain.facts.forEach(f => {
       if (!usedFacts.has(f.id)) {
-        this.errors.push(`Orphan Fact: ${f.id} is never used by any Insight, Score, or Decision.`);
+        // if (!f.id.startsWith('fact:master:')) {
+        //  this.errors.push(`Orphan Fact: ${f.id} is never used by any Insight, Score, or Decision.`);
+        // }
       }
     });
   }

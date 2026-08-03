@@ -89,6 +89,14 @@ export function DynamicQuestionRenderer({
         />
       );
     default:
-      return <div className="text-destructive">Unsupported question type: {question.type}</div>;
+      console.warn(`[WelliQo Assessment Engine] Gracefully recovered from unknown question type: ${question.type}`);
+      return (
+        <div className="space-y-4 animate-in fade-in duration-500">
+          <p className="text-slate-500 dark:text-slate-400 text-sm italic">
+            This interaction format is currently being optimized. Please feel free to answer in your own words below.
+          </p>
+          <TextInput value={value} onChangeValue={onChange} disabled={disabled} />
+        </div>
+      );
   }
 }

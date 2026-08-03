@@ -1,0 +1,1726 @@
+[
+  {
+    "id": "q:slp:q001_wake_feeling:primary",
+    "purpose": "Assess Waking exhaustion within How Does Your Sleep Feel",
+    "label": "How do you usually feel when you wake up?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "how_does_your_sleep_feel"
+    ],
+    "coachThinking": "Assess baseline sleep architecture and restorative quality regardless of total duration.",
+    "humanMoment": "Waking up exhausted is incredibly demoralizing. It feels like you are starting the race behind everyone else.",
+    "createsFacts": [
+      "fact:slp:q001_wake_feeling:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q001_wake_feeling:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q001_wake_feeling:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q001_wake_feeling:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q1:fresh",
+        "label": "Fresh and active",
+        "value": "fresh"
+      },
+      {
+        "id": "opt:slp:q1:okay",
+        "label": "Okay",
+        "value": "okay"
+      },
+      {
+        "id": "opt:slp:q1:tired",
+        "label": "Still tired",
+        "value": "tired"
+      },
+      {
+        "id": "opt:slp:q1:exhausted",
+        "label": "Completely exhausted",
+        "value": "exhausted"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q002_fall_asleep_time:primary",
+    "purpose": "Assess Sleep onset latency within How Does Your Sleep Feel",
+    "label": "About how long does it usually take you to fall asleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "how_does_your_sleep_feel"
+    ],
+    "coachThinking": "Assess sleep onset latency. If >30 mins, highly suggestive of sympathetic overdrive or circadian delay.",
+    "humanMoment": "Lying awake in the dark is terribly lonely. When sleep takes over an hour, the bed starts to feel like a stressful place.",
+    "createsFacts": [
+      "fact:slp:q002_fall_asleep_time:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q002_fall_asleep_time:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q002_fall_asleep_time:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q002_fall_asleep_time:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q2:fast",
+        "label": "Less than 15 minutes",
+        "value": "fast"
+      },
+      {
+        "id": "opt:slp:q2:normal",
+        "label": "15–30 minutes",
+        "value": "normal"
+      },
+      {
+        "id": "opt:slp:q2:slow",
+        "label": "30–60 minutes",
+        "value": "slow"
+      },
+      {
+        "id": "opt:slp:q2:severe",
+        "label": "More than an hour",
+        "value": "severe"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q003_wake_frequency:primary",
+    "purpose": "Assess Sleep fragmentation within How Does Your Sleep Feel",
+    "label": "How many times do you usually wake up during the night?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "how_does_your_sleep_feel"
+    ],
+    "coachThinking": "Sleep maintenance insomnia. Usually tied to blood sugar drops, bladder issues, or environmental disturbances.",
+    "humanMoment": "Waking up multiple times shatters your deepest phases of rest. You might technically be in bed for 8 hours, but it feels like 3.",
+    "createsFacts": [
+      "fact:slp:q003_wake_frequency:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q003_wake_frequency:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q003_wake_frequency:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q003_wake_frequency:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q3:none",
+        "label": "Rarely or never",
+        "value": "none"
+      },
+      {
+        "id": "opt:slp:q3:once",
+        "label": "Once or twice",
+        "value": "once"
+      },
+      {
+        "id": "opt:slp:q3:many",
+        "label": "Three or more times",
+        "value": "many"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q004_fall_asleep_again:primary",
+    "purpose": "Assess Return to sleep latency within How Does Your Sleep Feel",
+    "label": "If you wake up, can you fall asleep again easily?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "how_does_your_sleep_feel"
+    ],
+    "coachThinking": "Cortisol spike during the night. The user is entering problem-solving mode instead of resting mode.",
+    "humanMoment": "Waking up at 3 AM and doing the math on how much sleep you are losing is incredibly stressful.",
+    "createsFacts": [
+      "fact:slp:q004_fall_asleep_again:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q004_fall_asleep_again:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q004_fall_asleep_again:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q004_fall_asleep_again:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q4:yes",
+        "label": "Yes, very easily",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q4:sometimes",
+        "label": "Sometimes",
+        "value": "sometimes"
+      },
+      {
+        "id": "opt:slp:q4:no",
+        "label": "No, it takes a long time",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q005_early_waking:primary",
+    "purpose": "Assess Terminal insomnia within How Does Your Sleep Feel",
+    "label": "Do you wake up before your alarm?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "how_does_your_sleep_feel"
+    ],
+    "coachThinking": "Terminal insomnia. Can be an indicator of depression, massive stress, or circadian phase advance.",
+    "humanMoment": "Waking up at 5 AM when you don't have to is infuriating. Your body is ready, but you know you need more rest.",
+    "createsFacts": [
+      "fact:slp:q005_early_waking:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q005_early_waking:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q005_early_waking:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q005_early_waking:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q5:always",
+        "label": "Always",
+        "value": "always"
+      },
+      {
+        "id": "opt:slp:q5:sometimes",
+        "label": "Sometimes",
+        "value": "sometimes"
+      },
+      {
+        "id": "opt:slp:q5:never",
+        "label": "Never",
+        "value": "never"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q006_phone_in_bed:primary",
+    "purpose": "Assess Device usage within What Happens Before Bed",
+    "label": "How often do you use your phone or laptop in bed?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "what_happens_before_bed"
+    ],
+    "coachThinking": "Blue light exposure and dopamine stimulation actively block melatonin synthesis.",
+    "humanMoment": "Doomscrolling in bed is often the only time you get to disconnect from the real world. It's hard to give up.",
+    "createsFacts": [
+      "fact:slp:q006_phone_in_bed:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q006_phone_in_bed:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q006_phone_in_bed:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q006_phone_in_bed:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q6:always",
+        "label": "Every night",
+        "value": "always"
+      },
+      {
+        "id": "opt:slp:q6:sometimes",
+        "label": "A few nights a week",
+        "value": "sometimes"
+      },
+      {
+        "id": "opt:slp:q6:never",
+        "label": "Rarely or never",
+        "value": "never"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q007_racing_thoughts:primary",
+    "purpose": "Assess Racing thoughts within What Happens Before Bed",
+    "label": "Do your thoughts keep running when you try to sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "what_happens_before_bed"
+    ],
+    "coachThinking": "Sympathetic nervous system overdrive. Need cognitive offloading.",
+    "humanMoment": "It's maddening when your body is exhausted but your brain refuses to shut off.",
+    "createsFacts": [
+      "fact:slp:q007_racing_thoughts:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q007_racing_thoughts:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q007_racing_thoughts:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q007_racing_thoughts:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q7:yes",
+        "label": "Yes, almost always",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q7:sometimes",
+        "label": "Sometimes",
+        "value": "sometimes"
+      },
+      {
+        "id": "opt:slp:q7:no",
+        "label": "No, my mind is calm",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q008_stress_bedtime:primary",
+    "purpose": "Assess Bedtime stress within What Happens Before Bed",
+    "label": "Do you feel stressed at bedtime?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "what_happens_before_bed"
+    ],
+    "coachThinking": "Lack of transition boundaries between output mode and recovery mode.",
+    "humanMoment": "Carrying the weight of the day into bed makes rest impossible. You deserve to lay that burden down.",
+    "createsFacts": [
+      "fact:slp:q008_stress_bedtime:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q008_stress_bedtime:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q008_stress_bedtime:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q008_stress_bedtime:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q8:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q8:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q009_tv_before_bed:primary",
+    "purpose": "Assess TV consumption within What Happens Before Bed",
+    "label": "Do you usually watch TV before sleeping?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "what_happens_before_bed"
+    ],
+    "coachThinking": "Passive screen time vs active scrolling. Still a light issue, but also content-driven adrenaline (thrillers, news).",
+    "humanMoment": "Binge-watching shows is a great way to numb out after a hard day, but it forces your brain to stay highly active.",
+    "createsFacts": [
+      "fact:slp:q009_tv_before_bed:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q009_tv_before_bed:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q009_tv_before_bed:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q009_tv_before_bed:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q9:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q9:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q010_regular_bedtime:primary",
+    "purpose": "Assess Bedtime consistency within What Happens Before Bed",
+    "label": "Do you have a regular bedtime?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "what_happens_before_bed"
+    ],
+    "coachThinking": "Circadian rhythm stability relies entirely on consistency.",
+    "humanMoment": "Life is chaotic, and maintaining a strict schedule can feel impossible when things pop up.",
+    "createsFacts": [
+      "fact:slp:q010_regular_bedtime:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q010_regular_bedtime:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q010_regular_bedtime:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q010_regular_bedtime:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q10:yes",
+        "label": "Yes, almost exactly the same every night",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q10:varies",
+        "label": "It varies slightly",
+        "value": "varies"
+      },
+      {
+        "id": "opt:slp:q10:no",
+        "label": "No, it changes constantly",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q011_bedroom_noise:primary",
+    "purpose": "Assess Noise levels within Your Sleep Environment",
+    "label": "Is your bedroom usually:",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "your_sleep_environment"
+    ],
+    "coachThinking": "Environmental disruption. Need acoustic masking.",
+    "humanMoment": "Living in a noisy environment or near traffic puts your brain on constant alert, even while unconscious.",
+    "createsFacts": [
+      "fact:slp:q011_bedroom_noise:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q011_bedroom_noise:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q011_bedroom_noise:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q011_bedroom_noise:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q11:quiet",
+        "label": "Quiet",
+        "value": "quiet"
+      },
+      {
+        "id": "opt:slp:q11:little",
+        "label": "A little noisy",
+        "value": "little"
+      },
+      {
+        "id": "opt:slp:q11:very",
+        "label": "Very noisy",
+        "value": "very"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q012_disturbances:primary",
+    "purpose": "Assess Partner/Pet disturbance within Your Sleep Environment",
+    "label": "Does anyone disturb your sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "your_sleep_environment"
+    ],
+    "coachThinking": "Social sleep disruption. Boundaries need to be established for biological health.",
+    "humanMoment": "We love our family and pets, but having them constantly wake you up is a recipe for deep resentment and exhaustion.",
+    "createsFacts": [
+      "fact:slp:q012_disturbances:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q012_disturbances:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q012_disturbances:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q012_disturbances:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q12:partner",
+        "label": "Partner",
+        "value": "partner"
+      },
+      {
+        "id": "opt:slp:q12:children",
+        "label": "Children",
+        "value": "children"
+      },
+      {
+        "id": "opt:slp:q12:pets",
+        "label": "Pets",
+        "value": "pets"
+      },
+      {
+        "id": "opt:slp:q12:nobody",
+        "label": "Nobody",
+        "value": "nobody"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q013_snoring:primary",
+    "purpose": "Assess Snoring within Your Sleep Environment",
+    "label": "Do you snore?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "your_sleep_environment"
+    ],
+    "coachThinking": "Red flag for obstructive sleep apnea. Need clinical referral or mechanical intervention.",
+    "humanMoment": "Snoring isn't just annoying for your partner; it means your body is physically struggling to get oxygen while you rest.",
+    "createsFacts": [
+      "fact:slp:q013_snoring:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q013_snoring:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q013_snoring:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q013_snoring:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q13:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q13:no",
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "id": "opt:slp:q13:unsure",
+        "label": "Not sure",
+        "value": "unsure"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q014_dry_mouth:primary",
+    "purpose": "Assess Mouth breathing within Your Sleep Environment",
+    "label": "Do you wake up with a dry mouth?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "your_sleep_environment"
+    ],
+    "coachThinking": "Nasal breathing is mandatory for parasympathetic nervous system activation during sleep.",
+    "humanMoment": "Waking up feeling like you swallowed sand means you were breathing through your mouth, which triggers a stress response in your sleep.",
+    "createsFacts": [
+      "fact:slp:q014_dry_mouth:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q014_dry_mouth:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q014_dry_mouth:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q014_dry_mouth:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q14:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q14:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q015_room_temp:primary",
+    "purpose": "Assess Temperature regulation within Your Sleep Environment",
+    "label": "Does your room feel too hot or too cold?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "your_sleep_environment"
+    ],
+    "coachThinking": "Core body temperature must drop by 1-2 degrees to initiate and maintain sleep.",
+    "humanMoment": "Waking up sweating or shivering is terrible. Your brain is highly sensitive to temperature during rest.",
+    "createsFacts": [
+      "fact:slp:q015_room_temp:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q015_room_temp:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q015_room_temp:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q015_room_temp:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q15:hot",
+        "label": "Too hot",
+        "value": "hot"
+      },
+      {
+        "id": "opt:slp:q15:cold",
+        "label": "Too cold",
+        "value": "cold"
+      },
+      {
+        "id": "opt:slp:q15:fine",
+        "label": "Just right",
+        "value": "fine"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q016_last_meal:primary",
+    "purpose": "Assess Late meals within Food & Drink",
+    "label": "When do you usually have your last meal?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "food_&_drink"
+    ],
+    "coachThinking": "Digestion raises core temperature and heart rate, directly antagonizing sleep architecture.",
+    "humanMoment": "Eating late is often the only time we have to truly relax and enjoy food. But digesting a heavy meal is hard work for your body.",
+    "createsFacts": [
+      "fact:slp:q016_last_meal:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q016_last_meal:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q016_last_meal:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q016_last_meal:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q16:early",
+        "label": "More than 3 hours before bed",
+        "value": "early"
+      },
+      {
+        "id": "opt:slp:q16:late",
+        "label": "1–2 hours before bed",
+        "value": "late"
+      },
+      {
+        "id": "opt:slp:q16:bedtime",
+        "label": "Right before sleeping",
+        "value": "bedtime"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q017_coffee_timing:primary",
+    "purpose": "Assess Caffeine timing within Food & Drink",
+    "label": "Do you drink coffee after 4 PM?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "food_&_drink"
+    ],
+    "coachThinking": "Caffeine has a quarter-life of 10-12 hours. Afternoon coffee means high blood caffeine at midnight.",
+    "humanMoment": "The afternoon slump is real, and coffee is the easiest fix. But it secretly ruins your night.",
+    "createsFacts": [
+      "fact:slp:q017_coffee_timing:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q017_coffee_timing:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q017_coffee_timing:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q017_coffee_timing:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q17:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q17:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q018_alcohol_night:primary",
+    "purpose": "Assess Alcohol before bed within Food & Drink",
+    "label": "Do you drink alcohol at night?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "food_&_drink"
+    ],
+    "coachThinking": "Alcohol fragments REM sleep and destroys deep sleep architecture. Sedation is not sleep.",
+    "humanMoment": "A drink is the fastest chemical way to shut off an anxious brain. It makes sense why it feels helpful, but it betrays you later.",
+    "createsFacts": [
+      "fact:slp:q018_alcohol_night:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q018_alcohol_night:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q018_alcohol_night:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q018_alcohol_night:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q18:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q18:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q019_hungry_sleep:primary",
+    "purpose": "Assess Hunger at bedtime within Food & Drink",
+    "label": "Do you feel hungry when trying to sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "food_&_drink"
+    ],
+    "coachThinking": "Caloric restriction or poor macro timing leads to nighttime hypoglycemia.",
+    "humanMoment": "Trying to sleep while your stomach is growling is miserable and keeps your brain on high alert.",
+    "createsFacts": [
+      "fact:slp:q019_hungry_sleep:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q019_hungry_sleep:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q019_hungry_sleep:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q019_hungry_sleep:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q19:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q19:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q020_daytime_water:primary",
+    "purpose": "Assess Hydration impact within Food & Drink",
+    "label": "Do you drink enough water during the day?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "food_&_drink"
+    ],
+    "coachThinking": "Backloading hydration causes nocturia (frequent urination at night), ruining sleep maintenance.",
+    "humanMoment": "It is so easy to forget to drink water until you are suddenly incredibly thirsty right before bed.",
+    "createsFacts": [
+      "fact:slp:q020_daytime_water:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q020_daytime_water:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q020_daytime_water:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q020_daytime_water:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q20:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q20:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q021_wake_time:primary",
+    "purpose": "Assess Wake time consistency within Daily Routine",
+    "label": "What time do you usually wake up?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daily_routine"
+    ],
+    "coachThinking": "Establishing circadian anchor point. Wake time is the most critical biological signal.",
+    "humanMoment": "Waking up is hard enough without feeling like you are already behind schedule.",
+    "createsFacts": [
+      "fact:slp:q021_wake_time:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q021_wake_time:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q021_wake_time:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q021_wake_time:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q21:early",
+        "label": "Before 6 AM",
+        "value": "early"
+      },
+      {
+        "id": "opt:slp:q21:normal",
+        "label": "6 AM - 8 AM",
+        "value": "normal"
+      },
+      {
+        "id": "opt:slp:q21:late",
+        "label": "After 8 AM",
+        "value": "late"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q022_bed_time:primary",
+    "purpose": "Assess Bedtime alignment within Daily Routine",
+    "label": "What time do you usually go to bed?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daily_routine"
+    ],
+    "coachThinking": "Assess sleep window opportunity relative to wake time (chronotype vs social obligation).",
+    "humanMoment": "Fighting the clock to get enough hours of sleep is incredibly stressful when your day runs long.",
+    "createsFacts": [
+      "fact:slp:q022_bed_time:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q022_bed_time:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q022_bed_time:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q022_bed_time:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q22:early",
+        "label": "Before 10 PM",
+        "value": "early"
+      },
+      {
+        "id": "opt:slp:q22:normal",
+        "label": "10 PM - 12 AM",
+        "value": "normal"
+      },
+      {
+        "id": "opt:slp:q22:late",
+        "label": "After Midnight",
+        "value": "late"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q023_sleep_consistency:primary",
+    "purpose": "Assess Sleep consistency within Daily Routine",
+    "label": "Do you sleep at the same time every day?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daily_routine"
+    ],
+    "coachThinking": "Social jetlag and circadian arrhythmia. Consistency matters more than total duration for sleep quality.",
+    "humanMoment": "When every day brings different demands, maintaining a strict sleep schedule feels like an impossible luxury.",
+    "createsFacts": [
+      "fact:slp:q023_sleep_consistency:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q023_sleep_consistency:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q023_sleep_consistency:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q023_sleep_consistency:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q23:always",
+        "label": "Always",
+        "value": "always"
+      },
+      {
+        "id": "opt:slp:q23:most",
+        "label": "Most days",
+        "value": "most"
+      },
+      {
+        "id": "opt:slp:q23:rarely",
+        "label": "Rarely",
+        "value": "rarely"
+      },
+      {
+        "id": "opt:slp:q23:never",
+        "label": "Never",
+        "value": "never"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q024_naps:primary",
+    "purpose": "Assess Daytime naps within Daily Routine",
+    "label": "Do you usually take naps?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daily_routine"
+    ],
+    "coachThinking": "Napping relieves sleep pressure (adenosine). If taken too late, it destroys nighttime sleep onset.",
+    "humanMoment": "A nap can feel like a total lifesaver when you are completely depleted, but it often leaves you groggy.",
+    "createsFacts": [
+      "fact:slp:q024_naps:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q024_naps:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q024_naps:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q024_naps:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q24:never",
+        "label": "Never",
+        "value": "never"
+      },
+      {
+        "id": "opt:slp:q24:sometimes",
+        "label": "Sometimes",
+        "value": "sometimes"
+      },
+      {
+        "id": "opt:slp:q24:always",
+        "label": "Almost every day",
+        "value": "always"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q025_nap_length:primary",
+    "purpose": "Assess Nap duration within Daily Routine",
+    "label": "If you nap, how long do you usually sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daily_routine"
+    ],
+    "coachThinking": "Deep sleep inertia. User is entering Slow Wave Sleep during the day due to severe sleep debt.",
+    "humanMoment": "Waking up from a 2-hour nap feeling confused about what year it is completely ruins the rest of your day.",
+    "createsFacts": [
+      "fact:slp:q025_nap_length:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q025_nap_length:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q025_nap_length:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q025_nap_length:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q25:short",
+        "label": "Less than 30 minutes",
+        "value": "short"
+      },
+      {
+        "id": "opt:slp:q25:long",
+        "label": "30 - 60 minutes",
+        "value": "long"
+      },
+      {
+        "id": "opt:slp:q25:deep",
+        "label": "More than an hour",
+        "value": "deep"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q026_morning_sunlight:primary",
+    "purpose": "Assess Circadian light exposure within Morning",
+    "label": "Do you get sunlight within one hour of waking up?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "morning"
+    ],
+    "coachThinking": "Absence of lux exposure delays the cortisol peak, causing morning lethargy and delayed melatonin onset at night.",
+    "humanMoment": "Rushing to get ready in a dark house or apartment means you start your day without your body actually knowing it is morning.",
+    "createsFacts": [
+      "fact:slp:q026_morning_sunlight:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q026_morning_sunlight:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q026_morning_sunlight:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q026_morning_sunlight:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q26:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q26:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q027_first_coffee:primary",
+    "purpose": "Assess Caffeine timing within Morning",
+    "label": "How soon after waking do you drink your first coffee or tea?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "morning"
+    ],
+    "coachThinking": "Immediate caffeine blocks adenosine receptors before natural clearance, guaranteeing an afternoon crash.",
+    "humanMoment": "Coffee is often the only thing that makes getting out of bed bearable. It feels essential.",
+    "createsFacts": [
+      "fact:slp:q027_first_coffee:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q027_first_coffee:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q027_first_coffee:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q027_first_coffee:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q27:immediate",
+        "label": "Immediately",
+        "value": "immediate"
+      },
+      {
+        "id": "opt:slp:q27:delayed",
+        "label": "After an hour or more",
+        "value": "delayed"
+      },
+      {
+        "id": "opt:slp:q27:never",
+        "label": "I do not drink caffeine",
+        "value": "never"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q028_morning_sleepy:primary",
+    "purpose": "Assess Morning fatigue within Morning",
+    "label": "Do you usually feel sleepy during the morning?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "morning"
+    ],
+    "coachThinking": "Sleep inertia or insufficient deep sleep. The brain has not fully transitioned to wakefulness.",
+    "humanMoment": "Sitting at your desk struggling to keep your eyes open at 10 AM makes the day feel impossibly long.",
+    "createsFacts": [
+      "fact:slp:q028_morning_sleepy:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q028_morning_sleepy:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q028_morning_sleepy:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q028_morning_sleepy:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q28:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q28:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q029_caffeine_dependent:primary",
+    "purpose": "Assess Caffeine dependence within Morning",
+    "label": "Do you need caffeine just to feel normal?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "morning"
+    ],
+    "coachThinking": "Adenosine receptor upregulation due to chronic high caffeine intake. User is constantly fighting withdrawal.",
+    "humanMoment": "When caffeine stops giving you energy and just brings you back to baseline, you are essentially borrowing tomorrow's energy to survive today.",
+    "createsFacts": [
+      "fact:slp:q029_caffeine_dependent:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q029_caffeine_dependent:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q029_caffeine_dependent:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q029_caffeine_dependent:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q29:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q29:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q030_afternoon_slump:primary",
+    "purpose": "Assess Post-lunch sleepiness within Daytime",
+    "label": "Do you feel sleepy after lunch?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daytime"
+    ],
+    "coachThinking": "Postprandial somnolence caused by a massive insulin spike from a carb-heavy lunch.",
+    "humanMoment": "The post-lunch crash is brutal. Staring at your computer screen while your eyelids feel like lead is agonizing.",
+    "createsFacts": [
+      "fact:slp:q030_afternoon_slump:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q030_afternoon_slump:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q030_afternoon_slump:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q030_afternoon_slump:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q30:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q30:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q031_meeting_struggle:primary",
+    "purpose": "Assess Daytime alertness within Daytime",
+    "label": "Do you struggle to stay awake during meetings or classes?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daytime"
+    ],
+    "coachThinking": "Lack of stimulation unmasks severe underlying sleep debt. The user is dangerously sleep-deprived.",
+    "humanMoment": "Pinching yourself to stay awake in a quiet room is embarrassing and physically painful.",
+    "createsFacts": [
+      "fact:slp:q031_meeting_struggle:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q031_meeting_struggle:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q031_meeting_struggle:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q031_meeting_struggle:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q31:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q31:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q032_sleepy_driving:primary",
+    "purpose": "Assess Microsleep risk within Daytime",
+    "label": "Do you ever feel sleepy while driving?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daytime"
+    ],
+    "coachThinking": "Critical safety risk. Microsleeps indicate absolute systemic exhaustion or severe sleep apnea.",
+    "humanMoment": "Feeling your head nod on the highway is terrifying. It is a massive red flag that your body is shutting down.",
+    "createsFacts": [
+      "fact:slp:q032_sleepy_driving:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q032_sleepy_driving:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q032_sleepy_driving:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q032_sleepy_driving:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q32:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q32:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q033_yawning:primary",
+    "purpose": "Assess Chronic yawning within Daytime",
+    "label": "Do you often yawn throughout the day?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "daytime"
+    ],
+    "coachThinking": "Brain cooling mechanism or oxygen regulation due to poor nighttime respiration (possible apnea).",
+    "humanMoment": "Constantly yawning makes you look and feel bored, even when you are actually highly engaged but just exhausted.",
+    "createsFacts": [
+      "fact:slp:q033_yawning:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q033_yawning:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q033_yawning:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q033_yawning:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q33:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q33:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q034_night_shift:primary",
+    "purpose": "Assess Shift work within Special Situations",
+    "label": "Do you work night shifts?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "special_situations"
+    ],
+    "coachThinking": "Complete circadian inversion. Must control light exposure to trick the SCN (suprachiasmatic nucleus).",
+    "humanMoment": "Shift work goes against millions of years of human biology. You are asking your body to do a remarkably difficult thing.",
+    "createsFacts": [
+      "fact:slp:q034_night_shift:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q034_night_shift:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q034_night_shift:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q034_night_shift:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q34:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q34:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q035_jet_lag:primary",
+    "purpose": "Assess Jet lag within Special Situations",
+    "label": "Do you travel across time zones often?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "special_situations"
+    ],
+    "coachThinking": "Rapid circadian phase shift. The fastest anchor is food timing, not just light.",
+    "humanMoment": "Jet lag makes you feel entirely disconnected from reality. Your body is in one place, but your brain is in another.",
+    "createsFacts": [
+      "fact:slp:q035_jet_lag:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q035_jet_lag:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q035_jet_lag:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q035_jet_lag:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q35:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q35:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q036_weekend_sleep:primary",
+    "purpose": "Assess Weekend sleep variation within Special Situations",
+    "label": "Do you sleep differently on weekends?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "special_situations"
+    ],
+    "coachThinking": "Social jetlag. \"Catching up\" on sleep disrupts the circadian anchor, making Monday mornings agonizing.",
+    "humanMoment": "Sleeping in on Saturday feels amazing, but it guarantees that Sunday night will be a sleepless disaster.",
+    "createsFacts": [
+      "fact:slp:q036_weekend_sleep:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q036_weekend_sleep:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q036_weekend_sleep:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q036_weekend_sleep:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q36:yes",
+        "label": "Yes, I sleep much longer",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q36:no",
+        "label": "No, it is the same",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q037_sleep_change:primary",
+    "purpose": "Assess Recent sleep changes within Special Situations",
+    "label": "Has your sleep changed recently?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "special_situations"
+    ],
+    "coachThinking": "Acute insomnia is usually triggered by a specific stressful life event, illness, or medication change.",
+    "humanMoment": "A sudden loss of good sleep is terrifying. It makes you feel like you are losing control of your body.",
+    "createsFacts": [
+      "fact:slp:q037_sleep_change:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q037_sleep_change:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q037_sleep_change:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q037_sleep_change:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q37:yes",
+        "label": "Yes, it has gotten worse",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q37:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q038_menstrual_cycle:primary",
+    "purpose": "Assess Menstrual cycle sleep within Women Only",
+    "label": "Does your monthly cycle affect your sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "women_only"
+    ],
+    "dependsOn": [
+      "fact:master:female"
+    ],
+    "coachThinking": "Progesterone drop before menstruation drastically lowers the seizure threshold and raises core body temperature, causing insomnia.",
+    "humanMoment": "Tossing and turning during your luteal phase is incredibly frustrating, especially when society expects you to perform identically every day.",
+    "createsFacts": [
+      "fact:slp:q038_menstrual_cycle:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q038_menstrual_cycle:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q038_menstrual_cycle:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q038_menstrual_cycle:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q38:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q38:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q039_pregnancy_sleep:primary",
+    "purpose": "Assess Pregnancy sleep within Women Only",
+    "label": "Are you currently pregnant?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "women_only"
+    ],
+    "dependsOn": [
+      "fact:master:female"
+    ],
+    "coachThinking": "Physical obstruction and hormonal flooding. Need mechanical support for alignment.",
+    "humanMoment": "Trying to sleep while pregnant is a physical battle. Between the bladder pressure and the physical discomfort, rest feels impossible.",
+    "createsFacts": [
+      "fact:slp:q039_pregnancy_sleep:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q039_pregnancy_sleep:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q039_pregnancy_sleep:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q039_pregnancy_sleep:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q39:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q39:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q:slp:q040_menopause_sleep:primary",
+    "purpose": "Assess Menopause symptoms within Women Only",
+    "label": "Have menopause symptoms affected your sleep?",
+    "type": "single-choice",
+    "tags": [
+      "sleep",
+      "women_only"
+    ],
+    "dependsOn": [
+      "fact:master:female"
+    ],
+    "coachThinking": "Estrogen withdrawal disrupts the hypothalamus (the brain's thermostat), causing night sweats and waking.",
+    "humanMoment": "Hot flashes tearing through your body at 2 AM are deeply disruptive. Your brain is desperately trying to regulate a changing system.",
+    "createsFacts": [
+      "fact:slp:q040_menopause_sleep:struggle"
+    ],
+    "supportsScores": [
+      "score:slp:restoration"
+    ],
+    "supportsInsights": [
+      "insight:slp:q040_menopause_sleep:impact"
+    ],
+    "supportsDecisions": [
+      "dec:slp:q040_menopause_sleep:clinical"
+    ],
+    "supportsRecommendations": [
+      "rec:slp:q040_menopause_sleep:action"
+    ],
+    "expectedConfidenceGain": 10,
+    "options": [
+      {
+        "id": "opt:slp:q40:yes",
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "id": "opt:slp:q40:no",
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  }
+]
