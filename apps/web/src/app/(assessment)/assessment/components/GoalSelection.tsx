@@ -17,6 +17,38 @@ const PILLARS = [
     ]
   },
   {
+    id: 'digestion_group',
+    label: 'Digestion & Nutrition',
+    icon: '🥗',
+    color: 'from-emerald-400 to-green-500',
+    shadow: 'shadow-emerald-500/20',
+    type: 'group',
+    items: [
+      { id: 'nutrition', label: 'Better Eating Habits', icon: '🥗' },
+      { id: 'gut', label: 'Improve Gut Health', icon: '🦠' },
+      { id: 'hydration', label: 'Optimize Hydration', icon: '💧' },
+    ]
+  },
+  {
+    id: 'stress',
+    label: 'Reduce Stress & Anxiety',
+    icon: '🧘‍♂️',
+    color: 'from-purple-400 to-fuchsia-500',
+    shadow: 'shadow-purple-500/20',
+    type: 'direct'
+  },
+  {
+    id: 'womens_group',
+    label: "Women's Wellness",
+    icon: '🌸',
+    color: 'from-pink-400 to-rose-500',
+    shadow: 'shadow-pink-500/20',
+    type: 'group',
+    items: [
+      { id: 'womens', label: "Women's Hormone Health", icon: '🌸' },
+    ]
+  },
+  {
     id: 'energy',
     label: 'Boost Daily Energy',
     icon: '⚡',
@@ -31,27 +63,6 @@ const PILLARS = [
     color: 'from-violet-400 to-purple-500',
     shadow: 'shadow-violet-500/20',
     type: 'direct'
-  },
-  {
-    id: 'stress',
-    label: 'Reduce Stress & Anxiety',
-    icon: '🧘‍♂️',
-    color: 'from-purple-400 to-fuchsia-500',
-    shadow: 'shadow-purple-500/20',
-    type: 'direct'
-  },
-  {
-    id: 'digestion_group',
-    label: 'Digestion & Nutrition',
-    icon: '🥗',
-    color: 'from-emerald-400 to-green-500',
-    shadow: 'shadow-emerald-500/20',
-    type: 'group',
-    items: [
-      { id: 'nutrition', label: 'Better Eating Habits', icon: '🥗' },
-      { id: 'gut', label: 'Improve Gut Health', icon: '🦠' },
-      { id: 'hydration', label: 'Optimize Hydration', icon: '💧' },
-    ]
   },
   {
     id: 'metabolic_group',
@@ -76,17 +87,6 @@ const PILLARS = [
     items: [
       { id: 'fitness', label: 'Active & Fit Lifestyle', icon: '🏃‍♂️' },
       { id: 'aging', label: 'Healthy Aging & Joints', icon: '🦴' },
-    ]
-  },
-  {
-    id: 'womens_group',
-    label: "Women's Wellness",
-    icon: '🌸',
-    color: 'from-pink-400 to-rose-500',
-    shadow: 'shadow-pink-500/20',
-    type: 'group',
-    items: [
-      { id: 'womens', label: "Women's Hormone Health", icon: '🌸' },
     ]
   },
   {
