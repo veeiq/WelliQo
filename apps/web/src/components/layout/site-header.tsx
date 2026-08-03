@@ -1,37 +1,43 @@
 import Link from 'next/link';
 
-const navigationItems = [
-  { href: '/', label: 'Home' },
-  { href: '/assessment', label: 'Assessment' },
-  { href: '/learn', label: 'Knowledge' },
-  { href: '/recipes', label: 'Recipes' },
-  { href: '/products', label: 'Products' },
-  { href: '/about', label: 'About' },
-] as const;
+import { GlobalSearch } from '@/components/search/global-search';
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link
-          className="text-xl font-medium tracking-tight text-slate-900 dark:text-slate-50 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
-          href="/"
-        >
-          WelliQo
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border-subtle)] bg-[var(--color-background-primary)]/80 backdrop-blur">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-lg bg-[var(--color-accent-primary)] flex items-center justify-center">
+            <span className="text-white font-bold text-xl">W</span>
+          </div>
+          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
+            WelliQo
+          </span>
         </Link>
-        <nav aria-label="Primary navigation" className="hidden md:block">
-          <ul className="flex items-center gap-8">
-            {navigationItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  className="text-sm font-medium text-slate-600 dark:text-slate-400 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
-                  href={item.href}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        
+        <div className="flex-1 flex justify-center px-4">
+          <GlobalSearch />
+        </div>
+
+        <nav className="flex items-center gap-6">
+          <Link
+            href="/assessment"
+            className="text-sm font-medium hover:text-[var(--color-accent-primary)] transition-colors hidden md:block"
+          >
+            Take Assessment
+          </Link>
+          <Link
+            href="/action-hub/morning-sunlight-habit"
+            className="text-sm font-medium hover:text-[var(--color-accent-primary)] transition-colors hidden md:block"
+          >
+            Action Hub
+          </Link>
+          <Link
+            href="/assessment"
+            className="bg-[var(--color-accent-primary)] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-emerald-600 transition-colors shadow-sm hover:shadow"
+          >
+            Get Started
+          </Link>
         </nav>
       </div>
     </header>

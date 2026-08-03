@@ -47,7 +47,7 @@ export function ReportContainer({ result }: ReportContainerProps) {
       <ReportProgressPromise />
 
       {/* 9. The Support (Soft CTA) */}
-      <ReportSupport support={viewModel.support} />
+      <ReportSupport />
 
       {/* Footer / Compliance Disclaimer */}
       <footer className="w-full text-center py-8 text-sm text-slate-400 dark:text-slate-500 px-6">

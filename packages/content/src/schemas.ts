@@ -116,6 +116,16 @@ export const ContentManifestSchema = z.object({
 
 export type ContentManifest = z.infer<typeof ContentManifestSchema>;
 
+export interface SearchIndexNode {
+  id: string;
+  title: string;
+  type: string;
+  slug: string;
+  goals?: string[];
+  domain?: string;
+  category?: string;
+}
+
 export interface CompiledContentIndex {
   nodes: Record<string, BaseContent>;
   byType: Record<string, string[]>;

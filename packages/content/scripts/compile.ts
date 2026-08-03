@@ -9,7 +9,7 @@ function run() {
   console.log(`Compiling content from: ${dataDir}`);
 
   try {
-    const { index, manifest } = compileContent(dataDir);
+    const { index, manifest, searchIndex } = compileContent(dataDir);
 
     // Ensure dist directory exists
     if (!fs.existsSync(distDir)) {
@@ -20,12 +20,17 @@ function run() {
     const indexPath = path.join(distDir, 'index.json');
     fs.writeFileSync(indexPath, JSON.stringify(index, null, 2), 'utf8');
 
+    // Write Search Index
+    const searchIndexPath = path.join(distDir, 'search-index.json');
+    fs.writeFileSync(searchIndexPath, JSON.stringify(searchIndex, null, 2), 'utf8');
+
     // Write Manifest
     const manifestPath = path.join(distDir, 'manifest.json');
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
 
     console.log('\n✅ Compilation Successful!');
     console.log(`- Wrote ${indexPath}`);
+    console.log(`- Wrote ${searchIndexPath}`);
     console.log(`- Wrote ${manifestPath}`);
     console.log('\n--- Content Manifest ---');
     console.log(JSON.stringify(manifest, null, 2));

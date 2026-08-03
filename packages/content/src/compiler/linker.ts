@@ -1,9 +1,10 @@
 import { ParsedFile } from './parser';
-import { CompiledContentIndex, ContentManifest, BaseContent } from '../schemas';
+import { CompiledContentIndex, ContentManifest, BaseContent, SearchIndexNode } from '../schemas';
 
 export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
   index: CompiledContentIndex;
   manifest: ContentManifest;
+  searchIndex: SearchIndexNode[];
 } {
   const index: CompiledContentIndex = {
     nodes: {},
@@ -12,6 +13,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     byGoal: {},
   };
 
+  const searchIndex: SearchIndexNode[] = [];
   const nodesByType: Record<string, number> = {};
   let relationshipCount = 0;
   let orphanNodesCount = 0;
@@ -25,6 +27,17 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     }
 
     index.nodes[content.id] = content;
+    
+    // Add to search index
+    searchIndex.push({
+      id: content.id,
+      title: content.title,
+      type: content.type,
+      slug: content.slug,
+      goals: content.goals,
+      domain: content.domain,
+      category: content.category,
+    });
 
     // Group by Type
     if (!index.byType[content.type]) {
@@ -96,5 +109,5 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     orphanNodes: orphanNodesCount,
   };
 
-  return { index, manifest };
+  return { index, manifest, searchIndex };
 }
