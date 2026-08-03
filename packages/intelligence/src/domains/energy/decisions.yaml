@@ -1,0 +1,31 @@
+- id: "decision:energy:sleep_deprivation"
+  clinicalMeaning: "User's energy issues are primarily driven by acute or chronic sleep deprivation rather than nutrition or stress."
+  requiredFacts: []
+  confidence: 80
+  severity: "high"
+  priority: 1
+  linkedRecommendations: ["rec:sleep:routine"]
+
+- id: "decision:energy:glycemic_control"
+  clinicalMeaning: "User experiences energy crashes likely linked to post-prandial glycemic spikes and drops."
+  requiredFacts: []
+  confidence: 75
+  severity: "medium"
+  priority: 2
+  linkedRecommendations: ["rec:nutrition:protein_lunch"]
+
+- id: "decision:energy:aging_impact"
+  clinicalMeaning: "Age-related metabolic shifts are influencing base energy availability."
+  requiredFacts: ["fact:baseline:age"]
+  confidence: 50
+  severity: "low"
+  priority: 5
+  linkedRecommendations: ["rec:protein:senior"]
+
+- id: "decision:energy:hormonal"
+  clinicalMeaning: "Biological sex considerations for hormonal energy cycles."
+  requiredFacts: ["fact:baseline:gender"]
+  confidence: 40
+  severity: "low"
+  priority: 5
+  linkedRecommendations: ["rec:general:hormone_balance"]

@@ -1,0 +1,33 @@
+- id: "rec:sleep:routine"
+  title: "Prioritize 7 Hours of Sleep"
+  description: "Set a strict bedtime to ensure you get at least 7 hours of restorative sleep."
+  priority: 1
+  evidenceLevel: "clinical"
+  linkedDecisions: ["decision:energy:sleep_deprivation"]
+  explanationTemplate: "We suggested this because you told us you are currently sleeping less than 6 hours a night, which is likely the main cause of your fatigue."
+  linkedHabits: ["habit:sleep:consistent_bedtime"]
+
+- id: "rec:nutrition:protein_lunch"
+  title: "Add Protein to Your Lunch"
+  description: "Ensure your lunch contains at least 30g of protein to prevent an afternoon crash."
+  priority: 2
+  evidenceLevel: "clinical"
+  linkedDecisions: ["decision:energy:glycemic_control"]
+  explanationTemplate: "We suggested this because you told us you frequently experience a heavy crash in the afternoon, which is often caused by a carbohydrate-heavy lunch without enough protein."
+  linkedHabits: ["habit:nutrition:protein_first"]
+
+- id: "rec:protein:senior"
+  title: "Increase Daily Protein Intake"
+  description: "As we age, our bodies need more protein to maintain muscle mass and metabolic energy."
+  priority: 3
+  evidenceLevel: "clinical"
+  linkedDecisions: ["decision:energy:aging_impact"]
+  explanationTemplate: "We suggested this because as we get older, protein processing becomes less efficient, requiring a slightly higher intake for sustained energy."
+
+- id: "rec:general:hormone_balance"
+  title: "Support Hormonal Rhythms"
+  description: "Align your activity and eating patterns with your natural biological rhythms."
+  priority: 4
+  evidenceLevel: "general"
+  linkedDecisions: ["decision:energy:hormonal"]
+  explanationTemplate: "We suggested this to help harmonize your lifestyle with your biological baseline."

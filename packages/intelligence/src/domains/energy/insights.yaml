@@ -1,0 +1,23 @@
+- id: "insight:sleep:deprivation"
+  name: "Severe Sleep Debt"
+  meaning: "Your body is not receiving the minimum baseline rest required for cellular repair and cognitive function."
+  requiredFacts: ["fact:sleep:severe_deprivation"]
+  confidence: 90
+  linkedScores: ["score:energy:recovery"]
+  linkedDecisions: ["decision:energy:sleep_deprivation"]
+
+- id: "insight:energy:sugar_crash"
+  name: "Blood Sugar Rollercoaster"
+  meaning: "Your energy fluctuates dramatically throughout the day, heavily influenced by your meals."
+  requiredFacts: ["fact:energy:frequent_crash"]
+  confidence: 85
+  linkedScores: ["score:energy:sustained"]
+  linkedDecisions: ["decision:energy:glycemic_control"]
+
+- id: "insight:aging:metabolism"
+  name: "Metabolic Shift"
+  meaning: "Base metabolic rate changes are influencing overall energy availability."
+  requiredFacts: ["fact:baseline:age"]
+  confidence: 60
+  linkedScores: ["score:energy:baseline"]
+  linkedDecisions: ["decision:energy:aging_impact"]

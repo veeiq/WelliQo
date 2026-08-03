@@ -1,0 +1,62 @@
+- id: "fact:sleep:severe_deprivation"
+  description: "User gets less than 5 hours of sleep per night."
+  generatedFrom: ["q:energy:sleep_duration"]
+  tags: ["sleep", "energy", "stress"]
+  usedBy: ["decision:energy:sleep_deprivation", "score:energy:recovery"]
+  confidenceImpact: 40
+
+- id: "fact:sleep:mild_deprivation"
+  description: "User gets 5-6 hours of sleep per night."
+  generatedFrom: ["q:energy:sleep_duration"]
+  tags: ["sleep", "energy"]
+  usedBy: ["decision:energy:sleep_deprivation", "score:energy:recovery"]
+  confidenceImpact: 20
+
+- id: "fact:sleep:optimal"
+  description: "User gets 7-8 hours of sleep per night."
+  generatedFrom: ["q:energy:sleep_duration"]
+  tags: ["sleep", "energy"]
+  usedBy: ["score:energy:recovery"]
+  confidenceImpact: 30
+
+- id: "fact:sleep:excessive"
+  description: "User gets more than 8 hours of sleep per night."
+  generatedFrom: ["q:energy:sleep_duration"]
+  tags: ["sleep", "energy"]
+  usedBy: ["score:energy:recovery"]
+  confidenceImpact: 10
+
+- id: "fact:energy:frequent_crash"
+  description: "User experiences severe energy crashes almost every afternoon."
+  generatedFrom: ["q:energy:afternoon_crash"]
+  tags: ["energy", "nutrition"]
+  usedBy: ["decision:energy:glycemic_control", "insight:energy:sugar_crash", "score:energy:sustained"]
+  confidenceImpact: 35
+
+- id: "fact:energy:lunch_crash"
+  description: "User experiences energy crashes occasionally, tied to heavy meals."
+  generatedFrom: ["q:energy:afternoon_crash"]
+  tags: ["energy", "nutrition"]
+  usedBy: ["decision:energy:glycemic_control", "insight:energy:sugar_crash", "score:energy:sustained"]
+  confidenceImpact: 20
+
+- id: "fact:energy:steady"
+  description: "User maintains steady energy throughout the afternoon."
+  generatedFrom: ["q:energy:afternoon_crash"]
+  tags: ["energy"]
+  usedBy: ["score:energy:sustained"]
+  confidenceImpact: 25
+
+- id: "fact:baseline:age"
+  description: "User's biological age in years."
+  generatedFrom: ["q:baseline:age"]
+  tags: ["baseline"]
+  usedBy: ["decision:energy:aging_impact", "score:energy:baseline"]
+  confidenceImpact: 10
+
+- id: "fact:baseline:gender"
+  description: "User's biological sex."
+  generatedFrom: ["q:baseline:gender"]
+  tags: ["baseline"]
+  usedBy: ["decision:energy:hormonal", "score:energy:baseline"]
+  confidenceImpact: 10

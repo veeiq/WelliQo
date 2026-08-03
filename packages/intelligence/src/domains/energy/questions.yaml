@@ -1,0 +1,84 @@
+- id: "q:baseline:age"
+  purpose: "Establish biological baseline for calculating BMR and age-related risk factors."
+  label: "How old are you?"
+  type: "number"
+  tags: ["baseline", "energy", "sleep", "weight"]
+  expectedConfidenceGain: 10
+  createsFacts: ["fact:baseline:age"]
+  supportsScores: ["score:energy:baseline"]
+  supportsInsights: ["insight:aging:metabolism"]
+  supportsDecisions: ["decision:energy:aging_impact"]
+  supportsRecommendations: ["rec:protein:senior"]
+
+- id: "q:baseline:gender"
+  purpose: "Establish biological baseline for calculating BMR and hormonal contexts."
+  label: "What is your biological sex?"
+  type: "single-choice"
+  tags: ["baseline", "energy", "weight"]
+  expectedConfidenceGain: 10
+  createsFacts: ["fact:baseline:gender"]
+  supportsScores: ["score:energy:baseline"]
+  supportsInsights: []
+  supportsDecisions: ["decision:energy:hormonal"]
+  supportsRecommendations: []
+  options:
+    - id: "opt:male"
+      label: "Male"
+      value: "male"
+    - id: "opt:female"
+      label: "Female"
+      value: "female"
+
+- id: "q:energy:sleep_duration"
+  purpose: "Determine if insufficient sleep is the primary root cause of daytime fatigue."
+  label: "How many hours do you usually sleep at night?"
+  type: "single-choice"
+  tags: ["energy", "sleep", "stress"]
+  expectedConfidenceGain: 40
+  createsFacts: ["fact:sleep:duration"]
+  supportsScores: ["score:energy:recovery"]
+  supportsInsights: ["insight:sleep:deprivation"]
+  supportsDecisions: ["decision:energy:sleep_deprivation"]
+  supportsRecommendations: ["rec:sleep:routine"]
+  options:
+    - id: "opt:sleep:less_than_5"
+      label: "Less than 5 hours"
+      value: "<5"
+      generatesFacts: ["fact:sleep:severe_deprivation"]
+    - id: "opt:sleep:5_to_6"
+      label: "5 to 6 hours"
+      value: "5-6"
+      generatesFacts: ["fact:sleep:mild_deprivation"]
+    - id: "opt:sleep:7_to_8"
+      label: "7 to 8 hours"
+      value: "7-8"
+      generatesFacts: ["fact:sleep:optimal"]
+    - id: "opt:sleep:more_than_8"
+      label: "More than 8 hours"
+      value: ">8"
+      generatesFacts: ["fact:sleep:excessive"]
+
+- id: "q:energy:afternoon_crash"
+  purpose: "Identify post-prandial somnolence or circadian rhythm dips."
+  label: "Do you often feel a heavy crash or sleepiness in the afternoon?"
+  type: "single-choice"
+  tags: ["energy", "nutrition", "gut"]
+  expectedConfidenceGain: 35
+  createsFacts: ["fact:energy:afternoon_crash"]
+  supportsScores: ["score:energy:sustained"]
+  supportsInsights: ["insight:energy:sugar_crash"]
+  supportsDecisions: ["decision:energy:glycemic_control"]
+  supportsRecommendations: ["rec:nutrition:protein_lunch"]
+  options:
+    - id: "opt:crash:yes"
+      label: "Yes, almost every day."
+      value: "yes"
+      generatesFacts: ["fact:energy:frequent_crash"]
+    - id: "opt:crash:sometimes"
+      label: "Sometimes, usually after a heavy lunch."
+      value: "sometimes"
+      generatesFacts: ["fact:energy:lunch_crash"]
+    - id: "opt:crash:no"
+      label: "No, my energy is usually steady."
+      value: "no"
+      generatesFacts: ["fact:energy:steady"]

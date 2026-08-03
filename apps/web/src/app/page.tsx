@@ -60,72 +60,83 @@ export default function HomePage() {
       {/* Secondary Pathways: Explore */}
       <section className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
+          <span className="mb-4 inline-block rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+            Featured Goal
+          </span>
           <h2 className="text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">
-            Explore what you need, when you need it.
+            Conquer your daily energy.
           </h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            WelliQo is designed to support every aspect of your day.
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Stop relying on caffeine to survive the afternoon. Explore our complete guide to metabolic health, circadian rhythms, and sustained focus.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <Link
-            href="/learn"
+            href="/learn/conquering-3pm-crash"
             className="group flex flex-col rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-blue-200 dark:bg-slate-900 dark:ring-slate-800 dark:hover:ring-blue-900/50"
           >
             <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
               <BookOpen className="h-6 w-6" />
             </div>
             <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">
-              Knowledge
+              The 3 PM Crash
             </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Read expert guides, learn about the science of nutrition, and discover actionable
-              daily protocols.
+              Understand the biological collision of blood sugar and adenosine that causes afternoon brain fog.
             </p>
             <span className="flex items-center font-medium text-blue-600 dark:text-blue-400">
-              Read articles{' '}
+              Read the guide{' '}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
 
           <Link
-            href="/recipes"
+            href="/recipes/protein-scramble"
             className="group flex flex-col rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-orange-200 dark:bg-slate-900 dark:ring-slate-800 dark:hover:ring-orange-900/50"
           >
             <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400">
               <Utensils className="h-6 w-6" />
             </div>
-            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">Recipes</h3>
+            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">High-Protein Breakfast</h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Find macro-balanced, delicious meals designed to fuel your body and support your
-              goals.
+              Stabilize your morning blood sugar with a 15-minute, 32g protein scramble to prevent the 11 AM slump.
             </p>
             <span className="flex items-center font-medium text-orange-600 dark:text-orange-400">
-              View recipes{' '}
+              View recipe{' '}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
 
           <Link
-            href="/products"
-            className="group flex flex-col rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-purple-200 dark:bg-slate-900 dark:ring-slate-800 dark:hover:ring-purple-900/50"
+            href="/goals/energy"
+            className="group flex flex-col rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-emerald-200 dark:bg-slate-900 dark:ring-slate-800 dark:hover:ring-emerald-900/50"
           >
-            <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400">
-              <ShoppingBag className="h-6 w-6" />
+            <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400">
+              <Activity className="h-6 w-6" />
             </div>
             <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">
-              Products
+              Explore All Energy
             </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Explore science-backed nutritional supplements targeted for energy, recovery, and core
-              health.
+              Dive into our complete ecosystem of habits, recipes, science, and optional accelerators for energy.
             </p>
-            <span className="flex items-center font-medium text-purple-600 dark:text-purple-400">
-              Shop products{' '}
+            <span className="flex items-center font-medium text-emerald-600 dark:text-emerald-400">
+              View energy goal{' '}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
+        </div>
+
+        {/* Coming Soon Pillars */}
+        <div className="mt-24 border-t border-slate-200 dark:border-slate-800 pt-16">
+          <h3 className="text-xl font-medium text-center text-slate-900 dark:text-slate-50 mb-10">Future Wellness Pillars</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Deep Sleep (Coming Soon)</div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Gut Health (Coming Soon)</div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Metabolism & Weight (Coming Soon)</div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Women's Wellness (Coming Soon)</div>
+          </div>
         </div>
       </section>
 

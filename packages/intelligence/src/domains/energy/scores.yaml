@@ -1,0 +1,33 @@
+- id: "score:energy:recovery"
+  name: "Recovery Score"
+  description: "Measures the quality and duration of your restorative rest."
+  baseValue: 80
+  rules:
+    - requiredFacts: ["fact:sleep:severe_deprivation"]
+      valueModifier: -40
+    - requiredFacts: ["fact:sleep:mild_deprivation"]
+      valueModifier: -15
+    - requiredFacts: ["fact:sleep:optimal"]
+      valueModifier: 15
+
+- id: "score:energy:sustained"
+  name: "Sustained Energy Score"
+  description: "Measures how stable your energy remains throughout the day."
+  baseValue: 70
+  rules:
+    - requiredFacts: ["fact:energy:frequent_crash"]
+      valueModifier: -30
+    - requiredFacts: ["fact:energy:lunch_crash"]
+      valueModifier: -10
+    - requiredFacts: ["fact:energy:steady"]
+      valueModifier: 20
+
+- id: "score:energy:baseline"
+  name: "Baseline Vitality"
+  description: "A foundational metric of biological energy capacity."
+  baseValue: 75
+  rules:
+    - requiredFacts: ["fact:baseline:age"]
+      valueModifier: -5
+    - requiredFacts: ["fact:baseline:gender"]
+      valueModifier: 0

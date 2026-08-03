@@ -1,8 +1,30 @@
-# WelliQo Content Intelligence Blueprint v1.0
+# CONTENT INTELLIGENCE BLUEPRINT v1.0
+
+**STATUS: FINAL PERMANENT EDITORIAL CONSTITUTION**
 
 > [!IMPORTANT]
 > **Core Editorial Philosophy: Problem-First Architecture**
 > Users do not search for biology; they search for solutions to pain points. WelliQo is shifting from a *Concept-First* model to a *Problem-First* model. The journey always begins with human suffering or friction (e.g., "Why am I tired at 3 PM?") and leads gracefully down a path of Guides, actionable Habits, biological Concepts, and optional human/product support.
+
+---
+
+## EDITORIAL CONSTITUTION & GUIDING PRINCIPLES
+
+### 1. Trust Before Traffic
+Traffic is a consequence. Trust is the objective. Every editorial decision should strengthen user trust before attempting conversion.
+
+### 2. Helpfulness Before Length
+Do not optimize for article length. Optimize for solving the user's problem completely. Some pages deserve 300 words. Others deserve 4,000 words. Length must never become the KPI. Helpfulness is the KPI.
+
+### 3. The Wellness Pyramid
+This is the permanent user journey:
+**Problems** $\rightarrow$ **Education** $\rightarrow$ **Understanding** $\rightarrow$ **Habits** $\rightarrow$ **Food** $\rightarrow$ **Products (optional)** $\rightarrow$ **Coach (optional)** $\rightarrow$ **Long-term Wellness Companion**
+Every future feature should fit into this pyramid.
+
+### 4. The WelliQo Promise
+> **"We will never recommend a product when education, food, or lifestyle alone is the better answer."**
+> 
+> *This is the company's editorial promise. It reinforces user trust. It protects Herbalife compliance. It differentiates WelliQo from affiliate websites.*
 
 ---
 
@@ -38,6 +60,21 @@ Nodes will be tagged with one or more of the following Audience Segments:
 - **Senior / Aging**: Focus on joint mobility, longevity, digestion support.
 
 *Strategic Value:* This allows the Discovery Engine to serve highly personalized recommendations. If a user identifies as a "Postpartum Mother", the platform will surface the "15-Minute Protein Scramble" recipe rather than a "60-Minute Meal Prep Guide."
+
+### 1.2 Personalization Strategy
+
+Personalization must **NOT** depend solely on the assessment. The Discovery Engine builds a continuous user interest profile dynamically from multiple behavioural signals, including:
+- Assessment results
+- Articles read
+- Guides completed
+- Recipes viewed
+- Goals explored
+- Search history
+- Saved items
+- Challenges joined
+- Repeat visits
+
+*Strategic Value:* The assessment becomes **ONE** signal, not **THE** signal. This allows WelliQo to become increasingly helpful, predictive, and personalized even for users who never formally complete the assessment funnel.
 
 ---
 
