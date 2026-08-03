@@ -78,7 +78,6 @@ export function CoachCallToAction() {
           <div className="w-full sm:w-auto">
             <Button 
               onClick={() => setIsOpen(true)}
-              size="lg" 
               className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none font-semibold text-lg px-8 py-6 rounded-2xl"
             >
               Request a Free Consultation
