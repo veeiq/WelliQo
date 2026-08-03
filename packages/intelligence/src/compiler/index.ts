@@ -28,13 +28,14 @@ function compileDomains(): IntelligenceDomain {
     recommendations: [],
   };
 
-  const domains = fs.readdirSync(DOMAINS_DIR, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
+  const domains = fs
+    .readdirSync(DOMAINS_DIR, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
 
   for (const domainName of domains) {
     const domainPath = path.join(DOMAINS_DIR, domainName);
-    
+
     console.log(`Compiling domain: ${domainName}...`);
 
     const questions = loadYaml<any[]>(path.join(domainPath, 'questions.yaml')) || [];
@@ -57,7 +58,7 @@ function compileDomains(): IntelligenceDomain {
 
 function run() {
   console.log('--- WelliQo Intelligence Compiler ---');
-  
+
   if (!fs.existsSync(DOMAINS_DIR)) {
     fs.mkdirSync(DOMAINS_DIR, { recursive: true });
     console.log('Created domains directory. No domains to compile yet.');
@@ -68,7 +69,7 @@ function run() {
 
   // 1. Validate Schema via Zod
   const parseResult = DomainSchema.safeParse(rawDomain);
-  
+
   if (!parseResult.success) {
     console.error('\n❌ SCHEMA VALIDATION FAILED');
     console.error(JSON.stringify(parseResult.error.format(), null, 2));
@@ -83,7 +84,7 @@ function run() {
 
   if (!isValid) {
     console.error('\n❌ DAG VALIDATION FAILED');
-    errors.forEach(err => console.error(` - ${err}`));
+    errors.forEach((err) => console.error(` - ${err}`));
     process.exit(1);
   }
 

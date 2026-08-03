@@ -67,14 +67,14 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
       const response = await fetch('/api/assessment/execute', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          answers, 
+        body: JSON.stringify({
+          answers,
           knownFacts: [], // Will be computed server-side from answers
           answeredQuestionIds: Object.keys(answers),
-          currentLayer: get().currentLayer
+          currentLayer: get().currentLayer,
         }),
       });
-      
+
       if (!response.ok) throw new Error('Server execution failed');
       const data = await response.json();
 

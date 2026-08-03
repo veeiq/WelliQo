@@ -27,7 +27,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     }
 
     index.nodes[content.id] = content;
-    
+
     // Add to search index
     searchIndex.push({
       id: content.id,

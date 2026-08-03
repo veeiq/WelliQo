@@ -4,6 +4,8 @@ node_modules/
 .next/
 coverage/
 dist/
+build/
+out/
 
 # Environment and deployment
 .env

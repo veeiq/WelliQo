@@ -12,7 +12,7 @@ export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [hasSearched, setHasSearched] = useState(false);
-  
+
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -61,10 +61,10 @@ export function GlobalSearch() {
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setSelectedIndex(prev => (prev < results.length - 1 ? prev + 1 : prev));
+      setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setSelectedIndex(prev => (prev > 0 ? prev - 1 : 0));
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
     } else if (e.key === 'Enter' && selectedIndex >= 0) {
       e.preventDefault();
       const selected = results[selectedIndex];
@@ -114,8 +114,8 @@ export function GlobalSearch() {
                   <Link
                     href={`/action-hub/${result.slug}`}
                     className={`block px-4 py-3 transition-colors ${
-                      index === selectedIndex 
-                        ? 'bg-[var(--color-accent-primary)] text-white' 
+                      index === selectedIndex
+                        ? 'bg-[var(--color-accent-primary)] text-white'
                         : 'hover:bg-[var(--color-background-primary)] text-[var(--color-text-primary)]'
                     }`}
                     onClick={() => {
@@ -127,7 +127,9 @@ export function GlobalSearch() {
                     <div className={`font-semibold ${index === selectedIndex ? 'text-white' : ''}`}>
                       {result.title}
                     </div>
-                    <div className={`text-xs capitalize mt-1 ${index === selectedIndex ? 'text-emerald-100' : 'text-[var(--color-text-secondary)]'}`}>
+                    <div
+                      className={`text-xs capitalize mt-1 ${index === selectedIndex ? 'text-emerald-100' : 'text-[var(--color-text-secondary)]'}`}
+                    >
                       {result.type} • {result.domain}
                     </div>
                   </Link>

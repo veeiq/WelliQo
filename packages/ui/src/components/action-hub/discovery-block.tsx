@@ -11,7 +11,7 @@ export function DiscoveryBlock({ recommendations }: { recommendations: BaseConte
         <h2 className="text-3xl font-semibold mb-8 text-slate-900 dark:text-white tracking-tight">
           Continue Your Journey
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {recommendations.map((node) => (
             <Link
@@ -27,11 +27,11 @@ export function DiscoveryBlock({ recommendations }: { recommendations: BaseConte
                   <span className="text-xs text-slate-500">{node.readingTimeMinutes} min</span>
                 )}
               </div>
-              
+
               <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
                 {node.title}
               </h3>
-              
+
               {node.author && (
                 <p className="mt-auto pt-4 text-sm text-slate-500">By {node.author}</p>
               )}

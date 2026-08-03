@@ -1,16 +1,52 @@
 import Link from 'next/link';
 
 const GOALS = [
-  { id: 'better-sleep', title: 'Better Sleep', description: 'Improve your sleep quality and circadian rhythm' },
-  { id: 'weight-management', title: 'Weight Management', description: 'Strategies for healthy and sustainable weight management' },
+  {
+    id: 'better-sleep',
+    title: 'Better Sleep',
+    description: 'Improve your sleep quality and circadian rhythm',
+  },
+  {
+    id: 'weight-management',
+    title: 'Weight Management',
+    description: 'Strategies for healthy and sustainable weight management',
+  },
   { id: 'energy', title: 'More Energy', description: 'Boost your daily energy levels and focus' },
-  { id: 'healthy-digestion', title: 'Healthy Digestion', description: 'Optimize your gut health and microbiome' },
-  { id: 'heart-health', title: 'Heart Health', description: 'Support cardiovascular function and longevity' },
-  { id: 'healthy-aging', title: 'Healthy Aging', description: 'Maintain vitality and healthspan as you age' },
-  { id: 'womens-wellness', title: "Women's Wellness", description: 'Targeted support for female health and hormones' },
-  { id: 'sports-nutrition', title: 'Sports Nutrition', description: 'Fuel your athletic performance and recovery' },
-  { id: 'immunity', title: 'Immunity', description: 'Strengthen your immune system and resilience' },
-  { id: 'general-wellness', title: 'General Wellness', description: 'Foundational habits for overall well-being' },
+  {
+    id: 'healthy-digestion',
+    title: 'Healthy Digestion',
+    description: 'Optimize your gut health and microbiome',
+  },
+  {
+    id: 'heart-health',
+    title: 'Heart Health',
+    description: 'Support cardiovascular function and longevity',
+  },
+  {
+    id: 'healthy-aging',
+    title: 'Healthy Aging',
+    description: 'Maintain vitality and healthspan as you age',
+  },
+  {
+    id: 'womens-wellness',
+    title: "Women's Wellness",
+    description: 'Targeted support for female health and hormones',
+  },
+  {
+    id: 'sports-nutrition',
+    title: 'Sports Nutrition',
+    description: 'Fuel your athletic performance and recovery',
+  },
+  {
+    id: 'immunity',
+    title: 'Immunity',
+    description: 'Strengthen your immune system and resilience',
+  },
+  {
+    id: 'general-wellness',
+    title: 'General Wellness',
+    description: 'Foundational habits for overall well-being',
+  },
 ];
 
 export const metadata = {
@@ -36,9 +72,7 @@ export default function GoalsPage() {
             <h2 className="text-2xl font-semibold text-[var(--color-text-primary)] mb-2 group-hover:text-[var(--color-accent-primary)] transition-colors">
               {goal.title}
             </h2>
-            <p className="text-[var(--color-text-secondary)]">
-              {goal.description}
-            </p>
+            <p className="text-[var(--color-text-secondary)]">{goal.description}</p>
           </Link>
         ))}
       </div>

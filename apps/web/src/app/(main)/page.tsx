@@ -67,7 +67,8 @@ export default function HomePage() {
             Conquer your daily energy.
           </h2>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Stop relying on caffeine to survive the afternoon. Explore our complete guide to metabolic health, circadian rhythms, and sustained focus.
+            Stop relying on caffeine to survive the afternoon. Explore our complete guide to
+            metabolic health, circadian rhythms, and sustained focus.
           </p>
         </div>
 
@@ -83,7 +84,8 @@ export default function HomePage() {
               The 3 PM Crash
             </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Understand the biological collision of blood sugar and adenosine that causes afternoon brain fog.
+              Understand the biological collision of blood sugar and adenosine that causes afternoon
+              brain fog.
             </p>
             <span className="flex items-center font-medium text-blue-600 dark:text-blue-400">
               Read the guide{' '}
@@ -98,9 +100,12 @@ export default function HomePage() {
             <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400">
               <Utensils className="h-6 w-6" />
             </div>
-            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">High-Protein Breakfast</h3>
+            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">
+              High-Protein Breakfast
+            </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Stabilize your morning blood sugar with a 15-minute, 32g protein scramble to prevent the 11 AM slump.
+              Stabilize your morning blood sugar with a 15-minute, 32g protein scramble to prevent
+              the 11 AM slump.
             </p>
             <span className="flex items-center font-medium text-orange-600 dark:text-orange-400">
               View recipe{' '}
@@ -119,7 +124,8 @@ export default function HomePage() {
               Explore All Energy
             </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Dive into our complete ecosystem of habits, recipes, science, and optional accelerators for energy.
+              Dive into our complete ecosystem of habits, recipes, science, and optional
+              accelerators for energy.
             </p>
             <span className="flex items-center font-medium text-emerald-600 dark:text-emerald-400">
               View energy goal{' '}
@@ -130,12 +136,22 @@ export default function HomePage() {
 
         {/* Coming Soon Pillars */}
         <div className="mt-24 border-t border-slate-200 dark:border-slate-800 pt-16">
-          <h3 className="text-xl font-medium text-center text-slate-900 dark:text-slate-50 mb-10">Future Wellness Pillars</h3>
+          <h3 className="text-xl font-medium text-center text-slate-900 dark:text-slate-50 mb-10">
+            Future Wellness Pillars
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Deep Sleep (Coming Soon)</div>
-            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Gut Health (Coming Soon)</div>
-            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Metabolism & Weight (Coming Soon)</div>
-            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">Women's Wellness (Coming Soon)</div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">
+              Deep Sleep (Coming Soon)
+            </div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">
+              Gut Health (Coming Soon)
+            </div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">
+              Metabolism & Weight (Coming Soon)
+            </div>
+            <div className="px-6 py-3 rounded-full border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 text-sm font-medium">
+              Women's Wellness (Coming Soon)
+            </div>
           </div>
         </div>
       </section>

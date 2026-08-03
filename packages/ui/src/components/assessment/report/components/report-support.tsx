@@ -13,8 +13,8 @@ export function ReportSupport() {
           Need personal guidance?
         </h2>
         <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 text-balance leading-relaxed">
-          Talk to a Wellness Coach. Improvement is a journey. Whether you are looking for community, continued learning, or
-          gentle accountability, we're here to help guide you.
+          Talk to a Wellness Coach. Improvement is a journey. Whether you are looking for community,
+          continued learning, or gentle accountability, we're here to help guide you.
         </p>
         <div className="flex justify-center">
           <Link

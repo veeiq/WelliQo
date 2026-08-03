@@ -1,7 +1,8 @@
 // Append Batch 2 to the existing generate_sleep_domain.js
 const fs = require('fs');
 
-const file = 'C:/Users/alokm/.gemini/antigravity/brain/401f6cba-85fa-422f-8b12-473e06bdabcc/scratch/generate_sleep_domain.js';
+const file =
+  'C:/Users/alokm/.gemini/antigravity/brain/401f6cba-85fa-422f-8b12-473e06bdabcc/scratch/generate_sleep_domain.js';
 let content = fs.readFileSync(file, 'utf8');
 
 // We will replace the final file write commands with the new batch content and then write everything at the end.

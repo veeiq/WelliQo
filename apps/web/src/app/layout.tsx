@@ -5,7 +5,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'WelliQo | Wellness Companion Platform',
-  description: 'Your personalized companion for circadian health, metabolic wellness, and daily energy.',
+  description:
+    'Your personalized companion for circadian health, metabolic wellness, and daily energy.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

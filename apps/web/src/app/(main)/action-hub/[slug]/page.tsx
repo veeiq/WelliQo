@@ -7,11 +7,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const actionHub = contentAdapter.buildActionHub(slug);
   if (!actionHub) return {};
-  
+
   const content = actionHub.primaryContent;
   return {
     title: content.seoTitle || `${content.title} | WelliQo Action Hub`,
-    description: content.seoDescription || content.summary || `Discover ${content.title} on WelliQo.`,
+    description:
+      content.seoDescription || content.summary || `Discover ${content.title} on WelliQo.`,
   };
 }
 
@@ -29,11 +30,11 @@ export default async function ActionHubPage({ params }: { params: Promise<{ slug
   const recommendations = contentAdapter.getDiscoveryRecommendations(actionHub.primaryContent.id);
 
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": actionHub.primaryContent.title,
-    "datePublished": actionHub.primaryContent.createdAt || new Date().toISOString(),
-    "dateModified": actionHub.primaryContent.updatedAt || new Date().toISOString()
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: actionHub.primaryContent.title,
+    datePublished: actionHub.primaryContent.createdAt || new Date().toISOString(),
+    dateModified: actionHub.primaryContent.updatedAt || new Date().toISOString(),
   };
 
   return (

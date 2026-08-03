@@ -16,14 +16,26 @@ export async function POST(request: Request) {
     // const rankedQuestions = selector.rankAllQuestions({ answeredQuestionIds, knownFacts });
     const mockRankedQuestions: ScoredQuestion[] = [
       {
-        question: { id: 'q:energy:sleep_duration', label: 'How many hours do you usually sleep at night?', tags: ['energy'], humanMoment: 'Great. Now I\'d like to understand your sleep. Many people don\'t realise how much sleep affects energy and weight.' },
-        informationGain: 45
-      }
+        question: {
+          id: 'q:eng:eng_1:primary',
+          label: "When your alarm goes off, do you feel like you haven't slept at all?",
+          tags: ['energy'],
+          humanMoment:
+            "Waking up exhausted is incredibly demoralizing. Let's look into your mornings.",
+        },
+        informationGain: 45,
+      },
     ];
 
     // 3. Orchestrate the conversation
-    const orchestrator = new ConversationOrchestrator(currentLayer || null, answeredQuestionIds || []);
-    const { nextQuestion, isNewLayer, newLayerName } = orchestrator.selectNextQuestion(mockRankedQuestions, MasterEngineConfig.questions);
+    const orchestrator = new ConversationOrchestrator(
+      currentLayer || null,
+      answeredQuestionIds || [],
+    );
+    const { nextQuestion, isNewLayer, newLayerName } = orchestrator.selectNextQuestion(
+      mockRankedQuestions,
+      MasterEngineConfig.questions,
+    );
     const confidences = [{ domain: 'energy', confidence: 45 }];
 
     // 4. Stop Early Rule
@@ -33,7 +45,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         action: 'FINISH',
         report: mockReport,
-        confidences
+        confidences,
       });
     }
 
@@ -43,9 +55,8 @@ export async function POST(request: Request) {
       isNewLayer,
       newLayerName,
       currentReportPreview: mockReport,
-      confidences
+      confidences,
     });
-
   } catch (error) {
     return NextResponse.json({ error: 'Failed to process assessment' }, { status: 500 });
   }

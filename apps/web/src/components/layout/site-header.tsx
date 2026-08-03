@@ -10,11 +10,9 @@ export function SiteHeader() {
           <div className="h-8 w-8 rounded-lg bg-[var(--color-accent-primary)] flex items-center justify-center">
             <span className="text-white font-bold text-xl">W</span>
           </div>
-          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
-            WelliQo
-          </span>
+          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">WelliQo</span>
         </Link>
-        
+
         <div className="flex-1 flex justify-center px-4">
           <GlobalSearch />
         </div>

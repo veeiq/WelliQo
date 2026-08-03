@@ -1,1232 +1,1228 @@
 # MASTER LIBRARY - Questions
 # Layer 1: Identity
 
-- id: "q:master:greeting"
-  purpose: "Establish absolute emotional safety."
-  label: "Welcome to WelliQo. I'm genuinely glad you're here today. How are you feeling about starting this journey?"
-  type: "single-choice"
-  tags: ["master", "identity", "baseline"]
+- id: 'q:master:greeting'
+  purpose: 'Establish absolute emotional safety.'
+  label: "Welcome to WelliQo. It's great to have you here. How are you feeling about starting this journey?"
+  type: 'single-choice'
+  tags: ['master', 'identity', 'baseline']
   expectedConfidenceGain: 10
   coachThinking: "If I start firing clinical questions immediately, they will put their walls up. I need them to know they aren't being judged."
-  humanMoment: "Take a deep breath. You're in a safe place. We're going to do this together."
-  createsFacts: ["fact:master:emotional_state"]
+  humanMoment: "Let's take this one step at a time."
+  createsFacts: ['fact:master:emotional_state']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:greet:excited"
-      label: "Excited"
-      value: "excited"
-    - id: "opt:master:greet:nervous"
-      label: "A bit nervous"
-      value: "nervous"
-    - id: "opt:master:greet:overwhelmed"
-      label: "Overwhelmed"
-      value: "overwhelmed"
+    - id: 'opt:master:greet:excited'
+      label: 'Ready to go'
+      value: 'excited'
+    - id: 'opt:master:greet:nervous'
+      label: 'A bit nervous'
+      value: 'nervous'
+    - id: 'opt:master:greet:overwhelmed'
+      label: 'Not sure where to start'
+      value: 'overwhelmed'
 
-- id: "q:master:goal"
-  purpose: "Discover the emotional anchor driving the desire to change."
-  label: "What is the main reason you want to focus on your health right now?"
-  type: "single-choice"
-  tags: ["master", "identity", "baseline"]
+- id: 'q:master:goal'
+  purpose: 'Discover the emotional anchor driving the desire to change.'
+  label: 'What brings you here today?'
+  type: 'single-choice'
+  tags: ['master', 'identity', 'baseline']
   expectedConfidenceGain: 20
   coachThinking: "Nobody just wants to 'lose 10 kilos.' They want to stop feeling breathless playing with their kids. I need to find the anchor."
-  humanMoment: "Understanding why you are here is more important than any number on a scale."
-  createsFacts: ["fact:master:primary_goal"]
+  humanMoment: 'Understanding why you are here is more important than any number on a scale.'
+  createsFacts: ['fact:master:primary_goal']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:goal:health"
-      label: "To feel healthier"
-      value: "health"
-    - id: "opt:master:goal:energy"
-      label: "To have more energy"
-      value: "energy"
-    - id: "opt:master:goal:confidence"
-      label: "To feel more confident"
-      value: "confidence"
-    - id: "opt:master:goal:event"
-      label: "For an upcoming event"
-      value: "event"
+    - id: 'opt:master:goal:health'
+      label: 'I want to improve my overall health'
+      value: 'health'
+    - id: 'opt:master:goal:energy'
+      label: 'I need more energy for my daily life'
+      value: 'energy'
+    - id: 'opt:master:goal:confidence'
+      label: 'I want to feel more confident in my body'
+      value: 'confidence'
+    - id: 'opt:master:goal:event'
+      label: "I'm preparing for a specific event or milestone"
+      value: 'event'
 
-- id: "q:master:age"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "How old are you?"
-  type: "number"
-  tags: ["master", "identity", "baseline"]
+- id: 'q:master:age'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'How old are you?'
+  type: 'number'
+  tags: ['master', 'identity', 'baseline']
   expectedConfidenceGain: 10
   coachThinking: "I need their age to calculate their BMR and TDEE, but I shouldn't linger on this. It's just a starting line."
   humanMoment: "To help me understand your body's baseline needs, I'm going to ask a few quick numbers."
-  createsFacts: ["fact:master:age", "fact:master:age_group"]
+  createsFacts: ['fact:master:age', 'fact:master:age_group']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:gender"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "Are you"
-  type: "single-choice"
-  tags: ["master", "identity", "baseline"]
+- id: 'q:master:gender'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'What was your biological sex assigned at birth?'
+  type: 'single-choice'
+  tags: ['master', 'identity', 'baseline']
   expectedConfidenceGain: 10
-  coachThinking: "Biological sex impacts BMR calculations and hormonal profiles."
-  humanMoment: "Just capturing the basics so we can give you the right biological baseline."
-  createsFacts: ["fact:master:gender"]
+  coachThinking: 'Biological sex impacts BMR calculations and hormonal profiles.'
+  humanMoment: 'This is purely to ensure our metabolic calculations are as scientifically accurate as possible.'
+  createsFacts: ['fact:master:gender']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:gender:male"
-      label: "Male"
-      value: "male"
-    - id: "opt:master:gender:female"
-      label: "Female"
-      value: "female"
-    - id: "opt:master:gender:prefer_not"
-      label: "Prefer not to say"
-      value: "prefer_not"
+    - id: 'opt:master:gender:male'
+      label: 'Male'
+      value: 'male'
+    - id: 'opt:master:gender:female'
+      label: 'Female'
+      value: 'female'
+    - id: 'opt:master:gender:prefer_not'
+      label: 'I prefer not to say'
+      value: 'prefer_not'
 
-- id: "q:master:height"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "How tall are you?"
-  type: "height"
-  tags: ["master", "identity", "measurements"]
+- id: 'q:master:height'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'How tall are you?'
+  type: 'height'
+  tags: ['master', 'identity', 'measurements']
   expectedConfidenceGain: 10
-  coachThinking: "Required for accurate BMI and metabolic calculations."
-  humanMoment: "Almost done with the numbers."
-  createsFacts: ["fact:master:height"]
+  coachThinking: 'Required for accurate BMI and metabolic calculations.'
+  humanMoment: 'Almost done with the numbers.'
+  createsFacts: ['fact:master:height']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:weight"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "What is your current weight?"
-  type: "weight"
-  tags: ["master", "identity", "measurements"]
+- id: 'q:master:weight'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'What is your current weight?'
+  type: 'weight'
+  tags: ['master', 'identity', 'measurements']
   expectedConfidenceGain: 30
-  coachThinking: "The primary metabolic variable. Must capture without triggering shame."
-  humanMoment: "Your current measurements simply give us a starting point. Many successful wellness journeys begin exactly where you are today."
-  createsFacts: [
-    "fact:master:weight", 
-    "fact:master:bmi", 
-    "fact:master:healthy_weight_range", 
-    "fact:master:ideal_weight", 
-    "fact:master:estimated_body_fat", 
-    "fact:master:daily_water_need", 
-    "fact:master:daily_protein_need", 
-    "fact:master:estimated_calories", 
-    "fact:master:risk_category"
-  ]
+  coachThinking: 'The primary metabolic variable. Must capture without triggering shame.'
+  humanMoment: 'Your current measurements simply give us a starting point. Many successful wellness journeys begin exactly where you are today.'
+  createsFacts:
+    [
+      'fact:master:weight',
+      'fact:master:bmi',
+      'fact:master:healthy_weight_range',
+      'fact:master:ideal_weight',
+      'fact:master:estimated_body_fat',
+      'fact:master:daily_water_need',
+      'fact:master:daily_protein_need',
+      'fact:master:estimated_calories',
+      'fact:master:risk_category',
+    ]
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:waist"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "What is your waist size?"
-  type: "number"
-  tags: ["master", "identity", "measurements"]
+- id: 'q:master:waist'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'What is your waist size?'
+  type: 'number'
+  tags: ['master', 'identity', 'measurements']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:waist"]
+  createsFacts: ['fact:master:waist']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:occupation"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "What do you do?"
-  type: "single-choice"
-  tags: ["master", "identity", "lifestyle"]
+- id: 'q:master:occupation'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'What do you do?'
+  type: 'single-choice'
+  tags: ['master', 'identity', 'lifestyle']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:occupation"]
+  createsFacts: ['fact:master:occupation']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:occ:student"
-      label: "Student"
-      value: "student"
-    - id: "opt:master:occ:office"
-      label: "Office Job"
-      value: "office"
-    - id: "opt:master:occ:business"
-      label: "Business"
-      value: "business"
-    - id: "opt:master:occ:homemaker"
-      label: "Homemaker"
-      value: "homemaker"
-    - id: "opt:master:occ:labour"
-      label: "Labour"
-      value: "labour"
-    - id: "opt:master:occ:retired"
-      label: "Retired"
-      value: "retired"
-    - id: "opt:master:occ:other"
-      label: "Other"
-      value: "other"
+    - id: 'opt:master:occ:student'
+      label: 'Student'
+      value: 'student'
+    - id: 'opt:master:occ:office'
+      label: 'Office Job'
+      value: 'office'
+    - id: 'opt:master:occ:business'
+      label: 'Business'
+      value: 'business'
+    - id: 'opt:master:occ:homemaker'
+      label: 'Homemaker'
+      value: 'homemaker'
+    - id: 'opt:master:occ:labour'
+      label: 'Labour'
+      value: 'labour'
+    - id: 'opt:master:occ:retired'
+      label: 'Retired'
+      value: 'retired'
+    - id: 'opt:master:occ:other'
+      label: 'Other'
+      value: 'other'
 
-- id: "q:master:city"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "Which city do you live in?"
-  type: "text"
-  tags: ["master", "identity", "demographics"]
+- id: 'q:master:city'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'Which city do you live in?'
+  type: 'text'
+  tags: ['master', 'identity', 'demographics']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:city"]
+  createsFacts: ['fact:master:city']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:marital_status"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "Are you"
-  type: "single-choice"
-  tags: ["master", "identity", "demographics"]
+- id: 'q:master:marital_status'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'Are you'
+  type: 'single-choice'
+  tags: ['master', 'identity', 'demographics']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:marital_status"]
-  supportsScores: []
-  supportsInsights: []
-  supportsDecisions: []
-  supportsRecommendations: []
-  options:
-    - id: "opt:master:marital:single"
-      label: "Single"
-      value: "single"
-    - id: "opt:master:marital:married"
-      label: "Married"
-      value: "married"
-    - id: "opt:master:marital:other"
-      label: "Other"
-      value: "other"
-
-- id: "q:master:children"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "Do you have children?"
-  type: "single-choice"
-  tags: ["master", "identity", "demographics"]
-  expectedConfidenceGain: 5
-  createsFacts: ["fact:master:has_children"]
+  createsFacts: ['fact:master:marital_status']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:child:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:child:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:marital:single'
+      label: 'Single'
+      value: 'single'
+    - id: 'opt:master:marital:married'
+      label: 'Married'
+      value: 'married'
+    - id: 'opt:master:marital:other'
+      label: 'Other'
+      value: 'other'
 
-- id: "q:master:language"
-  purpose: "Know WHO the person is. Do NOT make assumptions."
-  label: "What language do you prefer?"
-  type: "text"
-  tags: ["master", "identity", "demographics"]
+- id: 'q:master:children'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'Do you have children?'
+  type: 'single-choice'
+  tags: ['master', 'identity', 'demographics']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:language"]
+  createsFacts: ['fact:master:has_children']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
+  options:
+    - id: 'opt:master:child:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:child:no'
+      label: 'No'
+      value: 'no'
 
+- id: 'q:master:language'
+  purpose: 'Know WHO the person is. Do NOT make assumptions.'
+  label: 'What language do you prefer?'
+  type: 'text'
+  tags: ['master', 'identity', 'demographics']
+  expectedConfidenceGain: 5
+  createsFacts: ['fact:master:language']
+  supportsScores: []
+  supportsInsights: []
+  supportsDecisions: []
+  supportsRecommendations: []
 
 # Layer 2: Lifestyle
 
-- id: "q:master:wake_time"
-  purpose: "Understand daily routine."
-  label: "What time do you usually wake up?"
-  type: "time"
-  tags: ["master", "lifestyle", "routine"]
+- id: 'q:master:wake_time'
+  purpose: 'Understand daily routine.'
+  label: 'What time do you usually wake up?'
+  type: 'time'
+  tags: ['master', 'lifestyle', 'routine']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:wake_time"]
+  createsFacts: ['fact:master:wake_time']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:bed_time"
-  purpose: "Understand daily routine."
-  label: "What time do you usually go to bed?"
-  type: "time"
-  tags: ["master", "lifestyle", "routine"]
+- id: 'q:master:bed_time'
+  purpose: 'Understand daily routine.'
+  label: 'What time do you usually go to bed?'
+  type: 'time'
+  tags: ['master', 'lifestyle', 'routine']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:bed_time"]
+  createsFacts: ['fact:master:bed_time']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:sleep_hours"
-  purpose: "Understand daily routine."
-  label: "How many hours do you usually sleep?"
-  type: "number"
-  tags: ["master", "lifestyle", "sleep"]
+- id: 'q:master:sleep_hours'
+  purpose: 'Understand daily routine.'
+  label: 'How many hours do you usually sleep?'
+  type: 'number'
+  tags: ['master', 'lifestyle', 'sleep']
   expectedConfidenceGain: 15
-  coachThinking: "Sleep dictates cortisol and recovery. Without enough sleep, weight loss is biochemically blocked."
-  humanMoment: "Sleep is the foundation of everything. How much rest is your body actually getting?"
-  createsFacts: ["fact:master:sleep_duration"]
+  coachThinking: 'Sleep dictates cortisol and recovery. Without enough sleep, weight loss is biochemically blocked.'
+  humanMoment: 'Sleep is the foundation of everything. How much rest is your body actually getting?'
+  createsFacts: ['fact:master:sleep_duration']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:water_intake"
-  purpose: "Understand daily routine."
-  label: "How much water do you drink in a day?"
-  type: "single-choice"
-  tags: ["master", "lifestyle", "nutrition"]
+- id: 'q:master:water_intake'
+  purpose: 'Understand daily routine.'
+  label: 'How much water do you drink in a day?'
+  type: 'single-choice'
+  tags: ['master', 'lifestyle', 'nutrition']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:water_intake"]
+  createsFacts: ['fact:master:water_intake']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:water:low"
-      label: "Less than 1 liter"
-      value: "low"
-    - id: "opt:master:water:med"
-      label: "1-2 liters"
-      value: "med"
-    - id: "opt:master:water:high"
-      label: "More than 2 liters"
-      value: "high"
+    - id: 'opt:master:water:low'
+      label: 'Less than 1 liter'
+      value: 'low'
+    - id: 'opt:master:water:med'
+      label: '1-2 liters'
+      value: 'med'
+    - id: 'opt:master:water:high'
+      label: 'More than 2 liters'
+      value: 'high'
 
-- id: "q:master:breakfast"
-  purpose: "Understand daily routine."
-  label: "Do you eat breakfast?"
-  type: "single-choice"
-  tags: ["master", "lifestyle", "nutrition"]
+- id: 'q:master:breakfast'
+  purpose: 'Understand daily routine.'
+  label: 'Do you eat breakfast?'
+  type: 'single-choice'
+  tags: ['master', 'lifestyle', 'nutrition']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:breakfast_habit"]
+  createsFacts: ['fact:master:breakfast_habit']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:bfast:always"
-      label: "Always"
-      value: "always"
-    - id: "opt:master:bfast:sometimes"
-      label: "Sometimes"
-      value: "sometimes"
-    - id: "opt:master:bfast:never"
-      label: "Never"
-      value: "never"
+    - id: 'opt:master:bfast:always'
+      label: 'Always'
+      value: 'always'
+    - id: 'opt:master:bfast:sometimes'
+      label: 'Sometimes'
+      value: 'sometimes'
+    - id: 'opt:master:bfast:never'
+      label: 'Never'
+      value: 'never'
 
-- id: "q:master:meal_count"
-  purpose: "Understand daily routine."
-  label: "How many meals do you usually eat?"
-  type: "number"
-  tags: ["master", "lifestyle", "nutrition"]
+- id: 'q:master:meal_count'
+  purpose: 'Understand daily routine.'
+  label: 'How many meals do you usually eat?'
+  type: 'number'
+  tags: ['master', 'lifestyle', 'nutrition']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:meal_count"]
+  createsFacts: ['fact:master:meal_count']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:eating_out"
-  purpose: "Understand daily routine."
-  label: "How often do you eat outside food?"
-  type: "single-choice"
-  tags: ["master", "lifestyle", "nutrition"]
+- id: 'q:master:eating_out'
+  purpose: 'Understand daily routine.'
+  label: 'How often do you eat outside food?'
+  type: 'single-choice'
+  tags: ['master', 'lifestyle', 'nutrition']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:eating_out_frequency"]
+  createsFacts: ['fact:master:eating_out_frequency']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:eatout:daily"
-      label: "Daily"
-      value: "daily"
-    - id: "opt:master:eatout:weekly"
-      label: "A few times a week"
-      value: "weekly"
-    - id: "opt:master:eatout:rarely"
-      label: "Rarely"
-      value: "rarely"
+    - id: 'opt:master:eatout:daily'
+      label: 'Daily'
+      value: 'daily'
+    - id: 'opt:master:eatout:weekly'
+      label: 'A few times a week'
+      value: 'weekly'
+    - id: 'opt:master:eatout:rarely'
+      label: 'Rarely'
+      value: 'rarely'
 
-- id: "q:master:exercise"
-  purpose: "Understand daily routine."
-  label: "Do you exercise?"
-  type: "single-choice"
-  tags: ["master", "lifestyle", "fitness"]
+- id: 'q:master:exercise'
+  purpose: 'Understand daily routine.'
+  label: 'Do you exercise?'
+  type: 'single-choice'
+  tags: ['master', 'lifestyle', 'fitness']
   expectedConfidenceGain: 15
-  coachThinking: "Assess baseline metabolic demand from activity."
-  humanMoment: "Any movement counts. We just need to know where you are starting from."
-  createsFacts: ["fact:master:exercise_frequency"]
+  coachThinking: 'Assess baseline metabolic demand from activity.'
+  humanMoment: 'Any movement counts. We just need to know where you are starting from.'
+  createsFacts: ['fact:master:exercise_frequency']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:ex:daily"
-      label: "Daily"
-      value: "daily"
-    - id: "opt:master:ex:weekly"
-      label: "Few times a week"
-      value: "weekly"
-    - id: "opt:master:ex:rarely"
-      label: "Rarely"
-      value: "rarely"
-    - id: "opt:master:ex:never"
-      label: "Never"
-      value: "never"
+    - id: 'opt:master:ex:daily'
+      label: 'Daily'
+      value: 'daily'
+    - id: 'opt:master:ex:weekly'
+      label: 'Few times a week'
+      value: 'weekly'
+    - id: 'opt:master:ex:rarely'
+      label: 'Rarely'
+      value: 'rarely'
+    - id: 'opt:master:ex:never'
+      label: 'Never'
+      value: 'never'
 
-- id: "q:master:sitting_hours"
-  purpose: "Understand daily routine."
-  label: "About how many hours do you sit every day?"
-  type: "number"
-  tags: ["master", "lifestyle", "fitness"]
+- id: 'q:master:sitting_hours'
+  purpose: 'Understand daily routine.'
+  label: 'About how many hours do you sit every day?'
+  type: 'number'
+  tags: ['master', 'lifestyle', 'fitness']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:sitting_hours"]
+  createsFacts: ['fact:master:sitting_hours']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:smoke_alcohol"
-  purpose: "Understand daily routine."
-  label: "Do you smoke or drink alcohol?"
-  type: "multiple-choice"
-  tags: ["master", "lifestyle", "habits"]
+- id: 'q:master:smoke_alcohol'
+  purpose: 'Understand daily routine.'
+  label: 'Do you smoke or drink alcohol?'
+  type: 'multiple-choice'
+  tags: ['master', 'lifestyle', 'habits']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:smoking", "fact:master:alcohol"]
+  createsFacts: ['fact:master:smoking', 'fact:master:alcohol']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:habit:smoke"
-      label: "Smoke"
-      value: "smoke"
-    - id: "opt:master:habit:alcohol"
-      label: "Drink alcohol"
-      value: "alcohol"
-    - id: "opt:master:habit:neither"
-      label: "Neither"
-      value: "neither"
+    - id: 'opt:master:habit:smoke'
+      label: 'Smoke'
+      value: 'smoke'
+    - id: 'opt:master:habit:alcohol'
+      label: 'Drink alcohol'
+      value: 'alcohol'
+    - id: 'opt:master:habit:neither'
+      label: 'Neither'
+      value: 'neither'
 
 # Layer 3: Medical Safety
 
-- id: "q:master:pregnant"
-  purpose: "Ensure recommendations are always safe."
-  label: "Are you pregnant?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:pregnant'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Are you pregnant?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:pregnant"]
+  createsFacts: ['fact:master:pregnant']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:preg:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:preg:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:preg:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:preg:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:breastfeeding"
-  purpose: "Ensure recommendations are always safe."
-  label: "Are you breastfeeding?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:breastfeeding'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Are you breastfeeding?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:breastfeeding"]
+  createsFacts: ['fact:master:breastfeeding']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:bf:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:bf:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:bf:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:bf:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:medical_diet"
-  purpose: "Ensure recommendations are always safe."
-  label: "Has a doctor advised you to follow any special diet?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:medical_diet'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Has a doctor advised you to follow any special diet?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:medical_diet"]
+  createsFacts: ['fact:master:medical_diet']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:md:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:md:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:md:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:md:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:diabetes"
-  purpose: "Ensure recommendations are always safe."
-  label: "Do you have diabetes?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:diabetes'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Do you have diabetes?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:diabetes"]
+  createsFacts: ['fact:master:diabetes']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:dia:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:dia:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:dia:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:dia:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:blood_pressure"
-  purpose: "Ensure recommendations are always safe."
-  label: "Do you have high blood pressure?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:blood_pressure'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Do you have high blood pressure?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:high_bp"]
+  createsFacts: ['fact:master:high_bp']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:bp:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:bp:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:bp:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:bp:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:thyroid"
-  purpose: "Ensure recommendations are always safe."
-  label: "Do you have thyroid problems?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:thyroid'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Do you have thyroid problems?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:thyroid"]
+  createsFacts: ['fact:master:thyroid']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:thy:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:thy:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:thy:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:thy:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:medication"
-  purpose: "Ensure recommendations are always safe."
-  label: "Are you taking any regular medicines?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:medication'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Are you taking any regular medicines?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:regular_medication"]
+  createsFacts: ['fact:master:regular_medication']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:med:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:med:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:med:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:med:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:surgery"
-  purpose: "Ensure recommendations are always safe."
-  label: "Have you had any major surgery in the last year?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:surgery'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Have you had any major surgery in the last year?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:recent_surgery"]
+  createsFacts: ['fact:master:recent_surgery']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:surg:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:surg:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:surg:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:surg:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:allergies"
-  purpose: "Ensure recommendations are always safe."
-  label: "Do you have any food allergies?"
-  type: "single-choice"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:allergies'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Do you have any food allergies?'
+  type: 'single-choice'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:food_allergies"]
+  createsFacts: ['fact:master:food_allergies']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:allg:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:allg:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:allg:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:allg:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:other_health"
-  purpose: "Ensure recommendations are always safe."
-  label: "Is there anything important about your health we should know?"
-  type: "text"
-  tags: ["master", "medical_safety"]
+- id: 'q:master:other_health'
+  purpose: 'Ensure recommendations are always safe.'
+  label: 'Is there anything important about your health we should know?'
+  type: 'text'
+  tags: ['master', 'medical_safety']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:other_health_info"]
+  createsFacts: ['fact:master:other_health_info']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
-
 
 # Layer 4: Family & Home
 
-- id: "q:master:cooks"
+- id: 'q:master:cooks'
   purpose: "Understand the person's real environment."
-  label: "Who usually cooks at home?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Who usually cooks at home?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:primary_cook"]
+  createsFacts: ['fact:master:primary_cook']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:cook:me"
-      label: "Me"
-      value: "me"
-    - id: "opt:master:cook:partner"
-      label: "Partner/Family"
-      value: "partner"
-    - id: "opt:master:cook:help"
-      label: "House Help"
-      value: "help"
+    - id: 'opt:master:cook:me'
+      label: 'Me'
+      value: 'me'
+    - id: 'opt:master:cook:partner'
+      label: 'Partner/Family'
+      value: 'partner'
+    - id: 'opt:master:cook:help'
+      label: 'House Help'
+      value: 'help'
 
-- id: "q:master:groceries"
+- id: 'q:master:groceries'
   purpose: "Understand the person's real environment."
-  label: "Who buys groceries?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Who buys groceries?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:primary_shopper"]
+  createsFacts: ['fact:master:primary_shopper']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:groc:me"
-      label: "Me"
-      value: "me"
-    - id: "opt:master:groc:partner"
-      label: "Partner/Family"
-      value: "partner"
-    - id: "opt:master:groc:help"
-      label: "House Help"
-      value: "help"
+    - id: 'opt:master:groc:me'
+      label: 'Me'
+      value: 'me'
+    - id: 'opt:master:groc:partner'
+      label: 'Partner/Family'
+      value: 'partner'
+    - id: 'opt:master:groc:help'
+      label: 'House Help'
+      value: 'help'
 
-- id: "q:master:family_support"
+- id: 'q:master:family_support'
   purpose: "Understand the person's real environment."
-  label: "Does your family support your health goals?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Does your family support your health goals?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:family_support"]
+  createsFacts: ['fact:master:family_support']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:sup:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:sup:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:sup:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:sup:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:eat_with_family"
+- id: 'q:master:eat_with_family'
   purpose: "Understand the person's real environment."
-  label: "Do you usually eat with your family?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Do you usually eat with your family?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:eat_with_family"]
+  createsFacts: ['fact:master:eat_with_family']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:ewf:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:ewf:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:ewf:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:ewf:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:travel"
+- id: 'q:master:travel'
   purpose: "Understand the person's real environment."
-  label: "Do you travel frequently for work?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Do you travel frequently for work?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:frequent_travel"]
+  createsFacts: ['fact:master:frequent_travel']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:trav:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:trav:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:trav:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:trav:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:living_situation"
+- id: 'q:master:living_situation'
   purpose: "Understand the person's real environment."
-  label: "Do you live alone or with family?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Do you live alone or with family?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:living_situation"]
+  createsFacts: ['fact:master:living_situation']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:liv:alone"
-      label: "Alone"
-      value: "alone"
-    - id: "opt:master:liv:family"
-      label: "With Family"
-      value: "family"
+    - id: 'opt:master:liv:alone'
+      label: 'Alone'
+      value: 'alone'
+    - id: 'opt:master:liv:family'
+      label: 'With Family'
+      value: 'family'
 
-- id: "q:master:food_availability"
+- id: 'q:master:food_availability'
   purpose: "Understand the person's real environment."
-  label: "Is healthy food easily available where you live?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Is healthy food easily available where you live?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:food_availability"]
+  createsFacts: ['fact:master:food_availability']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:favail:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:favail:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:favail:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:favail:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:food_decisions"
+- id: 'q:master:food_decisions'
   purpose: "Understand the person's real environment."
-  label: "Who usually decides what food is prepared?"
-  type: "single-choice"
-  tags: ["master", "family_home"]
+  label: 'Who usually decides what food is prepared?'
+  type: 'single-choice'
+  tags: ['master', 'family_home']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:food_decision_maker"]
+  createsFacts: ['fact:master:food_decision_maker']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:fdec:me"
-      label: "Me"
-      value: "me"
-    - id: "opt:master:fdec:partner"
-      label: "Partner/Family"
-      value: "partner"
-    - id: "opt:master:fdec:help"
-      label: "House Help"
-      value: "help"
-
+    - id: 'opt:master:fdec:me'
+      label: 'Me'
+      value: 'me'
+    - id: 'opt:master:fdec:partner'
+      label: 'Partner/Family'
+      value: 'partner'
+    - id: 'opt:master:fdec:help'
+      label: 'House Help'
+      value: 'help'
 
 # Layer 5: Financial Reality
 
-- id: "q:master:cook_time"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Do you have time to cook every day?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:cook_time'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Do you have time to cook every day?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:daily_cooking_time"]
+  createsFacts: ['fact:master:daily_cooking_time']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:ctime:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:ctime:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:ctime:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:ctime:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:kitchen_access"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Do you have access to a kitchen?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:kitchen_access'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Do you have access to a kitchen?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:kitchen_access"]
+  createsFacts: ['fact:master:kitchen_access']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:kacc:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:kacc:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:kacc:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:kacc:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:fridge_access"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Do you have a refrigerator?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:fridge_access'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Do you have a refrigerator?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:refrigerator_access"]
+  createsFacts: ['fact:master:refrigerator_access']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:facc:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:facc:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:facc:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:facc:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:health_time"
-  purpose: "Recommend solutions people can actually follow."
-  label: "How much time can you realistically spend on your health daily?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:health_time'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'How much time can you realistically spend on your health daily?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:daily_health_time"]
+  createsFacts: ['fact:master:daily_health_time']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:htime:little"
-      label: "Less than 15 minutes"
-      value: "little"
-    - id: "opt:master:htime:some"
-      label: "15 to 45 minutes"
-      value: "some"
-    - id: "opt:master:htime:lots"
-      label: "More than 45 minutes"
-      value: "lots"
+    - id: 'opt:master:htime:little'
+      label: 'Less than 15 minutes'
+      value: 'little'
+    - id: 'opt:master:htime:some'
+      label: '15 to 45 minutes'
+      value: 'some'
+    - id: 'opt:master:htime:lots'
+      label: 'More than 45 minutes'
+      value: 'lots'
 
-- id: "q:master:low_cost_meals"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Would you prefer low-cost meal ideas?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:low_cost_meals'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Would you prefer low-cost meal ideas?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:prefer_low_cost"]
+  createsFacts: ['fact:master:prefer_low_cost']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:lcm:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:lcm:no"
-      label: "No, budget is flexible"
-      value: "no"
+    - id: 'opt:master:lcm:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:lcm:no'
+      label: 'No, budget is flexible'
+      value: 'no'
 
-- id: "q:master:buy_healthy"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Are you comfortable buying healthy foods every week?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:buy_healthy'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Are you comfortable buying healthy foods every week?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:buy_healthy_comfort"]
+  createsFacts: ['fact:master:buy_healthy_comfort']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:bh:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:bh:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:bh:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:bh:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:home_solutions"
-  purpose: "Recommend solutions people can actually follow."
-  label: "Would you like home-based solutions instead of gym-based solutions?"
-  type: "single-choice"
-  tags: ["master", "financial_reality"]
+- id: 'q:master:home_solutions'
+  purpose: 'Recommend solutions people can actually follow.'
+  label: 'Would you like home-based solutions instead of gym-based solutions?'
+  type: 'single-choice'
+  tags: ['master', 'financial_reality']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:prefer_home_solutions"]
+  createsFacts: ['fact:master:prefer_home_solutions']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:hs:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:hs:no"
-      label: "No, I go to a gym"
-      value: "no"
-
+    - id: 'opt:master:hs:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:hs:no'
+      label: 'No, I go to a gym'
+      value: 'no'
 
 # Layer 6: Personal Preferences
 
-- id: "q:master:exercise_type"
-  purpose: "Personalize recommendations."
-  label: "Which type of exercise do you enjoy?"
-  type: "multiple-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:exercise_type'
+  purpose: 'Personalize recommendations.'
+  label: 'Which type of exercise do you enjoy?'
+  type: 'multiple-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:enjoyed_exercise"]
+  createsFacts: ['fact:master:enjoyed_exercise']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:extype:walking"
-      label: "Walking / Running"
-      value: "walking"
-    - id: "opt:master:extype:weights"
-      label: "Lifting weights"
-      value: "weights"
-    - id: "opt:master:extype:yoga"
-      label: "Yoga / Stretching"
-      value: "yoga"
-    - id: "opt:master:extype:none"
-      label: "I do not enjoy exercise"
-      value: "none"
+    - id: 'opt:master:extype:walking'
+      label: 'Walking / Running'
+      value: 'walking'
+    - id: 'opt:master:extype:weights'
+      label: 'Lifting weights'
+      value: 'weights'
+    - id: 'opt:master:extype:yoga'
+      label: 'Yoga / Stretching'
+      value: 'yoga'
+    - id: 'opt:master:extype:none'
+      label: 'I do not enjoy exercise'
+      value: 'none'
 
-- id: "q:master:workout_location"
-  purpose: "Personalize recommendations."
-  label: "Do you prefer home workouts or a gym?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:workout_location'
+  purpose: 'Personalize recommendations.'
+  label: 'Do you prefer home workouts or a gym?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:workout_location"]
+  createsFacts: ['fact:master:workout_location']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:wloc:home"
-      label: "Home"
-      value: "home"
-    - id: "opt:master:wloc:gym"
-      label: "Gym"
-      value: "gym"
+    - id: 'opt:master:wloc:home'
+      label: 'Home'
+      value: 'home'
+    - id: 'opt:master:wloc:gym'
+      label: 'Gym'
+      value: 'gym'
 
-- id: "q:master:vegetarian"
-  purpose: "Personalize recommendations."
-  label: "Are you vegetarian?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:vegetarian'
+  purpose: 'Personalize recommendations.'
+  label: 'Are you vegetarian?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:is_vegetarian"]
+  createsFacts: ['fact:master:is_vegetarian']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:veg:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:veg:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:veg:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:veg:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:eat_eggs"
-  purpose: "Personalize recommendations."
-  label: "Do you eat eggs?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:eat_eggs'
+  purpose: 'Personalize recommendations.'
+  label: 'Do you eat eggs?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:eats_eggs"]
+  createsFacts: ['fact:master:eats_eggs']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:eggs:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:eggs:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:eggs:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:eggs:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:eat_meat"
-  purpose: "Personalize recommendations."
-  label: "Do you eat chicken or fish?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:eat_meat'
+  purpose: 'Personalize recommendations.'
+  label: 'Do you eat chicken or fish?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:eats_meat"]
+  createsFacts: ['fact:master:eats_meat']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:meat:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:meat:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:meat:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:meat:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:hardest_meal"
-  purpose: "Personalize recommendations."
-  label: "Which meal is hardest for you to manage?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:hardest_meal'
+  purpose: 'Personalize recommendations.'
+  label: 'Which meal is hardest for you to manage?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:hardest_meal"]
+  createsFacts: ['fact:master:hardest_meal']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:hm:breakfast"
-      label: "Breakfast"
-      value: "breakfast"
-    - id: "opt:master:hm:lunch"
-      label: "Lunch"
-      value: "lunch"
-    - id: "opt:master:hm:dinner"
-      label: "Dinner"
-      value: "dinner"
+    - id: 'opt:master:hm:breakfast'
+      label: 'Breakfast'
+      value: 'breakfast'
+    - id: 'opt:master:hm:lunch'
+      label: 'Lunch'
+      value: 'lunch'
+    - id: 'opt:master:hm:dinner'
+      label: 'Dinner'
+      value: 'dinner'
 
-- id: "q:master:like_cooking"
-  purpose: "Personalize recommendations."
-  label: "Do you like cooking?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:like_cooking'
+  purpose: 'Personalize recommendations.'
+  label: 'Do you like cooking?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:likes_cooking"]
+  createsFacts: ['fact:master:likes_cooking']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:lc:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:lc:no"
-      label: "No"
-      value: "no"
+    - id: 'opt:master:lc:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:lc:no'
+      label: 'No'
+      value: 'no'
 
-- id: "q:master:change_size"
-  purpose: "Personalize recommendations."
-  label: "Would you rather make small changes or bigger changes?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:change_size'
+  purpose: 'Personalize recommendations.'
+  label: 'Would you rather make small changes or bigger changes?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:preferred_change_size"]
+  createsFacts: ['fact:master:preferred_change_size']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:cs:small"
-      label: "Small, easy changes"
-      value: "small"
-    - id: "opt:master:cs:big"
-      label: "Bigger, faster changes"
-      value: "big"
+    - id: 'opt:master:cs:small'
+      label: 'Small, easy changes'
+      value: 'small'
+    - id: 'opt:master:cs:big'
+      label: 'Bigger, faster changes'
+      value: 'big'
 
-- id: "q:master:like_schedule"
-  purpose: "Personalize recommendations."
-  label: "Do you like following a schedule?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:like_schedule'
+  purpose: 'Personalize recommendations.'
+  label: 'Do you like following a schedule?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:likes_schedule"]
+  createsFacts: ['fact:master:likes_schedule']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:ls:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:ls:no"
-      label: "No, I need flexibility"
-      value: "no"
+    - id: 'opt:master:ls:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:ls:no'
+      label: 'No, I need flexibility'
+      value: 'no'
 
-- id: "q:master:want_reminders"
-  purpose: "Personalize recommendations."
-  label: "Would you like reminders and habit tracking?"
-  type: "single-choice"
-  tags: ["master", "personal_preferences"]
+- id: 'q:master:want_reminders'
+  purpose: 'Personalize recommendations.'
+  label: 'Would you like reminders and habit tracking?'
+  type: 'single-choice'
+  tags: ['master', 'personal_preferences']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:wants_reminders"]
+  createsFacts: ['fact:master:wants_reminders']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
   options:
-    - id: "opt:master:wr:yes"
-      label: "Yes"
-      value: "yes"
-    - id: "opt:master:wr:no"
-      label: "No"
-      value: "no"
-
+    - id: 'opt:master:wr:yes'
+      label: 'Yes'
+      value: 'yes'
+    - id: 'opt:master:wr:no'
+      label: 'No'
+      value: 'no'
 
 # Layer 7: Readiness & Motivation
 
-- id: "q:master:improve_why"
-  purpose: "Measure mindset before recommendations."
-  label: "Why do you want to improve your health now?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:improve_why'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'Why do you want to improve your health now?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:health_motivation"]
+  createsFacts: ['fact:master:health_motivation']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:worries"
-  purpose: "Measure mindset before recommendations."
-  label: "What worries you the most?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:worries'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'What worries you the most?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:primary_worry"]
+  createsFacts: ['fact:master:primary_worry']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:stopped_past"
-  purpose: "Measure mindset before recommendations."
-  label: "What has stopped you in the past?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:stopped_past'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'What has stopped you in the past?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:past_blockers"]
+  createsFacts: ['fact:master:past_blockers']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:worked_past"
-  purpose: "Measure mindset before recommendations."
-  label: "What has worked well for you before?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:worked_past'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'What has worked well for you before?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:past_successes"]
+  createsFacts: ['fact:master:past_successes']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:motivator"
-  purpose: "Measure mindset before recommendations."
-  label: "Who motivates you?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:motivator'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'Who motivates you?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:primary_motivator"]
+  createsFacts: ['fact:master:primary_motivator']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:confidence"
-  purpose: "Measure mindset before recommendations."
-  label: "How confident are you that you can make changes?"
-  type: "scale"
-  tags: ["master", "motivation"]
+- id: 'q:master:confidence'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'How confident are you that you can make changes?'
+  type: 'scale'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 10
-  createsFacts: ["fact:master:change_confidence"]
+  createsFacts: ['fact:master:change_confidence']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:readiness"
-  purpose: "Measure mindset before recommendations."
-  label: "How ready are you to start today? (1-10)"
-  type: "scale"
-  tags: ["master", "motivation"]
+- id: 'q:master:readiness'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'How ready are you to start today? (1-10)'
+  type: 'scale'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 20
-  createsFacts: ["fact:master:readiness_score"]
+  createsFacts: ['fact:master:readiness_score']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:improve_first"
-  purpose: "Measure mindset before recommendations."
-  label: "What is the one thing you want to improve first?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:improve_first'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'What is the one thing you want to improve first?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:priority_improvement"]
+  createsFacts: ['fact:master:priority_improvement']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:success_vision"
-  purpose: "Measure mindset before recommendations."
-  label: "What would success look like after 3 months?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:success_vision'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'What would success look like after 3 months?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 15
-  createsFacts: ["fact:master:success_vision"]
+  createsFacts: ['fact:master:success_vision']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []
   supportsRecommendations: []
 
-- id: "q:master:other_info"
-  purpose: "Measure mindset before recommendations."
-  label: "Is there anything else you want us to know?"
-  type: "text"
-  tags: ["master", "motivation"]
+- id: 'q:master:other_info'
+  purpose: 'Measure mindset before recommendations.'
+  label: 'Is there anything else you want us to know?'
+  type: 'text'
+  tags: ['master', 'motivation']
   expectedConfidenceGain: 5
-  createsFacts: ["fact:master:additional_info"]
+  createsFacts: ['fact:master:additional_info']
   supportsScores: []
   supportsInsights: []
   supportsDecisions: []

@@ -1,130 +1,31 @@
 [
   {
-    "id": "score:slp:restoration",
-    "name": "Sleep & Restoration Score",
-    "description": "Measures overall sleep quality and recovery capacity.",
-    "baseValue": 80,
-    "rules": [
-      {
-        "requiredFacts": [
-          "fact:slp:q001_wake_feeling:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q002_fall_asleep_time:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q003_wake_frequency:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q004_fall_asleep_again:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q005_early_waking:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q006_phone_in_bed:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q007_racing_thoughts:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q008_stress_bedtime:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q009_tv_before_bed:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q010_regular_bedtime:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q011_bedroom_noise:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q012_disturbances:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q013_snoring:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q014_dry_mouth:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q015_room_temp:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q016_last_meal:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q017_coffee_timing:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q018_alcohol_night:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q019_hungry_sleep:struggle"
-        ],
-        "valueModifier": -2
-      },
-      {
-        "requiredFacts": [
-          "fact:slp:q020_daytime_water:struggle"
-        ],
-        "valueModifier": -2
-      }
-    ]
-  }
+    'id': 'score:slp:restoration',
+    'name': 'Sleep & Restoration Score',
+    'description': 'Measures overall sleep quality and recovery capacity.',
+    'baseValue': 80,
+    'rules':
+      [
+        { 'requiredFacts': ['fact:slp:q001_wake_feeling:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q002_fall_asleep_time:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q003_wake_frequency:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q004_fall_asleep_again:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q005_early_waking:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q006_phone_in_bed:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q007_racing_thoughts:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q008_stress_bedtime:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q009_tv_before_bed:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q010_regular_bedtime:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q011_bedroom_noise:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q012_disturbances:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q013_snoring:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q014_dry_mouth:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q015_room_temp:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q016_last_meal:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q017_coffee_timing:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q018_alcohol_night:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q019_hungry_sleep:struggle'], 'valueModifier': -2 },
+        { 'requiredFacts': ['fact:slp:q020_daytime_water:struggle'], 'valueModifier': -2 },
+      ],
+  },
 ]

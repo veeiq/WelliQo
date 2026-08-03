@@ -9,54 +9,47 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
   const answers = useAssessmentStore((state) => state.answers);
   const answeredQuestionIds = Object.keys(answers);
 
-  // Estimate progress based on typical 40 question domain size (flexible UI mapping)
-  const currentStep = answeredQuestionIds.length + 1;
-  const estimatedTotal = 40; 
-  const timeRemaining = Math.max(1, Math.ceil((estimatedTotal - currentStep) * 0.5)); // Approx 30 seconds per question
+  // Smooth, non-linear progress that gives a feeling of momentum without exposing the total count.
+  const step = answeredQuestionIds.length;
+  const progressPercent = Math.min(95, 100 - 100 / (1 + 0.15 * step));
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 font-sans">
-      <header className="w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-950 font-sans selection:bg-emerald-100 selection:text-emerald-900">
+      {/* Premium subtle top-edge progress bar */}
+      {currentQuestion && (
+        <div className="fixed top-0 left-0 right-0 h-1.5 bg-slate-100 dark:bg-slate-900 z-50 overflow-hidden">
+          <div
+            className="h-full bg-emerald-500 rounded-r-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(16,185,129,0.4)]"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
+      )}
+
+      <header className="w-full bg-transparent sticky top-0 z-40 mt-1.5">
+        <div className="max-w-3xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Link href="/" className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2 group">
-              <span className="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">W</span>
-              <span className="hidden sm:inline-block">WelliQo</span>
+            <Link
+              href="/"
+              className="flex items-center gap-3 group opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <span className="w-10 h-10 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-bold text-lg shadow-sm">
+                W
+              </span>
             </Link>
           </div>
-          
-          {currentQuestion && (
-            <div className="hidden md:flex items-center space-x-6 text-sm text-slate-500 dark:text-slate-400">
-              <div className="flex items-center space-x-2">
-                <span>Step {currentStep} of ~{estimatedTotal}</span>
-                <div className="w-32 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-emerald-500 transition-all duration-500 ease-out" 
-                    style={{ width: `${Math.min(100, (currentStep / estimatedTotal) * 100)}%` }} 
-                  />
-                </div>
-              </div>
-              <div className="flex items-center space-x-1">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span>~{timeRemaining} min remaining</span>
-              </div>
-            </div>
-          )}
 
           <div>
-            <Link 
-              href="/" 
-              className="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            <Link
+              href="/"
+              className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors rounded-full hover:bg-slate-50 dark:hover:bg-slate-900"
             >
               Save & Exit
             </Link>
           </div>
         </div>
       </header>
-      
-      <main className="flex-1 flex flex-col">
-        {children}
-      </main>
+
+      <main className="flex-1 flex flex-col">{children}</main>
     </div>
   );
 }

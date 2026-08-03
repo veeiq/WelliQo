@@ -1,682 +1,506 @@
 [
   {
-    "id": "fact:slp:q001_wake_feeling:struggle",
-    "description": "How Does Your Sleep Feel - Waking exhaustion",
-    "generatedFrom": [
-      "q:slp:q001_wake_feeling:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q001_wake_feeling:impact",
-      "score:slp:restoration",
-      "dec:slp:q001_wake_feeling:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q001_wake_feeling:struggle',
+    'description': 'How Does Your Sleep Feel - Waking exhaustion',
+    'generatedFrom': ['q:slp:q001_wake_feeling:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q001_wake_feeling:impact',
+        'score:slp:restoration',
+        'dec:slp:q001_wake_feeling:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q002_fall_asleep_time:struggle",
-    "description": "How Does Your Sleep Feel - Sleep onset latency",
-    "generatedFrom": [
-      "q:slp:q002_fall_asleep_time:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q002_fall_asleep_time:impact",
-      "score:slp:restoration",
-      "dec:slp:q002_fall_asleep_time:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q002_fall_asleep_time:struggle',
+    'description': 'How Does Your Sleep Feel - Sleep onset latency',
+    'generatedFrom': ['q:slp:q002_fall_asleep_time:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q002_fall_asleep_time:impact',
+        'score:slp:restoration',
+        'dec:slp:q002_fall_asleep_time:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q003_wake_frequency:struggle",
-    "description": "How Does Your Sleep Feel - Sleep fragmentation",
-    "generatedFrom": [
-      "q:slp:q003_wake_frequency:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q003_wake_frequency:impact",
-      "score:slp:restoration",
-      "dec:slp:q003_wake_frequency:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q003_wake_frequency:struggle',
+    'description': 'How Does Your Sleep Feel - Sleep fragmentation',
+    'generatedFrom': ['q:slp:q003_wake_frequency:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q003_wake_frequency:impact',
+        'score:slp:restoration',
+        'dec:slp:q003_wake_frequency:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q004_fall_asleep_again:struggle",
-    "description": "How Does Your Sleep Feel - Return to sleep latency",
-    "generatedFrom": [
-      "q:slp:q004_fall_asleep_again:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q004_fall_asleep_again:impact",
-      "score:slp:restoration",
-      "dec:slp:q004_fall_asleep_again:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q004_fall_asleep_again:struggle',
+    'description': 'How Does Your Sleep Feel - Return to sleep latency',
+    'generatedFrom': ['q:slp:q004_fall_asleep_again:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q004_fall_asleep_again:impact',
+        'score:slp:restoration',
+        'dec:slp:q004_fall_asleep_again:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q005_early_waking:struggle",
-    "description": "How Does Your Sleep Feel - Terminal insomnia",
-    "generatedFrom": [
-      "q:slp:q005_early_waking:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q005_early_waking:impact",
-      "score:slp:restoration",
-      "dec:slp:q005_early_waking:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q005_early_waking:struggle',
+    'description': 'How Does Your Sleep Feel - Terminal insomnia',
+    'generatedFrom': ['q:slp:q005_early_waking:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q005_early_waking:impact',
+        'score:slp:restoration',
+        'dec:slp:q005_early_waking:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q006_phone_in_bed:struggle",
-    "description": "What Happens Before Bed - Device usage",
-    "generatedFrom": [
-      "q:slp:q006_phone_in_bed:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q006_phone_in_bed:impact",
-      "score:slp:restoration",
-      "dec:slp:q006_phone_in_bed:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q006_phone_in_bed:struggle',
+    'description': 'What Happens Before Bed - Device usage',
+    'generatedFrom': ['q:slp:q006_phone_in_bed:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q006_phone_in_bed:impact',
+        'score:slp:restoration',
+        'dec:slp:q006_phone_in_bed:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q007_racing_thoughts:struggle",
-    "description": "What Happens Before Bed - Racing thoughts",
-    "generatedFrom": [
-      "q:slp:q007_racing_thoughts:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q007_racing_thoughts:impact",
-      "score:slp:restoration",
-      "dec:slp:q007_racing_thoughts:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q007_racing_thoughts:struggle',
+    'description': 'What Happens Before Bed - Racing thoughts',
+    'generatedFrom': ['q:slp:q007_racing_thoughts:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q007_racing_thoughts:impact',
+        'score:slp:restoration',
+        'dec:slp:q007_racing_thoughts:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q008_stress_bedtime:struggle",
-    "description": "What Happens Before Bed - Bedtime stress",
-    "generatedFrom": [
-      "q:slp:q008_stress_bedtime:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q008_stress_bedtime:impact",
-      "score:slp:restoration",
-      "dec:slp:q008_stress_bedtime:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q008_stress_bedtime:struggle',
+    'description': 'What Happens Before Bed - Bedtime stress',
+    'generatedFrom': ['q:slp:q008_stress_bedtime:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q008_stress_bedtime:impact',
+        'score:slp:restoration',
+        'dec:slp:q008_stress_bedtime:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q009_tv_before_bed:struggle",
-    "description": "What Happens Before Bed - TV consumption",
-    "generatedFrom": [
-      "q:slp:q009_tv_before_bed:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q009_tv_before_bed:impact",
-      "score:slp:restoration",
-      "dec:slp:q009_tv_before_bed:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q009_tv_before_bed:struggle',
+    'description': 'What Happens Before Bed - TV consumption',
+    'generatedFrom': ['q:slp:q009_tv_before_bed:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q009_tv_before_bed:impact',
+        'score:slp:restoration',
+        'dec:slp:q009_tv_before_bed:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q010_regular_bedtime:struggle",
-    "description": "What Happens Before Bed - Bedtime consistency",
-    "generatedFrom": [
-      "q:slp:q010_regular_bedtime:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q010_regular_bedtime:impact",
-      "score:slp:restoration",
-      "dec:slp:q010_regular_bedtime:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q010_regular_bedtime:struggle',
+    'description': 'What Happens Before Bed - Bedtime consistency',
+    'generatedFrom': ['q:slp:q010_regular_bedtime:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q010_regular_bedtime:impact',
+        'score:slp:restoration',
+        'dec:slp:q010_regular_bedtime:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q011_bedroom_noise:struggle",
-    "description": "Your Sleep Environment - Noise levels",
-    "generatedFrom": [
-      "q:slp:q011_bedroom_noise:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q011_bedroom_noise:impact",
-      "score:slp:restoration",
-      "dec:slp:q011_bedroom_noise:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q011_bedroom_noise:struggle',
+    'description': 'Your Sleep Environment - Noise levels',
+    'generatedFrom': ['q:slp:q011_bedroom_noise:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q011_bedroom_noise:impact',
+        'score:slp:restoration',
+        'dec:slp:q011_bedroom_noise:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q012_disturbances:struggle",
-    "description": "Your Sleep Environment - Partner/Pet disturbance",
-    "generatedFrom": [
-      "q:slp:q012_disturbances:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q012_disturbances:impact",
-      "score:slp:restoration",
-      "dec:slp:q012_disturbances:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q012_disturbances:struggle',
+    'description': 'Your Sleep Environment - Partner/Pet disturbance',
+    'generatedFrom': ['q:slp:q012_disturbances:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q012_disturbances:impact',
+        'score:slp:restoration',
+        'dec:slp:q012_disturbances:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q013_snoring:struggle",
-    "description": "Your Sleep Environment - Snoring",
-    "generatedFrom": [
-      "q:slp:q013_snoring:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q013_snoring:impact",
-      "score:slp:restoration",
-      "dec:slp:q013_snoring:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q013_snoring:struggle',
+    'description': 'Your Sleep Environment - Snoring',
+    'generatedFrom': ['q:slp:q013_snoring:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      ['insight:slp:q013_snoring:impact', 'score:slp:restoration', 'dec:slp:q013_snoring:clinical'],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q014_dry_mouth:struggle",
-    "description": "Your Sleep Environment - Mouth breathing",
-    "generatedFrom": [
-      "q:slp:q014_dry_mouth:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q014_dry_mouth:impact",
-      "score:slp:restoration",
-      "dec:slp:q014_dry_mouth:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q014_dry_mouth:struggle',
+    'description': 'Your Sleep Environment - Mouth breathing',
+    'generatedFrom': ['q:slp:q014_dry_mouth:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q014_dry_mouth:impact',
+        'score:slp:restoration',
+        'dec:slp:q014_dry_mouth:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q015_room_temp:struggle",
-    "description": "Your Sleep Environment - Temperature regulation",
-    "generatedFrom": [
-      "q:slp:q015_room_temp:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q015_room_temp:impact",
-      "score:slp:restoration",
-      "dec:slp:q015_room_temp:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q015_room_temp:struggle',
+    'description': 'Your Sleep Environment - Temperature regulation',
+    'generatedFrom': ['q:slp:q015_room_temp:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q015_room_temp:impact',
+        'score:slp:restoration',
+        'dec:slp:q015_room_temp:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q016_last_meal:struggle",
-    "description": "Food & Drink - Late meals",
-    "generatedFrom": [
-      "q:slp:q016_last_meal:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q016_last_meal:impact",
-      "score:slp:restoration",
-      "dec:slp:q016_last_meal:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q016_last_meal:struggle',
+    'description': 'Food & Drink - Late meals',
+    'generatedFrom': ['q:slp:q016_last_meal:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q016_last_meal:impact',
+        'score:slp:restoration',
+        'dec:slp:q016_last_meal:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q017_coffee_timing:struggle",
-    "description": "Food & Drink - Caffeine timing",
-    "generatedFrom": [
-      "q:slp:q017_coffee_timing:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q017_coffee_timing:impact",
-      "score:slp:restoration",
-      "dec:slp:q017_coffee_timing:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q017_coffee_timing:struggle',
+    'description': 'Food & Drink - Caffeine timing',
+    'generatedFrom': ['q:slp:q017_coffee_timing:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q017_coffee_timing:impact',
+        'score:slp:restoration',
+        'dec:slp:q017_coffee_timing:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q018_alcohol_night:struggle",
-    "description": "Food & Drink - Alcohol before bed",
-    "generatedFrom": [
-      "q:slp:q018_alcohol_night:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q018_alcohol_night:impact",
-      "score:slp:restoration",
-      "dec:slp:q018_alcohol_night:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q018_alcohol_night:struggle',
+    'description': 'Food & Drink - Alcohol before bed',
+    'generatedFrom': ['q:slp:q018_alcohol_night:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q018_alcohol_night:impact',
+        'score:slp:restoration',
+        'dec:slp:q018_alcohol_night:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q019_hungry_sleep:struggle",
-    "description": "Food & Drink - Hunger at bedtime",
-    "generatedFrom": [
-      "q:slp:q019_hungry_sleep:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q019_hungry_sleep:impact",
-      "score:slp:restoration",
-      "dec:slp:q019_hungry_sleep:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q019_hungry_sleep:struggle',
+    'description': 'Food & Drink - Hunger at bedtime',
+    'generatedFrom': ['q:slp:q019_hungry_sleep:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q019_hungry_sleep:impact',
+        'score:slp:restoration',
+        'dec:slp:q019_hungry_sleep:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q020_daytime_water:struggle",
-    "description": "Food & Drink - Hydration impact",
-    "generatedFrom": [
-      "q:slp:q020_daytime_water:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q020_daytime_water:impact",
-      "score:slp:restoration",
-      "dec:slp:q020_daytime_water:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q020_daytime_water:struggle',
+    'description': 'Food & Drink - Hydration impact',
+    'generatedFrom': ['q:slp:q020_daytime_water:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q020_daytime_water:impact',
+        'score:slp:restoration',
+        'dec:slp:q020_daytime_water:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q021_wake_time:struggle",
-    "description": "Daily Routine - Wake time consistency",
-    "generatedFrom": [
-      "q:slp:q021_wake_time:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q021_wake_time:impact",
-      "score:slp:restoration",
-      "dec:slp:q021_wake_time:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q021_wake_time:struggle',
+    'description': 'Daily Routine - Wake time consistency',
+    'generatedFrom': ['q:slp:q021_wake_time:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q021_wake_time:impact',
+        'score:slp:restoration',
+        'dec:slp:q021_wake_time:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q022_bed_time:struggle",
-    "description": "Daily Routine - Bedtime alignment",
-    "generatedFrom": [
-      "q:slp:q022_bed_time:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q022_bed_time:impact",
-      "score:slp:restoration",
-      "dec:slp:q022_bed_time:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q022_bed_time:struggle',
+    'description': 'Daily Routine - Bedtime alignment',
+    'generatedFrom': ['q:slp:q022_bed_time:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q022_bed_time:impact',
+        'score:slp:restoration',
+        'dec:slp:q022_bed_time:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q023_sleep_consistency:struggle",
-    "description": "Daily Routine - Sleep consistency",
-    "generatedFrom": [
-      "q:slp:q023_sleep_consistency:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q023_sleep_consistency:impact",
-      "score:slp:restoration",
-      "dec:slp:q023_sleep_consistency:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q023_sleep_consistency:struggle',
+    'description': 'Daily Routine - Sleep consistency',
+    'generatedFrom': ['q:slp:q023_sleep_consistency:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q023_sleep_consistency:impact',
+        'score:slp:restoration',
+        'dec:slp:q023_sleep_consistency:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q024_naps:struggle",
-    "description": "Daily Routine - Daytime naps",
-    "generatedFrom": [
-      "q:slp:q024_naps:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q024_naps:impact",
-      "score:slp:restoration",
-      "dec:slp:q024_naps:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q024_naps:struggle',
+    'description': 'Daily Routine - Daytime naps',
+    'generatedFrom': ['q:slp:q024_naps:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      ['insight:slp:q024_naps:impact', 'score:slp:restoration', 'dec:slp:q024_naps:clinical'],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q025_nap_length:struggle",
-    "description": "Daily Routine - Nap duration",
-    "generatedFrom": [
-      "q:slp:q025_nap_length:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q025_nap_length:impact",
-      "score:slp:restoration",
-      "dec:slp:q025_nap_length:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q025_nap_length:struggle',
+    'description': 'Daily Routine - Nap duration',
+    'generatedFrom': ['q:slp:q025_nap_length:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q025_nap_length:impact',
+        'score:slp:restoration',
+        'dec:slp:q025_nap_length:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q026_morning_sunlight:struggle",
-    "description": "Morning - Circadian light exposure",
-    "generatedFrom": [
-      "q:slp:q026_morning_sunlight:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q026_morning_sunlight:impact",
-      "score:slp:restoration",
-      "dec:slp:q026_morning_sunlight:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q026_morning_sunlight:struggle',
+    'description': 'Morning - Circadian light exposure',
+    'generatedFrom': ['q:slp:q026_morning_sunlight:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q026_morning_sunlight:impact',
+        'score:slp:restoration',
+        'dec:slp:q026_morning_sunlight:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q027_first_coffee:struggle",
-    "description": "Morning - Caffeine timing",
-    "generatedFrom": [
-      "q:slp:q027_first_coffee:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q027_first_coffee:impact",
-      "score:slp:restoration",
-      "dec:slp:q027_first_coffee:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q027_first_coffee:struggle',
+    'description': 'Morning - Caffeine timing',
+    'generatedFrom': ['q:slp:q027_first_coffee:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q027_first_coffee:impact',
+        'score:slp:restoration',
+        'dec:slp:q027_first_coffee:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q028_morning_sleepy:struggle",
-    "description": "Morning - Morning fatigue",
-    "generatedFrom": [
-      "q:slp:q028_morning_sleepy:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q028_morning_sleepy:impact",
-      "score:slp:restoration",
-      "dec:slp:q028_morning_sleepy:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q028_morning_sleepy:struggle',
+    'description': 'Morning - Morning fatigue',
+    'generatedFrom': ['q:slp:q028_morning_sleepy:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q028_morning_sleepy:impact',
+        'score:slp:restoration',
+        'dec:slp:q028_morning_sleepy:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q029_caffeine_dependent:struggle",
-    "description": "Morning - Caffeine dependence",
-    "generatedFrom": [
-      "q:slp:q029_caffeine_dependent:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q029_caffeine_dependent:impact",
-      "score:slp:restoration",
-      "dec:slp:q029_caffeine_dependent:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q029_caffeine_dependent:struggle',
+    'description': 'Morning - Caffeine dependence',
+    'generatedFrom': ['q:slp:q029_caffeine_dependent:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q029_caffeine_dependent:impact',
+        'score:slp:restoration',
+        'dec:slp:q029_caffeine_dependent:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q030_afternoon_slump:struggle",
-    "description": "Daytime - Post-lunch sleepiness",
-    "generatedFrom": [
-      "q:slp:q030_afternoon_slump:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q030_afternoon_slump:impact",
-      "score:slp:restoration",
-      "dec:slp:q030_afternoon_slump:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q030_afternoon_slump:struggle',
+    'description': 'Daytime - Post-lunch sleepiness',
+    'generatedFrom': ['q:slp:q030_afternoon_slump:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q030_afternoon_slump:impact',
+        'score:slp:restoration',
+        'dec:slp:q030_afternoon_slump:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q031_meeting_struggle:struggle",
-    "description": "Daytime - Daytime alertness",
-    "generatedFrom": [
-      "q:slp:q031_meeting_struggle:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q031_meeting_struggle:impact",
-      "score:slp:restoration",
-      "dec:slp:q031_meeting_struggle:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q031_meeting_struggle:struggle',
+    'description': 'Daytime - Daytime alertness',
+    'generatedFrom': ['q:slp:q031_meeting_struggle:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q031_meeting_struggle:impact',
+        'score:slp:restoration',
+        'dec:slp:q031_meeting_struggle:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q032_sleepy_driving:struggle",
-    "description": "Daytime - Microsleep risk",
-    "generatedFrom": [
-      "q:slp:q032_sleepy_driving:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q032_sleepy_driving:impact",
-      "score:slp:restoration",
-      "dec:slp:q032_sleepy_driving:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q032_sleepy_driving:struggle',
+    'description': 'Daytime - Microsleep risk',
+    'generatedFrom': ['q:slp:q032_sleepy_driving:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q032_sleepy_driving:impact',
+        'score:slp:restoration',
+        'dec:slp:q032_sleepy_driving:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q033_yawning:struggle",
-    "description": "Daytime - Chronic yawning",
-    "generatedFrom": [
-      "q:slp:q033_yawning:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q033_yawning:impact",
-      "score:slp:restoration",
-      "dec:slp:q033_yawning:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q033_yawning:struggle',
+    'description': 'Daytime - Chronic yawning',
+    'generatedFrom': ['q:slp:q033_yawning:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      ['insight:slp:q033_yawning:impact', 'score:slp:restoration', 'dec:slp:q033_yawning:clinical'],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q034_night_shift:struggle",
-    "description": "Special Situations - Shift work",
-    "generatedFrom": [
-      "q:slp:q034_night_shift:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q034_night_shift:impact",
-      "score:slp:restoration",
-      "dec:slp:q034_night_shift:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q034_night_shift:struggle',
+    'description': 'Special Situations - Shift work',
+    'generatedFrom': ['q:slp:q034_night_shift:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q034_night_shift:impact',
+        'score:slp:restoration',
+        'dec:slp:q034_night_shift:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q035_jet_lag:struggle",
-    "description": "Special Situations - Jet lag",
-    "generatedFrom": [
-      "q:slp:q035_jet_lag:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q035_jet_lag:impact",
-      "score:slp:restoration",
-      "dec:slp:q035_jet_lag:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q035_jet_lag:struggle',
+    'description': 'Special Situations - Jet lag',
+    'generatedFrom': ['q:slp:q035_jet_lag:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      ['insight:slp:q035_jet_lag:impact', 'score:slp:restoration', 'dec:slp:q035_jet_lag:clinical'],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q036_weekend_sleep:struggle",
-    "description": "Special Situations - Weekend sleep variation",
-    "generatedFrom": [
-      "q:slp:q036_weekend_sleep:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q036_weekend_sleep:impact",
-      "score:slp:restoration",
-      "dec:slp:q036_weekend_sleep:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q036_weekend_sleep:struggle',
+    'description': 'Special Situations - Weekend sleep variation',
+    'generatedFrom': ['q:slp:q036_weekend_sleep:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q036_weekend_sleep:impact',
+        'score:slp:restoration',
+        'dec:slp:q036_weekend_sleep:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q037_sleep_change:struggle",
-    "description": "Special Situations - Recent sleep changes",
-    "generatedFrom": [
-      "q:slp:q037_sleep_change:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q037_sleep_change:impact",
-      "score:slp:restoration",
-      "dec:slp:q037_sleep_change:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q037_sleep_change:struggle',
+    'description': 'Special Situations - Recent sleep changes',
+    'generatedFrom': ['q:slp:q037_sleep_change:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q037_sleep_change:impact',
+        'score:slp:restoration',
+        'dec:slp:q037_sleep_change:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q038_menstrual_cycle:struggle",
-    "description": "Women Only - Menstrual cycle sleep",
-    "generatedFrom": [
-      "q:slp:q038_menstrual_cycle:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q038_menstrual_cycle:impact",
-      "score:slp:restoration",
-      "dec:slp:q038_menstrual_cycle:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q038_menstrual_cycle:struggle',
+    'description': 'Women Only - Menstrual cycle sleep',
+    'generatedFrom': ['q:slp:q038_menstrual_cycle:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q038_menstrual_cycle:impact',
+        'score:slp:restoration',
+        'dec:slp:q038_menstrual_cycle:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q039_pregnancy_sleep:struggle",
-    "description": "Women Only - Pregnancy sleep",
-    "generatedFrom": [
-      "q:slp:q039_pregnancy_sleep:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q039_pregnancy_sleep:impact",
-      "score:slp:restoration",
-      "dec:slp:q039_pregnancy_sleep:clinical"
-    ],
-    "confidenceImpact": 15
+    'id': 'fact:slp:q039_pregnancy_sleep:struggle',
+    'description': 'Women Only - Pregnancy sleep',
+    'generatedFrom': ['q:slp:q039_pregnancy_sleep:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q039_pregnancy_sleep:impact',
+        'score:slp:restoration',
+        'dec:slp:q039_pregnancy_sleep:clinical',
+      ],
+    'confidenceImpact': 15,
   },
   {
-    "id": "fact:slp:q040_menopause_sleep:struggle",
-    "description": "Women Only - Menopause symptoms",
-    "generatedFrom": [
-      "q:slp:q040_menopause_sleep:primary"
-    ],
-    "tags": [
-      "sleep",
-      "barrier"
-    ],
-    "usedBy": [
-      "insight:slp:q040_menopause_sleep:impact",
-      "score:slp:restoration",
-      "dec:slp:q040_menopause_sleep:clinical"
-    ],
-    "confidenceImpact": 15
-  }
+    'id': 'fact:slp:q040_menopause_sleep:struggle',
+    'description': 'Women Only - Menopause symptoms',
+    'generatedFrom': ['q:slp:q040_menopause_sleep:primary'],
+    'tags': ['sleep', 'barrier'],
+    'usedBy':
+      [
+        'insight:slp:q040_menopause_sleep:impact',
+        'score:slp:restoration',
+        'dec:slp:q040_menopause_sleep:clinical',
+      ],
+    'confidenceImpact': 15,
+  },
 ]

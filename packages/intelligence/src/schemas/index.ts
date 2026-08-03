@@ -14,10 +14,21 @@ export const QuestionSchema = z.object({
   id: z.string(),
   purpose: z.string().describe('Why it exists'),
   label: z.string().describe('The simple, everyday language question'),
-  type: z.enum(['single-choice', 'multiple-choice', 'slider', 'number', 'boolean', 'height', 'weight', 'text', 'time', 'scale']),
+  type: z.enum([
+    'single-choice',
+    'multiple-choice',
+    'slider',
+    'number',
+    'boolean',
+    'height',
+    'weight',
+    'text',
+    'time',
+    'scale',
+  ]),
   tags: z.array(z.string()).min(1),
   options: z.array(QuestionOptionSchema).optional(),
-  
+
   // Mandatory Engine Requirements
   dependsOn: z.array(z.string()).optional(),
   coachThinking: z.string().optional(),
@@ -42,9 +53,9 @@ export const FactSchema = z.object({
   tags: z.array(z.string()).min(1),
   usedBy: z.array(z.string()).describe('Decision IDs, Insight IDs, or Score IDs'),
   confidenceImpact: z.number(),
-  
+
   // The raw mapping logic
-  conditions: z.array(z.any()).optional(), 
+  conditions: z.array(z.any()).optional(),
 });
 
 export type MasterFact = z.infer<typeof FactSchema>;
@@ -72,10 +83,12 @@ export const ScoreSchema = z.object({
   name: z.string(),
   description: z.string(),
   baseValue: z.number(),
-  rules: z.array(z.object({
-    requiredFacts: z.array(z.string()),
-    valueModifier: z.number(),
-  })),
+  rules: z.array(
+    z.object({
+      requiredFacts: z.array(z.string()),
+      valueModifier: z.number(),
+    }),
+  ),
 });
 
 export type MasterScore = z.infer<typeof ScoreSchema>;
@@ -107,7 +120,7 @@ export const RecommendationSchema = z.object({
   priority: z.number(),
   evidenceLevel: z.enum(['clinical', 'coaching', 'general']),
   linkedDecisions: z.array(z.string()).min(1),
-  
+
   // Mandatory No Assumptions Rule (Founder Addendum)
   requiredFacts: z.array(z.string()).optional(),
   whyWeThinkThis: z.string(),
@@ -115,7 +128,7 @@ export const RecommendationSchema = z.object({
   whyFirstStepMatters: z.string(),
   successVision: z.string(),
   coachSupportTiming: z.string(),
-  
+
   // Content Node Linkages
   linkedGuides: z.array(z.string()).optional(),
   linkedHabits: z.array(z.string()).optional(),

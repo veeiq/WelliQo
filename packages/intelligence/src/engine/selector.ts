@@ -24,8 +24,8 @@ export class QuestionSelectionEngine {
     const domainScores: Record<string, { totalPossible: number; current: number }> = {};
 
     // Initialize all domains from tags found in questions and facts
-    this.library.questions.forEach(q => {
-      q.tags.forEach(tag => {
+    this.library.questions.forEach((q) => {
+      q.tags.forEach((tag) => {
         if (!domainScores[tag]) {
           domainScores[tag] = { totalPossible: 0, current: 0 };
         }
@@ -34,8 +34,8 @@ export class QuestionSelectionEngine {
 
     // A real implementation evaluates how many Decisions per domain have reached their required facts.
     // For this blueprint implementation, we estimate confidence based on facts unlocked per domain.
-    this.library.facts.forEach(fact => {
-      fact.tags.forEach(tag => {
+    this.library.facts.forEach((fact) => {
+      fact.tags.forEach((tag) => {
         if (!domainScores[tag]) domainScores[tag] = { totalPossible: 0, current: 0 };
         domainScores[tag].totalPossible += fact.confidenceImpact;
         if (state.knownFacts.has(fact.id)) {
@@ -44,11 +44,10 @@ export class QuestionSelectionEngine {
       });
     });
 
-    return Object.keys(domainScores).map(domain => {
+    return Object.keys(domainScores).map((domain) => {
       const stats = domainScores[domain];
-      const confidence = stats.totalPossible > 0 
-        ? Math.round((stats.current / stats.totalPossible) * 100) 
-        : 0;
+      const confidence =
+        stats.totalPossible > 0 ? Math.round((stats.current / stats.totalPossible) * 100) : 0;
       return { domain, confidence };
     });
   }
@@ -58,16 +57,16 @@ export class QuestionSelectionEngine {
    */
   public selectNextQuestion(state: SelectionState): MasterQuestion | null {
     const confidences = this.calculateConfidence(state);
-    
+
     // Check Stop Early Rule: If all domains > 85%, we stop asking.
-    const allConfident = confidences.every(c => c.confidence >= 85);
+    const allConfident = confidences.every((c) => c.confidence >= 85);
     if (allConfident && confidences.length > 0) {
-      return null; 
+      return null;
     }
 
     // Sort by Lowest Confidence First
     confidences.sort((a, b) => a.confidence - b.confidence);
-    
+
     // Evaluate Questions
     let bestQuestion: MasterQuestion | null = null;
     let highestValue = -1;
@@ -76,17 +75,17 @@ export class QuestionSelectionEngine {
       if (state.answeredQuestionIds.includes(question.id)) continue;
 
       // Smart Skipping: If we already know ALL facts this question creates, skip it entirely.
-      const createsNewFacts = question.createsFacts.some(f => !state.knownFacts.has(f));
+      const createsNewFacts = question.createsFacts.some((f) => !state.knownFacts.has(f));
       if (!createsNewFacts) continue;
 
       // Calculate the value of this question toward the lowest confidence domains
       let value = 0;
-      
+
       confidences.forEach((domainConf, index) => {
         if (question.tags.includes(domainConf.domain)) {
           // Weight heavily towards the domains with the lowest confidence (index 0 is lowest)
           const domainWeight = 100 - index * 10;
-          value += (question.expectedConfidenceGain * domainWeight);
+          value += question.expectedConfidenceGain * domainWeight;
         }
       });
 

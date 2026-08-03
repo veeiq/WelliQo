@@ -89,7 +89,9 @@ export function DynamicQuestionRenderer({
         />
       );
     default:
-      console.warn(`[WelliQo Assessment Engine] Gracefully recovered from unknown question type: ${question.type}`);
+      console.warn(
+        `[WelliQo Assessment Engine] Gracefully recovered from unknown question type: ${question.type}`,
+      );
       return (
         <div className="animate-in fade-in duration-500">
           <TextInput value={value} onChangeValue={onChange} disabled={disabled} />

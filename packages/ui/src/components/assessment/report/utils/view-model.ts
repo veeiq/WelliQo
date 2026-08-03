@@ -10,7 +10,8 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
   const strengths = [];
   const patterns = [];
 
-  for (const insight of result.insights) {
+  const insights = result.insights || [];
+  for (const insight of insights) {
     const meta = InsightMetadataSchema.safeParse(insight.metadata);
     const type = meta.success ? meta.data.type : undefined;
 
@@ -32,7 +33,8 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
   }
 
   // 2. Process Snapshot
-  const snapshot = result.categoryScores
+  const categoryScores = result.categoryScores || [];
+  const snapshot = categoryScores
     .filter((s) => s.categoryId !== 'overall')
     .map((s) => ({
       id: s.categoryId,
@@ -40,13 +42,14 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
       percentage: Math.min(Math.max(s.value, 0), 100),
     }));
 
-  const overallScore = result.categoryScores.find((s) => s.categoryId === 'overall')?.value || null;
+  const overallScore = categoryScores.find((s) => s.categoryId === 'overall')?.value || null;
 
   // 3. Process Recommendations
   const support = [];
   const generalActions = [];
 
-  for (const rec of result.recommendations) {
+  const recommendations = result.recommendations || [];
+  for (const rec of recommendations) {
     const meta = RecommendationMetadataSchema.safeParse(rec.metadata);
     const title = meta.success ? meta.data.title || 'Recommendation' : 'Recommendation';
     const description = meta.success

@@ -1,1652 +1,992 @@
 [
   {
-    "id": "insight:weight:wm_bespoke_1:impact",
-    "name": "Desk job inactivity Barrier",
-    "meaning": "Indicates that Desk job inactivity is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_1:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_1:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_2:impact",
-    "name": "Stress eating after work Barrier",
-    "meaning": "Indicates that Stress eating after work is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_2:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_2:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_3:impact",
-    "name": "Postpartum exhaustion Barrier",
-    "meaning": "Indicates that Postpartum exhaustion is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_3:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_3:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_4:impact",
-    "name": "PCOS belly fat Barrier",
-    "meaning": "Indicates that PCOS belly fat is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_4:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_4:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_5:impact",
-    "name": "Budget constraints Barrier",
-    "meaning": "Indicates that Budget constraints is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_5:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_5:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_6:impact",
-    "name": "Late night TV snacking Barrier",
-    "meaning": "Indicates that Late night TV snacking is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_6:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_6:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_7:impact",
-    "name": "Prediabetes risk Barrier",
-    "meaning": "Indicates that Prediabetes risk is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_7:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_7:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_bespoke_8:impact",
-    "name": "Joint pain during cardio Barrier",
-    "meaning": "Indicates that Joint pain during cardio is an active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_bespoke_8:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_bespoke_8:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_9:impact",
-    "name": "General Factor 0 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_9:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_9:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_10:impact",
-    "name": "General Factor 1 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_10:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_10:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_11:impact",
-    "name": "General Factor 2 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_11:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_11:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_12:impact",
-    "name": "General Factor 3 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_12:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_12:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_13:impact",
-    "name": "General Factor 4 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_13:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_13:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_14:impact",
-    "name": "General Factor 5 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_14:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_14:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_15:impact",
-    "name": "General Factor 6 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_15:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_15:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_16:impact",
-    "name": "General Factor 7 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_16:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_16:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_17:impact",
-    "name": "General Factor 8 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_17:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_17:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_18:impact",
-    "name": "General Factor 9 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_18:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_18:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_19:impact",
-    "name": "General Factor 10 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_19:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_19:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_20:impact",
-    "name": "General Factor 11 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_20:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_20:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_21:impact",
-    "name": "General Factor 12 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_21:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_21:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_22:impact",
-    "name": "General Factor 13 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_22:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_22:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_23:impact",
-    "name": "General Factor 14 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_23:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_23:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_24:impact",
-    "name": "General Factor 15 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_24:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_24:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_25:impact",
-    "name": "General Factor 16 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_25:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_25:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_26:impact",
-    "name": "General Factor 17 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_26:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_26:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_27:impact",
-    "name": "General Factor 18 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_27:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_27:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_28:impact",
-    "name": "General Factor 19 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_28:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_28:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_29:impact",
-    "name": "General Factor 20 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_29:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_29:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_30:impact",
-    "name": "General Factor 21 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_30:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_30:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_31:impact",
-    "name": "General Factor 22 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_31:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_31:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_32:impact",
-    "name": "General Factor 23 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_32:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_32:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_33:impact",
-    "name": "General Factor 24 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_33:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_33:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_34:impact",
-    "name": "General Factor 25 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_34:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_34:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_35:impact",
-    "name": "General Factor 26 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_35:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_35:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_36:impact",
-    "name": "General Factor 27 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_36:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_36:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_37:impact",
-    "name": "General Factor 28 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_37:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_37:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_38:impact",
-    "name": "General Factor 29 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_38:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_38:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_39:impact",
-    "name": "General Factor 30 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_39:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_39:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_40:impact",
-    "name": "General Factor 31 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_40:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_40:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_41:impact",
-    "name": "General Factor 32 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_41:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_41:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_42:impact",
-    "name": "General Factor 33 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_42:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_42:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_43:impact",
-    "name": "General Factor 34 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_43:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_43:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_44:impact",
-    "name": "General Factor 35 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_44:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_44:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_45:impact",
-    "name": "General Factor 36 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_45:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_45:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_46:impact",
-    "name": "General Factor 37 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_46:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_46:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_47:impact",
-    "name": "General Factor 38 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_47:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_47:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_48:impact",
-    "name": "General Factor 39 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_48:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_48:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_49:impact",
-    "name": "General Factor 40 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_49:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_49:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_50:impact",
-    "name": "General Factor 41 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_50:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_50:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_51:impact",
-    "name": "General Factor 42 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_51:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_51:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_52:impact",
-    "name": "General Factor 43 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_52:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_52:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_53:impact",
-    "name": "General Factor 44 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_53:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_53:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_54:impact",
-    "name": "General Factor 45 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_54:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_54:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_55:impact",
-    "name": "General Factor 46 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_55:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_55:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_56:impact",
-    "name": "General Factor 47 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_56:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_56:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_57:impact",
-    "name": "General Factor 48 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_57:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_57:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_58:impact",
-    "name": "General Factor 49 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_58:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_58:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_59:impact",
-    "name": "General Factor 50 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_59:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_59:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_60:impact",
-    "name": "General Factor 51 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_60:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_60:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_61:impact",
-    "name": "General Factor 52 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_61:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_61:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_62:impact",
-    "name": "General Factor 53 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_62:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_62:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_63:impact",
-    "name": "General Factor 54 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_63:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_63:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_64:impact",
-    "name": "General Factor 55 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_64:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_64:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_65:impact",
-    "name": "General Factor 56 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_65:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_65:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_66:impact",
-    "name": "General Factor 57 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_66:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_66:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_67:impact",
-    "name": "General Factor 58 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_67:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_67:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_68:impact",
-    "name": "General Factor 59 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_68:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_68:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_69:impact",
-    "name": "General Factor 60 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_69:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_69:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_70:impact",
-    "name": "General Factor 61 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_70:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_70:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_71:impact",
-    "name": "General Factor 62 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_71:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_71:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_72:impact",
-    "name": "General Factor 63 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_72:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_72:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_73:impact",
-    "name": "General Factor 64 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_73:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_73:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_74:impact",
-    "name": "General Factor 65 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_74:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_74:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_75:impact",
-    "name": "General Factor 66 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_75:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_75:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_76:impact",
-    "name": "General Factor 67 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_76:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_76:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_77:impact",
-    "name": "General Factor 68 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_77:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_77:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_78:impact",
-    "name": "General Factor 69 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_78:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_78:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_79:impact",
-    "name": "General Factor 70 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_79:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_79:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_80:impact",
-    "name": "General Factor 71 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_80:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_80:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_81:impact",
-    "name": "General Factor 72 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_81:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_81:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_82:impact",
-    "name": "General Factor 73 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_82:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_82:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_83:impact",
-    "name": "General Factor 74 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_83:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_83:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_84:impact",
-    "name": "General Factor 75 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_84:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_84:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_85:impact",
-    "name": "General Factor 76 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_85:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_85:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_86:impact",
-    "name": "General Factor 77 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_86:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_86:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_87:impact",
-    "name": "General Factor 78 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_87:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_87:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_88:impact",
-    "name": "General Factor 79 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_88:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_88:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_89:impact",
-    "name": "General Factor 80 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_89:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_89:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_90:impact",
-    "name": "General Factor 81 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_90:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_90:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_91:impact",
-    "name": "General Factor 82 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_91:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_91:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_92:impact",
-    "name": "General Factor 83 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_92:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_92:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_93:impact",
-    "name": "General Factor 84 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_93:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_93:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_94:impact",
-    "name": "General Factor 85 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_94:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_94:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_95:impact",
-    "name": "General Factor 86 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_95:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_95:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_96:impact",
-    "name": "General Factor 87 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_96:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_96:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_97:impact",
-    "name": "General Factor 88 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_97:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_97:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_98:impact",
-    "name": "General Factor 89 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_98:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_98:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_99:impact",
-    "name": "General Factor 90 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_99:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_99:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_100:impact",
-    "name": "General Factor 91 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_100:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_100:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_101:impact",
-    "name": "General Factor 92 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_101:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_101:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_102:impact",
-    "name": "General Factor 93 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_102:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_102:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_103:impact",
-    "name": "General Factor 94 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_103:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_103:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_104:impact",
-    "name": "General Factor 95 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_104:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_104:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_105:impact",
-    "name": "General Factor 96 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_105:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_105:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_106:impact",
-    "name": "General Factor 97 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_106:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_106:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_107:impact",
-    "name": "General Factor 98 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_107:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_107:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_108:impact",
-    "name": "General Factor 99 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_108:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_108:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_109:impact",
-    "name": "General Factor 100 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_109:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_109:clinical"
-    ]
-  },
-  {
-    "id": "insight:weight:wm_filler_110:impact",
-    "name": "General Factor 101 Barrier",
-    "meaning": "Active roadblock.",
-    "requiredFacts": [
-      "fact:weight:wm_filler_110:struggle"
-    ],
-    "confidence": 80,
-    "linkedScores": [
-      "score:weight:readiness"
-    ],
-    "linkedDecisions": [
-      "dec:weight:wm_filler_110:clinical"
-    ]
-  }
+    'id': 'insight:weight:wm_bespoke_1:impact',
+    'name': 'Desk job inactivity Barrier',
+    'meaning': 'Indicates that Desk job inactivity is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_1:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_1:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_2:impact',
+    'name': 'Stress eating after work Barrier',
+    'meaning': 'Indicates that Stress eating after work is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_2:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_2:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_3:impact',
+    'name': 'Postpartum exhaustion Barrier',
+    'meaning': 'Indicates that Postpartum exhaustion is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_3:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_3:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_4:impact',
+    'name': 'PCOS belly fat Barrier',
+    'meaning': 'Indicates that PCOS belly fat is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_4:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_4:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_5:impact',
+    'name': 'Budget constraints Barrier',
+    'meaning': 'Indicates that Budget constraints is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_5:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_5:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_6:impact',
+    'name': 'Late night TV snacking Barrier',
+    'meaning': 'Indicates that Late night TV snacking is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_6:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_6:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_7:impact',
+    'name': 'Prediabetes risk Barrier',
+    'meaning': 'Indicates that Prediabetes risk is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_7:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_7:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_bespoke_8:impact',
+    'name': 'Joint pain during cardio Barrier',
+    'meaning': 'Indicates that Joint pain during cardio is an active roadblock.',
+    'requiredFacts': ['fact:weight:wm_bespoke_8:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_bespoke_8:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_9:impact',
+    'name': 'General Factor 0 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_9:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_9:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_10:impact',
+    'name': 'General Factor 1 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_10:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_10:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_11:impact',
+    'name': 'General Factor 2 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_11:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_11:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_12:impact',
+    'name': 'General Factor 3 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_12:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_12:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_13:impact',
+    'name': 'General Factor 4 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_13:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_13:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_14:impact',
+    'name': 'General Factor 5 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_14:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_14:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_15:impact',
+    'name': 'General Factor 6 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_15:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_15:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_16:impact',
+    'name': 'General Factor 7 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_16:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_16:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_17:impact',
+    'name': 'General Factor 8 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_17:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_17:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_18:impact',
+    'name': 'General Factor 9 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_18:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_18:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_19:impact',
+    'name': 'General Factor 10 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_19:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_19:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_20:impact',
+    'name': 'General Factor 11 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_20:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_20:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_21:impact',
+    'name': 'General Factor 12 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_21:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_21:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_22:impact',
+    'name': 'General Factor 13 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_22:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_22:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_23:impact',
+    'name': 'General Factor 14 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_23:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_23:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_24:impact',
+    'name': 'General Factor 15 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_24:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_24:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_25:impact',
+    'name': 'General Factor 16 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_25:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_25:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_26:impact',
+    'name': 'General Factor 17 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_26:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_26:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_27:impact',
+    'name': 'General Factor 18 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_27:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_27:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_28:impact',
+    'name': 'General Factor 19 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_28:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_28:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_29:impact',
+    'name': 'General Factor 20 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_29:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_29:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_30:impact',
+    'name': 'General Factor 21 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_30:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_30:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_31:impact',
+    'name': 'General Factor 22 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_31:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_31:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_32:impact',
+    'name': 'General Factor 23 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_32:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_32:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_33:impact',
+    'name': 'General Factor 24 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_33:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_33:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_34:impact',
+    'name': 'General Factor 25 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_34:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_34:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_35:impact',
+    'name': 'General Factor 26 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_35:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_35:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_36:impact',
+    'name': 'General Factor 27 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_36:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_36:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_37:impact',
+    'name': 'General Factor 28 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_37:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_37:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_38:impact',
+    'name': 'General Factor 29 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_38:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_38:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_39:impact',
+    'name': 'General Factor 30 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_39:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_39:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_40:impact',
+    'name': 'General Factor 31 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_40:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_40:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_41:impact',
+    'name': 'General Factor 32 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_41:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_41:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_42:impact',
+    'name': 'General Factor 33 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_42:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_42:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_43:impact',
+    'name': 'General Factor 34 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_43:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_43:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_44:impact',
+    'name': 'General Factor 35 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_44:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_44:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_45:impact',
+    'name': 'General Factor 36 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_45:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_45:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_46:impact',
+    'name': 'General Factor 37 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_46:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_46:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_47:impact',
+    'name': 'General Factor 38 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_47:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_47:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_48:impact',
+    'name': 'General Factor 39 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_48:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_48:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_49:impact',
+    'name': 'General Factor 40 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_49:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_49:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_50:impact',
+    'name': 'General Factor 41 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_50:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_50:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_51:impact',
+    'name': 'General Factor 42 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_51:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_51:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_52:impact',
+    'name': 'General Factor 43 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_52:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_52:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_53:impact',
+    'name': 'General Factor 44 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_53:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_53:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_54:impact',
+    'name': 'General Factor 45 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_54:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_54:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_55:impact',
+    'name': 'General Factor 46 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_55:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_55:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_56:impact',
+    'name': 'General Factor 47 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_56:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_56:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_57:impact',
+    'name': 'General Factor 48 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_57:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_57:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_58:impact',
+    'name': 'General Factor 49 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_58:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_58:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_59:impact',
+    'name': 'General Factor 50 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_59:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_59:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_60:impact',
+    'name': 'General Factor 51 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_60:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_60:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_61:impact',
+    'name': 'General Factor 52 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_61:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_61:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_62:impact',
+    'name': 'General Factor 53 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_62:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_62:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_63:impact',
+    'name': 'General Factor 54 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_63:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_63:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_64:impact',
+    'name': 'General Factor 55 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_64:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_64:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_65:impact',
+    'name': 'General Factor 56 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_65:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_65:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_66:impact',
+    'name': 'General Factor 57 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_66:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_66:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_67:impact',
+    'name': 'General Factor 58 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_67:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_67:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_68:impact',
+    'name': 'General Factor 59 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_68:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_68:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_69:impact',
+    'name': 'General Factor 60 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_69:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_69:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_70:impact',
+    'name': 'General Factor 61 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_70:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_70:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_71:impact',
+    'name': 'General Factor 62 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_71:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_71:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_72:impact',
+    'name': 'General Factor 63 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_72:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_72:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_73:impact',
+    'name': 'General Factor 64 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_73:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_73:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_74:impact',
+    'name': 'General Factor 65 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_74:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_74:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_75:impact',
+    'name': 'General Factor 66 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_75:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_75:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_76:impact',
+    'name': 'General Factor 67 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_76:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_76:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_77:impact',
+    'name': 'General Factor 68 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_77:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_77:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_78:impact',
+    'name': 'General Factor 69 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_78:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_78:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_79:impact',
+    'name': 'General Factor 70 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_79:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_79:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_80:impact',
+    'name': 'General Factor 71 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_80:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_80:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_81:impact',
+    'name': 'General Factor 72 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_81:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_81:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_82:impact',
+    'name': 'General Factor 73 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_82:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_82:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_83:impact',
+    'name': 'General Factor 74 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_83:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_83:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_84:impact',
+    'name': 'General Factor 75 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_84:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_84:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_85:impact',
+    'name': 'General Factor 76 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_85:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_85:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_86:impact',
+    'name': 'General Factor 77 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_86:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_86:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_87:impact',
+    'name': 'General Factor 78 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_87:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_87:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_88:impact',
+    'name': 'General Factor 79 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_88:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_88:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_89:impact',
+    'name': 'General Factor 80 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_89:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_89:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_90:impact',
+    'name': 'General Factor 81 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_90:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_90:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_91:impact',
+    'name': 'General Factor 82 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_91:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_91:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_92:impact',
+    'name': 'General Factor 83 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_92:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_92:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_93:impact',
+    'name': 'General Factor 84 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_93:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_93:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_94:impact',
+    'name': 'General Factor 85 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_94:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_94:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_95:impact',
+    'name': 'General Factor 86 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_95:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_95:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_96:impact',
+    'name': 'General Factor 87 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_96:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_96:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_97:impact',
+    'name': 'General Factor 88 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_97:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_97:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_98:impact',
+    'name': 'General Factor 89 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_98:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_98:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_99:impact',
+    'name': 'General Factor 90 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_99:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_99:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_100:impact',
+    'name': 'General Factor 91 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_100:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_100:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_101:impact',
+    'name': 'General Factor 92 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_101:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_101:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_102:impact',
+    'name': 'General Factor 93 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_102:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_102:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_103:impact',
+    'name': 'General Factor 94 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_103:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_103:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_104:impact',
+    'name': 'General Factor 95 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_104:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_104:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_105:impact',
+    'name': 'General Factor 96 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_105:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_105:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_106:impact',
+    'name': 'General Factor 97 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_106:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_106:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_107:impact',
+    'name': 'General Factor 98 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_107:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_107:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_108:impact',
+    'name': 'General Factor 99 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_108:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_108:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_109:impact',
+    'name': 'General Factor 100 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_109:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_109:clinical'],
+  },
+  {
+    'id': 'insight:weight:wm_filler_110:impact',
+    'name': 'General Factor 101 Barrier',
+    'meaning': 'Active roadblock.',
+    'requiredFacts': ['fact:weight:wm_filler_110:struggle'],
+    'confidence': 80,
+    'linkedScores': ['score:weight:readiness'],
+    'linkedDecisions': ['dec:weight:wm_filler_110:clinical'],
+  },
 ]

@@ -1,329 +1,324 @@
-
 # Layer 3: Medical Safety
 
-- id: "fact:master:pregnant"
-  description: "Whether the user is currently pregnant."
-  generatedFrom: ["q:master:pregnant"]
-  tags: ["master", "medical_safety", "pregnancy"]
+- id: 'fact:master:pregnant'
+  description: 'Whether the user is currently pregnant.'
+  generatedFrom: ['q:master:pregnant']
+  tags: ['master', 'medical_safety', 'pregnancy']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:breastfeeding"
-  description: "Whether the user is currently breastfeeding."
-  generatedFrom: ["q:master:breastfeeding"]
-  tags: ["master", "medical_safety", "postpartum"]
+- id: 'fact:master:breastfeeding'
+  description: 'Whether the user is currently breastfeeding.'
+  generatedFrom: ['q:master:breastfeeding']
+  tags: ['master', 'medical_safety', 'postpartum']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:medical_diet"
-  description: "Whether the user is on a doctor-advised diet."
-  generatedFrom: ["q:master:medical_diet"]
-  tags: ["master", "medical_safety", "diet"]
+- id: 'fact:master:medical_diet'
+  description: 'Whether the user is on a doctor-advised diet.'
+  generatedFrom: ['q:master:medical_diet']
+  tags: ['master', 'medical_safety', 'diet']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:diabetes"
-  description: "Whether the user has diabetes."
-  generatedFrom: ["q:master:diabetes"]
-  tags: ["master", "medical_safety", "chronic"]
+- id: 'fact:master:diabetes'
+  description: 'Whether the user has diabetes.'
+  generatedFrom: ['q:master:diabetes']
+  tags: ['master', 'medical_safety', 'chronic']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:high_bp"
-  description: "Whether the user has high blood pressure."
-  generatedFrom: ["q:master:blood_pressure"]
-  tags: ["master", "medical_safety", "chronic"]
+- id: 'fact:master:high_bp'
+  description: 'Whether the user has high blood pressure.'
+  generatedFrom: ['q:master:blood_pressure']
+  tags: ['master', 'medical_safety', 'chronic']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:thyroid"
-  description: "Whether the user has thyroid problems."
-  generatedFrom: ["q:master:thyroid"]
-  tags: ["master", "medical_safety", "chronic"]
+- id: 'fact:master:thyroid'
+  description: 'Whether the user has thyroid problems.'
+  generatedFrom: ['q:master:thyroid']
+  tags: ['master', 'medical_safety', 'chronic']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:regular_medication"
-  description: "Whether the user is taking regular medication."
-  generatedFrom: ["q:master:medication"]
-  tags: ["master", "medical_safety", "medication"]
+- id: 'fact:master:regular_medication'
+  description: 'Whether the user is taking regular medication.'
+  generatedFrom: ['q:master:medication']
+  tags: ['master', 'medical_safety', 'medication']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:recent_surgery"
-  description: "Whether the user had major surgery recently."
-  generatedFrom: ["q:master:surgery"]
-  tags: ["master", "medical_safety", "surgery"]
+- id: 'fact:master:recent_surgery'
+  description: 'Whether the user had major surgery recently.'
+  generatedFrom: ['q:master:surgery']
+  tags: ['master', 'medical_safety', 'surgery']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:food_allergies"
-  description: "Whether the user has food allergies."
-  generatedFrom: ["q:master:allergies"]
-  tags: ["master", "medical_safety", "allergies"]
+- id: 'fact:master:food_allergies'
+  description: 'Whether the user has food allergies.'
+  generatedFrom: ['q:master:allergies']
+  tags: ['master', 'medical_safety', 'allergies']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:other_health_info"
-  description: "Other important health information."
-  generatedFrom: ["q:master:other_health"]
-  tags: ["master", "medical_safety", "other"]
+- id: 'fact:master:other_health_info'
+  description: 'Other important health information.'
+  generatedFrom: ['q:master:other_health']
+  tags: ['master', 'medical_safety', 'other']
   usedBy: []
   confidenceImpact: 10
-
 
 # Layer 4: Family & Home
 
-- id: "fact:master:primary_cook"
-  description: "Who primarily cooks at home."
-  generatedFrom: ["q:master:cooks"]
-  tags: ["master", "family_home", "cooking"]
+- id: 'fact:master:primary_cook'
+  description: 'Who primarily cooks at home.'
+  generatedFrom: ['q:master:cooks']
+  tags: ['master', 'family_home', 'cooking']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:primary_shopper"
-  description: "Who primarily buys groceries."
-  generatedFrom: ["q:master:groceries"]
-  tags: ["master", "family_home", "shopping"]
+- id: 'fact:master:primary_shopper'
+  description: 'Who primarily buys groceries.'
+  generatedFrom: ['q:master:groceries']
+  tags: ['master', 'family_home', 'shopping']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:family_support"
-  description: "Whether the family supports health goals."
-  generatedFrom: ["q:master:family_support"]
-  tags: ["master", "family_home", "support"]
+- id: 'fact:master:family_support'
+  description: 'Whether the family supports health goals.'
+  generatedFrom: ['q:master:family_support']
+  tags: ['master', 'family_home', 'support']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:eat_with_family"
-  description: "Whether the user eats with family."
-  generatedFrom: ["q:master:eat_with_family"]
-  tags: ["master", "family_home", "eating"]
+- id: 'fact:master:eat_with_family'
+  description: 'Whether the user eats with family.'
+  generatedFrom: ['q:master:eat_with_family']
+  tags: ['master', 'family_home', 'eating']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:frequent_travel"
-  description: "Whether the user travels frequently for work."
-  generatedFrom: ["q:master:travel"]
-  tags: ["master", "family_home", "lifestyle"]
+- id: 'fact:master:frequent_travel'
+  description: 'Whether the user travels frequently for work.'
+  generatedFrom: ['q:master:travel']
+  tags: ['master', 'family_home', 'lifestyle']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:living_situation"
-  description: "Whether the user lives alone or with family."
-  generatedFrom: ["q:master:living_situation"]
-  tags: ["master", "family_home", "living"]
+- id: 'fact:master:living_situation'
+  description: 'Whether the user lives alone or with family.'
+  generatedFrom: ['q:master:living_situation']
+  tags: ['master', 'family_home', 'living']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:food_availability"
-  description: "Availability of healthy food in living area."
-  generatedFrom: ["q:master:food_availability"]
-  tags: ["master", "family_home", "environment"]
+- id: 'fact:master:food_availability'
+  description: 'Availability of healthy food in living area.'
+  generatedFrom: ['q:master:food_availability']
+  tags: ['master', 'family_home', 'environment']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:food_decision_maker"
-  description: "Who decides what food is prepared."
-  generatedFrom: ["q:master:food_decisions"]
-  tags: ["master", "family_home", "decisions"]
+- id: 'fact:master:food_decision_maker'
+  description: 'Who decides what food is prepared.'
+  generatedFrom: ['q:master:food_decisions']
+  tags: ['master', 'family_home', 'decisions']
   usedBy: []
   confidenceImpact: 10
-
 
 # Layer 5: Financial Reality
 
-- id: "fact:master:daily_cooking_time"
-  description: "Whether user has time to cook daily."
-  generatedFrom: ["q:master:cook_time"]
-  tags: ["master", "financial_reality", "time"]
+- id: 'fact:master:daily_cooking_time'
+  description: 'Whether user has time to cook daily.'
+  generatedFrom: ['q:master:cook_time']
+  tags: ['master', 'financial_reality', 'time']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:kitchen_access"
-  description: "Whether user has kitchen access."
-  generatedFrom: ["q:master:kitchen_access"]
-  tags: ["master", "financial_reality", "access"]
+- id: 'fact:master:kitchen_access'
+  description: 'Whether user has kitchen access.'
+  generatedFrom: ['q:master:kitchen_access']
+  tags: ['master', 'financial_reality', 'access']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:refrigerator_access"
-  description: "Whether user has refrigerator access."
-  generatedFrom: ["q:master:fridge_access"]
-  tags: ["master", "financial_reality", "access"]
+- id: 'fact:master:refrigerator_access'
+  description: 'Whether user has refrigerator access.'
+  generatedFrom: ['q:master:fridge_access']
+  tags: ['master', 'financial_reality', 'access']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:daily_health_time"
-  description: "Realistic daily time for health."
-  generatedFrom: ["q:master:health_time"]
-  tags: ["master", "financial_reality", "time"]
+- id: 'fact:master:daily_health_time'
+  description: 'Realistic daily time for health.'
+  generatedFrom: ['q:master:health_time']
+  tags: ['master', 'financial_reality', 'time']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:prefer_low_cost"
-  description: "Preference for low-cost meals."
-  generatedFrom: ["q:master:low_cost_meals"]
-  tags: ["master", "financial_reality", "budget"]
+- id: 'fact:master:prefer_low_cost'
+  description: 'Preference for low-cost meals.'
+  generatedFrom: ['q:master:low_cost_meals']
+  tags: ['master', 'financial_reality', 'budget']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:buy_healthy_comfort"
-  description: "Comfort level buying healthy foods weekly."
-  generatedFrom: ["q:master:buy_healthy"]
-  tags: ["master", "financial_reality", "budget"]
+- id: 'fact:master:buy_healthy_comfort'
+  description: 'Comfort level buying healthy foods weekly.'
+  generatedFrom: ['q:master:buy_healthy']
+  tags: ['master', 'financial_reality', 'budget']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:prefer_home_solutions"
-  description: "Preference for home vs gym solutions."
-  generatedFrom: ["q:master:home_solutions"]
-  tags: ["master", "financial_reality", "budget"]
+- id: 'fact:master:prefer_home_solutions'
+  description: 'Preference for home vs gym solutions.'
+  generatedFrom: ['q:master:home_solutions']
+  tags: ['master', 'financial_reality', 'budget']
   usedBy: []
   confidenceImpact: 10
-
 
 # Layer 6: Personal Preferences
 
-- id: "fact:master:enjoyed_exercise"
-  description: "Type of exercise enjoyed."
-  generatedFrom: ["q:master:exercise_type"]
-  tags: ["master", "personal_preferences", "exercise"]
+- id: 'fact:master:enjoyed_exercise'
+  description: 'Type of exercise enjoyed.'
+  generatedFrom: ['q:master:exercise_type']
+  tags: ['master', 'personal_preferences', 'exercise']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:workout_location"
-  description: "Preferred workout location."
-  generatedFrom: ["q:master:workout_location"]
-  tags: ["master", "personal_preferences", "exercise"]
+- id: 'fact:master:workout_location'
+  description: 'Preferred workout location.'
+  generatedFrom: ['q:master:workout_location']
+  tags: ['master', 'personal_preferences', 'exercise']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:is_vegetarian"
-  description: "Whether user is vegetarian."
-  generatedFrom: ["q:master:vegetarian"]
-  tags: ["master", "personal_preferences", "diet"]
+- id: 'fact:master:is_vegetarian'
+  description: 'Whether user is vegetarian.'
+  generatedFrom: ['q:master:vegetarian']
+  tags: ['master', 'personal_preferences', 'diet']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:eats_eggs"
-  description: "Whether user eats eggs."
-  generatedFrom: ["q:master:eat_eggs"]
-  tags: ["master", "personal_preferences", "diet"]
+- id: 'fact:master:eats_eggs'
+  description: 'Whether user eats eggs.'
+  generatedFrom: ['q:master:eat_eggs']
+  tags: ['master', 'personal_preferences', 'diet']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:eats_meat"
-  description: "Whether user eats meat."
-  generatedFrom: ["q:master:eat_meat"]
-  tags: ["master", "personal_preferences", "diet"]
+- id: 'fact:master:eats_meat'
+  description: 'Whether user eats meat.'
+  generatedFrom: ['q:master:eat_meat']
+  tags: ['master', 'personal_preferences', 'diet']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:hardest_meal"
-  description: "Hardest meal to manage."
-  generatedFrom: ["q:master:hardest_meal"]
-  tags: ["master", "personal_preferences", "diet"]
+- id: 'fact:master:hardest_meal'
+  description: 'Hardest meal to manage.'
+  generatedFrom: ['q:master:hardest_meal']
+  tags: ['master', 'personal_preferences', 'diet']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:likes_cooking"
-  description: "Whether user likes cooking."
-  generatedFrom: ["q:master:like_cooking"]
-  tags: ["master", "personal_preferences", "diet"]
+- id: 'fact:master:likes_cooking'
+  description: 'Whether user likes cooking.'
+  generatedFrom: ['q:master:like_cooking']
+  tags: ['master', 'personal_preferences', 'diet']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:preferred_change_size"
-  description: "Preference for small vs big changes."
-  generatedFrom: ["q:master:change_size"]
-  tags: ["master", "personal_preferences", "psychology"]
+- id: 'fact:master:preferred_change_size'
+  description: 'Preference for small vs big changes.'
+  generatedFrom: ['q:master:change_size']
+  tags: ['master', 'personal_preferences', 'psychology']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:likes_schedule"
-  description: "Preference for following a schedule."
-  generatedFrom: ["q:master:like_schedule"]
-  tags: ["master", "personal_preferences", "psychology"]
+- id: 'fact:master:likes_schedule'
+  description: 'Preference for following a schedule.'
+  generatedFrom: ['q:master:like_schedule']
+  tags: ['master', 'personal_preferences', 'psychology']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:wants_reminders"
-  description: "Preference for reminders."
-  generatedFrom: ["q:master:want_reminders"]
-  tags: ["master", "personal_preferences", "psychology"]
+- id: 'fact:master:wants_reminders'
+  description: 'Preference for reminders.'
+  generatedFrom: ['q:master:want_reminders']
+  tags: ['master', 'personal_preferences', 'psychology']
   usedBy: []
   confidenceImpact: 10
-
 
 # Layer 7: Readiness & Motivation
 
-- id: "fact:master:health_motivation"
-  description: "Core reason for improving health now."
-  generatedFrom: ["q:master:improve_why"]
-  tags: ["master", "motivation", "core"]
+- id: 'fact:master:health_motivation'
+  description: 'Core reason for improving health now.'
+  generatedFrom: ['q:master:improve_why']
+  tags: ['master', 'motivation', 'core']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:primary_worry"
+- id: 'fact:master:primary_worry'
   description: "User's primary health worry."
-  generatedFrom: ["q:master:worries"]
-  tags: ["master", "motivation", "fears"]
+  generatedFrom: ['q:master:worries']
+  tags: ['master', 'motivation', 'fears']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:past_blockers"
-  description: "What stopped the user in the past."
-  generatedFrom: ["q:master:stopped_past"]
-  tags: ["master", "motivation", "history"]
+- id: 'fact:master:past_blockers'
+  description: 'What stopped the user in the past.'
+  generatedFrom: ['q:master:stopped_past']
+  tags: ['master', 'motivation', 'history']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:past_successes"
-  description: "What worked for the user in the past."
-  generatedFrom: ["q:master:worked_past"]
-  tags: ["master", "motivation", "history"]
+- id: 'fact:master:past_successes'
+  description: 'What worked for the user in the past.'
+  generatedFrom: ['q:master:worked_past']
+  tags: ['master', 'motivation', 'history']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:primary_motivator"
-  description: "Who motivates the user."
-  generatedFrom: ["q:master:motivator"]
-  tags: ["master", "motivation", "support"]
+- id: 'fact:master:primary_motivator'
+  description: 'Who motivates the user.'
+  generatedFrom: ['q:master:motivator']
+  tags: ['master', 'motivation', 'support']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:change_confidence"
-  description: "Confidence in making changes."
-  generatedFrom: ["q:master:confidence"]
-  tags: ["master", "motivation", "confidence"]
+- id: 'fact:master:change_confidence'
+  description: 'Confidence in making changes.'
+  generatedFrom: ['q:master:confidence']
+  tags: ['master', 'motivation', 'confidence']
   usedBy: []
   confidenceImpact: 10
 
-- id: "fact:master:readiness_score"
-  description: "Score of readiness to start."
-  generatedFrom: ["q:master:readiness"]
-  tags: ["master", "motivation", "readiness"]
+- id: 'fact:master:readiness_score'
+  description: 'Score of readiness to start.'
+  generatedFrom: ['q:master:readiness']
+  tags: ['master', 'motivation', 'readiness']
   usedBy: []
   confidenceImpact: 20
 
-- id: "fact:master:priority_improvement"
-  description: "Top priority for improvement."
-  generatedFrom: ["q:master:improve_first"]
-  tags: ["master", "motivation", "priority"]
+- id: 'fact:master:priority_improvement'
+  description: 'Top priority for improvement.'
+  generatedFrom: ['q:master:improve_first']
+  tags: ['master', 'motivation', 'priority']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:success_vision"
-  description: "Vision of success."
-  generatedFrom: ["q:master:success_vision"]
-  tags: ["master", "motivation", "vision"]
+- id: 'fact:master:success_vision'
+  description: 'Vision of success.'
+  generatedFrom: ['q:master:success_vision']
+  tags: ['master', 'motivation', 'vision']
   usedBy: []
   confidenceImpact: 15
 
-- id: "fact:master:additional_info"
-  description: "Other information."
-  generatedFrom: ["q:master:other_info"]
-  tags: ["master", "motivation", "other"]
+- id: 'fact:master:additional_info'
+  description: 'Other information.'
+  generatedFrom: ['q:master:other_info']
+  tags: ['master', 'motivation', 'other']
   usedBy: []
   confidenceImpact: 5

@@ -14,19 +14,21 @@ export function NumberInput({
   ...props
 }: Readonly<NumberInputProps>) {
   return (
-    <input
-      type="number"
-      value={value === undefined ? '' : value}
-      onChange={(e) => {
-        const val = e.target.value;
-        onChangeValue(val === '' ? undefined : Number(val));
-      }}
-      disabled={disabled}
-      className={cn(
-        'flex h-12 w-full rounded-md border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50',
-        className,
-      )}
-      {...props}
-    />
+    <div className="flex justify-center w-full animate-in fade-in zoom-in-95 duration-500 py-4 md:py-8">
+      <input
+        type="number"
+        value={value === undefined ? '' : value}
+        onChange={(e) => {
+          const val = e.target.value;
+          onChangeValue(val === '' ? undefined : Number(val));
+        }}
+        disabled={disabled}
+        className={cn(
+          'w-full max-w-[240px] text-center text-6xl md:text-7xl font-light bg-transparent text-emerald-950 dark:text-emerald-50 border-b-[3px] border-emerald-200 dark:border-emerald-800/50 focus:border-emerald-500 focus:outline-none transition-colors pb-4 placeholder:text-slate-300 dark:placeholder:text-slate-700 disabled:cursor-not-allowed disabled:opacity-50',
+          className,
+        )}
+        {...props}
+      />
+    </div>
   );
 }

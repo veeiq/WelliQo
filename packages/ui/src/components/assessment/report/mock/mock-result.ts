@@ -8,7 +8,8 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
     {
       id: 'insight_inconsistent_energy',
       name: 'The 3 PM Wall',
-      description: 'You frequently experience a sharp drop in energy and focus in the mid-afternoon, likely driven by blood sugar variability.',
+      description:
+        'You frequently experience a sharp drop in energy and focus in the mid-afternoon, likely driven by blood sugar variability.',
       metadata: { type: 'PATTERN' },
     },
     {
@@ -88,8 +89,7 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
       reasons: ['insight_blood_sugar'],
       metadata: {
         title: 'The 15-Minute Protein Scramble',
-        description:
-          '32 grams of protein to set a stable metabolic baseline for the entire day.',
+        description: '32 grams of protein to set a stable metabolic baseline for the entire day.',
       },
     },
   ],
