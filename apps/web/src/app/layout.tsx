@@ -35,21 +35,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
               <div className="space-y-4 max-w-sm text-left">
                 <div className="flex items-center gap-3">
-                  <div className="relative h-8 w-10 flex items-center justify-center">
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700" 
-                      style={{
-                        WebkitMaskImage: 'url(/icon.png)',
-                        WebkitMaskSize: 'contain',
-                        WebkitMaskRepeat: 'no-repeat',
-                        WebkitMaskPosition: 'center',
-                        maskImage: 'url(/icon.png)',
-                        maskSize: 'contain',
-                        maskRepeat: 'no-repeat',
-                        maskPosition: 'center',
-                      }}
+                  <div className="relative h-11 w-11 flex items-center justify-center">
+                    <img 
+                      src="/logo.jpg" 
+                      alt="WelliQo" 
+                      className="w-full h-full object-contain rounded-xl shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm mix-blend-overlay rounded-full" />
                   </div>
                   <span className="font-semibold text-xl tracking-tight text-white">
                     WelliQo
