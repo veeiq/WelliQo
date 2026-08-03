@@ -6,8 +6,23 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8 flex h-[72px] items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300">
-            <span className="text-white font-bold text-xl tracking-tighter">W</span>
+          <div className="relative h-10 w-12 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            {/* The CSS mask uses the uploaded icon's alpha channel to shape the gradient */}
+            <div 
+              className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-slate-800 dark:from-emerald-400 dark:to-slate-300 shadow-lg shadow-emerald-500/20" 
+              style={{
+                WebkitMaskImage: 'url(/icon.png)',
+                WebkitMaskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center',
+                maskImage: 'url(/icon.png)',
+                maskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center',
+              }}
+            />
+            {/* Glassmorphism overlay to give it a 3D glass look */}
+            <div className="absolute inset-0 bg-white/10 dark:bg-white/20 backdrop-blur-sm mix-blend-overlay rounded-full" />
           </div>
           <span className="font-semibold text-2xl tracking-tight text-slate-900 dark:text-white hidden sm:inline-block">
             WelliQo
