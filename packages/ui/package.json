@@ -11,7 +11,8 @@
     "./styles/tokens.css": "./src/styles/tokens.css"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "next": "*"
   },
   "dependencies": {
     "@welliqo/assessment-engine": "workspace:*",
@@ -25,5 +26,9 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "next": "16.2.12",
+    "@types/react": "^19.0.0"
   }
 }

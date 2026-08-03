@@ -23,24 +23,26 @@ export function ActionHubContainer({ actionHub }: ActionHubContainerProps) {
   const accelerator = recipes[1] || null;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-50 overflow-x-hidden selection:bg-indigo-200 dark:selection:bg-indigo-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-50 overflow-x-hidden selection:bg-indigo-200 dark:selection:bg-indigo-900 pb-24">
       
       {/* 1. The Personalized Playbook Hero (Aha! Moment) */}
       <PlaybookHero primaryContent={actionHub.primaryContent} />
 
-      {/* 2. The One Next Step (Gentle CTA) */}
-      <OneNextStep habit={habit} />
+      <div className="space-y-24">
+        {/* 2. The One Next Step (Gentle CTA) */}
+        <OneNextStep habit={habit} />
 
-      {/* 3. Contextual Solutions (Food vs Accelerator) */}
-      <ContextualSolutions 
-        foodFirst={foodFirst} 
-        accelerator={accelerator} 
-        foodFirstBody={foodFirst ? <MDXRenderer source={foodFirst.rawBody || ''} /> : null}
-        acceleratorBody={accelerator ? <MDXRenderer source={accelerator.rawBody || ''} /> : null}
-      />
+        {/* 3. Contextual Solutions (Food vs Accelerator) */}
+        <ContextualSolutions 
+          foodFirst={foodFirst} 
+          accelerator={accelerator} 
+          foodFirstBody={foodFirst ? <MDXRenderer source={foodFirst.rawBody || ''} /> : null}
+          acceleratorBody={accelerator ? <MDXRenderer source={accelerator.rawBody || ''} /> : null}
+        />
 
-      {/* 4. Knowledge Discovery (Science Bridge) */}
-      <ExploreFurther concepts={actionHub.explanations} />
+        {/* 4. Knowledge Discovery (Science Bridge) */}
+        <ExploreFurther concepts={actionHub.explanations} />
+      </div>
 
     </div>
   );

@@ -67,7 +67,7 @@ export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acc
           </span>
         </div>
         
-        <div className="mb-6">
+        <div key={activeTab} className="mb-6 animate-in fade-in duration-500 fill-mode-both">
           {activeTab === 'food' ? foodFirstBody : acceleratorBody}
         </div>
 

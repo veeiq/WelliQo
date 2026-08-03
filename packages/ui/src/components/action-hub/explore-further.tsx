@@ -1,6 +1,7 @@
 import React from 'react';
 import type { BaseContent } from '@welliqo/content';
 import { BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 interface ExploreFurtherProps {
   concepts: BaseContent[];
@@ -23,9 +24,10 @@ export function ExploreFurther({ concepts }: ExploreFurtherProps) {
 
         <div className="grid gap-6">
           {concepts.map((concept) => (
-            <a 
+            <Link 
               key={concept.id}
               href={`/learn/${concept.id}`}
+              prefetch={true}
               className="group bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex gap-6 items-start block"
             >
               <div className="w-12 h-12 shrink-0 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 group-hover:scale-110 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/50 transition-all">
@@ -42,7 +44,7 @@ export function ExploreFurther({ concepts }: ExploreFurtherProps) {
                   When your rhythm is aligned, you wake up energized and fall asleep easily. When it is broken, you feel exhausted all day but wired at night. Learn how light sets your internal clock.
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { ReportFirstStepData } from '../types';
 import { Target } from 'lucide-react';
+import Link from 'next/link';
 
 interface ReportFirstStepProps {
   firstStep: ReportFirstStepData | null;
@@ -46,9 +47,9 @@ export function ReportFirstStep({ firstStep }: ReportFirstStepProps) {
           )}
 
           {/* In Sprint 5, we link to the Playbook instead of generic commit */}
-          <a href={`/action-hub/guide-morning-energy`} className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/30 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
+          <Link href={`/action-hub/guide-morning-energy`} prefetch={true} className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-600/30 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
             Open Your Playbook
-          </a>
+          </Link>
         </div>
       </div>
     </section>
