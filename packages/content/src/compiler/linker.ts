@@ -48,7 +48,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
     const { content } = file;
 
     if (content.relationships) {
-      for (const [relationshipType, targetIds] of Object.entries(content.relationships)) {
+      for (const [relationshipType, targetIds] of Object.entries(content.relationships) as [string, string[]][]) {
         for (const targetId of targetIds) {
           if (!nodeIds.has(targetId)) {
             throw new Error(
