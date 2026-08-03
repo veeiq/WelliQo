@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { Question } from '@welliqo/assessment-engine';
+export type Question = any; // Fallback type since engine was removed
 import {
   SingleChoice,
   MultipleChoice,

@@ -81,7 +81,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
     const baselineKeys = ['age', 'gender', 'height', 'weight', 'activityLevel', 'profession', 'conditions'];
     const newData = { ...state.data };
     if (baselineKeys.includes(questionId)) {
-      newData[questionId as keyof AssessmentData] = value;
+      (newData as any)[questionId] = value;
     }
 
     return {
