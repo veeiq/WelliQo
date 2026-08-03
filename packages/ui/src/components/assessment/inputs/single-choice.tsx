@@ -9,77 +9,83 @@ export interface SingleChoiceProps {
 }
 
 export function SingleChoice({ options, value, onChange, disabled }: Readonly<SingleChoiceProps>) {
+  const extractEmoji = (text: string) => {
+    // A robust emoji regex to extract the first emoji found
+    const match = text.match(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/u);
+    if (match) {
+      return {
+        emoji: match[0],
+        text: text.replace(match[0], '').trim()
+      };
+    }
+    return { emoji: null, text };
+  };
+
   return (
     <div
-      className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700"
+      className="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 w-full"
       role="radiogroup"
     >
-      {options.map((option) => (
-        <button
-          key={option.id}
-          type="button"
-          disabled={disabled}
-          onClick={() => onChange(option.value)}
-          role="radio"
-          aria-checked={value === option.value}
-          className={cn(
-            'group relative flex w-full items-center justify-between gap-4 rounded-2xl border-2 p-5 text-left transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500/30 hover:shadow-md hover:-translate-y-0.5',
-            value === option.value
-              ? 'border-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/30 shadow-sm'
-              : 'border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 hover:border-emerald-200 dark:hover:border-emerald-800 hover:bg-white dark:hover:bg-slate-900',
-            disabled && 'pointer-events-none opacity-50',
-          )}
-        >
-          <div className="flex flex-col flex-1 gap-1">
-            <span
-              className={cn(
-                'text-[17px] font-medium tracking-tight transition-colors',
-                value === option.value
-                  ? 'text-emerald-900 dark:text-emerald-100'
-                  : 'text-slate-800 dark:text-slate-200',
-              )}
-            >
-              {option.label}
-            </span>
-            {option.description && (
-              <span
-                className={cn(
-                  'text-[15px] leading-relaxed transition-colors',
-                  value === option.value
-                    ? 'text-emerald-700/80 dark:text-emerald-300/80'
-                    : 'text-slate-500 dark:text-slate-400',
-                )}
-              >
-                {option.description}
-              </span>
-            )}
-          </div>
-
-          <div
+      {options.map((option) => {
+        const { emoji, text } = extractEmoji(option.label);
+        const isSelected = value === option.value;
+        
+        return (
+          <button
+            key={option.id}
+            type="button"
+            disabled={disabled}
+            onClick={() => onChange(option.value)}
+            role="radio"
+            aria-checked={isSelected}
             className={cn(
-              'flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 transition-all duration-300',
-              value === option.value
-                ? 'border-emerald-500 bg-emerald-500 text-white scale-110'
-                : 'border-slate-300 dark:border-slate-700 group-hover:border-emerald-300 dark:group-hover:border-emerald-700',
+              'group relative flex flex-col items-center justify-center gap-3 rounded-[2rem] p-6 text-center transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500/30 hover:shadow-xl hover:-translate-y-2 overflow-hidden aspect-square',
+              isSelected
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 shadow-emerald-500/20 border-transparent text-white'
+                : 'bg-white dark:bg-slate-900 shadow-sm border-2 border-slate-100 dark:border-slate-800 hover:border-transparent',
+              disabled && 'pointer-events-none opacity-50',
             )}
           >
-            {value === option.value && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-3.5 h-3.5 animate-in zoom-in duration-200"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            {!isSelected && (
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             )}
-          </div>
-        </button>
-      ))}
+            
+            {emoji && (
+              <span className={cn(
+                "relative z-10 text-5xl transition-transform duration-500 ease-out group-hover:scale-125 animate-bounce-in",
+                isSelected && "scale-110 drop-shadow-md"
+              )}>
+                {emoji}
+              </span>
+            )}
+
+            <div className="relative z-10 flex flex-col gap-1 mt-2">
+              <span
+                className={cn(
+                  'text-[17px] font-semibold tracking-tight transition-colors',
+                  isSelected
+                    ? 'text-white drop-shadow-sm'
+                    : 'text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-50',
+                )}
+              >
+                {text}
+              </span>
+              {option.description && (
+                <span
+                  className={cn(
+                    'text-[13px] leading-snug transition-colors font-medium',
+                    isSelected
+                      ? 'text-teal-50 drop-shadow-sm'
+                      : 'text-slate-500 dark:text-slate-400',
+                  )}
+                >
+                  {option.description}
+                </span>
+              )}
+            </div>
+          </button>
+        );
+      })}
     </div>
   );
 }

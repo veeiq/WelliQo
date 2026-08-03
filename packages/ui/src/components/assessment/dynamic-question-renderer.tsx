@@ -50,7 +50,14 @@ export function DynamicQuestionRenderer({
         />
       );
     case 'text':
-      return <TextInput value={value} onChangeValue={onChange} disabled={disabled} />;
+      return (
+        <TextInput
+          value={value}
+          onChangeValue={onChange}
+          disabled={disabled}
+          placeholder={question.placeholder}
+        />
+      );
     case 'textarea':
       return <TextareaInput value={value} onChangeValue={onChange} disabled={disabled} />;
     case 'number':

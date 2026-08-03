@@ -1,32 +1,41 @@
 :root {
-  --font-sans: Arial, Helvetica, sans-serif;
-  --color-surface-canvas: #f7f9f7;
-  --color-surface-raised: #ffffff;
-  --color-text-primary: #17362c;
-  --color-text-secondary: #526c60;
-  --color-border-subtle: #d9e4dc;
-  --color-brand-primary: #1f7656;
-  --color-focus-ring: #0d63ce;
+  --font-sans: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  --color-surface-canvas: #f8fafc; /* slate-50 */
+  --color-surface-raised: #ffffff; /* white */
+  --color-text-primary: #0f172a; /* slate-900 */
+  --color-text-secondary: #64748b; /* slate-500 */
+  --color-border-subtle: #e2e8f0; /* slate-200 */
+  --color-brand-primary: #10b981; /* emerald-500 */
+  --color-focus-ring: #34d399; /* emerald-400 */
 }
 
 .dark {
-  --color-surface-canvas: #10251e;
-  --color-surface-raised: #18342a;
-  --color-text-primary: #eef7f0;
-  --color-text-secondary: #b9d0bf;
-  --color-border-subtle: #345044;
-  --color-brand-primary: #60bd90;
-  --color-focus-ring: #86bcff;
+  --color-surface-canvas: #020617; /* slate-950 */
+  --color-surface-raised: #0f172a; /* slate-900 */
+  --color-text-primary: #f8fafc; /* slate-50 */
+  --color-text-secondary: #94a3b8; /* slate-400 */
+  --color-border-subtle: #1e293b; /* slate-800 */
+  --color-brand-primary: #10b981; /* emerald-500 */
+  --color-focus-ring: #059669; /* emerald-600 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --color-surface-canvas: #10251e;
-    --color-surface-raised: #18342a;
-    --color-text-primary: #eef7f0;
-    --color-text-secondary: #b9d0bf;
-    --color-border-subtle: #345044;
-    --color-brand-primary: #60bd90;
-    --color-focus-ring: #86bcff;
+    --color-surface-canvas: #020617;
+    --color-surface-raised: #0f172a;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-border-subtle: #1e293b;
+    --color-brand-primary: #10b981;
+    --color-focus-ring: #059669;
   }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  animation: gradient 15s ease infinite;
 }

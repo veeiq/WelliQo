@@ -12,19 +12,23 @@ export function TextInput({
   className,
   disabled,
   type = 'text',
+  placeholder,
   ...props
 }: Readonly<TextInputProps>) {
   return (
-    <input
-      type={type}
-      value={value || ''}
-      onChange={(e) => onChangeValue(e.target.value)}
-      disabled={disabled}
-      className={cn(
-        'flex h-12 w-full rounded-md border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50',
-        className,
-      )}
-      {...props}
-    />
+    <div className={cn("flex flex-col items-center justify-center w-full max-w-lg mx-auto animate-in fade-in zoom-in-95 duration-500 py-8", className)}>
+      <div className="relative group w-full">
+        <input
+          type={type}
+          value={value || ''}
+          onChange={(e) => onChangeValue(e.target.value)}
+          disabled={disabled}
+          placeholder={placeholder || 'Type your answer...'}
+          className="w-full h-24 px-8 text-center text-3xl md:text-4xl font-medium bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-50 border-4 border-emerald-100 dark:border-slate-800 focus:border-emerald-400 dark:focus:border-emerald-500 focus:outline-none transition-all rounded-[2rem] shadow-sm hover:shadow-md focus:shadow-xl focus:-translate-y-1 placeholder:text-slate-300 dark:placeholder:text-slate-700 disabled:opacity-50"
+          autoFocus
+          {...props}
+        />
+      </div>
+    </div>
   );
 }
