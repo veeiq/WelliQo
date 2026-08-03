@@ -74,7 +74,7 @@ The report is structured to guide the user through a specific emotional arc:
 - **User Emotion:** "Aha" moment, self-awareness, feeling understood.
 - **Data Source:** `AssessmentResult.insights` (neutral or growth-oriented).
 - **UI Concept:** A masonry layout of conversational text blocks. We map internal engine reasons to friendly explanations.
-- **Language Example:** Instead of "LOW_HYDRATION", we say _"We noticed you're drinking less water than your body might need for optimal energy."_
+- **Language Example:** Instead of "LOW*HYDRATION", we say *"We noticed you're drinking less water than your body might need for optimal energy."\_
 - **Interaction:** Accordion expands to provide deeper (but natural) context about why this pattern matters.
 
 ### Section 5: Your Wellness Snapshot

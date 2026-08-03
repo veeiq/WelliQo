@@ -4,7 +4,8 @@ import { Utensils, Clock, Flame, Info } from 'lucide-react';
 export default function RecipesPage() {
   const featuredRecipe = {
     title: 'Formula 1 Healthy Meal Shake',
-    description: 'A delicious, easy-to-make shake that provides an ideal balance of protein, fiber, and essential vitamins.',
+    description:
+      'A delicious, easy-to-make shake that provides an ideal balance of protein, fiber, and essential vitamins.',
     prepTime: '5 mins',
     calories: '170 kcal',
     category: 'Breakfast',
@@ -31,7 +32,9 @@ export default function RecipesPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <div className="flex items-center gap-3 text-orange-600 dark:text-orange-400 mb-4">
             <Utensils className="w-6 h-6" />
-            <span className="font-semibold tracking-widest uppercase text-sm">Nutrition Kitchen</span>
+            <span className="font-semibold tracking-widest uppercase text-sm">
+              Nutrition Kitchen
+            </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-slate-50 mb-6 text-balance">
             Nourish your body.
@@ -47,7 +50,9 @@ export default function RecipesPage() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
             <section>
-              <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">Featured Recipe</h2>
+              <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">
+                Featured Recipe
+              </h2>
               <div className="group relative flex flex-col sm:flex-row bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-md transition-all duration-300">
                 <div className="sm:w-2/5 bg-slate-200 dark:bg-slate-800 h-64 sm:h-auto flex items-center justify-center">
                   <Utensils className="w-12 h-12 text-slate-400 dark:text-slate-600" />
@@ -63,23 +68,39 @@ export default function RecipesPage() {
                     {featuredRecipe.description}
                   </p>
                   <div className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-                    <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{featuredRecipe.prepTime}</span>
-                    <span className="flex items-center gap-1.5"><Flame className="w-4 h-4" />{featuredRecipe.calories}</span>
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-4 h-4" />
+                      {featuredRecipe.prepTime}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Flame className="w-4 h-4" />
+                      {featuredRecipe.calories}
+                    </span>
                   </div>
                 </div>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">Recently Added</h2>
+              <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">
+                Recently Added
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {recentRecipes.map((recipe, idx) => (
-                  <div key={idx} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                  <div
+                    key={idx}
+                    className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800"
+                  >
                     <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2 block">
                       {recipe.category}
                     </span>
-                    <h4 className="text-lg font-medium text-slate-900 dark:text-slate-100 mb-4">{recipe.title}</h4>
-                    <span className="flex items-center text-sm text-slate-500 gap-1.5"><Clock className="w-4 h-4" />{recipe.prepTime}</span>
+                    <h4 className="text-lg font-medium text-slate-900 dark:text-slate-100 mb-4">
+                      {recipe.title}
+                    </h4>
+                    <span className="flex items-center text-sm text-slate-500 gap-1.5">
+                      <Clock className="w-4 h-4" />
+                      {recipe.prepTime}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -89,15 +110,19 @@ export default function RecipesPage() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-6">Browse by Category</h3>
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-6">
+                Browse by Category
+              </h3>
               <ul className="space-y-4">
-                {['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Recovery Shakes', 'Vegan'].map((cat) => (
-                  <li key={cat}>
-                    <div className="flex items-center justify-between text-slate-600 dark:text-slate-400 cursor-default">
-                      <span>{cat}</span>
-                    </div>
-                  </li>
-                ))}
+                {['Breakfast', 'Lunch', 'Dinner', 'Snacks', 'Recovery Shakes', 'Vegan'].map(
+                  (cat) => (
+                    <li key={cat}>
+                      <div className="flex items-center justify-between text-slate-600 dark:text-slate-400 cursor-default">
+                        <span>{cat}</span>
+                      </div>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           </div>

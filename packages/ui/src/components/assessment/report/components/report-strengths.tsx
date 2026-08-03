@@ -18,7 +18,8 @@ export function ReportStrengths({ strengths }: ReportStrengthsProps) {
           Your Foundation of Strengths
         </h2>
         <p className="text-slate-600 dark:text-slate-400">
-          Let&apos;s take a moment to celebrate the wonderful habits you&apos;ve already established.
+          Let&apos;s take a moment to celebrate the wonderful habits you&apos;ve already
+          established.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

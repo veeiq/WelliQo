@@ -15,7 +15,8 @@ export default function HomePage() {
             A calmer approach to your wellness.
           </h1>
           <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-slate-600 dark:text-slate-400 sm:text-2xl">
-            No fads. No crash diets. Just personalized insights, science-backed nutrition, and a companion for your lifelong journey.
+            No fads. No crash diets. Just personalized insights, science-backed nutrition, and a
+            companion for your lifelong journey.
           </p>
         </div>
       </section>
@@ -31,7 +32,8 @@ export default function HomePage() {
               It begins with understanding your baseline.
             </h2>
             <p className="mb-10 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-              Our holistic assessment analyzes your sleep, nutrition, and daily habits to build a comprehensive wellness profile tailored just for you.
+              Our holistic assessment analyzes your sleep, nutrition, and daily habits to build a
+              comprehensive wellness profile tailored just for you.
             </p>
             <div>
               <Link
@@ -74,12 +76,16 @@ export default function HomePage() {
             <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
               <BookOpen className="h-6 w-6" />
             </div>
-            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">Knowledge</h3>
+            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">
+              Knowledge
+            </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Read expert guides, learn about the science of nutrition, and discover actionable daily protocols.
+              Read expert guides, learn about the science of nutrition, and discover actionable
+              daily protocols.
             </p>
             <span className="flex items-center font-medium text-blue-600 dark:text-blue-400">
-              Read articles <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Read articles{' '}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
 
@@ -92,10 +98,12 @@ export default function HomePage() {
             </div>
             <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">Recipes</h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Find macro-balanced, delicious meals designed to fuel your body and support your goals.
+              Find macro-balanced, delicious meals designed to fuel your body and support your
+              goals.
             </p>
             <span className="flex items-center font-medium text-orange-600 dark:text-orange-400">
-              View recipes <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              View recipes{' '}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
 
@@ -106,12 +114,16 @@ export default function HomePage() {
             <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400">
               <ShoppingBag className="h-6 w-6" />
             </div>
-            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">Products</h3>
+            <h3 className="mb-4 text-2xl font-medium text-slate-900 dark:text-slate-50">
+              Products
+            </h3>
             <p className="mb-8 flex-1 text-slate-600 dark:text-slate-400 leading-relaxed">
-              Explore science-backed nutritional supplements targeted for energy, recovery, and core health.
+              Explore science-backed nutritional supplements targeted for energy, recovery, and core
+              health.
             </p>
             <span className="flex items-center font-medium text-purple-600 dark:text-purple-400">
-              Shop products <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Shop products{' '}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
         </div>
@@ -125,7 +137,8 @@ export default function HomePage() {
               Turn your passion into purpose.
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              Join a global community of wellness coaches. Build a sustainable business by helping others achieve their goals.
+              Join a global community of wellness coaches. Build a sustainable business by helping
+              others achieve their goals.
             </p>
           </div>
           <div className="md:w-1/3 md:text-right">

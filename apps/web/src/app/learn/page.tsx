@@ -19,14 +19,15 @@ export default function LearnIndexPage() {
     },
     {
       title: 'The Circadian Rhythm',
-      description: 'Understanding your body\'s natural internal clock and sleep-wake cycle.',
+      description: "Understanding your body's natural internal clock and sleep-wake cycle.",
       readTime: '8 min read',
       href: '/learn/circadian-rhythm',
       category: 'Science & Concepts',
     },
     {
       title: 'Morning Sunlight Habit',
-      description: 'How 10 minutes of morning sunlight can transform your daily energy and sleep quality.',
+      description:
+        'How 10 minutes of morning sunlight can transform your daily energy and sleep quality.',
       readTime: '4 min read',
       href: '/learn/morning-sunlight',
       category: 'Daily Habits',
@@ -40,7 +41,9 @@ export default function LearnIndexPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <div className="flex items-center gap-3 text-emerald-600 dark:text-emerald-400 mb-4">
             <BookOpen className="w-6 h-6" />
-            <span className="font-semibold tracking-widest uppercase text-sm">Knowledge Library</span>
+            <span className="font-semibold tracking-widest uppercase text-sm">
+              Knowledge Library
+            </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-slate-50 mb-6 text-balance">
             Explore wellness wisdom.
@@ -55,12 +58,13 @@ export default function LearnIndexPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-12">
-            
             {/* Featured Section */}
             <section>
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-amber-500" />
-                <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">Featured Guides</h2>
+                <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+                  Featured Guides
+                </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {featuredGuides.slice(0, 2).map((guide) => (
@@ -91,7 +95,9 @@ export default function LearnIndexPage() {
             <section>
               <div className="flex items-center gap-2 mb-6">
                 <TrendingUp className="w-5 h-5 text-blue-500" />
-                <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">Popular Right Now</h2>
+                <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+                  Popular Right Now
+                </h2>
               </div>
               <div className="space-y-4">
                 {featuredGuides.map((guide) => (
@@ -104,7 +110,9 @@ export default function LearnIndexPage() {
                       <h3 className="text-lg font-medium text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">
                         {guide.title}
                       </h3>
-                      <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{guide.category}</p>
+                      <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
+                        {guide.category}
+                      </p>
                     </div>
                     <div className="hidden sm:flex items-center text-sm text-slate-400">
                       <Clock className="w-4 h-4 mr-1.5" />
@@ -119,7 +127,9 @@ export default function LearnIndexPage() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-6">Categories</h3>
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-6">
+                Categories
+              </h3>
               <ul className="space-y-4">
                 {categories.map((cat) => (
                   <li key={cat.title}>

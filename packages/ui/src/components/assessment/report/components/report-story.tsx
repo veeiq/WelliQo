@@ -8,7 +8,9 @@ export function ReportStory() {
           Your Journey
         </h2>
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg text-balance">
-          This isn&apos;t a test, and there&apos;s no such thing as a perfect score. Everything below is simply a reflection of where you are today. We&apos;re here to celebrate your strengths and help you discover small, manageable steps forward.
+          This isn&apos;t a test, and there&apos;s no such thing as a perfect score. Everything
+          below is simply a reflection of where you are today. We&apos;re here to celebrate your
+          strengths and help you discover small, manageable steps forward.
         </p>
       </div>
     </section>

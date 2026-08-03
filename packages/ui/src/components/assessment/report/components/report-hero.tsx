@@ -13,7 +13,8 @@ export function ReportHero({ data }: ReportHeroProps) {
           Let&apos;s look at your wellness journey together.
         </h1>
         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 text-balance">
-          You&apos;ve taken a wonderful first step. Let&apos;s explore where you are right now and where we can go next.
+          You&apos;ve taken a wonderful first step. Let&apos;s explore where you are right now and
+          where we can go next.
         </p>
       </div>
     </div>

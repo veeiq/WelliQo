@@ -15,8 +15,12 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
           <div>WelliQo Wellness Companion Platform</div>
           <div className="flex gap-6">
-            <Link href="/about" className="hover:text-emerald-600 transition-colors">Privacy Policy</Link>
-            <Link href="/about" className="hover:text-emerald-600 transition-colors">Terms of Service</Link>
+            <Link href="/about" className="hover:text-emerald-600 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/about" className="hover:text-emerald-600 transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </footer>
