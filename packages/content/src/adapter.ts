@@ -36,7 +36,7 @@ export class ContentAdapter {
     if (primary.relationships) {
       const getNodes = (ids?: string[]) => {
         if (!ids) return [];
-        return ids.map(id => this.getContentById(id)).filter((n): n is BaseContent => !!n);
+        return ids.map((id) => this.getContentById(id)).filter((n): n is BaseContent => !!n);
       };
 
       hub.supportingNodes = getNodes(primary.relationships['supports']);

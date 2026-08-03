@@ -13,18 +13,20 @@ export function ExploreFurther({ concepts }: ExploreFurtherProps) {
   return (
     <section className="w-full bg-slate-100 dark:bg-slate-950/50 py-24 mt-12 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-3xl mx-auto px-6">
-        
         {/* Science Bridge */}
         <div className="mb-12 text-center max-w-xl mx-auto">
-          <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">Curious Why?</h2>
+          <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">
+            Curious Why?
+          </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed italic">
-            "You don't need to understand the science for this to work. But if you're curious, here's why we recommended it."
+            "You don't need to understand the science for this to work. But if you're curious,
+            here's why we recommended it."
           </p>
         </div>
 
         <div className="grid gap-6">
           {concepts.map((concept) => (
-            <Link 
+            <Link
               key={concept.id}
               href={`/learn/${concept.id}`}
               prefetch={true}
@@ -41,7 +43,9 @@ export function ExploreFurther({ concepts }: ExploreFurtherProps) {
                   {concept.title}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 line-clamp-2">
-                  When your rhythm is aligned, you wake up energized and fall asleep easily. When it is broken, you feel exhausted all day but wired at night. Learn how light sets your internal clock.
+                  When your rhythm is aligned, you wake up energized and fall asleep easily. When it
+                  is broken, you feel exhausted all day but wired at night. Learn how light sets
+                  your internal clock.
                 </p>
               </div>
             </Link>

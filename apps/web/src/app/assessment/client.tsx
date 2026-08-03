@@ -9,15 +9,8 @@ import { DynamicQuestionRenderer } from '@welliqo/ui/components/assessment';
 
 export function AssessmentClient() {
   const router = useRouter();
-  const { 
-    runtimeState, 
-    initialize, 
-    journey, 
-    progress, 
-    answers, 
-    recordAnswer, 
-    nextStep 
-  } = useAssessmentStore();
+  const { runtimeState, initialize, journey, progress, answers, recordAnswer, nextStep } =
+    useAssessmentStore();
 
   useEffect(() => {
     if (runtimeState === 'IDLE') {
@@ -32,31 +25,47 @@ export function AssessmentClient() {
   }, [runtimeState, router]);
 
   if (runtimeState === 'IDLE' || runtimeState === 'STARTING') {
-    return <div className="min-h-screen flex items-center justify-center">Loading Assessment...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">Loading Assessment...</div>
+    );
   }
 
   if (runtimeState === 'ERROR') {
-    return <div className="min-h-screen flex items-center justify-center text-red-500">An error occurred during the assessment.</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-red-500">
+        An error occurred during the assessment.
+      </div>
+    );
   }
 
   if (runtimeState === 'EXECUTING') {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950">
-        <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">Generating your report...</h2>
+        <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+          Generating your report...
+        </h2>
         <div className="w-16 h-16 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   // Find current group
-  const currentSection = journey?.sections.find(s => s.id === progress?.currentSectionId);
-  const currentGroup = currentSection?.questionGroups.find(g => g.id === progress?.currentGroupId);
+  const currentSection = journey?.sections.find((s) => s.id === progress?.currentSectionId);
+  const currentGroup = currentSection?.questionGroups.find(
+    (g) => g.id === progress?.currentGroupId,
+  );
 
   if (!currentGroup) {
-    return <div className="min-h-screen flex items-center justify-center">No more questions. Processing...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        No more questions. Processing...
+      </div>
+    );
   }
 
-  const allAnswered = currentGroup.questions.every(q => !q.required || answers[q.id] !== undefined);
+  const allAnswered = currentGroup.questions.every(
+    (q) => !q.required || answers[q.id] !== undefined,
+  );
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-50 py-12 px-6">
@@ -76,13 +85,20 @@ export function AssessmentClient() {
         </div>
 
         <div className="space-y-12">
-          {currentGroup.questions.map(question => (
-            <div key={question.id} className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-500">
+          {currentGroup.questions.map((question) => (
+            <div
+              key={question.id}
+              className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-500"
+            >
               <h2 className="text-xl font-medium text-slate-800 dark:text-slate-200 mb-6">
                 {question.label}
               </h2>
               <DynamicQuestionRenderer
-                question={question as unknown as React.ComponentProps<typeof DynamicQuestionRenderer>['question']}
+                question={
+                  question as unknown as React.ComponentProps<
+                    typeof DynamicQuestionRenderer
+                  >['question']
+                }
                 value={answers[question.id]}
                 onChange={(val: unknown) => recordAnswer(question.id, val)}
               />
@@ -96,7 +112,9 @@ export function AssessmentClient() {
             disabled={!allAnswered}
             className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500/50"
           >
-            {progress?.currentSectionId && progress?.currentGroupId && !progress?.isComplete ? 'Next Step' : 'View Report'}
+            {progress?.currentSectionId && progress?.currentGroupId && !progress?.isComplete
+              ? 'Next Step'
+              : 'View Report'}
           </button>
         </div>
       </div>

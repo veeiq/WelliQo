@@ -4,17 +4,21 @@ import { z } from 'zod';
 // ZOD SCHEMAS FOR METADATA VALIDATION
 // ==========================================
 
-export const InsightMetadataSchema = z.object({
-  type: z.string().optional(),
-}).catchall(z.unknown());
+export const InsightMetadataSchema = z
+  .object({
+    type: z.string().optional(),
+  })
+  .catchall(z.unknown());
 
-export const RecommendationMetadataSchema = z.object({
-  title: z.string().optional(),
-  description: z.string().optional(),
-  effort: z.string().optional(),
-  impact: z.string().optional(),
-  whyItMatters: z.string().optional(),
-}).catchall(z.unknown());
+export const RecommendationMetadataSchema = z
+  .object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    effort: z.string().optional(),
+    impact: z.string().optional(),
+    whyItMatters: z.string().optional(),
+  })
+  .catchall(z.unknown());
 
 // ==========================================
 // PRESENTATION TYPES

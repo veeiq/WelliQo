@@ -24,9 +24,9 @@ export const mockJourney: config.ValidatedJourney = {
                 { id: 'opt1', label: 'Rarely', value: 'rarely' },
                 { id: 'opt2', label: '1-2 days a week', value: '1_2_days' },
                 { id: 'opt3', label: '3-4 days a week', value: '3_4_days' },
-                { id: 'opt4', label: '5+ days a week', value: '5_plus_days' }
+                { id: 'opt4', label: '5+ days a week', value: '5_plus_days' },
               ],
-              required: true
+              required: true,
             },
             {
               id: 'sleep_quality',
@@ -34,44 +34,44 @@ export const mockJourney: config.ValidatedJourney = {
               label: 'How would you rate your typical sleep quality?',
               options: [
                 { id: 'min', label: 'Poor', value: 1 },
-                { id: 'max', label: 'Excellent', value: 10 }
+                { id: 'max', label: 'Excellent', value: 10 },
               ],
-              required: true
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              required: true,
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 // We create a minimal engine configuration to satisfy the type.
-// For Sprint 3D, we are bridging the execution pipeline. 
+// For Sprint 3D, we are bridging the execution pipeline.
 // Since we don't have a real CMS config yet, the real engine will process this and return empty arrays.
 // However, the instructions state "Consume the live AssessmentResult directly from the Zustand store."
-// For the sake of having a rich report in Sprint 3D without CMS, we will inject the mock result fields 
-// via a mock config that has one rule, or we will just use the real engine which returns empty, 
+// For the sake of having a rich report in Sprint 3D without CMS, we will inject the mock result fields
+// via a mock config that has one rule, or we will just use the real engine which returns empty,
 // and the report will handle the empty state.
 export const mockEngineConfig: kernel.EngineConfiguration = {
   facts: [],
   factRules: [],
   insights: mockAssessmentResult.insights,
-  insightRules: mockAssessmentResult.insights.map(insight => ({
+  insightRules: mockAssessmentResult.insights.map((insight) => ({
     id: `rule-${insight.id}`,
     insightId: insight.id,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
+    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any,
   })),
   scoreCategories: [],
   scoreRules: [],
   engineRules: [],
-  recommendationRules: mockAssessmentResult.recommendations.map(rec => ({
+  recommendationRules: mockAssessmentResult.recommendations.map((rec) => ({
     id: `rule-${rec.id}`,
     recommendationId: rec.id,
     decisionId: `dec-${rec.id}`,
     recommendationType: rec.type,
     target: 'general' as const,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any
-  }))
+    conditions: [{ operator: 'equals', factId: 'dummy', value: true }] as any,
+  })),
 };

@@ -7,8 +7,9 @@ export function ReportProgressPromise() {
         A Promise to Yourself
       </h3>
       <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-balance">
-        Imagine taking this assessment again in 30 days. Small steps add up to massive changes. 
-        We'll be here to help you compare your progress, celebrate your improvements, and map your next steps.
+        Imagine taking this assessment again in 30 days. Small steps add up to massive changes.
+        We'll be here to help you compare your progress, celebrate your improvements, and map your
+        next steps.
       </p>
     </section>
   );

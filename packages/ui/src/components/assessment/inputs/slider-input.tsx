@@ -10,7 +10,14 @@ export interface SliderInputProps {
   disabled?: boolean;
 }
 
-export function SliderInput({ value = 0, onChangeValue, min = 0, max = 100, step = 1, disabled }: Readonly<SliderInputProps>) {
+export function SliderInput({
+  value = 0,
+  onChangeValue,
+  min = 0,
+  max = 100,
+  step = 1,
+  disabled,
+}: Readonly<SliderInputProps>) {
   return (
     <div className="flex flex-col gap-4">
       <input

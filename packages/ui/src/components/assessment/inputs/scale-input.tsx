@@ -9,7 +9,7 @@ export interface ScaleInputProps {
 
 export function ScaleInput({ value, onChangeValue, disabled }: Readonly<ScaleInputProps>) {
   const scale = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  
+
   return (
     <div className="flex flex-wrap gap-2">
       {scale.map((num) => (
@@ -23,7 +23,7 @@ export function ScaleInput({ value, onChangeValue, disabled }: Readonly<ScaleInp
             value === num
               ? 'border-brand bg-brand/5 text-brand'
               : 'border-border bg-card text-foreground hover:bg-black/5 dark:hover:bg-white/5',
-            disabled && 'pointer-events-none opacity-50'
+            disabled && 'pointer-events-none opacity-50',
           )}
         >
           {num}

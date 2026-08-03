@@ -11,7 +11,9 @@ export function ProgressIndicator({ current, total }: Readonly<ProgressIndicator
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between text-sm font-medium text-muted">
-        <span>Step {current} of {total}</span>
+        <span>
+          Step {current} of {total}
+        </span>
         <span>{Math.round(percentage)}%</span>
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-card border border-border">

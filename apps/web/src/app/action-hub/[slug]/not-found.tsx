@@ -14,7 +14,7 @@ export default function ActionHubNotFound() {
       <p className="text-lg text-slate-600 dark:text-slate-400 max-w-md mb-8 leading-relaxed">
         We couldn&apos;t find this part of your playbook. It might have been moved or removed.
       </p>
-      <Link 
+      <Link
         href="/"
         className="group flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300"
       >

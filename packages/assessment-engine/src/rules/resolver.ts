@@ -10,14 +10,14 @@ export function resolveDecisions(
   registry: RuleRegistry,
   facts: Fact[],
   insights: Insight[],
-  scores: CategoryScore[]
+  scores: CategoryScore[],
 ): Decision[] {
   const rules = registry.getAllRules();
   const decisions: Decision[] = [];
 
   for (const rule of rules) {
     const { isMatch, reasons } = evaluateRule(rule, facts, insights, scores);
-    
+
     if (isMatch) {
       decisions.push({
         id: rule.decisionId,

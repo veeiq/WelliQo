@@ -8,10 +8,10 @@ import type { Insight } from '../insights/types';
 export function resolveScores(
   registry: ScoreRegistry,
   facts: Fact[],
-  insights: Insight[]
+  insights: Insight[],
 ): CategoryScore[] {
-  const factIds = new Set(facts.map(f => f.id));
-  const insightIds = new Set(insights.map(i => i.id));
+  const factIds = new Set(facts.map((f) => f.id));
+  const insightIds = new Set(insights.map((i) => i.id));
 
   const allRules = registry.getAllRules();
   const activeRules = filterActiveRules(allRules, factIds, insightIds);

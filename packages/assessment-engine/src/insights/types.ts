@@ -10,5 +10,5 @@ export interface InsightRule {
   insightId: string;
   requireFacts?: string[]; // ALL of these facts must be present
   excludeFacts?: string[]; // NONE of these facts must be present
-  anyFacts?: string[];     // AT LEAST ONE of these facts must be present
+  anyFacts?: string[]; // AT LEAST ONE of these facts must be present
 }

@@ -1,11 +1,19 @@
 import { create } from 'zustand';
 import { journey as journeyEngine, kernel } from '@welliqo/assessment-engine';
 
-export type AssessmentRuntimeState = 'IDLE' | 'STARTING' | 'ASSESSMENT' | 'VALIDATING' | 'EXECUTING' | 'GENERATING_REPORT' | 'REPORT_READY' | 'ERROR';
+export type AssessmentRuntimeState =
+  | 'IDLE'
+  | 'STARTING'
+  | 'ASSESSMENT'
+  | 'VALIDATING'
+  | 'EXECUTING'
+  | 'GENERATING_REPORT'
+  | 'REPORT_READY'
+  | 'ERROR';
 
 export interface AssessmentState {
   runtimeState: AssessmentRuntimeState;
-  
+
   // Static Configuration
   configuration: kernel.EngineConfiguration | null;
   journey: journeyEngine.Journey | null;
@@ -13,10 +21,10 @@ export interface AssessmentState {
   // Volatile Session
   progress: journeyEngine.JourneyProgress | null;
   answers: Record<string, unknown>;
-  
+
   // Deterministic Result
   result: kernel.AssessmentResult | null;
-  
+
   // Errors
   error: Error | null;
 
@@ -41,7 +49,7 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     set({ runtimeState: 'STARTING', error: null });
     try {
       const progress = journeyEngine.initializeProgress(journey);
-      
+
       set({
         runtimeState: 'ASSESSMENT',
         configuration,
@@ -51,7 +59,10 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
         result: null,
       });
     } catch (error) {
-      set({ runtimeState: 'ERROR', error: error instanceof Error ? error : new Error('Unknown error during initialization') });
+      set({
+        runtimeState: 'ERROR',
+        error: error instanceof Error ? error : new Error('Unknown error during initialization'),
+      });
     }
   },
 
@@ -73,17 +84,20 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
       // In a real app we'd run Zod validation for the current group here.
       // For now, we assume valid and determine the next step.
       const nextProgress = journeyEngine.determineNextStep(journey, progress, answers);
-      
-      set({ 
+
+      set({
         progress: nextProgress,
-        runtimeState: nextProgress.isComplete ? 'EXECUTING' : 'ASSESSMENT' 
+        runtimeState: nextProgress.isComplete ? 'EXECUTING' : 'ASSESSMENT',
       });
 
       if (nextProgress.isComplete) {
         get().execute();
       }
     } catch (error) {
-      set({ runtimeState: 'ERROR', error: error instanceof Error ? error : new Error('Unknown error during navigation') });
+      set({
+        runtimeState: 'ERROR',
+        error: error instanceof Error ? error : new Error('Unknown error during navigation'),
+      });
     }
   },
 
@@ -104,7 +118,10 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
         runtimeState: 'REPORT_READY',
       });
     } catch (error) {
-      set({ runtimeState: 'ERROR', error: error instanceof Error ? error : new Error('Unknown error during execution') });
+      set({
+        runtimeState: 'ERROR',
+        error: error instanceof Error ? error : new Error('Unknown error during execution'),
+      });
     }
   },
 

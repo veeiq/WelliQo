@@ -7,10 +7,10 @@ function run() {
   const dataDir = path.resolve(__dirname, '../data');
   const distDir = path.resolve(__dirname, '../dist');
   console.log(`Compiling content from: ${dataDir}`);
-  
+
   try {
     const { index, manifest } = compileContent(dataDir);
-    
+
     // Ensure dist directory exists
     if (!fs.existsSync(distDir)) {
       fs.mkdirSync(distDir, { recursive: true });
@@ -35,7 +35,6 @@ function run() {
     const hub = adapter.buildActionHub('guide-morning-energy');
     console.log('\n--- Action Hub for "guide-morning-energy" ---');
     console.log(JSON.stringify(hub, null, 2));
-    
   } catch (error) {
     console.error('\n❌ Compilation Failed!');
     console.error(error);

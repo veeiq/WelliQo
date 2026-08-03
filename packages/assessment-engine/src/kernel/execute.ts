@@ -4,16 +4,13 @@ import type { AssessmentPayload, AssessmentResult } from './types';
 export function executeAssessment(payload: AssessmentPayload): AssessmentResult {
   const startTime = Date.now();
 
-  const {
-    facts,
-    insights,
-    categoryScores,
-    decisions,
-    recommendations,
-  } = runPipeline(payload.answers, payload.configuration);
+  const { facts, insights, categoryScores, decisions, recommendations } = runPipeline(
+    payload.answers,
+    payload.configuration,
+  );
 
   const overallScoreEntry = categoryScores.find(
-    (s) => s.categoryId === 'OVERALL' || s.categoryId === 'OVERALL_SCORE'
+    (s) => s.categoryId === 'OVERALL' || s.categoryId === 'OVERALL_SCORE',
   );
   const overallScore = overallScoreEntry ? overallScoreEntry.value : undefined;
 

@@ -32,9 +32,23 @@ export function DynamicQuestionRenderer({
 }: Readonly<DynamicQuestionRendererProps>) {
   switch (question.type) {
     case 'single-choice':
-      return <SingleChoice options={question.options || []} value={value} onChange={onChange} disabled={disabled} />;
+      return (
+        <SingleChoice
+          options={question.options || []}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      );
     case 'multiple-choice':
-      return <MultipleChoice options={question.options || []} value={value || []} onChange={onChange} disabled={disabled} />;
+      return (
+        <MultipleChoice
+          options={question.options || []}
+          value={value || []}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      );
     case 'text':
       return <TextInput value={value} onChangeValue={onChange} disabled={disabled} />;
     case 'textarea':
@@ -57,9 +71,23 @@ export function DynamicQuestionRenderer({
     case 'weight':
       return <WeightInput value={value} onChangeValue={onChange} disabled={disabled} />;
     case 'card-selection':
-      return <CardSelection options={question.options || []} value={value} onChange={onChange} disabled={disabled} />;
+      return (
+        <CardSelection
+          options={question.options || []}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      );
     case 'image-selection':
-      return <ImageSelection options={question.options || []} value={value} onChange={onChange} disabled={disabled} />;
+      return (
+        <ImageSelection
+          options={question.options || []}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      );
     default:
       return <div className="text-destructive">Unsupported question type: {question.type}</div>;
   }

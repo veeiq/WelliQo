@@ -18,11 +18,11 @@ export default function ReportPage() {
   if (!result) {
     return <div className="min-h-screen flex items-center justify-center">Redirecting...</div>;
   }
-  
+
   // SPRINT 5 INTEGRATION:
   // The Action Hub is now a distinct route (/action-hub/[slug]).
   // The ReportFirstStep component links directly to the Action Hub using the target ID.
-  
+
   return (
     <>
       <ReportContainer result={result} />

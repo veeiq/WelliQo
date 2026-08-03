@@ -7,7 +7,7 @@ export function evaluateCondition(
   condition: RuleCondition,
   facts: Fact[],
   insights: Insight[],
-  scores: CategoryScore[]
+  scores: CategoryScore[],
 ): boolean {
   let actualValue: unknown;
   let exists = false;
@@ -38,9 +38,17 @@ export function evaluateCondition(
     case 'not-equals':
       return actualValue !== condition.value;
     case 'greater-than':
-      return typeof actualValue === 'number' && typeof condition.value === 'number' && actualValue > condition.value;
+      return (
+        typeof actualValue === 'number' &&
+        typeof condition.value === 'number' &&
+        actualValue > condition.value
+      );
     case 'less-than':
-      return typeof actualValue === 'number' && typeof condition.value === 'number' && actualValue < condition.value;
+      return (
+        typeof actualValue === 'number' &&
+        typeof condition.value === 'number' &&
+        actualValue < condition.value
+      );
     case 'contains':
       if (Array.isArray(actualValue) || typeof actualValue === 'string') {
         return (actualValue as any).includes(condition.value);
@@ -60,7 +68,7 @@ export function evaluateRule(
   rule: EngineRule,
   facts: Fact[],
   insights: Insight[],
-  scores: CategoryScore[]
+  scores: CategoryScore[],
 ): { isMatch: boolean; reasons: string[] } {
   const reasons: string[] = [];
 

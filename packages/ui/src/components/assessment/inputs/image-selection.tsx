@@ -8,7 +8,12 @@ export interface ImageSelectionProps {
   disabled?: boolean;
 }
 
-export function ImageSelection({ options, value, onChange, disabled }: Readonly<ImageSelectionProps>) {
+export function ImageSelection({
+  options,
+  value,
+  onChange,
+  disabled,
+}: Readonly<ImageSelectionProps>) {
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3" role="radiogroup">
       {options.map((option) => (
@@ -24,7 +29,7 @@ export function ImageSelection({ options, value, onChange, disabled }: Readonly<
             value === option.value
               ? 'border-brand bg-brand/5'
               : 'border-border bg-card hover:bg-black/5 dark:hover:bg-white/5',
-            disabled && 'pointer-events-none opacity-50'
+            disabled && 'pointer-events-none opacity-50',
           )}
         >
           {option.image ? (

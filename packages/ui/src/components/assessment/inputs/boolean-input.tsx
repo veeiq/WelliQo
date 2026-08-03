@@ -19,7 +19,7 @@ export function BooleanInput({ value, onChangeValue, disabled }: Readonly<Boolea
           value === true
             ? 'border-brand bg-brand/5 text-brand'
             : 'border-border bg-card text-foreground hover:bg-black/5 dark:hover:bg-white/5',
-          disabled && 'pointer-events-none opacity-50'
+          disabled && 'pointer-events-none opacity-50',
         )}
       >
         Yes
@@ -33,7 +33,7 @@ export function BooleanInput({ value, onChangeValue, disabled }: Readonly<Boolea
           value === false
             ? 'border-brand bg-brand/5 text-brand'
             : 'border-border bg-card text-foreground hover:bg-black/5 dark:hover:bg-white/5',
-          disabled && 'pointer-events-none opacity-50'
+          disabled && 'pointer-events-none opacity-50',
         )}
       >
         No

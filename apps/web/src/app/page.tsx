@@ -9,7 +9,8 @@ export default function HomePage() {
           WelliQo is being built with care.
         </h1>
         <p className="mt-5 text-lg text-muted">
-          Sprint 1 establishes the platform foundation. The complete architecture is now wired up, and the assessment is ready to use.
+          Sprint 1 establishes the platform foundation. The complete architecture is now wired up,
+          and the assessment is ready to use.
         </p>
         <div className="mt-8">
           <a

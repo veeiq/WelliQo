@@ -6,7 +6,6 @@ import {
 } from '../types';
 
 export function createReportViewModel(result: kernel.AssessmentResult): ReportViewModel {
-  
   // 1. Process Insights
   const strengths = [];
   const patterns = [];
@@ -26,7 +25,8 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
         id: insight.id,
         description: insight.description || 'We found a behavioral pattern here.',
         // We will default why it matters since it's hardcoded in the UI right now
-        whyItMatters: 'This insight was identified based on your responses. Focusing here can create a ripple effect of positive wellness outcomes.',
+        whyItMatters:
+          'This insight was identified based on your responses. Focusing here can create a ripple effect of positive wellness outcomes.',
       });
     }
   }
@@ -48,8 +48,10 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
 
   for (const rec of result.recommendations) {
     const meta = RecommendationMetadataSchema.safeParse(rec.metadata);
-    const title = meta.success ? (meta.data.title || 'Recommendation') : 'Recommendation';
-    const description = meta.success ? (meta.data.description || 'Take this action to improve your wellness.') : 'Take this action to improve your wellness.';
+    const title = meta.success ? meta.data.title || 'Recommendation' : 'Recommendation';
+    const description = meta.success
+      ? meta.data.description || 'Take this action to improve your wellness.'
+      : 'Take this action to improve your wellness.';
 
     if (rec.type === 'COACH' || rec.type === 'COMMUNITY') {
       support.push({
@@ -73,20 +75,22 @@ export function createReportViewModel(result: kernel.AssessmentResult): ReportVi
 
   // 4. Sort actions and pull out the first step
   generalActions.sort((a, b) => b.confidence - a.confidence);
-  
+
   const firstStepRaw = generalActions.length > 0 ? generalActions[0] : null;
   const actionPlanRaw = generalActions.slice(1);
 
-  const firstStep = firstStepRaw ? {
-    id: firstStepRaw.id,
-    title: firstStepRaw.title,
-    description: firstStepRaw.description,
-    effort: firstStepRaw.effort,
-    impact: firstStepRaw.impact,
-    whyItMatters: firstStepRaw.whyItMatters,
-  } : null;
+  const firstStep = firstStepRaw
+    ? {
+        id: firstStepRaw.id,
+        title: firstStepRaw.title,
+        description: firstStepRaw.description,
+        effort: firstStepRaw.effort,
+        impact: firstStepRaw.impact,
+        whyItMatters: firstStepRaw.whyItMatters,
+      }
+    : null;
 
-  const actionPlan = actionPlanRaw.map(a => ({
+  const actionPlan = actionPlanRaw.map((a) => ({
     id: a.id,
     type: a.type,
     title: a.title,

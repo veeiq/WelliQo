@@ -24,7 +24,7 @@ export function SingleChoice({ options, value, onChange, disabled }: Readonly<Si
             value === option.value
               ? 'border-brand bg-brand/5'
               : 'border-border bg-card text-foreground hover:bg-black/5 dark:hover:bg-white/5',
-            disabled && 'pointer-events-none opacity-50'
+            disabled && 'pointer-events-none opacity-50',
           )}
         >
           <span className="font-medium">{option.label}</span>

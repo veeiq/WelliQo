@@ -4,7 +4,7 @@ import { resolveEnabledSections, resolveEnabledGroups } from './resolver';
 export function initializeProgress(journey: Journey): JourneyProgress {
   const initialSections = resolveEnabledSections(journey.sections, {});
   const firstSection = initialSections.length > 0 ? initialSections[0] : null;
-  
+
   let firstGroupId = null;
   if (firstSection) {
     const initialGroups = resolveEnabledGroups(firstSection.questionGroups || [], {});
@@ -25,7 +25,7 @@ export function initializeProgress(journey: Journey): JourneyProgress {
 function findNextValidSectionAndGroup(
   enabledSections: ReturnType<typeof resolveEnabledSections>,
   startIndex: number,
-  answers: Record<string, unknown>
+  answers: Record<string, unknown>,
 ): { sectionId: string | null; groupId: string | null; skippedSectionIds: string[] } {
   const skippedSectionIds: string[] = [];
 
@@ -47,7 +47,7 @@ function findNextValidSectionAndGroup(
 export function determineNextStep(
   journey: Journey,
   currentProgress: JourneyProgress,
-  answers: Record<string, unknown>
+  answers: Record<string, unknown>,
 ): JourneyProgress {
   if (currentProgress.isComplete || !currentProgress.currentSectionId) {
     return { ...currentProgress, isComplete: true };
@@ -55,7 +55,7 @@ export function determineNextStep(
 
   const enabledSections = resolveEnabledSections(journey.sections, answers);
   const currentSectionIndex = enabledSections.findIndex(
-    (s) => s.id === currentProgress.currentSectionId
+    (s) => s.id === currentProgress.currentSectionId,
   );
 
   if (currentSectionIndex === -1) {
@@ -67,14 +67,14 @@ export function determineNextStep(
     return { ...currentProgress, isComplete: true };
   }
   const enabledGroups = resolveEnabledGroups(currentSection.questionGroups || [], answers);
-  
+
   let nextGroupId: string | null = null;
   let nextSectionId: string | null = null;
   const newCompletedSections = new Set(currentProgress.completedSectionIds);
 
   if (currentProgress.currentGroupId) {
     const currentGroupIndex = enabledGroups.findIndex(
-      (g) => g.id === currentProgress.currentGroupId
+      (g) => g.id === currentProgress.currentGroupId,
     );
 
     if (currentGroupIndex !== -1 && currentGroupIndex < enabledGroups.length - 1) {
@@ -85,11 +85,11 @@ export function determineNextStep(
     } else {
       // Section is complete
       newCompletedSections.add(currentSection.id);
-      
+
       const { sectionId, groupId, skippedSectionIds } = findNextValidSectionAndGroup(
         enabledSections,
         currentSectionIndex + 1,
-        answers
+        answers,
       );
 
       nextSectionId = sectionId;

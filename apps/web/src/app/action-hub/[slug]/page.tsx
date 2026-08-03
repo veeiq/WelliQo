@@ -6,10 +6,10 @@ import { notFound } from 'next/navigation';
 export default async function ActionHubPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  
+
   // The content adapter resolves the Action Hub from the compiled JSON index
   const actionHub = contentAdapter.buildActionHub(slug);
-  
+
   if (!actionHub) {
     notFound();
   }

@@ -1,8 +1,8 @@
 import type { ScoreCategory, ScoreRule, CategoryScore } from './types';
 
 export function calculateCategoryScore(
-  category: ScoreCategory, 
-  activeRules: ScoreRule[]
+  category: ScoreCategory,
+  activeRules: ScoreRule[],
 ): CategoryScore {
   let score = category.baseScore;
 
@@ -15,6 +15,6 @@ export function calculateCategoryScore(
 
   return {
     categoryId: category.id,
-    value: score
+    value: score,
   };
 }

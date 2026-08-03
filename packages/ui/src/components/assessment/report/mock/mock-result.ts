@@ -14,13 +14,15 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
     {
       id: 'insight_active_lifestyle',
       name: 'Active Lifestyle',
-      description: 'You are moving your body regularly, which is fantastic for long-term heart health.',
+      description:
+        'You are moving your body regularly, which is fantastic for long-term heart health.',
       metadata: { type: 'STRENGTH' },
     },
     {
       id: 'insight_inconsistent_sleep',
       name: 'Inconsistent Sleep',
-      description: 'We noticed your sleep schedule has been inconsistent, and you often wake up feeling less refreshed.',
+      description:
+        'We noticed your sleep schedule has been inconsistent, and you often wake up feeling less refreshed.',
       metadata: { type: 'PATTERN' },
     },
   ],
@@ -57,10 +59,12 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
       reasons: ['insight_inconsistent_sleep'],
       metadata: {
         title: 'Establish a Consistent Bedtime',
-        description: 'Try going to bed and waking up at the exact same time every day, even on weekends.',
+        description:
+          'Try going to bed and waking up at the exact same time every day, even on weekends.',
         effort: 'Medium',
         impact: 'High',
-        whyItMatters: 'Consistency regulates your circadian rhythm, dramatically improving sleep quality.',
+        whyItMatters:
+          'Consistency regulates your circadian rhythm, dramatically improving sleep quality.',
       },
     },
     {
@@ -84,7 +88,8 @@ export const mockAssessmentResult: kernel.AssessmentResult = {
       reasons: [],
       metadata: {
         title: 'Explore Coaching',
-        description: 'You don’t have to do this alone. When you’re ready for accountability, our community is here.',
+        description:
+          'You don’t have to do this alone. When you’re ready for accountability, our community is here.',
       },
     },
   ],

@@ -8,7 +8,12 @@ export interface MultipleChoiceProps {
   disabled?: boolean;
 }
 
-export function MultipleChoice({ options, value = [], onChange, disabled }: Readonly<MultipleChoiceProps>) {
+export function MultipleChoice({
+  options,
+  value = [],
+  onChange,
+  disabled,
+}: Readonly<MultipleChoiceProps>) {
   const toggleOption = (optionValue: any) => {
     if (value.includes(optionValue)) {
       onChange(value.filter((v) => v !== optionValue));
@@ -34,7 +39,7 @@ export function MultipleChoice({ options, value = [], onChange, disabled }: Read
               isChecked
                 ? 'border-brand bg-brand/5'
                 : 'border-border bg-card text-foreground hover:bg-black/5 dark:hover:bg-white/5',
-              disabled && 'pointer-events-none opacity-50'
+              disabled && 'pointer-events-none opacity-50',
             )}
           >
             <span className="font-medium">{option.label}</span>

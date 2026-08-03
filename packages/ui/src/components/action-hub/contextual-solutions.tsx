@@ -11,7 +11,12 @@ interface ContextualSolutionsProps {
   acceleratorBody?: React.ReactNode;
 }
 
-export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acceleratorBody }: ContextualSolutionsProps) {
+export function ContextualSolutions({
+  foodFirst,
+  accelerator,
+  foodFirstBody,
+  acceleratorBody,
+}: ContextualSolutionsProps) {
   const [activeTab, setActiveTab] = useState<'food' | 'accelerator'>('food');
 
   if (!foodFirst && !accelerator) return null;
@@ -19,7 +24,9 @@ export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acc
   return (
     <section className="w-full max-w-3xl mx-auto px-6 py-16">
       <div className="mb-10 text-center">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">Today's Reality</h2>
+        <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4">
+          Today's Reality
+        </h2>
         <p className="text-slate-600 dark:text-slate-400">
           Your morning dictates your energy. Choose the option that fits your schedule today.
         </p>
@@ -34,11 +41,17 @@ export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acc
               : 'hover:bg-slate-100 dark:hover:bg-slate-800/50 scale-95 opacity-70'
           }`}
         >
-          <Clock className={`w-8 h-8 mb-3 ${activeTab === 'food' ? 'text-indigo-500' : 'text-slate-400'}`} />
-          <span className={`text-sm font-semibold uppercase tracking-wider mb-1 ${activeTab === 'food' ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-500'}`}>
+          <Clock
+            className={`w-8 h-8 mb-3 ${activeTab === 'food' ? 'text-indigo-500' : 'text-slate-400'}`}
+          />
+          <span
+            className={`text-sm font-semibold uppercase tracking-wider mb-1 ${activeTab === 'food' ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-500'}`}
+          >
             Have 15 Minutes?
           </span>
-          <span className="text-slate-900 dark:text-slate-200 font-medium">{foodFirst?.title || 'Protein Scramble'}</span>
+          <span className="text-slate-900 dark:text-slate-200 font-medium">
+            {foodFirst?.title || 'Protein Scramble'}
+          </span>
         </button>
 
         <button
@@ -49,11 +62,17 @@ export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acc
               : 'hover:bg-slate-100 dark:hover:bg-slate-800/50 scale-95 opacity-70'
           }`}
         >
-          <Zap className={`w-8 h-8 mb-3 ${activeTab === 'accelerator' ? 'text-emerald-500' : 'text-slate-400'}`} />
-          <span className={`text-sm font-semibold uppercase tracking-wider mb-1 ${activeTab === 'accelerator' ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500'}`}>
+          <Zap
+            className={`w-8 h-8 mb-3 ${activeTab === 'accelerator' ? 'text-emerald-500' : 'text-slate-400'}`}
+          />
+          <span
+            className={`text-sm font-semibold uppercase tracking-wider mb-1 ${activeTab === 'accelerator' ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500'}`}
+          >
             Rushing this morning?
           </span>
-          <span className="text-slate-900 dark:text-slate-200 font-medium">{accelerator?.title || 'Formula 1 Shake'}</span>
+          <span className="text-slate-900 dark:text-slate-200 font-medium">
+            {accelerator?.title || 'Formula 1 Shake'}
+          </span>
         </button>
       </div>
 
@@ -66,7 +85,7 @@ export function ContextualSolutions({ foodFirst, accelerator, foodFirstBody, acc
             {activeTab === 'food' ? 'Food-first' : 'Accelerator'}
           </span>
         </div>
-        
+
         <div key={activeTab} className="mb-6 animate-in fade-in duration-500 fill-mode-both">
           {activeTab === 'food' ? foodFirstBody : acceleratorBody}
         </div>

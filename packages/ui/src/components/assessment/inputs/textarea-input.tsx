@@ -6,7 +6,13 @@ export interface TextareaInputProps extends React.TextareaHTMLAttributes<HTMLTex
   onChangeValue: (value: string) => void;
 }
 
-export function TextareaInput({ value, onChangeValue, className, disabled, ...props }: Readonly<TextareaInputProps>) {
+export function TextareaInput({
+  value,
+  onChangeValue,
+  className,
+  disabled,
+  ...props
+}: Readonly<TextareaInputProps>) {
   return (
     <textarea
       value={value || ''}
@@ -14,7 +20,7 @@ export function TextareaInput({ value, onChangeValue, className, disabled, ...pr
       disabled={disabled}
       className={cn(
         'flex min-h-[120px] w-full rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50',
-        className
+        className,
       )}
       {...props}
     />

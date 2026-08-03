@@ -14,7 +14,7 @@ export default function LearnNotFound() {
       <p className="text-lg text-slate-600 dark:text-slate-400 max-w-md mb-8 leading-relaxed">
         We couldn&apos;t find this piece of knowledge. It might have been updated or removed.
       </p>
-      <Link 
+      <Link
         href="/"
         className="group flex items-center justify-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
       >

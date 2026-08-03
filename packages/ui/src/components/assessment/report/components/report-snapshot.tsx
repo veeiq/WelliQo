@@ -11,8 +11,12 @@ export function ReportSnapshot({ snapshot }: ReportSnapshotProps) {
   return (
     <section className="w-full max-w-4xl mx-auto py-16 px-6">
       <div className="mb-10 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
-        <h2 className="text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-3">Your Wellness Snapshot</h2>
-        <p className="text-slate-600 dark:text-slate-400">A detailed look at your specific habits.</p>
+        <h2 className="text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-3">
+          Your Wellness Snapshot
+        </h2>
+        <p className="text-slate-600 dark:text-slate-400">
+          A detailed look at your specific habits.
+        </p>
       </div>
       <div className="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-700">
         <div className="space-y-8">
@@ -37,7 +41,7 @@ function ScoreBar({ item }: { item: ReportSnapshotItem }) {
         </span>
       </div>
       <div className="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-        <div 
+        <div
           className="h-full bg-emerald-400 dark:bg-emerald-500 transition-all duration-[1500ms] ease-out rounded-full shadow-inner"
           style={{ width: `${item.percentage}%` }}
           aria-valuenow={item.percentage}

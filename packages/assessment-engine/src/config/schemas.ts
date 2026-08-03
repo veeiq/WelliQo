@@ -29,16 +29,18 @@ export const QuestionOptionSchema = z.object({
   image: z.string().optional(),
 });
 
-export const QuestionMetadataSchema = z.object({
-  icon: z.string().optional(),
-  illustration: z.string().optional(),
-  estimatedTime: z.number().optional(),
-  emotionalWeight: z.string().optional(),
-  analyticsKey: z.string().optional(),
-  helpArticle: z.string().optional(),
-  coachHint: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-}).catchall(z.unknown());
+export const QuestionMetadataSchema = z
+  .object({
+    icon: z.string().optional(),
+    illustration: z.string().optional(),
+    estimatedTime: z.number().optional(),
+    emotionalWeight: z.string().optional(),
+    analyticsKey: z.string().optional(),
+    helpArticle: z.string().optional(),
+    coachHint: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  })
+  .catchall(z.unknown());
 
 export const QuestionSchema = z.object({
   id: z.string(),
@@ -85,10 +87,12 @@ export const SectionSchema = z.object({
   metadata: z.record(z.string(), z.unknown()).optional(),
 });
 
-export const JourneyMetadataSchema = z.object({
-  locale: z.string().optional(),
-  featureFlags: z.array(z.string()).optional(),
-}).catchall(z.unknown());
+export const JourneyMetadataSchema = z
+  .object({
+    locale: z.string().optional(),
+    featureFlags: z.array(z.string()).optional(),
+  })
+  .catchall(z.unknown());
 
 export const JourneySchema = z.object({
   id: z.string(),
@@ -148,7 +152,14 @@ export const ScoreRuleSchema = z.object({
 export const DecisionPrioritySchema = z.enum(['LOW', 'MEDIUM', 'HIGH', 'CRITICAL']);
 
 export const RuleConditionOperatorSchema = z.enum([
-  'equals', 'not-equals', 'greater-than', 'less-than', 'contains', 'in', 'exists', 'not-exists'
+  'equals',
+  'not-equals',
+  'greater-than',
+  'less-than',
+  'contains',
+  'in',
+  'exists',
+  'not-exists',
 ]);
 
 export const RuleConditionSchema = z.object({

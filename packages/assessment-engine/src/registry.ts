@@ -10,11 +10,7 @@ export class QuestionRegistry {
   private questions = new Map<string, QuestionSequenceItem>();
   private firstQuestionId: string | null = null;
 
-  register(
-    question: Question,
-    defaultNextId: string | 'END',
-    rules: NavigationRule[] = []
-  ) {
+  register(question: Question, defaultNextId: string | 'END', rules: NavigationRule[] = []) {
     if (this.questions.size === 0) {
       this.firstQuestionId = question.id;
     }
@@ -30,6 +26,6 @@ export class QuestionRegistry {
   }
 
   getAllQuestions(): Question[] {
-    return Array.from(this.questions.values()).map(item => item.question);
+    return Array.from(this.questions.values()).map((item) => item.question);
   }
 }

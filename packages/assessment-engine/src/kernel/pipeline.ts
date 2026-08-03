@@ -18,7 +18,7 @@ import type { Recommendation } from '../recommendations/types';
 
 export function runPipeline(
   answers: Record<string, unknown>,
-  config: EngineConfiguration
+  config: EngineConfiguration,
 ): {
   facts: Fact[];
   insights: Insight[];

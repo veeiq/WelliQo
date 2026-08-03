@@ -15,7 +15,7 @@ export default tsEslint.config(
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     plugins: {
       '@next/next': nextPlugin,
-      'react': reactPlugin,
+      react: reactPlugin,
       'react-hooks': reactHooksPlugin,
       'jsx-a11y': jsxA11yPlugin,
     },
@@ -32,5 +32,5 @@ export default tsEslint.config(
         version: 'detect',
       },
     },
-  }
+  },
 );

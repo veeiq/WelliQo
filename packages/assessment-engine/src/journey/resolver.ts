@@ -3,7 +3,7 @@ import type { Section, QuestionGroup } from './types';
 
 export function evaluateConditions(
   conditions: NavigationCondition[] | undefined,
-  answers: Record<string, unknown>
+  answers: Record<string, unknown>,
 ): boolean {
   if (!conditions || conditions.length === 0) {
     return true;
@@ -40,16 +40,16 @@ export function evaluateConditions(
 
 export function resolveEnabledSections(
   sections: Section[],
-  answers: Record<string, unknown>
+  answers: Record<string, unknown>,
 ): Section[] {
   return sections.filter(
-    (section) => section.enabled && evaluateConditions(section.conditions, answers)
+    (section) => section.enabled && evaluateConditions(section.conditions, answers),
   );
 }
 
 export function resolveEnabledGroups(
   groups: QuestionGroup[],
-  answers: Record<string, unknown>
+  answers: Record<string, unknown>,
 ): QuestionGroup[] {
   return groups.filter((group) => evaluateConditions(group.conditions, answers));
 }

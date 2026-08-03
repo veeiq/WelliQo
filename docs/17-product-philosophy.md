@@ -17,7 +17,6 @@ This document serves as the emotional and psychological foundation of the WelliQ
 
 1. **Never punish.**
    No guilt. No streaks. No shame. No fear of failure.
-   
 2. **Meet people where they are.**
    Never where we think they should be.
 

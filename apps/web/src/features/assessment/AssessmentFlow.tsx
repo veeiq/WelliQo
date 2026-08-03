@@ -94,7 +94,7 @@ export function AssessmentFlow({ registry }: Readonly<AssessmentFlowProps>) {
   return (
     <AssessmentContainer>
       <ProgressIndicator current={currentStep} total={totalQuestions} />
-      
+
       <QuestionCard label={question.label} description={question.description}>
         <DynamicQuestionRenderer
           question={question}
@@ -107,13 +107,15 @@ export function AssessmentFlow({ registry }: Readonly<AssessmentFlowProps>) {
           </div>
         )}
       </QuestionCard>
-      
+
       <Navigation
         onNext={handleNext}
         onBack={handleBack}
         canGoBack={history.length > 0}
         canGoNext={currentValue !== undefined && currentValue !== null && currentValue !== ''}
-        nextLabel={currentItem.defaultNextId === 'END' && currentItem.rules.length === 0 ? 'Submit' : 'Next'}
+        nextLabel={
+          currentItem.defaultNextId === 'END' && currentItem.rules.length === 0 ? 'Submit' : 'Next'
+        }
       />
     </AssessmentContainer>
   );

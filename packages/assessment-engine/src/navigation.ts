@@ -2,7 +2,7 @@ import { NavigationCondition, NavigationRule } from './types';
 
 function evaluateCondition(condition: NavigationCondition, answers: Record<string, any>): boolean {
   const actualValue = answers[condition.questionId];
-  
+
   if (actualValue === undefined) return false;
 
   switch (condition.operator) {
@@ -33,7 +33,7 @@ export function determineNextQuestionId(
   currentQuestionId: string,
   answers: Record<string, any>,
   navigationRules: NavigationRule[],
-  defaultNextId: string | 'END'
+  defaultNextId: string | 'END',
 ): string | 'END' {
   for (const rule of navigationRules) {
     const isMatch = rule.conditions.every((condition) => evaluateCondition(condition, answers));
@@ -41,6 +41,6 @@ export function determineNextQuestionId(
       return rule.targetId;
     }
   }
-  
+
   return defaultNextId;
 }

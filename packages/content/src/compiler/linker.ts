@@ -1,7 +1,10 @@
 import { ParsedFile } from './parser';
 import { CompiledContentIndex, ContentManifest, BaseContent } from '../schemas';
 
-export function linkAndValidateContent(parsedFiles: ParsedFile[]): { index: CompiledContentIndex, manifest: ContentManifest } {
+export function linkAndValidateContent(parsedFiles: ParsedFile[]): {
+  index: CompiledContentIndex;
+  manifest: ContentManifest;
+} {
   const index: CompiledContentIndex = {
     nodes: {},
     byType: {},
@@ -15,13 +18,13 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): { index: Comp
   // 1. Build Index Map
   for (const file of parsedFiles) {
     const { content } = file;
-    
+
     if (index.nodes[content.id]) {
       throw new Error(`Duplicate content ID detected: ${content.id}`);
     }
-    
+
     index.nodes[content.id] = content;
-    
+
     // Group by Type
     if (!index.byType[content.type]) {
       index.byType[content.type] = [];
@@ -29,7 +32,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): { index: Comp
     }
     index.byType[content.type]!.push(content.id);
     nodesByType[content.type]!++;
-    
+
     // Group by Domain
     if (!index.byDomain[content.domain]) {
       index.byDomain[content.domain] = [];
@@ -43,14 +46,14 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): { index: Comp
 
   for (const file of parsedFiles) {
     const { content } = file;
-    
+
     if (content.relationships) {
       for (const [relationshipType, targetIds] of Object.entries(content.relationships)) {
         for (const targetId of targetIds) {
           if (!nodeIds.has(targetId)) {
             throw new Error(
               `Referential Integrity Error in '${content.id}': ` +
-              `Relationship '${relationshipType}' references non-existent node '${targetId}'.`
+                `Relationship '${relationshipType}' references non-existent node '${targetId}'.`,
             );
           }
           referencedTargetIds.add(targetId);
@@ -76,7 +79,7 @@ export function linkAndValidateContent(parsedFiles: ParsedFile[]): { index: Comp
     relationshipCount,
     nodesByType,
     brokenLinks: 0, // Must be 0 because we throw on broken links
-    orphanNodes: orphanNodesCount
+    orphanNodes: orphanNodesCount,
   };
 
   return { index, manifest };

@@ -4,7 +4,7 @@ import type { Decision } from '../rules/types';
 
 export function resolveRecommendations(
   registry: RecommendationRegistry,
-  decisions: Decision[]
+  decisions: Decision[],
 ): Recommendation[] {
   const recommendations: Recommendation[] = [];
 

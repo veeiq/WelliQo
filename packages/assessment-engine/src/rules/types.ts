@@ -9,7 +9,15 @@ export interface Decision {
   metadata?: Record<string, unknown>;
 }
 
-export type RuleConditionOperator = 'equals' | 'not-equals' | 'greater-than' | 'less-than' | 'contains' | 'in' | 'exists' | 'not-exists';
+export type RuleConditionOperator =
+  | 'equals'
+  | 'not-equals'
+  | 'greater-than'
+  | 'less-than'
+  | 'contains'
+  | 'in'
+  | 'exists'
+  | 'not-exists';
 
 export interface RuleCondition {
   targetId: string;

@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { 
-  AssessmentState, 
-  QuestionRegistry, 
+import {
+  AssessmentState,
+  QuestionRegistry,
   validateAnswer,
-  determineNextQuestionId
+  determineNextQuestionId,
 } from '@welliqo/assessment-engine';
 
 export interface AssessmentStore extends AssessmentState {
@@ -29,7 +29,7 @@ export const useAssessmentStore = create<AssessmentStore>()(
           answers: {
             ...state.answers,
             [questionId]: value,
-          }
+          },
         }));
       },
 
@@ -58,7 +58,7 @@ export const useAssessmentStore = create<AssessmentStore>()(
           currentQuestionId,
           answers,
           currentItem.rules,
-          currentItem.defaultNextId
+          currentItem.defaultNextId,
         );
 
         if (nextId === 'END') {
@@ -75,7 +75,7 @@ export const useAssessmentStore = create<AssessmentStore>()(
         set((state) => {
           const newHistory = [...state.history];
           const previousId = newHistory.pop();
-          
+
           if (!previousId) return state;
 
           return {
@@ -108,6 +108,6 @@ export const useAssessmentStore = create<AssessmentStore>()(
       name: 'welliqo-assessment-session',
       // skip hydration on server
       skipHydration: true,
-    }
-  )
+    },
+  ),
 );
