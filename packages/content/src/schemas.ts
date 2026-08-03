@@ -85,7 +85,9 @@ export const BaseContentSchema = z.object({
   keyTakeaways: z.array(z.string()).optional(),
   faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
   estimatedReadTime: z.number().optional(),
-  evidenceLevel: z.enum(['anecdotal', 'expert-opinion', 'clinical-trial', 'meta-analysis']).optional(),
+  evidenceLevel: z
+    .enum(['anecdotal', 'expert-opinion', 'clinical-trial', 'meta-analysis'])
+    .optional(),
   relatedGoals: z.array(z.string()).optional(),
   relatedHabits: z.array(z.string()).optional(),
   relatedRecipes: z.array(z.string()).optional(),
