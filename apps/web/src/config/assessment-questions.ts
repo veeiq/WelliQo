@@ -135,14 +135,6 @@ const STRESS_QUESTIONS: QuestionDef[] = [
   }
 ];
 
-const MOTIVATION_QUESTION: QuestionDef = {
-  id: 'motivation',
-  section: 'Your Journey',
-  label: 'Why do you want to become healthier right now?',
-  type: 'text',
-  placeholder: 'e.g. To feel more confident, have more energy...'
-};
-
 // Combine into goal specific arrays.
 // For now we assemble ~10-15 robust questions for Weight. 
 // We will expand this rapidly.
@@ -204,7 +196,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   sleep: [
     ...BASELINE_QUESTIONS,
@@ -240,7 +232,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   energy: [
     ...BASELINE_QUESTIONS,
@@ -265,7 +257,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       placeholder: 'Cups'
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   gut: [
     ...BASELINE_QUESTIONS,
@@ -294,7 +286,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   stress: [
     ...BASELINE_QUESTIONS,
@@ -324,7 +316,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
         { id: 'meditation', label: '🧘 Meditation', value: 'meditation' },
       ]
     },
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   women: [
     ...BASELINE_QUESTIONS,
@@ -342,7 +334,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   aging: [
     ...BASELINE_QUESTIONS,
@@ -360,7 +352,7 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ],
   fitness: [
     ...BASELINE_QUESTIONS,
@@ -378,9 +370,9 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    MOTIVATION_QUESTION
+    // Motivation question removed
   ]
 };
 
 // Fallback if goal not found
-export const DEFAULT_QUESTIONS = [...BASELINE_QUESTIONS, ...LIFESTYLE_QUESTIONS, ...STRESS_QUESTIONS, MOTIVATION_QUESTION];
+export const DEFAULT_QUESTIONS = [...BASELINE_QUESTIONS, ...LIFESTYLE_QUESTIONS, ...STRESS_QUESTIONS];

@@ -26,6 +26,9 @@ export interface CalculatedMetrics {
   fatPercentage: string;
   idealWeight: string;
   pillarScores: PillarScore[];
+  targetPillars: PillarScore[];
+  weightDifferenceKg: number;
+  weightDirection: 'lose' | 'gain' | 'maintain';
 }
 
 export interface AssessmentState {
@@ -164,13 +167,78 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
         pillars.push({ id: 'women', label: 'Women\'s Wellness', icon: '👩', score: calcScore(answers.cycle_status === 'regular' ? +15 : -5) });
       }
 
+      // 1. Identify Target Pillars based on selected goal
+      const goal = data.goal || 'weight';
+      let targetPillarIds: string[] = [];
+
+      switch (goal) {
+        case 'weight':
+        case 'gain':
+          targetPillarIds = ['weight', 'nutrition', 'energy', 'activity'];
+          break;
+        case 'muscle':
+        case 'fitness':
+          targetPillarIds = ['muscle', 'nutrition', 'activity', 'sleep'];
+          break;
+        case 'energy':
+        case 'sleep':
+          targetPillarIds = ['energy', 'sleep', 'stress', 'nutrition'];
+          break;
+        case 'stress':
+          targetPillarIds = ['stress', 'sleep', 'gut', 'energy'];
+          break;
+        case 'gut':
+        case 'nutrition':
+          targetPillarIds = ['gut', 'nutrition', 'hydration', 'energy'];
+          break;
+        case 'heart':
+        case 'sugar':
+          targetPillarIds = ['heart', 'weight', 'nutrition', 'activity'];
+          break;
+        case 'womens':
+          targetPillarIds = ['women', 'stress', 'sleep', 'weight'];
+          break;
+        case 'aging':
+        case 'immunity':
+          targetPillarIds = ['aging', 'nutrition', 'activity', 'sleep'];
+          break;
+        default:
+          targetPillarIds = ['weight', 'nutrition', 'energy', 'sleep'];
+      }
+
+      const targetPillars = pillars.filter(p => targetPillarIds.includes(p.id));
+
+      // 2. Calculate the Weight Gap (Current vs Ideal)
+      // Standard healthy BMI is 18.5 to 24.9.
+      // Target BMI is ~22 for calculating the exact difference.
+      const targetWeightKg = 22 * (heightM * heightM);
+      const minIdealKg = 18.5 * (heightM * heightM);
+      const maxIdealKg = 24.9 * (heightM * heightM);
+      
+      let weightDiff = 0;
+      let direction: 'lose' | 'gain' | 'maintain' = 'maintain';
+
+      if (weightKg > maxIdealKg) {
+        weightDiff = weightKg - targetWeightKg;
+        direction = 'lose';
+      } else if (weightKg < minIdealKg) {
+        weightDiff = targetWeightKg - weightKg;
+        direction = 'gain';
+      } else {
+        weightDiff = 0;
+        direction = 'maintain';
+      }
+
       set({
         calculatedMetrics: {
           bmi: bmi.toFixed(1),
           bmr: Math.round(bmr),
           fatPercentage: fatPercentage.toFixed(1),
-          idealWeight: `${Math.round(18.5 * (heightM * heightM))} - ${Math.round(24.9 * (heightM * heightM))} kg`,
-          pillarScores: pillars
+          idealWeight: `${Math.round(minIdealKg)} - ${Math.round(maxIdealKg)} kg`,
+          pillarScores: pillars,
+          targetPillars: targetPillars,
+          weightDifferenceKg: Math.round(weightDiff),
+          weightDirection: direction
         },
         runtimeState: 'REPORT_READY'
       });

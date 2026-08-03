@@ -2,8 +2,8 @@ import React from 'react';
 import { useAssessmentStore } from '../../../../../store/assessment-store';
 import { PillarScores } from './PillarScores';
 import { CurrentVsIdeal } from './CurrentVsIdeal';
-import { PersonalizedPlan } from './PersonalizedPlan';
-import { HubUpsellCards } from './HubUpsellCards';
+import { PositivesAndNegatives } from './PositivesAndNegatives';
+import { CoachCallToAction } from './CoachCallToAction';
 
 export function ReportDashboard() {
   const { calculatedMetrics, data, answers, reset } = useAssessmentStore();
@@ -19,26 +19,30 @@ export function ReportDashboard() {
           Your Personalized Blueprint
         </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-          Hi {answers.name || 'there'}, here's your <span className="text-emerald-600 dark:text-emerald-400">Wellness Report</span>
+          Hi {answers.name || 'there'}, here is your <span className="text-emerald-600 dark:text-emerald-400">Baseline</span>
         </h1>
         <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-          We analyzed your {data.goal} profile across 12 critical pillars of health to create your optimal path forward.
+          We analyzed your profile to identify exactly what is holding you back and what you need to focus on right now.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="space-y-12">
+        {/* The Reality Check / Gap */}
+        <CurrentVsIdeal metrics={calculatedMetrics} data={data} answers={answers} />
         
-        {/* Left Column: Scores & Metrics */}
-        <div className="lg:col-span-2 space-y-8">
-          <PillarScores metrics={calculatedMetrics} />
-          <CurrentVsIdeal metrics={calculatedMetrics} data={data} answers={answers} />
+        {/* Targeted Pillar Scores (Only showing 3-4 related to their goal) */}
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 text-center">
+            Your Core Focus Areas
+          </h2>
+          <PillarScores metrics={{ ...calculatedMetrics, pillarScores: calculatedMetrics.targetPillars }} />
         </div>
 
-        {/* Right Column: Plans & Hubs */}
-        <div className="space-y-8">
-          <PersonalizedPlan metrics={calculatedMetrics} answers={answers} />
-          <HubUpsellCards />
-        </div>
+        {/* The Analysis: Good & Bad */}
+        <PositivesAndNegatives answers={answers} data={data} />
+
+        {/* The Solution & Call to Action */}
+        <CoachCallToAction data={data} />
 
       </div>
 
