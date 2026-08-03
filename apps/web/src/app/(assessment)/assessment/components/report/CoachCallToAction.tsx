@@ -1,93 +1,154 @@
 import React, { useState } from 'react';
-import { AssessmentData } from '../../../../../store/assessment-store';
+import { useAssessmentStore, AssessmentData } from '../../../../../store/assessment-store';
+import { PhoneCall } from 'lucide-react';
+import { Button } from '@welliqo/ui/components/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export function CoachCallToAction({ data }: { data: AssessmentData }) {
-  const [showModal, setShowModal] = useState(false);
+  const { goal, answers, weight, targetWeight, height, age, gender } = useAssessmentStore();
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    coach: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  return (
-    <>
-      <div className="bg-slate-900 dark:bg-slate-950 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden text-center">
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent pointer-events-none" />
-        
-        <div className="relative z-10 max-w-xl mx-auto space-y-6">
-          <div className="w-16 h-16 mx-auto bg-emerald-500 rounded-full flex items-center justify-center text-white text-3xl shadow-lg shadow-emerald-500/30">
-            👋
-          </div>
-          <h2 className="text-3xl font-bold text-white">You don't have to do this alone.</h2>
-          <p className="text-slate-300 text-lg leading-relaxed">
-            Achieving your {data.goal || 'wellness'} goals is much easier with a customized nutrition plan and 1-on-1 daily guidance. We take the guesswork out of your health.
-          </p>
-          
-          <button 
-            onClick={() => setShowModal(true)}
-            className="w-full md:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-full text-lg transition-all hover:scale-105 hover:shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 mx-auto"
-          >
-            <span>📞</span> Request a Free Consultation
-          </button>
-          
-          <p className="text-xs text-slate-500 mt-4 max-w-md mx-auto">
-            * Herbalife Independent Distributors. Our wellness products are not intended to diagnose, treat, cure, or prevent any disease. Results are not typical.
-          </p>
-        </div>
-      </div>
-
-      {showModal && <LeadCaptureModal onClose={() => setShowModal(false)} />}
-    </>
-  );
-}
-
-function LeadCaptureModal({ onClose }: { onClose: () => void }) {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Request Sent! A coach will contact you shortly.");
-    onClose();
+    if (!formData.name || !formData.phone || !formData.coach) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.name,
+          phoneNumber: formData.phone,
+          coachSelected: formData.coach,
+          primaryGoal: goal || 'Not Selected',
+          assessmentData: {
+            weight,
+            targetWeight,
+            height,
+            age,
+            gender,
+            answers
+          }
+        }),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsOpen(false);
+          setIsSuccess(false);
+          setFormData({ name: '', phone: '', coach: '' });
+        }, 3000);
+      } else {
+        alert("There was an error submitting your request. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl relative animate-in zoom-in-95 duration-300">
-        <button 
-          onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
-        >
-          ✕
-        </button>
-        
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Speak to a Coach</h3>
-          <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">We'll help you build a personalized nutrition plan to hit your exact targets.</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
-            <input type="text" required className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
-            <input type="tel" required className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Select a Coach</label>
-            <select required className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500">
-              <option value="">Any Available Coach</option>
-              <option value="alok">Coach Alok</option>
-              <option value="priya">Coach Priya</option>
-              <option value="dipti">Coach Dipti</option>
-            </select>
-          </div>
-          <button 
-            type="submit"
-            className="w-full h-12 mt-4 rounded-xl bg-emerald-600 text-white font-medium text-[17px] hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20"
-          >
-            Request Callback
-          </button>
-          <p className="text-[10px] text-slate-400 text-center mt-4">
-            By submitting, you agree to be contacted by an Independent Herbalife Associate regarding your wellness goals.
+    <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-3xl p-6 sm:p-8 mt-12 border border-emerald-100 dark:border-emerald-900/50">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex-1 space-y-4 text-center sm:text-left">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-2">
+            <PhoneCall className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+            Ready for Real Results?
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300">
+            Get a personalized nutrition plan and daily guidance from an expert Herbalife Coach to reach your goals faster.
           </p>
-        </form>
+        </div>
+        <div className="w-full sm:w-auto">
+          <Button 
+            onClick={() => setIsOpen(true)}
+            size="lg" 
+            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none font-semibold text-lg px-8 py-6 rounded-2xl"
+          >
+            Request a Free Consultation
+          </Button>
+        </div>
       </div>
+
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="sm:max-w-md border-0 shadow-2xl">
+          <DialogHeader className="space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+            <DialogTitle className="text-2xl text-center">Connect with a Coach</DialogTitle>
+          </DialogHeader>
+          
+          {isSuccess ? (
+            <div className="py-12 flex flex-col items-center justify-center space-y-4">
+              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">Request Sent!</h3>
+              <p className="text-center text-slate-500 dark:text-slate-400">Your selected coach will contact you shortly.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6 pt-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input 
+                  id="name" 
+                  placeholder="John Doe" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required 
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="phone">WhatsApp / Phone Number</Label>
+                <Input 
+                  id="phone" 
+                  type="tel" 
+                  placeholder="+91 99999 99999" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  required 
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="coach">Select Your Coach</Label>
+                <Select required value={formData.coach} onValueChange={(value) => setFormData({...formData, coach: value})}>
+                  <SelectTrigger id="coach" className="h-12">
+                    <SelectValue placeholder="Choose a coach" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Alok">Coach Alok (+91 9114211911)</SelectItem>
+                    <SelectItem value="Priya">Coach Priya (+91 9337616265)</SelectItem>
+                    <SelectItem value="Dipti">Coach Dipti (+91 7008183356)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <Button type="submit" disabled={isSubmitting} className="w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-lg">
+                {isSubmitting ? "Submitting..." : "Submit Request"}
+              </Button>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
