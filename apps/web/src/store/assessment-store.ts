@@ -8,7 +8,7 @@ export interface AssessmentData {
   gender: 'male' | 'female' | 'prefer_not' | null;
   height: number | null; // cm
   weight: number | null; // kg
-  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'athlete' | null;
+  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active' | null;
   profession: 'desk' | 'active' | 'mixed' | null;
   conditions: string[];
 }
