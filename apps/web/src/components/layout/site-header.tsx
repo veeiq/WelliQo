@@ -13,7 +13,7 @@ export function SiteHeader() {
               className="w-full h-full object-contain rounded-xl shadow-lg shadow-emerald-500/20"
             />
           </div>
-          <span className="font-semibold text-2xl tracking-tight text-slate-900 dark:text-white hidden sm:inline-block">
+          <span className="font-semibold text-2xl tracking-tight text-slate-900 dark:text-white">
             Welli<span className="text-emerald-500">Q</span>o
           </span>
         </Link>

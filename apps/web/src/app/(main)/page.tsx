@@ -6,21 +6,21 @@ export default function HomePage() {
     <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-900 dark:selection:text-emerald-100">
       
       {/* 1. HERO SECTION */}
-      <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden px-4 text-center sm:px-6 lg:px-8">
+      <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden px-4 pb-24 text-center sm:px-6 lg:px-8">
         {/* Background glow effects */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-200/40 via-slate-50 to-slate-50 dark:from-emerald-900/40 dark:via-slate-950 dark:to-slate-950"></div>
         
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-400/20 dark:bg-emerald-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-teal-400/20 dark:bg-teal-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-8 sm:mt-0">
+        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-12 sm:mt-0">
           <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium tracking-wide text-emerald-800 dark:text-emerald-300 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
             <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Intelligent Wellness, Science-Informed</span>
           </div>
           
           <h1 className="mb-4 sm:mb-8 text-balance text-5xl font-light tracking-tight text-slate-900 dark:text-white sm:text-7xl lg:text-[5.5rem] leading-[1.1]">
-            Stop guessing. <br className="hidden md:block"/> Start understanding your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">wellness.</span>
+            Stop guessing. Start understanding your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">wellness.</span>
           </h1>
           
           <p className="mx-auto max-w-2xl text-balance text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl mb-8 sm:mb-12 px-2">
