@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAssessmentStore } from '@/store/assessment-store';
-import { GOAL_QUESTIONS, DEFAULT_QUESTIONS } from '@/config/assessment-questions';
+import { GOAL_QUESTIONS, DEFAULT_QUESTIONS, UNIVERSAL_PROFILE_QUESTIONS } from '@/config/assessment-questions';
 
 export default function AssessmentLayout({ children }: { children: React.ReactNode }) {
   const runtimeState = useAssessmentStore((state) => state.runtimeState);
@@ -11,7 +11,8 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
   const data = useAssessmentStore((state) => state.data);
 
   const goal = data.goal || 'weight';
-  const questionsList = GOAL_QUESTIONS[goal] || DEFAULT_QUESTIONS;
+  const goalQuestions = GOAL_QUESTIONS[goal] || DEFAULT_QUESTIONS;
+  const questionsList = [...UNIVERSAL_PROFILE_QUESTIONS, ...goalQuestions];
   const totalQuestions = questionsList.length;
 
   // Map state to progress
