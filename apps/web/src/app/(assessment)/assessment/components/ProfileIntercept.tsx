@@ -7,7 +7,7 @@ export function ProfileIntercept() {
   const name = data.name || 'Friend';
   
   return (
-    <div className="flex-1 flex flex-col pt-12 md:pt-24 px-6 pb-24 items-center justify-center">
+    <div className="flex-1 flex flex-col pt-12 md:pt-24 px-6 pb-24 items-center justify-center overflow-y-auto hide-scrollbar">
       <div className="w-full max-w-lg mx-auto space-y-8 animate-in fade-in zoom-in-95 duration-500 bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[2rem] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 text-center">
         
         <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-inner text-4xl">

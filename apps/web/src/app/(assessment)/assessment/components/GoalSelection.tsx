@@ -124,7 +124,7 @@ export function GoalSelection() {
   const setGoal = useAssessmentStore((state) => state.setGoal);
 
   return (
-    <div className="flex-1 flex flex-col pt-8 md:pt-16 px-4 pb-24 animate-in fade-in slide-in-from-bottom-8 duration-700">
+    <div className="flex-1 flex flex-col pt-8 md:pt-16 px-4 pb-24 animate-in fade-in slide-in-from-bottom-8 duration-700 overflow-y-auto hide-scrollbar">
       <div className="max-w-6xl mx-auto w-full flex flex-col items-center">
         
         {/* Header Section */}
