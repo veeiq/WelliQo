@@ -34,13 +34,13 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
       </div>
 
       <header className="w-full bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800/50 sticky top-1.5 z-40">
-        <div className="max-w-3xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Link
               href="/"
               className="flex items-center gap-3 group opacity-80 hover:opacity-100 transition-opacity"
             >
-              <div className="relative h-11 w-11 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="relative h-9 w-9 flex items-center justify-center group-hover:scale-105 transition-transform">
                 <img 
                   src="/logo.jpg" 
                   alt="WelliQo" 
@@ -51,7 +51,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
           </div>
 
           {runtimeState === 'QUESTIONNAIRE' && (
-            <div className="absolute left-1/2 -translate-x-1/2 text-sm font-medium text-slate-500 bg-slate-50 dark:bg-slate-900 px-4 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in duration-500">
+            <div className="absolute left-1/2 -translate-x-1/2 text-xs sm:text-sm font-medium text-slate-500 bg-slate-50 dark:bg-slate-900 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in duration-500">
               Question <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{currentQuestionIndex + 1}</span> of {totalQuestions}
             </div>
           )}
@@ -59,9 +59,9 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
           <div>
             <Link
               href="/"
-              className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors rounded-full hover:bg-slate-50 dark:hover:bg-slate-900"
+              className="px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors rounded-full hover:bg-slate-50 dark:hover:bg-slate-900"
             >
-              Save & Exit
+              Exit
             </Link>
           </div>
         </div>

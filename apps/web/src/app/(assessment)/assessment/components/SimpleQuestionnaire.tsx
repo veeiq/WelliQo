@@ -40,19 +40,19 @@ export function SimpleQuestionnaire() {
   };
 
   return (
-    <div className="flex-1 flex flex-col pt-4 md:pt-16 px-4 md:px-6 pb-20 md:pb-24">
+    <div className="flex-1 flex flex-col pt-2 md:pt-6 px-4 md:px-6 pb-6 md:pb-8 max-h-[calc(100vh-64px)] overflow-hidden">
       <div className="w-full max-w-2xl mx-auto flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700">
         
-        <div className="space-y-3 md:space-y-4 text-center mb-8 md:mb-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold tracking-wide uppercase shadow-sm">
+        <div className="space-y-2 md:space-y-3 text-center mb-4 md:mb-8 shrink-0">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[11px] md:text-xs font-semibold tracking-wide uppercase shadow-sm">
             {currentQuestion.section}
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-[42px] font-medium tracking-tight text-slate-900 dark:text-slate-50 text-balance leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-50 text-balance leading-tight px-2">
             {currentQuestion.label}
           </h2>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center min-h-[250px] mb-8">
+        <div className="flex-1 flex flex-col min-h-0 overflow-y-auto w-full mb-4 px-1 hide-scrollbar">
           <DynamicQuestionRenderer
             question={formattedQuestion as any}
             value={currentValue}
@@ -60,7 +60,7 @@ export function SimpleQuestionnaire() {
           />
         </div>
 
-        <div className="flex justify-between items-center pt-6 md:pt-8 border-t border-slate-100 dark:border-slate-800 mt-auto">
+        <div className="flex justify-between items-center pt-4 md:pt-6 border-t border-slate-100 dark:border-slate-800 shrink-0">
           <button 
             onClick={() => prevQuestion(UNIVERSAL_PROFILE_QUESTIONS.length)} 
             className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 font-medium px-2 md:px-4 py-2 transition-colors text-sm md:text-base"
@@ -71,13 +71,13 @@ export function SimpleQuestionnaire() {
           <button
             onClick={() => nextQuestion(questionsList.length)}
             disabled={!isAnswered}
-            className="group relative flex h-12 md:h-[60px] items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-8 md:px-12 font-medium text-white dark:text-slate-900 shadow-xl shadow-slate-900/10 dark:shadow-white/10 transition-all hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-30 disabled:shadow-none"
+            className="group relative flex h-12 md:h-14 items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-8 md:px-10 font-medium text-white dark:text-slate-900 shadow-xl shadow-slate-900/10 dark:shadow-white/10 transition-all hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-30 disabled:shadow-none"
           >
-            <span className="relative z-10 text-[15px] md:text-[17px]">
+            <span className="relative z-10 text-[15px] md:text-[16px]">
               {safeIndex === questionsList.length - 1 ? 'Show My Results' : 'Continue'}
             </span>
             <div className="absolute inset-0 z-0 bg-gradient-to-r from-emerald-500 to-emerald-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <span className="relative z-10 ml-2 md:ml-3 group-hover:text-white transition-colors duration-300">
+            <span className="relative z-10 ml-2 group-hover:text-white transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5">
                 <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
               </svg>
