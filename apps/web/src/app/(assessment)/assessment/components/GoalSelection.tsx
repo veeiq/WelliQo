@@ -19,6 +19,17 @@ type Section = {
 
 const SECTIONS: Section[] = [
   {
+    title: 'Weight & Body Goals',
+    theme: { color: 'from-amber-400 to-orange-500', shadow: 'shadow-orange-500/20' },
+    items: [
+      { id: 'weight', label: 'Weight Management', icon: '⚖️' },
+      { id: 'lose_weight', label: 'Lose Weight & Burn Fat', icon: '🔥' },
+      { id: 'healthy_weight_gain', label: 'Healthy Weight Gain', icon: '🍽️' },
+      { id: 'muscle', label: 'Build Muscle & Tone', icon: '💪' },
+      { id: 'fitness', label: 'Fitness & Active Lifestyle', icon: '🏃' },
+    ]
+  },
+  {
     title: 'Foundation Wellness',
     theme: { color: 'from-blue-400 to-indigo-500', shadow: 'shadow-blue-500/20' },
     items: [
@@ -29,17 +40,6 @@ const SECTIONS: Section[] = [
       { id: 'hydration', label: 'Hydration', icon: '💧' },
       { id: 'stress', label: 'Stress & Mental Wellbeing', icon: '😌' },
       { id: 'brain_health', label: 'Brain Health & Mental Focus', icon: '🧠' },
-    ]
-  },
-  {
-    title: 'Weight & Body Goals',
-    theme: { color: 'from-amber-400 to-orange-500', shadow: 'shadow-orange-500/20' },
-    items: [
-      { id: 'weight', label: 'Weight Management', icon: '⚖️' },
-      { id: 'lose_weight', label: 'Lose Weight & Burn Fat', icon: '🔥' },
-      { id: 'healthy_weight_gain', label: 'Healthy Weight Gain', icon: '🍽️' },
-      { id: 'muscle', label: 'Build Muscle & Tone', icon: '💪' },
-      { id: 'fitness', label: 'Fitness & Active Lifestyle', icon: '🏃' },
     ]
   },
   {
