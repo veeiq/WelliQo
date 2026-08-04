@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { GoalSelection } from './components/GoalSelection';
 import { SimpleQuestionnaire } from './components/SimpleQuestionnaire';
+import { ProfileIntercept } from './components/ProfileIntercept';
 
 export function AssessmentClient() {
   const router = useRouter();
@@ -18,6 +19,10 @@ export function AssessmentClient() {
 
   if (runtimeState === 'GOAL_SELECTION') {
     return <GoalSelection />;
+  }
+
+  if (runtimeState === 'PROFILE_INTERCEPT') {
+    return <ProfileIntercept />;
   }
 
   if (runtimeState === 'QUESTIONNAIRE') {

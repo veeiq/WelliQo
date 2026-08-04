@@ -62,7 +62,7 @@ export function SimpleQuestionnaire() {
 
         <div className="flex justify-between items-center pt-6 md:pt-8 border-t border-slate-100 dark:border-slate-800 mt-auto">
           <button 
-            onClick={prevQuestion} 
+            onClick={() => prevQuestion(UNIVERSAL_PROFILE_QUESTIONS.length)} 
             className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 font-medium px-2 md:px-4 py-2 transition-colors text-sm md:text-base"
           >
             Back
