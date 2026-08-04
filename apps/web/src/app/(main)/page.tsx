@@ -59,7 +59,7 @@ export default function HomePage() {
               <Activity className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white text-lg">🤖 AI Personalized Report</p>
+              <p className="font-semibold text-slate-900 dark:text-white text-lg">🤖 AI-Powered Personalized Report</p>
               <p className="text-sm text-slate-500 dark:text-slate-400">Based on your goals and lifestyle</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-50 sm:text-5xl">
-            Your personalized wellness journey starts here. ⭐
+            Your personalized wellness journey starts here.
           </h2>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Just three simple steps to discover your wellness score and personalized action plan.
@@ -102,7 +102,7 @@ export default function HomePage() {
               <span className="text-3xl font-bold text-slate-300 dark:text-slate-700 group-hover:text-emerald-500 transition-colors duration-500">3</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Achieve</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Receive your personalized wellness plan and optional guidance from a wellness coach.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Receive your personalized wellness plan and optional coach guidance.</p>
           </div>
         </div>
 
@@ -113,7 +113,7 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-3">
              <span className="text-3xl">🤖</span>
-             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">AI Personalized Report</span>
+             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">Personalized AI Report</span>
           </div>
           <div className="flex items-center gap-3">
              <span className="text-3xl">📅</span>

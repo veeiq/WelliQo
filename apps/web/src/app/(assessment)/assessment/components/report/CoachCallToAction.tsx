@@ -72,7 +72,7 @@ export function CoachCallToAction() {
               Ready for Real Results?
             </h2>
             <p className="text-slate-600 dark:text-slate-300">
-              Get a personalized nutrition plan and daily guidance from an expert Herbalife Coach to reach your goals faster.
+              Get a personalized nutrition plan and daily guidance from an expert Wellness Coach to reach your goals faster.
             </p>
           </div>
           <div className="w-full sm:w-auto">

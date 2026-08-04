@@ -13,7 +13,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'WelliQo | Personalized Wellness & Nutrition',
   description: 'Achieve your health goals with customized nutrition plans, expert coaching, and high-quality wellness products. Start your free wellness assessment today.',
-  keywords: ['wellness', 'nutrition', 'weight loss', 'herbalife', 'health coach', 'healthy aging', 'fitness'],
+  keywords: ['wellness', 'nutrition', 'weight loss', 'health coach', 'healthy aging', 'fitness'],
   openGraph: {
     title: 'WelliQo | Personalized Wellness Assessment',
     description: 'Discover your wellness baseline and get a customized nutrition plan.',
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             {children}
           </main>
           
-          {/* Global Herbalife Compliance Footer */}
+          {/* Global Compliance Footer */}
           <footer className="w-full bg-slate-900 text-slate-400 py-12 px-4 text-xs leading-relaxed border-t border-slate-800 mt-auto">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
               <div className="space-y-4 max-w-sm text-left">
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                 <p className="text-sm font-medium text-emerald-400">Intelligent Wellness, Science-Informed</p>
                 <div className="space-y-2 pt-2 text-slate-500">
                   <p>
-                    <strong>Independent Herbalife Associate:</strong><br/> Alok Kumar Mahapatra
+                    <strong>Independent Wellness Coach:</strong><br/> Alok Kumar Mahapatra
                   </p>
                   <p>
                     © {new Date().getFullYear()} WelliQo. All rights reserved.
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
               
               <div className="flex-1 max-w-2xl space-y-4 md:text-right flex flex-col justify-between h-full">
                 <p className="text-slate-500">
-                  These products are not intended to diagnose, treat, cure, or prevent any disease. Results are not typical. Individual results will vary depending on starting point, goals, and effort. This website is operated by independent associates and is not the official Herbalife corporate website.
+                  These products are not intended to diagnose, treat, cure, or prevent any disease. Results are not typical. Individual results will vary depending on starting point, goals, and effort. This website is operated by independent wellness coaches.
                 </p>
                 <p className="text-slate-600 pt-8">Built with ❤️ in India by <a href="https://veeiq.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-500 font-medium transition-colors">VeeiQ</a>.</p>
               </div>
