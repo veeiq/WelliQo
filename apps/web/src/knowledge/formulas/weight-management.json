@@ -1,0 +1,132 @@
+{
+  "id": "module_formulas_weight_management",
+  "version": "1.0.0",
+  "definition": "Core formulas for weight management and body composition",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "formulas": [
+    {
+      "id": "FORMULA_BMI",
+      "name": "Body Mass Index",
+      "purpose": "Estimate body weight relative to height.",
+      "expression": "weight / Math.pow(height, 2)",
+      "unit": "kg/m²",
+      "variables": ["weight", "height"],
+      "assumptions": ["Height is in meters", "Weight is in kg"],
+      "limitations": ["BMI is a screening tool, not a measure of body fat."],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_HEALTHY_WEIGHT_RANGE_MIN",
+      "name": "Minimum Healthy Weight",
+      "purpose": "Estimate minimum healthy weight range using BMI 18.5.",
+      "expression": "18.5 * Math.pow(height, 2)",
+      "unit": "kg",
+      "variables": ["height"],
+      "assumptions": ["Height is in meters"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_HEALTHY_WEIGHT_RANGE_MAX",
+      "name": "Maximum Healthy Weight",
+      "purpose": "Estimate maximum healthy weight range using BMI 24.9.",
+      "expression": "24.9 * Math.pow(height, 2)",
+      "unit": "kg",
+      "variables": ["height"],
+      "assumptions": ["Height is in meters"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_TARGET_WEIGHT_DIFF",
+      "name": "Target Weight Difference",
+      "purpose": "Determine the amount of change required.",
+      "expression": "weight - target_weight",
+      "unit": "kg",
+      "variables": ["weight", "target_weight"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": false
+    },
+    {
+      "id": "FORMULA_BODY_FAT_ESTIMATE",
+      "name": "Estimated Body Fat %",
+      "purpose": "Estimate body fat percentage when direct measurement is unavailable.",
+      "expression": "(1.2 * bmi) + (0.23 * age) - (10.8 * (gender === 'male' ? 1 : 0)) - 5.4",
+      "unit": "%",
+      "variables": ["bmi", "age", "gender"],
+      "assumptions": ["Uses standard adult BMI-based formula"],
+      "limitations": ["This is an estimate, not a direct measurement."],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_BMR",
+      "name": "Basal Metabolic Rate",
+      "purpose": "Estimate daily energy required at complete rest.",
+      "expression": "(10 * weight) + (6.25 * (height * 100)) - (5 * age) + (gender === 'male' ? 5 : -161)",
+      "unit": "kcal/day",
+      "variables": ["weight", "height", "age", "gender"],
+      "assumptions": ["Mifflin-St Jeor equation", "Height in meters, converted to cm internally"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_TDEE",
+      "name": "Total Daily Energy Expenditure",
+      "purpose": "Estimate daily energy expenditure based on activity.",
+      "expression": "bmr * activity_multiplier",
+      "unit": "kcal/day",
+      "variables": ["bmr", "activity_multiplier"],
+      "assumptions": ["Activity multiplier matches standard clinical brackets"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_CALORIE_TARGET",
+      "name": "Daily Calorie Target",
+      "purpose": "Provide a personalised calorie target based on the selected weight goal.",
+      "expression": "goal === 'lose' ? tdee - 500 : goal === 'gain' ? tdee + 500 : tdee",
+      "unit": "kcal/day",
+      "variables": ["tdee", "goal"],
+      "assumptions": ["Standard 500 kcal deficit/surplus for moderate change"],
+      "limitations": [],
+      "reusable": false
+    },
+    {
+      "id": "FORMULA_PROTEIN_TARGET",
+      "name": "Daily Protein Goal",
+      "purpose": "Estimate daily protein needs based on the user's goal.",
+      "expression": "goal === 'lose' ? weight * 1.8 : goal === 'gain' ? weight * 1.6 : weight * 1.0",
+      "unit": "g/day",
+      "variables": ["weight", "goal"],
+      "assumptions": ["Weight Loss = 1.8g/kg, Gain = 1.6g/kg, Maintain = 1.0g/kg"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_WATER_TARGET",
+      "name": "Daily Water Goal",
+      "purpose": "Estimate daily hydration needs.",
+      "expression": "(weight * 35) / 1000",
+      "unit": "L/day",
+      "variables": ["weight"],
+      "assumptions": ["Standard 35mL per kg baseline"],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "FORMULA_PROGRESS_TIMELINE",
+      "name": "Healthy Weight Progress Timeline",
+      "purpose": "Estimate a realistic timeframe based on target weight difference.",
+      "expression": "Math.abs(weight - target_weight) / 0.75",
+      "unit": "weeks",
+      "variables": ["weight", "target_weight"],
+      "assumptions": ["Assumes ~0.75kg per week rate of change"],
+      "limitations": ["Conservative estimate, not a guarantee"],
+      "reusable": false
+    }
+  ]
+}

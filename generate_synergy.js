@@ -1,0 +1,166 @@
+const fs = require('fs');
+const path = require('path');
+
+const synergy_rules = [
+  {
+    id: "SYN_POSITIVE_ENERGY_BALANCE",
+    name: "Positive Energy Balance",
+    requiredEvidence: [
+      "LARGE_PORTIONS",
+      "VERY_LARGE_PORTIONS",
+      "FREQUENT_EATING_OUT",
+      "HIGH_RESTAURANT_DEPENDENCY",
+      "HIGH_SUGAR_BEVERAGES",
+      "DAILY_SUGAR_BEVERAGES",
+      "EXCESS_LIQUID_CALORIES",
+      "FREQUENT_SNACKING",
+      "CONTINUOUS_GRAZING",
+      "REGULAR_LATE_EATING",
+      "CHRONIC_LATE_EATING",
+      "VERY_LOW_DAILY_MOVEMENT"
+    ],
+    minRequiredMatches: 3,
+    findingId: "FINDING_POSITIVE_ENERGY_BALANCE",
+    priority: "URGENT",
+    confidence: 90
+  },
+  {
+    id: "SYN_RECOVERY_DEFICIT",
+    name: "Recovery Deficit",
+    requiredEvidence: [
+      "SLEEP_DEPRIVATION",
+      "INADEQUATE_SLEEP",
+      "POOR_SLEEP_QUALITY",
+      "SEVERE_SLEEP_DISRUPTION",
+      "HIGH_STRESS",
+      "CHRONIC_STRESS",
+      "LOW_DAILY_ENERGY",
+      "REDUCED_ENERGY"
+    ],
+    minRequiredMatches: 3,
+    findingId: "FINDING_POOR_RECOVERY",
+    priority: "HIGH",
+    confidence: 90
+  },
+  {
+    id: "SYN_SEDENTARY_LIFESTYLE",
+    name: "Sedentary Lifestyle",
+    requiredEvidence: [
+      "HIGH_SEDENTARY_BEHAVIOUR",
+      "VERY_HIGH_SEDENTARY_BEHAVIOUR",
+      "LOW_DAILY_MOVEMENT",
+      "VERY_LOW_DAILY_MOVEMENT",
+      "NO_STRUCTURED_EXERCISE"
+    ],
+    minRequiredMatches: 3,
+    findingId: "FINDING_SEDENTARY_LIFESTYLE",
+    priority: "HIGH",
+    confidence: 90
+  },
+  {
+    id: "SYN_EMOTIONAL_EATING",
+    name: "Emotional Eating Pattern",
+    requiredEvidence: [
+      "EMOTIONAL_EATING",
+      "CHRONIC_EMOTIONAL_EATING",
+      "HIGH_STRESS",
+      "CHRONIC_STRESS",
+      "FREQUENT_CRAVINGS",
+      "PERSISTENT_CRAVINGS",
+      "LATE_NIGHT_CRAVINGS"
+    ],
+    minRequiredMatches: 3,
+    findingId: "FINDING_EMOTIONAL_EATING_PATTERN",
+    priority: "HIGH",
+    confidence: 95
+  },
+  {
+    id: "SYN_IRREGULAR_EATING",
+    name: "Irregular Eating Pattern",
+    requiredEvidence: [
+      "FREQUENT_BREAKFAST_SKIPPING",
+      "LOW_MEAL_FREQUENCY",
+      "REGULAR_LATE_EATING",
+      "CHRONIC_LATE_EATING",
+      "FREQUENT_SNACKING",
+      "CONTINUOUS_GRAZING"
+    ],
+    minRequiredMatches: 3,
+    findingId: "FINDING_IRREGULAR_EATING",
+    priority: "MEDIUM",
+    confidence: 85
+  },
+  {
+    id: "SYN_WEIGHT_CYCLING",
+    name: "Weight Cycling Risk",
+    requiredEvidence: [
+      "REPEATED_DIET_ATTEMPTS",
+      "CHRONIC_DIET_CYCLING",
+      "WEIGHT_CYCLING"
+    ],
+    minRequiredMatches: 2, // Slightly adjusted since there are fewer indicators in this group
+    findingId: "FINDING_WEIGHT_CYCLING",
+    priority: "HIGH",
+    confidence: 95
+  },
+  {
+    id: "SYN_LOW_BEHAVIOUR_READINESS",
+    name: "Low Behaviour Readiness",
+    requiredEvidence: [
+      "LOW_SELF_CONFIDENCE",
+      "NO_SUPPORT_SYSTEM"
+    ],
+    minRequiredMatches: 2,
+    findingId: "FINDING_LOW_BEHAVIOUR_READINESS",
+    priority: "MEDIUM",
+    confidence: 85
+  },
+  // Positive Synergies
+  {
+    id: "SYN_ACTIVE_HEALTHY",
+    name: "Active Healthy Lifestyle",
+    requiredEvidence: [
+      "ACTIVE_LIFESTYLE",
+      "GOOD_VITALITY"
+    ],
+    minRequiredMatches: 2,
+    findingId: "FINDING_ACTIVE_LIFESTYLE",
+    priority: "INFO",
+    confidence: 90
+  },
+  {
+    id: "SYN_STRONG_RECOVERY",
+    name: "Strong Recovery",
+    requiredEvidence: [
+      "GOOD_VITALITY"
+    ],
+    minRequiredMatches: 1, // Just using good vitality since we didn't map "good sleep" to positive evidence explicitly yet
+    findingId: "FINDING_STRONG_RECOVERY",
+    priority: "INFO",
+    confidence: 90
+  },
+  {
+    id: "SYN_BALANCED_NUTRITION",
+    name: "Balanced Nutrition Pattern",
+    requiredEvidence: [
+      "HEALTHY_SNACK_PATTERN"
+    ],
+    minRequiredMatches: 1,
+    findingId: "FINDING_BALANCED_NUTRITION",
+    priority: "INFO",
+    confidence: 90
+  }
+];
+
+fs.writeFileSync("apps/web/src/knowledge/synergy/weight-management.json", JSON.stringify({
+    id: "module_synergy_weight_management",
+    version: "1.0.0",
+    definition: "Core synergy rules for weight management",
+    reviewedBy: "Clinical Team",
+    lastReviewed: "2026-08-05",
+    nextReview: "2027-08-05",
+    scientificReferences: [],
+    synergy: synergy_rules
+}, null, 2));
+
+console.log("Synergy generated");

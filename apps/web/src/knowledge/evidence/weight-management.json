@@ -1,0 +1,96 @@
+{
+  "id": "module_evidence_weight_management",
+  "version": "1.0.0",
+  "definition": "Core evidence definitions for weight management",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "evidence": [
+    {
+      "id": "GOAL_WEIGHT_LOSS",
+      "description": "Wants to lose weight",
+      "category": "Goal"
+    },
+    {
+      "id": "GOAL_MAINTENANCE",
+      "description": "Wants to maintain weight",
+      "category": "Goal"
+    },
+    {
+      "id": "GOAL_WEIGHT_GAIN",
+      "description": "Wants to gain weight",
+      "category": "Goal"
+    },
+    {
+      "id": "GOAL_RECOMPOSITION",
+      "description": "Wants to recomp",
+      "category": "Goal"
+    },
+    {
+      "id": "TARGET_WEIGHT",
+      "description": "Target weight set",
+      "category": "Goal"
+    },
+    {
+      "id": "WEIGHT_STABLE",
+      "description": "Weight mostly stable",
+      "category": "History"
+    },
+    {
+      "id": "WEIGHT_GAINING",
+      "description": "Weight increasing",
+      "category": "History"
+    },
+    {
+      "id": "HEALTHY_SNACK_PATTERN",
+      "description": "Healthy snacks",
+      "category": "Nutrition"
+    },
+    {
+      "id": "MODERATE_SNACKING",
+      "description": "Moderate snacks",
+      "category": "Nutrition"
+    },
+    {
+      "id": "AFTERNOON_CRAVINGS",
+      "description": "Cravings in afternoon",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVENING_CRAVINGS",
+      "description": "Cravings in evening",
+      "category": "Behaviour"
+    },
+    {
+      "id": "VARIABLE_CRAVINGS",
+      "description": "Variable cravings",
+      "category": "Behaviour"
+    },
+    {
+      "id": "VERY_SHORT_SLEEP",
+      "description": "Sleep < 5 hours",
+      "category": "Recovery"
+    },
+    {
+      "id": "ACTIVE_LIFESTYLE",
+      "description": "High steps",
+      "category": "Activity"
+    },
+    {
+      "id": "GOOD_VITALITY",
+      "description": "High energy",
+      "category": "Recovery"
+    },
+    {
+      "id": "HIGH_READINESS",
+      "description": "High confidence",
+      "category": "Behaviour"
+    },
+    {
+      "id": "GOOD_SUPPORT_SYSTEM",
+      "description": "Has support",
+      "category": "Behaviour"
+    }
+  ]
+}

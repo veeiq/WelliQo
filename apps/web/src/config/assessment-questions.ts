@@ -1,23 +1,4 @@
-export type QuestionType = 'single_choice' | 'multiple_choice' | 'number' | 'boolean' | 'scale' | 'height' | 'weight' | 'text';
-
-export interface QuestionOption {
-  id: string;
-  label: string;
-  description?: string;
-  value: any;
-}
-
-export interface QuestionDef {
-  id: string;
-  section: string;
-  label: string;
-  type: QuestionType;
-  options?: QuestionOption[];
-  placeholder?: string;
-  required?: boolean;
-}
-
-export type GoalQuestions = Record<string, QuestionDef[]>;
+import { QuestionDef, QuestionOption, QuestionType } from '../types/assessment';
 
 export const UNIVERSAL_PROFILE_QUESTIONS: QuestionDef[] = [
   {
@@ -142,9 +123,4 @@ export const UNIVERSAL_PROFILE_QUESTIONS: QuestionDef[] = [
     ],
   },
 ];
-
-export const GOAL_QUESTIONS: GoalQuestions = {};
-
-// Fallback if goal not found
-export const DEFAULT_QUESTIONS: QuestionDef[] = [];
 

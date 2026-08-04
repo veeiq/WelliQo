@@ -1,0 +1,44 @@
+{
+  "id": "body-composition-knowledge",
+  "version": "1.0.0",
+  "definition": "Clinical guidelines for BMI and Body Fat percentages.",
+  "reviewedBy": "Dr. Sarah Jenkins (RD, PhD)",
+  "lastReviewed": "2026-08-01",
+  "nextReview": "2027-08-01",
+  "scientificReferences": [
+    {
+      "organization": "WHO",
+      "publication": "Obesity: preventing and managing the global epidemic",
+      "year": 2000,
+      "evidenceLevel": "High"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "bmi",
+      "name": "Body Mass Index",
+      "expression": "weight / (height * height)",
+      "unit": "kg/m2",
+      "variables": ["weight", "height"],
+      "referenceIndex": 0,
+      "limitations": ["Does not distinguish between muscle and fat mass"]
+    }
+  ],
+  "thresholds": [
+    {
+      "metricId": "bmi",
+      "name": "WHO BMI Classifications",
+      "referenceIndex": 0,
+      "brackets": [
+        { "max": 18.4, "clinicalMeaning": "Underweight", "severity": "MEDIUM" },
+        { "min": 18.5, "max": 24.9, "clinicalMeaning": "Normal Weight", "severity": "LOW" },
+        { "min": 25.0, "max": 29.9, "clinicalMeaning": "Overweight", "severity": "LOW" },
+        { "min": 30.0, "max": 34.9, "clinicalMeaning": "Obesity Class I", "severity": "MEDIUM" },
+        { "min": 35.0, "max": 39.9, "clinicalMeaning": "Obesity Class II", "severity": "HIGH" },
+        { "min": 40.0, "clinicalMeaning": "Obesity Class III", "severity": "CRITICAL" }
+      ]
+    }
+  ],
+  "recommendations": [],
+  "contraindications": []
+}

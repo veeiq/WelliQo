@@ -3,24 +3,39 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAssessmentStore } from '@/store/assessment-store';
-import { GOAL_QUESTIONS, DEFAULT_QUESTIONS, UNIVERSAL_PROFILE_QUESTIONS } from '@/config/assessment-questions';
+import { UNIVERSAL_PROFILE_QUESTIONS } from '@/config/assessment-questions';
+import { ASSESSMENTS } from '@/assessments/registry';
+import { GlobalProfileMenu } from './assessment/components/GlobalProfileMenu';
 
 export default function AssessmentLayout({ children }: { children: React.ReactNode }) {
   const runtimeState = useAssessmentStore((state) => state.runtimeState);
   const currentQuestionIndex = useAssessmentStore((state) => state.currentQuestionIndex);
   const data = useAssessmentStore((state) => state.data);
 
-  const goal = data.goal || 'weight';
-  const goalQuestions = GOAL_QUESTIONS[goal] || DEFAULT_QUESTIONS;
+  let goalQuestions: any[] = [];
+  if (data.goal) {
+    const assessment = ASSESSMENTS.find(a => a.id === data.goal);
+    if (assessment && assessment.implemented) {
+      goalQuestions = assessment.questions;
+    }
+  }
+
   const questionsList = [...UNIVERSAL_PROFILE_QUESTIONS, ...goalQuestions];
   const totalQuestions = questionsList.length;
 
   // Map state to progress
   let progressPercent = 10;
   if (runtimeState === 'QUESTIONNAIRE') {
-    progressPercent = 15 + ((currentQuestionIndex + 1) / totalQuestions) * 75;
+    if (currentQuestionIndex < UNIVERSAL_PROFILE_QUESTIONS.length) {
+      // Phase 1 Progress (Profile Builder)
+      progressPercent = 5 + ((currentQuestionIndex) / UNIVERSAL_PROFILE_QUESTIONS.length) * 45;
+    } else {
+      // Phase 2 Progress (Deep Dive)
+      const phase2Index = currentQuestionIndex - UNIVERSAL_PROFILE_QUESTIONS.length;
+      progressPercent = 50 + ((phase2Index) / goalQuestions.length) * 40;
+    }
   }
-  if (runtimeState === 'CALCULATING') progressPercent = 90;
+  if (runtimeState === 'CALCULATING') progressPercent = 95;
   if (runtimeState === 'REPORT_READY') progressPercent = 100;
 
   return (
@@ -55,17 +70,16 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
 
           {runtimeState === 'QUESTIONNAIRE' && (
             <div className="absolute left-1/2 -translate-x-1/2 text-xs sm:text-sm font-medium text-slate-500 bg-slate-50 dark:bg-slate-900 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm animate-in fade-in duration-500">
-              Question <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{currentQuestionIndex + 1}</span> of {totalQuestions}
+              {currentQuestionIndex < UNIVERSAL_PROFILE_QUESTIONS.length ? (
+                <>Question <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{currentQuestionIndex + 1}</span> of {UNIVERSAL_PROFILE_QUESTIONS.length} <span className="hidden sm:inline"> (Profile Builder)</span></>
+              ) : (
+                <>Question <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{(currentQuestionIndex - UNIVERSAL_PROFILE_QUESTIONS.length) + 1}</span> of {goalQuestions.length} <span className="hidden sm:inline"> (Deep Dive)</span></>
+              )}
             </div>
           )}
 
           <div>
-            <Link
-              href="/"
-              className="px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors rounded-full hover:bg-slate-50 dark:hover:bg-slate-900"
-            >
-              Exit
-            </Link>
+            <GlobalProfileMenu />
           </div>
         </div>
       </header>

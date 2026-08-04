@@ -26,9 +26,12 @@ export function ProfileIntercept() {
         <div className="pt-4 space-y-4">
           <button
             onClick={() => {
-              // Edge case: if we currently have no category questions
-              const { GOAL_QUESTIONS, DEFAULT_QUESTIONS } = require('@/config/assessment-questions');
-              const goalQuestions = GOAL_QUESTIONS[data.goal || 'weight'] || DEFAULT_QUESTIONS;
+              const { ASSESSMENTS } = require('@/assessments/registry');
+              let goalQuestions: any[] = [];
+              const assessment = ASSESSMENTS.find((a: any) => a.id === (data.goal || 'weight'));
+              if (assessment && assessment.implemented) {
+                goalQuestions = assessment.questions;
+              }
               
               if (goalQuestions.length === 0) {
                 // Nothing else to ask, just submit

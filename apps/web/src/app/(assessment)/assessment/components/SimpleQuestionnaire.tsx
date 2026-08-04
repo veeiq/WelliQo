@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { DynamicQuestionRenderer } from '@welliqo/ui/components/assessment';
-import { GOAL_QUESTIONS, DEFAULT_QUESTIONS, UNIVERSAL_PROFILE_QUESTIONS } from '@/config/assessment-questions';
+import { UNIVERSAL_PROFILE_QUESTIONS } from '@/config/assessment-questions';
+import { ASSESSMENTS } from '@/assessments/registry';
 
 export function SimpleQuestionnaire() {
   const { 
@@ -14,7 +15,12 @@ export function SimpleQuestionnaire() {
   } = useAssessmentStore();
 
   const goal = data.goal || 'weight';
-  const goalQuestions = GOAL_QUESTIONS[goal] || DEFAULT_QUESTIONS;
+
+  let goalQuestions: any[] = [];
+  const assessment = ASSESSMENTS.find(a => a.id === goal);
+  if (assessment && assessment.implemented) {
+    goalQuestions = assessment.questions;
+  }
   
   // Combine Universal Profile with Goal Questions
   const questionsList = [...UNIVERSAL_PROFILE_QUESTIONS, ...goalQuestions];
@@ -41,6 +47,7 @@ export function SimpleQuestionnaire() {
 
   return (
     <div className="flex-1 flex flex-col pt-2 md:pt-6 px-4 md:px-6 pb-6 md:pb-8 min-h-0">
+
       <div className="w-full max-w-2xl mx-auto flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700 min-h-0">
         
         <div className="space-y-2 md:space-y-3 text-center mb-4 md:mb-8 shrink-0">

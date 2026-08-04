@@ -1,0 +1,476 @@
+{
+  "id": "module_recommendations_weight_management",
+  "version": "1.0.0",
+  "definition": "Core recommendations for weight management",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "recommendations": [
+    {
+      "id": "REC_HEALTHY_WEIGHT_PLAN",
+      "title": "Healthy Weight Plan",
+      "category": "Lifestyle",
+      "priority": "URGENT",
+      "triggeredByFindings": [
+        "FINDING_OVERWEIGHT",
+        "FINDING_OBESITY"
+      ],
+      "recommendationText": "Focus on building sustainable daily habits rather than pursuing rapid weight loss. Gradual improvements are more likely to produce lasting results.",
+      "whyThisMatters": "Healthy weight management is primarily achieved through consistent nutrition, regular movement, quality sleep, and behaviour change—not short-term restrictive diets.",
+      "actionSteps": [
+        "Set realistic weekly goals",
+        "Monitor progress consistently",
+        "Build habits gradually",
+        "Prioritize long-term consistency"
+      ],
+      "expectedBenefits": [
+        "Sustainable weight change",
+        "Better energy",
+        "Improved metabolic health",
+        "Reduced weight regain risk"
+      ],
+      "expectedTimeline": "Visible improvements typically develop over weeks to months depending on consistency and individual circumstances.",
+      "contraindications": [],
+      "successIndicators": [
+        "Consistent habits",
+        "Improved energy",
+        "Improved measurements",
+        "Better confidence"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_PORTION_AWARENESS",
+      "title": "Portion Awareness",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "LARGE_PORTIONS",
+        "VERY_LARGE_PORTIONS",
+        "POSITIVE_ENERGY_BALANCE_PATTERN"
+      ],
+      "recommendationText": "Become more aware of portion sizes before changing the types of food you eat. Small reductions in portion size can meaningfully reduce excess energy intake without making meals feel restrictive.",
+      "whyThisMatters": "Portion control is one of the most effective ways to manage energy balance without removing your favorite foods.",
+      "actionSteps": [
+        "Use slightly smaller plates",
+        "Serve vegetables first",
+        "Eat slowly and stop when 80% full"
+      ],
+      "expectedBenefits": [
+        "Improved satiety awareness",
+        "Better calorie control",
+        "Easier long-term adherence"
+      ],
+      "expectedTimeline": "Immediate reduction in energy intake; results visible in 2-4 weeks.",
+      "contraindications": [],
+      "successIndicators": [
+        "Feeling comfortably full, not stuffed",
+        "Stable weight trend",
+        "No afternoon energy crashes"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "REC_REDUCE_SUGARY_DRINKS",
+      "title": "Reduce Sugary Drinks",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_HIGH_SUGAR_INTAKE",
+        "HIGH_SUGAR_BEVERAGES",
+        "DAILY_SUGAR_BEVERAGES",
+        "EXCESS_LIQUID_CALORIES"
+      ],
+      "recommendationText": "Replace sugar-sweetened beverages with water or other low- or no-added-sugar options whenever practical.",
+      "whyThisMatters": "Liquid calories often do not provide satiety and can easily lead to a positive energy balance.",
+      "actionSteps": [
+        "Swap one sugary drink for water daily",
+        "Use zero-calorie alternatives if needed"
+      ],
+      "expectedBenefits": [
+        "Reduced added sugar intake",
+        "Lower liquid calorie intake",
+        "Better hydration"
+      ],
+      "expectedTimeline": "Immediate reduction in energy intake.",
+      "contraindications": [],
+      "successIndicators": [
+        "Increased water intake",
+        "Fewer sugar cravings",
+        "More stable energy levels"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "REC_REGULAR_MEALS",
+      "title": "Establish Regular Meals",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_IRREGULAR_EATING",
+        "IRREGULAR_EATING_PATTERN",
+        "LOW_MEAL_FREQUENCY",
+        "MEAL_INCONSISTENCY"
+      ],
+      "recommendationText": "Develop a meal schedule that fits your lifestyle and helps reduce long gaps between eating occasions if those gaps contribute to overeating later in the day.",
+      "whyThisMatters": "Irregular eating patterns can disrupt hunger hormones and lead to impulsive food choices.",
+      "actionSteps": [
+        "Plan your meal times",
+        "Avoid skipping meals intentionally if it causes later hunger"
+      ],
+      "expectedBenefits": [
+        "Stable energy levels",
+        "Better hunger management",
+        "Reduced cravings"
+      ],
+      "expectedTimeline": "1-2 weeks for hunger cues to stabilize.",
+      "contraindications": [],
+      "successIndicators": [
+        "Fewer extreme hunger episodes",
+        "Consistent meal timing"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_ACTIVITY_PLAN",
+      "title": "Increase Daily Movement",
+      "category": "Movement",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_SEDENTARY_LIFESTYLE",
+        "SEDENTARY_LIFESTYLE_PATTERN",
+        "VERY_LOW_DAILY_MOVEMENT",
+        "HIGH_SEDENTARY_BEHAVIOUR",
+        "VERY_HIGH_SEDENTARY_BEHAVIOUR"
+      ],
+      "recommendationText": "Increase daily movement gradually. Small increases in walking, standing, and other routine activity can provide meaningful health benefits.",
+      "whyThisMatters": "Non-exercise activity thermogenesis (NEAT) makes up a significant portion of daily calorie burn.",
+      "actionSteps": [
+        "Walk more frequently",
+        "Reduce prolonged sitting",
+        "Increase daily movement gradually"
+      ],
+      "expectedBenefits": [
+        "Increased daily energy expenditure",
+        "Better cardiovascular health"
+      ],
+      "expectedTimeline": "Immediate benefits to mood; physical changes in 4-6 weeks.",
+      "contraindications": [],
+      "successIndicators": [
+        "Higher daily step count",
+        "Feeling less stiff",
+        "Better mood"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "REC_EXERCISE_ROUTINE",
+      "title": "Build an Exercise Routine",
+      "category": "Exercise",
+      "priority": "MEDIUM",
+      "triggeredByFindings": [
+        "NO_STRUCTURED_EXERCISE",
+        "LIMITED_EXERCISE"
+      ],
+      "recommendationText": "Aim to build a regular exercise routine that is realistic for your schedule and fitness level.",
+      "whyThisMatters": "Exercise preserves muscle mass during weight loss and improves overall metabolic health.",
+      "actionSteps": [
+        "Start with 2 days a week",
+        "Choose activities you enjoy",
+        "Focus on consistency over intensity initially"
+      ],
+      "expectedBenefits": [
+        "Improved fitness",
+        "Better body composition",
+        "Stress relief"
+      ],
+      "expectedTimeline": "Strength and endurance improve within weeks.",
+      "contraindications": [],
+      "successIndicators": [
+        "Consistent weekly workouts",
+        "Increased strength",
+        "Better sleep"
+      ],
+      "reusable": true,
+      "difficulty": "Advanced"
+    },
+    {
+      "id": "REC_SLEEP_RECOVERY",
+      "title": "Improve Sleep Recovery",
+      "category": "Recovery",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_POOR_RECOVERY",
+        "RECOVERY_DEFICIT_PATTERN",
+        "SLEEP_DEPRIVATION",
+        "INADEQUATE_SLEEP",
+        "POOR_SLEEP_QUALITY",
+        "SEVERE_SLEEP_DISRUPTION"
+      ],
+      "recommendationText": "Improving sleep duration and sleep quality may make healthy eating, activity, and recovery easier to maintain.",
+      "whyThisMatters": "Poor sleep alters hunger hormones, making cravings harder to resist and reducing energy for activity.",
+      "actionSteps": [
+        "Set a consistent bedtime",
+        "Reduce screen time before bed",
+        "Ensure a dark, cool sleeping environment"
+      ],
+      "expectedBenefits": [
+        "Better recovery",
+        "Improved daytime energy",
+        "Improved consistency"
+      ],
+      "expectedTimeline": "Immediate improvement in energy and mood within days.",
+      "contraindications": [],
+      "successIndicators": [
+        "Waking up rested",
+        "7+ hours of sleep",
+        "Fewer evening cravings"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_STRESS_MANAGEMENT",
+      "title": "Stress Management",
+      "category": "Recovery",
+      "priority": "MEDIUM",
+      "triggeredByFindings": [
+        "FINDING_HIGH_STRESS_PATTERN",
+        "HIGH_STRESS",
+        "CHRONIC_STRESS",
+        "MODERATE_STRESS"
+      ],
+      "recommendationText": "Identify practical strategies that help reduce or manage daily stress, as persistent stress can affect eating behaviours, recovery, and motivation.",
+      "whyThisMatters": "Chronic stress elevates cortisol which can promote fat storage and trigger emotional eating.",
+      "actionSteps": [
+        "Incorporate daily relaxation",
+        "Take short mental breaks during work",
+        "Practice deep breathing or meditation"
+      ],
+      "expectedBenefits": [
+        "Lower cortisol levels",
+        "Reduced emotional eating triggers",
+        "Better sleep"
+      ],
+      "expectedTimeline": "Ongoing practice required.",
+      "contraindications": [],
+      "successIndicators": [
+        "Feeling calmer",
+        "Better response to triggers",
+        "Reduced emotional eating"
+      ],
+      "reusable": true,
+      "difficulty": "Advanced"
+    },
+    {
+      "id": "REC_EMOTIONAL_EATING_SUPPORT",
+      "title": "Emotional Eating Support",
+      "category": "Behaviour",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_EMOTIONAL_EATING_PATTERN",
+        "EMOTIONAL_EATING_PATTERN",
+        "EMOTIONAL_EATING",
+        "CHRONIC_EMOTIONAL_EATING"
+      ],
+      "recommendationText": "Before eating, pause briefly and ask whether you are responding to physical hunger or an emotional trigger. Increasing awareness is often the first step toward changing the habit.",
+      "whyThisMatters": "Separating emotions from food allows for more mindful choices.",
+      "actionSteps": [
+        "Keep a basic trigger journal",
+        "Delay the craving by 10 minutes",
+        "Find non-food coping mechanisms"
+      ],
+      "expectedBenefits": [
+        "Better emotional regulation",
+        "Reduced binge eating episodes"
+      ],
+      "expectedTimeline": "Gradual improvement over months.",
+      "contraindications": [],
+      "successIndicators": [
+        "Identifying triggers before eating",
+        "Using non-food coping mechanisms"
+      ],
+      "reusable": true,
+      "difficulty": "Advanced"
+    },
+    {
+      "id": "REC_WEIGHT_CYCLING",
+      "title": "Stop Weight Cycling",
+      "category": "Mindset",
+      "priority": "HIGH",
+      "triggeredByFindings": [
+        "FINDING_WEIGHT_CYCLING",
+        "WEIGHT_CYCLING_PATTERN",
+        "WEIGHT_CYCLING",
+        "REPEATED_DIET_ATTEMPTS",
+        "CHRONIC_DIET_CYCLING"
+      ],
+      "recommendationText": "Rather than repeatedly starting over with restrictive plans, focus on creating routines that you can realistically maintain for months and years.",
+      "whyThisMatters": "Yo-yo dieting can slow metabolism and make future weight loss more difficult.",
+      "actionSteps": [
+        "Avoid extreme diets",
+        "Focus on 80/20 consistency",
+        "Aim for maintenance phases"
+      ],
+      "expectedBenefits": [
+        "Stable metabolism",
+        "Better relationship with food"
+      ],
+      "expectedTimeline": "Long-term behavioural shift.",
+      "contraindications": [],
+      "successIndicators": [
+        "Focusing on habits over the scale",
+        "Reduced anxiety around food"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_REALISTIC_EXPECTATIONS",
+      "title": "Set Realistic Expectations",
+      "category": "Mindset",
+      "priority": "MEDIUM",
+      "triggeredByFindings": [
+        "FINDING_UNREALISTIC_EXPECTATION",
+        "UNREALISTIC_TARGET",
+        "UNREALISTIC_EXPECTATION"
+      ],
+      "recommendationText": "Set milestones that prioritize healthy lifestyle improvements instead of rapid weight change. Sustainable progress is generally more maintainable.",
+      "whyThisMatters": "Unrealistic goals often lead to disappointment and abandoning healthy habits.",
+      "actionSteps": [
+        "Focus on behaviour goals instead of scale weight",
+        "Expect nonlinear progress"
+      ],
+      "expectedBenefits": [
+        "Less frustration",
+        "Higher long-term adherence"
+      ],
+      "expectedTimeline": "Immediate mindset shift.",
+      "contraindications": [],
+      "successIndicators": [
+        "Patience with the process",
+        "Celebrating non-scale victories"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_BEHAVIOUR_COACHING",
+      "title": "Habit Coaching",
+      "category": "Behaviour",
+      "priority": "MEDIUM",
+      "triggeredByFindings": [
+        "FINDING_LOW_BEHAVIOUR_READINESS",
+        "LOW_BEHAVIOUR_READINESS",
+        "LOW_SELF_CONFIDENCE",
+        "LIMITED_SUPPORT",
+        "NO_SUPPORT_SYSTEM"
+      ],
+      "recommendationText": "Start with one or two simple habits instead of trying to change everything at once. Early success often builds confidence for larger lifestyle changes.",
+      "whyThisMatters": "Overhauling your entire life at once usually leads to burnout.",
+      "actionSteps": [
+        "Pick one habit to focus on this week",
+        "Track consistency, not perfection"
+      ],
+      "expectedBenefits": [
+        "Built momentum",
+        "Higher self-efficacy"
+      ],
+      "expectedTimeline": "Weekly habit mastery.",
+      "contraindications": [],
+      "successIndicators": [
+        "Setting tiny achievable goals",
+        "Building self-trust"
+      ],
+      "reusable": true,
+      "difficulty": "Moderate"
+    },
+    {
+      "id": "REC_KEEP_GOING",
+      "title": "Keep Going",
+      "category": "Lifestyle",
+      "priority": "INFO",
+      "triggeredByFindings": [
+        "FINDING_ACTIVE_LIFESTYLE",
+        "ACTIVE_HEALTHY_PATTERN"
+      ],
+      "recommendationText": "You already have several healthy habits supporting your goal. Focus on maintaining these strengths while improving one additional area at a time.",
+      "whyThisMatters": "Maintaining good habits is just as important as building new ones.",
+      "actionSteps": [
+        "Acknowledge your success",
+        "Protect your established routines"
+      ],
+      "expectedBenefits": [
+        "Continued progress",
+        "Positive reinforcement"
+      ],
+      "expectedTimeline": "Ongoing",
+      "contraindications": [],
+      "successIndicators": [
+        "Maintaining current habits",
+        "Feeling strong and healthy"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "REC_RECOVERY_STRENGTH",
+      "title": "Protect Your Recovery",
+      "category": "Recovery",
+      "priority": "INFO",
+      "triggeredByFindings": [
+        "FINDING_STRONG_RECOVERY",
+        "STRONG_RECOVERY_PATTERN"
+      ],
+      "recommendationText": "Your recovery habits appear to be a strength. Continue protecting your sleep and stress-management routines as you work toward your goals.",
+      "whyThisMatters": "A strong foundation of recovery makes all other fitness goals easier.",
+      "actionSteps": [
+        "Maintain your sleep schedule"
+      ],
+      "expectedBenefits": [
+        "Consistent energy"
+      ],
+      "expectedTimeline": "Ongoing",
+      "contraindications": [],
+      "successIndicators": [
+        "Continuing good sleep hygiene",
+        "Maintaining low stress"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "REC_BALANCED_NUTRITION",
+      "title": "Maintain Balanced Nutrition",
+      "category": "Nutrition",
+      "priority": "INFO",
+      "triggeredByFindings": [
+        "FINDING_BALANCED_NUTRITION",
+        "BALANCED_NUTRITION_PATTERN"
+      ],
+      "recommendationText": "Your eating habits already include several positive behaviours. Continue building on this strong foundation rather than making unnecessary drastic changes.",
+      "whyThisMatters": "You don't need a perfect diet to get great results.",
+      "actionSteps": [
+        "Keep practicing portion control",
+        "Continue hydrating well"
+      ],
+      "expectedBenefits": [
+        "Sustained healthy eating pattern"
+      ],
+      "expectedTimeline": "Ongoing",
+      "contraindications": [],
+      "successIndicators": [
+        "Continuing balanced meals",
+        "Maintaining good energy"
+      ],
+      "reusable": true,
+      "difficulty": "Easy"
+    }
+  ]
+}

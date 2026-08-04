@@ -1,0 +1,48 @@
+{
+  "id": "hydration-knowledge",
+  "version": "1.0.0",
+  "definition": "Clinical guidelines for daily water intake and hydration monitoring.",
+  "reviewedBy": "Dr. Sarah Jenkins (RD, PhD)",
+  "lastReviewed": "2026-08-01",
+  "nextReview": "2027-08-01",
+  "scientificReferences": [
+    {
+      "organization": "EFSA",
+      "publication": "Scientific Opinion on Dietary Reference Values for water",
+      "year": 2010,
+      "evidenceLevel": "Moderate"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "daily_water_target",
+      "name": "Daily Water Target",
+      "expression": "weight * 35",
+      "unit": "ml",
+      "variables": ["weight"],
+      "referenceIndex": 0,
+      "limitations": ["Needs adjustment for high heat or extreme physical activity", "Contraindicated for heart failure patients"]
+    }
+  ],
+  "thresholds": [],
+  "recommendations": [
+    {
+      "id": "increase_water_35ml",
+      "title": "Optimize Daily Hydration",
+      "description": "Aim for 35ml of water per kg of body weight daily.",
+      "expectedBenefits": ["Improves metabolic clearance", "Enhances physical performance", "Reduces false hunger signals"],
+      "category": "HYDRATION",
+      "priority": "MEDIUM",
+      "referenceIndex": 0
+    }
+  ],
+  "contraindications": [
+    {
+      "recommendationId": "increase_water_35ml",
+      "triggerCondition": "answers.heart_failure === true",
+      "action": "SUPPRESS",
+      "reasoning": "Fluid restriction is typically required for patients with heart failure. Do not recommend standardized water increases.",
+      "referenceIndex": 0
+    }
+  ]
+}

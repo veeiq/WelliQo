@@ -1,18 +1,19 @@
 import React from 'react';
-import { CalculatedMetrics, AssessmentData } from '../../../../../store/assessment-store';
+import { CalculatedMetrics, AssessmentData, MetricCardData } from '../../../../../store/assessment-store';
+
+const cn = (...classes: (string | boolean | undefined | null)[]) => classes.filter(Boolean).join(' ');
 
 export function CurrentVsIdeal({ 
   metrics, 
   data, 
-  answers 
+  answers,
+  timeline
 }: { 
   metrics: CalculatedMetrics, 
   data: AssessmentData,
-  answers: Record<string, any>
+  answers: Record<string, any>,
+  timeline?: string
 }) {
-  const currentWeight = data.weight ? `${data.weight} kg` : 'N/A';
-  const idealWeight = metrics.idealWeight;
-  
   // Lead-gen focused phrasing based on the gap
   let headline = "Your Target Health Range";
   let subheadline = "Here is the baseline we need to work from.";
@@ -41,26 +42,87 @@ export function CurrentVsIdeal({
         </p>
       </div>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
-        <MetricCard label="Current Weight" value={currentWeight} icon="⚖️" />
-        <MetricCard label="Target Range" value={idealWeight} icon="🎯" highlight />
-        <MetricCard label="Current BMI" value={metrics.bmi} icon="📊" />
-        <MetricCard label="Body Fat (Est.)" value={`${metrics.fatPercentage}%`} icon="🔥" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+        {metrics.metricCards?.map(card => (
+          <MetricCard key={card.id} card={card} />
+        ))}
       </div>
     </div>
   );
 }
 
-function MetricCard({ label, value, icon, highlight = false }: { label: string, value: string, icon: string, highlight?: boolean }) {
+function MetricCard({ card }: { card: MetricCardData }) {
+  const isDanger = card.status === 'danger';
+  const isWarning = card.status === 'warning';
+  const isGood = card.status === 'good';
+
   return (
-    <div className={`p-4 rounded-2xl flex flex-col justify-between h-32 ${highlight ? 'bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/30 shadow-inner' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
-      <div className="flex justify-between items-start">
-        <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{label}</span>
-        <span className="text-lg opacity-70">{icon}</span>
+    <div className={cn(
+      "p-5 rounded-2xl flex flex-col h-auto bg-slate-50 dark:bg-slate-800/50 border border-transparent transition-colors",
+      isGood && "bg-emerald-50 dark:bg-emerald-900/10 border-emerald-100 dark:border-emerald-900/30",
+      isWarning && "bg-amber-50 dark:bg-amber-900/10 border-amber-100 dark:border-amber-900/30",
+      isDanger && "bg-red-50 dark:bg-red-900/10 border-red-100 dark:border-red-900/30"
+    )}>
+      <div className="flex justify-between items-start mb-1">
+        <span className="text-sm font-semibold text-slate-600 dark:text-slate-300">{card.title}</span>
+        {card.sourceType && (
+          <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+            {card.sourceType}
+          </span>
+        )}
       </div>
-      <div className={`text-xl md:text-2xl font-bold mt-2 ${highlight ? 'text-emerald-700 dark:text-emerald-400' : 'text-slate-900 dark:text-slate-50'}`}>
-        {value}
+      
+      {card.sourceExplanation && (
+        <div className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 leading-tight">
+          {card.sourceExplanation}
+        </div>
+      )}
+
+      <div className="flex items-end gap-2 mb-4">
+        <div className={cn(
+          "text-3xl font-bold tracking-tight",
+          isGood ? "text-emerald-700 dark:text-emerald-400" : 
+          isWarning ? "text-amber-700 dark:text-amber-400" : 
+          isDanger ? "text-red-700 dark:text-red-400" : 
+          "text-slate-900 dark:text-slate-50"
+        )}>
+          {card.current}
+        </div>
       </div>
+      
+      <div className="space-y-2 mt-auto">
+        <div className="flex justify-between text-xs sm:text-sm border-b border-slate-200 dark:border-slate-700/50 pb-1">
+          <span className="text-slate-500 dark:text-slate-400">Ideal:</span>
+          <span className="font-medium text-slate-700 dark:text-slate-300">{card.ideal}</span>
+        </div>
+        
+        {card.clinicalMeaning && (
+          <div className="flex justify-between text-xs sm:text-sm border-b border-slate-200 dark:border-slate-700/50 pb-1">
+            <span className="text-slate-500 dark:text-slate-400">Clinical Meaning:</span>
+            <span className={cn("font-semibold text-right max-w-[60%]", 
+              isWarning ? "text-amber-600 dark:text-amber-400" : 
+              isDanger ? "text-red-600 dark:text-red-400" : "text-emerald-600 dark:text-emerald-400"
+            )}>
+              {isWarning || isDanger ? '↓ ' : '✓ '}{card.clinicalMeaning}
+            </span>
+          </div>
+        )}
+
+        {card.primaryFocus && (
+          <div className="flex justify-between text-xs sm:text-sm">
+            <span className="text-slate-500 dark:text-slate-400">Primary Focus:</span>
+            <span className="font-medium text-slate-800 dark:text-slate-200">{card.primaryFocus}</span>
+          </div>
+        )}
+      </div>
+      
+      {(!card.clinicalMeaning && !card.primaryFocus) && (
+        <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700/50">
+          <p className="text-xs text-slate-500 dark:text-slate-400 leading-snug">
+            {card.meaning}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

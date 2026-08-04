@@ -1,0 +1,42 @@
+{
+  "id": "sleep-knowledge",
+  "version": "1.0.0",
+  "definition": "Clinical guidelines for sleep duration and its impact on recovery and metabolic health.",
+  "reviewedBy": "Dr. Sarah Jenkins (RD, PhD)",
+  "lastReviewed": "2026-08-01",
+  "nextReview": "2027-08-01",
+  "scientificReferences": [
+    {
+      "organization": "National Sleep Foundation",
+      "publication": "Sleep Duration Recommendations",
+      "year": 2015,
+      "evidenceLevel": "Strong"
+    }
+  ],
+  "formulas": [],
+  "thresholds": [
+    {
+      "metricId": "daily_sleep_hours",
+      "name": "Sleep Duration Adequacy",
+      "referenceIndex": 0,
+      "brackets": [
+        { "max": 4.9, "clinicalMeaning": "Severe Deprivation", "severity": "HIGH" },
+        { "min": 5.0, "max": 6.9, "clinicalMeaning": "Suboptimal", "severity": "MEDIUM" },
+        { "min": 7.0, "max": 9.0, "clinicalMeaning": "Optimal", "severity": "LOW" },
+        { "min": 9.1, "clinicalMeaning": "Possible Hypersomnia / Illness", "severity": "MEDIUM" }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "increase_sleep_7h",
+      "title": "Prioritize 7+ Hours of Sleep",
+      "description": "Aim for at least 7 hours of sleep per night to support metabolic health and recovery.",
+      "expectedBenefits": ["Improves insulin sensitivity", "Reduces cortisol (stress hormone)", "Enhances muscle recovery"],
+      "category": "SLEEP",
+      "priority": "HIGH",
+      "referenceIndex": 0
+    }
+  ],
+  "contraindications": []
+}

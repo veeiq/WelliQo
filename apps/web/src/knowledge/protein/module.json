@@ -1,0 +1,76 @@
+{
+  "id": "protein-knowledge",
+  "version": "1.0.0",
+  "definition": "Clinical guidelines for dietary protein intake, focusing on preservation of lean mass during calorie deficits and kidney safety.",
+  "reviewedBy": "Dr. Sarah Jenkins (RD, PhD)",
+  "lastReviewed": "2026-08-01",
+  "nextReview": "2027-08-01",
+  "scientificReferences": [
+    {
+      "organization": "ISSN",
+      "publication": "International Society of Sports Nutrition Position Stand: protein and exercise",
+      "year": 2017,
+      "evidenceLevel": "High"
+    },
+    {
+      "organization": "National Kidney Foundation",
+      "publication": "Dietary Protein Guidelines for CKD",
+      "year": 2020,
+      "evidenceLevel": "High"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "daily_protein_target_maintenance",
+      "name": "Maintenance Protein Target",
+      "expression": "weight * 1.6",
+      "unit": "g",
+      "variables": ["weight"],
+      "referenceIndex": 0,
+      "limitations": ["Assumes healthy renal function", "May overestimate for individuals with BMI > 30"]
+    }
+  ],
+  "thresholds": [
+    {
+      "metricId": "daily_protein_intake",
+      "name": "Protein Intake Adequacy",
+      "referenceIndex": 0,
+      "brackets": [
+        { "max": 0.8, "clinicalMeaning": "Deficient", "severity": "HIGH" },
+        { "min": 0.81, "max": 1.2, "clinicalMeaning": "Suboptimal", "severity": "MEDIUM" },
+        { "min": 1.21, "max": 2.2, "clinicalMeaning": "Optimal", "severity": "LOW" },
+        { "min": 2.21, "clinicalMeaning": "Excessive", "severity": "MEDIUM" }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "increase_protein_1_6",
+      "title": "Optimize Protein for Lean Mass",
+      "description": "Increase daily protein intake to approximately 1.6g per kg of body weight.",
+      "expectedBenefits": ["Preserves muscle mass during fat loss", "Increases meal satiety", "Improves metabolic rate"],
+      "category": "NUTRITION",
+      "priority": "HIGH",
+      "referenceIndex": 0
+    },
+    {
+      "id": "moderate_protein_renal",
+      "title": "Kidney-Safe Protein Strategy",
+      "description": "Maintain a moderate protein intake of 0.8-1.0g per kg of body weight to protect kidney function.",
+      "expectedBenefits": ["Reduces renal workload", "Maintains baseline nutritional needs"],
+      "category": "MEDICAL",
+      "priority": "URGENT",
+      "referenceIndex": 1
+    }
+  ],
+  "contraindications": [
+    {
+      "recommendationId": "increase_protein_1_6",
+      "triggerCondition": "answers.kidney_disease === true",
+      "action": "MODIFY",
+      "modifiedRecommendationId": "moderate_protein_renal",
+      "reasoning": "High protein diets are contraindicated for patients reporting kidney disease or impaired renal function.",
+      "referenceIndex": 1
+    }
+  ]
+}

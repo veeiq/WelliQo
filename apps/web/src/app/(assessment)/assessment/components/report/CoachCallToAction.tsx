@@ -1,66 +1,45 @@
 import React, { useState } from 'react';
-import { useAssessmentStore, AssessmentData } from '../../../../../store/assessment-store';
-import { PhoneCall } from 'lucide-react';
+import { useAssessmentStore } from '../../../../../store/assessment-store';
+import { PhoneCall, MessageCircle, Mail, User, Globe, Award } from 'lucide-react';
 import { Button } from '@welliqo/ui/components/button';
+
+const COACHES = {
+  alok: { 
+    name: 'Wellness Coach Alok', 
+    firstName: 'Alok',
+    exp: '5+ Years Experience', 
+    lang: 'English, Hindi, Odia', 
+    phone: '919114211911', 
+    email: 'alok@welliqo.com' 
+  },
+  priya: { 
+    name: 'Wellness Coach Priya', 
+    firstName: 'Priya',
+    exp: '4+ Years Experience', 
+    lang: 'English, Hindi, Odia', 
+    phone: '919337616265', 
+    email: 'priya@welliqo.com' 
+  },
+  dipti: { 
+    name: 'Wellness Coach Dipti', 
+    firstName: 'Dipti',
+    exp: '3+ Years Experience', 
+    lang: 'English, Hindi, Odia', 
+    phone: '917008183356', 
+    email: 'dipti@welliqo.com' 
+  }
+};
 
 export function CoachCallToAction() {
   const { data, answers, calculatedMetrics } = useAssessmentStore();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    name: answers.name || '',
     phone: '',
     coach: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.coach) {
-      alert("Please fill in all fields.");
-      return;
-    }
-    
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('/api/leads', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.name,
-          phoneNumber: formData.phone,
-          coachSelected: formData.coach,
-          primaryGoal: data.goal || 'Not Selected',
-          assessmentData: {
-            weight: data.weight,
-            targetWeight: calculatedMetrics?.idealWeight || 'Unknown',
-            height: data.height,
-            age: data.age,
-            gender: data.gender,
-            answers
-          }
-        }),
-      });
-
-      if (response.ok) {
-        setIsSuccess(true);
-        setTimeout(() => {
-          setIsOpen(false);
-          setIsSuccess(false);
-          setFormData({ name: '', phone: '', coach: '' });
-        }, 3000);
-      } else {
-        alert("There was an error submitting your request. Please try again.");
-      }
-    } catch (error) {
-      alert("Network error. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const selectedCoach = formData.coach ? COACHES[formData.coach as keyof typeof COACHES] : null;
 
   return (
     <>
@@ -89,74 +68,93 @@ export function CoachCallToAction() {
       {/* Modal Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl relative animate-in zoom-in-95 duration-300">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 w-full max-w-lg shadow-2xl relative animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto hide-scrollbar">
             <button 
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors z-10"
             >
               ✕
             </button>
             
-            <div className="text-center mb-6">
+            <div className="text-center mb-6 pt-2">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Connect with a Coach</h3>
-              {isSuccess ? null : <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">We'll help you build a personalized nutrition plan to hit your targets.</p>}
+              <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">Select a coach to view their profile and contact options.</p>
             </div>
 
-            {isSuccess ? (
-              <div className="py-8 flex flex-col items-center justify-center space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Request Sent!</h3>
-                <p className="text-center text-slate-500 dark:text-slate-400">Your selected coach will contact you shortly.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
-                  <input 
-                    type="text" 
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    required 
-                    placeholder="John Doe"
-                    className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" 
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">WhatsApp / Phone Number</label>
-                  <input 
-                    type="tel" 
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    required 
-                    placeholder="+91 99999 99999"
-                    className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500" 
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Select a Coach</label>
-                  <select 
-                    required 
-                    value={formData.coach}
-                    onChange={(e) => setFormData({...formData, coach: e.target.value})}
-                    className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500"
-                  >
-                    <option value="" disabled>Choose a coach</option>
-                    <option value="Alok">Coach Alok (+91 9114211911)</option>
-                    <option value="Priya">Coach Priya (+91 9337616265)</option>
-                    <option value="Dipti">Coach Dipti (+91 7008183356)</option>
-                  </select>
-                </div>
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full h-12 mt-4 rounded-xl bg-emerald-600 text-white font-medium text-[17px] hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20 disabled:opacity-70"
+            <div className="space-y-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Select a Coach</label>
+                <select 
+                  value={formData.coach}
+                  onChange={(e) => setFormData({...formData, coach: e.target.value})}
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Request"}
-                </button>
-              </form>
-            )}
+                  <option value="" disabled>Choose your preferred coach</option>
+                  <option value="alok">{COACHES.alok.name}</option>
+                  <option value="priya">{COACHES.priya.name}</option>
+                  <option value="dipti">{COACHES.dipti.name}</option>
+                </select>
+              </div>
+
+              {selectedCoach && (
+                <div className="animate-in fade-in slide-in-from-top-4 duration-500 bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center shrink-0">
+                      <User className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white">{selectedCoach.name}</h4>
+                      <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        <Award className="w-4 h-4 text-emerald-500" /> {selectedCoach.exp}
+                      </div>
+                      <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                        <Globe className="w-4 h-4 text-emerald-500" /> {selectedCoach.lang}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium text-slate-600 dark:text-slate-300 text-center mb-4">
+                      Connect with {selectedCoach.firstName} instantly:
+                    </p>
+                    
+                    <a 
+                      href={`https://wa.me/${selectedCoach.phone}?text=Hi Coach ${selectedCoach.firstName}, I just completed my WelliQo assessment and would like to discuss my personalized plan.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-[#25D366] text-white font-medium hover:bg-[#20bd5a] transition-colors"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      Chat on WhatsApp
+                    </a>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <a 
+                        href={`tel:+${selectedCoach.phone}`}
+                        className="flex items-center justify-center gap-2 h-12 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+                      >
+                        <PhoneCall className="w-5 h-5" />
+                        Call Now
+                      </a>
+                      <a 
+                        href={`mailto:${selectedCoach.email}?subject=WelliQo Wellness Consultation Request&body=Hi Coach ${selectedCoach.firstName},%0D%0A%0D%0AI just completed my assessment and my score was ${calculatedMetrics?.overallScore || 'unknown'}. I would like to schedule a consultation.`}
+                        className="flex items-center justify-center gap-2 h-12 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+                      >
+                        <Mail className="w-5 h-5" />
+                        Email
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-center">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Standard data and messaging rates may apply. By contacting our coaches, you agree to receive guidance and personalized plans based on your assessment results.
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}

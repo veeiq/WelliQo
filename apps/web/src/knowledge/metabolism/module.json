@@ -1,0 +1,39 @@
+{
+  "id": "metabolism-knowledge",
+  "version": "1.0.0",
+  "definition": "Clinical guidelines for Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) estimation.",
+  "reviewedBy": "Dr. Sarah Jenkins (RD, PhD)",
+  "lastReviewed": "2026-08-01",
+  "nextReview": "2027-08-01",
+  "scientificReferences": [
+    {
+      "organization": "Academy of Nutrition and Dietetics",
+      "publication": "Evidence Analysis Library: Resting Metabolic Rate",
+      "year": 2014,
+      "evidenceLevel": "Strong"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "bmr_mifflin_male",
+      "name": "BMR Mifflin-St Jeor (Male)",
+      "expression": "(10 * weight) + (6.25 * (height * 100)) - (5 * age) + 5",
+      "unit": "kcal",
+      "variables": ["weight", "height", "age"],
+      "referenceIndex": 0,
+      "limitations": ["Underestimates in highly muscular individuals"]
+    },
+    {
+      "id": "bmr_mifflin_female",
+      "name": "BMR Mifflin-St Jeor (Female)",
+      "expression": "(10 * weight) + (6.25 * (height * 100)) - (5 * age) - 161",
+      "unit": "kcal",
+      "variables": ["weight", "height", "age"],
+      "referenceIndex": 0,
+      "limitations": ["Underestimates in highly muscular individuals"]
+    }
+  ],
+  "thresholds": [],
+  "recommendations": [],
+  "contraindications": []
+}
