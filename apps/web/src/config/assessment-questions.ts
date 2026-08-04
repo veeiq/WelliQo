@@ -19,19 +19,18 @@ export interface QuestionDef {
 
 export type GoalQuestions = Record<string, QuestionDef[]>;
 
-// Shared baseline questions for ALL goals (required for the math engine)
-export const BASELINE_QUESTIONS: QuestionDef[] = [
+export const UNIVERSAL_PROFILE_QUESTIONS: QuestionDef[] = [
   {
     id: 'name',
-    section: 'Basic Info',
-    label: 'What is your name?',
+    section: 'Personal Information',
+    label: 'What is your full name?',
     type: 'text',
     placeholder: 'Enter your full name',
-    required: true,
+    required: false,
   },
   {
     id: 'age',
-    section: 'Basic Info',
+    section: 'Personal Information',
     label: 'How old are you?',
     type: 'number',
     placeholder: 'Age',
@@ -39,79 +38,109 @@ export const BASELINE_QUESTIONS: QuestionDef[] = [
   },
   {
     id: 'gender',
-    section: 'Basic Info',
-    label: 'What is your biological sex?',
+    section: 'Personal Information',
+    label: 'What is your gender?',
     type: 'single_choice',
     options: [
-      { id: 'male', label: '👨 Male', value: 'male' },
-      { id: 'female', label: '👩 Female', value: 'female' },
+      { id: 'male', label: 'Male', value: 'male' },
+      { id: 'female', label: 'Female', value: 'female' },
+      { id: 'other', label: 'Other', value: 'other' },
     ],
     required: true,
   },
   {
     id: 'height',
-    section: 'Body Metrics',
+    section: 'Body Information',
     label: 'How tall are you?',
     type: 'height',
     required: true,
   },
   {
     id: 'weight',
-    section: 'Body Metrics',
+    section: 'Body Information',
     label: 'What is your current weight?',
     type: 'weight',
     required: true,
   },
-];
-
-// Shared Lifestyle block
-const LIFESTYLE_QUESTIONS: QuestionDef[] = [
+  {
+    id: 'occupation',
+    section: 'Lifestyle',
+    label: 'What is your occupation?',
+    type: 'single_choice',
+    options: [
+      { id: 'student', label: 'Student', value: 'student' },
+      { id: 'professional', label: 'Working Professional', value: 'professional' },
+      { id: 'business', label: 'Business Owner', value: 'business' },
+      { id: 'homemaker', label: 'Homemaker', value: 'homemaker' },
+      { id: 'retired', label: 'Retired', value: 'retired' },
+      { id: 'other', label: 'Other', value: 'other' },
+    ],
+  },
   {
     id: 'activityLevel',
     section: 'Lifestyle',
-    label: 'How would you describe your weekly activity level?',
+    label: 'How would you describe your activity level?',
     type: 'single_choice',
     options: [
-      { id: 'sedentary', label: '🪑 Sedentary', value: 'sedentary', description: 'Little to no exercise' },
-      { id: 'light', label: '🚶 Lightly Active', value: 'light', description: '1-3 days/week' },
-      { id: 'moderate', label: '🏃 Moderately Active', value: 'moderate', description: '3-5 days/week' },
-      { id: 'very', label: '🏋️ Very Active', value: 'very_active', description: '6-7 days/week' },
+      { id: 'sedentary', label: 'Not Active', value: 'sedentary', description: 'Little to no exercise' },
+      { id: 'light', label: 'Lightly Active', value: 'light', description: '1-3 days/week' },
+      { id: 'moderate', label: 'Moderately Active', value: 'moderate', description: '3-5 days/week' },
+      { id: 'active', label: 'Very Active', value: 'active', description: '6-7 days/week' },
     ],
   },
   {
-    id: 'profession',
-    section: 'Lifestyle',
-    label: 'What best describes your typical workday?',
-    type: 'single_choice',
+    id: 'conditions',
+    section: 'Health',
+    label: 'Do you have any known medical conditions?',
+    type: 'multiple_choice',
     options: [
-      { id: 'desk', label: '💻 Desk Job', value: 'desk', description: 'Mostly sitting' },
-      { id: 'mixed', label: '🔄 Mixed', value: 'mixed', description: 'Sitting & Standing' },
-      { id: 'moving', label: '🏃 On my feet', value: 'moving', description: 'Retail, Healthcare' },
-      { id: 'active', label: '🏗️ Highly Active', value: 'active', description: 'Physical labor' },
+      { id: 'none', label: 'None', value: 'none' },
+      { id: 'diabetes', label: 'Diabetes', value: 'diabetes' },
+      { id: 'hbp', label: 'High Blood Pressure', value: 'hbp' },
+      { id: 'thyroid', label: 'Thyroid', value: 'thyroid' },
+      { id: 'heart', label: 'Heart Disease', value: 'heart' },
+      { id: 'pcos', label: 'PCOS', value: 'pcos' },
+      { id: 'asthma', label: 'Asthma', value: 'asthma' },
+      { id: 'cholesterol', label: 'High Cholesterol', value: 'cholesterol' },
+      { id: 'other', label: 'Other', value: 'other' },
     ],
   },
   {
-    id: 'alcohol',
-    section: 'Lifestyle',
-    label: 'How often do you consume alcohol?',
+    id: 'food_preference',
+    section: 'Health',
+    label: 'What is your food preference?',
     type: 'single_choice',
     options: [
-      { id: 'never', label: '🚫 Never', value: 'never' },
-      { id: 'rarely', label: '🍷 Rarely', value: 'rarely', description: '1-2 times/month' },
-      { id: 'weekly', label: '🥂 Weekly', value: 'weekly', description: '1-2 times/week' },
-      { id: 'daily', label: '🍻 Daily', value: 'daily', description: 'Almost daily' },
+      { id: 'veg', label: 'Vegetarian', value: 'vegetarian' },
+      { id: 'egg', label: 'Eggetarian', value: 'eggetarian' },
+      { id: 'nonveg', label: 'Non-Vegetarian', value: 'non_vegetarian' },
+      { id: 'vegan', label: 'Vegan', value: 'vegan' },
+      { id: 'jain', label: 'Jain', value: 'jain' },
+      { id: 'other', label: 'Other', value: 'other' },
     ],
   },
   {
     id: 'smoking',
-    section: 'Lifestyle',
+    section: 'Health',
     label: 'Do you smoke or use tobacco products?',
     type: 'single_choice',
     options: [
-      { id: 'yes', label: '🚬 Yes', value: 'yes', description: 'Regularly or occasionally' },
-      { id: 'no', label: '🚭 No', value: 'no', description: 'Never or quit' },
-    ]
-  }
+      { id: 'no', label: 'No', value: 'no' },
+      { id: 'occasionally', label: 'Occasionally', value: 'occasionally' },
+      { id: 'regularly', label: 'Regularly', value: 'regularly' },
+    ],
+  },
+  {
+    id: 'alcohol',
+    section: 'Health',
+    label: 'How often do you consume alcohol?',
+    type: 'single_choice',
+    options: [
+      { id: 'no', label: 'No', value: 'no' },
+      { id: 'occasionally', label: 'Occasionally', value: 'occasionally' },
+      { id: 'regularly', label: 'Regularly', value: 'regularly' },
+    ],
+  },
 ];
 
 const STRESS_QUESTIONS: QuestionDef[] = [
@@ -136,12 +165,8 @@ const STRESS_QUESTIONS: QuestionDef[] = [
 ];
 
 // Combine into goal specific arrays.
-// For now we assemble ~10-15 robust questions for Weight. 
-// We will expand this rapidly.
 export const GOAL_QUESTIONS: GoalQuestions = {
   weight: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'weight_goal_type',
       section: 'Weight Management',
@@ -183,24 +208,9 @@ export const GOAL_QUESTIONS: GoalQuestions = {
         { id: 'overall', label: '🧍 Full Body (Evenly)', value: 'overall' },
       ]
     },
-    {
-      id: 'diet_type',
-      section: 'Diet & Nutrition',
-      label: 'Do you follow any specific dietary pattern?',
-      type: 'multiple_choice',
-      options: [
-        { id: 'keto', label: '🥑 Keto / Low Carb', value: 'keto' },
-        { id: 'vegan', label: '🥗 Vegan / Plant-based', value: 'vegan' },
-        { id: 'fasting', label: '⏱️ Intermittent Fasting', value: 'fasting' },
-        { id: 'none', label: '🍔 No specific diet', value: 'none' },
-      ]
-    },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   sleep: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'sleep_hours',
       section: 'Sleep Quality',
@@ -232,11 +242,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   energy: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'energy_dip',
       section: 'Daily Energy',
@@ -257,11 +264,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       placeholder: 'Cups'
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   gut: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'gut_symptom',
       section: 'Gut Health',
@@ -286,11 +290,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   stress: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     ...STRESS_QUESTIONS,
     {
       id: 'stress_source',
@@ -316,11 +317,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
         { id: 'meditation', label: '🧘 Meditation', value: 'meditation' },
       ]
     },
-    // Motivation question removed
   ],
   women: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'cycle_status',
       section: 'Women\'s Health',
@@ -334,11 +332,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   aging: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'longevity_goal',
       section: 'Healthy Aging',
@@ -352,11 +347,8 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ],
   fitness: [
-    ...BASELINE_QUESTIONS,
-    ...LIFESTYLE_QUESTIONS,
     {
       id: 'fitness_goal',
       section: 'Fitness & Activity',
@@ -370,9 +362,9 @@ export const GOAL_QUESTIONS: GoalQuestions = {
       ]
     },
     ...STRESS_QUESTIONS,
-    // Motivation question removed
   ]
 };
 
 // Fallback if goal not found
-export const DEFAULT_QUESTIONS = [...BASELINE_QUESTIONS, ...LIFESTYLE_QUESTIONS, ...STRESS_QUESTIONS];
+export const DEFAULT_QUESTIONS = [...STRESS_QUESTIONS];
+

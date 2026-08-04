@@ -19,7 +19,7 @@ export function PositivesAndNegatives({ answers, data }: { answers: Record<strin
     negatives.push("You experience energy crashes, suggesting blood sugar instability.");
   }
 
-  if (data.activityLevel === 'active' || data.activityLevel === 'very_active') {
+  if (data.activityLevel === 'active') {
     positives.push("Your active lifestyle gives you a great baseline metabolism.");
   } else if (data.activityLevel === 'sedentary') {
     negatives.push("Your sedentary lifestyle is slowing down your metabolic rate.");

@@ -4,13 +4,17 @@ export type SimpleAssessmentState = 'GOAL_SELECTION' | 'QUESTIONNAIRE' | 'CALCUL
 
 export interface AssessmentData {
   goal: string | null;
+  name: string | null;
   age: number | null;
-  gender: 'male' | 'female' | 'prefer_not' | null;
+  gender: 'male' | 'female' | 'other' | null;
   height: number | null; // cm
   weight: number | null; // kg
-  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active' | null;
-  profession: 'desk' | 'active' | 'mixed' | null;
+  occupation: string | null;
+  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | null;
   conditions: string[];
+  food_preference: string | null;
+  smoking: string | null;
+  alcohol: string | null;
 }
 
 export interface PillarScore {
@@ -53,13 +57,17 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
   runtimeState: 'GOAL_SELECTION',
   data: {
     goal: null,
+    name: null,
     age: null,
     gender: null,
     height: null,
     weight: null,
+    occupation: null,
     activityLevel: null,
-    profession: null,
     conditions: [],
+    food_preference: null,
+    smoking: null,
+    alcohol: null,
   },
   answers: {},
   calculatedMetrics: null,
@@ -78,7 +86,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
 
   recordAnswer: (questionId, value) => set((state) => {
     // If it's a baseline metric, also sync it to data for calculation
-    const baselineKeys = ['age', 'gender', 'height', 'weight', 'activityLevel', 'profession', 'conditions'];
+    const baselineKeys = ['name', 'age', 'gender', 'height', 'weight', 'occupation', 'activityLevel', 'conditions', 'food_preference', 'smoking', 'alcohol'];
     const newData = { ...state.data };
     if (baselineKeys.includes(questionId)) {
       (newData as any)[questionId] = value;
@@ -144,7 +152,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
       // Specific Modifiers from answers
       const actLvl = data.activityLevel || answers.activityLevel;
       const isSedentary = actLvl === 'sedentary';
-      const isActive = actLvl === 'active' || actLvl === 'very_active';
+      const isActive = actLvl === 'active' || actLvl === 'moderate';
       
       const sleepHours = answers.sleep_hours || 7;
       const stressLvl = answers.stress_level || 5;
@@ -250,13 +258,17 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>((s
       runtimeState: 'GOAL_SELECTION',
       data: {
         goal: null,
+        name: null,
         age: null,
         gender: null,
         height: null,
         weight: null,
+        occupation: null,
         activityLevel: null,
-        profession: null,
         conditions: [],
+        food_preference: null,
+        smoking: null,
+        alcohol: null,
       },
       calculatedMetrics: null,
     });
