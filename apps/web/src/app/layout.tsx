@@ -46,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                     Welli<span className="text-emerald-500">Q</span>o
                   </span>
                 </div>
-                <p className="text-sm font-medium text-emerald-400">Intelligent Nutrition, Guided by Experts.</p>
+                <p className="text-sm font-medium text-emerald-400">Intelligent Wellness, Science-Informed</p>
                 <div className="space-y-2 pt-2 text-slate-500">
                   <p>
                     <strong>Independent Herbalife Associate:</strong><br/> Alok Kumar Mahapatra

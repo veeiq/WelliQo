@@ -13,18 +13,18 @@ export default function HomePage() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-400/20 dark:bg-emerald-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-teal-400/20 dark:bg-teal-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-sm font-medium tracking-wide text-emerald-800 dark:text-emerald-300 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-            <Sparkles className="h-4 w-4" />
-            <span>Intelligent Nutrition, Guided by Experts.</span>
+        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-8 sm:mt-0">
+          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium tracking-wide text-emerald-800 dark:text-emerald-300 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span>Intelligent Wellness, Science-Informed</span>
           </div>
           
-          <h1 className="mb-8 text-balance text-6xl font-light tracking-tight text-slate-900 dark:text-white sm:text-7xl lg:text-[5.5rem] leading-[1.1]">
-            Stop guessing with <br className="hidden md:block"/> your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">wellness.</span>
+          <h1 className="mb-4 sm:mb-8 text-balance text-5xl font-light tracking-tight text-slate-900 dark:text-white sm:text-7xl lg:text-[5.5rem] leading-[1.1]">
+            Stop guessing. <br className="hidden md:block"/> Start understanding your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">wellness.</span>
           </h1>
           
-          <p className="mx-auto max-w-2xl text-balance text-xl leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl mb-12">
-            Take our 3-minute holistic wellness assessment and receive a personalized roadmap to your goals, backed by world-class nutrition.
+          <p className="mx-auto max-w-2xl text-balance text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl mb-8 sm:mb-12 px-2">
+            Take our free 3-minute wellness assessment and receive a personalized AI wellness report with science-backed nutrition and lifestyle recommendations.
           </p>
           
           <Link
@@ -33,9 +33,9 @@ export default function HomePage() {
           >
             <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 rounded-full blur opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></span>
             <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-            <span className="relative flex items-center gap-2 rounded-full bg-slate-900/10 dark:bg-black/20 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
-              Start Your Free Assessment
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <span className="relative flex items-center gap-2 rounded-full bg-slate-900/10 dark:bg-black/20 px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
+              Start Free Assessment
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
         </div>
