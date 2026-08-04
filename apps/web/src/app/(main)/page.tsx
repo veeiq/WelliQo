@@ -105,31 +105,16 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Receive your personalized wellness plan and optional coach guidance.</p>
           </div>
         </div>
-
-        <div className="mt-20 pt-10 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-          <div className="flex items-center gap-3">
-             <span className="text-3xl">📊</span>
-             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">Wellness Score</span>
-          </div>
-          <div className="flex items-center gap-3">
-             <span className="text-3xl">🤖</span>
-             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">Personalized AI Report</span>
-          </div>
-          <div className="flex items-center gap-3">
-             <span className="text-3xl">📅</span>
-             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">30-Day Action Plan</span>
-          </div>
-        </div>
       </section>
 
       {/* 4. THE CORE PILLARS (Bento Box) */}
       <section className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-50 sm:text-5xl">
-            We target what matters.
+            Choose your wellness goal.
           </h2>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Comprehensive solutions designed for your specific biological needs.
+            Explore personalized wellness programs designed around your goals and lifestyle.
           </p>
         </div>
 
@@ -145,7 +130,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="text-3xl font-semibold text-slate-900 dark:text-white mb-4">Weight & Body Composition</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-lg max-w-md">Whether you want to burn stubborn fat or build lean muscle, we provide the exact macro-ratios and metabolic support you need.</p>
+                <p className="text-slate-600 dark:text-slate-400 text-lg max-w-md">Lose fat, build lean muscle, and achieve a healthier body composition.</p>
               </div>
             </div>
           </Link>
@@ -156,7 +141,7 @@ export default function HomePage() {
               <Zap className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Daily Energy</h3>
-            <p className="text-slate-600 dark:text-slate-400">Stop relying on caffeine to survive the afternoon crash.</p>
+            <p className="text-slate-600 dark:text-slate-400">Feel energized throughout the day without relying on caffeine.</p>
           </Link>
 
           {/* Regular Card 3 */}
@@ -165,7 +150,7 @@ export default function HomePage() {
               <Leaf className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Digestion & Gut</h3>
-            <p className="text-slate-600 dark:text-slate-400">Heal from the inside out with targeted aloe and probiotic support.</p>
+            <p className="text-slate-600 dark:text-slate-400">Support a healthier gut, smoother digestion, and better nutrient absorption.</p>
           </Link>
 
           {/* Regular Card 4 */}
@@ -174,7 +159,7 @@ export default function HomePage() {
               <Brain className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Stress & Sleep</h3>
-            <p className="text-slate-600 dark:text-slate-400">Optimize your circadian rhythm for deeper recovery.</p>
+            <p className="text-slate-600 dark:text-slate-400">Reduce stress and improve sleep for better recovery and focus.</p>
           </Link>
 
           {/* Regular Card 5 */}
@@ -183,7 +168,23 @@ export default function HomePage() {
               <Heart className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Women's Wellness</h3>
-            <p className="text-slate-600 dark:text-slate-400">Specialized nutrition for hormonal balance and healthy aging.</p>
+            <p className="text-slate-600 dark:text-slate-400">Support hormonal balance, vitality, and healthy aging through every stage of life.</p>
+          </Link>
+
+          {/* New Explore All Card */}
+          <Link href="/assessment" className="group lg:col-span-3 relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/50 p-8 transition-all hover:shadow-2xl hover:shadow-slate-900/20 hover:-translate-y-1 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+            <div className="flex items-center gap-6 flex-col md:flex-row">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-800 dark:bg-slate-700 text-white shadow-inner">
+                <Sparkles className="h-8 w-8 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-2">Explore All Assessments</h3>
+                <p className="text-slate-400 text-lg">Browse 40+ personalized wellness assessments.</p>
+              </div>
+            </div>
+            <div className="hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-white group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300">
+              <ArrowRight className="h-5 w-5" />
+            </div>
           </Link>
         </div>
         
@@ -192,7 +193,7 @@ export default function HomePage() {
             href="/assessment"
             className="inline-flex items-center justify-center rounded-full bg-slate-900 dark:bg-slate-50 px-8 py-4 text-base font-medium text-white dark:text-slate-900 transition-all hover:bg-emerald-600 dark:hover:bg-emerald-400"
           >
-            Start Your Journey
+            Explore Assessments
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
