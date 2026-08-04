@@ -188,15 +188,7 @@ export default function HomePage() {
           </Link>
         </div>
         
-        <div className="mt-12 text-center">
-          <Link
-            href="/assessment"
-            className="inline-flex items-center justify-center rounded-full bg-slate-900 dark:bg-slate-50 px-8 py-4 text-base font-medium text-white dark:text-slate-900 transition-all hover:bg-emerald-600 dark:hover:bg-emerald-400"
-          >
-            Explore Assessments
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
+
       </section>
 
       {/* 5. THE BUSINESS OPPORTUNITY (Footer CTA) */}
