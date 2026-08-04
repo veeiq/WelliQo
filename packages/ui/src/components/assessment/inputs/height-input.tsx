@@ -43,7 +43,7 @@ export function HeightInput({ value, onChangeValue, disabled }: Readonly<NumberI
   };
 
   return (
-    <div className="flex flex-col items-center w-full animate-in fade-in zoom-in-95 duration-500 py-8 gap-10">
+    <div className="flex flex-col items-center w-full animate-in fade-in zoom-in-95 duration-500 py-2 sm:py-4 gap-4 sm:gap-8">
       <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-full relative shadow-inner">
         <button
           onClick={() => setUnit('cm')}

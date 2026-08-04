@@ -24,7 +24,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
   if (runtimeState === 'REPORT_READY') progressPercent = 100;
 
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-900 bg-gradient-to-br from-slate-50 via-[#f0f4f8] to-[#e2e8f0] dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 bg-[length:200%_200%] animate-gradient">
+    <div className="h-[100dvh] overflow-hidden flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-900 bg-gradient-to-br from-slate-50 via-[#f0f4f8] to-[#e2e8f0] dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 bg-[length:200%_200%] animate-gradient">
       {/* Premium running bar at top */}
       <div className="fixed top-0 left-0 right-0 h-1.5 bg-slate-100 dark:bg-slate-900 z-50 overflow-hidden">
         <div
@@ -67,7 +67,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
         </div>
       </header>
 
-      <main className="flex-1 flex flex-col">{children}</main>
+      <main className="flex-1 flex flex-col min-h-0">{children}</main>
     </div>
   );
 }

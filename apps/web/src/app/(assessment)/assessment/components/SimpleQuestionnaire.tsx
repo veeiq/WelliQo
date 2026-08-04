@@ -40,8 +40,8 @@ export function SimpleQuestionnaire() {
   };
 
   return (
-    <div className="flex-1 flex flex-col pt-2 md:pt-6 px-4 md:px-6 pb-6 md:pb-8 max-h-[calc(100vh-64px)] overflow-hidden">
-      <div className="w-full max-w-2xl mx-auto flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="flex-1 flex flex-col pt-2 md:pt-6 px-4 md:px-6 pb-6 md:pb-8 min-h-0">
+      <div className="w-full max-w-2xl mx-auto flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700 min-h-0">
         
         <div className="space-y-2 md:space-y-3 text-center mb-4 md:mb-8 shrink-0">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[11px] md:text-xs font-semibold tracking-wide uppercase shadow-sm">
