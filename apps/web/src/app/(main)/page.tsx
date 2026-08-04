@@ -49,8 +49,8 @@ export default function HomePage() {
               <ShieldCheck className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white text-lg">Certified Guidance</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Independent Herbalife Associates</p>
+              <p className="font-semibold text-slate-900 dark:text-white text-lg">👨‍⚕️ Guided by Certified Wellness Coaches</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Personalized support when you need it</p>
             </div>
           </div>
           <div className="hidden sm:block h-12 w-px bg-slate-200 dark:bg-slate-800"></div>
@@ -59,8 +59,8 @@ export default function HomePage() {
               <Activity className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white text-lg">100% Personalized</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Tailored to your unique biology</p>
+              <p className="font-semibold text-slate-900 dark:text-white text-lg">🤖 AI Personalized Report</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Based on your goals and lifestyle</p>
             </div>
           </div>
         </div>
@@ -70,10 +70,10 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-medium tracking-tight text-slate-900 dark:text-slate-50 sm:text-5xl">
-            Your journey to better health.
+            Your personalized wellness journey starts here. ⭐
           </h2>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Three simple steps to unlock your personalized wellness protocol.
+            Just three simple steps to discover your wellness score and personalized action plan.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function HomePage() {
               <span className="text-3xl font-bold text-slate-300 dark:text-slate-700 group-hover:text-emerald-500 transition-colors duration-500">1</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Assess</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Complete our holistic 3-minute health profile to uncover your baseline.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Answer a few simple questions to understand your current wellness.</p>
           </div>
 
           <div className="relative flex flex-col items-center text-center group">
@@ -94,7 +94,7 @@ export default function HomePage() {
               <span className="text-3xl font-bold text-slate-300 dark:text-slate-700 group-hover:text-teal-500 transition-colors duration-500">2</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Analyze</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Our intelligent engine evaluates your metrics against optimal health markers.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Our AI analyzes your responses and identifies your strengths and improvement areas.</p>
           </div>
 
           <div className="relative flex flex-col items-center text-center group">
@@ -102,7 +102,22 @@ export default function HomePage() {
               <span className="text-3xl font-bold text-slate-300 dark:text-slate-700 group-hover:text-emerald-500 transition-colors duration-500">3</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Achieve</h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Receive your custom protocol and connect with a coach to hit your goals.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Receive your personalized wellness plan and optional guidance from a wellness coach.</p>
+          </div>
+        </div>
+
+        <div className="mt-20 pt-10 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          <div className="flex items-center gap-3">
+             <span className="text-3xl">📊</span>
+             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">Wellness Score</span>
+          </div>
+          <div className="flex items-center gap-3">
+             <span className="text-3xl">🤖</span>
+             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">AI Personalized Report</span>
+          </div>
+          <div className="flex items-center gap-3">
+             <span className="text-3xl">📅</span>
+             <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">30-Day Action Plan</span>
           </div>
         </div>
       </section>
