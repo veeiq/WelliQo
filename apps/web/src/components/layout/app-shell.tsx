@@ -43,7 +43,7 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
             <ul className="space-y-3">
               <li><Link href="/about" className="hover:text-emerald-400 transition-colors">About</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact</Link></li>
-              <li><Link href="/library" className="hover:text-emerald-400 transition-colors">Library</Link></li>
+              <li><Link href="/health-library" className="hover:text-emerald-400 transition-colors">Library</Link></li>
               <li><Link href="/faq" className="hover:text-emerald-400 transition-colors">FAQ</Link></li>
             </ul>
           </div>
