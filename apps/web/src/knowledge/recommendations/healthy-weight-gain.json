@@ -1,0 +1,255 @@
+{
+  "id": "module_recommendations_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Recommendations for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "recommendations": [
+    {
+      "id": "RECOMMENDATION_HWG_INCREASE_MEAL_FREQUENCY",
+      "triggers": [
+        "FINDING_HWG_LOW_MEAL_FREQUENCY"
+      ],
+      "title": "Increase Your Daily Meal Frequency",
+      "why": "Eating only a few meals each day makes it difficult to consistently consume enough calories for healthy weight gain.",
+      "action": "Aim for 4–5 balanced meals spaced evenly throughout the day instead of relying on 2–3 large meals.",
+      "expectedBenefit": "Steadier calorie intake and improved weight gain potential.",
+      "expectedImprovement": "2–4 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Eating at least 4 meals daily",
+        "Reduced missed meals",
+        "Gradual weight increase"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_INCREASE_PROTEIN",
+      "triggers": [
+        "FINDING_HWG_LOW_PROTEIN"
+      ],
+      "title": "Increase Protein At Every Meal",
+      "why": "Protein provides the building blocks needed to repair and grow muscle.",
+      "action": "Include a quality protein source with every meal and snack.",
+      "expectedBenefit": "Improved muscle development and recovery.",
+      "expectedImprovement": "2–4 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Protein included in every meal",
+        "Improved workout recovery",
+        "Increased daily protein intake"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_ADD_CALORIE_DENSE_SNACKS",
+      "triggers": [
+        "FINDING_HWG_LOW_SNACKING"
+      ],
+      "title": "Add Healthy Calorie-Dense Snacks",
+      "why": "Extra snacks help increase daily calorie intake without relying only on larger meals.",
+      "action": "Choose snacks like nuts, peanut butter, yogurt, cheese, trail mix, or dried fruits.",
+      "expectedBenefit": "Higher calorie intake with less effort.",
+      "expectedImprovement": "2–3 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "1–2 nutritious snacks added daily",
+        "Improved energy intake"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_USE_LIQUID_CALORIES",
+      "triggers": [
+        "FINDING_HWG_NO_LIQUID_CALORIES"
+      ],
+      "title": "Use Nutritious Liquid Calories",
+      "why": "Liquid nutrition makes it easier to consume extra calories, especially if appetite is low.",
+      "action": "Include smoothies, milk, protein shakes, or homemade calorie-rich beverages.",
+      "expectedBenefit": "Increase calories without excessive fullness.",
+      "expectedImprovement": "1–3 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Daily liquid nutrition added",
+        "Easier calorie surplus"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_IMPROVE_APPETITE",
+      "triggers": [
+        "FINDING_HWG_POOR_APPETITE"
+      ],
+      "title": "Improve Your Appetite Naturally",
+      "why": "A poor appetite is one of the biggest barriers to healthy weight gain.",
+      "action": "Eat at consistent times, stay active, avoid skipping meals, and begin meals before becoming overly hungry.",
+      "expectedBenefit": "Better appetite and improved food intake.",
+      "expectedImprovement": "3–6 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Increased hunger before meals",
+        "Larger meal completion"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_SMALL_FREQUENT_MEALS",
+      "triggers": [
+        "FINDING_HWG_EARLY_SATIETY"
+      ],
+      "title": "Eat Smaller Meals More Often",
+      "why": "Smaller meals reduce discomfort while still increasing daily calorie intake.",
+      "action": "Split your daily intake into 5–6 smaller meals.",
+      "expectedBenefit": "Higher total calories with improved comfort.",
+      "expectedImprovement": "2–4 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Less fullness during meals",
+        "Increased daily calorie intake"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_START_STRENGTH_TRAINING",
+      "triggers": [
+        "FINDING_HWG_NO_STRENGTH_TRAINING"
+      ],
+      "title": "Begin Resistance Training",
+      "why": "Strength training directs extra calories toward muscle growth instead of fat storage.",
+      "action": "Perform resistance exercises 3–4 times each week focusing on major muscle groups.",
+      "expectedBenefit": "Improved lean muscle gain.",
+      "expectedImprovement": "4–8 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Consistent weekly workouts",
+        "Strength improvements"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_PROGRESSIVE_OVERLOAD",
+      "triggers": [
+        "FINDING_HWG_NO_PROGRESSIVE_OVERLOAD"
+      ],
+      "title": "Gradually Increase Training Intensity",
+      "why": "Muscles grow only when they are progressively challenged.",
+      "action": "Increase weights, repetitions, or training volume gradually over time.",
+      "expectedBenefit": "Continuous muscle development.",
+      "expectedImprovement": "4–8 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Increasing workout performance",
+        "Progressive strength gains"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_BALANCE_CARDIO",
+      "triggers": [
+        "FINDING_HWG_EXCESSIVE_CARDIO"
+      ],
+      "title": "Balance Cardio With Muscle Goals",
+      "why": "Too much cardio increases calorie expenditure and may slow healthy weight gain.",
+      "action": "Reduce unnecessary cardio while maintaining general cardiovascular health.",
+      "expectedBenefit": "Improved calorie surplus.",
+      "expectedImprovement": "2–4 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Reduced cardio frequency",
+        "Improved body weight trend"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_PRIORITIZE_SLEEP",
+      "triggers": [
+        "FINDING_HWG_POOR_SLEEP"
+      ],
+      "title": "Improve Sleep For Muscle Growth",
+      "why": "Recovery and muscle growth depend heavily on quality sleep.",
+      "action": "Aim for 7–9 hours of consistent sleep each night.",
+      "expectedBenefit": "Better recovery and improved muscle development.",
+      "expectedImprovement": "2–6 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Longer sleep duration",
+        "Feeling refreshed",
+        "Better workout recovery"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_MANAGE_STRESS",
+      "triggers": [
+        "FINDING_HWG_HIGH_STRESS"
+      ],
+      "title": "Reduce Daily Stress",
+      "why": "Stress can reduce appetite and interfere with recovery.",
+      "action": "Practice stress management through relaxation, walking, breathing exercises, or hobbies.",
+      "expectedBenefit": "Improved appetite and recovery.",
+      "expectedImprovement": "3–8 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Lower perceived stress",
+        "Improved eating consistency"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_STOP_SKIPPING_MEALS",
+      "triggers": [
+        "FINDING_HWG_MEAL_SKIPPING"
+      ],
+      "title": "Stop Skipping Meals",
+      "why": "Every missed meal reduces your opportunity to create a calorie surplus.",
+      "action": "Plan meals in advance and carry convenient healthy snacks when busy.",
+      "expectedBenefit": "More consistent nutrition.",
+      "expectedImprovement": "2–4 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Fewer skipped meals",
+        "Improved eating routine"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_BUILD_PORTION_TOLERANCE",
+      "triggers": [
+        "FINDING_HWG_PORTION_DISCOMFORT"
+      ],
+      "title": "Gradually Increase Portion Sizes",
+      "why": "Your stomach adapts gradually to larger food volumes.",
+      "action": "Increase portion sizes slightly every 1–2 weeks instead of making large changes immediately.",
+      "expectedBenefit": "Greater calorie intake with improved comfort.",
+      "expectedImprovement": "4–8 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Larger meals tolerated comfortably",
+        "Reduced fullness"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_BUILD_CONFIDENCE",
+      "triggers": [
+        "FINDING_HWG_LOW_CONFIDENCE"
+      ],
+      "title": "Focus On Small Weekly Wins",
+      "why": "Confidence grows through consistent progress rather than perfection.",
+      "action": "Track healthy habits and celebrate small improvements each week.",
+      "expectedBenefit": "Higher motivation and long-term consistency.",
+      "expectedImprovement": "4–8 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Improved confidence score",
+        "Better adherence"
+      ]
+    },
+    {
+      "id": "RECOMMENDATION_HWG_STAY_CONSISTENT",
+      "triggers": [
+        "FINDING_HWG_LOW_COMMITMENT"
+      ],
+      "title": "Build Consistency Before Perfection",
+      "why": "Long-term habits produce better results than short periods of extreme effort.",
+      "action": "Create a realistic eating and training routine that you can maintain every week.",
+      "expectedBenefit": "Sustainable healthy weight gain.",
+      "expectedImprovement": "6–12 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Consistent weekly routine",
+        "Improved habit adherence",
+        "Steady progress toward target weight"
+      ]
+    }
+  ]
+}

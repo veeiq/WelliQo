@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "mappings": {
+    "vegetarian": [
+      "paneer",
+      "curd",
+      "greek_yogurt",
+      "milk",
+      "soy",
+      "tofu",
+      "dal",
+      "rajma",
+      "chana",
+      "moong",
+      "peanuts"
+    ],
+    "vegan": [
+      "soy",
+      "tofu",
+      "tempeh",
+      "dal",
+      "rajma",
+      "chana",
+      "moong",
+      "peanuts",
+      "seeds"
+    ],
+    "non_vegetarian": [
+      "eggs",
+      "chicken",
+      "fish",
+      "paneer",
+      "curd",
+      "dal"
+    ],
+    "jain": [
+      "paneer",
+      "curd",
+      "milk",
+      "moong",
+      "chana",
+      "tofu",
+      "peanuts"
+    ],
+    "eggetarian": [
+      "eggs",
+      "paneer",
+      "curd",
+      "milk",
+      "soy",
+      "tofu",
+      "dal",
+      "rajma",
+      "chana",
+      "moong",
+      "peanuts"
+    ]
+  }
+}

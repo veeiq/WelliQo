@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "mappings": {
+    "healthy-weight-gain": {
+      "generic": [
+        "generic_protein",
+        "generic_multivitamin"
+      ],
+      "herbalife": [
+        "hl_formula1",
+        "hl_ppp",
+        "hl_aloe",
+        "hl_afresh"
+      ]
+    },
+    "lose-weight": {
+      "generic": [
+        "generic_protein",
+        "generic_fiber"
+      ],
+      "herbalife": [
+        "hl_formula1",
+        "hl_ppp",
+        "hl_afresh",
+        "hl_fiber"
+      ]
+    },
+    "build-muscle-tone": {
+      "generic": [
+        "generic_protein",
+        "generic_creatine",
+        "generic_multivitamin"
+      ],
+      "herbalife": [
+        "hl_formula1_sport",
+        "hl_rebuild_strength",
+        "hl_cr7"
+      ]
+    }
+  }
+}

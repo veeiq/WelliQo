@@ -1,0 +1,47 @@
+{
+  "id": "module_thresholds_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Thresholds for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "thresholds": [
+    {
+      "id": "THRESHOLD_HWG_STATUS",
+      "type": "SCORE_BAND",
+      "bands": [
+        {
+          "min": 90,
+          "max": 100,
+          "label": "Excellent",
+          "status": "optimal"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "label": "Good",
+          "status": "good"
+        },
+        {
+          "min": 60,
+          "max": 74,
+          "label": "Fair",
+          "status": "fair"
+        },
+        {
+          "min": 40,
+          "max": 59,
+          "label": "Needs Attention",
+          "status": "poor"
+        },
+        {
+          "min": 0,
+          "max": 39,
+          "label": "High Priority",
+          "status": "critical"
+        }
+      ]
+    }
+  ]
+}

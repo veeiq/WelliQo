@@ -1,0 +1,482 @@
+{
+  "id": "module_findings_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "findings",
+  "findings": [
+    {
+      "id": "FND_FAL_3",
+      "title": "Improvement needed in exercise_frequency",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_4"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_2"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_4",
+      "title": "Improvement needed in exercise_duration",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_5"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_3"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_5",
+      "title": "Improvement needed in exercise_type",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_6"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_4"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_6",
+      "title": "Improvement needed in daily_movement",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_7"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_5"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_7",
+      "title": "Improvement needed in daily_steps",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_8"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_6"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_8",
+      "title": "Improvement needed in active_choices",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_9"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_7"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_9",
+      "title": "Improvement needed in exercise_consistency",
+      "category": "Physical Activity",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_10"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_8"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_10",
+      "title": "Improvement needed in cardio_endurance",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_11"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_9"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_11",
+      "title": "Improvement needed in breathlessness",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_12"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_10"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_12",
+      "title": "Improvement needed in cardio_frequency",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_13"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_11"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_13",
+      "title": "Improvement needed in cardio_recovery",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_14"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_12"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_14",
+      "title": "Improvement needed in walking_capacity",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_15"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_13"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_15",
+      "title": "Improvement needed in sports_participation",
+      "category": "Cardiovascular Fitness",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_16"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_14"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_16",
+      "title": "Improvement needed in flexibility",
+      "category": "Mobility",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_17"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_15"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_17",
+      "title": "Improvement needed in mobility_training",
+      "category": "Mobility",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_18"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_16"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_18",
+      "title": "Improvement needed in balance",
+      "category": "Mobility",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_19"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_17"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_19",
+      "title": "Improvement needed in muscle_stiffness",
+      "category": "Mobility",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_20"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_18"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_20",
+      "title": "Improvement needed in physical_energy",
+      "category": "Mobility",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_21"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_19"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_21",
+      "title": "Improvement needed in fitness_barrier",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_22"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_20"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_22",
+      "title": "Improvement needed in fitness_confidence",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_23"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_21"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_23",
+      "title": "Improvement needed in fitness_commitment",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_24"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_22"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_24",
+      "title": "Improvement needed in missed_exercise",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_25"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_23"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_25",
+      "title": "Improvement needed in activity_tracking",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_26"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_24"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_26",
+      "title": "Improvement needed in routine_resilience",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_27"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_25"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FND_FAL_27",
+      "title": "Improvement needed in fitness_goal",
+      "category": "Lifestyle",
+      "severity": "HIGH",
+      "confidence": 100,
+      "priority": "HIGH",
+      "evidenceRequired": [
+        "EVD_FAL_28"
+      ],
+      "clinicalExplanation": "Clinical reasoning here.",
+      "userExplanation": "User reasoning here.",
+      "recommendationIds": [
+        "REC_FAL_26"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    }
+  ]
+}

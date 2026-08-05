@@ -1,0 +1,45 @@
+{
+  "id": "fitness-active-lifestyle",
+  "version": "1.0",
+  "name": "Fitness & Active Lifestyle",
+  "scoringFormulas": [
+    {
+      "pillar": "physical_activity",
+      "type": "weighted_average",
+      "weights": {
+        "EVIDENCE_SEDENTARY_LIFESTYLE": 0.3,
+        "EVIDENCE_NO_EXERCISE": 0.3,
+        "EVIDENCE_LOW_STEP_COUNT": 0.2,
+        "EVIDENCE_POOR_EXERCISE_CONSISTENCY": 0.2
+      }
+    },
+    {
+      "pillar": "cardiovascular_fitness",
+      "type": "weighted_average",
+      "weights": {
+        "EVIDENCE_POOR_CARDIO_ENDURANCE": 0.4,
+        "EVIDENCE_EARLY_BREATHLESSNESS": 0.3,
+        "EVIDENCE_LOW_CARDIO_FREQUENCY": 0.3
+      }
+    },
+    {
+      "pillar": "mobility_functional_fitness",
+      "type": "weighted_average",
+      "weights": {
+        "EVIDENCE_POOR_FLEXIBILITY": 0.4,
+        "EVIDENCE_POOR_BALANCE": 0.3,
+        "EVIDENCE_FREQUENT_STIFFNESS": 0.3
+      }
+    },
+    {
+      "pillar": "lifestyle_motivation",
+      "type": "weighted_average",
+      "weights": {
+        "EVIDENCE_POOR_CONSISTENCY": 0.3,
+        "EVIDENCE_LOW_COMMITMENT": 0.3,
+        "EVIDENCE_LOW_CONFIDENCE": 0.2,
+        "EVIDENCE_TIME_BARRIER": 0.2
+      }
+    }
+  ]
+}

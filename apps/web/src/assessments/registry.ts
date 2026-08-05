@@ -1,54 +1,18 @@
 import { AssessmentModule } from '../types/assessment';
 import { weightManagement } from './weight-management';
 import { loseWeight } from './lose-weight';
+import { healthyWeightGain } from './healthy-weight-gain';
+import { buildMuscleTone } from './build-muscle-tone';
+import { fitnessActiveLifestyle } from './fitness-active-lifestyle';
+import { generalWellnessAssessment } from './general-wellness';
 
 export const ASSESSMENTS: AssessmentModule[] = [
   weightManagement,
   loseWeight,
-  {
-    implemented: false,
-    id: 'healthy_weight_gain',
-    title: 'Healthy Weight Gain',
-    emoji: '🍽️',
-    icon: 'FileQuestion', // Placeholder icon
-    description: 'Detailed analysis and personalized plan for Healthy Weight Gain.',
-    category: 'Weight & Body Goals',
-    enabled: true,
-    comingSoon: true
-  },
-  {
-    implemented: false,
-    id: 'muscle',
-    title: 'Build Muscle & Tone',
-    emoji: '💪',
-    icon: 'FileQuestion', // Placeholder icon
-    description: 'Detailed analysis and personalized plan for Build Muscle & Tone.',
-    category: 'Weight & Body Goals',
-    enabled: true,
-    comingSoon: true
-  },
-  {
-    implemented: false,
-    id: 'fitness',
-    title: 'Fitness & Active Lifestyle',
-    emoji: '🏃',
-    icon: 'FileQuestion', // Placeholder icon
-    description: 'Detailed analysis and personalized plan for Fitness & Active Lifestyle.',
-    category: 'Weight & Body Goals',
-    enabled: true,
-    comingSoon: true
-  },
-  {
-    implemented: false,
-    id: 'general_wellness',
-    title: 'General Wellness Assessment',
-    emoji: '🌍',
-    icon: 'FileQuestion', // Placeholder icon
-    description: 'Detailed analysis and personalized plan for General Wellness Assessment.',
-    category: 'Foundation Wellness',
-    enabled: true,
-    comingSoon: true
-  },
+  healthyWeightGain,
+  buildMuscleTone,
+  fitnessActiveLifestyle,
+  generalWellnessAssessment,
   {
     implemented: false,
     id: 'sleep',

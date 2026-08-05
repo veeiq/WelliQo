@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "condition": "pregnancy",
+      "haltRecommendations": true,
+      "haltReason": "Please consult your healthcare provider before beginning any supplementation during pregnancy.",
+      "avoidTags": [
+        "energy"
+      ],
+      "avoidProducts": [
+        "hl_afresh",
+        "generic_energy"
+      ]
+    },
+    {
+      "condition": "kidney_disease",
+      "avoidTags": [
+        "protein"
+      ],
+      "avoidProducts": [
+        "hl_ppp",
+        "generic_protein"
+      ]
+    },
+    {
+      "condition": "diabetes",
+      "avoidTags": [
+        "sugar"
+      ],
+      "avoidProducts": []
+    }
+  ]
+}

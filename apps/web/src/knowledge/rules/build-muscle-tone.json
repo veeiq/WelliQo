@@ -1,0 +1,250 @@
+{
+  "id": "module_rules_build_muscle_tone",
+  "version": "1.0.0",
+  "definition": "Rules for build muscle & tone",
+  "rules": [
+    {
+      "id": "RULE_BMT_001_NEVER",
+      "questionId": "strength_training_days",
+      "answerValue": "never",
+      "evidenceId": "EVD_MUSCLE_005",
+      "findingId": "FND_BMT_001",
+      "scoreDeduction": 60,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_001_1_2",
+      "questionId": "strength_training_days",
+      "answerValue": "1_2_days",
+      "evidenceId": "EVD_MUSCLE_005",
+      "findingId": "FND_BMT_001",
+      "scoreDeduction": 50,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_002_NEVER",
+      "questionId": "progressive_overload",
+      "answerValue": "never",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_002",
+      "scoreDeduction": 50,
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RULE_BMT_002_RARELY",
+      "questionId": "progressive_overload",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_002",
+      "scoreDeduction": 40,
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RULE_BMT_INTENSITY_RARELY",
+      "questionId": "training_intensity",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_002",
+      "scoreDeduction": 30,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_003_VERY_LITTLE",
+      "questionId": "daily_protein_intake",
+      "answerValue": "very_little",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_003",
+      "scoreDeduction": 50,
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RULE_BMT_003_LESS",
+      "questionId": "daily_protein_intake",
+      "answerValue": "less_than_recommended",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_003",
+      "scoreDeduction": 40,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_004_NEVER",
+      "questionId": "post_workout_protein",
+      "answerValue": "never",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_004",
+      "scoreDeduction": 30,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_004_RARELY",
+      "questionId": "post_workout_protein",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_004",
+      "scoreDeduction": 20,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_004_SOMETIMES",
+      "questionId": "post_workout_protein",
+      "answerValue": "sometimes",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_004",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_005_DEF_NOT",
+      "questionId": "calorie_surplus",
+      "answerValue": "definitely_not",
+      "evidenceId": "EVD_MUSCLE_003",
+      "findingId": "FND_BMT_005",
+      "scoreDeduction": 40,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_005_PROB_NOT",
+      "questionId": "calorie_surplus",
+      "answerValue": "probably_not",
+      "evidenceId": "EVD_MUSCLE_003",
+      "findingId": "FND_BMT_005",
+      "scoreDeduction": 30,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_006_NONE",
+      "questionId": "rest_days",
+      "answerValue": "none",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 50,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_006_ONE",
+      "questionId": "rest_days",
+      "answerValue": "one",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 20,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_006_FATIGUE_ALMOST",
+      "questionId": "post_workout_fatigue",
+      "answerValue": "almost_always",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 50,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_006_FATIGUE_OFTEN",
+      "questionId": "post_workout_fatigue",
+      "answerValue": "often",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 30,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_RECOVERY_QUITE",
+      "questionId": "muscle_recovery",
+      "answerValue": "quite_sore",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 30,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_RECOVERY_EXTREMELY",
+      "questionId": "muscle_recovery",
+      "answerValue": "extremely_sore",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_007",
+      "scoreDeduction": 50,
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RULE_BMT_ENERGY_LOW",
+      "questionId": "workout_energy",
+      "answerValue": "low",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_006",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_007_DAILY",
+      "questionId": "strength_training_days",
+      "answerValue": "daily",
+      "evidenceId": "EVD_MUSCLE_004",
+      "findingId": "FND_BMT_007",
+      "scoreDeduction": 30,
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RULE_BMT_008_SOMETIMES",
+      "questionId": "missed_workouts",
+      "answerValue": "sometimes",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_008",
+      "scoreDeduction": 20,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_008_OFTEN",
+      "questionId": "missed_workouts",
+      "answerValue": "often",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_008",
+      "scoreDeduction": 40,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_008_VERY_OFTEN",
+      "questionId": "missed_workouts",
+      "answerValue": "very_often",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_008",
+      "scoreDeduction": 60,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_DISRUPT_SKIP",
+      "questionId": "routine_disruption",
+      "answerValue": "skip_workouts",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_008",
+      "scoreDeduction": 20,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_BMT_DISRUPT_BREAKS",
+      "questionId": "routine_disruption",
+      "answerValue": "breaks_completely",
+      "evidenceId": "EVD_MUSCLE_001",
+      "findingId": "FND_BMT_008",
+      "scoreDeduction": 40,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_BMT_009_3_4",
+      "questionId": "strength_training_days",
+      "answerValue": "3_4_days",
+      "evidenceId": "EVD_MUSCLE_005",
+      "findingId": "FND_BMT_009",
+      "scoreDeduction": 0,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_BMT_010_TRACK",
+      "questionId": "daily_protein_intake",
+      "answerValue": "track_daily",
+      "evidenceId": "EVD_MUSCLE_002",
+      "findingId": "FND_BMT_010",
+      "scoreDeduction": 0,
+      "severity": "INFO"
+    }
+  ]
+}

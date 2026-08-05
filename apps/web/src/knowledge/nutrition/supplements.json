@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "brands": {
+    "generic": {
+      "name": "Generic",
+      "products": [
+        {
+          "id": "generic_protein",
+          "name": "High-quality Protein Powder",
+          "tags": [
+            "protein",
+            "muscle"
+          ]
+        },
+        {
+          "id": "generic_multivitamin",
+          "name": "Multivitamin",
+          "tags": [
+            "general_health"
+          ]
+        },
+        {
+          "id": "generic_fiber",
+          "name": "Fiber Supplement",
+          "tags": [
+            "digestion"
+          ]
+        },
+        {
+          "id": "generic_energy",
+          "name": "Energy Drink / Pre-workout",
+          "tags": [
+            "energy"
+          ]
+        }
+      ]
+    },
+    "herbalife": {
+      "name": "Herbalife",
+      "products": [
+        {
+          "id": "hl_formula1",
+          "name": "Formula 1 Nutritional Shake Mix",
+          "tags": [
+            "meal_replacement",
+            "protein",
+            "weight_management"
+          ]
+        },
+        {
+          "id": "hl_ppp",
+          "name": "Personalized Protein Powder",
+          "tags": [
+            "protein",
+            "muscle"
+          ]
+        },
+        {
+          "id": "hl_afresh",
+          "name": "Afresh Energy Drink Mix",
+          "tags": [
+            "energy",
+            "metabolism"
+          ]
+        },
+        {
+          "id": "hl_aloe",
+          "name": "Herbal Aloe Concentrate",
+          "tags": [
+            "digestion",
+            "hydration"
+          ]
+        },
+        {
+          "id": "hl_fiber",
+          "name": "Active Fiber Complex",
+          "tags": [
+            "digestion"
+          ]
+        },
+        {
+          "id": "hl_formula2",
+          "name": "Formula 2 Multivitamin",
+          "tags": [
+            "vitamins"
+          ]
+        },
+        {
+          "id": "hl_formula3",
+          "name": "Cell Activator",
+          "tags": [
+            "absorption"
+          ]
+        },
+        {
+          "id": "hl_celluloss",
+          "name": "Cell-U-Loss",
+          "tags": [
+            "fluid_balance"
+          ]
+        }
+      ]
+    }
+  }
+}

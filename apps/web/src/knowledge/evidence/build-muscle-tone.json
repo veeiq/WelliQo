@@ -1,0 +1,36 @@
+{
+  "id": "module_evidence_bmt",
+  "version": "1.0.0",
+  "definition": "Build Muscle Evidence",
+  "reviewedBy": "System",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "evidence": [
+    {
+      "id": "EVD_MUSCLE_001",
+      "description": "Progressive Overload for Hypertrophy",
+      "category": "Activity"
+    },
+    {
+      "id": "EVD_MUSCLE_002",
+      "description": "Protein Synthesis and Hypertrophy",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVD_MUSCLE_003",
+      "description": "Caloric Surplus for Lean Mass",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVD_MUSCLE_004",
+      "description": "Sleep and Muscle Recovery",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVD_MUSCLE_005",
+      "description": "Training Frequency for Hypertrophy",
+      "category": "Activity"
+    }
+  ]
+}

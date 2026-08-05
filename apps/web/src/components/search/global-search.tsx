@@ -69,7 +69,7 @@ export function GlobalSearch() {
       e.preventDefault();
       const selected = results[selectedIndex];
       if (selected) {
-        router.push(`/action-hub/${selected.slug}`);
+        router.push(`/health-library/${selected.type.toLowerCase()}/${selected.id}`);
         setIsOpen(false);
         setQuery('');
       }
@@ -112,7 +112,7 @@ export function GlobalSearch() {
               {results.map((result, index) => (
                 <li key={result.id}>
                   <Link
-                    href={`/action-hub/${result.slug}`}
+                    href={`/health-library/${result.type.toLowerCase()}/${result.id}`}
                     className={`block px-4 py-3 transition-colors ${
                       index === selectedIndex
                         ? 'bg-[var(--color-accent-primary)] text-white'

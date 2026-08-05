@@ -1,0 +1,1157 @@
+{
+  "id": "module_rules_general_wellness",
+  "version": "1.0.0",
+  "definition": "rules",
+  "rules": [
+    {
+      "id": "RULE_GW_1",
+      "questionId": "overall_health",
+      "answerValue": "poor",
+      "evidenceId": "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+      "findingId": "FINDING_GW_POOR_OVERALL_HEALTH",
+      "scoreDeduction": 18,
+      "severity": "CRITICAL",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_2",
+      "questionId": "overall_health",
+      "answerValue": "fair",
+      "evidenceId": "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+      "findingId": "FINDING_GW_POOR_OVERALL_HEALTH",
+      "scoreDeduction": 18,
+      "severity": "CRITICAL",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_3",
+      "questionId": "overall_health",
+      "answerValue": "very_good",
+      "evidenceId": "EVIDENCE_GW_EXCELLENT_OVERALL_HEALTH",
+      "findingId": "FINDING_GW_EXCELLENT_OVERALL_HEALTH",
+      "scoreDeduction": -6,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_4",
+      "questionId": "overall_health",
+      "answerValue": "excellent",
+      "evidenceId": "EVIDENCE_GW_EXCELLENT_OVERALL_HEALTH",
+      "findingId": "FINDING_GW_EXCELLENT_OVERALL_HEALTH",
+      "scoreDeduction": -6,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_5",
+      "questionId": "health_trend",
+      "answerValue": "much_worse",
+      "evidenceId": "EVIDENCE_GW_DECLINING_HEALTH",
+      "findingId": "FINDING_GW_DECLINING_HEALTH",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_6",
+      "questionId": "health_trend",
+      "answerValue": "slightly_worse",
+      "evidenceId": "EVIDENCE_GW_DECLINING_HEALTH",
+      "findingId": "FINDING_GW_DECLINING_HEALTH",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_7",
+      "questionId": "health_trend",
+      "answerValue": "slightly_better",
+      "evidenceId": "EVIDENCE_GW_IMPROVING_HEALTH",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_8",
+      "questionId": "health_trend",
+      "answerValue": "much_better",
+      "evidenceId": "EVIDENCE_GW_IMPROVING_HEALTH",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_9",
+      "questionId": "daily_function",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_LIMITED_DAILY_FUNCTION",
+      "findingId": "FINDING_GW_LIMITED_DAILY_FUNCTION",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_10",
+      "questionId": "daily_function",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_LIMITED_DAILY_FUNCTION",
+      "findingId": "FINDING_GW_LIMITED_DAILY_FUNCTION",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_11",
+      "questionId": "daily_function",
+      "answerValue": "most_days",
+      "evidenceId": "EVIDENCE_GW_GOOD_DAILY_FUNCTION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_12",
+      "questionId": "daily_function",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_GOOD_DAILY_FUNCTION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_13",
+      "questionId": "health_satisfaction",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_SATISFACTION",
+      "findingId": "FINDING_GW_LOW_HEALTH_SATISFACTION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_14",
+      "questionId": "health_satisfaction",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_SATISFACTION",
+      "findingId": "FINDING_GW_LOW_HEALTH_SATISFACTION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_15",
+      "questionId": "health_satisfaction",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_SATISFACTION",
+      "findingId": "FINDING_GW_LOW_HEALTH_SATISFACTION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_16",
+      "questionId": "health_satisfaction",
+      "answerValue": "4",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_SATISFACTION",
+      "findingId": "FINDING_GW_LOW_HEALTH_SATISFACTION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_17",
+      "questionId": "health_satisfaction",
+      "answerValue": "8",
+      "evidenceId": "EVIDENCE_GW_HIGH_HEALTH_SATISFACTION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_18",
+      "questionId": "health_satisfaction",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_GW_HIGH_HEALTH_SATISFACTION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_19",
+      "questionId": "health_satisfaction",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_GW_HIGH_HEALTH_SATISFACTION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_20",
+      "questionId": "daily_energy_level",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_LOW_DAILY_ENERGY",
+      "findingId": "FINDING_GW_LOW_DAILY_ENERGY",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_21",
+      "questionId": "daily_energy_level",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_LOW_DAILY_ENERGY",
+      "findingId": "FINDING_GW_LOW_DAILY_ENERGY",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_22",
+      "questionId": "daily_energy_level",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_HIGH_DAILY_ENERGY",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_23",
+      "questionId": "daily_energy_level",
+      "answerValue": "almost_always",
+      "evidenceId": "EVIDENCE_GW_HIGH_DAILY_ENERGY",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_24",
+      "questionId": "fatigue_frequency",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_FREQUENT_FATIGUE",
+      "findingId": "FINDING_GW_FREQUENT_FATIGUE",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_25",
+      "questionId": "fatigue_frequency",
+      "answerValue": "several_times_week",
+      "evidenceId": "EVIDENCE_GW_FREQUENT_FATIGUE",
+      "findingId": "FINDING_GW_FREQUENT_FATIGUE",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_26",
+      "questionId": "fatigue_frequency",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_RARE_FATIGUE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_27",
+      "questionId": "fatigue_frequency",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_RARE_FATIGUE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_28",
+      "questionId": "balanced_meals",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+      "findingId": "FINDING_GW_POOR_NUTRITION",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_29",
+      "questionId": "balanced_meals",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+      "findingId": "FINDING_GW_POOR_NUTRITION",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_30",
+      "questionId": "balanced_meals",
+      "answerValue": "most_days",
+      "evidenceId": "EVIDENCE_GW_BALANCED_NUTRITION",
+      "findingId": "FINDING_GW_HEALTHY_LIFESTYLE",
+      "scoreDeduction": -6,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_31",
+      "questionId": "balanced_meals",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_BALANCED_NUTRITION",
+      "findingId": "FINDING_GW_HEALTHY_LIFESTYLE",
+      "scoreDeduction": -6,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_32",
+      "questionId": "healthy_activity",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+      "findingId": "FINDING_GW_PHYSICAL_INACTIVITY",
+      "scoreDeduction": 15,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_33",
+      "questionId": "healthy_activity",
+      "answerValue": "1_2_days",
+      "evidenceId": "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+      "findingId": "FINDING_GW_PHYSICAL_INACTIVITY",
+      "scoreDeduction": 15,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_34",
+      "questionId": "healthy_activity",
+      "answerValue": "5_6_days",
+      "evidenceId": "EVIDENCE_GW_REGULAR_PHYSICAL_ACTIVITY",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_35",
+      "questionId": "healthy_activity",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_REGULAR_PHYSICAL_ACTIVITY",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_36",
+      "questionId": "refreshing_sleep",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+      "findingId": "FINDING_GW_POOR_SLEEP",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_37",
+      "questionId": "refreshing_sleep",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+      "findingId": "FINDING_GW_POOR_SLEEP",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_38",
+      "questionId": "refreshing_sleep",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_REFRESHING_SLEEP",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_39",
+      "questionId": "refreshing_sleep",
+      "answerValue": "almost_always",
+      "evidenceId": "EVIDENCE_GW_REFRESHING_SLEEP",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_40",
+      "questionId": "hydration_habit",
+      "answerValue": "very_poorly",
+      "evidenceId": "EVIDENCE_GW_POOR_HYDRATION",
+      "findingId": "FINDING_GW_POOR_HYDRATION",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_41",
+      "questionId": "hydration_habit",
+      "answerValue": "poorly",
+      "evidenceId": "EVIDENCE_GW_POOR_HYDRATION",
+      "findingId": "FINDING_GW_POOR_HYDRATION",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_42",
+      "questionId": "hydration_habit",
+      "answerValue": "well",
+      "evidenceId": "EVIDENCE_GW_GOOD_HYDRATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_43",
+      "questionId": "hydration_habit",
+      "answerValue": "very_well",
+      "evidenceId": "EVIDENCE_GW_GOOD_HYDRATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_44",
+      "questionId": "sunlight_exposure",
+      "answerValue": "almost_never",
+      "evidenceId": "EVIDENCE_GW_LOW_SUNLIGHT_EXPOSURE",
+      "findingId": "FINDING_GW_LOW_SUNLIGHT",
+      "scoreDeduction": 4,
+      "severity": "LOW",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_45",
+      "questionId": "sunlight_exposure",
+      "answerValue": "1_2_days",
+      "evidenceId": "EVIDENCE_GW_LOW_SUNLIGHT_EXPOSURE",
+      "findingId": "FINDING_GW_LOW_SUNLIGHT",
+      "scoreDeduction": 4,
+      "severity": "LOW",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_46",
+      "questionId": "sunlight_exposure",
+      "answerValue": "5_6_days",
+      "evidenceId": "EVIDENCE_GW_HEALTHY_SUNLIGHT_EXPOSURE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_47",
+      "questionId": "sunlight_exposure",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_HEALTHY_SUNLIGHT_EXPOSURE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_48",
+      "questionId": "prolonged_sitting",
+      "answerValue": "almost_always",
+      "evidenceId": "EVIDENCE_GW_PROLONGED_SITTING",
+      "findingId": "FINDING_GW_PROLONGED_SITTING",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_49",
+      "questionId": "prolonged_sitting",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_PROLONGED_SITTING",
+      "findingId": "FINDING_GW_PROLONGED_SITTING",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_50",
+      "questionId": "prolonged_sitting",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_REGULAR_MOVEMENT_BREAKS",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_51",
+      "questionId": "prolonged_sitting",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_REGULAR_MOVEMENT_BREAKS",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_52",
+      "questionId": "emotional_balance",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_POOR_EMOTIONAL_BALANCE",
+      "findingId": "FINDING_GW_POOR_EMOTIONAL_BALANCE",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_53",
+      "questionId": "emotional_balance",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_POOR_EMOTIONAL_BALANCE",
+      "findingId": "FINDING_GW_POOR_EMOTIONAL_BALANCE",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_54",
+      "questionId": "emotional_balance",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_GOOD_EMOTIONAL_BALANCE",
+      "findingId": "FINDING_GW_STRONG_EMOTIONAL_WELLBEING",
+      "scoreDeduction": -5,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_55",
+      "questionId": "emotional_balance",
+      "answerValue": "almost_always",
+      "evidenceId": "EVIDENCE_GW_GOOD_EMOTIONAL_BALANCE",
+      "findingId": "FINDING_GW_STRONG_EMOTIONAL_WELLBEING",
+      "scoreDeduction": -5,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_56",
+      "questionId": "stress_management",
+      "answerValue": "very_poorly",
+      "evidenceId": "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+      "findingId": "FINDING_GW_POOR_STRESS_MANAGEMENT",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_57",
+      "questionId": "stress_management",
+      "answerValue": "poorly",
+      "evidenceId": "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+      "findingId": "FINDING_GW_POOR_STRESS_MANAGEMENT",
+      "scoreDeduction": 12,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_58",
+      "questionId": "stress_management",
+      "answerValue": "well",
+      "evidenceId": "EVIDENCE_GW_GOOD_STRESS_MANAGEMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_59",
+      "questionId": "stress_management",
+      "answerValue": "very_well",
+      "evidenceId": "EVIDENCE_GW_GOOD_STRESS_MANAGEMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_60",
+      "questionId": "health_motivation",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_MOTIVATION",
+      "findingId": "FINDING_GW_LOW_HEALTH_MOTIVATION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_61",
+      "questionId": "health_motivation",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_MOTIVATION",
+      "findingId": "FINDING_GW_LOW_HEALTH_MOTIVATION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_62",
+      "questionId": "health_motivation",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_HIGH_HEALTH_MOTIVATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_63",
+      "questionId": "health_motivation",
+      "answerValue": "always",
+      "evidenceId": "EVIDENCE_GW_HIGH_HEALTH_MOTIVATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_64",
+      "questionId": "work_life_balance",
+      "answerValue": "very_dissatisfied",
+      "evidenceId": "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE",
+      "findingId": "FINDING_GW_POOR_WORK_LIFE_BALANCE",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_65",
+      "questionId": "work_life_balance",
+      "answerValue": "dissatisfied",
+      "evidenceId": "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE",
+      "findingId": "FINDING_GW_POOR_WORK_LIFE_BALANCE",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_66",
+      "questionId": "work_life_balance",
+      "answerValue": "satisfied",
+      "evidenceId": "EVIDENCE_GW_HEALTHY_WORK_LIFE_BALANCE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_67",
+      "questionId": "work_life_balance",
+      "answerValue": "very_satisfied",
+      "evidenceId": "EVIDENCE_GW_HEALTHY_WORK_LIFE_BALANCE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_68",
+      "questionId": "relaxation_frequency",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_LACK_OF_RELAXATION",
+      "findingId": "FINDING_GW_LACK_OF_RELAXATION",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_69",
+      "questionId": "relaxation_frequency",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_LACK_OF_RELAXATION",
+      "findingId": "FINDING_GW_LACK_OF_RELAXATION",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_70",
+      "questionId": "relaxation_frequency",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_REGULAR_RELAXATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_71",
+      "questionId": "relaxation_frequency",
+      "answerValue": "every_day",
+      "evidenceId": "EVIDENCE_GW_REGULAR_RELAXATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_72",
+      "questionId": "social_connection",
+      "answerValue": "not_at_all",
+      "evidenceId": "EVIDENCE_GW_SOCIAL_ISOLATION",
+      "findingId": "FINDING_GW_SOCIAL_ISOLATION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_73",
+      "questionId": "social_connection",
+      "answerValue": "slightly",
+      "evidenceId": "EVIDENCE_GW_SOCIAL_ISOLATION",
+      "findingId": "FINDING_GW_SOCIAL_ISOLATION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_74",
+      "questionId": "social_connection",
+      "answerValue": "strongly",
+      "evidenceId": "EVIDENCE_GW_STRONG_SOCIAL_SUPPORT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_75",
+      "questionId": "social_connection",
+      "answerValue": "very_strongly",
+      "evidenceId": "EVIDENCE_GW_STRONG_SOCIAL_SUPPORT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_76",
+      "questionId": "preventive_checkups",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS",
+      "findingId": "FINDING_GW_NO_PREVENTIVE_CHECKUPS",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_77",
+      "questionId": "preventive_checkups",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS",
+      "findingId": "FINDING_GW_NO_PREVENTIVE_CHECKUPS",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_78",
+      "questionId": "preventive_checkups",
+      "answerValue": "usually",
+      "evidenceId": "EVIDENCE_GW_REGULAR_PREVENTIVE_CHECKUPS",
+      "findingId": "FINDING_GW_STRONG_PREVENTIVE_WELLNESS",
+      "scoreDeduction": -5,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_79",
+      "questionId": "preventive_checkups",
+      "answerValue": "always",
+      "evidenceId": "EVIDENCE_GW_REGULAR_PREVENTIVE_CHECKUPS",
+      "findingId": "FINDING_GW_STRONG_PREVENTIVE_WELLNESS",
+      "scoreDeduction": -5,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_80",
+      "questionId": "ignore_health_signals",
+      "answerValue": "always",
+      "evidenceId": "EVIDENCE_GW_IGNORES_HEALTH_SIGNALS",
+      "findingId": "FINDING_GW_IGNORING_HEALTH_SIGNALS",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_81",
+      "questionId": "ignore_health_signals",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_GW_IGNORES_HEALTH_SIGNALS",
+      "findingId": "FINDING_GW_IGNORING_HEALTH_SIGNALS",
+      "scoreDeduction": 10,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_82",
+      "questionId": "ignore_health_signals",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_GW_RESPONDS_TO_HEALTH_SIGNALS",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_83",
+      "questionId": "ignore_health_signals",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_GW_RESPONDS_TO_HEALTH_SIGNALS",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_84",
+      "questionId": "wellness_confidence",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE",
+      "findingId": "FINDING_GW_LOW_WELLNESS_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_85",
+      "questionId": "wellness_confidence",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE",
+      "findingId": "FINDING_GW_LOW_WELLNESS_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_86",
+      "questionId": "wellness_confidence",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE",
+      "findingId": "FINDING_GW_LOW_WELLNESS_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_87",
+      "questionId": "wellness_confidence",
+      "answerValue": "8",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_CONFIDENCE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_88",
+      "questionId": "wellness_confidence",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_CONFIDENCE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_89",
+      "questionId": "wellness_confidence",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_CONFIDENCE",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_90",
+      "questionId": "wellness_commitment",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT",
+      "findingId": "FINDING_GW_LOW_WELLNESS_COMMITMENT",
+      "scoreDeduction": 8,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_91",
+      "questionId": "wellness_commitment",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT",
+      "findingId": "FINDING_GW_LOW_WELLNESS_COMMITMENT",
+      "scoreDeduction": 8,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_92",
+      "questionId": "wellness_commitment",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT",
+      "findingId": "FINDING_GW_LOW_WELLNESS_COMMITMENT",
+      "scoreDeduction": 8,
+      "severity": "HIGH",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_93",
+      "questionId": "wellness_commitment",
+      "answerValue": "8",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_COMMITMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_94",
+      "questionId": "wellness_commitment",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_COMMITMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_95",
+      "questionId": "wellness_commitment",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_COMMITMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_96",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "lack_of_time",
+      "evidenceId": "EVIDENCE_GW_TIME_BARRIER",
+      "findingId": "FINDING_GW_TIME_BARRIER",
+      "scoreDeduction": 4,
+      "severity": "LOW",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_97",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "lack_of_motivation",
+      "evidenceId": "EVIDENCE_GW_LOW_HEALTH_MOTIVATION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_98",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "stress",
+      "evidenceId": "EVIDENCE_GW_STRESS_BARRIER",
+      "findingId": "FINDING_GW_STRESS_BARRIER",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_99",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "poor_routine",
+      "evidenceId": "EVIDENCE_GW_POOR_ROUTINE",
+      "findingId": "FINDING_GW_POOR_ROUTINE",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_100",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "financial_reasons",
+      "evidenceId": "EVIDENCE_GW_FINANCIAL_BARRIER",
+      "findingId": "FINDING_GW_FINANCIAL_BARRIER",
+      "scoreDeduction": 3,
+      "severity": "LOW",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_101",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "health_issues",
+      "evidenceId": "EVIDENCE_GW_HEALTH_LIMITATION",
+      "findingId": "FINDING_GW_HEALTH_LIMITATION",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_102",
+      "questionId": "biggest_health_barrier",
+      "answerValue": "family_responsibilities",
+      "evidenceId": "EVIDENCE_GW_FAMILY_RESPONSIBILITY",
+      "findingId": "FINDING_GW_FAMILY_RESPONSIBILITY",
+      "scoreDeduction": 3,
+      "severity": "LOW",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_103",
+      "questionId": "primary_focus_area",
+      "answerValue": "physical_fitness",
+      "evidenceId": "EVIDENCE_GW_GOAL_PHYSICAL_FITNESS",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_104",
+      "questionId": "primary_focus_area",
+      "answerValue": "nutrition",
+      "evidenceId": "EVIDENCE_GW_GOAL_NUTRITION",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_105",
+      "questionId": "primary_focus_area",
+      "answerValue": "sleep",
+      "evidenceId": "EVIDENCE_GW_GOAL_SLEEP",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_106",
+      "questionId": "primary_focus_area",
+      "answerValue": "energy",
+      "evidenceId": "EVIDENCE_GW_GOAL_ENERGY",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_107",
+      "questionId": "primary_focus_area",
+      "answerValue": "mental_wellbeing",
+      "evidenceId": "EVIDENCE_GW_GOAL_MENTAL_WELLBEING",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_108",
+      "questionId": "primary_focus_area",
+      "answerValue": "stress_management",
+      "evidenceId": "EVIDENCE_GW_GOAL_STRESS_MANAGEMENT",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_109",
+      "questionId": "primary_focus_area",
+      "answerValue": "overall_health",
+      "evidenceId": "EVIDENCE_GW_GOAL_OVERALL_HEALTH",
+      "findingId": null,
+      "scoreDeduction": 0,
+      "severity": "INFO",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_110",
+      "questionId": "wellness_readiness",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_LOW_WELLNESS_READINESS",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_111",
+      "questionId": "wellness_readiness",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_LOW_WELLNESS_READINESS",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_112",
+      "questionId": "wellness_readiness",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_GW_LOW_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_LOW_WELLNESS_READINESS",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM",
+      "isPositiveReinforcement": true
+    },
+    {
+      "id": "RULE_GW_113",
+      "questionId": "wellness_readiness",
+      "answerValue": "8",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_HIGH_WELLNESS_READINESS",
+      "scoreDeduction": -3,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_114",
+      "questionId": "wellness_readiness",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_HIGH_WELLNESS_READINESS",
+      "scoreDeduction": -3,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    },
+    {
+      "id": "RULE_GW_115",
+      "questionId": "wellness_readiness",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_GW_HIGH_WELLNESS_READINESS",
+      "findingId": "FINDING_GW_HIGH_WELLNESS_READINESS",
+      "scoreDeduction": -3,
+      "severity": "INFO",
+      "isPositiveReinforcement": false
+    }
+  ]
+}

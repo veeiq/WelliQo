@@ -1,0 +1,457 @@
+{
+  "id": "module_rules_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "rules",
+  "rules": [
+    {
+      "id": "RULE_FAL_6",
+      "questionId": "exercise_frequency",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_4",
+      "findingId": "FND_FAL_3",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_7",
+      "questionId": "exercise_frequency",
+      "answerValue": "1_2_days",
+      "evidenceId": "EVD_FAL_4",
+      "findingId": "FND_FAL_3",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_8",
+      "questionId": "exercise_duration",
+      "answerValue": "less_than_15",
+      "evidenceId": "EVD_FAL_5",
+      "findingId": "FND_FAL_4",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_9",
+      "questionId": "exercise_duration",
+      "answerValue": "15_30_min",
+      "evidenceId": "EVD_FAL_5",
+      "findingId": "FND_FAL_4",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_10",
+      "questionId": "exercise_type",
+      "answerValue": "no_exercise",
+      "evidenceId": "EVD_FAL_6",
+      "findingId": "FND_FAL_5",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_11",
+      "questionId": "exercise_type",
+      "answerValue": "walking",
+      "evidenceId": "EVD_FAL_6",
+      "findingId": "FND_FAL_5",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_12",
+      "questionId": "daily_movement",
+      "answerValue": "mostly_sitting",
+      "evidenceId": "EVD_FAL_7",
+      "findingId": "FND_FAL_6",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_13",
+      "questionId": "daily_movement",
+      "answerValue": "light_movement",
+      "evidenceId": "EVD_FAL_7",
+      "findingId": "FND_FAL_6",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_14",
+      "questionId": "daily_steps",
+      "answerValue": "less_than_3000",
+      "evidenceId": "EVD_FAL_8",
+      "findingId": "FND_FAL_7",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_15",
+      "questionId": "daily_steps",
+      "answerValue": "3000_5999",
+      "evidenceId": "EVD_FAL_8",
+      "findingId": "FND_FAL_7",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_16",
+      "questionId": "active_choices",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_9",
+      "findingId": "FND_FAL_8",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_17",
+      "questionId": "active_choices",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_FAL_9",
+      "findingId": "FND_FAL_8",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_18",
+      "questionId": "exercise_consistency",
+      "answerValue": "very_inconsistent",
+      "evidenceId": "EVD_FAL_10",
+      "findingId": "FND_FAL_9",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_19",
+      "questionId": "exercise_consistency",
+      "answerValue": "somewhat_inconsistent",
+      "evidenceId": "EVD_FAL_10",
+      "findingId": "FND_FAL_9",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_20",
+      "questionId": "cardio_endurance",
+      "answerValue": "very_poor",
+      "evidenceId": "EVD_FAL_11",
+      "findingId": "FND_FAL_10",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_21",
+      "questionId": "cardio_endurance",
+      "answerValue": "poor",
+      "evidenceId": "EVD_FAL_11",
+      "findingId": "FND_FAL_10",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_22",
+      "questionId": "breathlessness",
+      "answerValue": "almost_immediately",
+      "evidenceId": "EVD_FAL_12",
+      "findingId": "FND_FAL_11",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_23",
+      "questionId": "breathlessness",
+      "answerValue": "within_few_minutes",
+      "evidenceId": "EVD_FAL_12",
+      "findingId": "FND_FAL_11",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_24",
+      "questionId": "cardio_frequency",
+      "answerValue": "none",
+      "evidenceId": "EVD_FAL_13",
+      "findingId": "FND_FAL_12",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_25",
+      "questionId": "cardio_frequency",
+      "answerValue": "1_day",
+      "evidenceId": "EVD_FAL_13",
+      "findingId": "FND_FAL_12",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_26",
+      "questionId": "cardio_recovery",
+      "answerValue": "more_than_1_day",
+      "evidenceId": "EVD_FAL_14",
+      "findingId": "FND_FAL_13",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_27",
+      "questionId": "cardio_recovery",
+      "answerValue": "several_hours",
+      "evidenceId": "EVD_FAL_14",
+      "findingId": "FND_FAL_13",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_28",
+      "questionId": "walking_capacity",
+      "answerValue": "no",
+      "evidenceId": "EVD_FAL_15",
+      "findingId": "FND_FAL_14",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_29",
+      "questionId": "walking_capacity",
+      "answerValue": "with_difficulty",
+      "evidenceId": "EVD_FAL_15",
+      "findingId": "FND_FAL_14",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_30",
+      "questionId": "sports_participation",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_16",
+      "findingId": "FND_FAL_15",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_31",
+      "questionId": "sports_participation",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_FAL_16",
+      "findingId": "FND_FAL_15",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_32",
+      "questionId": "flexibility",
+      "answerValue": "very_poor",
+      "evidenceId": "EVD_FAL_17",
+      "findingId": "FND_FAL_16",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_33",
+      "questionId": "flexibility",
+      "answerValue": "poor",
+      "evidenceId": "EVD_FAL_17",
+      "findingId": "FND_FAL_16",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_34",
+      "questionId": "mobility_training",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_18",
+      "findingId": "FND_FAL_17",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_35",
+      "questionId": "mobility_training",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_FAL_18",
+      "findingId": "FND_FAL_17",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_36",
+      "questionId": "balance",
+      "answerValue": "very_poor",
+      "evidenceId": "EVD_FAL_19",
+      "findingId": "FND_FAL_18",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_37",
+      "questionId": "balance",
+      "answerValue": "poor",
+      "evidenceId": "EVD_FAL_19",
+      "findingId": "FND_FAL_18",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_38",
+      "questionId": "muscle_stiffness",
+      "answerValue": "always",
+      "evidenceId": "EVD_FAL_20",
+      "findingId": "FND_FAL_19",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_39",
+      "questionId": "muscle_stiffness",
+      "answerValue": "often",
+      "evidenceId": "EVD_FAL_20",
+      "findingId": "FND_FAL_19",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_40",
+      "questionId": "physical_energy",
+      "answerValue": "very_low",
+      "evidenceId": "EVD_FAL_21",
+      "findingId": "FND_FAL_20",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_41",
+      "questionId": "physical_energy",
+      "answerValue": "low",
+      "evidenceId": "EVD_FAL_21",
+      "findingId": "FND_FAL_20",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_42",
+      "questionId": "fitness_barrier",
+      "answerValue": "lack_of_time",
+      "evidenceId": "EVD_FAL_22",
+      "findingId": "FND_FAL_21",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_43",
+      "questionId": "fitness_barrier",
+      "answerValue": "low_motivation",
+      "evidenceId": "EVD_FAL_22",
+      "findingId": "FND_FAL_21",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_44",
+      "questionId": "fitness_confidence",
+      "answerValue": "1",
+      "evidenceId": "EVD_FAL_23",
+      "findingId": "FND_FAL_22",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_45",
+      "questionId": "fitness_confidence",
+      "answerValue": "2",
+      "evidenceId": "EVD_FAL_23",
+      "findingId": "FND_FAL_22",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_46",
+      "questionId": "fitness_commitment",
+      "answerValue": "1",
+      "evidenceId": "EVD_FAL_24",
+      "findingId": "FND_FAL_23",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_47",
+      "questionId": "fitness_commitment",
+      "answerValue": "2",
+      "evidenceId": "EVD_FAL_24",
+      "findingId": "FND_FAL_23",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_48",
+      "questionId": "missed_exercise",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_25",
+      "findingId": "FND_FAL_24",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_49",
+      "questionId": "missed_exercise",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_FAL_25",
+      "findingId": "FND_FAL_24",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_50",
+      "questionId": "activity_tracking",
+      "answerValue": "never",
+      "evidenceId": "EVD_FAL_26",
+      "findingId": "FND_FAL_25",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_51",
+      "questionId": "activity_tracking",
+      "answerValue": "rarely",
+      "evidenceId": "EVD_FAL_26",
+      "findingId": "FND_FAL_25",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_52",
+      "questionId": "routine_resilience",
+      "answerValue": "continue_as_planned",
+      "evidenceId": "EVD_FAL_27",
+      "findingId": "FND_FAL_26",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_53",
+      "questionId": "routine_resilience",
+      "answerValue": "reduce_workout_duration",
+      "evidenceId": "EVD_FAL_27",
+      "findingId": "FND_FAL_26",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_FAL_54",
+      "questionId": "fitness_goal",
+      "answerValue": "become_more_active",
+      "evidenceId": "EVD_FAL_28",
+      "findingId": "FND_FAL_27",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_FAL_55",
+      "questionId": "fitness_goal",
+      "answerValue": "improve_stamina",
+      "evidenceId": "EVD_FAL_28",
+      "findingId": "FND_FAL_27",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    }
+  ]
+}

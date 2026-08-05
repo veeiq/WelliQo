@@ -1,0 +1,18 @@
+{
+  "id": "module_thresholds_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "thresholds",
+  "thresholds": [
+    {
+      "metricId": "physical_activity",
+      "name": "Physical Activity",
+      "brackets": [
+        {
+          "max": 100,
+          "clinicalMeaning": "Needs work",
+          "severity": "HIGH"
+        }
+      ]
+    }
+  ]
+}

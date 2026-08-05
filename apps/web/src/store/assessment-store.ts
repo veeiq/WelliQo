@@ -58,6 +58,7 @@ export interface CalculatedMetrics {
   // Dynamic Report Data
   overallScore: number;
   scoreMeaning: string;
+  overallSummary: string;
   timeline: string;
   
   metricCards: MetricCardData[];
@@ -71,10 +72,15 @@ export interface CalculatedMetrics {
   
   nutritionPlan: {
     protein: string;
+    proteinGrams?: number;
     carbs: string;
     fats: string;
     naturalSources: string[];
-    supplements: string[];
+    supplements: {
+      state: 'RECOMMENDED' | 'OPTIONAL' | 'NOT_RECOMMENDED';
+      reason?: string;
+      products: string[];
+    };
   };
   recommendedAssessments: { id: string; label: string; icon: string }[];
 }

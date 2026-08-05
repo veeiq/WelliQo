@@ -1,0 +1,43 @@
+{
+  "id": "module_thresholds_general_wellness",
+  "version": "1.0.0",
+  "definition": "thresholds",
+  "thresholds": [
+    {
+      "metricId": "overall_wellness_score",
+      "name": "Overall Wellness Score",
+      "brackets": [
+        {
+          "min": 90,
+          "max": 100,
+          "clinicalMeaning": "Excellent Wellness",
+          "severity": "INFO"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "clinicalMeaning": "Healthy Lifestyle",
+          "severity": "INFO"
+        },
+        {
+          "min": 60,
+          "max": 74,
+          "clinicalMeaning": "Moderate Wellness",
+          "severity": "LOW"
+        },
+        {
+          "min": 40,
+          "max": 59,
+          "clinicalMeaning": "Multiple Improvement Areas",
+          "severity": "MEDIUM"
+        },
+        {
+          "min": 0,
+          "max": 39,
+          "clinicalMeaning": "High Priority Lifestyle Intervention",
+          "severity": "CRITICAL"
+        }
+      ]
+    }
+  ]
+}

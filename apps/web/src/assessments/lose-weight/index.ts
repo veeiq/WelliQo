@@ -21,5 +21,5 @@ export const loseWeight: ImplementedAssessment = {
   version: ASSESSMENT_VERSION,
   
   questions,
-  config,
+  config: config as any,
 };

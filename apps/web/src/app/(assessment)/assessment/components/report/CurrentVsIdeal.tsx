@@ -19,11 +19,12 @@ export function CurrentVsIdeal({
   let subheadline = "Here is the baseline we need to work from.";
   
   if (metrics.weightDifferenceKg > 0) {
+    const formattedDiff = `≈${Math.abs(metrics.weightDifferenceKg).toFixed(1)}`;
     if (metrics.weightDirection === 'lose') {
-      headline = `You have ${metrics.weightDifferenceKg} kg of excess weight holding you back.`;
+      headline = `You have ${formattedDiff} kg of excess weight holding you back.`;
       subheadline = "By addressing this, we can dramatically improve your energy, digestion, and overall wellness.";
     } else if (metrics.weightDirection === 'gain') {
-      headline = `We need to build ${metrics.weightDifferenceKg} kg of healthy mass.`;
+      headline = `We need to build ${formattedDiff} kg of healthy mass.`;
       subheadline = "Building lean muscle will completely transform your energy and physique.";
     }
   }
@@ -47,6 +48,18 @@ export function CurrentVsIdeal({
           <MetricCard key={card.id} card={card} />
         ))}
       </div>
+      
+      {timeline && (
+        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 relative z-10">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <span className="text-slate-600 dark:text-slate-400 font-medium">Estimated Timeline</span>
+            <div className="text-left sm:text-right">
+              <span className="text-xl font-bold text-slate-900 dark:text-slate-50 block">{timeline}</span>
+              <span className="text-sm text-slate-500 dark:text-slate-400 mt-1 block">Assuming consistent lifestyle changes.</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

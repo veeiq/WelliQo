@@ -84,7 +84,7 @@
     },
     {
       "id": "FINDING_POSITIVE_ENERGY_BALANCE",
-      "title": "Positive Energy Balance Pattern",
+      "title": "Reducing Excess Calorie Intake",
       "category": "Nutrition",
       "severity": "HIGH",
       "confidence": 90,
@@ -356,7 +356,7 @@
     },
     {
       "id": "POSITIVE_ENERGY_BALANCE",
-      "title": "Positive Energy Balance",
+      "title": "Reducing Excess Calorie Intake",
       "category": "Direct Finding",
       "severity": "INFO",
       "confidence": 100,
@@ -1076,7 +1076,7 @@
     },
     {
       "id": "POSITIVE_ENERGY_BALANCE_PATTERN",
-      "title": "Positive Energy Balance Pattern",
+      "title": "Reducing Excess Calorie Intake",
       "category": "Direct Finding",
       "severity": "INFO",
       "confidence": 100,

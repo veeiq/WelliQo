@@ -1,0 +1,181 @@
+{
+  "id": "module_evidence_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Core evidence definitions for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "evidence": [
+    {
+      "id": "EVIDENCE_HWG_LOW_MEAL_FREQUENCY",
+      "description": "Low meal frequency",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_MODERATE_MEAL_FREQUENCY",
+      "description": "Moderate meal frequency",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_GOOD_MEAL_FREQUENCY",
+      "description": "Good meal frequency",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_LOW_PROTEIN_INTAKE",
+      "description": "Low protein intake",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_GOOD_PROTEIN_INTAKE",
+      "description": "Good protein intake",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_LOW_SNACK_FREQUENCY",
+      "description": "Low snack frequency",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_GOOD_SNACK_FREQUENCY",
+      "description": "Good snack frequency",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_NO_LIQUID_CALORIES",
+      "description": "No liquid calories",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_GOOD_LIQUID_CALORIES",
+      "description": "Good liquid calories",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_POOR_APPETITE",
+      "description": "Poor appetite",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_HEALTHY_APPETITE",
+      "description": "Healthy appetite",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_EARLY_SATIETY",
+      "description": "Early satiety",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HWG_NO_STRENGTH_TRAINING",
+      "description": "No strength training",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_REGULAR_STRENGTH_TRAINING",
+      "description": "Regular strength training",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_NO_PROGRESSIVE_OVERLOAD",
+      "description": "No progressive overload",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_PROGRESSIVE_OVERLOAD",
+      "description": "Progressive overload",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_EXCESSIVE_CARDIO",
+      "description": "Excessive cardio",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_HIGH_DAILY_ACTIVITY",
+      "description": "High daily activity",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_SUCCESSFUL_MUSCLE_GAIN_HISTORY",
+      "description": "Successful muscle gain history",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HWG_POOR_SLEEP",
+      "description": "Poor sleep",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_OPTIMAL_SLEEP",
+      "description": "Optimal sleep",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_HIGH_STRESS",
+      "description": "High stress",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_POOR_RECOVERY",
+      "description": "Poor recovery",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_GOOD_RECOVERY",
+      "description": "Good recovery",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_INADEQUATE_REST",
+      "description": "Inadequate rest",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HWG_LIFELONG_HARD_GAINER",
+      "description": "Lifelong hard gainer",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_MULTIPLE_FAILED_ATTEMPTS",
+      "description": "Multiple failed attempts",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_FREQUENT_MEAL_SKIPPING",
+      "description": "Frequent meal skipping",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_PORTION_DISCOMFORT",
+      "description": "Portion discomfort",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_FEAR_OF_GAINING_FAT",
+      "description": "Fear of gaining fat",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_LOW_CONFIDENCE",
+      "description": "Low confidence",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_HIGH_CONFIDENCE",
+      "description": "High confidence",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_LOW_COMMITMENT",
+      "description": "Low commitment",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HWG_HIGH_COMMITMENT",
+      "description": "High commitment",
+      "category": "Behaviour"
+    }
+  ]
+}

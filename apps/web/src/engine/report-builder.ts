@@ -4,14 +4,20 @@ import { ScoreEngineResult } from './score-engine';
 import { FormulaRegistry } from './formula-registry';
 import { KnowledgeRepositoryLoader } from './knowledge-loader';
 import { CalculatedMetrics, PillarScore, MetricCardData } from '../store/assessment-store';
+import { FoodProvider } from './providers/food-provider';
+import { SupplementProvider } from './providers/supplement-provider';
 
 export class ReportBuilder {
   private loader: KnowledgeRepositoryLoader;
   private formulaRegistry: FormulaRegistry;
+  private foodProvider: FoodProvider;
+  private supplementProvider: SupplementProvider;
 
   constructor() {
     this.loader = KnowledgeRepositoryLoader.getInstance();
     this.formulaRegistry = FormulaRegistry.getInstance();
+    this.foodProvider = new FoodProvider();
+    this.supplementProvider = new SupplementProvider();
   }
 
   public build(
@@ -51,12 +57,28 @@ export class ReportBuilder {
     let weightDifferenceKg = 0;
     let weightDirection: 'lose' | 'gain' | 'maintain' = 'maintain';
     
-    if (baseline.weight > maxIdealKg) {
-      weightDifferenceKg = baseline.weight - maxIdealKg;
-      weightDirection = 'lose';
-    } else if (baseline.weight < minIdealKg) {
-      weightDifferenceKg = minIdealKg - baseline.weight;
+    if (answers.assessmentId === 'healthy-weight-gain') {
       weightDirection = 'gain';
+      weightDifferenceKg = Math.max(0, (baseline.target_weight || minIdealKg) - baseline.weight);
+      if (weightDifferenceKg === 0) weightDifferenceKg = 5; // Assume 5kg muscle gain goal if unspecified
+    } else if (answers.assessmentId === 'lose-weight') {
+      weightDirection = 'lose';
+      weightDifferenceKg = Math.max(0, baseline.weight - (baseline.target_weight || maxIdealKg));
+      if (weightDifferenceKg === 0) weightDifferenceKg = 5;
+    } else {
+      if (baseline.target_weight > baseline.weight) {
+        weightDifferenceKg = baseline.target_weight - baseline.weight;
+        weightDirection = 'gain';
+      } else if (baseline.target_weight < baseline.weight) {
+        weightDifferenceKg = baseline.weight - baseline.target_weight;
+        weightDirection = 'lose';
+      } else if (baseline.weight > maxIdealKg) {
+        weightDifferenceKg = baseline.weight - maxIdealKg;
+        weightDirection = 'lose';
+      } else if (baseline.weight < minIdealKg) {
+        weightDifferenceKg = minIdealKg - baseline.weight;
+        weightDirection = 'gain';
+      }
     }
 
     // Fetch findings metadata from knowledge repo
@@ -95,7 +117,7 @@ export class ReportBuilder {
         why: r!.whyThisMatters || '',
         action: r!.actionSteps?.[0] || r!.recommendationText,
         expectedBenefit: r!.expectedBenefits?.[0] || '',
-        timeline: r!.expectedTimeline || '',
+        timeline: r!.expectedTimeline ? '2–4 weeks' : '',
         difficulty: (r!.difficulty || 'Moderate') as 'Easy' | 'Moderate' | 'Advanced',
         successIndicators: r!.successIndicators || [],
         priority: 'High' as 'High' // UI expectation
@@ -127,7 +149,7 @@ export class ReportBuilder {
     if (scoreResult.overallWellnessScore < 60) scoreMeaning = 'High Priority';
 
     // Strengths and Improvements
-    const strengths = Object.entries(scoreResult.pillarScores).filter(([_, s]) => s >= 80).map(([p]) => p);
+    const strengths = Object.entries(scoreResult.pillarScores).filter(([_, s]) => s >= 85).map(([p]) => p);
     const improvements = Object.entries(scoreResult.pillarScores).filter(([_, s]) => s < 70).map(([p]) => p);
 
     // Metric Cards
@@ -138,11 +160,11 @@ export class ReportBuilder {
         icon: 'Activity',
         current: bmi.toFixed(1),
         ideal: '18.5 - 24.9',
-        difference: (bmi - 22).toFixed(1),
-        meaning: bmi > 25 ? 'Above Ideal' : 'Ideal',
-        status: bmi > 25 ? 'warning' : 'good',
-        clinicalMeaning: bmi > 25 ? 'Above healthy range' : 'Within healthy range',
-        primaryFocus: bmi > 25 ? 'Weight Management' : 'Maintenance',
+        difference: bmi < 18.5 ? (18.5 - bmi).toFixed(1) : (bmi > 24.9 ? (bmi - 24.9).toFixed(1) : '0.0'),
+        meaning: bmi < 18.5 ? 'Underweight' : (bmi > 24.9 ? 'Above Ideal' : 'Ideal'),
+        status: bmi < 18.5 || bmi > 24.9 ? 'warning' : 'good',
+        clinicalMeaning: bmi < 18.5 ? 'Underweight' : (bmi > 24.9 ? 'Above healthy range' : 'Within healthy range'),
+        primaryFocus: weightDirection === 'gain' ? (bmi < 18.5 ? 'Healthy Weight Gain' : 'Lean Weight Gain') : (weightDirection === 'lose' ? 'Fat Loss' : 'Maintenance'),
         sourceType: 'Calculated',
         sourceExplanation: 'Based on your height and weight.'
       },
@@ -178,23 +200,80 @@ export class ReportBuilder {
       timeline = `Approximately ${minMonths}–${maxMonths} months`;
     }
 
-    // Biggest Opportunity Explanation
-    let biggestOpportunityExplanation = 'Focusing here will create a cascading effect of positive changes across all other areas of your health.';
-    if (scoreResult.biggestOpportunity === 'Nutrition') {
-      biggestOpportunityExplanation = 'Nutrition is the foundation of weight management. Fixing your energy balance and meal timing here will make the biggest impact in the shortest amount of time.';
-    } else if (scoreResult.biggestOpportunity === 'Recovery') {
-      biggestOpportunityExplanation = 'Improving your sleep and stress management makes healthy eating, exercise, and appetite control significantly easier because recovery deeply influences your metabolic hormones.';
-    } else if (scoreResult.biggestOpportunity === 'Mindset') {
-      biggestOpportunityExplanation = 'Your mindset dictates your consistency. By addressing mental blocks or stress, you build a sustainable foundation that outlasts temporary motivation.';
+    // Biggest Opportunity Explanation (Personalized)
+    let biggestOpportunityExplanation = '';
+    let overallSummary = '';
+    const topNegativeHabits = scoreExplanation.map(f => {
+      const labelStr = f.label || (f as any).title || '';
+      return labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'drinking' ? 'Daily sugary drinks' : 
+             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'consistently' ? 'Very large portions' : 
+             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'intense' ? 'Frequent cravings' : 
+             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'you' ? 'Poor sleep schedule' : 
+             'These core habits';
+    });
+    
+    // Make it feel super personal instead of generic
+    if (scoreExplanation.length >= 2) {
+       const humanizeFinding = (id: string) => {
+         if (id.includes('NO_LIQUID_CALORIES')) return 'low liquid calorie intake';
+         if (id.includes('SUGAR') || id.includes('LIQUID')) return 'excess liquid calories';
+         if (id.includes('APPETITE')) return 'low appetite';
+         if (id.includes('EARLY_SATIETY')) return 'feeling full too quickly';
+         if (id.includes('PORTION')) return 'oversized portions';
+         if (id.includes('PROTEIN')) return 'low protein intake';
+         if (id.includes('CRAVING')) return 'frequent cravings';
+         if (id.includes('LOW_SNACKING')) return 'missing healthy snacks';
+         if (id.includes('SNACK')) return 'frequent snacking';
+         if (id.includes('SLEEP')) return 'poor sleep schedule';
+         if (id.includes('LATE')) return 'late night eating';
+         if (id.includes('STRESS')) return 'high stress';
+         if (id.includes('RESTAURANT')) return 'frequent fast food';
+         if (id.includes('NEAT')) return 'low daily activity';
+         if (id.includes('MOVEMENT') || id.includes('ROUTINE')) return 'prolonged sitting';
+         if (id.includes('EXERCISE') || id.includes('STRENGTH')) return 'lack of exercise';
+         return id.replace('FINDING_HWG_', '').replace('FINDING_', '').replace(/_/g, ' ').toLowerCase();
+       };
+
+       // Get findings specifically for the biggest opportunity pillar
+       const oppDeductions = scoreResult.auditTrail.deductionsApplied
+         .filter(d => d.pillar.toLowerCase() === scoreResult.biggestOpportunity.toLowerCase() && d.findingId);
+       
+       let oppFindings = oppDeductions
+         .map(d => activeFindingObjs.find(f => f!.id === d.findingId))
+         .filter(Boolean)
+         .slice(0, 3);
+         
+       if (oppFindings.length === 0) oppFindings = activeFindingObjs.slice(0, 3);
+
+       const oppBullets = oppFindings.map(f => humanizeFinding(f!.id));
+       const overallBullets = scoreExplanation.slice(0,3).map(f => humanizeFinding(f.id));
+       
+       biggestOpportunityExplanation = `Based on your answers, your biggest challenge isn't lack of motivation. It is the combination of:\n\n• ${oppBullets.join('\n• ')}\n\nImproving these habits alone is likely to produce the biggest improvement over the next few months.`;
+       
+       const habitsList = overallBullets.length > 1 
+         ? overallBullets.slice(0, -1).join(', ') + ', and ' + overallBullets[overallBullets.length - 1]
+         : overallBullets[0] || 'these daily habits';
+       overallSummary = `You are highly motivated to ${weightDirection === 'gain' ? 'gain' : 'lose'} weight, but several daily habits—including ${habitsList}—are making progress much harder than it needs to be.\n\nThe good news is that improving just three habits could significantly improve your health over the next few months.`;
+    } else {
+       biggestOpportunityExplanation = `Nutrition is the foundation of weight management. Reducing excess calorie intake and improving meal timing here will make the biggest impact in the shortest amount of time.`;
+       overallSummary = `You are highly motivated to ${weightDirection === 'gain' ? 'gain' : 'lose'} weight. We have identified some key areas to focus on. The good news is that optimizing these habits could significantly improve your health over the next few months.`;
     }
 
-    // Dummy Nutrition Plan (Can be fully dynamic later)
+    // Extract medical conditions (e.g. from answers.medical_conditions)
+    const medicalConditions = answers.medical_conditions ? (Array.isArray(answers.medical_conditions) ? answers.medical_conditions : [answers.medical_conditions]) : [];
+    
+    const proteinGrams = Math.round(baseline.weight * 1.6);
     const nutritionPlan = {
-      protein: '1.6g / kg',
+      protein: `≈${proteinGrams} g/day`,
+      proteinGrams: proteinGrams,
       carbs: 'Moderate',
       fats: 'Moderate',
-      naturalSources: ['Chicken', 'Fish', 'Beans'],
-      supplements: ['Protein Powder']
+      naturalSources: this.foodProvider.getRecommendedFoods(answers.food_preference),
+      supplements: this.supplementProvider.getRecommendedSupplements(
+        answers.assessmentId || 'healthy-weight-gain', // default if not provided
+        'generic', // can be dynamic based on user profile later
+        medicalConditions
+      )
     };
 
     return {
@@ -208,6 +287,7 @@ export class ReportBuilder {
       pillarScores,
       overallScore: scoreResult.overallWellnessScore,
       scoreMeaning,
+      overallSummary,
       timeline,
       metricCards,
       strengths,

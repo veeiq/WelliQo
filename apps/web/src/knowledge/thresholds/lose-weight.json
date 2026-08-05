@@ -1,0 +1,33 @@
+{
+  "id": "module_thresholds_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core thresholds for lose weight",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "thresholds": [
+    {
+      "metricId": "commitment_fl",
+      "name": "Commitment Level Thresholds",
+      "brackets": [
+        {
+          "max": 3,
+          "clinicalMeaning": "Low commitment",
+          "severity": "HIGH"
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "clinicalMeaning": "Moderate commitment",
+          "severity": "MEDIUM"
+        },
+        {
+          "min": 7,
+          "clinicalMeaning": "High commitment",
+          "severity": "INFO"
+        }
+      ]
+    }
+  ]
+}

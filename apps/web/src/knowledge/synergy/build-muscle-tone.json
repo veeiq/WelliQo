@@ -1,0 +1,31 @@
+{
+  "id": "module_synergy_build_muscle_tone",
+  "version": "1.0.0",
+  "definition": "Synergies for Build Muscle & Tone",
+  "synergy": [
+    {
+      "id": "SYN_BMT_001",
+      "name": "The Recovery Trap",
+      "requiredEvidence": [
+        "FND_BMT_001",
+        "FND_BMT_006"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FND_BMT_SYN_001",
+      "severity": "CRITICAL",
+      "confidence": 5
+    },
+    {
+      "id": "SYN_BMT_002",
+      "name": "The Missing Fuel",
+      "requiredEvidence": [
+        "FND_BMT_005",
+        "FND_BMT_002"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FND_BMT_SYN_002",
+      "severity": "CRITICAL",
+      "confidence": 5
+    }
+  ]
+}

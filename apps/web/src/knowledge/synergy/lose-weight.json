@@ -1,0 +1,137 @@
+{
+  "id": "module_synergy_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core synergy logic for lose weight and burn fat",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "synergy": [
+    {
+      "id": "SYNERGY_ENERGY_BALANCE",
+      "name": "Positive Energy Balance",
+      "requiredEvidence": [
+        "EVIDENCE_POOR_PORTION_CONTROL",
+        "EVIDENCE_HIGH_RESTAURANT_FOOD",
+        "EVIDENCE_HIGH_SUGARY_DRINKS",
+        "EVIDENCE_MINDLESS_SNACKING"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_POSITIVE_ENERGY_BALANCE",
+      "priority": "URGENT",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_POOR_ENVIRONMENT",
+      "name": "Poor Fat Loss Environment",
+      "requiredEvidence": [
+        "EVIDENCE_LOW_DAILY_MOVEMENT",
+        "EVIDENCE_POOR_PORTION_CONTROL",
+        "EVIDENCE_SLEEP_DEFICIT"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_POOR_FAT_LOSS_ENVIRONMENT",
+      "priority": "URGENT",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_MUSCLE_RISK",
+      "name": "Muscle Preservation Risk",
+      "requiredEvidence": [
+        "EVIDENCE_NO_STRENGTH_TRAINING",
+        "EVIDENCE_LOW_PROTEIN_INTAKE"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_MUSCLE_PRESERVATION_RISK",
+      "priority": "URGENT",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_RECOVERY_LIMIT",
+      "name": "Recovery Limited Progress",
+      "requiredEvidence": [
+        "EVIDENCE_SLEEP_DEFICIT",
+        "EVIDENCE_HIGH_STRESS",
+        "EVIDENCE_POOR_RECOVERY"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_RECOVERY_LIMITED_PROGRESS",
+      "priority": "HIGH",
+      "confidence": 90
+    },
+    {
+      "id": "SYNERGY_METABOLIC_STRAIN",
+      "name": "Metabolic Strain",
+      "requiredEvidence": [
+        "EVIDENCE_HIGH_SUGAR_CRAVINGS",
+        "EVIDENCE_POOR_SATIETY",
+        "EVIDENCE_AFTERNOON_ENERGY_CRASH"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_METABOLIC_STRAIN",
+      "priority": "HIGH",
+      "confidence": 90
+    },
+    {
+      "id": "SYNERGY_WEEKEND_COMPENSATION",
+      "name": "Weekend Compensation Pattern",
+      "requiredEvidence": [
+        "EVIDENCE_WEEKEND_OVEREATING",
+        "EVIDENCE_HIGH_RESTAURANT_FOOD"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_WEEKEND_COMPENSATION_PATTERN",
+      "priority": "MEDIUM",
+      "confidence": 80
+    },
+    {
+      "id": "SYNERGY_EMOTIONAL_OVEREATING",
+      "name": "Emotional Overeating Pattern",
+      "requiredEvidence": [
+        "EVIDENCE_EMOTIONAL_EATING",
+        "EVIDENCE_MINDLESS_SNACKING",
+        "EVIDENCE_HIGH_STRESS"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_EMOTIONAL_OVEREATING_PATTERN",
+      "priority": "URGENT",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_LOW_EFFICIENCY",
+      "name": "Low Fat Loss Efficiency",
+      "requiredEvidence": [
+        "EVIDENCE_WEIGHT_PLATEAU",
+        "EVIDENCE_LOW_DAILY_MOVEMENT",
+        "EVIDENCE_POOR_RECOVERY"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_LOW_FAT_LOSS_EFFICIENCY",
+      "priority": "URGENT",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_STRONG_FOUNDATION",
+      "name": "Strong Behavioural Foundation",
+      "requiredEvidence": [
+        "EVIDENCE_HIGH_COMMITMENT",
+        "EVIDENCE_GOOD_PORTION_CONTROL"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_STRONG_BEHAVIOURAL_FOUNDATION",
+      "priority": "INFO",
+      "confidence": 90
+    },
+    {
+      "id": "SYNERGY_HIGH_SUCCESS",
+      "name": "High Success Potential",
+      "requiredEvidence": [
+        "EVIDENCE_HIGH_COMMITMENT"
+      ],
+      "minRequiredMatches": 1,
+      "findingId": "FINDING_HIGH_SUCCESS_POTENTIAL",
+      "priority": "INFO",
+      "confidence": 90
+    }
+  ]
+}

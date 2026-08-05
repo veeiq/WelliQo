@@ -1,0 +1,19 @@
+{
+  "id": "module_synergy_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "synergy",
+  "synergy": [
+    {
+      "id": "SYN_FAL_1",
+      "name": "General Inactivity",
+      "requiredEvidence": [
+        "EVD_FAL_4",
+        "EVD_FAL_5"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FND_FAL_3",
+      "priority": "URGENT",
+      "confidence": 100
+    }
+  ]
+}

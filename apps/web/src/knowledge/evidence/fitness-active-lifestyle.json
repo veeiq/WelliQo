@@ -1,0 +1,132 @@
+{
+  "id": "module_evidence_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "evidence",
+  "evidence": [
+    {
+      "id": "EVD_FAL_4",
+      "description": "Negative flag for exercise_frequency",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_5",
+      "description": "Negative flag for exercise_duration",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_6",
+      "description": "Negative flag for exercise_type",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_7",
+      "description": "Negative flag for daily_movement",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_8",
+      "description": "Negative flag for daily_steps",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_9",
+      "description": "Negative flag for active_choices",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_10",
+      "description": "Negative flag for exercise_consistency",
+      "category": "Physical Activity"
+    },
+    {
+      "id": "EVD_FAL_11",
+      "description": "Negative flag for cardio_endurance",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_12",
+      "description": "Negative flag for breathlessness",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_13",
+      "description": "Negative flag for cardio_frequency",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_14",
+      "description": "Negative flag for cardio_recovery",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_15",
+      "description": "Negative flag for walking_capacity",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_16",
+      "description": "Negative flag for sports_participation",
+      "category": "Cardiovascular Fitness"
+    },
+    {
+      "id": "EVD_FAL_17",
+      "description": "Negative flag for flexibility",
+      "category": "Mobility"
+    },
+    {
+      "id": "EVD_FAL_18",
+      "description": "Negative flag for mobility_training",
+      "category": "Mobility"
+    },
+    {
+      "id": "EVD_FAL_19",
+      "description": "Negative flag for balance",
+      "category": "Mobility"
+    },
+    {
+      "id": "EVD_FAL_20",
+      "description": "Negative flag for muscle_stiffness",
+      "category": "Mobility"
+    },
+    {
+      "id": "EVD_FAL_21",
+      "description": "Negative flag for physical_energy",
+      "category": "Mobility"
+    },
+    {
+      "id": "EVD_FAL_22",
+      "description": "Negative flag for fitness_barrier",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_23",
+      "description": "Negative flag for fitness_confidence",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_24",
+      "description": "Negative flag for fitness_commitment",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_25",
+      "description": "Negative flag for missed_exercise",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_26",
+      "description": "Negative flag for activity_tracking",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_27",
+      "description": "Negative flag for routine_resilience",
+      "category": "Lifestyle"
+    },
+    {
+      "id": "EVD_FAL_28",
+      "description": "Negative flag for fitness_goal",
+      "category": "Lifestyle"
+    }
+  ]
+}

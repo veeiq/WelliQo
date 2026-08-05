@@ -1,0 +1,201 @@
+{
+  "id": "module_evidence_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core evidence definitions for lose weight and burn fat",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "evidence": [
+    {
+      "id": "EVIDENCE_POOR_PORTION_CONTROL",
+      "description": "Poor portion control",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HIGH_RESTAURANT_FOOD",
+      "description": "Frequent restaurant food",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_HIGH_SUGARY_DRINKS",
+      "description": "High sugary drinks",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_LOW_PROTEIN_INTAKE",
+      "description": "Low protein intake",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_MINDLESS_SNACKING",
+      "description": "Mindless snacking",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_LATE_NIGHT_EATING",
+      "description": "Late night eating",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_WEEKEND_OVEREATING",
+      "description": "Weekend overeating",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_GOOD_PORTION_CONTROL",
+      "description": "Good portion control",
+      "category": "Nutrition"
+    },
+    {
+      "id": "EVIDENCE_LOW_DAILY_MOVEMENT",
+      "description": "Low daily steps",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_NO_STRENGTH_TRAINING",
+      "description": "No strength training",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_LOW_CARDIO_ACTIVITY",
+      "description": "Low cardio activity",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_EXCESS_SEATED_TIME",
+      "description": "Excess sitting",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_PROLONGED_WORK_SITTING",
+      "description": "Prolonged sitting at work",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_SEDENTARY_ROUTINE",
+      "description": "Sedentary daily routine",
+      "category": "Activity"
+    },
+    {
+      "id": "EVIDENCE_HIGH_SUGAR_CRAVINGS",
+      "description": "Frequent sugar cravings",
+      "category": "Metabolic"
+    },
+    {
+      "id": "EVIDENCE_POOR_SATIETY",
+      "description": "Poor satiety after meals",
+      "category": "Metabolic"
+    },
+    {
+      "id": "EVIDENCE_AFTERNOON_ENERGY_CRASH",
+      "description": "Afternoon energy crash",
+      "category": "Metabolic"
+    },
+    {
+      "id": "EVIDENCE_WEIGHT_PLATEAU",
+      "description": "Weight loss plateau",
+      "category": "Metabolic"
+    },
+    {
+      "id": "EVIDENCE_COMPENSATORY_EATING",
+      "description": "Compensatory overeating",
+      "category": "Metabolic"
+    },
+    {
+      "id": "EVIDENCE_SLEEP_DEFICIT",
+      "description": "Sleep deficit",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_HIGH_STRESS",
+      "description": "High stress",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_POOR_RECOVERY",
+      "description": "Poor recovery",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_LOW_DAILY_ENERGY",
+      "description": "Low daily energy",
+      "category": "Recovery"
+    },
+    {
+      "id": "EVIDENCE_EMOTIONAL_EATING",
+      "description": "Emotional eating pattern",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_HIGH_COMMITMENT",
+      "description": "High commitment to change",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_MODERATE_COMMITMENT",
+      "description": "Moderate commitment",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_LOW_COMMITMENT",
+      "description": "Low commitment",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_LACK_OF_TIME",
+      "description": "Biggest obstacle: lack of time",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_CRAVINGS",
+      "description": "Biggest obstacle: cravings",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_STRESS",
+      "description": "Biggest obstacle: stress",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_LOW_MOTIVATION",
+      "description": "Biggest obstacle: low motivation",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_BUSY_SCHEDULE",
+      "description": "Biggest obstacle: busy schedule",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_SOCIAL_EATING",
+      "description": "Biggest obstacle: social eating",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_LACK_OF_PLANNING",
+      "description": "Biggest obstacle: lack of planning",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_HUNGER",
+      "description": "Biggest obstacle: hunger",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_SCHEDULE",
+      "description": "Biggest obstacle: schedule",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_MOTIVATION",
+      "description": "Biggest obstacle: motivation",
+      "category": "Behaviour"
+    },
+    {
+      "id": "EVIDENCE_OBSTACLE_CONSISTENCY",
+      "description": "Biggest obstacle: consistency",
+      "category": "Behaviour"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ export function NumberInput({
   const ITEM_HEIGHT = 80; 
   const numbers = Array.from({ length: max - min + 1 }, (_, i) => min + i);
   const [internalValue, setInternalValue] = React.useState(value ?? (min + 20)); // Default to roughly 21 if no value
-  const scrollTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [isManual, setIsManual] = React.useState(false);
 

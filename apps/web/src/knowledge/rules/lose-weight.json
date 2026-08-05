@@ -1,0 +1,731 @@
+{
+  "id": "module_rules_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core rules for lose weight and burn fat",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "rules": [
+    {
+      "id": "RULE_PORTION_1",
+      "questionId": "portion_control",
+      "answerValue": "most_meals",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_POOR_PORTION_CONTROL",
+      "findingId": "FINDING_POOR_PORTION_CONTROL"
+    },
+    {
+      "id": "RULE_PORTION_2",
+      "questionId": "portion_control",
+      "answerValue": "occasionally",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_POOR_PORTION_CONTROL",
+      "findingId": "FINDING_POOR_PORTION_CONTROL"
+    },
+    {
+      "id": "RULE_PORTION_3",
+      "questionId": "portion_control",
+      "answerValue": "never",
+      "scoreDeduction": 25,
+      "evidenceId": "EVIDENCE_POOR_PORTION_CONTROL",
+      "findingId": "FINDING_POOR_PORTION_CONTROL"
+    },
+    {
+      "id": "RULE_PORTION_GOOD",
+      "questionId": "portion_control",
+      "answerValue": "every_meal",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_GOOD_PORTION_CONTROL"
+    },
+    {
+      "id": "RULE_REST_1",
+      "questionId": "restaurant_food",
+      "answerValue": "once_week",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_HIGH_RESTAURANT_FOOD",
+      "findingId": "FINDING_HIGH_PROCESSED_FOOD_PATTERN"
+    },
+    {
+      "id": "RULE_REST_2",
+      "questionId": "restaurant_food",
+      "answerValue": "2_3_week",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_HIGH_RESTAURANT_FOOD",
+      "findingId": "FINDING_HIGH_PROCESSED_FOOD_PATTERN"
+    },
+    {
+      "id": "RULE_REST_3",
+      "questionId": "restaurant_food",
+      "answerValue": "4_plus",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_HIGH_RESTAURANT_FOOD",
+      "findingId": "FINDING_HIGH_PROCESSED_FOOD_PATTERN"
+    },
+    {
+      "id": "RULE_SUGAR_DRINK_1",
+      "questionId": "sugary_drinks_fl",
+      "answerValue": "1_2",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_HIGH_SUGARY_DRINKS",
+      "findingId": "FINDING_EXCESS_LIQUID_CALORIES"
+    },
+    {
+      "id": "RULE_SUGAR_DRINK_2",
+      "questionId": "sugary_drinks_fl",
+      "answerValue": "3_6",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_HIGH_SUGARY_DRINKS",
+      "findingId": "FINDING_EXCESS_LIQUID_CALORIES"
+    },
+    {
+      "id": "RULE_SUGAR_DRINK_3",
+      "questionId": "sugary_drinks_fl",
+      "answerValue": "daily",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_HIGH_SUGARY_DRINKS",
+      "findingId": "FINDING_EXCESS_LIQUID_CALORIES"
+    },
+    {
+      "id": "RULE_PROTEIN_1",
+      "questionId": "protein_intake",
+      "answerValue": "most_meals",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_LOW_PROTEIN_INTAKE",
+      "findingId": "FINDING_LOW_PROTEIN_INTAKE"
+    },
+    {
+      "id": "RULE_PROTEIN_2",
+      "questionId": "protein_intake",
+      "answerValue": "sometimes",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_LOW_PROTEIN_INTAKE",
+      "findingId": "FINDING_LOW_PROTEIN_INTAKE"
+    },
+    {
+      "id": "RULE_PROTEIN_3",
+      "questionId": "protein_intake",
+      "answerValue": "rarely",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_LOW_PROTEIN_INTAKE",
+      "findingId": "FINDING_LOW_PROTEIN_INTAKE"
+    },
+    {
+      "id": "RULE_SNACK_1",
+      "questionId": "mindless_snacking",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_MINDLESS_SNACKING",
+      "findingId": "FINDING_FREQUENT_SNACKING"
+    },
+    {
+      "id": "RULE_SNACK_2",
+      "questionId": "mindless_snacking",
+      "answerValue": "frequently",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_MINDLESS_SNACKING",
+      "findingId": "FINDING_FREQUENT_SNACKING"
+    },
+    {
+      "id": "RULE_SNACK_3",
+      "questionId": "mindless_snacking",
+      "answerValue": "daily",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_MINDLESS_SNACKING",
+      "findingId": "FINDING_FREQUENT_SNACKING"
+    },
+    {
+      "id": "RULE_LATE_1",
+      "questionId": "late_eating_fl",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_LATE_NIGHT_EATING",
+      "findingId": "FINDING_POOR_MEAL_TIMING"
+    },
+    {
+      "id": "RULE_LATE_2",
+      "questionId": "late_eating_fl",
+      "answerValue": "most_days",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_LATE_NIGHT_EATING",
+      "findingId": "FINDING_POOR_MEAL_TIMING"
+    },
+    {
+      "id": "RULE_LATE_3",
+      "questionId": "late_eating_fl",
+      "answerValue": "every_day",
+      "scoreDeduction": 25,
+      "evidenceId": "EVIDENCE_LATE_NIGHT_EATING",
+      "findingId": "FINDING_POOR_MEAL_TIMING"
+    },
+    {
+      "id": "RULE_WEEKEND_1",
+      "questionId": "weekend_eating",
+      "answerValue": "worse",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_WEEKEND_OVEREATING",
+      "findingId": "FINDING_WEEKEND_CALORIE_SURPLUS"
+    },
+    {
+      "id": "RULE_WEEKEND_2",
+      "questionId": "weekend_eating",
+      "answerValue": "much_worse",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_WEEKEND_OVEREATING",
+      "findingId": "FINDING_WEEKEND_CALORIE_SURPLUS"
+    },
+    {
+      "id": "RULE_WEEKEND_3",
+      "questionId": "weekend_eating",
+      "answerValue": "uncontrolled",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_WEEKEND_OVEREATING",
+      "findingId": "FINDING_WEEKEND_CALORIE_SURPLUS"
+    },
+    {
+      "id": "RULE_STEPS_1",
+      "questionId": "daily_steps_fl",
+      "answerValue": "7k_10k",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_LOW_DAILY_MOVEMENT",
+      "findingId": "FINDING_LOW_DAILY_MOVEMENT"
+    },
+    {
+      "id": "RULE_STEPS_2",
+      "questionId": "daily_steps_fl",
+      "answerValue": "4k_7k",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_LOW_DAILY_MOVEMENT",
+      "findingId": "FINDING_LOW_DAILY_MOVEMENT"
+    },
+    {
+      "id": "RULE_STEPS_3",
+      "questionId": "daily_steps_fl",
+      "answerValue": "below_4k",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_LOW_DAILY_MOVEMENT",
+      "findingId": "FINDING_LOW_DAILY_MOVEMENT"
+    },
+    {
+      "id": "RULE_STRENGTH_1",
+      "questionId": "strength_training",
+      "answerValue": "2_3",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_NO_STRENGTH_TRAINING",
+      "findingId": "FINDING_INADEQUATE_STRENGTH_TRAINING"
+    },
+    {
+      "id": "RULE_STRENGTH_2",
+      "questionId": "strength_training",
+      "answerValue": "1",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_NO_STRENGTH_TRAINING",
+      "findingId": "FINDING_INADEQUATE_STRENGTH_TRAINING"
+    },
+    {
+      "id": "RULE_STRENGTH_3",
+      "questionId": "strength_training",
+      "answerValue": "none",
+      "scoreDeduction": 35,
+      "evidenceId": "EVIDENCE_NO_STRENGTH_TRAINING",
+      "findingId": "FINDING_INADEQUATE_STRENGTH_TRAINING"
+    },
+    {
+      "id": "RULE_CARDIO_1",
+      "questionId": "cardio",
+      "answerValue": "3_4",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_LOW_CARDIO_ACTIVITY",
+      "findingId": "FINDING_LOW_CARDIO_ACTIVITY"
+    },
+    {
+      "id": "RULE_CARDIO_2",
+      "questionId": "cardio",
+      "answerValue": "1_2",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_LOW_CARDIO_ACTIVITY",
+      "findingId": "FINDING_LOW_CARDIO_ACTIVITY"
+    },
+    {
+      "id": "RULE_CARDIO_3",
+      "questionId": "cardio",
+      "answerValue": "none",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_LOW_CARDIO_ACTIVITY",
+      "findingId": "FINDING_LOW_CARDIO_ACTIVITY"
+    },
+    {
+      "id": "RULE_SEATED_1",
+      "questionId": "seated_hours",
+      "answerValue": "4_6",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_EXCESS_SEATED_TIME",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_SEATED_2",
+      "questionId": "seated_hours",
+      "answerValue": "7_9",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_EXCESS_SEATED_TIME",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_SEATED_3",
+      "questionId": "seated_hours",
+      "answerValue": "10_plus",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_EXCESS_SEATED_TIME",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_WORK_MOVE_1",
+      "questionId": "work_movement",
+      "answerValue": "often",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_PROLONGED_WORK_SITTING",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_WORK_MOVE_2",
+      "questionId": "work_movement",
+      "answerValue": "sometimes",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_PROLONGED_WORK_SITTING",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_WORK_MOVE_3",
+      "questionId": "work_movement",
+      "answerValue": "never",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_PROLONGED_WORK_SITTING",
+      "findingId": "FINDING_SEDENTARY_LIFESTYLE"
+    },
+    {
+      "id": "RULE_ROUTINE_1",
+      "questionId": "daily_routine",
+      "answerValue": "moderately_active",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_SEDENTARY_ROUTINE",
+      "findingId": "FINDING_LOW_ACTIVITY_ROUTINE"
+    },
+    {
+      "id": "RULE_ROUTINE_2",
+      "questionId": "daily_routine",
+      "answerValue": "mostly_sitting",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_SEDENTARY_ROUTINE",
+      "findingId": "FINDING_LOW_ACTIVITY_ROUTINE"
+    },
+    {
+      "id": "RULE_ROUTINE_3",
+      "questionId": "daily_routine",
+      "answerValue": "inactive",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_SEDENTARY_ROUTINE",
+      "findingId": "FINDING_LOW_ACTIVITY_ROUTINE"
+    },
+    {
+      "id": "RULE_SUGAR_1",
+      "questionId": "sugar_cravings",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_HIGH_SUGAR_CRAVINGS",
+      "findingId": "FINDING_HIGH_SUGAR_CRAVINGS"
+    },
+    {
+      "id": "RULE_SUGAR_2",
+      "questionId": "sugar_cravings",
+      "answerValue": "frequently",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_HIGH_SUGAR_CRAVINGS",
+      "findingId": "FINDING_HIGH_SUGAR_CRAVINGS"
+    },
+    {
+      "id": "RULE_SUGAR_3",
+      "questionId": "sugar_cravings",
+      "answerValue": "daily",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_HIGH_SUGAR_CRAVINGS",
+      "findingId": "FINDING_HIGH_SUGAR_CRAVINGS"
+    },
+    {
+      "id": "RULE_SATIETY_1",
+      "questionId": "satiety",
+      "answerValue": "3_4",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_POOR_SATIETY",
+      "findingId": "FINDING_POOR_APPETITE_CONTROL"
+    },
+    {
+      "id": "RULE_SATIETY_2",
+      "questionId": "satiety",
+      "answerValue": "2_3",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_POOR_SATIETY",
+      "findingId": "FINDING_POOR_APPETITE_CONTROL"
+    },
+    {
+      "id": "RULE_SATIETY_3",
+      "questionId": "satiety",
+      "answerValue": "less_2",
+      "scoreDeduction": 25,
+      "evidenceId": "EVIDENCE_POOR_SATIETY",
+      "findingId": "FINDING_POOR_APPETITE_CONTROL"
+    },
+    {
+      "id": "RULE_ENERGY_1",
+      "questionId": "energy_crashes",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_AFTERNOON_ENERGY_CRASH",
+      "findingId": "FINDING_ENERGY_INSTABILITY"
+    },
+    {
+      "id": "RULE_ENERGY_2",
+      "questionId": "energy_crashes",
+      "answerValue": "frequently",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_AFTERNOON_ENERGY_CRASH",
+      "findingId": "FINDING_ENERGY_INSTABILITY"
+    },
+    {
+      "id": "RULE_ENERGY_3",
+      "questionId": "energy_crashes",
+      "answerValue": "daily",
+      "scoreDeduction": 25,
+      "evidenceId": "EVIDENCE_AFTERNOON_ENERGY_CRASH",
+      "findingId": "FINDING_ENERGY_INSTABILITY"
+    },
+    {
+      "id": "RULE_PLATEAU_1",
+      "questionId": "weight_plateau",
+      "answerValue": "sometimes",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_WEIGHT_PLATEAU",
+      "findingId": "FINDING_FAT_LOSS_PLATEAU"
+    },
+    {
+      "id": "RULE_PLATEAU_2",
+      "questionId": "weight_plateau",
+      "answerValue": "yes",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_WEIGHT_PLATEAU",
+      "findingId": "FINDING_FAT_LOSS_PLATEAU"
+    },
+    {
+      "id": "RULE_PLATEAU_3",
+      "questionId": "weight_plateau",
+      "answerValue": "unsure",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_WEIGHT_PLATEAU"
+    },
+    {
+      "id": "RULE_COMP_1",
+      "questionId": "compensatory_eating",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_COMPENSATORY_EATING",
+      "findingId": "FINDING_COMPENSATORY_EATING"
+    },
+    {
+      "id": "RULE_COMP_2",
+      "questionId": "compensatory_eating",
+      "answerValue": "frequently",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_COMPENSATORY_EATING",
+      "findingId": "FINDING_COMPENSATORY_EATING"
+    },
+    {
+      "id": "RULE_COMP_3",
+      "questionId": "compensatory_eating",
+      "answerValue": "daily",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_COMPENSATORY_EATING",
+      "findingId": "FINDING_COMPENSATORY_EATING"
+    },
+    {
+      "id": "RULE_SLEEP_1",
+      "questionId": "sleep_hours_fl",
+      "answerValue": "6_7",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_SLEEP_DEFICIT",
+      "findingId": "FINDING_SLEEP_DEFICIT"
+    },
+    {
+      "id": "RULE_SLEEP_2",
+      "questionId": "sleep_hours_fl",
+      "answerValue": "5_6",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_SLEEP_DEFICIT",
+      "findingId": "FINDING_SLEEP_DEFICIT"
+    },
+    {
+      "id": "RULE_SLEEP_3",
+      "questionId": "sleep_hours_fl",
+      "answerValue": "less_5",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_SLEEP_DEFICIT",
+      "findingId": "FINDING_SLEEP_DEFICIT"
+    },
+    {
+      "id": "RULE_STRESS_1",
+      "questionId": "stress_level",
+      "answerValue": "moderate",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_HIGH_STRESS",
+      "findingId": "FINDING_HIGH_STRESS_LOAD"
+    },
+    {
+      "id": "RULE_STRESS_2",
+      "questionId": "stress_level",
+      "answerValue": "high",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_HIGH_STRESS",
+      "findingId": "FINDING_HIGH_STRESS_LOAD"
+    },
+    {
+      "id": "RULE_STRESS_3",
+      "questionId": "stress_level",
+      "answerValue": "extremely_high",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_HIGH_STRESS",
+      "findingId": "FINDING_HIGH_STRESS_LOAD"
+    },
+    {
+      "id": "RULE_WAKE_1",
+      "questionId": "wake_refreshed",
+      "answerValue": "usually",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_POOR_RECOVERY",
+      "findingId": "FINDING_POOR_RECOVERY"
+    },
+    {
+      "id": "RULE_WAKE_2",
+      "questionId": "wake_refreshed",
+      "answerValue": "rarely",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_POOR_RECOVERY",
+      "findingId": "FINDING_POOR_RECOVERY"
+    },
+    {
+      "id": "RULE_WAKE_3",
+      "questionId": "wake_refreshed",
+      "answerValue": "never",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_POOR_RECOVERY",
+      "findingId": "FINDING_POOR_RECOVERY"
+    },
+    {
+      "id": "RULE_ENERGY_D_1",
+      "questionId": "daily_energy",
+      "answerValue": "good",
+      "scoreDeduction": 5,
+      "evidenceId": "EVIDENCE_LOW_DAILY_ENERGY",
+      "findingId": "FINDING_LOW_DAILY_ENERGY"
+    },
+    {
+      "id": "RULE_ENERGY_D_2",
+      "questionId": "daily_energy",
+      "answerValue": "average",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_LOW_DAILY_ENERGY",
+      "findingId": "FINDING_LOW_DAILY_ENERGY"
+    },
+    {
+      "id": "RULE_ENERGY_D_3",
+      "questionId": "daily_energy",
+      "answerValue": "poor",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_LOW_DAILY_ENERGY",
+      "findingId": "FINDING_LOW_DAILY_ENERGY"
+    },
+    {
+      "id": "RULE_EMOTIONAL_1",
+      "questionId": "emotional_eating_fl",
+      "answerValue": "occasionally",
+      "scoreDeduction": 7,
+      "evidenceId": "EVIDENCE_EMOTIONAL_EATING",
+      "findingId": "FINDING_EMOTIONAL_EATING_PATTERN"
+    },
+    {
+      "id": "RULE_EMOTIONAL_2",
+      "questionId": "emotional_eating_fl",
+      "answerValue": "frequently",
+      "scoreDeduction": 15,
+      "evidenceId": "EVIDENCE_EMOTIONAL_EATING",
+      "findingId": "FINDING_EMOTIONAL_EATING_PATTERN"
+    },
+    {
+      "id": "RULE_EMOTIONAL_3",
+      "questionId": "emotional_eating_fl",
+      "answerValue": "always",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_EMOTIONAL_EATING",
+      "findingId": "FINDING_EMOTIONAL_EATING_PATTERN"
+    },
+    {
+      "id": "RULE_COMMIT_1",
+      "questionId": "commitment_fl",
+      "answerValue": "1",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_LOW_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_2",
+      "questionId": "commitment_fl",
+      "answerValue": "2",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_LOW_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_3",
+      "questionId": "commitment_fl",
+      "answerValue": "3",
+      "scoreDeduction": 30,
+      "evidenceId": "EVIDENCE_LOW_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_4",
+      "questionId": "commitment_fl",
+      "answerValue": "4",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_MODERATE_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_5",
+      "questionId": "commitment_fl",
+      "answerValue": "5",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_MODERATE_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_6",
+      "questionId": "commitment_fl",
+      "answerValue": "6",
+      "scoreDeduction": 10,
+      "evidenceId": "EVIDENCE_MODERATE_COMMITMENT"
+    },
+    {
+      "id": "RULE_COMMIT_7",
+      "questionId": "commitment_fl",
+      "answerValue": "7",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_HIGH_COMMITMENT",
+      "findingId": "FINDING_HIGH_READINESS_FOR_CHANGE"
+    },
+    {
+      "id": "RULE_COMMIT_8",
+      "questionId": "commitment_fl",
+      "answerValue": "8",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_HIGH_COMMITMENT",
+      "findingId": "FINDING_HIGH_READINESS_FOR_CHANGE"
+    },
+    {
+      "id": "RULE_COMMIT_9",
+      "questionId": "commitment_fl",
+      "answerValue": "9",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_HIGH_COMMITMENT",
+      "findingId": "FINDING_HIGH_READINESS_FOR_CHANGE"
+    },
+    {
+      "id": "RULE_COMMIT_10",
+      "questionId": "commitment_fl",
+      "answerValue": "10",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_HIGH_COMMITMENT",
+      "findingId": "FINDING_HIGH_READINESS_FOR_CHANGE"
+    },
+    {
+      "id": "RULE_OBSTACLE_1",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "lack_of_time",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_LACK_OF_TIME",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_2",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "cravings",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_CRAVINGS",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_3",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "stress",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_STRESS",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_4",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "low_motivation",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_LOW_MOTIVATION",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_5",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "busy_schedule",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_BUSY_SCHEDULE",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_6",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "social_eating",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_SOCIAL_EATING",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_7",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "lack_of_planning",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_LACK_OF_PLANNING",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_8",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "hunger",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_HUNGER",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_9",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "schedule",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_SCHEDULE",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_10",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "motivation",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_MOTIVATION",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    },
+    {
+      "id": "RULE_OBSTACLE_11",
+      "questionId": "biggest_obstacle_fl",
+      "answerValue": "consistency",
+      "scoreDeduction": 0,
+      "evidenceId": "EVIDENCE_OBSTACLE_CONSISTENCY",
+      "findingId": "FINDING_BEHAVIOURAL_BARRIER"
+    }
+  ]
+}

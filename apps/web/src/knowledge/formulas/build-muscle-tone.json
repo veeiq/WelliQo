@@ -1,0 +1,99 @@
+{
+  "id": "module_formulas_build_muscle_tone",
+  "version": "1.0.0",
+  "definition": "Formulas for Build Muscle & Tone",
+  "reviewedBy": "System",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "formulas": [
+    {
+      "id": "formula_8",
+      "name": "Training Quality Score",
+      "purpose": "Calculates training quality based on frequency, overload, and intensity.",
+      "expression": "Math.min(100, Math.round(((strength_training_days * 1.5) + (progressive_overload * 2) + (training_intensity * 1.5) + (structured_program * 1.5)) / 6.5 * 100))",
+      "unit": "Score",
+      "variables": ["strength_training_days", "progressive_overload", "training_intensity", "structured_program"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_9",
+      "name": "Muscle Nutrition Score",
+      "purpose": "Calculates muscle nutrition adequacy based on protein, surplus, and frequency.",
+      "expression": "Math.min(100, Math.max(0, Math.round(((daily_protein_intake * 2.5) + (calorie_surplus * 2.0) + (post_workout_protein * 1.5) - (meal_skipping * 1.0)) / 6.0 * 100)))",
+      "unit": "Score",
+      "variables": ["daily_protein_intake", "calorie_surplus", "post_workout_protein", "meal_skipping"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_10",
+      "name": "Recovery Score",
+      "purpose": "Calculates recovery capacity based on sleep, rest days, and fatigue.",
+      "expression": "Math.min(100, Math.max(0, Math.round(((sleep_duration * 2.0) + (rest_days * 1.5) + (workout_energy * 1.5) - (post_workout_fatigue * 1.5)) / 5.0 * 100)))",
+      "unit": "Score",
+      "variables": ["sleep_duration", "rest_days", "workout_energy", "post_workout_fatigue"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_11",
+      "name": "Consistency Score",
+      "purpose": "Calculates behavioral consistency.",
+      "expression": "Math.min(100, Math.max(0, Math.round(((commitment * 1.5) - (missed_workouts * 2.0) - (routine_disruption * 1.5) + 15) / 1.5 * 10)))",
+      "unit": "Score",
+      "variables": ["commitment", "missed_workouts", "routine_disruption"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_12",
+      "name": "Muscle Building Readiness Score",
+      "purpose": "Overall readiness combining the four pillars.",
+      "expression": "Math.round((formula_8 * 0.35) + (formula_9 * 0.30) + (formula_10 * 0.20) + (formula_11 * 0.15))",
+      "unit": "Score",
+      "variables": ["formula_8", "formula_9", "formula_10", "formula_11"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_13",
+      "name": "Progressive Overload Readiness",
+      "purpose": "Determines if the user can safely handle progressive overload.",
+      "expression": "((training_experience >= 3) && (structured_program >= 3) && (sleep_duration >= 3)) ? 1 : 0",
+      "unit": "Boolean",
+      "variables": ["training_experience", "structured_program", "sleep_duration"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_14",
+      "name": "Recovery Risk Index",
+      "purpose": "Calculates risk of overtraining.",
+      "expression": "Math.max(0, Math.round(((strength_training_days * 1.5) - (rest_days * 2.0) + (post_workout_fatigue * 1.5) - (sleep_duration * 1.5) - (muscle_recovery * 1.0)) * 10))",
+      "unit": "Index",
+      "variables": ["strength_training_days", "rest_days", "muscle_recovery", "post_workout_fatigue", "sleep_duration"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    },
+    {
+      "id": "formula_15",
+      "name": "Estimated Muscle Growth Timeline",
+      "purpose": "Calculates estimated weeks to see noticeable muscle growth based on training experience and overall readiness.",
+      "expression": "(training_experience < 2) ? Math.max(4, Math.round(12 - (formula_12 / 15))) : Math.max(8, Math.round(16 - (formula_12 / 20)))",
+      "unit": "Weeks",
+      "variables": ["training_experience", "formula_12"],
+      "assumptions": [],
+      "limitations": [],
+      "reusable": true
+    }
+  ]
+}

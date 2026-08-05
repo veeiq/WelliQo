@@ -1,0 +1,731 @@
+{
+  "id": "module_findings_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core findings for lose weight and burn fat",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "findings": [
+    {
+      "id": "FINDING_CALORIE_SURPLUS",
+      "title": "Reducing excess calorie intake",
+      "clinicalMeaning": "Your current eating habits suggest you are likely consuming more calories than your body burns, making fat loss difficult.",
+      "userExplanation": "Your current eating habits suggest you are likely consuming more calories than your body burns, making fat loss difficult.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_PORTION_CONTROL"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POOR_PORTION_CONTROL",
+      "title": "Poor Portion Control",
+      "clinicalMeaning": "Large or inconsistent portion sizes may be adding excess calories even when food choices appear healthy.",
+      "userExplanation": "Large or inconsistent portion sizes may be adding excess calories even when food choices appear healthy.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_PORTION_CONTROL"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_EXCESS_LIQUID_CALORIES",
+      "title": "Excess Liquid Calories",
+      "clinicalMeaning": "Sugar-sweetened beverages may be adding significant calories without helping you feel full.",
+      "userExplanation": "Sugar-sweetened beverages may be adding significant calories without helping you feel full.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_REDUCE_SUGARY_DRINKS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIGH_PROCESSED_FOOD_PATTERN",
+      "title": "Frequent Restaurant Meals",
+      "clinicalMeaning": "Frequent restaurant or takeaway meals may increase calorie intake while reducing overall nutritional quality.",
+      "userExplanation": "Frequent restaurant or takeaway meals may increase calorie intake while reducing overall nutritional quality.",
+      "severity": "MEDIUM",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_LIMIT_RESTAURANT_MEALS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_PROTEIN_INTAKE",
+      "title": "Low Protein Intake",
+      "clinicalMeaning": "Your protein intake may not be sufficient to support satiety and preserve muscle during fat loss.",
+      "userExplanation": "Your protein intake may not be sufficient to support satiety and preserve muscle during fat loss.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_PROTEIN"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_FREQUENT_SNACKING",
+      "title": "Frequent Snacking",
+      "clinicalMeaning": "Frequent snacking outside of genuine hunger may be increasing your daily calorie intake.",
+      "userExplanation": "Frequent snacking outside of genuine hunger may be increasing your daily calorie intake.",
+      "severity": "MEDIUM",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_CRAVINGS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POOR_MEAL_TIMING",
+      "title": "Poor Meal Timing",
+      "clinicalMeaning": "Late-night or inconsistent eating patterns may make it harder to maintain healthy eating habits.",
+      "userExplanation": "Late-night or inconsistent eating patterns may make it harder to maintain healthy eating habits.",
+      "severity": "MEDIUM",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_MEAL_TIMING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_WEEKEND_CALORIE_SURPLUS",
+      "title": "Weekend Calorie Surplus",
+      "clinicalMeaning": "Weekend eating habits may be undoing the healthy progress made during the rest of the week.",
+      "userExplanation": "Weekend eating habits may be undoing the healthy progress made during the rest of the week.",
+      "severity": "MEDIUM",
+      "pillar": "Nutrition",
+      "category": "Nutrition",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_DAILY_MOVEMENT",
+      "title": "Low Daily Movement",
+      "clinicalMeaning": "Low daily movement reduces overall calorie expenditure and slows fat-loss progress.",
+      "userExplanation": "Low daily movement reduces overall calorie expenditure and slows fat-loss progress.",
+      "severity": "HIGH",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_DAILY_STEPS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_SEDENTARY_LIFESTYLE",
+      "title": "Sedentary Lifestyle",
+      "clinicalMeaning": "Long periods of sitting reduce daily energy expenditure and contribute to poor metabolic health.",
+      "userExplanation": "Long periods of sitting reduce daily energy expenditure and contribute to poor metabolic health.",
+      "severity": "HIGH",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BREAK_UP_SITTING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_INADEQUATE_STRENGTH_TRAINING",
+      "title": "Inadequate Strength Training",
+      "clinicalMeaning": "Without regular resistance training, you may lose muscle along with body fat.",
+      "userExplanation": "Without regular resistance training, you may lose muscle along with body fat.",
+      "severity": "HIGH",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_STRENGTH_TRAINING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_CARDIO_ACTIVITY",
+      "title": "Low Cardio Activity",
+      "clinicalMeaning": "Limited cardiovascular exercise may reduce your total weekly calorie expenditure.",
+      "userExplanation": "Limited cardiovascular exercise may reduce your total weekly calorie expenditure.",
+      "severity": "MEDIUM",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_ADD_CARDIO"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_NON_EXERCISE_ACTIVITY",
+      "title": "Low Non-Exercise Activity",
+      "clinicalMeaning": "Daily movement outside of structured exercise appears to be lower than recommended.",
+      "userExplanation": "Daily movement outside of structured exercise appears to be lower than recommended.",
+      "severity": "MEDIUM",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_DAILY_STEPS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_ACTIVITY_ROUTINE",
+      "title": "Low Activity Routine",
+      "clinicalMeaning": "Your daily routine may not provide enough movement to support efficient fat loss.",
+      "userExplanation": "Your daily routine may not provide enough movement to support efficient fat loss.",
+      "severity": "MEDIUM",
+      "pillar": "Activity",
+      "category": "Activity",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_DAILY_STEPS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIGH_SUGAR_CRAVINGS",
+      "title": "High Sugar Cravings",
+      "clinicalMeaning": "Frequent sugar cravings can make maintaining a calorie deficit much more challenging.",
+      "userExplanation": "Frequent sugar cravings can make maintaining a calorie deficit much more challenging.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Metabolic",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_CRAVINGS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POOR_APPETITE_CONTROL",
+      "title": "Poor Appetite Control",
+      "clinicalMeaning": "Feeling hungry soon after meals suggests that your meals may not be keeping you satisfied for long.",
+      "userExplanation": "Feeling hungry soon after meals suggests that your meals may not be keeping you satisfied for long.",
+      "severity": "MEDIUM",
+      "pillar": "Metabolic",
+      "category": "Metabolic",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_PROTEIN"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_ENERGY_INSTABILITY",
+      "title": "Energy Instability",
+      "clinicalMeaning": "Afternoon energy crashes may reflect inconsistent nutrition or recovery.",
+      "userExplanation": "Afternoon energy crashes may reflect inconsistent nutrition or recovery.",
+      "severity": "MEDIUM",
+      "pillar": "Metabolic",
+      "category": "Metabolic",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_CRAVINGS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_FAT_LOSS_PLATEAU",
+      "title": "Fat Loss Plateau",
+      "clinicalMeaning": "Your current approach may have reached a plateau, indicating that adjustments are needed rather than simply trying harder.",
+      "userExplanation": "Your current approach may have reached a plateau, indicating that adjustments are needed rather than simply trying harder.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Metabolic",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_REVIEW_WEIGHT_PLATEAU"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_COMPENSATORY_EATING",
+      "title": "Compensatory Eating",
+      "clinicalMeaning": "Skipping meals followed by overeating can disrupt appetite regulation and increase total calorie intake.",
+      "userExplanation": "Skipping meals followed by overeating can disrupt appetite regulation and increase total calorie intake.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Metabolic",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_MEAL_TIMING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_SLEEP_DEFICIT",
+      "title": "Sleep Deficit",
+      "clinicalMeaning": "Insufficient sleep may increase hunger, reduce recovery, and make healthy choices more difficult.",
+      "userExplanation": "Insufficient sleep may increase hunger, reduce recovery, and make healthy choices more difficult.",
+      "severity": "HIGH",
+      "pillar": "Recovery",
+      "category": "Recovery",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_SLEEP"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIGH_STRESS_LOAD",
+      "title": "High Stress Load",
+      "clinicalMeaning": "Ongoing stress can influence appetite, cravings, recovery, and long-term fat-loss success.",
+      "userExplanation": "Ongoing stress can influence appetite, cravings, recovery, and long-term fat-loss success.",
+      "severity": "HIGH",
+      "pillar": "Recovery",
+      "category": "Recovery",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_STRESS_MANAGEMENT"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POOR_RECOVERY",
+      "title": "Poor Recovery",
+      "clinicalMeaning": "Not feeling refreshed after sleep suggests your body may not be recovering optimally.",
+      "userExplanation": "Not feeling refreshed after sleep suggests your body may not be recovering optimally.",
+      "severity": "MEDIUM",
+      "pillar": "Recovery",
+      "category": "Recovery",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_SLEEP"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_DAILY_ENERGY",
+      "title": "Low Daily Energy",
+      "clinicalMeaning": "Low energy throughout the day may reduce physical activity and consistency with healthy habits.",
+      "userExplanation": "Low energy throughout the day may reduce physical activity and consistency with healthy habits.",
+      "severity": "MEDIUM",
+      "pillar": "Recovery",
+      "category": "Recovery",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_STRESS_MANAGEMENT"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_EMOTIONAL_EATING_PATTERN",
+      "title": "Emotional Eating Pattern",
+      "clinicalMeaning": "Food appears to be used for emotional comfort rather than physical hunger, making consistent fat loss more difficult.",
+      "userExplanation": "Food appears to be used for emotional comfort rather than physical hunger, making consistent fat loss more difficult.",
+      "severity": "HIGH",
+      "pillar": "Behaviour",
+      "category": "Behaviour",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_EMOTIONAL_EATING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_BEHAVIOURAL_BARRIER",
+      "title": "Behavioural Barrier",
+      "clinicalMeaning": "Your biggest reported obstacle represents a genuine barrier that should be addressed as part of your fat-loss strategy.",
+      "userExplanation": "Your biggest reported obstacle represents a genuine barrier that should be addressed as part of your fat-loss strategy.",
+      "severity": "MEDIUM",
+      "pillar": "Behaviour",
+      "category": "Behaviour",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIGH_READINESS_FOR_CHANGE",
+      "title": "High Readiness For Change",
+      "clinicalMeaning": "Your commitment suggests you are mentally prepared to make meaningful lifestyle improvements.",
+      "userExplanation": "Your commitment suggests you are mentally prepared to make meaningful lifestyle improvements.",
+      "severity": "INFO",
+      "pillar": "Behaviour",
+      "category": "Positive Pattern",
+      "confidence": 90,
+      "priority": "INFO",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POSITIVE_ENERGY_BALANCE",
+      "title": "Reducing excess calorie intake",
+      "clinicalMeaning": "Several eating habits together suggest that your daily calorie intake is consistently exceeding your energy needs.",
+      "userExplanation": "Several eating habits together suggest that your daily calorie intake is consistently exceeding your energy needs.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Synergy",
+      "confidence": 100,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_PORTION_CONTROL"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_POOR_FAT_LOSS_ENVIRONMENT",
+      "title": "Poor Fat Loss Environment",
+      "clinicalMeaning": "A combination of nutrition, inactivity, and recovery factors is creating an environment that makes fat loss significantly harder.",
+      "userExplanation": "A combination of nutrition, inactivity, and recovery factors is creating an environment that makes fat loss significantly harder.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Synergy",
+      "confidence": 100,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_REVIEW_WEIGHT_PLATEAU"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_MUSCLE_PRESERVATION_RISK",
+      "title": "Muscle Preservation Risk",
+      "clinicalMeaning": "Low protein intake combined with limited resistance training increases the likelihood of losing muscle during weight loss.",
+      "userExplanation": "Low protein intake combined with limited resistance training increases the likelihood of losing muscle during weight loss.",
+      "severity": "HIGH",
+      "pillar": "Activity",
+      "category": "Synergy",
+      "confidence": 100,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_STRENGTH_TRAINING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_RECOVERY_LIMITED_PROGRESS",
+      "title": "Recovery Limited Progress",
+      "clinicalMeaning": "Poor sleep together with high stress may be reducing recovery and making healthy behaviours harder to maintain.",
+      "userExplanation": "Poor sleep together with high stress may be reducing recovery and making healthy behaviours harder to maintain.",
+      "severity": "MEDIUM",
+      "pillar": "Recovery",
+      "category": "Synergy",
+      "confidence": 80,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_SLEEP"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_METABOLIC_STRAIN",
+      "title": "Metabolic Strain",
+      "clinicalMeaning": "Frequent cravings, energy crashes, and poor satiety suggest your current eating pattern is making appetite regulation more difficult.",
+      "userExplanation": "Frequent cravings, energy crashes, and poor satiety suggest your current eating pattern is making appetite regulation more difficult.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "HIGH",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_CRAVINGS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_WEEKEND_COMPENSATION_PATTERN",
+      "title": "Weekend Compensation Pattern",
+      "clinicalMeaning": "Healthier weekday habits may be offset by less structured eating on weekends.",
+      "userExplanation": "Healthier weekday habits may be offset by less structured eating on weekends.",
+      "severity": "MEDIUM",
+      "pillar": "Nutrition",
+      "category": "Synergy",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_EMOTIONAL_OVEREATING_PATTERN",
+      "title": "Emotional Overeating Pattern",
+      "clinicalMeaning": "Emotional eating combined with mindless snacking creates a recurring pattern that can significantly increase calorie intake.",
+      "userExplanation": "Emotional eating combined with mindless snacking creates a recurring pattern that can significantly increase calorie intake.",
+      "severity": "HIGH",
+      "pillar": "Behaviour",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_EMOTIONAL_EATING"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_FAT_LOSS_EFFICIENCY",
+      "title": "Low Fat Loss Efficiency",
+      "clinicalMeaning": "Multiple lifestyle factors are working together to reduce the efficiency of your fat-loss efforts.",
+      "userExplanation": "Multiple lifestyle factors are working together to reduce the efficiency of your fat-loss efforts.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_STRONG_BEHAVIOURAL_FOUNDATION",
+      "title": "Strong Behavioural Foundation",
+      "clinicalMeaning": "Although some habits need improvement, your motivation and commitment provide an excellent foundation for long-term success.",
+      "userExplanation": "Although some habits need improvement, your motivation and commitment provide an excellent foundation for long-term success.",
+      "severity": "INFO",
+      "pillar": "Behaviour",
+      "category": "Positive Pattern",
+      "confidence": 90,
+      "priority": "INFO",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIGH_SUCCESS_POTENTIAL",
+      "title": "High Success Potential",
+      "clinicalMeaning": "Your current mindset and readiness indicate a strong potential to achieve meaningful fat-loss results with consistent action.",
+      "userExplanation": "Your current mindset and readiness indicate a strong potential to achieve meaningful fat-loss results with consistent action.",
+      "severity": "INFO",
+      "pillar": "Behaviour",
+      "category": "Positive Pattern",
+      "confidence": 90,
+      "priority": "INFO",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_BUILD_CONSISTENCY"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_HIDDEN_CALORIE_PATTERN",
+      "title": "Hidden Calorie Pattern",
+      "clinicalMeaning": "Calories from drinks, restaurant meals, and weekends may be preventing fat loss despite healthy intentions.",
+      "userExplanation": "Calories from drinks, restaurant meals, and weekends may be preventing fat loss despite healthy intentions.",
+      "severity": "HIGH",
+      "pillar": "Nutrition",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_REDUCE_SUGARY_DRINKS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_APPETITE_DYSREGULATION",
+      "title": "Appetite Dysregulation",
+      "clinicalMeaning": "Your eating pattern may be making it difficult to feel satisfied, increasing the risk of overeating.",
+      "userExplanation": "Your eating pattern may be making it difficult to feel satisfied, increasing the risk of overeating.",
+      "severity": "HIGH",
+      "pillar": "Metabolic",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_MANAGE_CRAVINGS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_CALORIE_EXPENDITURE",
+      "title": "Low Calorie Expenditure",
+      "clinicalMeaning": "Your overall daily movement appears too low to effectively support fat loss.",
+      "userExplanation": "Your overall daily movement appears too low to effectively support fat loss.",
+      "severity": "HIGH",
+      "pillar": "Activity",
+      "category": "Synergy",
+      "confidence": 90,
+      "priority": "URGENT",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_INCREASE_DAILY_STEPS"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    },
+    {
+      "id": "FINDING_LOW_DAILY_PERFORMANCE",
+      "title": "Low Daily Performance",
+      "clinicalMeaning": "Reduced energy throughout the day may be limiting your ability to stay active and consistent.",
+      "userExplanation": "Reduced energy throughout the day may be limiting your ability to stay active and consistent.",
+      "severity": "MEDIUM",
+      "pillar": "Recovery",
+      "category": "Synergy",
+      "confidence": 80,
+      "priority": "MEDIUM",
+      "evidenceRequired": [],
+      "recommendationIds": [
+        "RECOMMEND_IMPROVE_SLEEP"
+      ],
+      "contraindications": [],
+      "reportVisibility": true,
+      "reusable": true
+    }
+  ]
+}

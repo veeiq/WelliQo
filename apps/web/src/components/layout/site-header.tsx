@@ -19,17 +19,26 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden lg:flex flex-1 justify-center px-8">
-          <nav className="flex items-center gap-8 bg-slate-100/50 dark:bg-slate-900/50 px-6 py-2 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md">
+          <nav className="flex items-center gap-6 bg-slate-100/50 dark:bg-slate-900/50 px-6 py-2 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md">
             <Link href="/" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Home
             </Link>
-            <Link href="/coaches" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              Experts
+            <Link href="/assessments" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              Assessments
             </Link>
             <Link href="/goals" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Goals
             </Link>
-            <div className="w-[1px] h-4 bg-slate-300 dark:bg-slate-700"></div>
+            <span className="text-sm font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed" title="Coming Soon">
+              Resources
+            </span>
+            <Link href="/about" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              Contact
+            </Link>
+            <div className="w-[1px] h-4 bg-slate-300 dark:bg-slate-700 mx-2"></div>
             <div className="w-48">
               <GlobalSearch />
             </div>
@@ -37,8 +46,11 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-4">
+          <Link href="/api/auth/signin" className="hidden sm:block text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            Sign In
+          </Link>
           <Link
-            href="/assessment"
+            href="/assessments"
             className="group relative flex h-11 items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-8 font-medium text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-md shadow-slate-900/10"
           >
             <span className="relative z-10 text-[15px]">Get Started</span>

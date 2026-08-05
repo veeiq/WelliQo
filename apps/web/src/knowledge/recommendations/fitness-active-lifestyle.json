@@ -1,0 +1,607 @@
+{
+  "id": "module_recommendations_fitness_active_lifestyle",
+  "version": "1.0.0",
+  "definition": "recommendations",
+  "recommendations": [
+    {
+      "id": "REC_FAL_2",
+      "title": "Action for exercise_frequency",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_3"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_3",
+      "title": "Action for exercise_duration",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_4"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_4",
+      "title": "Action for exercise_type",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_5"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_5",
+      "title": "Action for daily_movement",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_6"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_6",
+      "title": "Action for daily_steps",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_7"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_7",
+      "title": "Action for active_choices",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_8"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_8",
+      "title": "Action for exercise_consistency",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_9"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_9",
+      "title": "Action for cardio_endurance",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_10"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_10",
+      "title": "Action for breathlessness",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_11"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_11",
+      "title": "Action for cardio_frequency",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_12"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_12",
+      "title": "Action for cardio_recovery",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_13"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_13",
+      "title": "Action for walking_capacity",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_14"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_14",
+      "title": "Action for sports_participation",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_15"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_15",
+      "title": "Action for flexibility",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_16"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_16",
+      "title": "Action for mobility_training",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_17"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_17",
+      "title": "Action for balance",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_18"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_18",
+      "title": "Action for muscle_stiffness",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_19"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_19",
+      "title": "Action for physical_energy",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_20"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_20",
+      "title": "Action for fitness_barrier",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_21"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_21",
+      "title": "Action for fitness_confidence",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_22"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_22",
+      "title": "Action for fitness_commitment",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_23"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_23",
+      "title": "Action for missed_exercise",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_24"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_24",
+      "title": "Action for activity_tracking",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_25"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_25",
+      "title": "Action for routine_resilience",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_26"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "REC_FAL_26",
+      "title": "Action for fitness_goal",
+      "category": "Exercise",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FND_FAL_27"
+      ],
+      "recommendationText": "Do this.",
+      "whyThisMatters": "Because.",
+      "actionSteps": [
+        "Step 1"
+      ],
+      "expectedBenefits": [
+        "Benefit 1"
+      ],
+      "expectedTimeline": "1 week",
+      "contraindications": [],
+      "successIndicators": [
+        "Check 1"
+      ],
+      "reusable": true
+    }
+  ]
+}

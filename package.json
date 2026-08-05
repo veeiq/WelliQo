@@ -25,5 +25,15 @@
     "prettier": "3.8.2",
     "typescript": "5.9.3",
     "vitest": "4.0.18"
+  },
+  "pnpm": {
+    "approvedBuilds": {
+      "prisma": [
+        "7.9.1"
+      ],
+      "@prisma/engines": [
+        "7.9.1"
+      ]
+    }
   }
 }

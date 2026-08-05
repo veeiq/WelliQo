@@ -9,6 +9,7 @@ export interface RulesEvaluationResult {
     questionId: string;
     deduction: number;
     severity?: string;
+    findingId?: string;
   }>;
   totalConfidenceAdjustment: number;
 }
@@ -68,6 +69,7 @@ export class RulesEngine {
               questionId: rule.questionId,
               deduction: rule.scoreDeduction,
               severity: rule.severity,
+              findingId: rule.findingId,
             });
           }
           if (rule.confidenceAdjustment) {

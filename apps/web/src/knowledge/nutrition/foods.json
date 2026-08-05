@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "categories": {
+    "proteins": {
+      "name": "Proteins",
+      "foods": [
+        {
+          "id": "chicken",
+          "name": "Chicken Breast",
+          "type": "animal"
+        },
+        {
+          "id": "fish",
+          "name": "Fish",
+          "type": "animal"
+        },
+        {
+          "id": "eggs",
+          "name": "Eggs",
+          "type": "animal"
+        },
+        {
+          "id": "paneer",
+          "name": "Paneer",
+          "type": "dairy"
+        },
+        {
+          "id": "curd",
+          "name": "Curd",
+          "type": "dairy"
+        },
+        {
+          "id": "greek_yogurt",
+          "name": "Greek Yogurt",
+          "type": "dairy"
+        },
+        {
+          "id": "milk",
+          "name": "Milk",
+          "type": "dairy"
+        },
+        {
+          "id": "tofu",
+          "name": "Tofu",
+          "type": "plant"
+        },
+        {
+          "id": "tempeh",
+          "name": "Tempeh",
+          "type": "plant"
+        },
+        {
+          "id": "soy",
+          "name": "Soya Chunks",
+          "type": "plant"
+        },
+        {
+          "id": "dal",
+          "name": "Dal (Lentils)",
+          "type": "plant"
+        },
+        {
+          "id": "rajma",
+          "name": "Rajma (Kidney Beans)",
+          "type": "plant"
+        },
+        {
+          "id": "chana",
+          "name": "Chana (Chickpeas)",
+          "type": "plant"
+        },
+        {
+          "id": "moong",
+          "name": "Moong",
+          "type": "plant"
+        },
+        {
+          "id": "peanuts",
+          "name": "Peanuts",
+          "type": "plant"
+        },
+        {
+          "id": "seeds",
+          "name": "Seeds",
+          "type": "plant"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": "module_synergy_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Synergies for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "synergies": [
+    {
+      "id": "SYNERGY_HWG_CHRONIC_CALORIE_DEFICIT",
+      "name": "Chronic Calorie Deficit",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_LOW_MEAL_FREQUENCY",
+        "EVIDENCE_HWG_POOR_APPETITE",
+        "EVIDENCE_HWG_EARLY_SATIETY"
+      ],
+      "minRequiredMatches": 3,
+      "scoreImpact": 15,
+      "findingGenerated": "SYNERGY_HWG_CHRONIC_CALORIE_DEFICIT",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SYNERGY_HWG_POOR_MUSCLE_GROWTH",
+      "name": "Poor Muscle Growth Strategy",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_LOW_PROTEIN_INTAKE",
+        "EVIDENCE_HWG_NO_STRENGTH_TRAINING"
+      ],
+      "minRequiredMatches": 2,
+      "scoreImpact": 15,
+      "findingGenerated": "SYNERGY_HWG_POOR_MUSCLE_GROWTH",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SYNERGY_HWG_HARD_GAINER",
+      "name": "Hard Gainer Profile",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_LIFELONG_HARD_GAINER",
+        "EVIDENCE_HWG_HIGH_DAILY_ACTIVITY",
+        "EVIDENCE_HWG_POOR_APPETITE"
+      ],
+      "minRequiredMatches": 3,
+      "scoreImpact": 15,
+      "findingGenerated": "SYNERGY_HWG_HARD_GAINER",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SYNERGY_HWG_POOR_RECOVERY",
+      "name": "Recovery Limiting Progress",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_POOR_SLEEP",
+        "EVIDENCE_HWG_HIGH_STRESS",
+        "EVIDENCE_HWG_POOR_RECOVERY"
+      ],
+      "minRequiredMatches": 3,
+      "scoreImpact": 15,
+      "findingGenerated": "SYNERGY_HWG_POOR_RECOVERY",
+      "severity": "HIGH"
+    },
+    {
+      "id": "SYNERGY_HWG_BUSY_LIFESTYLE",
+      "name": "Busy Lifestyle Barrier",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_FREQUENT_MEAL_SKIPPING",
+        "EVIDENCE_HWG_LOW_MEAL_FREQUENCY"
+      ],
+      "minRequiredMatches": 2,
+      "scoreImpact": 10,
+      "findingGenerated": "SYNERGY_HWG_BUSY_LIFESTYLE",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "SYNERGY_HWG_FEAR_OF_FAT_GAIN",
+      "name": "Fear-Based Under Eating",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_FEAR_OF_GAINING_FAT",
+        "EVIDENCE_HWG_PORTION_DISCOMFORT"
+      ],
+      "minRequiredMatches": 2,
+      "scoreImpact": 10,
+      "findingGenerated": "SYNERGY_HWG_FEAR_OF_FAT_GAIN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "SYNERGY_HWG_HIGH_CALORIE_BURN",
+      "name": "High Calorie Burn",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_HIGH_DAILY_ACTIVITY",
+        "EVIDENCE_HWG_EXCESSIVE_CARDIO"
+      ],
+      "minRequiredMatches": 2,
+      "scoreImpact": 10,
+      "findingGenerated": "SYNERGY_HWG_HIGH_CALORIE_BURN",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "SYNERGY_HWG_LEAN_GAIN_FOUNDATION",
+      "name": "Strong Lean Gain Foundation",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_GOOD_PROTEIN_INTAKE",
+        "EVIDENCE_HWG_REGULAR_STRENGTH_TRAINING",
+        "EVIDENCE_HWG_GOOD_RECOVERY"
+      ],
+      "minRequiredMatches": 3,
+      "scoreImpact": -8,
+      "findingGenerated": "SYNERGY_HWG_LEAN_GAIN_FOUNDATION",
+      "severity": "INFO"
+    },
+    {
+      "id": "SYNERGY_HWG_HIGH_COMMITMENT",
+      "name": "Highly Committed Learner",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_HIGH_CONFIDENCE",
+        "EVIDENCE_HWG_HIGH_COMMITMENT"
+      ],
+      "minRequiredMatches": 2,
+      "scoreImpact": -5,
+      "findingGenerated": "SYNERGY_HWG_HIGH_COMMITMENT",
+      "severity": "INFO"
+    },
+    {
+      "id": "SYNERGY_HWG_COMPLETE_HEALTHY_WEIGHT_GAIN",
+      "name": "Complete Healthy Weight Gain Lifestyle",
+      "requiredEvidence": [
+        "EVIDENCE_HWG_GOOD_MEAL_FREQUENCY",
+        "EVIDENCE_HWG_GOOD_PROTEIN_INTAKE",
+        "EVIDENCE_HWG_GOOD_LIQUID_CALORIES",
+        "EVIDENCE_HWG_REGULAR_STRENGTH_TRAINING",
+        "EVIDENCE_HWG_GOOD_RECOVERY",
+        "EVIDENCE_HWG_HIGH_COMMITMENT"
+      ],
+      "minRequiredMatches": 6,
+      "scoreImpact": -10,
+      "findingGenerated": "SYNERGY_HWG_COMPLETE_HEALTHY_WEIGHT_GAIN",
+      "severity": "INFO"
+    }
+  ]
+}

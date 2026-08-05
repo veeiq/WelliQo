@@ -1,0 +1,302 @@
+{
+  "id": "module_evidence_general_wellness",
+  "version": "1.0.0",
+  "definition": "evidence",
+  "evidence": [
+    {
+      "id": "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+      "category": "Overall Health Perception",
+      "description": "User perceives overall health as poor or fair"
+    },
+    {
+      "id": "EVIDENCE_GW_EXCELLENT_OVERALL_HEALTH",
+      "category": "Overall Health Perception",
+      "description": "User perceives overall health as very good or excellent"
+    },
+    {
+      "id": "EVIDENCE_GW_DECLINING_HEALTH",
+      "category": "Overall Health Perception",
+      "description": "Health has declined over the past year"
+    },
+    {
+      "id": "EVIDENCE_GW_IMPROVING_HEALTH",
+      "category": "Overall Health Perception",
+      "description": "Health has improved"
+    },
+    {
+      "id": "EVIDENCE_GW_LIMITED_DAILY_FUNCTION",
+      "category": "Overall Health Perception",
+      "description": "Daily functional capacity is limited"
+    },
+    {
+      "id": "EVIDENCE_GW_GOOD_DAILY_FUNCTION",
+      "category": "Overall Health Perception",
+      "description": "Good daily function"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_HEALTH_SATISFACTION",
+      "category": "Overall Health Perception",
+      "description": "Dissatisfied with current health"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_HEALTH_SATISFACTION",
+      "category": "Overall Health Perception",
+      "description": "Highly satisfied with current health"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_DAILY_ENERGY",
+      "category": "Overall Health Perception",
+      "description": "Low daily energy"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_DAILY_ENERGY",
+      "category": "Overall Health Perception",
+      "description": "High daily energy"
+    },
+    {
+      "id": "EVIDENCE_GW_FREQUENT_FATIGUE",
+      "category": "Overall Health Perception",
+      "description": "Frequent unexplained fatigue"
+    },
+    {
+      "id": "EVIDENCE_GW_RARE_FATIGUE",
+      "category": "Overall Health Perception",
+      "description": "Rare fatigue"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Poor eating habits"
+    },
+    {
+      "id": "EVIDENCE_GW_BALANCED_NUTRITION",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Balanced nutrition"
+    },
+    {
+      "id": "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Physical inactivity"
+    },
+    {
+      "id": "EVIDENCE_GW_REGULAR_PHYSICAL_ACTIVITY",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Regular physical activity"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Poor sleep quality"
+    },
+    {
+      "id": "EVIDENCE_GW_REFRESHING_SLEEP",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Refreshing sleep"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_HYDRATION",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Poor hydration"
+    },
+    {
+      "id": "EVIDENCE_GW_GOOD_HYDRATION",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Good hydration"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_SUNLIGHT_EXPOSURE",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Low sunlight exposure"
+    },
+    {
+      "id": "EVIDENCE_GW_HEALTHY_SUNLIGHT_EXPOSURE",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Healthy sunlight exposure"
+    },
+    {
+      "id": "EVIDENCE_GW_PROLONGED_SITTING",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Prolonged sitting"
+    },
+    {
+      "id": "EVIDENCE_GW_REGULAR_MOVEMENT_BREAKS",
+      "category": "Healthy Lifestyle Habits",
+      "description": "Regular movement breaks"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_EMOTIONAL_BALANCE",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Poor emotional balance"
+    },
+    {
+      "id": "EVIDENCE_GW_GOOD_EMOTIONAL_BALANCE",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Good emotional balance"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Poor stress management"
+    },
+    {
+      "id": "EVIDENCE_GW_GOOD_STRESS_MANAGEMENT",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Good stress management"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_HEALTH_MOTIVATION",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Low health motivation"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_HEALTH_MOTIVATION",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "High health motivation"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Poor work life balance"
+    },
+    {
+      "id": "EVIDENCE_GW_HEALTHY_WORK_LIFE_BALANCE",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Healthy work life balance"
+    },
+    {
+      "id": "EVIDENCE_GW_LACK_OF_RELAXATION",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Lack of relaxation"
+    },
+    {
+      "id": "EVIDENCE_GW_REGULAR_RELAXATION",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Regular relaxation"
+    },
+    {
+      "id": "EVIDENCE_GW_SOCIAL_ISOLATION",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Social isolation"
+    },
+    {
+      "id": "EVIDENCE_GW_STRONG_SOCIAL_SUPPORT",
+      "category": "Mental & Emotional Wellbeing",
+      "description": "Strong social support"
+    },
+    {
+      "id": "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "No preventive checkups"
+    },
+    {
+      "id": "EVIDENCE_GW_REGULAR_PREVENTIVE_CHECKUPS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Regular preventive checkups"
+    },
+    {
+      "id": "EVIDENCE_GW_IGNORES_HEALTH_SIGNALS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Ignores health signals"
+    },
+    {
+      "id": "EVIDENCE_GW_RESPONDS_TO_HEALTH_SIGNALS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Responds to health signals"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Low wellness confidence"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_WELLNESS_CONFIDENCE",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "High wellness confidence"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Low wellness commitment"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_WELLNESS_COMMITMENT",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "High wellness commitment"
+    },
+    {
+      "id": "EVIDENCE_GW_TIME_BARRIER",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Time"
+    },
+    {
+      "id": "EVIDENCE_GW_STRESS_BARRIER",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Stress"
+    },
+    {
+      "id": "EVIDENCE_GW_POOR_ROUTINE",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Poor routine"
+    },
+    {
+      "id": "EVIDENCE_GW_FINANCIAL_BARRIER",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Financial reasons"
+    },
+    {
+      "id": "EVIDENCE_GW_HEALTH_LIMITATION",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Health issues"
+    },
+    {
+      "id": "EVIDENCE_GW_FAMILY_RESPONSIBILITY",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Barrier: Family responsibility"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_PHYSICAL_FITNESS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Physical fitness"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_NUTRITION",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Nutrition"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_SLEEP",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Sleep"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_ENERGY",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Energy"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_MENTAL_WELLBEING",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Mental wellbeing"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_STRESS_MANAGEMENT",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Stress management"
+    },
+    {
+      "id": "EVIDENCE_GW_GOAL_OVERALL_HEALTH",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Goal: Overall health"
+    },
+    {
+      "id": "EVIDENCE_GW_LOW_WELLNESS_READINESS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "Low wellness readiness"
+    },
+    {
+      "id": "EVIDENCE_GW_HIGH_WELLNESS_READINESS",
+      "category": "Preventive Wellness & Lifestyle",
+      "description": "High wellness readiness"
+    }
+  ]
+}

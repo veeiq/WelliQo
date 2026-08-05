@@ -1,0 +1,491 @@
+{
+  "id": "module_recommendations_general_wellness",
+  "version": "1.0.0",
+  "definition": "recommendations",
+  "recommendations": [
+    {
+      "id": "RECOMMENDATION_GW_IMPROVE_OVERALL_HEALTH",
+      "title": "Improve Overall Health",
+      "category": "General Wellness",
+      "priority": "CRITICAL",
+      "difficulty": "Medium",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_OVERALL_HEALTH"
+      ],
+      "recommendationText": "Focus on improving nutrition, physical activity, sleep, hydration, and stress management one step at a time.",
+      "whyThisMatters": "Improving overall health requires consistent healthy lifestyle habits across multiple areas.",
+      "actionSteps": [
+        "Focus on improving nutrition, physical activity, sleep, hydration, and stress management one step at a time."
+      ],
+      "expectedBenefits": [
+        "Better health, improved quality of life, and increased vitality."
+      ],
+      "expectedTimeline": "6–12 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_REBUILD_DAILY_ENERGY",
+      "title": "Rebuild Daily Energy",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_DAILY_ENERGY"
+      ],
+      "recommendationText": "Improve sleep quality, hydration, balanced nutrition, and regular movement throughout the day.",
+      "whyThisMatters": "Healthy energy supports productivity, exercise, mood, and long-term wellbeing.",
+      "actionSteps": [
+        "Improve sleep quality, hydration, balanced nutrition, and regular movement throughout the day."
+      ],
+      "expectedBenefits": [
+        "Higher daily energy and better focus."
+      ],
+      "expectedTimeline": "2–4 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_REDUCE_FATIGUE",
+      "title": "Reduce Fatigue",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_FREQUENT_FATIGUE"
+      ],
+      "recommendationText": "Prioritize recovery through quality sleep, hydration, balanced meals, and stress reduction.",
+      "whyThisMatters": "Persistent fatigue often reflects lifestyle habits that require improvement.",
+      "actionSteps": [
+        "Prioritize recovery through quality sleep, hydration, balanced meals, and stress reduction."
+      ],
+      "expectedBenefits": [
+        "Reduced fatigue and improved daily functioning."
+      ],
+      "expectedTimeline": "3–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_IMPROVE_DAILY_FUNCTION",
+      "title": "Improve Daily Function",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Medium",
+      "triggeredByFindings": [
+        "FINDING_GW_LIMITED_DAILY_FUNCTION"
+      ],
+      "recommendationText": "Increase daily movement gradually while supporting recovery through healthy nutrition and sleep.",
+      "whyThisMatters": "Improving physical wellbeing helps everyday activities become easier and less tiring.",
+      "actionSteps": [
+        "Increase daily movement gradually while supporting recovery through healthy nutrition and sleep."
+      ],
+      "expectedBenefits": [
+        "Improved physical capacity and independence."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_BALANCED_NUTRITION",
+      "title": "Balanced Nutrition",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_NUTRITION"
+      ],
+      "recommendationText": "Eat regular meals containing whole grains, vegetables, fruits, quality protein, and healthy fats.",
+      "whyThisMatters": "Balanced nutrition supports energy, immunity, recovery, and overall health.",
+      "actionSteps": [
+        "Eat regular meals containing whole grains, vegetables, fruits, quality protein, and healthy fats."
+      ],
+      "expectedBenefits": [
+        "Better nutrition and improved overall wellbeing."
+      ],
+      "expectedTimeline": "2–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_INCREASE_PHYSICAL_ACTIVITY",
+      "title": "Increase Physical Activity",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_PHYSICAL_INACTIVITY"
+      ],
+      "recommendationText": "Aim for at least 150 minutes of moderate physical activity each week, progressing gradually.",
+      "whyThisMatters": "Regular movement supports heart health, energy, metabolism, and mental wellbeing.",
+      "actionSteps": [
+        "Aim for at least 150 minutes of moderate physical activity each week, progressing gradually."
+      ],
+      "expectedBenefits": [
+        "Improved fitness and long-term health."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_IMPROVE_SLEEP",
+      "title": "Improve Sleep",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_SLEEP"
+      ],
+      "recommendationText": "Maintain a consistent sleep schedule and create a relaxing bedtime routine.",
+      "whyThisMatters": "Sleep is essential for recovery, energy, mood, and overall health.",
+      "actionSteps": [
+        "Maintain a consistent sleep schedule and create a relaxing bedtime routine."
+      ],
+      "expectedBenefits": [
+        "Improved recovery and better daytime energy."
+      ],
+      "expectedTimeline": "2–4 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_IMPROVE_HYDRATION",
+      "title": "Improve Hydration",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_HYDRATION"
+      ],
+      "recommendationText": "Drink enough fluids throughout the day to meet your personalized daily water goal.",
+      "whyThisMatters": "Proper hydration supports nearly every function in the body.",
+      "actionSteps": [
+        "Drink enough fluids throughout the day to meet your personalized daily water goal."
+      ],
+      "expectedBenefits": [
+        "Improved concentration, energy, and physical wellbeing."
+      ],
+      "expectedTimeline": "1–3 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_REDUCE_SITTING",
+      "title": "Reduce Sitting",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_PROLONGED_SITTING"
+      ],
+      "recommendationText": "Stand, stretch, or walk briefly every 30–60 minutes.",
+      "whyThisMatters": "Long periods of sitting increase health risks even in people who exercise.",
+      "actionSteps": [
+        "Stand, stretch, or walk briefly every 30–60 minutes."
+      ],
+      "expectedBenefits": [
+        "Better circulation, posture, and daily movement."
+      ],
+      "expectedTimeline": "2–4 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_SAFE_SUNLIGHT",
+      "title": "Safe Sunlight Exposure",
+      "category": "General Wellness",
+      "priority": "LOW",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_SUNLIGHT"
+      ],
+      "recommendationText": "Spend short periods outdoors regularly while following safe sun practices.",
+      "whyThisMatters": "Appropriate sunlight exposure supports healthy daily rhythms and overall wellbeing.",
+      "actionSteps": [
+        "Spend short periods outdoors regularly while following safe sun practices."
+      ],
+      "expectedBenefits": [
+        "Improved daily routine and wellbeing."
+      ],
+      "expectedTimeline": "2–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_MANAGE_STRESS",
+      "title": "Manage Stress",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_STRESS_MANAGEMENT"
+      ],
+      "recommendationText": "Practice relaxation techniques such as deep breathing, mindfulness, walking, or meditation.",
+      "whyThisMatters": "Managing stress improves both mental and physical health.",
+      "actionSteps": [
+        "Practice relaxation techniques such as deep breathing, mindfulness, walking, or meditation."
+      ],
+      "expectedBenefits": [
+        "Reduced stress and improved emotional wellbeing."
+      ],
+      "expectedTimeline": "2–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_SUPPORT_EMOTIONAL_HEALTH",
+      "title": "Support Emotional Health",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Medium",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_EMOTIONAL_BALANCE"
+      ],
+      "recommendationText": "Make time for enjoyable activities, supportive relationships, and healthy coping strategies.",
+      "whyThisMatters": "Emotional wellbeing influences every aspect of overall health.",
+      "actionSteps": [
+        "Make time for enjoyable activities, supportive relationships, and healthy coping strategies."
+      ],
+      "expectedBenefits": [
+        "Improved emotional resilience."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_BUILD_HEALTH_ROUTINES",
+      "title": "Build Health Routines",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_HEALTH_MOTIVATION"
+      ],
+      "recommendationText": "Begin with one small healthy habit and build gradually over time.",
+      "whyThisMatters": "Healthy routines are more sustainable than relying on motivation alone.",
+      "actionSteps": [
+        "Begin with one small healthy habit and build gradually over time."
+      ],
+      "expectedBenefits": [
+        "Improved long-term consistency."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_IMPROVE_WORK_LIFE_BALANCE",
+      "title": "Improve Work-Life Balance",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Medium",
+      "triggeredByFindings": [
+        "FINDING_GW_POOR_WORK_LIFE_BALANCE"
+      ],
+      "recommendationText": "Protect time for family, hobbies, exercise, and recovery.",
+      "whyThisMatters": "Balancing work and personal life improves wellbeing and reduces stress.",
+      "actionSteps": [
+        "Protect time for family, hobbies, exercise, and recovery."
+      ],
+      "expectedBenefits": [
+        "Better mental health and reduced burnout."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_RELAX_REGULARLY",
+      "title": "Relax Regularly",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LACK_OF_RELAXATION"
+      ],
+      "recommendationText": "Schedule regular relaxation or leisure time every week.",
+      "whyThisMatters": "Recovery is essential for long-term wellbeing.",
+      "actionSteps": [
+        "Schedule regular relaxation or leisure time every week."
+      ],
+      "expectedBenefits": [
+        "Improved resilience and lower stress."
+      ],
+      "expectedTimeline": "2–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_STRENGTHEN_SOCIAL_CONNECTIONS",
+      "title": "Strengthen Social Connections",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_SOCIAL_ISOLATION"
+      ],
+      "recommendationText": "Spend more time connecting with supportive family, friends, or community groups.",
+      "whyThisMatters": "Healthy social relationships contribute to better emotional and physical wellbeing.",
+      "actionSteps": [
+        "Spend more time connecting with supportive family, friends, or community groups."
+      ],
+      "expectedBenefits": [
+        "Greater emotional support and improved wellbeing."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_SCHEDULE_CHECKUPS",
+      "title": "Schedule Routine Checkups",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_NO_PREVENTIVE_CHECKUPS"
+      ],
+      "recommendationText": "Schedule regular preventive health screenings appropriate for your age and health profile.",
+      "whyThisMatters": "Routine health check-ups help detect problems early.",
+      "actionSteps": [
+        "Schedule regular preventive health screenings appropriate for your age and health profile."
+      ],
+      "expectedBenefits": [
+        "Earlier detection and better long-term health outcomes."
+      ],
+      "expectedTimeline": "Immediate",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_RESPOND_TO_HEALTH_CHANGES",
+      "title": "Respond To Health Changes",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_IGNORING_HEALTH_SIGNALS"
+      ],
+      "recommendationText": "Seek professional medical advice if symptoms persist or worsen.",
+      "whyThisMatters": "Paying attention to early warning signs supports timely care.",
+      "actionSteps": [
+        "Seek professional medical advice if symptoms persist or worsen."
+      ],
+      "expectedBenefits": [
+        "Reduced risk of delayed diagnosis."
+      ],
+      "expectedTimeline": "Immediate",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_BUILD_CONFIDENCE",
+      "title": "Build Wellness Confidence",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_WELLNESS_CONFIDENCE"
+      ],
+      "recommendationText": "Set small, achievable wellness goals and celebrate progress regularly.",
+      "whyThisMatters": "Confidence helps maintain healthy behaviours over time.",
+      "actionSteps": [
+        "Set small, achievable wellness goals and celebrate progress regularly."
+      ],
+      "expectedBenefits": [
+        "Greater self-belief and long-term success."
+      ],
+      "expectedTimeline": "4–8 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_STRENGTHEN_COMMITMENT",
+      "title": "Strengthen Commitment",
+      "category": "General Wellness",
+      "priority": "HIGH",
+      "difficulty": "Medium",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_WELLNESS_COMMITMENT"
+      ],
+      "recommendationText": "Commit to following your personalized wellness plan consistently for at least 90 days.",
+      "whyThisMatters": "Long-term success depends on sustained healthy habits.",
+      "actionSteps": [
+        "Commit to following your personalized wellness plan consistently for at least 90 days."
+      ],
+      "expectedBenefits": [
+        "Greater habit formation and lasting health improvements."
+      ],
+      "expectedTimeline": "8–12 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_START_SMALL",
+      "title": "Start Small",
+      "category": "General Wellness",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_LOW_WELLNESS_READINESS"
+      ],
+      "recommendationText": "Choose one realistic improvement this week before adding additional goals.",
+      "whyThisMatters": "Major lifestyle changes are more successful when built gradually.",
+      "actionSteps": [
+        "Choose one realistic improvement this week before adding additional goals."
+      ],
+      "expectedBenefits": [
+        "Reduced overwhelm and greater consistency."
+      ],
+      "expectedTimeline": "2–6 weeks",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMENDATION_GW_MAINTAIN_HEALTHY_LIFESTYLE",
+      "title": "Maintain Healthy Lifestyle",
+      "category": "General Wellness",
+      "priority": "INFO",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_GW_EXCELLENT_OVERALL_HEALTH"
+      ],
+      "recommendationText": "Continue maintaining your healthy routines while making gradual improvements where appropriate.",
+      "whyThisMatters": "Your current habits provide an excellent foundation for long-term health.",
+      "actionSteps": [
+        "Continue maintaining your healthy routines while making gradual improvements where appropriate."
+      ],
+      "expectedBenefits": [
+        "Sustained wellness, healthy aging, and improved quality of life."
+      ],
+      "expectedTimeline": "Ongoing",
+      "contraindications": [],
+      "successIndicators": [],
+      "reusable": true
+    }
+  ]
+}

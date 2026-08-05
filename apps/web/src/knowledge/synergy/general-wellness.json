@@ -1,0 +1,231 @@
+{
+  "id": "module_synergy_general_wellness",
+  "version": "1.0.0",
+  "definition": "synergy",
+  "synergy": [
+    {
+      "id": "SYNERGY_GW_DECLINING_WELLBEING",
+      "name": "Declining Wellbeing",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+        "EVIDENCE_GW_DECLINING_HEALTH",
+        "EVIDENCE_GW_LOW_HEALTH_SATISFACTION"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_DECLINING_HEALTH",
+      "priority": "CRITICAL",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_LOW_VITALITY",
+      "name": "Low Vitality",
+      "requiredEvidence": [
+        "EVIDENCE_GW_LOW_DAILY_ENERGY",
+        "EVIDENCE_GW_FREQUENT_FATIGUE",
+        "EVIDENCE_GW_LIMITED_DAILY_FUNCTION"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_LOW_DAILY_ENERGY",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_UNHEALTHY_DAILY_HABITS",
+      "name": "Unhealthy Daily Habits",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+        "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+        "EVIDENCE_GW_POOR_SLEEP_QUALITY"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_NUTRITION",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_SEDENTARY_PATTERN",
+      "name": "Sedentary Pattern",
+      "requiredEvidence": [
+        "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+        "EVIDENCE_GW_PROLONGED_SITTING"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_GW_PHYSICAL_INACTIVITY",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_POOR_RECOVERY",
+      "name": "Poor Recovery",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+        "EVIDENCE_GW_POOR_HYDRATION",
+        "EVIDENCE_GW_FREQUENT_FATIGUE"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_SLEEP",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_HIGH_STRESS_BURDEN",
+      "name": "High Stress Burden",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+        "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE",
+        "EVIDENCE_GW_LACK_OF_RELAXATION"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_STRESS_MANAGEMENT",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_LOW_EMOTIONAL_RESILIENCE",
+      "name": "Low Emotional Resilience",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_EMOTIONAL_BALANCE",
+        "EVIDENCE_GW_SOCIAL_ISOLATION"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_GW_POOR_EMOTIONAL_BALANCE",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_LOW_BEHAVIOURAL_DRIVE",
+      "name": "Low Behavioural Drive",
+      "requiredEvidence": [
+        "EVIDENCE_GW_LOW_HEALTH_MOTIVATION",
+        "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE",
+        "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_LOW_WELLNESS_COMMITMENT",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_POOR_PREVENTIVE_HEALTH",
+      "name": "Poor Preventive Health",
+      "requiredEvidence": [
+        "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS",
+        "EVIDENCE_GW_IGNORES_HEALTH_SIGNALS"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_GW_IGNORING_HEALTH_SIGNALS",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_LOW_CHANGE_READINESS",
+      "name": "Low Change Readiness",
+      "requiredEvidence": [
+        "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT",
+        "EVIDENCE_GW_LOW_WELLNESS_READINESS"
+      ],
+      "minRequiredMatches": 2,
+      "findingId": "FINDING_GW_LOW_WELLNESS_READINESS",
+      "priority": "MEDIUM",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_MULTIPLE_WELLNESS_GAPS",
+      "name": "Multiple Wellness Gaps",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+        "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+        "EVIDENCE_GW_PHYSICAL_INACTIVITY",
+        "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+        "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+        "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_OVERALL_HEALTH",
+      "priority": "CRITICAL",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_BUSY_LIFESTYLE",
+      "name": "Busy Lifestyle",
+      "requiredEvidence": [
+        "EVIDENCE_GW_TIME_BARRIER",
+        "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE",
+        "EVIDENCE_GW_PROLONGED_SITTING"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_WORK_LIFE_BALANCE",
+      "priority": "MEDIUM",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_RECOVERY_DEFICIT",
+      "name": "Recovery Deficit",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_SLEEP_QUALITY",
+        "EVIDENCE_GW_FREQUENT_FATIGUE",
+        "EVIDENCE_GW_POOR_STRESS_MANAGEMENT"
+      ],
+      "minRequiredMatches": 3,
+      "findingId": "FINDING_GW_POOR_SLEEP",
+      "priority": "HIGH",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_COMPLETE_WELLNESS_RISK",
+      "name": "Complete Wellness Risk",
+      "requiredEvidence": [
+        "EVIDENCE_GW_POOR_OVERALL_HEALTH",
+        "EVIDENCE_GW_POOR_NUTRITION_HABITS",
+        "EVIDENCE_GW_POOR_STRESS_MANAGEMENT",
+        "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS"
+      ],
+      "minRequiredMatches": 4,
+      "findingId": "FINDING_GW_POOR_OVERALL_HEALTH",
+      "priority": "CRITICAL",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_HEALTHY_LIFESTYLE_FOUNDATION",
+      "name": "Healthy Lifestyle Foundation",
+      "requiredEvidence": [
+        "EVIDENCE_GW_BALANCED_NUTRITION",
+        "EVIDENCE_GW_REGULAR_PHYSICAL_ACTIVITY",
+        "EVIDENCE_GW_REFRESHING_SLEEP",
+        "EVIDENCE_GW_GOOD_HYDRATION"
+      ],
+      "minRequiredMatches": 4,
+      "findingId": "FINDING_GW_HEALTHY_LIFESTYLE",
+      "priority": "INFO",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_RESILIENT_WELLBEING",
+      "name": "Resilient Wellbeing",
+      "requiredEvidence": [
+        "EVIDENCE_GW_GOOD_EMOTIONAL_BALANCE",
+        "EVIDENCE_GW_GOOD_STRESS_MANAGEMENT",
+        "EVIDENCE_GW_REGULAR_RELAXATION",
+        "EVIDENCE_GW_STRONG_SOCIAL_SUPPORT"
+      ],
+      "minRequiredMatches": 4,
+      "findingId": "FINDING_GW_STRONG_EMOTIONAL_WELLBEING",
+      "priority": "INFO",
+      "confidence": 100
+    },
+    {
+      "id": "SYNERGY_GW_PREVENTIVE_CHAMPION",
+      "name": "Preventive Champion",
+      "requiredEvidence": [
+        "EVIDENCE_GW_REGULAR_PREVENTIVE_CHECKUPS",
+        "EVIDENCE_GW_RESPONDS_TO_HEALTH_SIGNALS",
+        "EVIDENCE_GW_HIGH_WELLNESS_CONFIDENCE",
+        "EVIDENCE_GW_HIGH_WELLNESS_COMMITMENT"
+      ],
+      "minRequiredMatches": 4,
+      "findingId": "FINDING_GW_STRONG_PREVENTIVE_WELLNESS",
+      "priority": "INFO",
+      "confidence": 100
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "module_metadata_general_wellness",
+  "version": "1.0.0",
+  "definition": "metadata",
+  "metadata": {
+    "assessmentId": "general-wellness",
+    "version": "1.0",
+    "status": "Draft",
+    "pillars": [
+      "Overall Health Perception",
+      "Healthy Lifestyle Habits",
+      "Mental & Emotional Wellbeing",
+      "Preventive Wellness & Lifestyle"
+    ]
+  }
+}

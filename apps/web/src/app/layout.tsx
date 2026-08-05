@@ -15,14 +15,19 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'WelliQo | Personalized Wellness & Nutrition',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  title: {
+    default: 'WelliQo | Intelligent Wellness, Science-Informed',
+    template: '%s | WelliQo'
+  },
   description: 'Achieve your health goals with customized nutrition plans, expert coaching, and high-quality wellness products. Start your free wellness assessment today.',
   keywords: ['wellness', 'nutrition', 'weight loss', 'health coach', 'healthy aging', 'fitness'],
   openGraph: {
-    title: 'WelliQo | Personalized Wellness Assessment',
+    title: 'WelliQo | Intelligent Wellness, Science-Informed',
     description: 'Discover your wellness baseline and get a customized nutrition plan.',
     type: 'website',
-  }
+  },
+  manifest: '/manifest.json'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

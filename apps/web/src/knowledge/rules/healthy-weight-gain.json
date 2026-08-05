@@ -1,0 +1,472 @@
+{
+  "id": "module_rules_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Rules for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "rules": [
+    {
+      "id": "RULE_HWG_MEAL_FREQ_1",
+      "questionId": "hwg_meal_frequency",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_HWG_LOW_MEAL_FREQUENCY",
+      "findingId": "FINDING_HWG_LOW_MEAL_FREQUENCY",
+      "scoreDeduction": 12,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_MEAL_FREQ_2",
+      "questionId": "hwg_meal_frequency",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_HWG_LOW_MEAL_FREQUENCY",
+      "findingId": "FINDING_HWG_LOW_MEAL_FREQUENCY",
+      "scoreDeduction": 12,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_MEAL_FREQ_3",
+      "questionId": "hwg_meal_frequency",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_HWG_MODERATE_MEAL_FREQUENCY",
+      "scoreDeduction": 5,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_MEAL_FREQ_GOOD",
+      "questionId": "hwg_meal_frequency",
+      "answerValue": "5_plus",
+      "evidenceId": "EVIDENCE_HWG_GOOD_MEAL_FREQUENCY",
+      "scoreDeduction": -4,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_PROTEIN_1",
+      "questionId": "hwg_protein_frequency",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_HWG_LOW_PROTEIN_INTAKE",
+      "findingId": "FINDING_HWG_LOW_PROTEIN",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_PROTEIN_2",
+      "questionId": "hwg_protein_frequency",
+      "answerValue": "sometimes",
+      "evidenceId": "EVIDENCE_HWG_LOW_PROTEIN_INTAKE",
+      "findingId": "FINDING_HWG_LOW_PROTEIN",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_PROTEIN_GOOD",
+      "questionId": "hwg_protein_frequency",
+      "answerValue": "every_meal",
+      "evidenceId": "EVIDENCE_HWG_GOOD_PROTEIN_INTAKE",
+      "findingId": "FINDING_HWG_GOOD_PROTEIN",
+      "scoreDeduction": -5,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_SNACK_1",
+      "questionId": "hwg_snack_frequency",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_HWG_LOW_SNACK_FREQUENCY",
+      "findingId": "FINDING_HWG_LOW_SNACKING",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_SNACK_2",
+      "questionId": "hwg_snack_frequency",
+      "answerValue": "rarely",
+      "evidenceId": "EVIDENCE_HWG_LOW_SNACK_FREQUENCY",
+      "findingId": "FINDING_HWG_LOW_SNACKING",
+      "scoreDeduction": 6,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_SNACK_GOOD",
+      "questionId": "hwg_snack_frequency",
+      "answerValue": "daily",
+      "evidenceId": "EVIDENCE_HWG_GOOD_SNACK_FREQUENCY",
+      "scoreDeduction": -3,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_LIQUID_1",
+      "questionId": "hwg_liquid_calories",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_HWG_NO_LIQUID_CALORIES",
+      "findingId": "FINDING_HWG_NO_LIQUID_CALORIES",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_LIQUID_GOOD",
+      "questionId": "hwg_liquid_calories",
+      "answerValue": "daily",
+      "evidenceId": "EVIDENCE_HWG_GOOD_LIQUID_CALORIES",
+      "scoreDeduction": -3,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_APPETITE_1",
+      "questionId": "hwg_appetite",
+      "answerValue": "very_poor",
+      "evidenceId": "EVIDENCE_HWG_POOR_APPETITE",
+      "findingId": "FINDING_HWG_POOR_APPETITE",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_APPETITE_2",
+      "questionId": "hwg_appetite",
+      "answerValue": "low",
+      "evidenceId": "EVIDENCE_HWG_POOR_APPETITE",
+      "findingId": "FINDING_HWG_POOR_APPETITE",
+      "scoreDeduction": 12,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_APPETITE_GOOD",
+      "questionId": "hwg_appetite",
+      "answerValue": "excellent",
+      "evidenceId": "EVIDENCE_HWG_HEALTHY_APPETITE",
+      "findingId": "FINDING_HWG_GOOD_APPETITE",
+      "scoreDeduction": -4,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_SATIETY_1",
+      "questionId": "hwg_early_satiety",
+      "answerValue": "almost_always",
+      "evidenceId": "EVIDENCE_HWG_EARLY_SATIETY",
+      "findingId": "FINDING_HWG_EARLY_SATIETY",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_SATIETY_2",
+      "questionId": "hwg_early_satiety",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_HWG_EARLY_SATIETY",
+      "findingId": "FINDING_HWG_EARLY_SATIETY",
+      "scoreDeduction": 10,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_TRAINING_1",
+      "questionId": "hwg_resistance_training",
+      "answerValue": "0",
+      "evidenceId": "EVIDENCE_HWG_NO_STRENGTH_TRAINING",
+      "findingId": "FINDING_HWG_NO_STRENGTH_TRAINING",
+      "scoreDeduction": 25,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_TRAINING_2",
+      "questionId": "hwg_resistance_training",
+      "answerValue": "1_2",
+      "evidenceId": "EVIDENCE_HWG_NO_STRENGTH_TRAINING",
+      "findingId": "FINDING_HWG_NO_STRENGTH_TRAINING",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_TRAINING_GOOD",
+      "questionId": "hwg_resistance_training",
+      "answerValue": "3_4",
+      "evidenceId": "EVIDENCE_HWG_REGULAR_STRENGTH_TRAINING",
+      "findingId": "FINDING_HWG_REGULAR_STRENGTH_TRAINING",
+      "scoreDeduction": -6,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_TRAINING_EXC",
+      "questionId": "hwg_resistance_training",
+      "answerValue": "5_plus",
+      "evidenceId": "EVIDENCE_HWG_REGULAR_STRENGTH_TRAINING",
+      "findingId": "FINDING_HWG_REGULAR_STRENGTH_TRAINING",
+      "scoreDeduction": -6,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_OVERLOAD_1",
+      "questionId": "hwg_progressive_overload",
+      "answerValue": "never",
+      "evidenceId": "EVIDENCE_HWG_NO_PROGRESSIVE_OVERLOAD",
+      "findingId": "FINDING_HWG_NO_PROGRESSIVE_OVERLOAD",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_OVERLOAD_GOOD",
+      "questionId": "hwg_progressive_overload",
+      "answerValue": "consistently",
+      "evidenceId": "EVIDENCE_HWG_PROGRESSIVE_OVERLOAD",
+      "scoreDeduction": -4,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_CARDIO_1",
+      "questionId": "hwg_cardio",
+      "answerValue": "5_plus_sessions",
+      "evidenceId": "EVIDENCE_HWG_EXCESSIVE_CARDIO",
+      "findingId": "FINDING_HWG_EXCESSIVE_CARDIO",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_ACTIVITY_1",
+      "questionId": "hwg_daily_activity",
+      "answerValue": "very_active",
+      "evidenceId": "EVIDENCE_HWG_HIGH_DAILY_ACTIVITY",
+      "findingId": "FINDING_HWG_HIGH_ACTIVITY",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_ACTIVITY_2",
+      "questionId": "hwg_daily_activity",
+      "answerValue": "physically_demanding",
+      "evidenceId": "EVIDENCE_HWG_HIGH_DAILY_ACTIVITY",
+      "findingId": "FINDING_HWG_HIGH_ACTIVITY",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_SLEEP_1",
+      "questionId": "hwg_sleep",
+      "answerValue": "under_5",
+      "evidenceId": "EVIDENCE_HWG_POOR_SLEEP",
+      "findingId": "FINDING_HWG_POOR_SLEEP",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_SLEEP_2",
+      "questionId": "hwg_sleep",
+      "answerValue": "5_6",
+      "evidenceId": "EVIDENCE_HWG_POOR_SLEEP",
+      "findingId": "FINDING_HWG_POOR_SLEEP",
+      "scoreDeduction": 10,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_STRESS_1",
+      "questionId": "hwg_stress",
+      "answerValue": "high",
+      "evidenceId": "EVIDENCE_HWG_HIGH_STRESS",
+      "findingId": "FINDING_HWG_HIGH_STRESS",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_STRESS_2",
+      "questionId": "hwg_stress",
+      "answerValue": "very_high",
+      "evidenceId": "EVIDENCE_HWG_HIGH_STRESS",
+      "findingId": "FINDING_HWG_HIGH_STRESS",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_RECOVERY_1",
+      "questionId": "hwg_muscle_recovery",
+      "answerValue": "poor",
+      "evidenceId": "EVIDENCE_HWG_POOR_RECOVERY",
+      "findingId": "FINDING_HWG_POOR_RECOVERY",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_RECOVERY_2",
+      "questionId": "hwg_muscle_recovery",
+      "answerValue": "very_poor",
+      "evidenceId": "EVIDENCE_HWG_POOR_RECOVERY",
+      "findingId": "FINDING_HWG_POOR_RECOVERY",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_RECOVERY_GOOD",
+      "questionId": "hwg_muscle_recovery",
+      "answerValue": "excellent",
+      "evidenceId": "EVIDENCE_HWG_GOOD_RECOVERY",
+      "findingId": "FINDING_HWG_GOOD_RECOVERY",
+      "scoreDeduction": -5,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_REST_1",
+      "questionId": "hwg_rest_days",
+      "answerValue": "0",
+      "evidenceId": "EVIDENCE_HWG_INADEQUATE_REST",
+      "findingId": "FINDING_HWG_INADEQUATE_REST",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_HARD_GAINER_1",
+      "questionId": "hwg_hard_gainer",
+      "answerValue": "yes_childhood",
+      "evidenceId": "EVIDENCE_HWG_LIFELONG_HARD_GAINER",
+      "findingId": "FINDING_HWG_LIFELONG_HARD_GAINER",
+      "scoreDeduction": 10,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_HARD_GAINER_2",
+      "questionId": "hwg_hard_gainer",
+      "answerValue": "mostly_yes",
+      "evidenceId": "EVIDENCE_HWG_LIFELONG_HARD_GAINER",
+      "findingId": "FINDING_HWG_LIFELONG_HARD_GAINER",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_ATTEMPTS_1",
+      "questionId": "hwg_previous_attempts",
+      "answerValue": "more_than_3",
+      "evidenceId": "EVIDENCE_HWG_MULTIPLE_FAILED_ATTEMPTS",
+      "findingId": "FINDING_HWG_MULTIPLE_FAILED_ATTEMPTS",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_SKIPPING_1",
+      "questionId": "hwg_skip_meals",
+      "answerValue": "daily",
+      "evidenceId": "EVIDENCE_HWG_FREQUENT_MEAL_SKIPPING",
+      "findingId": "FINDING_HWG_MEAL_SKIPPING",
+      "scoreDeduction": 20,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_SKIPPING_2",
+      "questionId": "hwg_skip_meals",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_HWG_FREQUENT_MEAL_SKIPPING",
+      "findingId": "FINDING_HWG_MEAL_SKIPPING",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_PORTION_DISCOMFORT_1",
+      "questionId": "hwg_portion_discomfort",
+      "answerValue": "always",
+      "evidenceId": "EVIDENCE_HWG_PORTION_DISCOMFORT",
+      "findingId": "FINDING_HWG_PORTION_DISCOMFORT",
+      "scoreDeduction": 12,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_PORTION_DISCOMFORT_2",
+      "questionId": "hwg_portion_discomfort",
+      "answerValue": "often",
+      "evidenceId": "EVIDENCE_HWG_PORTION_DISCOMFORT",
+      "findingId": "FINDING_HWG_PORTION_DISCOMFORT",
+      "scoreDeduction": 8,
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "RULE_HWG_OBSTACLE_FEAR",
+      "questionId": "hwg_biggest_obstacle",
+      "answerValue": "fear_of_fat",
+      "evidenceId": "EVIDENCE_HWG_FEAR_OF_GAINING_FAT",
+      "findingId": "FINDING_HWG_FEAR_OF_GAINING_FAT",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_CONFIDENCE_1",
+      "questionId": "hwg_confidence",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_HWG_LOW_CONFIDENCE",
+      "findingId": "FINDING_HWG_LOW_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "LOW"
+    },
+    {
+      "id": "RULE_HWG_CONFIDENCE_2",
+      "questionId": "hwg_confidence",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_HWG_LOW_CONFIDENCE",
+      "findingId": "FINDING_HWG_LOW_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "LOW"
+    },
+    {
+      "id": "RULE_HWG_CONFIDENCE_3",
+      "questionId": "hwg_confidence",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_HWG_LOW_CONFIDENCE",
+      "findingId": "FINDING_HWG_LOW_CONFIDENCE",
+      "scoreDeduction": 5,
+      "severity": "LOW"
+    },
+    {
+      "id": "RULE_HWG_CONFIDENCE_GOOD",
+      "questionId": "hwg_confidence",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_HWG_HIGH_CONFIDENCE",
+      "scoreDeduction": -3,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_CONFIDENCE_EXC",
+      "questionId": "hwg_confidence",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_HWG_HIGH_CONFIDENCE",
+      "scoreDeduction": -3,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_COMMITMENT_1",
+      "questionId": "hwg_commitment",
+      "answerValue": "1",
+      "evidenceId": "EVIDENCE_HWG_LOW_COMMITMENT",
+      "findingId": "FINDING_HWG_LOW_COMMITMENT",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_COMMITMENT_2",
+      "questionId": "hwg_commitment",
+      "answerValue": "2",
+      "evidenceId": "EVIDENCE_HWG_LOW_COMMITMENT",
+      "findingId": "FINDING_HWG_LOW_COMMITMENT",
+      "scoreDeduction": 15,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_COMMITMENT_3",
+      "questionId": "hwg_commitment",
+      "answerValue": "3",
+      "evidenceId": "EVIDENCE_HWG_LOW_COMMITMENT",
+      "findingId": "FINDING_HWG_LOW_COMMITMENT",
+      "scoreDeduction": 12,
+      "severity": "HIGH"
+    },
+    {
+      "id": "RULE_HWG_COMMITMENT_GOOD",
+      "questionId": "hwg_commitment",
+      "answerValue": "9",
+      "evidenceId": "EVIDENCE_HWG_HIGH_COMMITMENT",
+      "findingId": "FINDING_HWG_HIGH_COMMITMENT",
+      "scoreDeduction": -5,
+      "severity": "INFO"
+    },
+    {
+      "id": "RULE_HWG_COMMITMENT_EXC",
+      "questionId": "hwg_commitment",
+      "answerValue": "10",
+      "evidenceId": "EVIDENCE_HWG_HIGH_COMMITMENT",
+      "findingId": "FINDING_HWG_HIGH_COMMITMENT",
+      "scoreDeduction": -5,
+      "severity": "INFO"
+    }
+  ]
+}

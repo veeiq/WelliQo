@@ -160,7 +160,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'sugar_cravings',
-    section: 'Metabolic Health',
+    section: 'Metabolic Efficiency',
     label: 'Do you experience strong sugar cravings?',
     type: 'single_choice',
     options: [
@@ -172,7 +172,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'satiety',
-    section: 'Metabolic Health',
+    section: 'Metabolic Efficiency',
     label: 'How soon after meals do you feel hungry again?',
     type: 'single_choice',
     options: [
@@ -184,7 +184,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'energy_crashes',
-    section: 'Metabolic Health',
+    section: 'Metabolic Efficiency',
     label: 'Do you experience afternoon energy crashes?',
     type: 'single_choice',
     options: [
@@ -196,7 +196,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'weight_plateau',
-    section: 'Metabolic Health',
+    section: 'Metabolic Efficiency',
     label: 'Have you stopped losing weight despite trying consistently?',
     type: 'single_choice',
     options: [
@@ -208,7 +208,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'compensatory_eating',
-    section: 'Metabolic Health',
+    section: 'Metabolic Efficiency',
     label: 'How often do you skip meals and then overeat later?',
     type: 'single_choice',
     options: [
@@ -268,7 +268,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'emotional_eating_fl',
-    section: 'Behaviour & Consistency',
+    section: 'Behaviour & Long-term Consistency',
     label: 'When stressed, how often do you eat for comfort?',
     type: 'single_choice',
     options: [
@@ -280,7 +280,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'biggest_obstacle_fl',
-    section: 'Behaviour & Consistency',
+    section: 'Behaviour & Long-term Consistency',
     label: 'What is your biggest obstacle to losing fat?',
     type: 'single_choice',
     options: [
@@ -294,7 +294,7 @@ export const questions: QuestionDef[] = [
   },
   {
     id: 'commitment_fl',
-    section: 'Behaviour & Consistency',
+    section: 'Behaviour & Long-term Consistency',
     label: 'How committed are you to changing your habits over the next 90 days?',
     type: 'scale',
     options: [

@@ -94,7 +94,7 @@ export class ScoreEngine {
       auditTrail.deductionsApplied.push({
         ruleId: deduction.ruleId,
         evidenceIds: Array.from(rulesResult.evidenceIds), // Simplification: we might want to map exact evidence to rule
-        findingId: Array.from(rulesResult.findingIds)[0], // Simplification for audit
+        findingId: deduction.findingId, // Exact mapped finding id
         pillar,
         deductionValue: deduction.deduction,
         confidence: 100 // Deduction confidence

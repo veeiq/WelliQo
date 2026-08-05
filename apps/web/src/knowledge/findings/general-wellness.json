@@ -1,0 +1,635 @@
+{
+  "id": "module_findings_general_wellness",
+  "version": "1.0.0",
+  "definition": "findings",
+  "findings": [
+    {
+      "id": "FINDING_GW_POOR_OVERALL_HEALTH",
+      "title": "Your Overall Health Needs Attention",
+      "category": "Overall Health Perception",
+      "severity": "CRITICAL",
+      "priority": "CRITICAL",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your responses suggest that your current overall health is below your desired level.",
+      "userExplanation": "Improving your daily habits can gradually improve how you feel and function.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_OVERALL_HEALTH"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_IMPROVE_OVERALL_HEALTH"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_DECLINING_HEALTH",
+      "title": "Your Health Has Declined Over The Past Year",
+      "category": "Overall Health Perception",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your perceived health trend suggests worsening overall wellbeing.",
+      "userExplanation": "Early lifestyle improvements can help reverse this trend.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_DECLINING_HEALTH"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LIMITED_DAILY_FUNCTION",
+      "title": "Your Daily Activities Are Being Affected",
+      "category": "Overall Health Perception",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Reduced functional capacity may be limiting everyday productivity and quality of life.",
+      "userExplanation": "Improving your overall health can make everyday activities feel easier.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LIMITED_DAILY_FUNCTION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_IMPROVE_DAILY_FUNCTION"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_HEALTH_SATISFACTION",
+      "title": "You Are Not Satisfied With Your Current Health",
+      "category": "Overall Health Perception",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Low health satisfaction often reflects multiple lifestyle areas needing improvement.",
+      "userExplanation": "Small, consistent changes can significantly improve your confidence in your health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_HEALTH_SATISFACTION"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_DAILY_ENERGY",
+      "title": "Low Daily Energy Is Affecting Your Wellbeing",
+      "category": "Overall Health Perception",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your current energy levels may reduce physical activity, productivity, and motivation.",
+      "userExplanation": "Better sleep, nutrition, hydration, and regular movement often improve energy.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_DAILY_ENERGY"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_REBUILD_DAILY_ENERGY"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_FREQUENT_FATIGUE",
+      "title": "Frequent Fatigue Is Reducing Your Quality Of Life",
+      "category": "Overall Health Perception",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Persistent fatigue may reflect poor recovery or unhealthy lifestyle habits.",
+      "userExplanation": "Addressing the root causes of fatigue can improve your overall wellbeing.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_FREQUENT_FATIGUE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_REDUCE_FATIGUE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_NUTRITION",
+      "title": "Your Eating Habits Need Improvement",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Current eating habits may not provide consistent nutritional support for long-term health.",
+      "userExplanation": "Balanced meals help support energy, immunity, and overall wellness.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_NUTRITION_HABITS"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_BALANCED_NUTRITION"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_PHYSICAL_INACTIVITY",
+      "title": "You Need More Physical Activity",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your current activity level is below the amount generally recommended for maintaining good health.",
+      "userExplanation": "Increasing regular movement can improve almost every aspect of your health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_PHYSICAL_INACTIVITY"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_INCREASE_PHYSICAL_ACTIVITY"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_SLEEP",
+      "title": "Your Sleep Quality Needs Improvement",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Poor sleep may reduce recovery, energy, and emotional wellbeing.",
+      "userExplanation": "Improving sleep quality is one of the most effective ways to improve overall health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_SLEEP_QUALITY"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_IMPROVE_SLEEP"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_HYDRATION",
+      "title": "You're Not Drinking Enough Fluids",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Inadequate hydration can affect physical performance, concentration, and overall health.",
+      "userExplanation": "Better hydration supports nearly every function in your body.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_HYDRATION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_IMPROVE_HYDRATION"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_SUNLIGHT",
+      "title": "You May Benefit From More Natural Sunlight",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "LOW",
+      "priority": "LOW",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Limited sunlight exposure may affect daily rhythms and general wellbeing.",
+      "userExplanation": "Safe sunlight exposure supports overall health and healthy daily routines.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_SUNLIGHT_EXPOSURE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_SAFE_SUNLIGHT"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_PROLONGED_SITTING",
+      "title": "You Spend Too Much Time Sitting",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Extended sitting increases sedentary health risks even if you exercise occasionally.",
+      "userExplanation": "Taking regular movement breaks throughout the day can improve your health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_PROLONGED_SITTING"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_REDUCE_SITTING"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_EMOTIONAL_BALANCE",
+      "title": "Your Emotional Wellbeing Needs Support",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Current emotional wellbeing appears below optimal levels.",
+      "userExplanation": "Supporting emotional health is an important part of overall wellness.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_EMOTIONAL_BALANCE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_SUPPORT_EMOTIONAL_HEALTH"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_STRESS_MANAGEMENT",
+      "title": "Stress Is Affecting Your Wellbeing",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your current stress management strategies may not be sufficient.",
+      "userExplanation": "Learning healthier coping strategies can improve both mental and physical health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_STRESS_MANAGEMENT"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_MANAGE_STRESS"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_HEALTH_MOTIVATION",
+      "title": "Motivation Is Holding Back Your Progress",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Low motivation may reduce your ability to maintain healthy habits consistently.",
+      "userExplanation": "Building routines instead of relying on motivation often leads to lasting success.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_HEALTH_MOTIVATION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_BUILD_HEALTH_ROUTINES"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_WORK_LIFE_BALANCE",
+      "title": "Your Work-Life Balance Needs Improvement",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "An unhealthy balance between work and personal life may increase stress and reduce recovery.",
+      "userExplanation": "Making time for personal wellbeing is essential for long-term health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_WORK_LIFE_BALANCE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_IMPROVE_WORK_LIFE_BALANCE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LACK_OF_RELAXATION",
+      "title": "You Rarely Take Time To Relax",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Insufficient relaxation may contribute to chronic stress and poor recovery.",
+      "userExplanation": "Regular relaxation supports emotional resilience and better overall health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LACK_OF_RELAXATION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_RELAX_REGULARLY"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_SOCIAL_ISOLATION",
+      "title": "Limited Social Support May Affect Your Wellbeing",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Strong social relationships are associated with better physical and emotional health.",
+      "userExplanation": "Meaningful connections with family or friends can positively influence your wellbeing.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_SOCIAL_ISOLATION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_STRENGTHEN_SOCIAL_CONNECTIONS"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_NO_PREVENTIVE_CHECKUPS",
+      "title": "Routine Health Check-ups Are Missing",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Preventive healthcare helps identify health concerns before they become serious.",
+      "userExplanation": "Regular check-ups support long-term health and early detection.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_NO_PREVENTIVE_CHECKUPS"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_SCHEDULE_CHECKUPS"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_IGNORING_HEALTH_SIGNALS",
+      "title": "You Tend To Ignore Early Health Warning Signs",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Delaying attention to health concerns may increase future health risks.",
+      "userExplanation": "Seeking timely care can prevent minor issues from becoming major problems.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_IGNORES_HEALTH_SIGNALS"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_RESPOND_TO_HEALTH_CHANGES"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_WELLNESS_CONFIDENCE",
+      "title": "You Need More Confidence In Your Healthy Habits",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Low confidence may reduce long-term behaviour change success.",
+      "userExplanation": "Confidence usually grows through small, consistent achievements.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_WELLNESS_CONFIDENCE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_BUILD_CONFIDENCE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_WELLNESS_COMMITMENT",
+      "title": "Your Commitment To Better Health Needs Strengthening",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "HIGH",
+      "priority": "HIGH",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Sustained commitment is essential for long-term lifestyle improvement.",
+      "userExplanation": "Healthy habits become easier when they become part of your daily routine.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_WELLNESS_COMMITMENT"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_STRENGTHEN_COMMITMENT"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_LOW_WELLNESS_READINESS",
+      "title": "You May Not Yet Feel Ready For Lifestyle Change",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Behaviour change is most successful when readiness and commitment are aligned.",
+      "userExplanation": "Starting with small, achievable changes can build confidence over time.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_LOW_WELLNESS_READINESS"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_START_SMALL"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_EXCELLENT_OVERALL_HEALTH",
+      "title": "Your Overall Health Is A Major Strength",
+      "category": "Overall Health Perception",
+      "severity": "INFO",
+      "priority": "INFO",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your responses indicate strong overall health and daily functioning.",
+      "userExplanation": "Maintaining your current healthy habits will help preserve your long-term wellbeing.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_EXCELLENT_OVERALL_HEALTH"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_MAINTAIN_HEALTHY_LIFESTYLE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_HEALTHY_LIFESTYLE",
+      "title": "You Maintain Healthy Daily Habits",
+      "category": "Healthy Lifestyle Habits",
+      "severity": "INFO",
+      "priority": "INFO",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your nutrition, activity, hydration, sleep, and daily routines support overall wellness.",
+      "userExplanation": "Continue building on these healthy lifestyle habits.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_BALANCED_NUTRITION"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_MAINTAIN_HEALTHY_LIFESTYLE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_STRONG_EMOTIONAL_WELLBEING",
+      "title": "Your Mental Wellbeing Is A Strength",
+      "category": "Mental & Emotional Wellbeing",
+      "severity": "INFO",
+      "priority": "INFO",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "You demonstrate good emotional resilience and healthy coping abilities.",
+      "userExplanation": "Maintaining emotional wellbeing supports every aspect of your health.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_GOOD_EMOTIONAL_BALANCE"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_MAINTAIN_HEALTHY_LIFESTYLE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_STRONG_PREVENTIVE_WELLNESS",
+      "title": "You Take A Proactive Approach To Your Health",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "INFO",
+      "priority": "INFO",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your preventive health behaviours support long-term wellness.",
+      "userExplanation": "Continuing regular health check-ups and healthy habits helps reduce future health risks.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_REGULAR_PREVENTIVE_CHECKUPS"
+      ],
+      "recommendationIds": [
+        "RECOMMENDATION_GW_MAINTAIN_HEALTHY_LIFESTYLE"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_HIGH_WELLNESS_READINESS",
+      "title": "You're Ready To Improve Your Health",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "INFO",
+      "priority": "INFO",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Your confidence, commitment, and readiness suggest a high likelihood of successful lifestyle improvement.",
+      "userExplanation": "This positive mindset provides an excellent foundation for lasting healthy habits.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_HIGH_WELLNESS_READINESS"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_TIME_BARRIER",
+      "title": "Time is a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "LOW",
+      "priority": "LOW",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Lack of time affects health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_TIME_BARRIER"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_STRESS_BARRIER",
+      "title": "Stress is a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Stress affects health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_STRESS_BARRIER"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_POOR_ROUTINE",
+      "title": "Poor Routine is a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Poor routine affects health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_POOR_ROUTINE"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_FINANCIAL_BARRIER",
+      "title": "Financial Reasons are a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "LOW",
+      "priority": "LOW",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Financial reasons affect health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_FINANCIAL_BARRIER"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_HEALTH_LIMITATION",
+      "title": "Health Issues are a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "MEDIUM",
+      "priority": "MEDIUM",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Health issues affect health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_HEALTH_LIMITATION"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    },
+    {
+      "id": "FINDING_GW_FAMILY_RESPONSIBILITY",
+      "title": "Family Responsibilities are a Major Barrier",
+      "category": "Preventive Wellness & Lifestyle",
+      "severity": "LOW",
+      "priority": "LOW",
+      "confidence": 100,
+      "reportVisibility": true,
+      "reusable": true,
+      "clinicalExplanation": "Family responsibilities affect health goals.",
+      "userExplanation": "Small habits can fit into any schedule.",
+      "evidenceRequired": [
+        "EVIDENCE_GW_FAMILY_RESPONSIBILITY"
+      ],
+      "recommendationIds": [],
+      "contraindications": []
+    }
+  ]
+}

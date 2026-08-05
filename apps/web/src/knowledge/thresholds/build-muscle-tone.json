@@ -1,0 +1,37 @@
+{
+  "id": "module_thresholds_build_muscle_tone",
+  "version": "1.0.0",
+  "definition": "Thresholds for Build Muscle & Tone",
+  "thresholds": [
+    {
+      "id": "THRESHOLD_BMT_STATUS",
+      "type": "SCORE_BAND",
+      "bands": [
+        {
+          "min": 90,
+          "max": 100,
+          "label": "Excellent",
+          "status": "optimal"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "label": "Good",
+          "status": "good"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "label": "Fair",
+          "status": "warning"
+        },
+        {
+          "min": 0,
+          "max": 49,
+          "label": "Needs Improvement",
+          "status": "critical"
+        }
+      ]
+    }
+  ]
+}

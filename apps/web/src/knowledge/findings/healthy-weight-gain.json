@@ -1,0 +1,227 @@
+{
+  "id": "module_findings_healthy_weight_gain",
+  "version": "1.0.0",
+  "definition": "Findings definitions for healthy weight gain",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "findings": [
+    {
+      "id": "FINDING_HWG_LOW_MEAL_FREQUENCY",
+      "title": "Not Eating Frequently Enough",
+      "clinicalExplanation": "Your current meal frequency may not provide enough calories throughout the day to support healthy weight gain.",
+      "userExplanation": "Eating only a few times each day makes it difficult to consistently consume the energy your body needs to gain weight."
+    },
+    {
+      "id": "FINDING_HWG_LOW_PROTEIN",
+      "title": "Protein Intake Needs Improvement",
+      "clinicalExplanation": "Your meals may not consistently provide enough protein to effectively support muscle repair and growth.",
+      "userExplanation": "Your meals consistently lack enough protein to effectively support muscle growth and repair."
+    },
+    {
+      "id": "FINDING_HWG_LOW_SNACKING",
+      "title": "Missing Extra Calorie Opportunities",
+      "clinicalExplanation": "Healthy snacks between meals are an effective way to increase daily calorie intake without relying on large meals.",
+      "userExplanation": "You are missing out on extra calories between meals, making healthy weight gain much harder."
+    },
+    {
+      "id": "FINDING_HWG_NO_LIQUID_CALORIES",
+      "title": "Not Using Liquid Nutrition",
+      "clinicalExplanation": "Liquid calories are an efficient strategy for increasing energy intake, especially when appetite is limited.",
+      "userExplanation": "You are not utilizing liquid calories, which is a missed opportunity to easily increase your daily energy intake."
+    },
+    {
+      "id": "FINDING_HWG_POOR_APPETITE",
+      "title": "Low Appetite Is Limiting Progress",
+      "clinicalExplanation": "Reduced appetite makes it difficult to consume enough calories consistently.",
+      "userExplanation": "Even the best weight gain plan won't work if eating enough feels difficult every day."
+    },
+    {
+      "id": "FINDING_HWG_EARLY_SATIETY",
+      "title": "You Feel Full Too Quickly",
+      "clinicalExplanation": "Feeling full early during meals limits total calorie intake and slows healthy weight gain.",
+      "userExplanation": "Feeling full too quickly makes it very difficult for you to eat the larger portions needed to gain weight."
+    },
+    {
+      "id": "FINDING_HWG_NO_STRENGTH_TRAINING",
+      "title": "Limited Muscle Building Stimulus",
+      "clinicalExplanation": "Without regular resistance training, much of the additional weight gained may come from body fat rather than lean muscle.",
+      "userExplanation": "Without regular strength training, the extra calories you consume are more likely to be stored as fat rather than built into muscle."
+    },
+    {
+      "id": "FINDING_HWG_NO_PROGRESSIVE_OVERLOAD",
+      "title": "Workouts May Have Stalled",
+      "clinicalExplanation": "Muscles adapt over time. Without gradually increasing training intensity, muscle growth slows.",
+      "userExplanation": "Your workouts lack progression, meaning your muscles don't have a reason to continue growing."
+    },
+    {
+      "id": "FINDING_HWG_EXCESSIVE_CARDIO",
+      "title": "High Cardio May Slow Weight Gain",
+      "clinicalExplanation": "Large amounts of cardio increase calorie expenditure and make maintaining a calorie surplus more difficult.",
+      "userExplanation": "You may be burning many of the extra calories you're trying to consume."
+    },
+    {
+      "id": "FINDING_HWG_HIGH_ACTIVITY",
+      "title": "Your Lifestyle Burns A Lot Of Calories",
+      "clinicalExplanation": "A physically demanding lifestyle increases daily calorie needs beyond average estimates.",
+      "userExplanation": "Because you're active throughout the day, you may need substantially more food than you realize."
+    },
+    {
+      "id": "FINDING_HWG_POOR_SLEEP",
+      "title": "Sleep May Be Limiting Muscle Growth",
+      "clinicalExplanation": "Inadequate sleep reduces recovery quality and may slow muscle development.",
+      "userExplanation": "Your body builds and repairs muscle most effectively during quality sleep."
+    },
+    {
+      "id": "FINDING_HWG_HIGH_STRESS",
+      "title": "Stress Could Affect Your Progress",
+      "clinicalExplanation": "High stress can reduce appetite, interfere with recovery, and make healthy habits harder to maintain.",
+      "userExplanation": "Managing stress can make it easier to eat consistently and recover from training."
+    },
+    {
+      "id": "FINDING_HWG_POOR_RECOVERY",
+      "title": "Your Recovery Needs Improvement",
+      "clinicalExplanation": "Poor recovery reduces your body's ability to adapt and grow after exercise.",
+      "userExplanation": "Recovery is where muscle growth actually happens—not during the workout itself."
+    },
+    {
+      "id": "FINDING_HWG_INADEQUATE_REST",
+      "title": "Your Body May Need More Rest",
+      "clinicalExplanation": "Too little recovery between training sessions may reduce long-term progress.",
+      "userExplanation": "Regular rest days help your muscles rebuild and become stronger."
+    },
+    {
+      "id": "FINDING_HWG_LIFELONG_HARD_GAINER",
+      "title": "You've Always Struggled To Gain Weight",
+      "clinicalExplanation": "Your history suggests long-term difficulty gaining weight, which often requires a more structured nutrition strategy.",
+      "userExplanation": "Your body may naturally require more planning and consistency than others to gain healthy weight."
+    },
+    {
+      "id": "FINDING_HWG_MULTIPLE_FAILED_ATTEMPTS",
+      "title": "Previous Attempts Haven't Worked",
+      "clinicalExplanation": "Repeated unsuccessful attempts suggest that previous strategies may not have addressed the real barriers.",
+      "userExplanation": "The right plan isn't just eating more—it's improving the habits that matter most."
+    },
+    {
+      "id": "FINDING_HWG_MEAL_SKIPPING",
+      "title": "Skipping Meals Is Holding You Back",
+      "clinicalExplanation": "Missing meals reduces total daily calorie intake and makes healthy weight gain much harder.",
+      "userExplanation": "Every missed meal is a missed opportunity to fuel healthy growth."
+    },
+    {
+      "id": "FINDING_HWG_PORTION_DISCOMFORT",
+      "title": "Larger Meals Feel Difficult",
+      "clinicalExplanation": "Difficulty eating larger portions limits your ability to consistently consume enough calories.",
+      "userExplanation": "You experience discomfort when trying to eat larger portions, heavily limiting your calorie intake."
+    },
+    {
+      "id": "FINDING_HWG_FEAR_OF_GAINING_FAT",
+      "title": "Fear Of Fat Gain Is Affecting Your Progress",
+      "clinicalExplanation": "Avoiding adequate food intake because of concerns about body fat can unintentionally prevent healthy muscle gain.",
+      "userExplanation": "A balanced nutrition plan helps you build lean muscle while minimizing unnecessary fat gain."
+    },
+    {
+      "id": "FINDING_HWG_LOW_CONFIDENCE",
+      "title": "Your Confidence Needs Building",
+      "clinicalExplanation": "Low confidence can reduce consistency and make it harder to stay committed.",
+      "userExplanation": "Believing you can succeed is an important part of long-term progress."
+    },
+    {
+      "id": "FINDING_HWG_LOW_COMMITMENT",
+      "title": "Consistency May Be Your Biggest Challenge",
+      "clinicalExplanation": "Without strong commitment, even the best nutrition and training plans become difficult to follow.",
+      "userExplanation": "Small habits practiced consistently produce far better results than perfect plans followed briefly."
+    },
+    {
+      "id": "FINDING_HWG_GOOD_APPETITE",
+      "title": "Your Appetite Supports Healthy Weight Gain",
+      "clinicalExplanation": "A healthy appetite makes it easier to consistently consume enough calories.",
+      "userExplanation": "This is one of your biggest strengths and will make progress easier."
+    },
+    {
+      "id": "FINDING_HWG_GOOD_PROTEIN",
+      "title": "You're Prioritizing Protein Well",
+      "clinicalExplanation": "Consistent protein intake provides the building blocks needed for muscle growth.",
+      "userExplanation": "Keep including quality protein in every meal to support healthy weight gain."
+    },
+    {
+      "id": "FINDING_HWG_REGULAR_STRENGTH_TRAINING",
+      "title": "Your Training Supports Muscle Growth",
+      "clinicalExplanation": "Regular resistance training provides the necessary stimulus for lean muscle development.",
+      "userExplanation": "You're giving your body a strong reason to build muscle instead of simply gaining fat."
+    },
+    {
+      "id": "FINDING_HWG_GOOD_RECOVERY",
+      "title": "Your Recovery Habits Are Strong",
+      "clinicalExplanation": "Good sleep and recovery create an excellent environment for muscle growth.",
+      "userExplanation": "Recovery is one of your strengths—keep protecting it."
+    },
+    {
+      "id": "FINDING_HWG_HIGH_COMMITMENT",
+      "title": "You're Ready To Succeed",
+      "clinicalExplanation": "High commitment significantly increases the likelihood of achieving long-term healthy weight gain.",
+      "userExplanation": "Your willingness to stay consistent gives you an excellent foundation for success."
+    },
+    {
+      "id": "SYNERGY_HWG_CHRONIC_CALORIE_DEFICIT",
+      "title": "Chronic Calorie Deficit",
+      "clinicalExplanation": "The user consistently struggles to consume enough calories due to low meal frequency, reduced appetite, and feeling full too quickly.",
+      "userExplanation": "You consistently struggle to consume enough calories due to low meal frequency, reduced appetite, and feeling full too quickly."
+    },
+    {
+      "id": "SYNERGY_HWG_POOR_MUSCLE_GROWTH",
+      "title": "Poor Muscle Growth Strategy",
+      "clinicalExplanation": "Even if calorie intake improves, muscle gain will remain limited without adequate protein and resistance training.",
+      "userExplanation": "Even if your calorie intake improves, muscle gain will remain limited without adequate protein and resistance training."
+    },
+    {
+      "id": "SYNERGY_HWG_HARD_GAINER",
+      "title": "Hard Gainer Profile",
+      "clinicalExplanation": "The user naturally burns large amounts of energy while struggling to eat enough, making healthy weight gain particularly challenging.",
+      "userExplanation": "You naturally burn large amounts of energy while struggling to eat enough, making healthy weight gain particularly challenging."
+    },
+    {
+      "id": "SYNERGY_HWG_POOR_RECOVERY",
+      "title": "Recovery Limiting Progress",
+      "clinicalExplanation": "Recovery capacity is limiting muscle growth despite other healthy efforts.",
+      "userExplanation": "Your recovery capacity is limiting muscle growth despite other healthy efforts."
+    },
+    {
+      "id": "SYNERGY_HWG_BUSY_LIFESTYLE",
+      "title": "Busy Lifestyle Barrier",
+      "clinicalExplanation": "A busy routine is preventing consistent calorie intake throughout the day.",
+      "userExplanation": "A busy routine is preventing consistent calorie intake throughout the day."
+    },
+    {
+      "id": "SYNERGY_HWG_FEAR_OF_FAT_GAIN",
+      "title": "Fear-Based Under Eating",
+      "clinicalExplanation": "Psychological concerns about gaining body fat are preventing adequate calorie intake.",
+      "userExplanation": "Concerns about gaining body fat are preventing you from adequately eating enough calories."
+    },
+    {
+      "id": "SYNERGY_HWG_HIGH_CALORIE_BURN",
+      "title": "High Calorie Burn",
+      "clinicalExplanation": "Daily calorie expenditure is extremely high, making it difficult to maintain a calorie surplus.",
+      "userExplanation": "Your daily calorie expenditure is extremely high, making it difficult to maintain a calorie surplus."
+    },
+    {
+      "id": "SYNERGY_HWG_LEAN_GAIN_FOUNDATION",
+      "title": "Strong Lean Gain Foundation",
+      "clinicalExplanation": "The user already has the core habits needed to gain lean muscle effectively.",
+      "userExplanation": "You already have the core habits needed to gain lean muscle effectively."
+    },
+    {
+      "id": "SYNERGY_HWG_HIGH_COMMITMENT",
+      "title": "Highly Committed Learner",
+      "clinicalExplanation": "The user demonstrates excellent readiness for long-term behaviour change.",
+      "userExplanation": "You demonstrate excellent readiness for long-term behaviour change."
+    },
+    {
+      "id": "SYNERGY_HWG_COMPLETE_HEALTHY_WEIGHT_GAIN",
+      "title": "Complete Healthy Weight Gain Lifestyle",
+      "clinicalExplanation": "The user consistently follows the key nutritional, training, recovery, and behavioural habits associated with successful healthy weight gain.",
+      "userExplanation": "You consistently follow the key nutritional, training, recovery, and behavioural habits associated with successful healthy weight gain."
+    }
+  ]
+}

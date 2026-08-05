@@ -1,0 +1,425 @@
+{
+  "id": "module_recommendations_lose_weight",
+  "version": "1.0.0",
+  "definition": "Core recommendations for lose weight",
+  "reviewedBy": "Clinical Team",
+  "lastReviewed": "2026-08-05",
+  "nextReview": "2027-08-05",
+  "scientificReferences": [],
+  "recommendations": [
+    {
+      "id": "RECOMMEND_PORTION_CONTROL",
+      "title": "Master Portion Control",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_CALORIE_SURPLUS",
+        "FINDING_POOR_PORTION_CONTROL"
+      ],
+      "recommendationText": "Focus on reducing portion sizes at major meals without eliminating food groups.",
+      "whyThisMatters": "Portion control is the most direct way to create a calorie deficit.",
+      "actionSteps": [
+        "Use smaller plates",
+        "Serve vegetables first",
+        "Wait 15 minutes before second helpings"
+      ],
+      "expectedBenefits": [
+        "Weight loss",
+        "Better digestion"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Clothes fit looser",
+        "Scale weight decreases"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_REDUCE_SUGARY_DRINKS",
+      "title": "Cut Liquid Calories",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_EXCESS_LIQUID_CALORIES"
+      ],
+      "recommendationText": "Replace sugar-sweetened beverages with water, tea, or zero-calorie alternatives.",
+      "whyThisMatters": "Liquid calories do not trigger fullness signals in the brain.",
+      "actionSteps": [
+        "Switch to zero-sugar versions",
+        "Drink sparkling water",
+        "Limit alcohol to weekends"
+      ],
+      "expectedBenefits": [
+        "Rapid calorie reduction",
+        "Stable blood sugar"
+      ],
+      "expectedTimeline": "1-2 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Reduced daily calorie intake"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_LIMIT_RESTAURANT_MEALS",
+      "title": "Reduce Restaurant Meals",
+      "category": "Nutrition",
+      "priority": "MEDIUM",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_HIGH_PROCESSED_FOOD_PATTERN"
+      ],
+      "recommendationText": "Aim to cook more meals at home to better control ingredients and portion sizes.",
+      "whyThisMatters": "Restaurant meals typically contain 20-40% more calories than home-cooked equivalents.",
+      "actionSteps": [
+        "Meal prep twice a week",
+        "Check menus before eating out",
+        "Request dressings on the side"
+      ],
+      "expectedBenefits": [
+        "Better calorie control",
+        "Reduced sodium intake"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Eating out less than twice a week"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_INCREASE_PROTEIN",
+      "title": "Prioritize Protein",
+      "category": "Nutrition",
+      "priority": "HIGH",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_LOW_PROTEIN_INTAKE",
+        "FINDING_POOR_APPETITE_CONTROL"
+      ],
+      "recommendationText": "Ensure every main meal contains a high-quality protein source.",
+      "whyThisMatters": "Protein preserves muscle mass during weight loss and keeps you full.",
+      "actionSteps": [
+        "Include 20-30g protein per meal",
+        "Snack on Greek yogurt or eggs",
+        "Add protein powder if needed"
+      ],
+      "expectedBenefits": [
+        "Muscle preservation",
+        "Reduced hunger"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Feeling full between meals"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_IMPROVE_MEAL_TIMING",
+      "title": "Structure Your Meals",
+      "category": "Nutrition",
+      "priority": "MEDIUM",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_POOR_MEAL_TIMING",
+        "FINDING_COMPENSATORY_EATING"
+      ],
+      "recommendationText": "Establish a consistent eating schedule to regulate hunger hormones.",
+      "whyThisMatters": "Irregular eating makes portion control difficult and leads to overeating.",
+      "actionSteps": [
+        "Eat meals at similar times",
+        "Stop eating 2 hours before bed",
+        "Don't skip breakfast if hungry"
+      ],
+      "expectedBenefits": [
+        "Stable energy",
+        "Reduced late-night cravings"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Predictable hunger patterns"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_INCREASE_DAILY_STEPS",
+      "title": "Boost Daily Steps",
+      "category": "Activity",
+      "priority": "HIGH",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_LOW_DAILY_MOVEMENT",
+        "FINDING_LOW_NON_EXERCISE_ACTIVITY"
+      ],
+      "recommendationText": "Gradually increase your daily step count to boost total energy expenditure.",
+      "whyThisMatters": "Daily movement (NEAT) accounts for more calorie burn than structured exercise.",
+      "actionSteps": [
+        "Take a 15-minute walk after meals",
+        "Park further away",
+        "Take the stairs"
+      ],
+      "expectedBenefits": [
+        "Increased calorie burn",
+        "Better digestion"
+      ],
+      "expectedTimeline": "1-2 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Hitting 8,000+ steps consistently"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_BREAK_UP_SITTING",
+      "title": "Break Up Sitting Time",
+      "category": "Activity",
+      "priority": "MEDIUM",
+      "difficulty": "Easy",
+      "triggeredByFindings": [
+        "FINDING_SEDENTARY_LIFESTYLE"
+      ],
+      "recommendationText": "Set reminders to stand up and move briefly every hour.",
+      "whyThisMatters": "Prolonged sitting shuts down fat-burning enzymes.",
+      "actionSteps": [
+        "Use a standing desk if possible",
+        "Stretch every 60 minutes",
+        "Take walking meetings"
+      ],
+      "expectedBenefits": [
+        "Better posture",
+        "Improved blood flow"
+      ],
+      "expectedTimeline": "1-2 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Less than 8 hours total sitting time"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_STRENGTH_TRAINING",
+      "title": "Start Strength Training",
+      "category": "Activity",
+      "priority": "HIGH",
+      "difficulty": "Advanced",
+      "triggeredByFindings": [
+        "FINDING_INADEQUATE_STRENGTH_TRAINING"
+      ],
+      "recommendationText": "Incorporate resistance training 2-3 times per week.",
+      "whyThisMatters": "Muscle is metabolically active tissue; maintaining it prevents your metabolism from dropping.",
+      "actionSteps": [
+        "Start with bodyweight exercises",
+        "Follow a beginner program",
+        "Focus on compound movements"
+      ],
+      "expectedBenefits": [
+        "Muscle preservation",
+        "Improved body composition"
+      ],
+      "expectedTimeline": "4-8 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Getting stronger in lifts"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_ADD_CARDIO",
+      "title": "Include Cardio Sessions",
+      "category": "Activity",
+      "priority": "MEDIUM",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_LOW_CARDIO_ACTIVITY"
+      ],
+      "recommendationText": "Add dedicated cardiovascular exercise to your weekly routine.",
+      "whyThisMatters": "Cardio burns calories directly and improves heart health.",
+      "actionSteps": [
+        "Start with 2x 30-min sessions",
+        "Find an activity you enjoy",
+        "Mix intensities (LISS and intervals)"
+      ],
+      "expectedBenefits": [
+        "Improved stamina",
+        "Extra calorie burn"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Able to sustain effort longer"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_MANAGE_CRAVINGS",
+      "title": "Manage Cravings",
+      "category": "Metabolic",
+      "priority": "HIGH",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_HIGH_SUGAR_CRAVINGS",
+        "FINDING_ENERGY_INSTABILITY"
+      ],
+      "recommendationText": "Balance your meals to prevent severe blood sugar fluctuations.",
+      "whyThisMatters": "Cravings are often physiological responses to low blood sugar or lack of protein/fiber.",
+      "actionSteps": [
+        "Pair carbs with protein/fat",
+        "Stay hydrated",
+        "Wait 20 mins before giving in to a craving"
+      ],
+      "expectedBenefits": [
+        "Fewer cravings",
+        "Stable energy"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Reduced desire for sweets"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_REVIEW_WEIGHT_PLATEAU",
+      "title": "Overcome Weight Plateau",
+      "category": "Metabolic",
+      "priority": "HIGH",
+      "difficulty": "Advanced",
+      "triggeredByFindings": [
+        "FINDING_FAT_LOSS_PLATEAU"
+      ],
+      "recommendationText": "Reassess your calorie intake and expenditure as your body has adapted.",
+      "whyThisMatters": "As you lose weight, your body requires fewer calories to function.",
+      "actionSteps": [
+        "Recalculate your calorie target",
+        "Take a 2-week diet break (maintenance calories)",
+        "Increase NEAT"
+      ],
+      "expectedBenefits": [
+        "Resumed fat loss",
+        "Metabolic reset"
+      ],
+      "expectedTimeline": "2-4 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Scale starts moving again"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_IMPROVE_SLEEP",
+      "title": "Prioritize Sleep",
+      "category": "Recovery",
+      "priority": "HIGH",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_SLEEP_DEFICIT",
+        "FINDING_POOR_RECOVERY"
+      ],
+      "recommendationText": "Aim for 7-9 hours of quality sleep to support fat loss hormones.",
+      "whyThisMatters": "Lack of sleep increases hunger (ghrelin) and decreases fullness (leptin).",
+      "actionSteps": [
+        "Set a consistent bedtime",
+        "Cool, dark room",
+        "No screens 1 hour before bed"
+      ],
+      "expectedBenefits": [
+        "Better hunger control",
+        "More daytime energy"
+      ],
+      "expectedTimeline": "1-2 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Waking up refreshed"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_STRESS_MANAGEMENT",
+      "title": "Manage Stress",
+      "category": "Recovery",
+      "priority": "MEDIUM",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_HIGH_STRESS_LOAD",
+        "FINDING_LOW_DAILY_ENERGY"
+      ],
+      "recommendationText": "Implement daily stress-reduction practices.",
+      "whyThisMatters": "High cortisol promotes fat storage, particularly around the midsection.",
+      "actionSteps": [
+        "5 mins deep breathing daily",
+        "Spend time in nature",
+        "Regular gentle movement"
+      ],
+      "expectedBenefits": [
+        "Reduced emotional eating",
+        "Lower cortisol"
+      ],
+      "expectedTimeline": "4-8 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Feeling calmer"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_MANAGE_EMOTIONAL_EATING",
+      "title": "Address Emotional Eating",
+      "category": "Behaviour",
+      "priority": "HIGH",
+      "difficulty": "Advanced",
+      "triggeredByFindings": [
+        "FINDING_EMOTIONAL_EATING_PATTERN"
+      ],
+      "recommendationText": "Develop non-food coping mechanisms for stress and emotions.",
+      "whyThisMatters": "Emotional eating can undo days of calorie deficit in a single evening.",
+      "actionSteps": [
+        "Identify your triggers",
+        "Create a 'stress-relief toolkit' (e.g., walking, calling a friend)",
+        "Pause before eating"
+      ],
+      "expectedBenefits": [
+        "Better emotional regulation",
+        "Consistent fat loss"
+      ],
+      "expectedTimeline": "4-8 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Handling stress without food"
+      ],
+      "reusable": true
+    },
+    {
+      "id": "RECOMMEND_BUILD_CONSISTENCY",
+      "title": "Focus on Consistency",
+      "category": "Behaviour",
+      "priority": "HIGH",
+      "difficulty": "Moderate",
+      "triggeredByFindings": [
+        "FINDING_BEHAVIOURAL_BARRIER",
+        "FINDING_WEEKEND_CALORIE_SURPLUS"
+      ],
+      "recommendationText": "Aim for 80% adherence rather than perfect adherence.",
+      "whyThisMatters": "Perfectionism often leads to the 'all-or-nothing' cycle of binging and restricting.",
+      "actionSteps": [
+        "Track adherence on a calendar",
+        "Don't restrict heavily after a 'bad' meal",
+        "Focus on weekly averages"
+      ],
+      "expectedBenefits": [
+        "Sustainable progress",
+        "Better relationship with food"
+      ],
+      "expectedTimeline": "4-8 weeks",
+      "contraindications": [],
+      "successIndicators": [
+        "Consistent habits over months"
+      ],
+      "reusable": true
+    }
+  ]
+}
