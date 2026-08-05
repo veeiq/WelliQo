@@ -29,9 +29,9 @@ export function SiteHeader() {
             <Link href="/goals" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Goals
             </Link>
-            <span className="text-sm font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed" title="Coming Soon">
-              Resources
-            </span>
+            <Link href="/library" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              Library
+            </Link>
             <Link href="/about" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               About
             </Link>
