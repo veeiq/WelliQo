@@ -1,7 +1,7 @@
 @import 'tailwindcss';
+@custom-variant dark (&:is(.dark *));
 @source "../../../../packages/ui/src/**/*.{js,ts,jsx,tsx,mdx}";
 @import '@welliqo/ui/styles/tokens.css';
-
 @theme inline {
   --color-background: var(--color-surface-canvas);
   --color-foreground: var(--color-text-primary);
