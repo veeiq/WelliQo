@@ -2490,7 +2490,7 @@ export const articles: KnowledgeContent[] = [
     }
   },
   {
-    id: 'ART035',
+    id: 'ART935',
     title: 'Soluble Fiber: Nature\'s Cholesterol Sponge',
     type: 'ARTICLE',
     category: 'Heart Health',
@@ -2548,7 +2548,7 @@ export const articles: KnowledgeContent[] = [
     }
   },
   {
-    id: 'ART036',
+    id: 'ART936',
     title: 'The Mediterranean Approach: The Gold Standard',
     type: 'ARTICLE',
     category: 'Heart Health',
