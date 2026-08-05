@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, BookOpen, Utensils, Target } from "lucide-react";
 
 interface CollectionCardProps {
@@ -18,9 +19,11 @@ export function CollectionCard({ id, title, image, stats }: CollectionCardProps)
       href={`/health-library/collection/${id}`}
       className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-[#1A1A1A] border border-[#333] flex-shrink-0 snap-center w-[320px] aspect-[3/4] transition-transform duration-300 hover:scale-[1.02] outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
     >
-      <img 
+      <Image 
         src={image} 
         alt={title} 
+        fill
+        sizes="320px"
         className="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>

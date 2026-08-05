@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { KnowledgeContent } from "@/types/knowledge";
 import { Bookmark, Clock, PlayCircle } from "lucide-react";
+import { getTopicImage } from "@/lib/images";
 
 interface ContentCardProps {
   content: KnowledgeContent;
@@ -12,6 +14,7 @@ interface ContentCardProps {
 
 export function ContentCard({ content, progress, isHero = false }: ContentCardProps) {
   const url = `/health-library/${content.type.toLowerCase()}/${content.id}`;
+  const imageSrc = getTopicImage(content, isHero);
   
   return (
     <Link 
@@ -20,9 +23,11 @@ export function ContentCard({ content, progress, isHero = false }: ContentCardPr
         isHero ? 'w-full h-[60vh] md:h-[550px]' : 'w-[280px] md:w-[320px] aspect-[4/5]'
       }`}
     >
-      <img 
-        src={content.thumbnail} 
+      <Image 
+        src={imageSrc} 
         alt={content.title} 
+        fill
+        sizes={isHero ? "100vw" : "(max-width: 768px) 280px, 320px"}
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 opacity-80 group-hover:opacity-100"
       />
       
@@ -78,4 +83,3 @@ export function ContentCard({ content, progress, isHero = false }: ContentCardPr
     </Link>
   );
 }
-

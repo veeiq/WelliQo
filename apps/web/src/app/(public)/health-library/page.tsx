@@ -36,19 +36,19 @@ export default async function HealthLibraryPage(props: {
     {
       id: "immune-boost",
       title: "Immune Boosting Essentials",
-      image: "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80",
+      image: "/images/topics/gut-health-portrait.webp",
       stats: { articles: 5, recipes: 3, habits: 2 }
     },
     {
       id: "sleep-mastery",
       title: "Sleep Mastery Protocol",
-      image: "https://images.unsplash.com/photo-1511295742362-92c96b5ade36?auto=format&fit=crop&q=80",
+      image: "/images/topics/sleep-portrait.webp",
       stats: { articles: 4, recipes: 0, habits: 4 }
     },
     {
       id: "plant-based",
       title: "Plant-Based Power",
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80",
+      image: "/images/topics/nutrition-portrait.webp",
       stats: { articles: 2, recipes: 8, habits: 1 }
     }
   ];
