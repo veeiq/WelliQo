@@ -1,135 +1,149 @@
 import { searchContent } from "@/lib/knowledge-engine";
 import Link from "next/link";
-import { BookOpen, Utensils, Activity, Leaf, Search, Filter } from "lucide-react";
-import { KnowledgeContent } from "@/types/knowledge";
+import { Search, Flame, Moon, Battery, Dumbbell, HeartPulse, Brain, Apple } from "lucide-react";
+import { ContentCard } from "./components/ContentCard";
+import { GoalCard } from "./components/GoalCard";
+import { CollectionCard } from "./components/CollectionCard";
+import { Carousel } from "./components/Carousel";
 
-export default async function HealthLibraryPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
+export default async function HealthLibraryPage(props: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const searchParams = await props.searchParams;
   const query = typeof searchParams.q === 'string' ? searchParams.q : '';
   const type = typeof searchParams.type === 'string' ? searchParams.type : 'ALL';
   const goal = typeof searchParams.goal === 'string' ? searchParams.goal : 'ALL';
 
+  const isSearching = query !== '' || type !== 'ALL' || goal !== 'ALL';
   const results = searchContent(query, { type, goal });
 
-  const categories = [
-    { name: "All Types", value: "ALL", icon: BookOpen },
-    { name: "Articles", value: "ARTICLE", icon: BookOpen },
-    { name: "Recipes", value: "RECIPE", icon: Utensils },
-    { name: "Habits", value: "HABIT", icon: Leaf },
-    { name: "Exercises", value: "EXERCISE_GUIDE", icon: Activity },
-  ];
+  const allContent = searchContent('');
+  const continueReading = allContent[0];
+  const trending = allContent.slice(1, 6);
+  const forYou = allContent.slice(6, 14);
 
   const goalsList = [
-    { name: "All Goals", value: "ALL" },
-    { name: "Weight Loss", value: "weight-loss" },
-    { name: "Better Sleep", value: "better-sleep" },
-    { name: "More Energy", value: "energy" },
-    { name: "Muscle Gain", value: "muscle-gain" },
-    { name: "Healthy Aging", value: "healthy-aging" },
-    { name: "Stress Management", value: "stress-management" },
-    { name: "Gut Health", value: "gut-health" },
+    { name: "Weight Loss", value: "weight-loss", icon: <Flame /> },
+    { name: "Better Sleep", value: "better-sleep", icon: <Moon /> },
+    { name: "More Energy", value: "energy", icon: <Battery /> },
+    { name: "Muscle Gain", value: "muscle-gain", icon: <Dumbbell /> },
+    { name: "Healthy Aging", value: "healthy-aging", icon: <HeartPulse /> },
+    { name: "Stress Management", value: "stress-management", icon: <Brain /> },
+    { name: "Gut Health", value: "gut-health", icon: <Apple /> },
+  ];
+
+  const collections = [
+    {
+      id: "immune-boost",
+      title: "Immune Boosting Essentials",
+      image: "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80",
+      stats: { articles: 5, recipes: 3, habits: 2 }
+    },
+    {
+      id: "sleep-mastery",
+      title: "Sleep Mastery Protocol",
+      image: "https://images.unsplash.com/photo-1511295742362-92c96b5ade36?auto=format&fit=crop&q=80",
+      stats: { articles: 4, recipes: 0, habits: 4 }
+    },
+    {
+      id: "plant-based",
+      title: "Plant-Based Power",
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80",
+      stats: { articles: 2, recipes: 8, habits: 1 }
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-12 px-4">
-      <div className="max-w-6xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
+    <div className="min-h-screen bg-[#000000] pt-24 pb-24 text-slate-50 selection:bg-emerald-500/30 font-sans">
+      <div className="max-w-[1600px] mx-auto">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Health Library
-          </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400">
-            Science-backed articles, recipes, and guides for your wellness journey.
-          </p>
-        </div>
-
-        {/* Search & Filters */}
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-          <form className="flex flex-col md:flex-row gap-4">
-            <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-              <input 
-                type="text" 
-                name="q"
-                defaultValue={query}
-                placeholder="Search articles, recipes, habits..." 
-                className="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 transition-shadow"
-              />
-            </div>
-            <div className="flex gap-4">
-              <select name="type" defaultValue={type} className="px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
-                {categories.map(c => (
-                  <option key={c.value} value={c.value}>{c.name}</option>
-                ))}
-              </select>
-              <select name="goal" defaultValue={goal} className="px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
-                {goalsList.map(g => (
-                  <option key={g.value} value={g.value}>{g.name}</option>
-                ))}
-              </select>
-              <button type="submit" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-all shadow-md flex items-center gap-2">
-                <Filter className="w-4 h-4" />
-                Filter
-              </button>
-            </div>
+        {/* Search Header */}
+        <div className="px-4 md:px-12 mb-16 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Explore</h1>
+            <p className="text-slate-400 font-normal text-lg">Insights and tools for your well-being.</p>
+          </div>
+          
+          <form className="relative w-full md:w-[450px]">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+            <input 
+              type="text" 
+              name="q"
+              defaultValue={query}
+              placeholder="Search topics, goals..." 
+              className="w-full pl-16 pr-6 py-4 bg-[#1A1A1A] border border-[#333] hover:bg-[#222] rounded-full outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:border-transparent transition-colors duration-300 text-white placeholder-slate-500 text-lg"
+            />
           </form>
         </div>
 
-        {/* Results */}
-        <div className="pt-4">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              {results.length} Results
+        {isSearching ? (
+          <div className="px-4 md:px-12 mt-12">
+            <h2 className="text-3xl font-bold text-white tracking-tight mb-12">
+              Results for "{query}"
             </h2>
-          </div>
-          
-          {results.length === 0 ? (
-            <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800">
-              <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-slate-400" />
+            
+            {results.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                {results.map(rec => (
+                  <div key={rec.id} className="w-full flex justify-center">
+                    <ContentCard content={rec} />
+                  </div>
+                ))}
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">No results found</h3>
-              <p className="text-slate-500">Try adjusting your search or filters to find what you're looking for.</p>
-              <Link href="/health-library" className="mt-6 inline-block text-emerald-600 font-semibold hover:underline">
-                Clear all filters
-              </Link>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {results.map(rec => (
-                <Link key={rec.id} href={`/health-library/${rec.type.toLowerCase()}/${rec.id}`} className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:border-emerald-500 hover:shadow-md transition-all group flex flex-col">
-                  <div className="aspect-video bg-slate-100 dark:bg-slate-800 relative">
-                    <img src={rec.thumbnail} alt={rec.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    {rec.featured && (
-                      <div className="absolute top-2 left-2 px-2 py-1 bg-amber-500 text-white text-[10px] font-bold uppercase tracking-wider rounded">
-                        Featured
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">{rec.category}</span>
-                      <span className="text-xs text-slate-500">{rec.estimatedMinutes} min</span>
-                    </div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">{rec.title}</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-4 flex-1">{rec.summary}</p>
-                    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
-                       {rec.goals.map((g, i) => (
-                         <span key={i} className="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md text-[10px] uppercase font-bold tracking-wider">{g.replace(/-/g, ' ')}</span>
-                       ))}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
+            ) : (
+              <div className="text-center py-32 flex flex-col items-center justify-center max-w-lg mx-auto">
+                <Search className="w-12 h-12 text-slate-600 mb-6" />
+                <h3 className="text-2xl font-bold tracking-tight text-white mb-4">Nothing found</h3>
+                <p className="text-slate-400 text-lg">We couldn't find any content matching your search. Try adjusting your keywords.</p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="space-y-8">
+            
+            {/* Hero / Continue Reading */}
+            {continueReading && (
+              <div className="px-4 md:px-12 mb-20">
+                <h2 className="text-3xl font-bold tracking-tight text-white mb-8">Jump Back In</h2>
+                <ContentCard content={continueReading} isHero={true} progress={45} />
+              </div>
+            )}
 
+            <Carousel title="Browse by Goal" subtitle="Paths tailored for you">
+              {goalsList.map(g => (
+                <GoalCard key={g.value} goalId={g.value} label={g.name} icon={g.icon} />
+              ))}
+            </Carousel>
+
+            <Carousel title="Trending" subtitle="Popular in the community">
+              {trending.map(rec => (
+                <ContentCard key={rec.id} content={rec} />
+              ))}
+            </Carousel>
+
+            <Carousel title="Collections" subtitle="Curated deep dives">
+              {collections.map(c => (
+                <CollectionCard key={c.id} {...c} />
+              ))}
+            </Carousel>
+
+            <div className="px-4 md:px-12 pt-12 pb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-4">For You</h2>
+              <p className="text-slate-400 font-normal text-lg mb-12">Based on your recent activity.</p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                {forYou.map(rec => (
+                  <div key={rec.id} className="w-full flex justify-center">
+                    <ContentCard content={rec} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        )}
       </div>
     </div>
   );
 }
+

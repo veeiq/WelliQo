@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useEffect, useRef } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { GoalSelection } from './components/GoalSelection';
 import { SimpleQuestionnaire } from './components/SimpleQuestionnaire';
@@ -9,7 +9,19 @@ import { ProfileIntercept } from './components/ProfileIntercept';
 
 export function AssessmentClient() {
   const router = useRouter();
-  const { runtimeState } = useAssessmentStore();
+  const searchParams = useSearchParams();
+  const { runtimeState, setGoal } = useAssessmentStore();
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (!initialized.current) {
+      initialized.current = true;
+      const id = searchParams.get('id');
+      if (id && runtimeState === 'GOAL_SELECTION') {
+        setGoal(id);
+      }
+    }
+  }, [searchParams, runtimeState, setGoal]);
 
   useEffect(() => {
     if (runtimeState === 'REPORT_READY') {

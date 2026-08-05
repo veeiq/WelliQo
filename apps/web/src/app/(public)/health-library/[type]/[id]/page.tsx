@@ -10,7 +10,8 @@ import { DownloadButton } from "./DownloadButton";
 
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { type: string, id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ type: string, id: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const content = await getKnowledgeContentById(params.id);
   
   if (!content) {
@@ -34,11 +35,8 @@ export async function generateMetadata({ params }: { params: { type: string, id:
   };
 }
 
-export default async function KnowledgeDetailPage({
-  params
-}: {
-  params: { type: string, id: string }
-}) {
+export default async function KnowledgeDetailPage(props: { params: Promise<{ type: string, id: string }> }) {
+  const params = await props.params;
   const content = await getKnowledgeContentById(params.id);
   
   if (!content) {
