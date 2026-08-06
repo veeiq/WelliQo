@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Search } from 'lucide-react';
 // import { SearchIndexNode } from '@welliqo/content';
 
 export function GlobalSearch() {
@@ -81,14 +82,15 @@ export function GlobalSearch() {
   return (
     <div className="relative w-full max-w-md" ref={containerRef}>
       <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-slate-400" />
         <input
           type="text"
-          className="w-full px-4 py-2 bg-[var(--color-background-secondary)] text-[var(--color-text-primary)] rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-primary)] transition-all"
-          placeholder="Search recipes, habits, science..."
+          className="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 rounded-full border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-500"
+          placeholder="Search WelliQo"
           value={query}
           onChange={(e) => {
-            setQuery(e.target.value);
-            setIsOpen(true);
+             setQuery(e.target.value);
+             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
@@ -101,22 +103,22 @@ export function GlobalSearch() {
       </div>
 
       {isOpen && query.length >= 2 && (
-        <div className="absolute top-full mt-2 w-full bg-[var(--color-background-secondary)] rounded-xl shadow-lg border border-[var(--color-border-subtle)] overflow-hidden z-50">
+        <div className="absolute top-full mt-2 w-full bg-white dark:bg-slate-950 rounded-2xl shadow-xl shadow-slate-900/10 dark:shadow-black/50 border border-slate-200 dark:border-slate-800 overflow-hidden z-[100]">
           {!isLoading && hasSearched && results.length === 0 ? (
-            <div className="px-4 py-6 text-center text-[var(--color-text-secondary)]">
-              <p className="font-medium text-slate-700 dark:text-slate-300">No results found.</p>
-              <p className="text-sm mt-1 text-slate-500">Try adjusting your keywords.</p>
+            <div className="px-4 py-8 text-center">
+              <p className="font-semibold text-slate-900 dark:text-white">No results found.</p>
+              <p className="text-sm mt-1 text-slate-500 dark:text-slate-400">Try adjusting your keywords.</p>
             </div>
           ) : (
-            <ul className="max-h-80 overflow-y-auto py-2">
+            <ul className="max-h-[60vh] sm:max-h-80 overflow-y-auto py-2">
               {results.map((result, index) => (
                 <li key={result.id}>
                   <Link
                     href={`/health-library/${result.type.toLowerCase()}/${result.id}`}
-                    className={`block px-4 py-3 transition-colors ${
+                    className={`block px-5 py-4 transition-colors border-b border-slate-100 dark:border-slate-800/50 last:border-0 ${
                       index === selectedIndex
-                        ? 'bg-[var(--color-accent-primary)] text-white'
-                        : 'hover:bg-[var(--color-background-primary)] text-[var(--color-text-primary)]'
+                        ? 'bg-slate-50 dark:bg-slate-800/50'
+                        : 'hover:bg-slate-50 dark:hover:bg-slate-800/50'
                     }`}
                     onClick={() => {
                       setQuery('');
@@ -124,13 +126,13 @@ export function GlobalSearch() {
                     }}
                     onMouseEnter={() => setSelectedIndex(index)}
                   >
-                    <div className={`font-semibold ${index === selectedIndex ? 'text-white' : ''}`}>
+                    <div className="font-medium text-slate-900 dark:text-white mb-1">
                       {result.title}
                     </div>
-                    <div
-                      className={`text-xs capitalize mt-1 ${index === selectedIndex ? 'text-emerald-100' : 'text-[var(--color-text-secondary)]'}`}
-                    >
-                      {result.type} • {result.domain}
+                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                      <span className="uppercase tracking-wider text-emerald-600 dark:text-emerald-400">{result.type}</span>
+                      <span>•</span>
+                      <span className="capitalize">{result.domain}</span>
                     </div>
                   </Link>
                 </li>

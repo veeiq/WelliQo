@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { GlobalSearch } from '@/components/search/global-search';
 import { Menu, X, Home, ClipboardList, Target, Library, Info, Mail, LogIn } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
@@ -34,14 +36,14 @@ export function SiteHeader() {
           </button>
 
           <Link href="/" className="flex items-center gap-3 group lg:ml-0 ml-2 mr-auto">
-            <div className="relative h-11 w-11 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <div className="relative h-11 w-11 hidden sm:flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <img 
                 src="/logo.jpg" 
                 alt="WelliQo" 
                 className="w-full h-full object-contain rounded-xl shadow-lg shadow-emerald-500/20"
               />
             </div>
-            <span className="font-semibold text-2xl tracking-tight text-slate-900 dark:text-white hidden sm:block">
+            <span className="font-bold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white">
               Welli<span className="text-emerald-500">Q</span>o
             </span>
           </Link>
@@ -49,12 +51,12 @@ export function SiteHeader() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex flex-1 justify-center px-8">
             <nav className="flex items-center gap-6 bg-slate-100/50 dark:bg-slate-900/50 px-6 py-2 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md">
-              <Link href="/" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <Link href="/assessments" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Assessments</Link>
-              <Link href="/goals" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Goals</Link>
-              <Link href="/health-library" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Library</Link>
-              <Link href="/about" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About</Link>
-              <Link href="/contact" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Contact</Link>
+              <Link href="/" className={`text-sm font-medium transition-colors ${pathname === '/' ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Home</Link>
+              <Link href="/assessments" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/assessments') ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Assessments</Link>
+              <Link href="/goals" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/goals') ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Goals</Link>
+              <Link href="/health-library" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/health-library') ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Health Library</Link>
+              <Link href="/about" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/about') ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>About</Link>
+              <Link href="/contact" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/contact') ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Contact</Link>
               <div className="w-[1px] h-4 bg-slate-300 dark:bg-slate-700 mx-2"></div>
               <div className="w-48"><GlobalSearch /></div>
             </nav>
@@ -113,31 +115,31 @@ export function SiteHeader() {
             <GlobalSearch />
           </div>
           
-          <nav className="flex flex-col gap-2">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <Home className="w-5 h-5" /> Home
+          <nav className="flex flex-col gap-3">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname === '/' ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <Home className={`w-[22px] h-[22px] ${pathname === '/' ? 'text-emerald-500' : ''}`} /> Home
             </Link>
-            <Link href="/assessments" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <ClipboardList className="w-5 h-5" /> Assessments
+            <Link href="/assessments" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/assessments') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <ClipboardList className={`w-[22px] h-[22px] ${pathname?.startsWith('/assessments') ? 'text-emerald-500' : ''}`} /> Assessments
             </Link>
-            <Link href="/goals" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <Target className="w-5 h-5" /> Goals
+            <Link href="/goals" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/goals') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <Target className={`w-[22px] h-[22px] ${pathname?.startsWith('/goals') ? 'text-emerald-500' : ''}`} /> Goals
             </Link>
-            <Link href="/health-library" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <Library className="w-5 h-5" /> Health Library
+            <Link href="/health-library" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/health-library') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <Library className={`w-[22px] h-[22px] ${pathname?.startsWith('/health-library') ? 'text-emerald-500' : ''}`} /> Health Library
             </Link>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <Info className="w-5 h-5" /> About Us
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/about') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <Info className={`w-[22px] h-[22px] ${pathname?.startsWith('/about') ? 'text-emerald-500' : ''}`} /> About Us
             </Link>
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              <Mail className="w-5 h-5" /> Contact
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/contact') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <Mail className={`w-[22px] h-[22px] ${pathname?.startsWith('/contact') ? 'text-emerald-500' : ''}`} /> Contact
             </Link>
           </nav>
         </div>
 
         <div className="p-4 border-t border-slate-200 dark:border-slate-800">
-          <Link href="/api/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-medium hover:bg-emerald-100 dark:hover:bg-emerald-500/20 transition-colors">
-            <LogIn className="w-5 h-5" /> Sign In
+          <Link href="/api/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-colors">
+            <LogIn className="w-[22px] h-[22px] text-emerald-500" /> Sign In
           </Link>
         </div>
       </div>

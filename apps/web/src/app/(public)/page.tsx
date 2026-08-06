@@ -17,35 +17,38 @@ export default function HomePage() {
     <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-900 dark:selection:text-emerald-100">
       
       {/* 1. HERO SECTION */}
-      <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden px-4 pb-24 text-center sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-200/40 via-slate-50 to-slate-50 dark:from-emerald-900/40 dark:via-slate-950 dark:to-slate-950"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-400/20 dark:bg-emerald-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-teal-400/20 dark:bg-teal-500/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none" />
+      <section className="relative flex min-h-[85svh] sm:min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16 sm:pb-16 text-center bg-white dark:bg-slate-950">
+        {/* Subtle radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50/50 via-white to-white dark:from-emerald-900/10 dark:via-slate-950 dark:to-slate-950"></div>
+        
+        {/* Soft noise texture */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.015]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
+        
+        {/* Very subtle hint of emerald glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-400/5 dark:bg-emerald-500/5 rounded-[100%] blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-12 sm:mt-0">
-          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium tracking-wide text-emerald-800 dark:text-emerald-300 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
+        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-6 sm:mt-0">
+          <div className="mb-6 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 dark:text-slate-300 backdrop-blur-md">
+            <Sparkles className="h-3 w-3 text-emerald-500" />
             <span>Intelligent Wellness, Science-Informed</span>
           </div>
           
-          <h1 className="mb-4 sm:mb-8 text-balance text-5xl font-light tracking-tight text-slate-900 dark:text-white sm:text-7xl lg:text-[5.5rem] leading-[1.1]">
-            Stop guessing. Start understanding your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">wellness.</span>
+          <h1 className="mb-6 sm:mb-6 text-[clamp(2.25rem,10.5vw,4rem)] sm:text-[5rem] lg:text-[6.25rem] font-medium tracking-tighter text-slate-900 dark:text-white leading-[1.1] sm:leading-[1.05]">
+            <span className="block mb-4 sm:mb-8 text-slate-800 dark:text-slate-200">Stop guessing.</span>
+            <span className="block">Start understanding</span>
+            <span className="block">your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500 dark:from-emerald-400 dark:to-emerald-300">wellness.</span></span>
           </h1>
           
-          <p className="mx-auto max-w-2xl text-balance text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-2xl mb-8 sm:mb-12 px-2">
+          <p className="mx-auto w-[90%] sm:w-full max-w-2xl text-balance text-base leading-relaxed text-slate-500 dark:text-slate-400 sm:text-lg mb-8 sm:mb-8">
             Take our free 3-minute wellness assessment and receive a personalized wellness report with science-backed nutrition and lifestyle recommendations.
           </p>
           
           <Link
             href="/assessments"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-1"
+            className="group relative inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-white rounded-[24px] px-8 py-5 sm:px-10 sm:py-7 text-base sm:text-lg font-semibold shadow-[0_8px_30px_rgba(16,185,129,0.35)] hover:shadow-[0_16px_40px_rgba(16,185,129,0.5)] transition-all duration-300 hover:-translate-y-1.5 active:scale-[0.96] active:translate-y-0 active:shadow-[0_4px_15px_rgba(16,185,129,0.2)]"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 rounded-full blur opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></span>
-            <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-            <span className="relative flex items-center gap-2 rounded-full bg-slate-900/10 dark:bg-black/20 px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
-              Start Free Assessment
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
-            </span>
+            Start Free Assessment
+            <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
           </Link>
         </div>
       </section>
