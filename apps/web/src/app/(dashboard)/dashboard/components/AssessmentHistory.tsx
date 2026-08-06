@@ -7,13 +7,13 @@ import { useRouter } from 'next/navigation';
 
 export function AssessmentHistory() {
   const { savedReports } = useUserStore();
-  const { setGoal } = useAssessmentStore();
+  const { setAssessmentId } = useAssessmentStore();
   const router = useRouter();
   
   const [activeTab, setActiveTab] = useState('All');
   
   const handleRetake = (goal: string) => {
-    setGoal(goal as any);
+    setAssessmentId(goal as any);
     router.push('/assessment');
   };
 

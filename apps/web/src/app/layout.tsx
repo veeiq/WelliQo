@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Outfit } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
+import { NextAuthProvider } from '@/components/session-provider';
 import './globals.css';
 import { validateAssessments } from '@/assessments/validator';
 
@@ -34,11 +35,13 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="en" suppressHydrationWarning className={outfit.variable}>
       <body className="font-sans antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 selection:bg-emerald-200 selection:text-emerald-900 min-h-screen flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="flex-grow">
-            {children}
-          </main>
-        </ThemeProvider>
+        <NextAuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <main className="flex-grow">
+              {children}
+            </main>
+          </ThemeProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

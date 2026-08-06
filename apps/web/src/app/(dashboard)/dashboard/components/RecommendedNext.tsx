@@ -4,11 +4,11 @@ import { useAssessmentStore } from '@/store/assessment-store';
 import { useRouter } from 'next/navigation';
 
 export function RecommendedNext() {
-  const { setGoal } = useAssessmentStore();
   const router = useRouter();
-
-  const handleTakeAssessment = () => {
-    setGoal('sleep');
+  const { setAssessmentId } = useAssessmentStore();
+  const handleStart = () => {
+    // This assumes they want to focus on Sleep next, as an example.
+    setAssessmentId('sleep');
     router.push('/assessment');
   };
 
@@ -36,7 +36,7 @@ export function RecommendedNext() {
           <span className="text-emerald-600">+7 Points</span>
         </div>
         <button 
-          onClick={handleTakeAssessment}
+          onClick={handleStart}
           className="w-full h-12 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-emerald-600/20"
         >
           Take Assessment <ArrowRight className="w-5 h-5" />

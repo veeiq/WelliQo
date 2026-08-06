@@ -12,7 +12,7 @@ import { KnowledgeContent } from '@/types/knowledge';
 const cn = (...classes: (string | boolean | undefined | null)[]) => classes.filter(Boolean).join(' ');
 
 export function ReportDashboard({ hideActions = false }: { hideActions?: boolean }) {
-  const { calculatedMetrics, data, answers, reset, setGoal } = useAssessmentStore();
+  const { calculatedMetrics, data, answers, reset, setAssessmentId } = useAssessmentStore();
   const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
   const [recommendations, setRecommendations] = useState<KnowledgeContent[]>([]);
 
@@ -333,13 +333,13 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
               Recommended Follow-Up Assessments
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {recommendedAssessments.map((assessment) => (
+              {recommendedAssessments.map((assessment, idx) => (
                 <button 
-                  key={assessment.id} 
-                  onClick={() => setGoal(assessment.id as any)}
-                  className="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 text-center flex flex-col items-center justify-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer w-full"
+                  key={idx}
+                  onClick={() => setAssessmentId(assessment.id as any)}
+                  className="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-emerald-500 hover:shadow-md transition-all group text-left w-full"
                 >
-                   <div className="text-3xl">{assessment.icon}</div>
+                   <div className="text-3xl mr-3">{assessment.icon}</div>
                    <div className="font-semibold text-slate-700 dark:text-slate-300 text-sm">{assessment.label}</div>
                 </button>
               ))}

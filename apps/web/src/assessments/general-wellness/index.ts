@@ -5,7 +5,8 @@ import { questions } from './questions';
 import { ASSESSMENT_VERSION } from '../manifest';
 
 export const generalWellnessAssessment: ImplementedAssessment = {
-  implemented: true,
+  status: 'available',
+  goals: ['general-wellness', 'better-sleep', 'immunity'],
   id: 'general-wellness',
   title: 'General Wellness Assessment',
   emoji: '🌍',
@@ -13,7 +14,6 @@ export const generalWellnessAssessment: ImplementedAssessment = {
   description: 'Detailed analysis and personalized plan for General Wellness Assessment.',
   category: 'Foundation Wellness',
   enabled: true,
-  comingSoon: false,
   questionCount: 25,
   estimatedMinutes: 5,
   difficulty: 'Beginner',

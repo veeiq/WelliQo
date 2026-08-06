@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { signOut } from "next-auth/react";
 import { 
   Home, 
   BarChart2, 
@@ -15,6 +16,7 @@ import {
   Menu,
   X
 } from "lucide-react";
+import { sidebarConfig } from "../config/sidebar";
 
 interface UserData {
   name?: string | null;
@@ -26,21 +28,13 @@ export function DashboardSidebar({ user }: { user: UserData }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    { href: "/dashboard", label: "Dashboard", icon: Home },
-    { href: "/dashboard/reports", label: "My Reports", icon: BarChart2 },
-    { href: "/dashboard/history", label: "Assessment History", icon: ClipboardList },
-    { href: "/dashboard/saved", label: "Saved Resources", icon: Heart },
-    { href: "/dashboard/goals", label: "My Goals", icon: Target },
-    { href: "/dashboard/profile", label: "Profile", icon: UserIcon },
-    { href: "/dashboard/settings", label: "Settings", icon: Settings },
-  ];
+  const links = sidebarConfig;
 
   return (
     <>
       {/* Mobile Header & Hamburger */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-50 flex items-center justify-between px-4">
-        <Link href="/dashboard" className="font-semibold text-xl tracking-tight text-slate-900 dark:text-white">
+        <Link href="/" className="font-semibold text-xl tracking-tight text-slate-900 dark:text-white">
           Welli<span className="text-emerald-500">Q</span>o
         </Link>
         <button onClick={() => setIsOpen(!isOpen)} className="p-2 -mr-2 text-slate-600 dark:text-slate-400">
@@ -62,7 +56,7 @@ export function DashboardSidebar({ user }: { user: UserData }) {
         ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
         <div className="p-6 h-16 md:h-auto flex items-center border-b border-slate-200 dark:border-slate-800 md:border-none">
-          <Link href="/dashboard" className="hidden md:block font-semibold text-2xl tracking-tight text-slate-900 dark:text-white">
+          <Link href="/" className="hidden md:block font-semibold text-2xl tracking-tight text-slate-900 dark:text-white">
             Welli<span className="text-emerald-500">Q</span>o
           </Link>
         </div>
@@ -111,13 +105,13 @@ export function DashboardSidebar({ user }: { user: UserData }) {
               </p>
             </div>
           </div>
-          <Link 
-            href="/api/auth/signout"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-red-600 dark:hover:text-red-400 transition-all w-full"
+          <button 
+            onClick={() => signOut({ callbackUrl: '/login' })}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-red-600 dark:hover:text-red-400 transition-all w-full text-left"
           >
             <LogOut className="w-5 h-5 text-slate-400 group-hover:text-red-500" />
             Sign Out
-          </Link>
+          </button>
         </div>
       </aside>
     </>

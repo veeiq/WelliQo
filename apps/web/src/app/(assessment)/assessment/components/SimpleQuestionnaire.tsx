@@ -14,11 +14,11 @@ export function SimpleQuestionnaire() {
     prevQuestion 
   } = useAssessmentStore();
 
-  const goal = data.goal || 'weight';
+  const assessmentId = data.assessmentId || 'weight';
 
   let goalQuestions: any[] = [];
-  const assessment = ASSESSMENTS.find(a => a.id === goal);
-  if (assessment && assessment.implemented) {
+  const assessment = ASSESSMENTS.find(a => a.id === assessmentId);
+  if (assessment && assessment.status === 'available') {
     goalQuestions = assessment.questions;
   }
   

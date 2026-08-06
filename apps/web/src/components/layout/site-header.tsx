@@ -2,13 +2,24 @@
 
 import Link from 'next/link';
 import { GlobalSearch } from '@/components/search/global-search';
-import { Menu, X, Home, ClipboardList, Target, Library, Info, Mail, LogIn } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Menu, X, Home, ClipboardList, Target, Library, Info, Mail, LogIn, User, FileText, Settings, Heart, LogOut } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { signOut } from 'next-auth/react';
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  user?: {
+    name?: string | null;
+    email?: string | null;
+    image?: string | null;
+  };
+}
+
+export function SiteHeader({ user }: SiteHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
@@ -21,6 +32,17 @@ export function SiteHeader() {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -62,18 +84,61 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Link href="/api/auth/signin" className="hidden sm:block text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-              Sign In
-            </Link>
-            <Link
-              href="/assessments"
-              className="group relative flex h-10 md:h-11 items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-5 md:px-8 font-medium text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-md shadow-slate-900/10"
-            >
-              <span className="relative z-10 text-[14px] md:text-[15px]">Get Started</span>
-              <div className="absolute inset-0 z-0 bg-gradient-to-r from-emerald-500 to-emerald-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="relative z-10 ml-2 group-hover:text-white transition-colors duration-300 hidden md:inline">→</span>
-            </Link>
+          <div className="flex items-center gap-4 relative" ref={dropdownRef}>
+            {user ? (
+              <>
+                <Link href="/dashboard" className="hidden lg:block text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mr-2">
+                  Dashboard
+                </Link>
+                <button 
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                  className="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800/50 p-1.5 pr-3 rounded-full transition-all border border-transparent hover:border-slate-200 dark:hover:border-slate-700 active:scale-95"
+                >
+                  <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-700 dark:text-emerald-400 overflow-hidden shadow-sm">
+                    {user.image ? <img src={user.image} alt={user.name || "User"} className="w-full h-full object-cover"/> : <User className="w-4 h-4" />}
+                  </div>
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 hidden sm:block">
+                    {user.name ? user.name.split(' ')[0] : 'User'}
+                  </span>
+                  <span className="text-xs text-slate-400 ml-1">▼</span>
+                </button>
+
+                {isUserMenuOpen && (
+                  <div className="absolute top-full right-0 mt-3 w-56 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 py-2 animate-in fade-in slide-in-from-top-2">
+                    <Link href="/dashboard" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                      <Home className="w-4 h-4 text-slate-400" /> Dashboard
+                    </Link>
+                    <Link href="/dashboard/reports" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                      <FileText className="w-4 h-4 text-slate-400" /> My Reports
+                    </Link>
+                    <Link href="/dashboard/saved" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                      <Heart className="w-4 h-4 text-slate-400" /> Saved
+                    </Link>
+                    <Link href="/dashboard/settings" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                      <Settings className="w-4 h-4 text-slate-400" /> Settings
+                    </Link>
+                    <div className="h-px bg-slate-200 dark:bg-slate-800 my-2"></div>
+                    <button onClick={() => signOut({ callbackUrl: '/login' })} className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium w-full text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                      <LogOut className="w-4 h-4" /> Sign Out
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                <Link href="/login" className="hidden sm:block text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                  Sign In
+                </Link>
+                <Link
+                  href="/assessments"
+                  className="group relative flex h-10 md:h-11 items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-5 md:px-8 font-medium text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-md shadow-slate-900/10"
+                >
+                  <span className="relative z-10 text-[14px] md:text-[15px]">Get Started</span>
+                  <div className="absolute inset-0 z-0 bg-gradient-to-r from-emerald-500 to-emerald-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative z-10 ml-2 group-hover:text-white transition-colors duration-300 hidden md:inline">→</span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -138,9 +203,15 @@ export function SiteHeader() {
         </div>
 
         <div className="p-4 border-t border-slate-200 dark:border-slate-800">
-          <Link href="/api/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-colors">
-            <LogIn className="w-[22px] h-[22px] text-emerald-500" /> Sign In
-          </Link>
+          {user ? (
+            <Link href="/dashboard" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-sm transition-colors">
+              Go to Dashboard
+            </Link>
+          ) : (
+            <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-colors">
+              <LogIn className="w-[22px] h-[22px] text-emerald-500" /> Sign In
+            </Link>
+          )}
         </div>
       </div>
     </>

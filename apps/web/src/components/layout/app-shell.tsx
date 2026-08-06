@@ -2,12 +2,15 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SkipLink } from '@welliqo/ui/components/skip-link';
+import { auth } from '@/auth';
 
-export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
+export async function AppShell({ children }: Readonly<{ children: ReactNode }>) {
+  const session = await auth();
+  
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <SkipLink targetId="main-content" />
-      <SiteHeader />
+      <SiteHeader user={session?.user} />
       <main id="main-content" className="flex-1">
         {children}
       </main>

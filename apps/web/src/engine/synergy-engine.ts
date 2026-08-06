@@ -9,6 +9,8 @@ export interface SynergyEvaluationResult {
     findingId: string;
     matchedEvidence: string[];
     priority: string;
+    scoreAdjustment?: number;
+    affectedPillar?: string;
   }>;
 }
 
@@ -48,11 +50,6 @@ export class SynergyEngine {
       if (matched.length >= rule.minRequiredMatches) {
         result.synergyFindingIds.add(rule.findingId);
         if (rule.confidence > 0) {
-          // As per the architecture design, matching a synergy pattern boosts clinical confidence.
-          // In a more complex system this could be dynamic, but a flat boost or the rule's specific boost works here.
-          // Assuming rule.confidence is the new baseline confidence, or a boost amount. Let's treat it as a boost +5.
-          // Wait, the spec says finding confidence is e.g. 90. If it triggers, it sets that finding's confidence.
-          // But to affect overall score confidence, let's just use a flat boost for each synergy matched.
           result.totalConfidenceBoost += 5; // Flat +5% confidence per synergy pattern discovered
         }
 
@@ -61,6 +58,8 @@ export class SynergyEngine {
           findingId: rule.findingId,
           matchedEvidence: matched,
           priority: rule.priority,
+          scoreAdjustment: rule.scoreAdjustment || 0,
+          affectedPillar: rule.affectedPillar
         });
       }
     }

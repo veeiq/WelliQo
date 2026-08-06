@@ -1,55 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { Target, ArrowRight } from 'lucide-react';
-
-const GOALS = [
-  {
-    id: 'better-sleep',
-    title: 'Better Sleep',
-    description: 'Improve your sleep quality and circadian rhythm',
-  },
-  {
-    id: 'weight-management',
-    title: 'Weight Management',
-    description: 'Strategies for healthy and sustainable weight management',
-  },
-  { id: 'energy', title: 'More Energy', description: 'Boost your daily energy levels and focus' },
-  {
-    id: 'healthy-digestion',
-    title: 'Healthy Digestion',
-    description: 'Optimize your gut health and microbiome',
-  },
-  {
-    id: 'heart-health',
-    title: 'Heart Health',
-    description: 'Support cardiovascular function and longevity',
-  },
-  {
-    id: 'healthy-aging',
-    title: 'Healthy Aging',
-    description: 'Maintain vitality and healthspan as you age',
-  },
-  {
-    id: 'womens-wellness',
-    title: "Women's Wellness",
-    description: 'Targeted support for female health and hormones',
-  },
-  {
-    id: 'sports-nutrition',
-    title: 'Sports Nutrition',
-    description: 'Fuel your athletic performance and recovery',
-  },
-  {
-    id: 'immunity',
-    title: 'Immunity',
-    description: 'Strengthen your immune system and resilience',
-  },
-  {
-    id: 'general-wellness',
-    title: 'General Wellness',
-    description: 'Foundational habits for overall well-being',
-  },
-];
+import { GOALS } from '@/goals/registry';
 
 export const metadata: Metadata = {
   title: 'Wellness Goals | WelliQo',
@@ -59,16 +11,16 @@ export const metadata: Metadata = {
 export default function GoalsPage() {
   return (
     <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen">
-      <div className="container mx-auto px-4 py-16 sm:py-24 max-w-7xl">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 mb-6 shadow-inner">
-            <Target className="h-8 w-8" />
+      <div className="container mx-auto px-4 py-8 sm:py-12 max-w-7xl">
+        <div className="mb-10 text-center max-w-2xl mx-auto">
+          <div className="inline-flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 mb-4 shadow-inner">
+            <Target className="h-7 w-7 sm:h-8 sm:w-8" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
             Wellness Goals
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400">
-            Select a goal to discover tailored assessments, articles, and action plans designed for your specific journey.
+          <p className="text-lg text-slate-600 dark:text-slate-400">
+            Select a wellness goal to discover personalized assessments and practical recommendations.
           </p>
         </div>
 
@@ -76,20 +28,23 @@ export default function GoalsPage() {
           {GOALS.map((goal) => (
             <Link
               key={goal.id}
-              href="/assessments" // Redirecting to assessments for now as per v2 logic
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-xl hover:shadow-emerald-500/5 hover:-translate-y-1"
+              href={`/assessments?goal=${goal.id}`}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-[2px] active:scale-[0.98] active:translate-y-0"
             >
               <div>
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 mb-6 shadow-inner group-hover:bg-emerald-100 group-hover:text-emerald-600 dark:group-hover:bg-emerald-900/30 dark:group-hover:text-emerald-400 transition-colors">
+                  <goal.icon className="h-6 w-6" />
+                </div>
+                <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                   {goal.title}
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                <p className="text-slate-500 font-light dark:text-slate-400 mb-6 line-clamp-2">
                   {goal.description}
                 </p>
               </div>
-              <div className="flex items-center gap-2 font-medium text-emerald-600 dark:text-emerald-400">
-                <span>View Assessments</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center gap-1.5 font-medium text-emerald-600 dark:text-emerald-400">
+                <span>Explore</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
           ))}

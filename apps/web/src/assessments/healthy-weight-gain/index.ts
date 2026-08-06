@@ -4,7 +4,8 @@ import { questions } from './questions';
 import { ASSESSMENT_VERSION } from '../manifest';
 
 export const healthyWeightGain: ImplementedAssessment = {
-  implemented: true,
+  status: 'available',
+  goals: ['weight-management', 'sports-nutrition'],
   
   id: 'healthy_weight_gain',
   title: 'Healthy Weight Gain',
@@ -13,7 +14,6 @@ export const healthyWeightGain: ImplementedAssessment = {
   description: 'Detailed analysis and personalized plan for Healthy Weight Gain.',
   category: 'Weight & Body Goals',
   enabled: true,
-  comingSoon: false,
   
   questionCount: 25,
   estimatedMinutes: 8,

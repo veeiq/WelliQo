@@ -23,11 +23,14 @@ export interface ScoreAuditTrail {
     synergyId: string;
     findingId: string;
     confidenceBoost: number;
+    scoreAdjustment?: number;
+    affectedPillar?: string;
   }>;
   finalPillarScores: Record<string, number>;
   rawFinalScore: number;
   finalScore: number;
   overallConfidence: number;
+  validatorInterventions: import('./validator').ValidatorIntervention[];
 }
 
 export interface ScoreEngineResult {
@@ -35,6 +38,9 @@ export interface ScoreEngineResult {
   pillarScores: Record<string, number>;
   biggestWin: string;
   biggestOpportunity: string;
+  strengths: string[];
+  improvements: string[];
+  scoreMeaning: string;
   internalConfidenceScore: number;
   auditTrail: ScoreAuditTrail;
 }
@@ -64,7 +70,8 @@ export class ScoreEngine {
       finalPillarScores: {},
       rawFinalScore: 100,
       finalScore: 100,
-      overallConfidence: 50 + rulesResult.totalConfidenceAdjustment + synergyResult.totalConfidenceBoost
+      overallConfidence: 50 + rulesResult.totalConfidenceAdjustment + synergyResult.totalConfidenceBoost,
+      validatorInterventions: []
     };
 
     // Cap confidence
@@ -101,13 +108,24 @@ export class ScoreEngine {
       });
     }
 
-    // 3. Log synergy adjustments
+    // 3. Log and apply synergy adjustments
     for (const syn of synergyResult.matchedSynergies) {
       auditTrail.synergyAdjustments.push({
         synergyId: syn.synergyId,
         findingId: syn.findingId,
-        confidenceBoost: 5
+        confidenceBoost: 5,
+        scoreAdjustment: syn.scoreAdjustment,
+        affectedPillar: syn.affectedPillar
       });
+
+      if (syn.scoreAdjustment && syn.affectedPillar) {
+        // Apply the adjustment to the specific pillar
+        if (pillarScores[syn.affectedPillar] !== undefined) {
+          pillarScores[syn.affectedPillar] += syn.scoreAdjustment;
+          // Clamp pillar score back to 0-100 after synergy adjustment
+          pillarScores[syn.affectedPillar] = Math.max(0, Math.min(100, pillarScores[syn.affectedPillar]));
+        }
+      }
     }
 
     auditTrail.finalPillarScores = { ...pillarScores };
@@ -120,19 +138,23 @@ export class ScoreEngine {
 
     // Mathematical rounding
     finalScore = Math.round(finalScore);
-    
-    // Impossible score protection (example: if they have a severe finding but score is 95, clamp to 85)
-    // The exact logic for this can be expanded, but we implement the hook here.
-    const hasCriticalFinding = Array.from(rulesResult.findingIds).some(id => id.includes('CRITICAL'));
-    if (hasCriticalFinding && finalScore > 85) {
-      finalScore = 85;
-    }
-
     auditTrail.rawFinalScore = finalScore;
-    auditTrail.finalScore = finalScore;
 
     // 5. Run runtime validation
-    this.validator.validateScores(pillarScores, finalScore, config.pillarWeights);
+    const activeFindingIds = new Set([
+      ...Array.from(rulesResult.findingIds),
+      ...Array.from(synergyResult.synergyFindingIds)
+    ]);
+    
+    const interventions = this.validator.validateScores(pillarScores, finalScore, config.pillarWeights, activeFindingIds);
+    auditTrail.validatorInterventions = interventions;
+
+    // Apply interventions (last intervention's newScore becomes final)
+    if (interventions.length > 0) {
+      finalScore = interventions[interventions.length - 1].newScore;
+    }
+    
+    auditTrail.finalScore = finalScore;
 
     // 6. Determine Win/Opportunity
     let biggestWin = '';
@@ -151,11 +173,24 @@ export class ScoreEngine {
       }
     }
 
+    // Determine Meaning
+    let scoreMeaning = 'Excellent';
+    if (finalScore < 90) scoreMeaning = 'Very Good';
+    if (finalScore < 80) scoreMeaning = 'Good';
+    if (finalScore < 70) scoreMeaning = 'Needs Improvement';
+    if (finalScore < 60) scoreMeaning = 'High Priority';
+
+    const strengths = Object.entries(pillarScores).filter(([_, s]) => s >= 85).map(([p]) => p);
+    const improvements = Object.entries(pillarScores).filter(([_, s]) => s < 70).map(([p]) => p);
+
     return {
       overallWellnessScore: finalScore,
       pillarScores,
       biggestWin,
       biggestOpportunity,
+      strengths,
+      improvements,
+      scoreMeaning,
       internalConfidenceScore: auditTrail.overallConfidence,
       auditTrail
     };

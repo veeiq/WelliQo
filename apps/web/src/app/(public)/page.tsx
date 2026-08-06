@@ -90,7 +90,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link href="/assessments/weight-management" className="group lg:col-span-2 relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 md:p-12 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
+          <Link href="/assessments/weight" className="group lg:col-span-2 relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 md:p-12 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
             <div className="absolute top-0 right-0 p-8 opacity-10 dark:opacity-5 group-hover:opacity-20 transition-opacity">
               <Scale className="w-48 h-48" />
             </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/assessments/daily-energy" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-1">
+          <Link href="/assessments/energy" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400 mb-8">
               <Zap className="h-6 w-6" />
             </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Feel energized throughout the day without relying on caffeine.</p>
           </Link>
 
-          <Link href="/assessments/digestion-gut" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
+          <Link href="/assessments/gut" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400 mb-8">
               <Leaf className="h-6 w-6" />
             </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Support a healthier gut, smoother digestion, and better nutrient absorption.</p>
           </Link>
 
-          <Link href="/assessments/stress-sleep" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1">
+          <Link href="/assessments/stress" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-500/20 dark:text-purple-400 mb-8">
               <Brain className="h-6 w-6" />
             </div>
@@ -129,7 +129,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Reduce stress and improve sleep for better recovery and focus.</p>
           </Link>
 
-          <Link href="/assessments/womens-wellness" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-rose-500/10 hover:-translate-y-1">
+          <Link href="/assessments/womens" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-rose-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400 mb-8">
               <Heart className="h-6 w-6" />
             </div>

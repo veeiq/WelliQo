@@ -66,6 +66,8 @@ export interface SynergyRuleSchema {
   findingId: string;
   priority: Priority | 'URGENT';
   confidence: number;
+  scoreAdjustment?: number;
+  affectedPillar?: string;
 }
 
 export interface FindingSchema {

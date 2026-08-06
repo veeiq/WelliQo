@@ -27,6 +27,11 @@ export class ReportBuilder {
     scoreResult: ScoreEngineResult
   ): CalculatedMetrics {
     
+    // Calculate activity multiplier from answers (e.g. daily_steps, sitting_hours) or default to 1.2
+    let activity_multiplier = 1.2;
+    if (answers.daily_steps === 'more_10k') activity_multiplier = 1.55;
+    else if (answers.daily_steps === '7k_10k') activity_multiplier = 1.375;
+
     // We need baseline variables to feed into formulas
     // The store's 'answers' actually includes 'data' which has height/weight/age etc.
     const baseline = {
@@ -35,51 +40,43 @@ export class ReportBuilder {
       age: answers.age || 30,
       gender: answers.gender || 'female',
       target_weight: answers.target_weight || 70,
+      goal: answers.weight_goal || 'maintain',
+      activity_multiplier
     };
 
-    // Calculate core metrics via FormulaRegistry instead of hardcoded logic
     // Calculate core metrics via FormulaRegistry for true clinical formulas
     const metrics = this.formulaRegistry.batchEvaluate([
       'FORMULA_BMI',
       'FORMULA_BODY_FAT_ESTIMATE',
-      'FORMULA_BMR'
+      'FORMULA_BMR',
+      'FORMULA_HEALTHY_WEIGHT_RANGE_MIN',
+      'FORMULA_HEALTHY_WEIGHT_RANGE_MAX',
+      'FORMULA_TARGET_WEIGHT_DIFF',
+      'FORMULA_TDEE',
+      'FORMULA_CALORIE_TARGET',
+      'FORMULA_PROTEIN_TARGET',
+      'FORMULA_WATER_TARGET',
+      'FORMULA_PROGRESS_TIMELINE'
     ], baseline);
 
     const bmi = metrics['FORMULA_BMI'] || 0;
     const bmr = metrics['FORMULA_BMR'] || 0;
     const fatPercentage = metrics['FORMULA_BODY_FAT_ESTIMATE'] || 0;
-
-    // Ideal Weight / Differences are simple targets, keeping them calculated here for now
-    const heightM = baseline.height;
-    const minIdealKg = 18.5 * (heightM * heightM);
-    const maxIdealKg = 24.9 * (heightM * heightM);
-
-    let weightDifferenceKg = 0;
-    let weightDirection: 'lose' | 'gain' | 'maintain' = 'maintain';
+    const minIdealKg = metrics['FORMULA_HEALTHY_WEIGHT_RANGE_MIN'] || 0;
+    const maxIdealKg = metrics['FORMULA_HEALTHY_WEIGHT_RANGE_MAX'] || 0;
     
-    if (answers.assessmentId === 'healthy-weight-gain') {
-      weightDirection = 'gain';
-      weightDifferenceKg = Math.max(0, (baseline.target_weight || minIdealKg) - baseline.weight);
-      if (weightDifferenceKg === 0) weightDifferenceKg = 5; // Assume 5kg muscle gain goal if unspecified
-    } else if (answers.assessmentId === 'lose-weight') {
-      weightDirection = 'lose';
-      weightDifferenceKg = Math.max(0, baseline.weight - (baseline.target_weight || maxIdealKg));
-      if (weightDifferenceKg === 0) weightDifferenceKg = 5;
-    } else {
-      if (baseline.target_weight > baseline.weight) {
-        weightDifferenceKg = baseline.target_weight - baseline.weight;
-        weightDirection = 'gain';
-      } else if (baseline.target_weight < baseline.weight) {
-        weightDifferenceKg = baseline.weight - baseline.target_weight;
-        weightDirection = 'lose';
-      } else if (baseline.weight > maxIdealKg) {
-        weightDifferenceKg = baseline.weight - maxIdealKg;
-        weightDirection = 'lose';
-      } else if (baseline.weight < minIdealKg) {
-        weightDifferenceKg = minIdealKg - baseline.weight;
-        weightDirection = 'gain';
-      }
-    }
+    // Target Weight Diff might be negative depending on goal, but we want the absolute difference for the timeline/UI
+    const weightDifferenceKg = Math.abs(metrics['FORMULA_TARGET_WEIGHT_DIFF'] || 0);
+
+    let weightDirection: 'lose' | 'gain' | 'maintain' = 'maintain';
+    if (baseline.goal === 'lose' || answers.assessmentId === 'lose-weight') weightDirection = 'lose';
+    else if (baseline.goal === 'gain' || answers.assessmentId === 'healthy-weight-gain') weightDirection = 'gain';
+    
+    // Using FormulaRegistry calculations
+    const proteinGrams = Math.round(metrics['FORMULA_PROTEIN_TARGET'] || (baseline.weight * 1.0));
+    const dailyCalories = Math.round(metrics['FORMULA_CALORIE_TARGET'] || metrics['FORMULA_TDEE'] || 2000);
+    const dailyWaterLiters = (metrics['FORMULA_WATER_TARGET'] || (baseline.weight * 0.035)).toFixed(1);
+    const progressWeeks = metrics['FORMULA_PROGRESS_TIMELINE'] || 0;
 
     // Fetch findings metadata from knowledge repo
     const allFindings = this.loader.getAllModules().flatMap(m => m.findings || []);
@@ -142,15 +139,11 @@ export class ReportBuilder {
     });
 
     // Score Meaning
-    let scoreMeaning = 'Excellent';
-    if (scoreResult.overallWellnessScore < 90) scoreMeaning = 'Very Good';
-    if (scoreResult.overallWellnessScore < 80) scoreMeaning = 'Good';
-    if (scoreResult.overallWellnessScore < 70) scoreMeaning = 'Needs Improvement';
-    if (scoreResult.overallWellnessScore < 60) scoreMeaning = 'High Priority';
+    const scoreMeaning = scoreResult.scoreMeaning;
 
     // Strengths and Improvements
-    const strengths = Object.entries(scoreResult.pillarScores).filter(([_, s]) => s >= 85).map(([p]) => p);
-    const improvements = Object.entries(scoreResult.pillarScores).filter(([_, s]) => s < 70).map(([p]) => p);
+    const strengths = scoreResult.strengths;
+    const improvements = scoreResult.improvements;
 
     // Metric Cards
     const metricCards: MetricCardData[] = [
@@ -184,17 +177,10 @@ export class ReportBuilder {
       }
     ];
 
-    // Timeline
+    // Timeline (calculated by Formula Registry)
     let timeline = 'Next 30 Days';
-    if (weightDirection === 'lose' && weightDifferenceKg > 0) {
-      const weeksNeeded = Math.ceil(weightDifferenceKg / 0.75);
-      const monthsNeeded = Math.ceil(weeksNeeded / 4);
-      const minMonths = Math.max(1, monthsNeeded - 1);
-      const maxMonths = monthsNeeded + 1;
-      timeline = `Approximately ${minMonths}–${maxMonths} months`;
-    } else if (weightDirection === 'gain' && weightDifferenceKg > 0) {
-      const weeksNeeded = Math.ceil(weightDifferenceKg / 0.25);
-      const monthsNeeded = Math.ceil(weeksNeeded / 4);
+    if (weightDifferenceKg > 0 && progressWeeks > 0) {
+      const monthsNeeded = Math.ceil(progressWeeks / 4);
       const minMonths = Math.max(1, monthsNeeded - 1);
       const maxMonths = monthsNeeded + 1;
       timeline = `Approximately ${minMonths}–${maxMonths} months`;
@@ -203,37 +189,9 @@ export class ReportBuilder {
     // Biggest Opportunity Explanation (Personalized)
     let biggestOpportunityExplanation = '';
     let overallSummary = '';
-    const topNegativeHabits = scoreExplanation.map(f => {
-      const labelStr = f.label || (f as any).title || '';
-      return labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'drinking' ? 'Daily sugary drinks' : 
-             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'consistently' ? 'Very large portions' : 
-             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'intense' ? 'Frequent cravings' : 
-             labelStr.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') === 'you' ? 'Poor sleep schedule' : 
-             'These core habits';
-    });
     
     // Make it feel super personal instead of generic
     if (scoreExplanation.length >= 2) {
-       const humanizeFinding = (id: string) => {
-         if (id.includes('NO_LIQUID_CALORIES')) return 'low liquid calorie intake';
-         if (id.includes('SUGAR') || id.includes('LIQUID')) return 'excess liquid calories';
-         if (id.includes('APPETITE')) return 'low appetite';
-         if (id.includes('EARLY_SATIETY')) return 'feeling full too quickly';
-         if (id.includes('PORTION')) return 'oversized portions';
-         if (id.includes('PROTEIN')) return 'low protein intake';
-         if (id.includes('CRAVING')) return 'frequent cravings';
-         if (id.includes('LOW_SNACKING')) return 'missing healthy snacks';
-         if (id.includes('SNACK')) return 'frequent snacking';
-         if (id.includes('SLEEP')) return 'poor sleep schedule';
-         if (id.includes('LATE')) return 'late night eating';
-         if (id.includes('STRESS')) return 'high stress';
-         if (id.includes('RESTAURANT')) return 'frequent fast food';
-         if (id.includes('NEAT')) return 'low daily activity';
-         if (id.includes('MOVEMENT') || id.includes('ROUTINE')) return 'prolonged sitting';
-         if (id.includes('EXERCISE') || id.includes('STRENGTH')) return 'lack of exercise';
-         return id.replace('FINDING_HWG_', '').replace('FINDING_', '').replace(/_/g, ' ').toLowerCase();
-       };
-
        // Get findings specifically for the biggest opportunity pillar
        const oppDeductions = scoreResult.auditTrail.deductionsApplied
          .filter(d => d.pillar.toLowerCase() === scoreResult.biggestOpportunity.toLowerCase() && d.findingId);
@@ -245,8 +203,8 @@ export class ReportBuilder {
          
        if (oppFindings.length === 0) oppFindings = activeFindingObjs.slice(0, 3);
 
-       const oppBullets = oppFindings.map(f => humanizeFinding(f!.id));
-       const overallBullets = scoreExplanation.slice(0,3).map(f => humanizeFinding(f.id));
+       const oppBullets = oppFindings.map(f => f!.title.toLowerCase());
+       const overallBullets = scoreExplanation.slice(0,3).map(f => activeFindingObjs.find(a => a!.id === f.id)!.title.toLowerCase());
        
        biggestOpportunityExplanation = `Based on your answers, your biggest challenge isn't lack of motivation. It is the combination of:\n\n• ${oppBullets.join('\n• ')}\n\nImproving these habits alone is likely to produce the biggest improvement over the next few months.`;
        
@@ -262,9 +220,11 @@ export class ReportBuilder {
     // Extract medical conditions (e.g. from answers.medical_conditions)
     const medicalConditions = answers.medical_conditions ? (Array.isArray(answers.medical_conditions) ? answers.medical_conditions : [answers.medical_conditions]) : [];
     
-    const proteinGrams = Math.round(baseline.weight * 1.6);
+    // Protein and Calories are pre-calculated at the top of the file
     const nutritionPlan = {
       protein: `≈${proteinGrams} g/day`,
+      calories: `≈${dailyCalories} kcal/day`,
+      water: `≈${dailyWaterLiters} L/day`,
       proteinGrams: proteinGrams,
       carbs: 'Moderate',
       fats: 'Moderate',

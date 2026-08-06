@@ -10,18 +10,19 @@ import { ProfileIntercept } from './components/ProfileIntercept';
 export function AssessmentClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { runtimeState, setGoal } = useAssessmentStore();
-  const initialized = useRef(false);
+  const { runtimeState, setAssessmentId } = useAssessmentStore();
 
   useEffect(() => {
-    if (!initialized.current) {
-      initialized.current = true;
-      const id = searchParams.get('id');
-      if (id && runtimeState === 'GOAL_SELECTION') {
-        setGoal(id);
-      }
+    // Check for goal pre-selection in URL (legacy support) or id
+    const id = searchParams.get('id');
+    const legacyGoal = searchParams.get('goal');
+    
+    if (id && runtimeState === 'GOAL_SELECTION') {
+        setAssessmentId(id);
+    } else if (legacyGoal && runtimeState === 'GOAL_SELECTION') {
+        setAssessmentId(legacyGoal);
     }
-  }, [searchParams, runtimeState, setGoal]);
+  }, [searchParams, runtimeState, setAssessmentId]);
 
   useEffect(() => {
     if (runtimeState === 'REPORT_READY') {

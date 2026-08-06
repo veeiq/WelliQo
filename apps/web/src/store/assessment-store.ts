@@ -10,7 +10,7 @@ import { ReportBuilder } from '../engine/report-builder';
 export type SimpleAssessmentState = 'GOAL_SELECTION' | 'PROFILE_INTERCEPT' | 'QUESTIONNAIRE' | 'CALCULATING' | 'REPORT_READY';
 
 export interface AssessmentData {
-  goal: string | null;
+  assessmentId: string | null;
   name: string | null;
   age: number | null;
   gender: 'male' | 'female' | 'other' | null;
@@ -94,7 +94,7 @@ export interface AssessmentState {
 }
 
 interface AssessmentActions {
-  setGoal: (goal: AssessmentData['goal']) => void;
+  setAssessmentId: (assessmentId: AssessmentData['assessmentId']) => void;
   updateData: <K extends keyof AssessmentData>(key: K, value: AssessmentData[K]) => void;
   recordAnswer: (questionId: string, value: any) => void;
   nextQuestion: (totalQuestions: number) => void;
@@ -111,7 +111,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
     (set, get) => ({
       runtimeState: 'GOAL_SELECTION',
       data: {
-        goal: null,
+        assessmentId: null,
         name: null,
         age: null,
         gender: null,
@@ -128,10 +128,10 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
       calculatedMetrics: null,
       currentQuestionIndex: 0,
 
-      setGoal: (goal) => set((state) => {
+      setAssessmentId: (assessmentId) => set((state) => {
         const hasBaseline = !!state.data.age && !!state.data.height && !!state.data.weight;
         return {
-          data: { ...state.data, goal },
+          data: { ...state.data, assessmentId },
           runtimeState: hasBaseline ? 'PROFILE_INTERCEPT' : 'QUESTIONNAIRE',
           currentQuestionIndex: 0,
           answers: {},
@@ -202,11 +202,11 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
           try {
             const { data, answers } = get();
             
-            if (!data.goal) return;
+            if (!data.assessmentId) return;
 
-            const assessment = ASSESSMENTS.find(a => a.id === data.goal);
-            if (!assessment || !assessment.implemented) {
-              throw new Error(`[CRITICAL] Assessment ${data.goal} is not implemented or missing from registry.`);
+            const assessment = ASSESSMENTS.find(a => a.id === data.assessmentId);
+            if (!assessment || assessment.status !== 'available') {
+              throw new Error(`[CRITICAL] Assessment ${data.assessmentId} is not available or missing from registry.`);
             }
 
             // Combine profile data (baseline) and questionnaire answers

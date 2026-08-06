@@ -22,7 +22,7 @@ const THEMES: Record<string, { color: string; shadow: string }> = {
 };
 
 export function GoalSelection() {
-  const setGoal = useAssessmentStore((state) => state.setGoal);
+  const setAssessmentId = useAssessmentStore((state) => state.setAssessmentId);
 
   // Group assessments by category
   const sectionsMap = new Map<string, any[]>();
@@ -65,12 +65,12 @@ export function GoalSelection() {
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {section.items.map((item) => {
-                  const disabled = !item.implemented;
+                  const disabled = item.status !== 'available';
                   return (
                     <button
                       key={item.id}
                       disabled={disabled}
-                      onClick={() => setGoal(item.id)}
+                      onClick={() => setAssessmentId(item.id)}
                       className={`group relative flex flex-col items-center justify-center gap-4 p-6 rounded-[2rem] bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 transition-all duration-300 text-center ${disabled ? 'opacity-60 cursor-not-allowed grayscale' : `hover:border-transparent hover:shadow-2xl hover:-translate-y-2 hover:${section.theme.shadow}`}`}
                     >
                       {!disabled && (

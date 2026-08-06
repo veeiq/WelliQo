@@ -13,9 +13,9 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
   const data = useAssessmentStore((state) => state.data);
 
   let goalQuestions: any[] = [];
-  if (data.goal) {
-    const assessment = ASSESSMENTS.find(a => a.id === data.goal);
-    if (assessment && assessment.implemented) {
+  if (data.assessmentId) {
+    const assessment = ASSESSMENTS.find(a => a.id === data.assessmentId);
+    if (assessment && assessment.status === 'available') {
       goalQuestions = assessment.questions;
     }
   }

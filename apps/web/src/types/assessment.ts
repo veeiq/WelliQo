@@ -92,9 +92,10 @@ export interface QuestionDef {
 // ==========================================
 // Registry & Module Types
 // ==========================================
+import { GoalLinked } from './goal';
 
-export interface ComingSoonAssessment {
-  implemented: false;
+export interface ComingSoonAssessment extends GoalLinked {
+  status: 'coming-soon';
   
   id: string;
   title: string;
@@ -103,7 +104,6 @@ export interface ComingSoonAssessment {
   description: string;
   category: string;
   enabled: boolean;
-  comingSoon: boolean;
   
   // Forbidden properties at compile time
   questions?: never;
@@ -114,8 +114,8 @@ export interface ComingSoonAssessment {
   version?: never;
 }
 
-export interface ImplementedAssessment {
-  implemented: true;
+export interface ImplementedAssessment extends GoalLinked {
+  status: 'available';
   
   id: string;
   title: string;
@@ -124,7 +124,6 @@ export interface ImplementedAssessment {
   description: string;
   category: string;
   enabled: boolean;
-  comingSoon: boolean;
   
   questionCount: number;
   estimatedMinutes: number;

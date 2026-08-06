@@ -26,6 +26,15 @@ async function runRegressionTest(personaName: string, answers: Record<string, an
   console.log(`Biggest Opportunity: ${report.biggestOpportunity}`);
   console.log(`Strengths: ${report.strengths.join(', ') || 'None'}`);
   console.log(`Improvements: ${report.improvements.join(', ') || 'None'}`);
+  
+  if (scoreResult.auditTrail.validatorInterventions && scoreResult.auditTrail.validatorInterventions.length > 0) {
+    console.log(`Validator Interventions:`);
+    scoreResult.auditTrail.validatorInterventions.forEach(vi => {
+      console.log(`  - Triggered: ${vi.ruleId} | Reason: ${vi.triggerCondition} | Score: ${vi.oldScore} -> ${vi.newScore}`);
+    });
+  }
+
+  console.log(`Metrics -> BMI: ${report.bmi}, Protein: ${report.nutritionPlan.protein}, Timeline: ${report.timeline}, Calories: ${(report.nutritionPlan as any).calories || 'N/A'}, Water: ${(report.nutritionPlan as any).water || 'N/A'}`);
   return passed;
 }
 
@@ -101,6 +110,124 @@ async function main() {
     easiest_habit: 'snacking', hardest_habit: 'eating_more', commitment: '9'
   };
   if (!await runRegressionTest('Underweight User', underweight, [85, 100])) allPassed = false;
+
+  // 6. Over-Penalized Eater (Nutrition Synergy Test)
+  // Expecting: Large portions + Sugary drinks + Late eating -> Overlapping deductions offset by synergy
+  const overPenalized = {
+    name: 'Over-Penalized Eater', age: 35, gender: 'male', height: 175, weight: 105,
+    weight_goal: 'lose', target_weight: 85, goal_timeline: '3m',
+    weight_history: 'gained_10', weight_attempts: '2_3', biggest_obstacle: 'cravings',
+    meals_per_day: '2', skip_breakfast: 'daily', snacking_frequency: 'multiple',
+    late_eating: 'often', eating_out: '5_plus', sugary_drinks: 'daily',
+    portion_sizes: 'very_large', cravings_freq: 'daily', emotional_eating: 'sometimes',
+    sleep_hours: '6_7', sitting_hours: '4_7', daily_steps: '7k_10k',
+    confidence: '7', motivation: '8', support: 'spouse',
+    easiest_habit: 'exercise', hardest_habit: 'nutrition', commitment: '9'
+  };
+  // Baseline (without synergy score modifier) might be very low (e.g. 30). With synergy, it should recover a bit.
+  if (!await runRegressionTest('Over-Penalized Eater', overPenalized, [65, 75])) allPassed = false;
+
+  // 7. Burnout Worker (Recovery/Emotional Synergy Test)
+  const burnoutWorker = {
+    name: 'Burnout Worker', age: 42, gender: 'female', height: 162, weight: 75,
+    weight_goal: 'lose', target_weight: 65, goal_timeline: '6m',
+    weight_history: 'gained_5', weight_attempts: '1', biggest_obstacle: 'stress',
+    meals_per_day: '3', skip_breakfast: 'sometimes', snacking_frequency: 'sometimes',
+    late_eating: 'sometimes', eating_out: '1_2', sugary_drinks: 'rarely',
+    portion_sizes: 'moderate', cravings_freq: 'often', emotional_eating: 'almost_always',
+    sleep_hours: 'less_5', sitting_hours: '8_10', daily_steps: '3k_7k',
+    confidence: '5', motivation: '6', support: 'no_one',
+    easiest_habit: 'nutrition', hardest_habit: 'stress', commitment: '7'
+  };
+  if (!await runRegressionTest('Burnout Worker', burnoutWorker, [80, 95])) allPassed = false;
+
+  // 8. Golden Health (Positive Synergy Test)
+  const goldenHealth = {
+    name: 'Golden Health', age: 29, gender: 'female', height: 170, weight: 62,
+    weight_goal: 'maintain', target_weight: 62, goal_timeline: 'none',
+    weight_history: 'stable', weight_attempts: '0', biggest_obstacle: 'none',
+    meals_per_day: '3', skip_breakfast: 'never', snacking_frequency: 'rarely',
+    late_eating: 'never', eating_out: 'rarely', sugary_drinks: 'rarely',
+    portion_sizes: 'moderate', cravings_freq: 'rarely', emotional_eating: 'never',
+    sleep_hours: '7_plus', sitting_hours: 'less_4', daily_steps: 'more_10k',
+    confidence: '10', motivation: '10', support: 'friends',
+    easiest_habit: 'exercise', hardest_habit: 'none', commitment: '10'
+  };
+  if (!await runRegressionTest('Golden Health', goldenHealth, [95, 100])) allPassed = false;
+
+  // 9. Chronic Dieter (Weight Cycling Test)
+  const chronicDieter = {
+    name: 'Chronic Dieter', age: 39, gender: 'female', height: 160, weight: 80,
+    weight_goal: 'lose', target_weight: 60, goal_timeline: '1m', // unrealistic timeline
+    weight_history: 'gained_10', weight_attempts: '3_plus', biggest_obstacle: 'consistency',
+    meals_per_day: '3', skip_breakfast: 'sometimes', snacking_frequency: 'sometimes',
+    late_eating: 'sometimes', eating_out: 'rarely', sugary_drinks: 'rarely',
+    portion_sizes: 'moderate', cravings_freq: 'sometimes', emotional_eating: 'sometimes',
+    sleep_hours: '6_7', sitting_hours: '4_7', daily_steps: '7k_10k',
+    confidence: '6', motivation: '10', support: 'spouse',
+    easiest_habit: 'nutrition', hardest_habit: 'consistency', commitment: '10'
+  };
+  if (!await runRegressionTest('Chronic Dieter', chronicDieter, [80, 95])) allPassed = false;
+
+  // 10. Unready Beginner (Low Behaviour Readiness Test)
+  const unreadyBeginner = {
+    name: 'Unready Beginner', age: 50, gender: 'male', height: 182, weight: 110,
+    weight_goal: 'lose', target_weight: 95, goal_timeline: '6m',
+    weight_history: 'stable', weight_attempts: '0', biggest_obstacle: 'motivation',
+    meals_per_day: '3', skip_breakfast: 'sometimes', snacking_frequency: 'often',
+    late_eating: 'often', eating_out: '1_2', sugary_drinks: 'sometimes',
+    portion_sizes: 'large', cravings_freq: 'often', emotional_eating: 'sometimes',
+    sleep_hours: '6_7', sitting_hours: '8_10', daily_steps: 'less_3k',
+    confidence: '3', motivation: '5', support: 'no_one',
+    easiest_habit: 'none', hardest_habit: 'motivation', commitment: '5'
+  };
+  if (!await runRegressionTest('Unready Beginner', unreadyBeginner, [80, 95])) allPassed = false;
+
+  // 11. Flawed Athlete (Healthy Minimum Test)
+  const flawedAthlete = {
+    name: 'Flawed Athlete', age: 32, gender: 'male', height: 180, weight: 75,
+    weight_goal: 'maintain', target_weight: 75, goal_timeline: 'none',
+    weight_history: 'stable', weight_attempts: '0', biggest_obstacle: 'cravings',
+    meals_per_day: '3', skip_breakfast: 'never', snacking_frequency: 'rarely',
+    late_eating: 'often', eating_out: 'rarely', sugary_drinks: 'rarely',
+    portion_sizes: 'moderate', cravings_freq: 'daily', emotional_eating: 'never',
+    sleep_hours: '7_plus', sitting_hours: 'less_4', daily_steps: 'more_10k',
+    confidence: '9', motivation: '9', support: 'friends',
+    easiest_habit: 'exercise', hardest_habit: 'cravings', commitment: '9'
+  };
+  // Math might be ~82 due to cravings and late eating, but Rule 1 (VAL_HEALTHY_MINIMUM) should clamp to 85.
+  if (!await runRegressionTest('Flawed Athlete', flawedAthlete, [85, 95])) allPassed = false;
+
+  // 12. High Scoring Risk (High Risk Cap Test)
+  const highScoringRisk = {
+    name: 'High Scoring Risk', age: 40, gender: 'female', height: 165, weight: 85,
+    weight_goal: 'lose', target_weight: 70, goal_timeline: '6m',
+    weight_history: 'gained_10', weight_attempts: '3_plus', biggest_obstacle: 'stress', // Weight Cycling
+    meals_per_day: '3', skip_breakfast: 'sometimes', snacking_frequency: 'rarely',
+    late_eating: 'often', eating_out: '5_plus', sugary_drinks: 'daily', // Energy Balance
+    portion_sizes: 'large', cravings_freq: 'constant', emotional_eating: 'almost_always', // Emotional Eating
+    sleep_hours: 'less_5', sitting_hours: '8_10', daily_steps: 'less_3k', // Recovery Deficit
+    confidence: '8', motivation: '9', support: 'family',
+    easiest_habit: 'water', hardest_habit: 'nutrition', commitment: '8'
+  };
+  // Has some "good" isolated answers (meals=3, rarely snack, motivation=9, support=family, water=easiest)
+  // Math might reach ~75 or 80. But they have 3+ critical synergies. Rule 2 (VAL_HIGH_RISK_CAP) should clamp to 70.
+  if (!await runRegressionTest('High Scoring Risk', highScoringRisk, [50, 70])) allPassed = false;
+
+  // 13. Impossible User (Contradiction Test)
+  const impossibleUser = {
+    name: 'Impossible User', age: 45, gender: 'male', height: 170, weight: 120, // BMI 41
+    weight_goal: 'lose', target_weight: 80, goal_timeline: '6m',
+    weight_history: 'stable', weight_attempts: '0', biggest_obstacle: 'none',
+    meals_per_day: '3', skip_breakfast: 'never', snacking_frequency: 'rarely',
+    late_eating: 'often', eating_out: '5_plus', sugary_drinks: 'daily', // Force Energy Balance
+    portion_sizes: 'very_large', cravings_freq: 'rarely', emotional_eating: 'never',
+    sleep_hours: '7_plus', sitting_hours: 'less_4', daily_steps: 'more_10k', // Force Active Lifestyle
+    confidence: '10', motivation: '10', support: 'friends',
+    easiest_habit: 'exercise', hardest_habit: 'none', commitment: '10'
+  };
+  // Math gives them a good score, but they trigger VAL_CONTRADICTION
+  if (!await runRegressionTest('Impossible User', impossibleUser, [60, 85])) allPassed = false;
 
   if (allPassed) {
     console.log('\n✅ ALL REGRESSION TESTS PASSED!');

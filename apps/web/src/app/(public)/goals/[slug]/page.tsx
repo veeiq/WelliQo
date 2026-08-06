@@ -1,50 +1,15 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-
-const GOALS: Record<string, { title: string; description: string }> = {
-  'better-sleep': {
-    title: 'Better Sleep',
-    description: 'Improve your sleep quality and circadian rhythm',
-  },
-  'weight-management': {
-    title: 'Weight Management',
-    description: 'Strategies for healthy and sustainable weight management',
-  },
-  energy: { title: 'More Energy', description: 'Boost your daily energy levels and focus' },
-  'healthy-digestion': {
-    title: 'Healthy Digestion',
-    description: 'Optimize your gut health and microbiome',
-  },
-  'heart-health': {
-    title: 'Heart Health',
-    description: 'Support cardiovascular function and longevity',
-  },
-  'healthy-aging': {
-    title: 'Healthy Aging',
-    description: 'Maintain vitality and healthspan as you age',
-  },
-  'womens-wellness': {
-    title: "Women's Wellness",
-    description: 'Targeted support for female health and hormones',
-  },
-  'sports-nutrition': {
-    title: 'Sports Nutrition',
-    description: 'Fuel your athletic performance and recovery',
-  },
-  immunity: { title: 'Immunity', description: 'Strengthen your immune system and resilience' },
-  'general-wellness': {
-    title: 'General Wellness',
-    description: 'Foundational habits for overall well-being',
-  },
-};
+import { GOALS } from '@/goals/registry';
+import { GoalId } from '@/types/goal';
 
 export async function generateStaticParams() {
-  return Object.keys(GOALS).map((slug) => ({ slug }));
+  return GOALS.map((goal) => ({ slug: goal.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const goalInfo = GOALS[slug];
+  const goalInfo = GOALS.find((g) => g.id === slug);
   if (!goalInfo) return {};
 
   return {
@@ -55,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function GoalPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const goalInfo = GOALS[slug];
+  const goalInfo = GOALS.find((g) => g.id === slug);
   if (!goalInfo) {
     notFound();
   }

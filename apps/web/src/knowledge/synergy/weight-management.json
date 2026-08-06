@@ -27,7 +27,9 @@
       "minRequiredMatches": 3,
       "findingId": "FINDING_POSITIVE_ENERGY_BALANCE",
       "priority": "URGENT",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 10,
+      "affectedPillar": "Nutrition"
     },
     {
       "id": "SYN_RECOVERY_DEFICIT",
@@ -45,7 +47,9 @@
       "minRequiredMatches": 3,
       "findingId": "FINDING_POOR_RECOVERY",
       "priority": "HIGH",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 10,
+      "affectedPillar": "Recovery"
     },
     {
       "id": "SYN_SEDENTARY_LIFESTYLE",
@@ -60,7 +64,9 @@
       "minRequiredMatches": 3,
       "findingId": "FINDING_SEDENTARY_LIFESTYLE",
       "priority": "HIGH",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 10,
+      "affectedPillar": "Movement"
     },
     {
       "id": "SYN_EMOTIONAL_EATING",
@@ -70,14 +76,16 @@
         "CHRONIC_EMOTIONAL_EATING",
         "HIGH_STRESS",
         "CHRONIC_STRESS",
-        "FREQUENT_CRAVINGS",
-        "PERSISTENT_CRAVINGS",
+        "DAILY_CRAVINGS",
+        "CHRONIC_CRAVINGS",
         "LATE_NIGHT_CRAVINGS"
       ],
       "minRequiredMatches": 3,
       "findingId": "FINDING_EMOTIONAL_EATING_PATTERN",
       "priority": "HIGH",
-      "confidence": 95
+      "confidence": 95,
+      "scoreAdjustment": 10,
+      "affectedPillar": "Mindset"
     },
     {
       "id": "SYN_IRREGULAR_EATING",
@@ -93,20 +101,26 @@
       "minRequiredMatches": 3,
       "findingId": "FINDING_IRREGULAR_EATING",
       "priority": "MEDIUM",
-      "confidence": 85
+      "confidence": 85,
+      "scoreAdjustment": 5,
+      "affectedPillar": "Nutrition"
     },
     {
       "id": "SYN_WEIGHT_CYCLING",
       "name": "Weight Cycling Risk",
       "requiredEvidence": [
         "REPEATED_DIET_ATTEMPTS",
+        "MULTIPLE_DIET_ATTEMPTS",
+        "CHRONIC_DIETING",
         "CHRONIC_DIET_CYCLING",
         "WEIGHT_CYCLING"
       ],
       "minRequiredMatches": 2,
       "findingId": "FINDING_WEIGHT_CYCLING",
       "priority": "HIGH",
-      "confidence": 95
+      "confidence": 95,
+      "scoreAdjustment": 5,
+      "affectedPillar": "History"
     },
     {
       "id": "SYN_LOW_BEHAVIOUR_READINESS",
@@ -118,7 +132,9 @@
       "minRequiredMatches": 2,
       "findingId": "FINDING_LOW_BEHAVIOUR_READINESS",
       "priority": "MEDIUM",
-      "confidence": 85
+      "confidence": 85,
+      "scoreAdjustment": 0,
+      "affectedPillar": "Mindset"
     },
     {
       "id": "SYN_ACTIVE_HEALTHY",
@@ -130,7 +146,9 @@
       "minRequiredMatches": 2,
       "findingId": "FINDING_ACTIVE_LIFESTYLE",
       "priority": "INFO",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 5,
+      "affectedPillar": "Movement"
     },
     {
       "id": "SYN_STRONG_RECOVERY",
@@ -141,7 +159,9 @@
       "minRequiredMatches": 1,
       "findingId": "FINDING_STRONG_RECOVERY",
       "priority": "INFO",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 5,
+      "affectedPillar": "Recovery"
     },
     {
       "id": "SYN_BALANCED_NUTRITION",
@@ -152,7 +172,9 @@
       "minRequiredMatches": 1,
       "findingId": "FINDING_BALANCED_NUTRITION",
       "priority": "INFO",
-      "confidence": 90
+      "confidence": 90,
+      "scoreAdjustment": 5,
+      "affectedPillar": "Nutrition"
     }
   ]
 }

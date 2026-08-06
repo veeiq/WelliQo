@@ -1,5 +1,6 @@
 import { getUserDashboardData } from "./actions";
 import { getDailyFocus } from "@/lib/knowledge-engine";
+import { quickActionsConfig } from "../config/quick-actions";
 import Link from "next/link";
 import { 
   Activity, 
@@ -117,35 +118,48 @@ export default async function DashboardOverview() {
         <div className="space-y-4">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">Quick Actions</h2>
           <div className="grid gap-3">
-            <Link href="/assessments" className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all flex items-center justify-between group">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                  <PlusCircle className="w-5 h-5" />
-                </div>
-                <span className="font-semibold text-slate-800 dark:text-slate-200">Start New Assessment</span>
-              </div>
-              <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-500 transition-colors" />
-            </Link>
-            
-            <Link href={`/dashboard/report/${latestAssessment.id}`} className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all flex items-center justify-between group">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                  <BarChart2 className="w-5 h-5" />
-                </div>
-                <span className="font-semibold text-slate-800 dark:text-slate-200">View Latest Report</span>
-              </div>
-              <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-500 transition-colors" />
-            </Link>
-            
-            <Link href="/dashboard/history" className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all flex items-center justify-between group">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <span className="font-semibold text-slate-800 dark:text-slate-200">Assessment History</span>
-              </div>
-              <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-500 transition-colors" />
-            </Link>
+            {quickActionsConfig.map((action) => {
+              const ActionIcon = action.icon;
+              let bgColor, textColor;
+              
+              switch(action.color) {
+                case 'emerald': 
+                  bgColor = "bg-emerald-100 dark:bg-emerald-900/30"; 
+                  textColor = "text-emerald-600 dark:text-emerald-400"; 
+                  break;
+                case 'blue': 
+                  bgColor = "bg-blue-100 dark:bg-blue-900/30"; 
+                  textColor = "text-blue-600 dark:text-blue-400"; 
+                  break;
+                case 'purple': 
+                  bgColor = "bg-purple-100 dark:bg-purple-900/30"; 
+                  textColor = "text-purple-600 dark:text-purple-400"; 
+                  break;
+                case 'orange':
+                  bgColor = "bg-orange-100 dark:bg-orange-900/30";
+                  textColor = "text-orange-600 dark:text-orange-400";
+                  break;
+                default:
+                  bgColor = "bg-slate-100 dark:bg-slate-900/30";
+                  textColor = "text-slate-600 dark:text-slate-400";
+              }
+
+              const href = typeof action.href === 'function' 
+                ? action.href({ latestAssessmentId: latestAssessment.id })
+                : action.href;
+
+              return (
+                <Link key={action.id} href={href} className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all flex items-center justify-between group">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-lg ${bgColor} ${textColor} flex items-center justify-center`}>
+                      <ActionIcon className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">{action.title}</span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-500 transition-colors" />
+                </Link>
+              );
+            })}
           </div>
         </div>
 

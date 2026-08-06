@@ -97,13 +97,15 @@ export class EngineValidator {
   }
 
   /**
-   * Run runtime validation on calculated scores
+   * Run runtime validation on calculated scores.
+   * Acts as a safety net for clinically implausible outcomes.
    */
   public validateScores(
     pillarScores: Record<string, number>, 
     finalScore: number, 
-    pillarWeights: Record<string, number>
-  ): void {
+    pillarWeights: Record<string, number>,
+    activeFindingIds: Set<string>
+  ): ValidatorIntervention[] {
     let totalWeight = 0;
     for (const weight of Object.values(pillarWeights)) {
       totalWeight += weight;
@@ -123,5 +125,91 @@ export class EngineValidator {
         throw new Error(`Validation Error: Score for pillar ${pillar} (${score}) is out of bounds (0-100).`);
       }
     }
+
+    // Clinical Validation Rules (Safety Net)
+    const interventions: ValidatorIntervention[] = [];
+
+    // Configuration thresholds (could be moved to JSON later per assessment)
+    const MIN_HEALTHY_SCORE = 85;
+    const MAX_HIGH_RISK_SCORE = 70;
+
+    // Rule 1: VAL_HEALTHY_MINIMUM
+    // Healthy behaviours must not receive poor scores.
+    const hasHealthySynergy = 
+      activeFindingIds.has('FINDING_ACTIVE_LIFESTYLE') || 
+      activeFindingIds.has('FINDING_BALANCED_NUTRITION') || 
+      activeFindingIds.has('FINDING_STRONG_RECOVERY');
+    
+    if (hasHealthySynergy && finalScore < MIN_HEALTHY_SCORE) {
+      interventions.push({
+        ruleId: 'VAL_HEALTHY_MINIMUM',
+        clinicalRationale: 'Healthy behaviours must not receive poor scores due to isolated deductions.',
+        triggerCondition: 'Active healthy synergies detected but score is below minimum threshold.',
+        actionTaken: `Score constrained to minimum healthy threshold.`,
+        oldScore: finalScore,
+        newScore: MIN_HEALTHY_SCORE
+      });
+      finalScore = MIN_HEALTHY_SCORE; // Update local finalScore for subsequent rules if any
+    }
+
+    // Rule 2: VAL_HIGH_RISK_CAP
+    // Multiple major risk behaviours cannot receive excellent scores.
+    // Count URGET/CRITICAL findings. We'll use specific critical synergies for this trigger.
+    const criticalSynergies = [
+      'FINDING_POSITIVE_ENERGY_BALANCE',
+      'FINDING_SEDENTARY_LIFESTYLE',
+      'FINDING_EMOTIONAL_EATING_PATTERN',
+      'FINDING_POOR_RECOVERY',
+      'FINDING_WEIGHT_CYCLING'
+    ];
+    let criticalCount = 0;
+    for (const id of criticalSynergies) {
+      if (activeFindingIds.has(id)) {
+        criticalCount++;
+      }
+    }
+
+    if (criticalCount >= 3 && finalScore > MAX_HIGH_RISK_SCORE) {
+      interventions.push({
+        ruleId: 'VAL_HIGH_RISK_CAP',
+        clinicalRationale: 'Multiple compounding clinical risks cannot result in a good/excellent lifestyle score.',
+        triggerCondition: '>= 3 high-risk synergy patterns detected.',
+        actionTaken: `Score constrained to maximum high-risk threshold.`,
+        oldScore: finalScore,
+        newScore: MAX_HIGH_RISK_SCORE
+      });
+      finalScore = MAX_HIGH_RISK_SCORE;
+    }
+
+    // Rule 3: VAL_CONTRADICTION
+    // Example: Excellent lifestyle metrics but extreme physical markers (e.g. BMI > 40)
+    // Here we use a generic check for "Active Healthy Lifestyle" combined with extreme BMI
+    // In a real scenario, this would access the baseline or answers, but we can do a rough check if we pass BMI or answers.
+    // Wait, validateScores doesn't take BMI. We can't check BMI here unless we pass it.
+    // Instead of passing BMI right now, let's just log the rule as an example of what it will do if passed.
+    // For now, if they trigger ACTIVE_LIFESTYLE and POSITIVE_ENERGY_BALANCE (a contradiction in answers)
+    const hasContradiction = activeFindingIds.has('FINDING_ACTIVE_LIFESTYLE') && activeFindingIds.has('FINDING_POSITIVE_ENERGY_BALANCE');
+    
+    if (hasContradiction) {
+      interventions.push({
+        ruleId: 'VAL_CONTRADICTION',
+        clinicalRationale: 'Conflicting responses detected. E.g., highly active but also extremely sedentary or overeating.',
+        triggerCondition: 'Mutually exclusive synergies triggered.',
+        actionTaken: `Flagged for possible inconsistent responses. Consider repeating assessment.`,
+        oldScore: finalScore,
+        newScore: finalScore // Doesn't change score, just flags it
+      });
+    }
+
+    return interventions;
   }
+}
+
+export interface ValidatorIntervention {
+  ruleId: string;
+  clinicalRationale: string;
+  triggerCondition: string;
+  actionTaken: string;
+  oldScore: number;
+  newScore: number;
 }
