@@ -91,6 +91,8 @@ export interface AssessmentState {
   answers: Record<string, any>; 
   calculatedMetrics: CalculatedMetrics | null;
   currentQuestionIndex: number;
+  clientReportId: string | null;
+  synced: boolean;
 }
 
 interface AssessmentActions {
@@ -103,6 +105,7 @@ interface AssessmentActions {
   continueWithProfile: (universalQuestionCount: number) => void;
   resetProfile: () => void;
   reset: () => void;
+  setSynced: (synced: boolean) => void;
 }
 
 
@@ -127,6 +130,8 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
       answers: {},
       calculatedMetrics: null,
       currentQuestionIndex: 0,
+      clientReportId: null,
+      synced: false,
 
       setAssessmentId: (assessmentId) => set((state) => {
         const hasBaseline = !!state.data.age && !!state.data.height && !!state.data.weight;
@@ -232,9 +237,13 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
             // 5. Build Report (Legacy Output format)
             const calculatedMetrics = reportBuilder.build(allAnswers, rulesResult, synergyResult, scoreResult);
 
+            const clientReportId = `wm_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
+
             // Save to state
             set({
               calculatedMetrics,
+              clientReportId,
+              synced: false,
               runtimeState: 'REPORT_READY'
             });
           } catch (error) {
@@ -251,12 +260,23 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
           answers: {},
           calculatedMetrics: null,
           currentQuestionIndex: 0,
+          clientReportId: null,
+          synced: false,
         });
       },
+
+      setSynced: (synced: boolean) => set({ synced }),
     }),
     {
       name: 'welliqo-assessment-storage',
-      partialize: (state) => ({ data: state.data }),
+      partialize: (state) => ({ 
+        data: state.data,
+        answers: state.answers,
+        calculatedMetrics: state.calculatedMetrics,
+        runtimeState: state.runtimeState,
+        clientReportId: state.clientReportId,
+        synced: state.synced
+      }),
     }
   )
 );

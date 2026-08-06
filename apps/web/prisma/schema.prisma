@@ -94,6 +94,7 @@ model UserPreference {
 
 model AssessmentResult {
   id                String   @id @default(cuid())
+  clientReportId    String   @unique
   userId            String
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   
@@ -103,7 +104,7 @@ model AssessmentResult {
   
   answers           Json     
   clinicalReport    Json     
-  reportVersion     String   
+  schemaVersion     String   @default("1.0")
   
   createdAt         DateTime @default(now())
 }

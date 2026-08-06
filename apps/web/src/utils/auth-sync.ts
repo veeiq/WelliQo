@@ -1,25 +1,35 @@
+import { useAssessmentStore } from '../store/assessment-store';
+
 /**
  * Utility to synchronize guest data (like in-progress or completed assessments)
  * with the authenticated user's database record upon successful login/registration.
  */
 export async function syncGuestDataToUser() {
-  // TODO: Read local assessment data from localStorage / Zustand
-  const localAssessmentData = localStorage.getItem('welliqo_guest_assessment');
+  const store = useAssessmentStore.getState();
   
-  if (localAssessmentData) {
+  if (store.runtimeState === 'REPORT_READY' && store.clientReportId && !store.synced) {
     try {
-      // TODO: Call an API route (e.g. /api/assessments/sync) to attach this data to the authenticated user.
-      // await fetch('/api/assessments/sync', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: localAssessmentData
-      // });
+      const payload = {
+        clientReportId: store.clientReportId,
+        assessmentId: store.data.assessmentId,
+        answers: store.answers,
+        calculatedMetrics: store.calculatedMetrics
+      };
+
+      const response = await fetch('/api/assessments/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
       
-      // Clear the local storage once successfully synced
-      localStorage.removeItem('welliqo_guest_assessment');
-      console.log('Guest assessment successfully synced to authenticated user.');
+      if (response.ok) {
+        store.setSynced(true);
+        console.log('Guest assessment successfully synced to authenticated user.');
+      } else {
+        console.error('Failed to sync guest assessment (server error)');
+      }
     } catch (error) {
-      console.error('Failed to sync guest assessment:', error);
+      console.error('Failed to sync guest assessment (network error):', error);
     }
   }
 }
