@@ -19,6 +19,13 @@
 html {
   color-scheme: light;
   background: var(--color-surface-canvas);
+  --assessment-footer-height: 100px;
+}
+
+@media (min-width: 768px) {
+  html {
+    --assessment-footer-height: 110px;
+  }
 }
 
 html.dark {

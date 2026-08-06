@@ -4,7 +4,7 @@ import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { AssessmentRegistry } from '@/assessments/registry';
 
-import { DashboardState, getLatestBreakdown } from '../actions';
+import { DashboardState, getLatestBreakdown, getNextBestAssessment } from '../actions';
 
 export async function AdaptiveActionWidget({ state }: { state: DashboardState }) {
   if (state === 'NEW_USER') {
@@ -33,14 +33,8 @@ export async function AdaptiveActionWidget({ state }: { state: DashboardState })
   }
 
   // Populated state: Next Best Step based on lowest pillar
-  const breakdown = await getLatestBreakdown();
-  let lowestPillar = breakdown ? [...breakdown].sort((a, b) => a.score - b.score)[0] : null;
+  const { next, onCooldownMessage, lowestPillar } = await getNextBestAssessment();
 
-  // Use AssessmentRegistry to find an assessment that targets this pillar
-  const allAssessments = AssessmentRegistry.getAll();
-  const nextAssessment = allAssessments.find(a => a.status === 'available' && a.id !== 'core_health') || allAssessments[0]; // naive fallback
-  // In a real implementation, we might map pillar -> assessment more accurately
-  
   return (
     <WidgetCard>
       <div className="flex flex-col h-full justify-between">
@@ -50,13 +44,27 @@ export async function AdaptiveActionWidget({ state }: { state: DashboardState })
             <span className="font-semibold text-sm uppercase tracking-wider">Next Best Step</span>
           </div>
           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Focus on {lowestPillar ? lowestPillar.label : 'Wellness'}</h3>
-          <p className="text-slate-600 dark:text-slate-400 text-sm">
-            Based on your recent assessment, focusing on {lowestPillar ? lowestPillar.label.toLowerCase() : 'this area'} will yield the highest overall wellness improvement.
-          </p>
+          
+          {next ? (
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              Based on your recent assessment, focusing on {lowestPillar ? lowestPillar.label.toLowerCase() : 'this area'} will yield the highest overall wellness improvement.
+            </p>
+          ) : onCooldownMessage ? (
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 p-3 rounded-lg text-sm border border-emerald-100 dark:border-emerald-800/50 mt-2">
+              <span className="font-semibold block mb-1">Great job staying on track!</span>
+              {onCooldownMessage}
+            </div>
+          ) : (
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              You are currently up to date on your core assessments. Stay active and check back later!
+            </p>
+          )}
         </div>
-        <Link href={AssessmentRegistry.getRoute(nextAssessment!.id)} className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2.5 rounded-xl text-center font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-sm mt-4">
-          Start {nextAssessment!.title}
-        </Link>
+        {next && (
+          <Link href={AssessmentRegistry.getRoute(next.id)} className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2.5 rounded-xl text-center font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-sm mt-4">
+            Start {next.title}
+          </Link>
+        )}
       </div>
     </WidgetCard>
   );

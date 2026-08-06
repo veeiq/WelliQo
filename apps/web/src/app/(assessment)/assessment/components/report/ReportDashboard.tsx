@@ -3,18 +3,23 @@ import { useAssessmentStore } from '../../../../../store/assessment-store';
 import { CurrentVsIdeal } from './CurrentVsIdeal';
 import { CoachCallToAction } from './CoachCallToAction';
 import { SaveReportModal } from './SaveReportModal';
-import { CheckCircle2, AlertTriangle, ChevronRight, Activity, Beaker, Leaf, TrendingUp, ShieldCheck, BookOpen, PlayCircle } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, ChevronRight, Activity, Beaker, Leaf, TrendingUp, ShieldCheck, BookOpen, PlayCircle, Share, Download, Home, Save } from 'lucide-react';
 import Link from 'next/link';
 import { HealthWheel } from './HealthWheel';
-import { getRecommendationsAction } from '../../actions';
+import { getRecommendationsAction, saveAssessmentResultAction } from '../../actions';
 import { KnowledgeContent } from '@/types/knowledge';
+import { useSession } from 'next-auth/react';
 
 const cn = (...classes: (string | boolean | undefined | null)[]) => classes.filter(Boolean).join(' ');
 
 export function ReportDashboard({ hideActions = false }: { hideActions?: boolean }) {
-  const { calculatedMetrics, data, answers, reset, setAssessmentId } = useAssessmentStore();
+  const { calculatedMetrics, data, answers, reset, setAssessmentId, clientReportId } = useAssessmentStore();
   const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
   const [recommendations, setRecommendations] = useState<KnowledgeContent[]>([]);
+  const { data: session } = useSession();
+  const [isSaved, setIsSaved] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   // Exit intent detection (simple beforeunload for refreshing/closing tab)
   useEffect(() => {
@@ -40,6 +45,59 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
       fetchRecs();
     }
   }, [calculatedMetrics, data.assessmentId]);
+
+  const { synced, setSynced } = useAssessmentStore();
+
+  useEffect(() => {
+    if (session?.user && calculatedMetrics && !synced && !isSaved) {
+      const saveReport = async () => {
+        setSynced(true); // Optimistic lock to prevent Strict Mode duplicates
+        const reportId = clientReportId || `report_${Date.now()}`;
+        const res = await saveAssessmentResultAction(
+          reportId,
+          data.assessmentId || 'weight-loss',
+          'Weight Management Assessment',
+          answers,
+          calculatedMetrics
+        );
+        if (res.success) {
+          setIsSaved(true);
+          setToastMessage('✓ Report saved successfully');
+          setShowToast(true);
+          setTimeout(() => setShowToast(false), 2000);
+        } else {
+          // Revert lock if failed
+          setSynced(false);
+        }
+      };
+      saveReport();
+    }
+  }, [session, calculatedMetrics, isSaved, synced, setSynced, data, answers, clientReportId]);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'My Wellness Report',
+          text: 'Check out my personalized wellness report on WelliQo!',
+          url: window.location.href,
+        });
+      } catch (e) {
+        console.error('Error sharing:', e);
+      }
+    } else {
+      await navigator.clipboard.writeText(window.location.href);
+      setToastMessage('✓ Link copied to clipboard');
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 2000);
+    }
+  };
+
+  const handleDownloadPDF = () => {
+    setToastMessage('Download PDF (Coming Soon)');
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
 
   if (!calculatedMetrics) return null;
 
@@ -397,21 +455,45 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
       {/* Sticky Save Action Bar */}
       {!hideActions && (
         <>
-          <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 z-40 animate-in slide-in-from-bottom-24 duration-1000 delay-500">
-            <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
-              <div className="hidden sm:block">
-                <h4 className="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  Save your Wellness Report
-                </h4>
-                <p className="text-xs text-slate-500 mt-1">Don't lose your insights. Access your personalized plan anytime.</p>
-              </div>
-              <button 
-                onClick={() => setIsSaveModalOpen(true)}
-                className="flex-1 sm:flex-none px-8 py-3.5 bg-emerald-600 text-white hover:bg-emerald-500 rounded-xl font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2"
-              >
-                Unlock My Vault
-              </button>
+          <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 z-40 animate-in slide-in-from-bottom-24 duration-1000 delay-500 shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.1)]">
+            <div className="max-w-4xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-center gap-3">
+              {session?.user ? (
+                <>
+                  <button className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-xl font-bold border border-emerald-200 dark:border-emerald-800 flex items-center justify-center gap-2 cursor-default">
+                    <CheckCircle2 className="w-5 h-5" />
+                    <span className="hidden sm:inline">Saved ✓</span>
+                  </button>
+                  <button onClick={handleDownloadPDF} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    <Download className="w-4 h-4" />
+                    <span className="hidden sm:inline">Download PDF</span>
+                    <span className="sm:hidden">PDF</span>
+                  </button>
+                  <button onClick={handleShare} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    <Share className="w-4 h-4" />
+                    Share
+                  </button>
+                  <Link href="/dashboard" className="w-full md:flex-1 px-6 py-3 bg-emerald-600 text-white hover:bg-emerald-500 rounded-xl font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 order-first md:order-last">
+                    <Home className="w-5 h-5" />
+                    Go to Dashboard
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <button onClick={() => setIsSaveModalOpen(true)} className="w-full md:w-auto md:flex-1 px-6 py-3 bg-emerald-600 text-white hover:bg-emerald-500 rounded-xl font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 order-first md:order-none">
+                    <Save className="w-5 h-5" />
+                    Save Report
+                  </button>
+                  <button onClick={() => setIsSaveModalOpen(true)} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    <Download className="w-4 h-4" />
+                    <span className="hidden sm:inline">Download PDF</span>
+                    <span className="sm:hidden">PDF</span>
+                  </button>
+                  <button onClick={() => setIsSaveModalOpen(true)} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    <Share className="w-4 h-4" />
+                    Share
+                  </button>
+                </>
+              )}
             </div>
           </div>
 
@@ -420,6 +502,14 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
             onClose={() => setIsSaveModalOpen(false)} 
           />
         </>
+      )}
+
+      {/* Toast */}
+      {showToast && (
+        <div className="fixed bottom-24 right-4 z-50 animate-in slide-in-from-bottom-5 fade-in bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 border border-slate-800">
+          <span className="text-emerald-400 font-bold">{toastMessage.includes('✓') ? '✓' : 'ℹ'}</span>
+          <span className="text-sm font-medium">{toastMessage.replace('✓ ', '')}</span>
+        </div>
       )}
     </>
   );

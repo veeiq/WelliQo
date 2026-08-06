@@ -2,39 +2,34 @@ import React, { useState } from 'react';
 import { useAssessmentStore } from '../../../../../store/assessment-store';
 import { PhoneCall, MessageCircle, Mail, User, Globe, Award } from 'lucide-react';
 import { Button } from '@welliqo/ui/components/button';
+import Link from 'next/link';
 
 const COACHES = {
-  alok: { 
-    name: 'Wellness Coach Alok', 
-    firstName: 'Alok',
-    exp: '5+ Years Experience', 
-    lang: 'English, Hindi, Odia', 
-    phone: '919114211911', 
-    email: 'alok@welliqo.com' 
-  },
   priya: { 
     name: 'Wellness Coach Priya', 
     firstName: 'Priya',
-    exp: '4+ Years Experience', 
+    exp: '5+ Years Experience', 
     lang: 'English, Hindi, Odia', 
     phone: '919337616265', 
-    email: 'priya@welliqo.com' 
+    email: 'priya@welliqo.com',
+    avatarUrl: '/images/coaches/priya.jpg'
   },
   dipti: { 
     name: 'Wellness Coach Dipti', 
     firstName: 'Dipti',
-    exp: '3+ Years Experience', 
+    exp: '5+ Years Experience', 
     lang: 'English, Hindi, Odia', 
     phone: '917008183356', 
-    email: 'dipti@welliqo.com' 
+    email: 'dipti@welliqo.com',
+    avatarUrl: '/images/coaches/dipti.jpg'
   }
 };
 
 export function CoachCallToAction() {
-  const { data, answers, calculatedMetrics } = useAssessmentStore();
+  const { calculatedMetrics, answers } = useAssessmentStore();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: answers.name || '',
+    name: answers?.name || '',
     phone: '',
     coach: '',
   });
@@ -48,10 +43,10 @@ export function CoachCallToAction() {
           <div className="flex-1 space-y-4 text-center sm:text-left">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-2">
               <PhoneCall className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-              Ready for Real Results?
+              Need expert guidance?
             </h2>
             <p className="text-slate-600 dark:text-slate-300">
-              Get a personalized nutrition plan and daily guidance from an expert Wellness Coach to reach your goals faster.
+              Connect with a certified Wellness Coach.
             </p>
           </div>
           <div className="w-full sm:w-auto">
@@ -59,7 +54,7 @@ export function CoachCallToAction() {
               onClick={() => setIsOpen(true)}
               className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none font-semibold text-lg px-8 py-6 rounded-2xl"
             >
-              Talk to a Wellness Coach
+              View Coaches
             </Button>
           </div>
         </div>
@@ -90,7 +85,6 @@ export function CoachCallToAction() {
                   className="w-full h-12 px-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
                 >
                   <option value="" disabled>Choose your preferred coach</option>
-                  <option value="alok">{COACHES.alok.name}</option>
                   <option value="priya">{COACHES.priya.name}</option>
                   <option value="dipti">{COACHES.dipti.name}</option>
                 </select>
@@ -100,8 +94,12 @@ export function CoachCallToAction() {
                 <div className="animate-in fade-in slide-in-from-top-4 duration-500 bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
                   
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center shrink-0">
-                      <User className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+                    <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center shrink-0 overflow-hidden border-2 border-emerald-50 dark:border-emerald-900">
+                      {selectedCoach.avatarUrl ? (
+                        <img src={selectedCoach.avatarUrl} alt={selectedCoach.name} className="w-full h-full object-cover object-top" />
+                      ) : (
+                        <User className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+                      )}
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white">{selectedCoach.name}</h4>
@@ -147,7 +145,10 @@ export function CoachCallToAction() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-center">
+                  <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-center flex flex-col items-center gap-4">
+                    <Link href="/coaches" className="text-emerald-600 hover:text-emerald-500 font-semibold text-sm">
+                      View full coach profiles →
+                    </Link>
                     <p className="text-xs text-slate-500 dark:text-slate-400">
                       Standard data and messaging rates may apply. By contacting our coaches, you agree to receive guidance and personalized plans based on your assessment results.
                     </p>

@@ -251,7 +251,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
             // Fallback or error state handling could go here
             set({ runtimeState: 'GOAL_SELECTION' });
           }
-        }, 1500);
+        }, 4000);
       },
 
       reset: () => {

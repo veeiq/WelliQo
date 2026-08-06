@@ -178,7 +178,8 @@ export async function toggleSaveResource(resourceId: string, resourceType: strin
 
 import { AssessmentRepository } from '@/repositories/assessment-repository';
 import { CalculatedMetrics } from '@/store/assessment-store';
-import { Recommendation } from '@/types/assessment';
+import { Recommendation, AssessmentModule } from '@/types/assessment';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export async function getLatestScore(): Promise<{ score: number; status: string; label: string } | null> {
   const userId = await requireAuth();
@@ -227,4 +228,45 @@ export async function getDashboardState(): Promise<DashboardState> {
   } else {
     return 'MULTIPLE_REPORTS';
   }
+}
+
+export async function getNextBestAssessment() {
+  const userId = await requireAuth();
+  
+  const [fullHistory, metrics] = await Promise.all([
+    prisma.assessmentResult.findMany({
+      where: { userId },
+      orderBy: { createdAt: "desc" },
+    }),
+    AssessmentRepository.getLatestMetrics(userId)
+  ]);
+  
+  let lowestPillar = metrics?.pillarScores ? [...metrics.pillarScores].sort((a, b) => a.score - b.score)[0] : null;
+  const allAssessments = AssessmentRegistry.getAll().filter((a: AssessmentModule) => a.status === 'available' && a.id !== 'core_health');
+
+  const now = Date.now();
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  const validAssessments = [];
+  let onCooldownMessage = null;
+
+  for (const a of allAssessments) {
+    const lastCompleted = fullHistory.find(h => h.assessmentId === a.id);
+    if (lastCompleted) {
+      const cooldownDays = a.reassessmentIntervalDays || 30;
+      const daysSince = (now - new Date(lastCompleted.createdAt).getTime()) / DAY_MS;
+      if (daysSince < cooldownDays) {
+        if (!onCooldownMessage) {
+           onCooldownMessage = `${a.title} completed ${Math.floor(daysSince)} days ago. Next reassessment available in ${Math.ceil(cooldownDays - daysSince)} days.`;
+        }
+        continue;
+      }
+    }
+    validAssessments.push(a);
+  }
+
+  // Priority logic
+  const next = validAssessments.find(a => lowestPillar && a.relatedGoals?.includes(lowestPillar.id as any)) || validAssessments[0] || null;
+
+  return { next, onCooldownMessage, lowestPillar };
 }

@@ -36,40 +36,57 @@ export default async function AssessmentHistoryPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {history.map((assessment) => {
           let score = 0;
+          let status = 'Completed';
+          let duration = '18 min'; // Placeholder for now, could be stored in DB later
+          
           try {
-            if (assessment.clinicalReport && typeof assessment.clinicalReport === 'object' && 'overallScore' in assessment.clinicalReport) {
-              score = (assessment.clinicalReport as any).overallScore;
+            if (assessment.clinicalReport && typeof assessment.clinicalReport === 'object') {
+              if ('overallScore' in assessment.clinicalReport) {
+                score = (assessment.clinicalReport as any).overallScore;
+              }
+              if ('scoreMeaning' in assessment.clinicalReport) {
+                status = (assessment.clinicalReport as any).scoreMeaning.split(' - ')[0] || (assessment.clinicalReport as any).scoreMeaning;
+              }
             }
           } catch (e) {
             // ignore
           }
 
           return (
-            <div key={assessment.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col hover:border-emerald-500 hover:shadow-md transition-all">
-              <div className="p-6 flex-1">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    Completed
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(assessment.createdAt))}
-                  </span>
+            <div key={assessment.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm flex flex-col hover:border-emerald-500 hover:shadow-lg transition-all group">
+              <div className="p-6 md:p-8 flex-1">
+                
+                <div className="flex items-start justify-between mb-8">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                      {assessment.assessmentName || 'General Wellness'}
+                    </h3>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                      Completed <CheckCircle2 className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
-                  {assessment.assessmentName || 'General Wellness'}
-                </h3>
-                
-                <div className="mt-6 flex items-end gap-2">
-                  <div className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-1">Score:</div>
-                  <div className="text-3xl font-black text-slate-900 dark:text-white">{score || '--'}</div>
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-slate-900 dark:text-white">{score || '--'}</span>
+                    <span className="text-slate-500 font-semibold text-lg">/ 100</span>
+                  </div>
+                  <div className="text-emerald-600 dark:text-emerald-400 font-bold mt-1 text-lg">
+                    {status}
+                  </div>
                 </div>
+
+                <div className="flex items-center justify-between text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
+                  <span>{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(assessment.createdAt))}</span>
+                  <span>{duration}</span>
+                </div>
+
               </div>
               
               <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
-                <Link href={`/dashboard/report/${assessment.id}`} className="flex items-center justify-between text-emerald-600 dark:text-emerald-400 font-semibold group">
-                  View Full Report
+                <Link href={`/dashboard/report/${assessment.id}`} className="flex items-center justify-between text-emerald-600 dark:text-emerald-400 font-bold group-hover:text-emerald-700 dark:group-hover:text-emerald-300">
+                  View Report
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

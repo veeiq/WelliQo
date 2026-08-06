@@ -18,6 +18,8 @@ export const questions: QuestionDef[] = [
       id: 'target_weight',
       section: 'Goal & Motivation',
       label: 'What is your target weight?',
+      intro: 'Let\'s set a baseline.',
+      why: 'Used to personalize your calories and protein targets.',
       type: 'weight',
       required: true,
     },

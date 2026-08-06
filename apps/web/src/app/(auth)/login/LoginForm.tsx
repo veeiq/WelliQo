@@ -7,7 +7,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { syncGuestDataToUser } from '@/utils/auth-sync';
 
-export function LoginForm() {
+interface LoginFormProps {
+  onSuccess?: () => void;
+}
+
+export function LoginForm({ onSuccess }: LoginFormProps = {}) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -37,8 +41,12 @@ export function LoginForm() {
         setLoading(false);
       } else {
         await syncGuestDataToUser();
-        router.push('/dashboard');
-        router.refresh();
+        if (onSuccess) {
+          onSuccess();
+        } else {
+          router.push('/dashboard');
+          router.refresh();
+        }
       }
     }
   }

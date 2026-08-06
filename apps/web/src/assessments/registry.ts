@@ -23,6 +23,7 @@ export const ASSESSMENTS: AssessmentModule[] = [
     description: 'Detailed analysis and personalized plan for Sleep & Recovery.',
     category: 'Foundation Wellness',
     enabled: true,
+    reassessmentIntervalDays: 21,
     
   },
   {
@@ -71,6 +72,7 @@ export const ASSESSMENTS: AssessmentModule[] = [
     description: 'Detailed analysis and personalized plan for Stress & Mental Wellbeing.',
     category: 'Foundation Wellness',
     enabled: true,
+    reassessmentIntervalDays: 14,
     
   },
   {
@@ -119,6 +121,7 @@ export const ASSESSMENTS: AssessmentModule[] = [
     description: 'Detailed analysis and personalized plan for Gut Health.',
     category: 'Metabolic Health',
     enabled: true,
+    reassessmentIntervalDays: 45,
     
   },
   {
@@ -449,7 +452,7 @@ export class AssessmentRegistry {
   }
 
   static getReportRoute(): string {
-    return '/assessment/report';
+    return '/report';
   }
 
   // Dashboard helpers

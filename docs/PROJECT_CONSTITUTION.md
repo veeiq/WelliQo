@@ -184,7 +184,42 @@ Architecture before Implementation.
 Implementation before Optimization.
 Optimization before Features.
 
+SECTION 14
+UX Law
+
+The Assessment Experience is a guided conversation.
+
+It must never feel like
+a survey,
+a government form,
+or a data entry screen.
+
+Every screen must answer:
+What are we learning?
+Why does it matter?
+What happens next?
+
+SECTION 15
+One Source of Truth
+
+Every concept must have ONE source of truth.
+
+Assessment metadata -> Registry
+Clinical rules -> JSON
+Dashboard state -> DashboardState
+Profile baseline -> Profile
+Report logic -> Clinical Engine
+UI copy -> Configuration
+
+Never duplicate information between modules.
+This prevents future drift.
+
 WelliQo has reached architectural maturity.
 Protect the architecture.
 Features can always be added later.
 Architecture is much harder to rebuild.
+
+SECTION 16
+Report Persistence Law
+
+AssessmentResult is the single source of truth. Once a report is saved, every feature (Dashboard, History, Trends, Health Wheel, Goals, Articles, Coach recommendations, and future AI insights) must read from the persisted AssessmentResult. No feature may compute or maintain its own duplicate report state.

@@ -81,12 +81,16 @@ export interface QuestionOption {
 
 export interface QuestionDef {
   id: string;
-  section: string;
+  section: string; // Used to group questions logically
   label: string;
   type: QuestionType;
-  options?: QuestionOption[];
+  options?: QuestionOption[]; // Only for choice types
   placeholder?: string;
   required?: boolean;
+  dependsOn?: string; // ID of another question
+  dependsOnValue?: any; // The value that triggers this question
+  intro?: string; // Conversational prefix before the question
+  why?: string; // Explanation of why we ask this question
 }
 
 // ==========================================
@@ -104,6 +108,7 @@ export interface ComingSoonAssessment extends GoalLinked {
   description: string;
   category: string;
   enabled: boolean;
+  reassessmentIntervalDays?: number;
   
   // Forbidden properties at compile time
   questions?: never;
@@ -124,6 +129,7 @@ export interface ImplementedAssessment extends GoalLinked {
   description: string;
   category: string;
   enabled: boolean;
+  reassessmentIntervalDays?: number;
   
   questionCount: number;
   estimatedMinutes: number;

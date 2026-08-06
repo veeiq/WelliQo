@@ -11,6 +11,7 @@ export const weightManagement: AssessmentModule = {
   category: 'Weight & Body Goals',
   enabled: true,
   status: 'available',
+  reassessmentIntervalDays: 30,
   goals: ['weight-management'],
   estimatedMinutes: 5,
   difficulty: 'Beginner',

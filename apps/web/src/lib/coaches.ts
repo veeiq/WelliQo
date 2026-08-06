@@ -3,48 +3,51 @@ export interface Coach {
   slug: string;
   name: string;
   photo: string;
+  avatarUrl?: string;
   expertise: string;
   languages: string[];
   city?: string;
+  experience?: string;
+  timings?: string;
+  phone?: string;
+  email?: string;
   shortIntro: string;
   fullBio: string;
 }
 
 export const COACHES: Coach[] = [
   {
-    id: 'coach-alok',
-    slug: 'alok',
-    name: 'Coach Alok',
-    photo: 'A', // Placeholder for avatar
-    expertise: 'Metabolic Health & Systems Architecture',
-    languages: ['English', 'Hindi'],
-    city: 'Mumbai',
-    shortIntro: 'Bringing systems thinking to human performance and wellness.',
-    fullBio:
-      'Alok brings a deep understanding of systems architecture combined with a passion for metabolic health and circadian optimization. With over 10 years of engineering experience, he focuses on the intersection of data-driven habits and human performance. Health is a system. You cannot optimize one part without understanding the whole.',
-  },
-  {
     id: 'coach-priya',
     slug: 'priya',
-    name: 'Coach Priya',
+    name: 'Wellness Coach Priya',
     photo: 'P',
-    expertise: 'Clinical Nutrition & Holistic Wellness',
-    languages: ['English', 'Hindi', 'Marathi'],
+    avatarUrl: '/images/coaches/priya.jpg',
+    expertise: 'Herbalife Wellness Coach',
+    languages: ['English', 'Hindi', 'Odia'],
     city: 'Pune',
-    shortIntro: 'Sustainable, realistic nutritional interventions for everyday life.',
+    experience: '5+ Years Experience',
+    timings: '6:00 AM - 6:00 PM',
+    phone: '919337616265',
+    email: 'priya@welliqo.com',
+    shortIntro: 'Having experience as a Herbalife Wellness Coach, training 200+ people physically on a regular basis and impacting the lives of 1000+ people virtually.',
     fullBio:
-      "Priyadarshini focuses on sustainable, realistic nutritional interventions that fit into everyday life. She is an advocate for holistic wellness, believing that mental resilience and physical health are deeply interconnected. Nourishment isn't just about what you eat; it's about how you digest, move, and think.",
+      'Priyadarshini focuses on sustainable, realistic nutritional interventions that fit into everyday life. She is an advocate for holistic wellness, believing that mental resilience and physical health are deeply interconnected. Nourishment isn\'t just about what you eat; it\'s about how you digest, move, and think.',
   },
   {
     id: 'coach-dipti',
     slug: 'dipti',
-    name: 'Coach Dipti',
+    name: 'Wellness Coach Dipti',
     photo: 'D',
-    expertise: "Women's Health & Hormonal Balance",
-    languages: ['English', 'Gujarati'],
+    avatarUrl: '/images/coaches/dipti.jpg',
+    expertise: 'Weight Management Coach',
+    languages: ['English', 'Hindi', 'Odia'],
     city: 'Ahmedabad',
-    shortIntro: 'Empowering women through targeted nutrition and lifestyle changes.',
+    experience: '5+ Years Experience',
+    timings: '6:00 AM - 6:00 PM',
+    phone: '917008183356',
+    email: 'dipti@welliqo.com',
+    shortIntro: 'Dedicated weight management specialist focused on sustainable lifestyle changes. Experienced in creating personalized wellness plans for diverse needs.',
     fullBio:
-      "Dipti specializes in women's health, focusing on hormonal balance, postpartum recovery, and sustainable energy management. Her compassionate approach helps clients build resilience and vitality through mindful habit changes.",
+      'Dipti specializes in women\'s health, focusing on hormonal balance, postpartum recovery, and sustainable energy management. Her compassionate approach helps clients build resilience and vitality through mindful habit changes.',
   },
 ];
