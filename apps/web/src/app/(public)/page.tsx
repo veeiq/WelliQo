@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-900 dark:selection:text-emerald-100">
       
       {/* 1. HERO SECTION */}
-      <section className="relative flex min-h-[85svh] sm:min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-6 lg:px-8 pt-4 sm:pt-8 pb-20 sm:pb-16 text-center bg-white dark:bg-slate-950">
+      <section className="relative flex min-h-[85svh] sm:min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-6 lg:px-8 pt-4 sm:pt-2 pb-20 sm:pb-16 text-center bg-white dark:bg-slate-950">
         {/* Subtle radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50/50 via-white to-white dark:from-emerald-900/10 dark:via-slate-950 dark:to-slate-950"></div>
         
@@ -28,12 +28,12 @@ export default function HomePage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-400/5 dark:bg-emerald-500/5 rounded-[100%] blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-0 sm:mt-0">
-          <div className="mb-6 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 dark:text-slate-300 backdrop-blur-md">
+          <div className="mb-6 sm:mb-4 inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 dark:text-slate-300 backdrop-blur-md">
             <Sparkles className="h-3 w-3 text-emerald-500" />
             <span>Intelligent Wellness, Science-Informed</span>
           </div>
           
-          <h1 className="mb-6 sm:mb-6 text-[clamp(2.25rem,10.5vw,4rem)] sm:text-[5rem] lg:text-[6.25rem] font-medium tracking-tighter text-slate-900 dark:text-white leading-[1.1] sm:leading-[1.05]">
+          <h1 className="mb-6 sm:mb-4 text-[clamp(2.25rem,10.5vw,4rem)] sm:text-[5rem] lg:text-[6.25rem] font-medium tracking-tighter text-slate-900 dark:text-white leading-[1.1] sm:leading-[1.05]">
             <span className="block mb-4 sm:mb-8 text-slate-800 dark:text-slate-200">Stop guessing.</span>
             <span className="block">Start understanding</span>
             <span className="block">your <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500 dark:from-emerald-400 dark:to-emerald-300">wellness.</span></span>
@@ -45,7 +45,7 @@ export default function HomePage() {
           
           <Link
             href="/assessments"
-            className="group relative inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-white rounded-[24px] px-8 py-5 sm:px-10 sm:py-7 text-base sm:text-lg font-semibold shadow-[0_8px_30px_rgba(16,185,129,0.35)] hover:shadow-[0_16px_40px_rgba(16,185,129,0.5)] transition-all duration-300 hover:-translate-y-1.5 active:scale-[0.96] active:translate-y-0 active:shadow-[0_4px_15px_rgba(16,185,129,0.2)]"
+            className="group relative inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-white rounded-[24px] px-8 py-5 sm:px-10 sm:py-7 text-base sm:text-lg font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.3)] hover:shadow-[0_12px_35px_rgba(16,185,129,0.45)] transition-all duration-300 hover:-translate-y-[3px] active:scale-[0.96] active:translate-y-0 active:shadow-[0_4px_15px_rgba(16,185,129,0.2)]"
           >
             Start Free Assessment
             <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
