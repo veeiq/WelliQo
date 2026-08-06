@@ -1,6 +1,7 @@
 import { getUserHistory } from "../actions";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
+import { AssessmentRegistry } from "@/assessments/registry";
 
 export default async function AssessmentHistoryPage() {
   const history = await getUserHistory();
@@ -13,7 +14,7 @@ export default async function AssessmentHistoryPage() {
           Complete your first wellness assessment to see your progress history here.
         </p>
         <Link 
-          href="/assessments" 
+          href={AssessmentRegistry.getDirectoryRoute()} 
           className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2"
         >
           <PlayCircle className="w-5 h-5" />

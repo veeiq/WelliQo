@@ -4,7 +4,8 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { ASSESSMENTS } from '@/assessments/registry';
 import { GOALS } from '@/goals/registry';
-import { ArrowRight, CheckCircle2, Clock, ShieldCheck, Search } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
+import { ArrowRight, Clock, Search } from 'lucide-react';
 
 const CATEGORIES = [
   'All',
@@ -66,7 +67,7 @@ export function AssessmentDirectory({ initialGoal }: { initialGoal?: string }) {
         <div className="flex items-center gap-2 max-w-xl mx-auto mb-6">
           <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Showing:</span>
           <Link 
-            href="/assessments"
+            href={AssessmentRegistry.getDirectoryRoute()}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-sm font-medium hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors"
           >
             <span className="font-semibold text-emerald-500">🏷</span> {GOALS.find(g => g.id === initialGoal)?.title || initialGoal}
@@ -143,7 +144,7 @@ export function AssessmentDirectory({ initialGoal }: { initialGoal?: string }) {
         {filteredAssessments.map((assessment) => (
           <Link
             key={assessment.id}
-            href={`/assessments/${assessment.id}`}
+            href={AssessmentRegistry.getRoute(assessment.id)}
             className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1 active:scale-[0.98] active:translate-y-0"
           >
             <div>

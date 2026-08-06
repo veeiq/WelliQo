@@ -48,6 +48,8 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
+  mobile        String?   @unique
+  mobileVerified DateTime?
   image         String?
   password      String?
   
@@ -68,6 +70,17 @@ model Profile {
   id                String   @id @default(cuid())
   userId            String   @unique
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Personal Info
+  dob               DateTime?
+  gender            String?
+  country           String?
+  
+  // Health Baseline
+  height            Float?
+  weight            Float?
+  activityLevel     String?
+  primaryGoal       String?
   
   goals             String[]
   foodPreferences   String[]

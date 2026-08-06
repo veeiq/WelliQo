@@ -19,7 +19,7 @@ export function validateAssessments() {
       throw new Error(`[VALIDATION FAILED] Assessment ${assessment.id} is missing required metadata (title, category, or emoji).`);
     }
 
-    if (assessment.implemented) {
+    if (assessment.status === 'available') {
       implementedCount++;
       const impl = assessment as ImplementedAssessment;
 

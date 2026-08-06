@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { Target, ArrowRight } from 'lucide-react';
 import { GOALS } from '@/goals/registry';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export const metadata: Metadata = {
   title: 'Wellness Goals | WelliQo',
@@ -28,7 +29,7 @@ export default function GoalsPage() {
           {GOALS.map((goal) => (
             <Link
               key={goal.id}
-              href={`/assessments?goal=${goal.id}`}
+              href={`${AssessmentRegistry.getDirectoryRoute()}?goal=${goal.id}`}
               className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-[2px] active:scale-[0.98] active:translate-y-0"
             >
               <div>

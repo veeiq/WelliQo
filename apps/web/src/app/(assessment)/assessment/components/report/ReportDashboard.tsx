@@ -31,7 +31,7 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
       const fetchRecs = async () => {
         try {
           const findings = calculatedMetrics.scoreExplanation?.map(f => f.label || (f as any).title) || [];
-          const recs = await getRecommendationsAction([data.goal || 'weight-loss'], findings);
+          const recs = await getRecommendationsAction([data.assessmentId || 'weight-loss'], findings);
           setRecommendations(recs);
         } catch (e) {
           console.error('Failed to fetch recommendations:', e);
@@ -39,7 +39,7 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
       };
       fetchRecs();
     }
-  }, [calculatedMetrics, data.goal]);
+  }, [calculatedMetrics, data.assessmentId]);
 
   if (!calculatedMetrics) return null;
 

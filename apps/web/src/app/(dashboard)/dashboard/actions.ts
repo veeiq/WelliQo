@@ -176,3 +176,55 @@ export async function toggleSaveResource(resourceId: string, resourceType: strin
   }
 }
 
+import { AssessmentRepository } from '@/repositories/assessment-repository';
+import { CalculatedMetrics } from '@/store/assessment-store';
+import { Recommendation } from '@/types/assessment';
+
+export async function getLatestScore(): Promise<{ score: number; status: string; label: string } | null> {
+  const userId = await requireAuth();
+  const metrics = await AssessmentRepository.getLatestMetrics(userId);
+  if (!metrics) return null;
+  
+  return {
+    score: metrics.overallScore,
+    status: metrics.scoreMeaning.split(' - ')[0] || metrics.scoreMeaning, // basic fallback
+    label: metrics.scoreMeaning, 
+  };
+}
+
+export async function getPrimaryRecommendation(): Promise<Recommendation | null> {
+  const userId = await requireAuth();
+  const metrics = await AssessmentRepository.getLatestMetrics(userId);
+  if (!metrics || metrics.priorityPlan.length === 0) return null;
+  
+  // Return the highest priority recommendation
+  return metrics.priorityPlan[0] || null;
+}
+
+export async function getLatestBreakdown() {
+  const userId = await requireAuth();
+  const metrics = await AssessmentRepository.getLatestMetrics(userId);
+  if (!metrics) return null;
+  
+  return metrics.pillarScores;
+}
+
+export async function getScoreHistoryAction() {
+  const userId = await requireAuth();
+  return AssessmentRepository.getScoreHistory(userId);
+}
+
+export type DashboardState = 'NEW_USER' | 'ONE_REPORT' | 'MULTIPLE_REPORTS';
+
+export async function getDashboardState(): Promise<DashboardState> {
+  const userId = await requireAuth();
+  const history = await AssessmentRepository.getScoreHistory(userId, 2);
+  
+  if (history.length === 0) {
+    return 'NEW_USER';
+  } else if (history.length === 1) {
+    return 'ONE_REPORT';
+  } else {
+    return 'MULTIPLE_REPORTS';
+  }
+}

@@ -1,4 +1,5 @@
-import { PlusCircle, BarChart2, BookOpen, LucideIcon } from "lucide-react";
+import { PlusCircle, Target, Activity, FileText, LucideIcon, Stethoscope, BarChart2, BookOpen } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export interface QuickAction {
   id: string;
@@ -11,9 +12,9 @@ export interface QuickAction {
 export const quickActionsConfig: QuickAction[] = [
   {
     id: "new-assessment",
-    title: "Start New Assessment",
-    href: "/assessments",
-    icon: PlusCircle,
+    title: "Take Assessment",
+    icon: Stethoscope,
+    href: AssessmentRegistry.getDirectoryRoute(),
     color: "emerald"
   },
   {

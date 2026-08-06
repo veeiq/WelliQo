@@ -28,8 +28,8 @@ export function ProfileIntercept() {
             onClick={() => {
               const { ASSESSMENTS } = require('@/assessments/registry');
               let goalQuestions: any[] = [];
-              const assessment = ASSESSMENTS.find((a: any) => a.id === (data.goal || 'weight'));
-              if (assessment && assessment.implemented) {
+              const assessment = ASSESSMENTS.find((a: any) => a.id === (data.assessmentId || 'weight'));
+              if (assessment && assessment.status === 'available') {
                 goalQuestions = assessment.questions;
               }
               

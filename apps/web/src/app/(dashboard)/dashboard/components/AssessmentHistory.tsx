@@ -4,6 +4,7 @@ import { ArrowRight, Activity, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { useRouter } from 'next/navigation';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export function AssessmentHistory() {
   const { savedReports } = useUserStore();
@@ -13,8 +14,8 @@ export function AssessmentHistory() {
   const [activeTab, setActiveTab] = useState('All');
   
   const handleRetake = (goal: string) => {
-    setAssessmentId(goal as any);
-    router.push('/assessment');
+    // Note: in the future 'goal' here should be renamed to 'assessmentId'
+    router.push(AssessmentRegistry.getRoute(goal));
   };
 
   const handleView = (report: any) => {
@@ -24,7 +25,7 @@ export function AssessmentHistory() {
       calculatedMetrics: report.metrics,
       runtimeState: 'REPORT_READY'
     });
-    router.push('/report');
+    router.push(AssessmentRegistry.getReportRoute());
   };
 
   return (
@@ -92,43 +93,17 @@ export function AssessmentHistory() {
           </div>
         ))}
 
-        {/* Mock extra reports to match the UI length if there's only 1 real one */}
-        {savedReports.length < 4 && (
-           <>
-             <div className="flex items-center justify-between p-3 sm:p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700 opacity-60">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-xl flex items-center justify-center text-amber-600">
-                  <Activity className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white capitalize">Energy Report</h4>
-                  <p className="text-xs text-slate-500 mt-1">Jul 18, 2026</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-6">
-                <div className="text-right hidden sm:block">
-                  <span className="font-bold text-emerald-600 dark:text-emerald-400">76/100</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-between p-3 sm:p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-700 opacity-60">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl flex items-center justify-center text-indigo-600">
-                  <Activity className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white capitalize">Sleep Report</h4>
-                  <p className="text-xs text-slate-500 mt-1">Jul 1, 2026</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-6">
-                <div className="text-right hidden sm:block">
-                  <span className="font-bold text-emerald-600 dark:text-emerald-400">68/100</span>
-                </div>
-              </div>
-            </div>
-           </>
+        {savedReports.length === 0 && (
+          <div className="flex flex-col items-center justify-center p-8 text-center bg-slate-50 dark:bg-slate-800/20 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700">
+            <Activity className="w-8 h-8 text-slate-400 mb-3" />
+            <p className="text-sm text-slate-500 dark:text-slate-400">No assessments completed yet.</p>
+            <Link 
+              href={AssessmentRegistry.getDirectoryRoute()} 
+              className="mt-4 px-4 py-2 bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 rounded-lg text-sm font-semibold hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors"
+            >
+              Take an Assessment
+            </Link>
+          </div>
         )}
       </div>
     </div>

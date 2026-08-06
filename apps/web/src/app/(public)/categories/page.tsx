@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Activity, Brain, Leaf, Scale, Zap, Heart, ShieldCheck, Sparkles } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export const metadata: Metadata = {
   title: 'Assessment Categories | WelliQo',
@@ -76,7 +77,7 @@ export default function CategoriesPage() {
           return (
             <Link
               key={cat.name}
-              href="/assessments" 
+              href={`${AssessmentRegistry.getDirectoryRoute()}?category=${encodeURIComponent(cat.name)}`} 
               className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
             >
               <div>

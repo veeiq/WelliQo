@@ -121,9 +121,9 @@ export class ScoreEngine {
       if (syn.scoreAdjustment && syn.affectedPillar) {
         // Apply the adjustment to the specific pillar
         if (pillarScores[syn.affectedPillar] !== undefined) {
-          pillarScores[syn.affectedPillar] += syn.scoreAdjustment;
+          pillarScores[syn.affectedPillar]! += syn.scoreAdjustment;
           // Clamp pillar score back to 0-100 after synergy adjustment
-          pillarScores[syn.affectedPillar] = Math.max(0, Math.min(100, pillarScores[syn.affectedPillar]));
+          pillarScores[syn.affectedPillar] = Math.max(0, Math.min(100, pillarScores[syn.affectedPillar]!));
         }
       }
     }
@@ -151,7 +151,7 @@ export class ScoreEngine {
 
     // Apply interventions (last intervention's newScore becomes final)
     if (interventions.length > 0) {
-      finalScore = interventions[interventions.length - 1].newScore;
+      finalScore = interventions[interventions.length - 1]!.newScore;
     }
     
     auditTrail.finalScore = finalScore;

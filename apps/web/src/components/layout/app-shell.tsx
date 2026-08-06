@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SkipLink } from '@welliqo/ui/components/skip-link';
 import { auth } from '@/auth';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export async function AppShell({ children }: Readonly<{ children: ReactNode }>) {
   const session = await auth();
@@ -35,7 +36,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
           <div>
             <h3 className="text-white font-medium mb-4">Product</h3>
             <ul className="space-y-3">
-              <li><Link href="/assessments" className="hover:text-emerald-400 transition-colors">Assessments</Link></li>
+              <li><Link href={AssessmentRegistry.getDirectoryRoute()} className="hover:text-emerald-400 transition-colors">Assessments</Link></li>
               <li><Link href="/goals" className="hover:text-emerald-400 transition-colors">Goals</Link></li>
               <li><span className="text-slate-600 cursor-not-allowed">Reports</span></li>
             </ul>

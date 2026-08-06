@@ -1,15 +1,15 @@
 import React from 'react';
-import { Moon, ArrowRight } from 'lucide-react';
+import { Target, Zap, ShieldCheck, Moon, ArrowRight } from 'lucide-react';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { useRouter } from 'next/navigation';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export function RecommendedNext() {
   const router = useRouter();
-  const { setAssessmentId } = useAssessmentStore();
+
   const handleStart = () => {
-    // This assumes they want to focus on Sleep next, as an example.
-    setAssessmentId('sleep');
-    router.push('/assessment');
+    // Ideally this asks the Registry what to do. For MVP, we hardcode the intent but use the Registry for the route.
+    router.push(AssessmentRegistry.getRoute('sleep'));
   };
 
   return (

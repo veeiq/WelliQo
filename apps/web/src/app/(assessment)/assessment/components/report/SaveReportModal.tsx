@@ -60,9 +60,9 @@ export function SaveReportModal({ isOpen, onClose }: SaveReportModalProps) {
       }
 
       // 2. Save the report to their vault
-      if (calculatedMetrics && data.goal) {
+      if (calculatedMetrics && data.assessmentId) {
         saveReport({
-          goal: data.goal,
+          goal: data.assessmentId,
           data,
           answers,
           metrics: calculatedMetrics

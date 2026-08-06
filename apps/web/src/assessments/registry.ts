@@ -422,3 +422,44 @@ export const ASSESSMENTS: AssessmentModule[] = [
     
   },
 ];
+
+export class AssessmentRegistry {
+  static get(id: string): AssessmentModule | undefined {
+    return ASSESSMENTS.find(a => a.id === id);
+  }
+
+  static getAll(): AssessmentModule[] {
+    return ASSESSMENTS;
+  }
+
+  static available(): AssessmentModule[] {
+    return ASSESSMENTS.filter(a => a.enabled && a.status !== 'coming-soon');
+  }
+
+  static findByGoal(goalId: string): AssessmentModule[] {
+    return ASSESSMENTS.filter(a => a.goals?.includes(goalId as any));
+  }
+
+  static getRoute(id: string): string {
+    return `/assessment?id=${id}`;
+  }
+
+  static getDirectoryRoute(): string {
+    return '/assessments';
+  }
+
+  static getReportRoute(): string {
+    return '/assessment/report';
+  }
+
+  // Dashboard helpers
+  static getNextAssessment(userId?: string): string {
+    // In the future, this would check user history. For MVP, we return a core assessment.
+    return 'weight-management';
+  }
+
+  static getFeaturedAssessment(): string {
+    return 'general-wellness';
+  }
+}
+

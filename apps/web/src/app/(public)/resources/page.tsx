@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, Sparkles, ArrowRight, Book, Video, FileText } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export const metadata: Metadata = {
   title: 'Resources | WelliQo',
@@ -52,7 +53,7 @@ export default function ResourcesPage() {
             You can still get personalized insights by taking one of our wellness assessments today.
           </p>
           <Link
-            href="/assessments"
+            href={AssessmentRegistry.getDirectoryRoute()}
             className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-emerald-500 hover:shadow-lg"
           >
             Explore Assessments

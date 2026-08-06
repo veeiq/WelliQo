@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { GlobalSearch } from '@/components/search/global-search';
-import { Menu, X, Home, ClipboardList, Target, Library, Info, Mail, LogIn, User, FileText, Settings, Heart, LogOut } from 'lucide-react';
+import { Activity, Menu, X, User, LogOut, Settings, BarChart3, LayoutDashboard, Brain, ChevronRight, Goal, ShieldCheck, Dumbbell, ClipboardList, Home, Target, Library, Info, Mail, LogIn, FileText, Heart } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
@@ -74,7 +75,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
           <div className="hidden lg:flex flex-1 justify-center px-8">
             <nav className="flex items-center gap-6 bg-slate-100/50 dark:bg-slate-900/50 px-6 py-2 rounded-full border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md">
               <Link href="/" className={`text-sm font-medium transition-colors ${pathname === '/' ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Home</Link>
-              <Link href="/assessments" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/assessments') ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Assessments</Link>
+              <Link href={AssessmentRegistry.getDirectoryRoute()} className={`text-sm font-medium transition-colors ${pathname?.startsWith(AssessmentRegistry.getDirectoryRoute()) ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Assessments</Link>
               <Link href="/goals" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/goals') ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Goals</Link>
               <Link href="/health-library" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/health-library') ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>Health Library</Link>
               <Link href="/about" className={`text-sm font-medium transition-colors ${pathname?.startsWith('/about') ? 'text-emerald-600 dark:text-emerald-400 underline underline-offset-[6px] decoration-2 decoration-emerald-500/40 dark:decoration-emerald-400/40' : 'text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>About</Link>
@@ -130,7 +131,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                   Sign In
                 </Link>
                 <Link
-                  href="/assessments"
+                  href={AssessmentRegistry.getDirectoryRoute()}
                   className="group relative flex h-10 md:h-11 items-center justify-center overflow-hidden rounded-full bg-slate-900 dark:bg-white px-5 md:px-8 font-medium text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-md shadow-slate-900/10"
                 >
                   <span className="relative z-10 text-[14px] md:text-[15px]">Get Started</span>
@@ -184,8 +185,8 @@ export function SiteHeader({ user }: SiteHeaderProps) {
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname === '/' ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
               <Home className={`w-[22px] h-[22px] ${pathname === '/' ? 'text-emerald-500' : ''}`} /> Home
             </Link>
-            <Link href="/assessments" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/assessments') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
-              <ClipboardList className={`w-[22px] h-[22px] ${pathname?.startsWith('/assessments') ? 'text-emerald-500' : ''}`} /> Assessments
+            <Link href={AssessmentRegistry.getDirectoryRoute()} onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith(AssessmentRegistry.getDirectoryRoute()) ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
+              <ClipboardList className={`w-[22px] h-[22px] ${pathname?.startsWith(AssessmentRegistry.getDirectoryRoute()) ? 'text-emerald-500' : ''}`} /> Assessments
             </Link>
             <Link href="/goals" onClick={() => setIsMobileMenuOpen(false)} className={`flex items-center gap-3 p-3 rounded-xl text-base font-medium transition-colors ${pathname?.startsWith('/goals') ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-emerald-600 dark:hover:text-emerald-400'}`}>
               <Target className={`w-[22px] h-[22px] ${pathname?.startsWith('/goals') ? 'text-emerald-500' : ''}`} /> Goals

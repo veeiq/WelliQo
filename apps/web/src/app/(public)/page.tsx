@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AssessmentRegistry } from '@/assessments/registry';
 import { ArrowRight, Activity, ShieldCheck, Zap, Heart, Leaf, Sparkles, Scale, Brain, Lock, CheckCircle2, Star, Plus } from 'lucide-react';
 import { Metadata } from 'next';
 
@@ -44,7 +45,7 @@ export default function HomePage() {
           </p>
           
           <Link
-            href="/assessments"
+            href={AssessmentRegistry.getDirectoryRoute()}
             className="group relative inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-white rounded-[24px] px-8 py-5 sm:px-10 sm:py-7 text-base sm:text-lg font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.3)] hover:shadow-[0_12px_35px_rgba(16,185,129,0.45)] transition-all duration-300 hover:-translate-y-[3px] active:scale-[0.96] active:translate-y-0 active:shadow-[0_4px_15px_rgba(16,185,129,0.2)]"
           >
             Start Free Assessment
@@ -90,7 +91,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link href="/assessments/weight" className="group lg:col-span-2 relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 md:p-12 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
+          <Link href={AssessmentRegistry.getRoute('weight')} className="group lg:col-span-2 relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 md:p-12 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
             <div className="absolute top-0 right-0 p-8 opacity-10 dark:opacity-5 group-hover:opacity-20 transition-opacity">
               <Scale className="w-48 h-48" />
             </div>
@@ -105,7 +106,7 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/assessments/energy" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-1">
+          <Link href={AssessmentRegistry.getRoute('energy')} className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400 mb-8">
               <Zap className="h-6 w-6" />
             </div>
@@ -113,7 +114,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Feel energized throughout the day without relying on caffeine.</p>
           </Link>
 
-          <Link href="/assessments/gut" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
+          <Link href={AssessmentRegistry.getRoute('gut')} className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400 mb-8">
               <Leaf className="h-6 w-6" />
             </div>
@@ -121,7 +122,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Support a healthier gut, smoother digestion, and better nutrient absorption.</p>
           </Link>
 
-          <Link href="/assessments/stress" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1">
+          <Link href={AssessmentRegistry.getRoute('stress')} className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-500/20 dark:text-purple-400 mb-8">
               <Brain className="h-6 w-6" />
             </div>
@@ -129,7 +130,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Reduce stress and improve sleep for better recovery and focus.</p>
           </Link>
 
-          <Link href="/assessments/womens" className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-rose-500/10 hover:-translate-y-1">
+          <Link href={AssessmentRegistry.getRoute('womens')} className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 p-8 transition-all hover:shadow-2xl hover:shadow-rose-500/10 hover:-translate-y-1">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-rose-600 dark:bg-rose-500/20 dark:text-rose-400 mb-8">
               <Heart className="h-6 w-6" />
             </div>
@@ -137,7 +138,7 @@ export default function HomePage() {
             <p className="text-slate-600 dark:text-slate-400">Support hormonal balance, vitality, and healthy aging through every stage of life.</p>
           </Link>
 
-          <Link href="/categories" className="group lg:col-span-3 relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/50 p-8 transition-all hover:shadow-2xl hover:shadow-slate-900/20 hover:-translate-y-1 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+          <Link href={AssessmentRegistry.getDirectoryRoute()} className="group lg:col-span-3 relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900 border border-slate-700/50 p-8 transition-all hover:shadow-2xl hover:shadow-slate-900/20 hover:-translate-y-1 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
             <div className="flex items-center gap-6 flex-col md:flex-row">
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-800 dark:bg-slate-700 text-white shadow-inner">
                 <Sparkles className="h-8 w-8 text-emerald-400" />
@@ -362,7 +363,7 @@ export default function HomePage() {
           </div>
           <div className="relative z-10 md:w-1/3 md:text-right flex flex-col items-center md:items-end gap-4">
             <Link
-              href="/assessments"
+              href={AssessmentRegistry.getDirectoryRoute()}
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-5 text-lg font-semibold text-slate-900 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             >
               Start Free Assessment

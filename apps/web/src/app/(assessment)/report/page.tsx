@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { ReportDashboard } from '../assessment/components/report/ReportDashboard';
+import { AssessmentRegistry } from '@/assessments/registry';
 
 export default function ReportPage() {
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function ReportPage() {
 
   useEffect(() => {
     if (runtimeState !== 'REPORT_READY' || !calculatedMetrics) {
-      router.push('/assessment');
+      router.push(AssessmentRegistry.getDirectoryRoute());
     }
   }, [runtimeState, calculatedMetrics, router]);
 
