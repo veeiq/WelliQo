@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AllAssessmentsPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-7xl">
+    <div className="container mx-auto px-4 pt-10 pb-16 max-w-7xl">
       <div className="mb-12 text-center max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-4">
           Wellness Assessment Directory

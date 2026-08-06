@@ -43,7 +43,7 @@ export function SiteHeader() {
                 className="w-full h-full object-contain rounded-xl shadow-lg shadow-emerald-500/20"
               />
             </div>
-            <span className="font-bold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white">
+            <span className="font-bold text-[22px] sm:text-[27px] tracking-tight text-slate-900 dark:text-white">
               Welli<span className="text-emerald-500">Q</span>o
             </span>
           </Link>
@@ -97,7 +97,7 @@ export function SiteHeader() {
             <div className="h-9 w-9">
               <img src="/logo.jpg" alt="WelliQo" className="w-full h-full object-contain rounded-lg shadow-sm" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+            <span className="font-bold text-[22px] tracking-tight text-slate-900 dark:text-white">
               Welli<span className="text-emerald-500">Q</span>o
             </span>
           </Link>
