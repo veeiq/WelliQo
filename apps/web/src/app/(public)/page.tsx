@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-900 dark:selection:text-emerald-100">
       
       {/* 1. HERO SECTION */}
-      <section className="relative flex min-h-[85svh] sm:min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-16 sm:pb-16 text-center bg-white dark:bg-slate-950">
+      <section className="relative flex min-h-[85svh] sm:min-h-[75vh] w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-6 lg:px-8 pt-4 sm:pt-8 pb-20 sm:pb-16 text-center bg-white dark:bg-slate-950">
         {/* Subtle radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50/50 via-white to-white dark:from-emerald-900/10 dark:via-slate-950 dark:to-slate-950"></div>
         
@@ -27,7 +27,7 @@ export default function HomePage() {
         {/* Very subtle hint of emerald glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-400/5 dark:bg-emerald-500/5 rounded-[100%] blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-6 sm:mt-0">
+        <div className="relative z-10 mx-auto max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center mt-0 sm:mt-0">
           <div className="mb-6 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 px-3 py-1.5 text-xs font-semibold tracking-wide text-slate-700 dark:text-slate-300 backdrop-blur-md">
             <Sparkles className="h-3 w-3 text-emerald-500" />
             <span>Intelligent Wellness, Science-Informed</span>
