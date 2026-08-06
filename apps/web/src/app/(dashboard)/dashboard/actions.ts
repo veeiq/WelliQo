@@ -266,7 +266,7 @@ export async function getNextBestAssessment() {
   }
 
   // Priority logic
-  const next = validAssessments.find(a => lowestPillar && a.relatedGoals?.includes(lowestPillar.id as any)) || validAssessments[0] || null;
+  const next = validAssessments.find(a => lowestPillar && a.goals?.includes(lowestPillar.id as any)) || validAssessments[0] || null;
 
   return { next, onCooldownMessage, lowestPillar };
 }
