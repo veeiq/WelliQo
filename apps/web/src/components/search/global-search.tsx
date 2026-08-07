@@ -86,7 +86,7 @@ export function GlobalSearch() {
         <input
           type="text"
           className="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-slate-100 rounded-full border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-500"
-          placeholder="Search WelliQo"
+          placeholder="Ask WelliQo..."
           value={query}
           onChange={(e) => {
              setQuery(e.target.value);
