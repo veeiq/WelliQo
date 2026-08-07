@@ -8,13 +8,16 @@ export function WidgetCard({ children, className = '' }: { children: React.React
   );
 }
 
-export function WidgetCardHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+export function WidgetCardHeader({ title, subtitle, action }: { title: string; subtitle?: string; action?: React.ReactNode }) {
   return (
-    <div className="mb-4">
-      <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-wider text-xs mb-1">
-        {title}
-      </h3>
-      {subtitle && <p className="text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>}
+    <div className="mb-4 flex items-start justify-between">
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-wider text-xs mb-1">
+          {title}
+        </h3>
+        {subtitle && <p className="text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>}
+      </div>
+      {action && <div>{action}</div>}
     </div>
   );
 }
