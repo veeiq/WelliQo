@@ -4,7 +4,7 @@ import { SiteHeader } from '@/components/layout/site-header';
 import { SkipLink } from '@welliqo/ui/components/skip-link';
 import { auth } from '@/auth';
 import { AssessmentRegistry } from '@/assessments/registry';
-import { Instagram, Youtube, Facebook } from 'lucide-react';
+import { Instagram, Youtube, Facebook, Check } from 'lucide-react';
 
 export async function AppShell({ children }: Readonly<{ children: ReactNode }>) {
   const session = await auth();
@@ -47,18 +47,18 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
             <div className="pt-4 mt-auto">
               <p className="text-[11px] font-bold tracking-wider uppercase text-slate-500 mb-4">Connect With Us</p>
               <div className="flex gap-4 items-center">
-                <a href="#" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-black transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:border-slate-700 active:scale-95">
+                <a href="https://x.com/WelliQo" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-black transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:border-slate-700 active:scale-95">
                   <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.007 4.076H5.036z" /></svg>
                 </a>
-                <a href="#" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-transparent transition-all group relative active:scale-95">
+                <a href="https://instagram.com/WelliQo" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-transparent transition-all group relative active:scale-95">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] opacity-0 group-hover:opacity-40 blur-md transition-opacity duration-300 -z-10" />
                   <Instagram className="w-[20px] h-[20px] relative z-10" />
                 </a>
-                <a href="#" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all hover:shadow-[0_0_15px_rgba(24,119,242,0.3)] active:scale-95">
+                <a href="https://facebook.com/WelliQo" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all hover:shadow-[0_0_15px_rgba(24,119,242,0.3)] active:scale-95">
                   <Facebook className="w-[20px] h-[20px]" />
                 </a>
-                <a href="#" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] active:scale-95">
+                <a href="https://youtube.com/@WelliQo" target="_blank" rel="noopener noreferrer" className="w-[42px] h-[42px] rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all hover:shadow-[0_0_15px_rgba(255,0,0,0.3)] active:scale-95">
                   <Youtube className="w-[22px] h-[22px]" />
                 </a>
               </div>

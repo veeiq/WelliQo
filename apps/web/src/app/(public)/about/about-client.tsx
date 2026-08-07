@@ -80,22 +80,13 @@ export function AboutClient() {
             </motion.p>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500"
-          >
-            <span className="text-xs uppercase tracking-widest font-semibold">Discover</span>
-            <div className="w-px h-12 bg-gradient-to-b from-emerald-500/50 to-transparent" />
-          </motion.div>
         </section>
 
         {/* BUILT BY ALOK */}
         <section className="px-4 py-32 relative">
-          <FadeIn className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden group">
+          <FadeIn className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              <div className="lg:col-span-5 relative aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden group">
                 <div className="absolute inset-0 bg-emerald-500/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
                 <img 
                   src="/alok.jpg" 
@@ -105,7 +96,7 @@ export function AboutClient() {
                 <div className="absolute inset-0 border border-white/10 rounded-[2rem] z-20 pointer-events-none" />
               </div>
               
-              <div className="space-y-8">
+              <div className="lg:col-span-7 space-y-8">
                 <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-tight">
                   Hi, I'm Alok.
                 </h2>
@@ -228,33 +219,7 @@ export function AboutClient() {
           </div>
         </section>
 
-        {/* THE TECHNOLOGY */}
-        <section className="px-4 py-40 bg-white/5 border-y border-white/10 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-          
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <FadeIn>
-              <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-500 mb-16">The Intelligence Behind WelliQo</h2>
-              
-              <h3 className="text-4xl md:text-6xl font-light text-white leading-tight mb-16">
-                WelliQo combines
-              </h3>
-            </FadeIn>
-            
-            <div className="flex flex-col items-center gap-6 text-2xl md:text-4xl font-medium mb-16 text-slate-200">
-              <FadeIn delay={0.1}><div className="flex items-center gap-6"><span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400">✓</span> behavioral science</div></FadeIn>
-              <FadeIn delay={0.2}><div className="flex items-center gap-6"><span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400">✓</span> nutrition science</div></FadeIn>
-              <FadeIn delay={0.3}><div className="flex items-center gap-6"><span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400">✓</span> health mathematics</div></FadeIn>
-              <FadeIn delay={0.4}><div className="flex items-center gap-6"><span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400">✓</span> personalized reasoning</div></FadeIn>
-            </div>
-            
-            <FadeIn delay={0.5}>
-              <p className="text-2xl md:text-4xl font-light text-slate-400 text-balance">
-                to produce one report built specifically for you.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
+
 
         {/* DEFINING SENTENCE */}
         <section className="px-4 py-40 md:py-60 max-w-6xl mx-auto text-center">
@@ -262,8 +227,8 @@ export function AboutClient() {
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.1] text-balance tracking-tight">
               "We don't tell you what's healthy.<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200 font-light italic block mt-4">
-                We help you understand what's healthy for you.
-              </span>"
+                We help you understand what's healthy for you."
+              </span>
             </h2>
           </FadeIn>
         </section>
