@@ -26,7 +26,7 @@ export default async function middleware(req: NextRequest) {
   // Rate limiting check
   if (req.nextUrl.pathname.startsWith('/api/leads') || req.nextUrl.pathname.startsWith('/api/auth/register')) {
     if (ratelimit) {
-      const ip = req.ip ?? '127.0.0.1';
+      const ip = req.headers.get("x-forwarded-for") ?? '127.0.0.1';
       const { success, limit, reset, remaining } = await ratelimit.limit(`ratelimit_${ip}`);
 
       if (!success) {
