@@ -45,7 +45,7 @@ describe('OntologyGraph', () => {
 
     const orphans = graph.getOrphanFindings();
     expect(orphans.length).toBe(1);
-    expect(orphans[0].id).toBe('f3');
+    expect(orphans[0]?.id).toBe('f3');
   });
 
   it('should detect circular dependencies (acyclic validation)', () => {

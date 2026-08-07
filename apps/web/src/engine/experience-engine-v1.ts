@@ -5,7 +5,8 @@ import {
   ExperienceGraphNode, 
   ConfidenceLevel, 
   JourneyMode,
-  BlockMetadata
+  BlockMetadata,
+  BlockType
 } from './types/experience-blocks';
 
 export class ExperienceEngineV1 {
@@ -131,7 +132,7 @@ export class ExperienceEngineV1 {
           id: p.id,
           label: p.label,
           score: p.score,
-          status: p.score > 80 ? 'excellent' : p.score > 60 ? 'good' : p.score > 40 ? 'fair' : 'poor'
+          status: (p.score > 80 ? 'excellent' : p.score > 60 ? 'good' : p.score > 40 ? 'fair' : 'poor') as any
         })),
         goodNews: metrics.goodNews || {
           s1: "Nothing we found suggests your body has stopped responding.",
@@ -162,7 +163,7 @@ export class ExperienceEngineV1 {
         headline: 'Why progress has felt harder than it should.',
         body: `Your biggest challenge isn't simply eating too much or exercising too little. Patterns like ${evidenceText.toLowerCase()} are working together in the background. When habits reinforce each other, seeing results becomes much harder.`,
         evidence: metrics.scoreExplanation.map(f => (f as any).humanAnswer || f.label || (f as any).title).slice(0, 4),
-        confidence: 'High'
+        confidence: 'Confident'
       },
       data: {
         contradictionsExplained: [],
@@ -179,7 +180,7 @@ export class ExperienceEngineV1 {
           headline: 'The pattern most worth changing first.',
           body: `Trying to fix everything at once has probably become part of the cycle itself. Your assessment suggests your biggest opportunity isn't working harder—it's making fewer, more consistent decisions each day. That's where your effort will create the greatest return.`,
           evidence: [`Opportunity identified: ${metrics.biggestOpportunityExplanation || metrics.biggestOpportunity}`],
-          confidence: 'High'
+          confidence: 'Confident'
         },
         data: {
           primaryChallenge: metrics.biggestOpportunity,
@@ -199,7 +200,7 @@ export class ExperienceEngineV1 {
           headline: 'Your Body Today',
           body: '',
           evidence: [],
-          confidence: 'High'
+          confidence: 'Confident'
         },
         data: {
           metrics: metrics.bodyIntelligence,
@@ -221,7 +222,7 @@ export class ExperienceEngineV1 {
           headline: 'Micronutrient Dashboard',
           body: '',
           evidence: [],
-          confidence: 'High'
+          confidence: 'Confident'
         },
         data: {
           nutrients: metrics.nutritionIntelligence.nutrients
@@ -238,7 +239,7 @@ export class ExperienceEngineV1 {
           headline: 'Your Daily Nutrition Blueprint',
           body: 'This is how your targets translate into real life.',
           evidence: [],
-          confidence: 'High'
+          confidence: 'Confident'
         },
         data: {
           meals: metrics.dailyBlueprint.meals
@@ -255,7 +256,7 @@ export class ExperienceEngineV1 {
           headline: 'Companion Nutrition',
           body: 'These products may help address the identified nutritional gaps when used alongside a balanced diet.',
           evidence: [],
-          confidence: 'High'
+          confidence: 'Confident'
         },
         data: {
           nutrients: metrics.nutritionIntelligence.nutrients
@@ -345,7 +346,7 @@ export class ExperienceEngineV1 {
     return blocks;
   }
 
-  private createMeta(type: any, priority: number, journeyMode: JourneyMode): BlockMetadata {
+  private createMeta<T extends BlockType>(type: T, priority: number, journeyMode: JourneyMode): BlockMetadata & { type: T } {
     return {
       id: crypto.randomUUID(),
       type,

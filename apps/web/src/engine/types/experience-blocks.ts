@@ -19,7 +19,11 @@ export type BlockType =
   | 'Actions'
   | 'Resources'
   | 'Score'
-  | 'NextAssessment';
+  | 'NextAssessment'
+  | 'BodyIntelligence'
+  | 'NutritionIntelligence'
+  | 'DailyBlueprint'
+  | 'CompanionNutrition';
 
 export interface StructuredNarrative {
   intent: string;
@@ -130,6 +134,7 @@ export interface ScoreBlock extends BaseExperienceBlock {
     overallScore: number;
     scoreMeaning: string;
     showScore: boolean;
+    pillars?: any[];
   };
 }
 
