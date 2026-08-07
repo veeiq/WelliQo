@@ -22,7 +22,7 @@ const ratelimit = redis
     })
   : null;
 
-export default async function middleware(req: NextRequest) {
+export default authMiddleware(async (req) => {
   // Rate limiting check
   if (req.nextUrl.pathname.startsWith('/api/leads') || req.nextUrl.pathname.startsWith('/api/auth/register')) {
     if (ratelimit) {
@@ -45,9 +45,25 @@ export default async function middleware(req: NextRequest) {
     }
   }
 
-  // Continue with auth middleware
-  return (authMiddleware as any)(req, {} as any);
-}
+  // Role-based redirects
+  const isLoggedIn = !!req.auth;
+  const role = req.auth?.user?.role;
+  const pathname = req.nextUrl.pathname;
+
+  if (isLoggedIn) {
+    if (pathname === '/login' || pathname === '/') {
+      if (role === 'SUPER_ADMIN' || role === 'ADMIN') return NextResponse.redirect(new URL('/admin', req.nextUrl));
+      if (role === 'COACH') return NextResponse.redirect(new URL('/coach', req.nextUrl));
+      return NextResponse.redirect(new URL('/dashboard', req.nextUrl));
+    }
+    
+    // If an admin tries to go to standard user dashboard, forcibly route them to admin dashboard (or keep it if you want them to see both, but based on requirements, route them)
+    if (pathname === '/dashboard') {
+      if (role === 'SUPER_ADMIN' || role === 'ADMIN') return NextResponse.redirect(new URL('/admin', req.nextUrl));
+      if (role === 'COACH') return NextResponse.redirect(new URL('/coach', req.nextUrl));
+    }
+  }
+});
 
 export const config = {
   // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher

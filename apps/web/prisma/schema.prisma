@@ -6,6 +6,14 @@ datasource db {
   provider  = "postgresql"
 }
 
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  COACH
+  STAFF
+  USER
+}
+
 // NextAuth Models
 model Account {
   id                String  @id @default(cuid())
@@ -52,6 +60,7 @@ model User {
   mobileVerified DateTime?
   image         String?
   password      String?
+  role          UserRole  @default(USER)
   
   accounts      Account[]
   sessions      Session[]
@@ -61,6 +70,11 @@ model User {
   preferences   UserPreference?
   assessments   AssessmentResult[]
   savedContent  SavedResource[]
+  
+  coachNotes    CoachNote[]     @relation("UserNotes")
+  authoredNotes CoachNote[]     @relation("AuthoredNotes")
+  activities    ActivityLog[]
+  notifications Notification[]
   
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
@@ -133,4 +147,61 @@ model SavedResource {
   createdAt    DateTime @default(now())
 
   @@unique([userId, resourceId])
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  status      String   @default("DRAFT") // DRAFT, PUBLISHED, ARCHIVED
+  authorId    String?
+  
+  seoTitle    String?
+  seoDesc     String?
+  tags        String[]
+  
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CoachNote {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation("UserNotes", fields: [userId], references: [id], onDelete: Cascade)
+  
+  authorId  String
+  author    User     @relation("AuthoredNotes", fields: [authorId], references: [id], onDelete: Cascade)
+  
+  content   String   @db.Text
+  isPinned  Boolean  @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  action    String   // e.g., "REGISTERED", "COMPLETED_ASSESSMENT", "DOWNLOADED_PDF"
+  metadata  Json?    // Any extra contextual data
+  
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type      String   // e.g., "COACH_MESSAGE", "NEW_REPORT", "SYSTEM"
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  actionUrl String?
+  
+  createdAt DateTime @default(now())
 }

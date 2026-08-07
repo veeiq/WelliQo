@@ -129,6 +129,9 @@ importers:
       '@types/pg':
         specifier: ^8.20.3
         version: 8.20.3
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
       eslint:
         specifier: 9.39.2
         version: 9.39.2(jiti@2.7.0)
