@@ -187,16 +187,16 @@ export async function getLatestScore(): Promise<{ score: number; status: string;
   if (!metrics) return null;
   
   return {
-    score: metrics.overallScore,
-    status: metrics.scoreMeaning.split(' - ')[0] || metrics.scoreMeaning, // basic fallback
-    label: metrics.scoreMeaning, 
+    score: metrics.overallScore || 0,
+    status: (metrics.scoreMeaning || '').split(' - ')[0] || metrics.scoreMeaning || 'Completed', 
+    label: metrics.scoreMeaning || 'Assessment completed', 
   };
 }
 
 export async function getPrimaryRecommendation(): Promise<Recommendation | null> {
   const userId = await requireAuth();
   const metrics = await AssessmentRepository.getLatestMetrics(userId);
-  if (!metrics || metrics.priorityPlan.length === 0) return null;
+  if (!metrics || !metrics.priorityPlan || metrics.priorityPlan.length === 0) return null;
   
   // Return the highest priority recommendation
   return metrics.priorityPlan[0] || null;
@@ -205,7 +205,7 @@ export async function getPrimaryRecommendation(): Promise<Recommendation | null>
 export async function getLatestBreakdown() {
   const userId = await requireAuth();
   const metrics = await AssessmentRepository.getLatestMetrics(userId);
-  if (!metrics) return null;
+  if (!metrics || !metrics.pillarScores) return null;
   
   return metrics.pillarScores;
 }

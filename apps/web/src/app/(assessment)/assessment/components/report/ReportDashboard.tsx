@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useAssessmentStore } from '../../../../../store/assessment-store';
 import { CoachCallToAction } from './CoachCallToAction';
 import { SaveReportModal } from './SaveReportModal';
@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { saveAssessmentResultAction } from '../../actions';
 import { useSession } from 'next-auth/react';
 import { BlockRenderer } from './blocks/BlockRenderer';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 const cn = (...classes: (string | boolean | undefined | null)[]) => classes.filter(Boolean).join(' ');
 
@@ -17,16 +19,21 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
   const [isSaved, setIsSaved] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const reportRef = useRef<HTMLDivElement>(null);
 
   // Exit intent detection (simple beforeunload for refreshing/closing tab)
+  // Disable it when the save modal is open (so Google OAuth redirect doesn't trigger it) or if already saved.
   useEffect(() => {
+    if (isSaveModalOpen || isSaved) return;
+    
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault();
       e.returnValue = ''; // Required for Chrome to show a prompt
     };
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, []);
+  }, [isSaveModalOpen, isSaved]);
 
   // Recommendations now handled by ResourcesBlock via engine if needed
   // Removing old local fetchRecs logic
@@ -77,10 +84,58 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
     }
   };
 
-  const handleDownloadPDF = () => {
-    setToastMessage('Download PDF (Coming Soon)');
+  const handleDownloadPDF = async () => {
+    if (!reportRef.current || isGeneratingPDF) return;
+    
+    setIsGeneratingPDF(true);
+    setToastMessage('Preparing PDF... Please wait.');
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 2000);
+
+    try {
+      // Temporarily expand the element to its full height before capturing
+      // (This helps if there are hidden scrollable areas, though our page is fully expanded)
+      const canvas = await html2canvas(reportRef.current, {
+        scale: 2, // Higher resolution
+        useCORS: true, // Allow external images
+        logging: false,
+        backgroundColor: document.documentElement.classList.contains('dark') ? '#020617' : '#f8fafc',
+        windowWidth: document.documentElement.offsetWidth,
+        windowHeight: document.documentElement.offsetHeight
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      
+      // Calculate PDF dimensions (A4)
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      
+      // If the report is taller than one A4 page, we can either scale it down to fit one long page (not standard PDF) 
+      // or just let it flow across multiple pages. For simplicity and best visual quality of an infographic report,
+      // we'll print it as a continuous scroll by setting the PDF height to exactly match the image ratio.
+      // A standard A4 might cut off text in the middle of a line. 
+      const customPdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: [pdfWidth, pdfHeight]
+      });
+
+      customPdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      customPdf.save(`WelliQo_Report_${data.name || 'User'}.pdf`);
+      
+      setToastMessage('✓ PDF Downloaded');
+      setTimeout(() => setShowToast(false), 2000);
+    } catch (error) {
+      console.error('PDF Generation failed:', error);
+      setToastMessage('Failed to generate PDF. Please try again.');
+    } finally {
+      setIsGeneratingPDF(false);
+    }
   };
 
   if (!calculatedMetrics || !experienceBlocks) return null;
@@ -94,7 +149,7 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
         </span>
       </div>
 
-      <div className="w-full max-w-4xl mx-auto space-y-2 pb-32 animate-in fade-in slide-in-from-bottom-8 duration-700 relative z-10">
+      <div ref={reportRef} className="w-full max-w-4xl mx-auto space-y-2 pb-32 animate-in fade-in slide-in-from-bottom-8 duration-700 relative z-10">
       
       {/* The Experience Engine controls the UI sequence completely */}
       {experienceBlocks.map((block) => (
@@ -139,10 +194,10 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
                     <CheckCircle2 className="w-5 h-5" />
                     <span className="hidden sm:inline">Saved ✓</span>
                   </button>
-                  <button onClick={handleDownloadPDF} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                  <button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm disabled:opacity-50">
                     <Download className="w-4 h-4" />
-                    <span className="hidden sm:inline">Download PDF</span>
-                    <span className="sm:hidden">PDF</span>
+                    <span className="hidden sm:inline">{isGeneratingPDF ? 'Generating...' : 'Download PDF'}</span>
+                    <span className="sm:hidden">{isGeneratingPDF ? '...' : 'PDF'}</span>
                   </button>
                   <button onClick={handleShare} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
                     <Share className="w-4 h-4" />
@@ -159,10 +214,10 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
                     <Save className="w-5 h-5" />
                     Save Report
                   </button>
-                  <button onClick={() => setIsSaveModalOpen(true)} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                  <button onClick={handleDownloadPDF} disabled={isGeneratingPDF} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm disabled:opacity-50">
                     <Download className="w-4 h-4" />
-                    <span className="hidden sm:inline">Download PDF</span>
-                    <span className="sm:hidden">PDF</span>
+                    <span className="hidden sm:inline">{isGeneratingPDF ? 'Generating...' : 'Download PDF'}</span>
+                    <span className="sm:hidden">{isGeneratingPDF ? '...' : 'PDF'}</span>
                   </button>
                   <button onClick={() => setIsSaveModalOpen(true)} className="flex-1 md:flex-none px-4 md:px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-medium border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
                     <Share className="w-4 h-4" />
