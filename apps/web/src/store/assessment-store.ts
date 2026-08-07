@@ -6,6 +6,8 @@ import { RulesEngine } from '../engine/rules-engine';
 import { SynergyEngine } from '../engine/synergy-engine';
 import { ScoreEngine } from '../engine/score-engine';
 import { ReportBuilder } from '../engine/report-builder';
+import { ExperienceEngineV1 } from '../engine/experience-engine-v1';
+import { ExperienceBlock } from '../engine/types/experience-blocks';
 
 export type SimpleAssessmentState = 'GOAL_SELECTION' | 'PROFILE_INTERCEPT' | 'QUESTIONNAIRE' | 'CALCULATING' | 'REPORT_READY';
 
@@ -59,7 +61,66 @@ export interface CalculatedMetrics {
   overallScore: number;
   scoreMeaning: string;
   overallSummary: string;
+  rootCauseAttribution?: string;
+  recognition?: {
+    headline: string;
+    body: string;
+  };
+  patternHeadline?: string;
+  goodNews?: {
+    s1: string;
+    s2: string;
+    highlight: string;
+  };
+  score?: {
+    headline: string;
+    body: string;
+    showScore: boolean;
+  };
+  closingPhilosophy?: string;
   timeline: string;
+  
+  // New: Body Intelligence
+  bodyIntelligence?: {
+    age: number;
+    heightCm: number;
+    weightKg: number;
+    bmi: string;
+    bmiCategory: string;
+    healthyWeightRange: string;
+    bmr: number;
+    tdee: number;
+    targetCalories: number;
+    targetProtein: number;
+    targetWater: number;
+    targetFiber: number;
+    targetSleep: number;
+    targetSteps: number;
+  };
+
+  // New: Nutrition Intelligence
+  nutritionIntelligence?: {
+    nutrients: {
+      id: string;
+      label: string;
+      target: string;
+      current: string;
+      gap: string;
+      status: 'green' | 'yellow' | 'red';
+      whyItMatters: string;
+      foods: { category: string; items: string[] }[];
+      companionSupport: string[];
+    }[];
+  };
+
+  // New: Daily Blueprint
+  dailyBlueprint?: {
+    meals: {
+      name: string;
+      calories: number;
+      protein: number;
+    }[];
+  };
   
   metricCards: MetricCardData[];
   
@@ -90,6 +151,7 @@ export interface AssessmentState {
   data: AssessmentData; 
   answers: Record<string, any>; 
   calculatedMetrics: CalculatedMetrics | null;
+  experienceBlocks: ExperienceBlock[] | null;
   currentQuestionIndex: number;
   clientReportId: string | null;
   synced: boolean;
@@ -129,6 +191,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
       },
       answers: {},
       calculatedMetrics: null,
+      experienceBlocks: null,
       currentQuestionIndex: 0,
       clientReportId: null,
       synced: false,
@@ -222,6 +285,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
             const synergyEngine = new SynergyEngine();
             const scoreEngine = new ScoreEngine();
             const reportBuilder = new ReportBuilder();
+            const experienceEngine = new ExperienceEngineV1();
 
             // 2. Execute Rules Pipeline
             const rulesResult = rulesEngine.evaluate(allAnswers as any);
@@ -237,11 +301,15 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
             // 5. Build Report (Legacy Output format)
             const calculatedMetrics = reportBuilder.build(allAnswers, rulesResult, synergyResult, scoreResult);
 
+            // 6. Experience Engine V1 (Transforms facts into structured experience blocks)
+            const experienceBlocks = experienceEngine.generate(allAnswers, calculatedMetrics);
+
             const clientReportId = `wm_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
 
             // Save to state
             set({
               calculatedMetrics,
+              experienceBlocks,
               clientReportId,
               synced: false,
               runtimeState: 'REPORT_READY'
@@ -259,6 +327,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
           runtimeState: 'GOAL_SELECTION',
           answers: {},
           calculatedMetrics: null,
+          experienceBlocks: null,
           currentQuestionIndex: 0,
           clientReportId: null,
           synced: false,
@@ -273,6 +342,7 @@ export const useAssessmentStore = create<AssessmentState & AssessmentActions>()(
         data: state.data,
         answers: state.answers,
         calculatedMetrics: state.calculatedMetrics,
+        experienceBlocks: state.experienceBlocks,
         runtimeState: state.runtimeState,
         clientReportId: state.clientReportId,
         synced: state.synced

@@ -8,11 +8,13 @@ export function HydratedReport({
   metrics, 
   data, 
   answers, 
+  experienceBlocks,
   hideSaveAction 
 }: { 
   metrics: any, 
   data: any, 
   answers: any, 
+  experienceBlocks?: any,
   hideSaveAction: boolean 
 }) {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -23,7 +25,8 @@ export function HydratedReport({
     useAssessmentStore.setState({
       calculatedMetrics: metrics,
       data: data,
-      answers: answers
+      answers: answers,
+      experienceBlocks: experienceBlocks
     });
     setIsHydrated(true);
 

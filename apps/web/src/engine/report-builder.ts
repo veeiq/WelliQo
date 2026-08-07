@@ -6,18 +6,21 @@ import { KnowledgeRepositoryLoader } from './knowledge-loader';
 import { CalculatedMetrics, PillarScore, MetricCardData } from '../store/assessment-store';
 import { FoodProvider } from './providers/food-provider';
 import { SupplementProvider } from './providers/supplement-provider';
+import { NutritionIntelligenceProvider } from './providers/nutrition-intelligence-provider';
 
 export class ReportBuilder {
   private loader: KnowledgeRepositoryLoader;
   private formulaRegistry: FormulaRegistry;
   private foodProvider: FoodProvider;
   private supplementProvider: SupplementProvider;
+  private nutritionIntelligence: NutritionIntelligenceProvider;
 
   constructor() {
     this.loader = KnowledgeRepositoryLoader.getInstance();
     this.formulaRegistry = FormulaRegistry.getInstance();
     this.foodProvider = new FoodProvider();
     this.supplementProvider = new SupplementProvider();
+    this.nutritionIntelligence = new NutritionIntelligenceProvider();
   }
 
   public build(
@@ -236,6 +239,36 @@ export class ReportBuilder {
       )
     };
 
+    // --- NEW INTELLIGENCE BLOCKS ---
+    const targetFiber = Math.round((dailyCalories / 1000) * 14); // 14g per 1000 kcal
+
+    const bodyIntelligence = {
+      age: baseline.age,
+      heightCm: baseline.height * 100,
+      weightKg: baseline.weight,
+      bmi: bmi.toFixed(1),
+      bmiCategory: bmi < 18.5 ? 'Underweight' : (bmi > 24.9 ? 'Overweight' : 'Ideal'),
+      healthyWeightRange: `${Math.round(minIdealKg)} - ${Math.round(maxIdealKg)}`,
+      bmr: Math.round(bmr),
+      tdee: Math.round(metrics['FORMULA_TDEE'] || 2000),
+      targetCalories: dailyCalories,
+      targetProtein: proteinGrams,
+      targetWater: parseFloat(dailyWaterLiters),
+      targetFiber: targetFiber,
+      targetSleep: 7.5,
+      targetSteps: 8000
+    };
+
+    const niResult = this.nutritionIntelligence.generateIntelligence(answers.food_preference, {
+      protein: proteinGrams,
+      calories: dailyCalories,
+      fiber: targetFiber,
+      water: parseFloat(dailyWaterLiters)
+    });
+
+    const dailyBlueprint = this.nutritionIntelligence.generateBlueprint(dailyCalories, proteinGrams);
+    // --- END NEW INTELLIGENCE BLOCKS ---
+
     return {
       bmi: bmi.toFixed(1),
       bmr: Math.round(bmr),
@@ -257,7 +290,12 @@ export class ReportBuilder {
       biggestOpportunityExplanation,
       priorityPlan,
       nutritionPlan,
-      recommendedAssessments: []
+      recommendedAssessments: [],
+
+      // New integrations
+      bodyIntelligence,
+      nutritionIntelligence: niResult,
+      dailyBlueprint
     } as CalculatedMetrics;
   }
 }

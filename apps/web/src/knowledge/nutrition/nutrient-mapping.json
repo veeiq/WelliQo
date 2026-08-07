@@ -1,0 +1,206 @@
+{
+  "nutrients": {
+    "protein": {
+      "id": "protein",
+      "label": "Protein",
+      "whyItMatters": "Protein helps preserve muscle while losing fat, stabilizes blood sugar, and is essential for metabolic recovery.",
+      "companionSupport": [
+        "Formula 1 Nutritional Shake Mix",
+        "Personalized Protein Powder"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Dairy", "items": ["Paneer", "Greek Yogurt", "Milk", "Cheese"] },
+          { "category": "Plant", "items": ["Dal", "Soy", "Rajma", "Chickpeas", "Tofu"] }
+        ],
+        "egg": [
+          { "category": "Egg", "items": ["Eggs", "Egg Whites"] },
+          { "category": "Dairy", "items": ["Paneer", "Greek Yogurt", "Milk"] },
+          { "category": "Plant", "items": ["Dal", "Soy", "Rajma"] }
+        ],
+        "non_veg": [
+          { "category": "Meat & Fish", "items": ["Chicken Breast", "Fish", "Lean Mutton"] },
+          { "category": "Egg", "items": ["Eggs"] },
+          { "category": "Dairy", "items": ["Paneer", "Greek Yogurt"] },
+          { "category": "Plant", "items": ["Dal", "Soy"] }
+        ],
+        "vegan": [
+          { "category": "Plant", "items": ["Tofu", "Soy", "Lentils", "Chickpeas", "Rajma", "Peas"] },
+          { "category": "Nuts & Seeds", "items": ["Almonds", "Pumpkin Seeds", "Peanut Butter"] }
+        ],
+        "jain": [
+          { "category": "Dairy", "items": ["Paneer", "Milk", "Yogurt"] },
+          { "category": "Plant", "items": ["Moong Dal", "Besan", "Sattu", "Toor Dal"] }
+        ]
+      }
+    },
+    "fiber": {
+      "id": "fiber",
+      "label": "Fiber",
+      "whyItMatters": "Fiber promotes healthy digestion, keeps you full longer, and helps regulate blood sugar levels.",
+      "companionSupport": [
+        "Active Fiber Complex"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Grains & Legumes", "items": ["Oats", "Lentils", "Brown Rice", "Rajma"] },
+          { "category": "Fruits & Veggies", "items": ["Apples", "Guava", "Carrots", "Spinach"] }
+        ],
+        "egg": [
+          { "category": "Grains & Legumes", "items": ["Oats", "Lentils", "Brown Rice", "Rajma"] },
+          { "category": "Fruits & Veggies", "items": ["Apples", "Guava", "Carrots", "Spinach"] }
+        ],
+        "non_veg": [
+          { "category": "Grains & Legumes", "items": ["Oats", "Lentils", "Brown Rice", "Rajma"] },
+          { "category": "Fruits & Veggies", "items": ["Apples", "Guava", "Carrots", "Spinach"] }
+        ],
+        "vegan": [
+          { "category": "Grains & Legumes", "items": ["Oats", "Lentils", "Brown Rice", "Rajma"] },
+          { "category": "Fruits & Veggies", "items": ["Apples", "Guava", "Carrots", "Spinach"] }
+        ],
+        "jain": [
+          { "category": "Grains & Legumes", "items": ["Oats", "Moong Dal", "Brown Rice"] },
+          { "category": "Fruits", "items": ["Apples", "Guava", "Bananas"] }
+        ]
+      }
+    },
+    "calcium": {
+      "id": "calcium",
+      "label": "Calcium",
+      "whyItMatters": "Calcium is critical for bone density, muscle contraction, and maintaining a healthy nervous system.",
+      "companionSupport": [
+        "Herbalife Calcium Tablets"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Cheese", "Paneer"] },
+          { "category": "Plant", "items": ["Sesame Seeds", "Ragi", "Almonds"] }
+        ],
+        "egg": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Cheese", "Paneer"] },
+          { "category": "Plant", "items": ["Sesame Seeds", "Ragi", "Almonds"] }
+        ],
+        "non_veg": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Cheese", "Paneer"] },
+          { "category": "Meat & Fish", "items": ["Fish with bones (Sardines)"] }
+        ],
+        "vegan": [
+          { "category": "Plant", "items": ["Fortified Soy Milk", "Tofu (Calcium Set)", "Sesame Seeds", "Ragi", "Almonds"] }
+        ],
+        "jain": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Paneer"] },
+          { "category": "Plant", "items": ["Sesame Seeds", "Almonds"] }
+        ]
+      }
+    },
+    "vitamin_d": {
+      "id": "vitamin_d",
+      "label": "Vitamin D",
+      "whyItMatters": "Vitamin D aids in calcium absorption, supports immune function, and regulates mood.",
+      "companionSupport": [
+        "Formula 2 Multivitamin, Mineral & Herbal Tablets Plus"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Dairy", "items": ["Fortified Milk"] },
+          { "category": "Fungi", "items": ["Mushrooms (Sun-exposed)"] }
+        ],
+        "egg": [
+          { "category": "Egg", "items": ["Egg Yolks"] },
+          { "category": "Dairy", "items": ["Fortified Milk"] }
+        ],
+        "non_veg": [
+          { "category": "Meat & Fish", "items": ["Salmon", "Mackerel", "Tuna"] },
+          { "category": "Egg", "items": ["Egg Yolks"] }
+        ],
+        "vegan": [
+          { "category": "Plant", "items": ["Fortified Plant Milks"] },
+          { "category": "Fungi", "items": ["Mushrooms (Sun-exposed)"] }
+        ],
+        "jain": [
+          { "category": "Dairy", "items": ["Fortified Milk"] }
+        ]
+      }
+    },
+    "omega_3": {
+      "id": "omega_3",
+      "label": "Omega 3",
+      "whyItMatters": "Omega 3 fatty acids are essential for heart health, reducing inflammation, and brain function.",
+      "companionSupport": [
+        "Herbalifeline®"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Nuts & Seeds", "items": ["Walnuts", "Flaxseeds", "Chia Seeds"] }
+        ],
+        "egg": [
+          { "category": "Nuts & Seeds", "items": ["Walnuts", "Flaxseeds", "Chia Seeds"] }
+        ],
+        "non_veg": [
+          { "category": "Meat & Fish", "items": ["Salmon", "Sardines", "Mackerel"] },
+          { "category": "Nuts & Seeds", "items": ["Walnuts", "Flaxseeds"] }
+        ],
+        "vegan": [
+          { "category": "Nuts & Seeds", "items": ["Walnuts", "Flaxseeds", "Chia Seeds", "Hemp Seeds"] }
+        ],
+        "jain": [
+          { "category": "Nuts & Seeds", "items": ["Walnuts", "Flaxseeds", "Chia Seeds"] }
+        ]
+      }
+    },
+    "iron": {
+      "id": "iron",
+      "label": "Iron",
+      "whyItMatters": "Iron transports oxygen in your blood. Low iron leads to severe fatigue and poor metabolic function.",
+      "companionSupport": [
+        "Formula 2 Multivitamin, Mineral & Herbal Tablets Plus"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Plant", "items": ["Spinach", "Lentils", "Amaranth", "Pumpkin Seeds"] }
+        ],
+        "egg": [
+          { "category": "Egg", "items": ["Eggs"] },
+          { "category": "Plant", "items": ["Spinach", "Lentils", "Amaranth"] }
+        ],
+        "non_veg": [
+          { "category": "Meat & Fish", "items": ["Lean Mutton", "Chicken Liver", "Fish"] },
+          { "category": "Plant", "items": ["Spinach", "Lentils"] }
+        ],
+        "vegan": [
+          { "category": "Plant", "items": ["Spinach", "Lentils", "Amaranth", "Pumpkin Seeds", "Tofu"] }
+        ],
+        "jain": [
+          { "category": "Plant", "items": ["Moong Dal", "Amaranth", "Pumpkin Seeds"] }
+        ]
+      }
+    },
+    "b12": {
+      "id": "b12",
+      "label": "Vitamin B12",
+      "whyItMatters": "B12 is vital for nerve function and DNA synthesis. It is extremely common for plant-based diets to lack B12.",
+      "companionSupport": [
+        "Formula 2 Multivitamin, Mineral & Herbal Tablets Plus"
+      ],
+      "foods": {
+        "veg": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Paneer"] }
+        ],
+        "egg": [
+          { "category": "Egg", "items": ["Eggs"] },
+          { "category": "Dairy", "items": ["Milk", "Yogurt"] }
+        ],
+        "non_veg": [
+          { "category": "Meat & Fish", "items": ["Chicken", "Fish", "Mutton"] },
+          { "category": "Egg", "items": ["Eggs"] }
+        ],
+        "vegan": [
+          { "category": "Plant", "items": ["Nutritional Yeast", "Fortified Plant Milks"] }
+        ],
+        "jain": [
+          { "category": "Dairy", "items": ["Milk", "Yogurt", "Paneer"] }
+        ]
+      }
+    }
+  }
+}

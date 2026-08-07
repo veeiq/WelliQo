@@ -1,0 +1,204 @@
+{
+  "bmi": "29.8",
+  "bmr": 1758,
+  "fatPercentage": "27.3",
+  "idealWeight": "53 - 72 kg",
+  "weightDifferenceKg": 16,
+  "weightDirection": "maintain",
+  "pillarScores": [
+    {
+      "id": "nutrition",
+      "label": "Nutrition",
+      "score": 0,
+      "icon": "Apple",
+      "weightPercent": 0
+    },
+    {
+      "id": "activity",
+      "label": "Activity",
+      "score": 0,
+      "icon": "Activity",
+      "weightPercent": 0
+    },
+    {
+      "id": "metabolic",
+      "label": "Metabolic",
+      "score": 15,
+      "icon": "Activity",
+      "weightPercent": 0
+    },
+    {
+      "id": "recovery",
+      "label": "Recovery",
+      "score": 45,
+      "icon": "Moon",
+      "weightPercent": 0
+    },
+    {
+      "id": "behaviour",
+      "label": "Behaviour",
+      "score": 85,
+      "icon": "Activity",
+      "weightPercent": 0
+    }
+  ],
+  "overallScore": 18,
+  "scoreMeaning": "High Priority",
+  "overallSummary": "You are highly motivated to lose weight, but several daily habits—including poor portion control, excess liquid calories, and low protein intake—are making progress much harder than it needs to be.\n\nThe good news is that improving just three habits could significantly improve your health over the next few months.",
+  "timeline": "Approximately 5–7 months",
+  "metricCards": [
+    {
+      "id": "bmi",
+      "title": "BMI",
+      "icon": "Activity",
+      "current": "29.8",
+      "ideal": "18.5 - 24.9",
+      "difference": "4.9",
+      "meaning": "Above Ideal",
+      "status": "warning",
+      "clinicalMeaning": "Above healthy range",
+      "primaryFocus": "Maintenance",
+      "sourceType": "Calculated",
+      "sourceExplanation": "Based on your height and weight."
+    },
+    {
+      "id": "fat",
+      "title": "Est. Body Fat",
+      "icon": "Activity",
+      "current": "27.3%",
+      "ideal": "< 25%",
+      "difference": "",
+      "meaning": "",
+      "status": "warning",
+      "clinicalMeaning": "Above healthy range",
+      "primaryFocus": "Fat Loss",
+      "sourceType": "Estimated",
+      "sourceExplanation": "Based on your height, weight, age, and biological sex."
+    }
+  ],
+  "strengths": [
+    "Behaviour"
+  ],
+  "improvements": [
+    "Nutrition",
+    "Activity",
+    "Metabolic",
+    "Recovery"
+  ],
+  "scoreExplanation": [
+    {
+      "id": "FINDING_POOR_PORTION_CONTROL",
+      "pillarId": "overall",
+      "label": "Large or inconsistent portion sizes may be adding excess calories even when food choices appear healthy.",
+      "penalty": 0,
+      "recommendationId": "RECOMMEND_PORTION_CONTROL"
+    },
+    {
+      "id": "FINDING_EXCESS_LIQUID_CALORIES",
+      "pillarId": "overall",
+      "label": "Sugar-sweetened beverages may be adding significant calories without helping you feel full.",
+      "penalty": 0,
+      "recommendationId": "RECOMMEND_REDUCE_SUGARY_DRINKS"
+    },
+    {
+      "id": "FINDING_LOW_PROTEIN_INTAKE",
+      "pillarId": "overall",
+      "label": "Your protein intake may not be sufficient to support satiety and preserve muscle during fat loss.",
+      "penalty": 0,
+      "recommendationId": "RECOMMEND_INCREASE_PROTEIN"
+    }
+  ],
+  "biggestOpportunity": "Nutrition",
+  "biggestOpportunityExplanation": "Based on your answers, your biggest challenge isn't lack of motivation. It is the combination of:\n\n• poor portion control\n• frequent restaurant meals\n• excess liquid calories\n\nImproving these habits alone is likely to produce the biggest improvement over the next few months.",
+  "priorityPlan": [
+    {
+      "id": "RECOMMEND_PORTION_CONTROL",
+      "title": "Master Portion Control",
+      "why": "Portion control is the most direct way to create a calorie deficit.",
+      "action": "Use smaller plates",
+      "expectedBenefit": "Weight loss",
+      "timeline": "2–4 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Clothes fit looser",
+        "Scale weight decreases"
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "RECOMMEND_REDUCE_SUGARY_DRINKS",
+      "title": "Cut Liquid Calories",
+      "why": "Liquid calories do not trigger fullness signals in the brain.",
+      "action": "Switch to zero-sugar versions",
+      "expectedBenefit": "Rapid calorie reduction",
+      "timeline": "2–4 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Reduced daily calorie intake"
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "RECOMMEND_INCREASE_PROTEIN",
+      "title": "Prioritize Protein",
+      "why": "Protein preserves muscle mass during weight loss and keeps you full.",
+      "action": "Include 20-30g protein per meal",
+      "expectedBenefit": "Muscle preservation",
+      "timeline": "2–4 weeks",
+      "difficulty": "Moderate",
+      "successIndicators": [
+        "Feeling full between meals"
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "RECOMMEND_INCREASE_DAILY_STEPS",
+      "title": "Boost Daily Steps",
+      "why": "Daily movement (NEAT) accounts for more calorie burn than structured exercise.",
+      "action": "Take a 15-minute walk after meals",
+      "expectedBenefit": "Increased calorie burn",
+      "timeline": "2–4 weeks",
+      "difficulty": "Easy",
+      "successIndicators": [
+        "Hitting 8,000+ steps consistently"
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "RECOMMEND_STRENGTH_TRAINING",
+      "title": "Start Strength Training",
+      "why": "Muscle is metabolically active tissue; maintaining it prevents your metabolism from dropping.",
+      "action": "Start with bodyweight exercises",
+      "expectedBenefit": "Muscle preservation",
+      "timeline": "2–4 weeks",
+      "difficulty": "Advanced",
+      "successIndicators": [
+        "Getting stronger in lifts"
+      ],
+      "priority": "High"
+    }
+  ],
+  "nutritionPlan": {
+    "protein": "≈86 g/day",
+    "calories": "≈2109 kcal/day",
+    "water": "≈3.0 L/day",
+    "proteinGrams": 86,
+    "carbs": "Moderate",
+    "fats": "Moderate",
+    "naturalSources": [
+      "Eggs",
+      "Chicken Breast",
+      "Fish",
+      "Paneer",
+      "Curd"
+    ],
+    "supplements": {
+      "state": "RECOMMENDED",
+      "products": [
+        "High-quality Protein Powder",
+        "Multivitamin"
+      ]
+    }
+  },
+  "recommendedAssessments": []
+}
