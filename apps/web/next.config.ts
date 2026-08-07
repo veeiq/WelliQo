@@ -10,4 +10,4 @@ export default withSentryConfig(nextConfig, {
   silent: true,
   org: "veeiq",
   project: "welliqo",
-});
+}); // Force deploy
