@@ -1,142 +1,181 @@
 import React from 'react';
 import Link from 'next/link';
-import { HelpCircle, Heart, Shield, Activity, Users, Target, Sparkles } from 'lucide-react';
+import { AssessmentRegistry } from '@/assessments/registry';
+import { ArrowDown } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | WelliQo',
-  description: 'Learn about WelliQo, our founder Alok Kumar Mahapatra, and our expert wellness coaches Priya & Dipti.',
+  title: 'About | WelliQo',
+  description: 'Health advice is everywhere. Understanding your body is rare.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen pb-24">
-      {/* Header */}
-      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-20 sm:py-24">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="flex items-center justify-center gap-3 text-emerald-600 dark:text-emerald-400 mb-6">
-            <Sparkles className="w-6 h-6" />
-            <span className="font-semibold tracking-widest uppercase text-sm">About WelliQo</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-slate-900 dark:text-slate-50 mb-6 text-balance">
-            Your lifelong <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">wellness companion.</span>
-          </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed text-balance">
-            We believe that true wellness isn't a destination—it's a continuous journey of
-            understanding your body and making supportive choices.
+    <div className="w-full bg-slate-50 dark:bg-slate-950 min-h-screen font-sans selection:bg-emerald-200 selection:text-emerald-900">
+      
+      {/* HERO SECTION */}
+      <section className="px-4 py-32 md:py-48 max-w-5xl mx-auto text-center flex flex-col items-center justify-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-slate-900 dark:text-white mb-8 leading-[1.1] text-balance">
+          Health advice is everywhere.<br/>
+          <span className="text-emerald-600 dark:text-emerald-400 font-medium">Understanding your body is rare.</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl font-light leading-relaxed text-balance">
+          WelliQo wasn't built to tell everyone the same thing.<br/>
+          It was built to understand one person at a time.
+        </p>
+      </section>
+
+      {/* BUILT BY ALOK */}
+      <section className="px-4 py-24 max-w-4xl mx-auto flex flex-col items-center text-center">
+        <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-12 shadow-2xl shadow-emerald-900/20">
+          <img 
+            src="/alok.jpg" 
+            alt="Alok" 
+            className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" 
+          />
+        </div>
+        <h2 className="text-3xl md:text-5xl font-medium text-slate-900 dark:text-white mb-6">
+          Hi, I'm Alok.
+        </h2>
+        <div className="text-xl md:text-3xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-3xl space-y-8">
+          <p>
+            I spent years watching people receive generic advice that rarely fit their lives.
+          </p>
+          <p>
+            I wanted to build something different.<br/>
+            Something that listens before it teaches.
+          </p>
+          <p className="text-sm md:text-base text-slate-500 pt-12 uppercase tracking-widest font-semibold text-balance">
+            Built by Alok.<br/>For everyone who's tired of generic wellness advice.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-16">
-            
-            {/* Our Story / Founder */}
-            <section>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Our Story</h2>
-              </div>
-              <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 text-lg leading-relaxed space-y-6">
-                <p>
-                  WelliQo was founded by <strong>Alok Kumar Mahapatra</strong> with a clear vision: to bridge the gap between complex nutritional science and everyday lifestyle choices. Recognizing that standard, one-size-fits-all advice rarely results in long-term success, Alok set out to build a platform that treats every individual as unique.
-                </p>
-                <p>
-                  By combining holistic wellness principles with modern technology, WelliQo provides a framework to understand your baseline, set achievable goals, and sustain meaningful progress. The human body is incredibly complex, but understanding what it needs shouldn't be.
-                </p>
-              </div>
-            </section>
-
-            {/* Our Team */}
-            <section>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Meet Our Experts</h2>
-              </div>
-              <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-                Behind our intelligence engine is a team of dedicated human experts. Our certified Wellness Coaches ensure that our recommendations are not just scientifically accurate, but practical, empathetic, and sustainable.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center">
-                  <div className="w-24 h-24 bg-slate-200 dark:bg-slate-800 rounded-full mb-6 flex items-center justify-center text-3xl font-bold text-slate-400">P</div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">Priya</h3>
-                  <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-4">Lead Wellness Coach</p>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    Specializing in holistic nutrition and behavioral change. Priya helps translate complex wellness goals into simple daily habits.
-                  </p>
-                </div>
-                
-                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center">
-                  <div className="w-24 h-24 bg-slate-200 dark:bg-slate-800 rounded-full mb-6 flex items-center justify-center text-3xl font-bold text-slate-400">D</div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">Dipti</h3>
-                  <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-4">Senior Wellness Coach</p>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    Focusing on metabolic health and recovery. Dipti brings years of experience in guiding individuals through transformational journeys.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* The Companion Approach */}
-            <section>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                The Companion Approach
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <div className="p-3 bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 rounded-xl inline-flex mb-4">
-                    <Heart className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
-                    Empathy First
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    We start by listening. Your assessment answers inform everything we do, allowing
-                    us to meet you exactly where you are.
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <div className="p-3 bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-xl inline-flex mb-4">
-                    <Activity className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
-                    Science-Backed
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    Our knowledge library and intelligence engine are built upon verified
-                    nutritional science and behavioral psychology.
-                  </p>
-                </div>
-              </div>
-            </section>
+      {/* WHY WELLIQO EXISTS */}
+      <section className="px-4 py-32 md:py-48 max-w-5xl mx-auto">
+        <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-500 mb-16 text-center">Why WelliQo Exists</h2>
+        <div className="space-y-24 md:space-y-32 text-center md:text-left">
+          <div>
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-slate-500 dark:text-slate-400 mb-4 text-balance">Most health advice starts with answers.</h3>
+            <p className="text-3xl md:text-5xl lg:text-6xl font-medium text-slate-900 dark:text-white text-balance">We start with questions.</p>
           </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-slate-900 dark:bg-slate-900 p-8 rounded-3xl text-white shadow-xl shadow-slate-900/10">
-              <Shield className="w-10 h-10 mb-6 text-emerald-400" />
-              <h3 className="text-xl font-bold mb-4">Privacy & Trust</h3>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                Your personal health data is sacred. We utilize state-of-the-art encryption to
-                ensure your assessment results and wellness goals remain entirely private.
-              </p>
-              <Link
-                href="/privacy-policy"
-                className="inline-flex items-center font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
-              >
-                Read our Privacy Policy →
-              </Link>
-            </div>
+          <div className="md:text-right">
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-slate-500 dark:text-slate-400 mb-4 text-balance">Most apps track numbers.</h3>
+            <p className="text-3xl md:text-5xl lg:text-6xl font-medium text-slate-900 dark:text-white text-balance">We explain patterns.</p>
+          </div>
+          <div>
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-slate-500 dark:text-slate-400 mb-4 text-balance">Most plans tell you what to do.</h3>
+            <p className="text-3xl md:text-5xl lg:text-6xl font-medium text-slate-900 dark:text-white text-balance">We help you understand why.</p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* HOW WELLIQO THINKS */}
+      <section className="px-4 py-32 bg-white dark:bg-slate-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-500 mb-20">How WelliQo Thinks</h2>
+          
+          <div className="flex flex-col items-center space-y-8 text-2xl md:text-4xl font-light text-slate-800 dark:text-slate-200">
+            <div className="font-medium text-slate-900 dark:text-white">You</div>
+            <ArrowDown className="w-8 h-8 text-emerald-300 dark:text-emerald-800" strokeWidth={1.5} />
+            <div>Assessment</div>
+            <ArrowDown className="w-8 h-8 text-emerald-400 dark:text-emerald-700" strokeWidth={1.5} />
+            <div>Understanding</div>
+            <ArrowDown className="w-8 h-8 text-emerald-500 dark:text-emerald-600" strokeWidth={1.5} />
+            <div>Body Intelligence</div>
+            <ArrowDown className="w-8 h-8 text-emerald-600 dark:text-emerald-500" strokeWidth={1.5} />
+            <div>Nutrition Intelligence</div>
+            <ArrowDown className="w-8 h-8 text-emerald-700 dark:text-emerald-400" strokeWidth={1.5} />
+            <div>Daily Blueprint</div>
+            <ArrowDown className="w-8 h-8 text-emerald-800 dark:text-emerald-300" strokeWidth={1.5} />
+            <div>Small Habits</div>
+            <ArrowDown className="w-8 h-8 text-emerald-900 dark:text-emerald-200" strokeWidth={1.5} />
+            <div className="font-medium text-emerald-600 dark:text-emerald-400">Long-term Health</div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR PRINCIPLES */}
+      <section className="px-4 py-32 md:py-48 max-w-4xl mx-auto">
+        <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-500 mb-20 text-center">Our Principles</h2>
+        
+        <div className="space-y-20">
+          <div>
+            <h3 className="text-3xl md:text-4xl font-medium text-slate-900 dark:text-white mb-4">Evidence before opinion.</h3>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light">Every recommendation should have a reason.</p>
+          </div>
+          <div>
+            <h3 className="text-3xl md:text-4xl font-medium text-slate-900 dark:text-white mb-4">Compassion before motivation.</h3>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light text-balance">People don't change because they are judged.</p>
+          </div>
+          <div>
+            <h3 className="text-3xl md:text-4xl font-medium text-slate-900 dark:text-white mb-4">Progress before perfection.</h3>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light">Small improvements matter.</p>
+          </div>
+          <div>
+            <h3 className="text-3xl md:text-4xl font-medium text-slate-900 dark:text-white mb-4">Privacy by design.</h3>
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light">Your health belongs to you.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* THE TECHNOLOGY */}
+      <section className="px-4 py-32 bg-slate-900 text-center text-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-400 mb-16">The Intelligence Behind WelliQo</h2>
+          
+          <h3 className="text-3xl md:text-5xl font-light leading-tight mb-16 text-balance">
+            WelliQo combines
+          </h3>
+          
+          <div className="flex flex-col items-center gap-6 text-2xl md:text-4xl font-medium mb-16">
+            <div className="flex items-center gap-4"><span className="text-emerald-500 font-light">✓</span> behavioral science</div>
+            <div className="flex items-center gap-4"><span className="text-emerald-500 font-light">✓</span> nutrition science</div>
+            <div className="flex items-center gap-4"><span className="text-emerald-500 font-light">✓</span> health mathematics</div>
+            <div className="flex items-center gap-4"><span className="text-emerald-500 font-light">✓</span> personalized reasoning</div>
+          </div>
+          
+          <p className="text-2xl md:text-4xl font-light text-slate-400 text-balance">
+            to produce one report built specifically for you.
+          </p>
+        </div>
+      </section>
+
+      {/* DEFINING SENTENCE */}
+      <section className="px-4 py-32 md:py-48 max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium text-slate-900 dark:text-white leading-[1.2] text-balance">
+          "We don't tell you what's healthy.<br/>
+          <span className="text-emerald-600 dark:text-emerald-500 font-normal italic">We help you understand what's healthy for you.</span>"
+        </h2>
+      </section>
+
+      {/* OUR PROMISE */}
+      <section className="px-4 py-32 bg-white dark:bg-slate-900 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-sm font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-500 mb-20">Our Promise</h2>
+          
+          <div className="text-2xl md:text-4xl font-light text-slate-800 dark:text-slate-200 leading-relaxed space-y-12">
+            <p>We will never sell your health data.</p>
+            <p>We will never recommend something because it pays us.</p>
+            <p>We will never replace medical professionals.</p>
+            <p className="font-medium text-slate-900 dark:text-white text-balance">We will always try to help you understand yourself better than yesterday.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 py-32 md:py-48 text-center">
+        <h2 className="text-4xl md:text-5xl font-medium text-slate-900 dark:text-white mb-12">
+          Ready to understand your body?
+        </h2>
+        <Link 
+          href={AssessmentRegistry.getDirectoryRoute()}
+          className="inline-flex items-center justify-center h-16 px-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-lg font-medium hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-emerald-500/20"
+        >
+          Start Free Assessment
+        </Link>
+      </section>
+
     </div>
   );
 }
