@@ -2,8 +2,8 @@ import { z } from 'zod';
 
 const envSchema = z.object({
   DATABASE_URL: z.string().url("DATABASE_URL must be a valid URL").optional(),
-  NEXTAUTH_SECRET: z.string().min(1, "NEXTAUTH_SECRET is required"),
-  NEXTAUTH_URL: z.string().url("NEXTAUTH_URL must be a valid URL"),
+  NEXTAUTH_SECRET: z.string().min(1, "NEXTAUTH_SECRET is required").optional(),
+  NEXTAUTH_URL: z.string().url("NEXTAUTH_URL must be a valid URL").optional(),
   RESEND_API_KEY: z.string().min(1, "RESEND_API_KEY is required").optional(),
   POSTHOG_KEY: z.string().optional(),
   SENTRY_DSN: z.string().url("SENTRY_DSN must be a valid URL").optional(),
