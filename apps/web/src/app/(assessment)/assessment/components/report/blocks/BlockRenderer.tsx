@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExperienceBlock } from '../../../../../../../engine/types/experience-blocks';
+import { ExperienceBlock } from '@/engine/types/experience-blocks';
 import { 
   RecognitionBlockUI, 
   ReflectionBlockUI, 

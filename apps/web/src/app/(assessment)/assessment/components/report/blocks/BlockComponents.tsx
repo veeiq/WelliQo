@@ -4,7 +4,7 @@ import {
   RecognitionBlock, ReflectionBlock, StrengthBlock, UnderstandingBlock, 
   RealityBlock, JourneyBlock, ActionsBlock, ResourcesBlock, ScoreBlock, ExperienceBlock,
   BodyIntelligenceBlock, NutritionIntelligenceBlock, DailyBlueprintBlock, CompanionNutritionBlock
-} from '../../../../../../../engine/types/experience-blocks';
+} from '@/engine/types/experience-blocks';
 import { AlertTriangle, TrendingUp, Leaf, CheckCircle2, BookOpen, Activity, ChevronRight, ActivitySquare, Target, Droplets, Moon, Footprints, Flame } from 'lucide-react';
 import { HealthWheel } from '../HealthWheel';
 
