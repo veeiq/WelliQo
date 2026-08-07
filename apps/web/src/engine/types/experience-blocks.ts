@@ -23,7 +23,8 @@ export type BlockType =
   | 'BodyIntelligence'
   | 'NutritionIntelligence'
   | 'DailyBlueprint'
-  | 'CompanionNutrition';
+  | 'CompanionNutrition'
+  | 'TurningPoint';
 
 export interface StructuredNarrative {
   intent: string;
@@ -175,6 +176,14 @@ export interface CompanionNutritionBlock extends BaseExperienceBlock {
   };
 }
 
+export interface TurningPointBlock extends BaseExperienceBlock {
+  meta: BlockMetadata & { type: 'TurningPoint' };
+  data: {
+    primaryChallenge: string;
+    impact: string;
+  };
+}
+
 export type ExperienceBlock = 
   | RecognitionBlock 
   | ReflectionBlock 
@@ -189,7 +198,8 @@ export type ExperienceBlock =
   | BodyIntelligenceBlock
   | NutritionIntelligenceBlock
   | DailyBlueprintBlock
-  | CompanionNutritionBlock;
+  | CompanionNutritionBlock
+  | TurningPointBlock;
 
 // The intermediate structure the engine builds before emitting blocks
 export interface ExperienceGraphNode {
