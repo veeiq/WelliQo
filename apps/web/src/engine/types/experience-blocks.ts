@@ -63,6 +63,11 @@ export interface ReflectionBlock extends BaseExperienceBlock {
       score: number;
       status: 'excellent' | 'good' | 'fair' | 'poor' | 'unknown';
     }>;
+    goodNews?: {
+      s1: string;
+      s2: string;
+      highlight: string;
+    };
   };
 }
 
