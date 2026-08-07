@@ -49,7 +49,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
               <li><Link href="/coaches" className="hover:text-emerald-400 transition-colors">Coaches</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact</Link></li>
               <li><Link href="/health-library" className="hover:text-emerald-400 transition-colors">Library</Link></li>
-              <li><Link href="/faq" className="hover:text-emerald-400 transition-colors">FAQ</Link></li>
+              <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 

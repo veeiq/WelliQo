@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Outfit } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { NextAuthProvider } from '@/components/session-provider';
+import '@/env'; // Validate environment variables early
 import './globals.css';
 import { validateAssessments } from '@/assessments/validator';
 

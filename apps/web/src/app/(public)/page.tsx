@@ -342,7 +342,7 @@ export default function HomePage() {
           </details>
         </div>
         <div className="mt-8 text-center">
-          <Link href="/faq" className="text-emerald-600 dark:text-emerald-400 font-medium hover:underline">
+          <Link href="/contact" className="text-emerald-600 dark:text-emerald-400 font-medium hover:underline">
             View all FAQs →
           </Link>
         </div>

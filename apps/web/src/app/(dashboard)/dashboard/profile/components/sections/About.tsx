@@ -24,7 +24,7 @@ export function About() {
       </div>
 
       <div className="space-y-2">
-        <Link href="/faq" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group border border-transparent hover:border-slate-200 dark:hover:border-slate-800">
+        <Link href="/contact" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group border border-transparent hover:border-slate-200 dark:hover:border-slate-800">
           <span className="font-medium text-slate-700 dark:text-slate-300">Support Center & FAQ</span>
           <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" />
         </Link>
