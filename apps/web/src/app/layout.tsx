@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: 'WelliQo | Intelligent Wellness, Science-Informed',
     description: 'Discover your wellness baseline and get a customized nutrition plan.',
     type: 'website',
+    images: ['/logo.jpg'],
   },
   manifest: '/manifest.json'
 };
@@ -34,10 +35,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={outfit.variable}>
-      <body className="font-sans antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 selection:bg-emerald-200 selection:text-emerald-900 min-h-screen flex flex-col">
+      <body className="font-sans antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 selection:bg-emerald-200 selection:text-emerald-900 min-h-screen flex flex-col print:block print:min-h-0 print:h-auto">
         <NextAuthProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className="flex-grow">
+            <main className="flex-grow print:block print:h-auto">
               {children}
             </main>
           </ThemeProvider>

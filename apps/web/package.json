@@ -18,7 +18,7 @@
     "@welliqo/ui": "workspace:*",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^13.0.0",
-    "html2canvas": "^1.4.1",
+    "html-to-image": "^1.11.13",
     "jspdf": "^4.2.1",
     "lucide-react": "0.475.0",
     "next": "16.2.12",

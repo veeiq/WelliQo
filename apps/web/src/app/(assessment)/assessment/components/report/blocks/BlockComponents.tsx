@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { 
   RecognitionBlock, ReflectionBlock, StrengthBlock, UnderstandingBlock, 
   RealityBlock, JourneyBlock, ActionsBlock, ResourcesBlock, ScoreBlock, ExperienceBlock,
@@ -86,9 +87,9 @@ export const UnderstandingBlockUI = ({ block }: { block: UnderstandingBlock }) =
             <p className="text-slate-900 dark:text-slate-100 font-semibold mb-2">We don't expect this report to be perfect.</p>
             <p className="text-sm text-slate-500 dark:text-slate-400">If we misunderstood something, tell us what we missed.</p>
           </div>
-          <button className="px-6 py-2.5 mt-2 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl text-sm font-bold transition-all shadow-sm">
+          <Link href="/contact" className="px-6 py-2.5 mt-2 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl text-sm font-bold transition-all shadow-sm">
             Tell us what we missed
-          </button>
+          </Link>
         </div>
       </div>
     )}
@@ -187,24 +188,46 @@ export const ScoreBlockUI = ({ block }: { block: ScoreBlock }) => (
       </div>
     )}
     
-    <div className="max-w-2xl mx-auto bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
-      <h2 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4">{block.narrative.headline}</h2>
-      <p className="text-slate-600 dark:text-slate-400 mb-8 whitespace-pre-line">{block.narrative.body}</p>
+    <div className="max-w-3xl mx-auto relative group">
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-emerald-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
       
-      {block.data.showScore && (
-        <div className="inline-flex items-center gap-6 bg-white dark:bg-slate-950 px-8 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest text-left leading-tight">
-            Today's<br/>Baseline
-          </span>
-          <div className="w-px h-10 bg-slate-200 dark:bg-slate-800"></div>
-          <span className={cn(
-            "text-3xl md:text-4xl font-black",
-            block.data.overallScore >= 90 ? "text-emerald-500" : block.data.overallScore >= 75 ? "text-green-500" : "text-slate-900 dark:text-white"
-          )}>
-            {block.data.overallScore >= 90 ? '🌟 Excellent' : block.data.overallScore >= 75 ? '✅ Great' : block.data.overallScore}
-          </span>
-        </div>
-      )}
+      <div className="relative bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200/50 dark:border-slate-700/50 shadow-2xl overflow-hidden flex flex-col items-center text-center">
+        {/* Subtle Decorative Elements */}
+        <div className="absolute -top-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-emerald-600 dark:from-indigo-400 dark:to-emerald-400 mb-6 leading-tight">
+          {block.narrative.headline}
+        </h2>
+        
+        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 whitespace-pre-line leading-relaxed max-w-2xl font-medium">
+          {block.narrative.body}
+        </p>
+        
+        {block.data.showScore && (
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-3xl blur opacity-30"></div>
+            <div className="relative bg-white dark:bg-slate-950 px-10 py-6 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl flex items-center gap-8">
+              <div className="text-left">
+                <span className="block text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-1">
+                  Today's
+                </span>
+                <span className="block text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                  Baseline
+                </span>
+              </div>
+              <div className="w-px h-16 bg-gradient-to-b from-transparent via-slate-200 dark:via-slate-800 to-transparent"></div>
+              <span className={cn(
+                "text-5xl md:text-6xl font-black tracking-tighter drop-shadow-sm",
+                block.data.overallScore >= 90 ? "text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-emerald-600" : block.data.overallScore >= 75 ? "text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-emerald-500" : "text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-300 dark:to-purple-400"
+              )}>
+                {block.data.overallScore >= 90 ? '🌟 Excellent' : block.data.overallScore >= 75 ? '✅ Great' : block.data.overallScore}
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   </div>
 );
@@ -470,14 +493,23 @@ export const CompanionNutritionBlockUI = ({ block }: { block: CompanionNutrition
 
             <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Nutrition Support Options</h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Discuss these options with your coach to help fill your {n.label.toLowerCase()} gap.</p>
-            <ul className="space-y-3">
+            <div className="space-y-3 flex flex-col">
               {n.companionSupport.map((product: string, j: number) => (
-                <li key={j} className="flex items-start gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                  <Leaf className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                  <span className="font-semibold text-slate-800 dark:text-slate-200">{product}</span>
-                </li>
+                <a 
+                  key={j} 
+                  href="#coach-cta"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('coach-cta')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-start gap-3 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 hover:shadow-md cursor-pointer transition-all group"
+                >
+                  <Leaf className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-slate-800 dark:text-slate-200 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">{product}</span>
+                  <ChevronRight className="w-5 h-5 text-slate-300 dark:text-slate-600 ml-auto group-hover:text-emerald-500 transition-colors" />
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       ))}

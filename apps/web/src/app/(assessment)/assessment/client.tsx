@@ -10,21 +10,25 @@ import { ProfileIntercept } from './components/ProfileIntercept';
 export function AssessmentClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { runtimeState, setAssessmentId } = useAssessmentStore();
+  const { runtimeState, setAssessmentId, data, reset } = useAssessmentStore();
 
   useEffect(() => {
     // Check for goal pre-selection in URL (legacy support) or id
     const id = searchParams.get('id');
     const legacyGoal = searchParams.get('goal');
+    const targetId = id || legacyGoal;
     
-    if (id && runtimeState === 'GOAL_SELECTION') {
-        setAssessmentId(id);
-    } else if (legacyGoal && runtimeState === 'GOAL_SELECTION') {
-        setAssessmentId(legacyGoal);
-    } else if (!id && !legacyGoal && runtimeState === 'GOAL_SELECTION') {
+    if (targetId) {
+      if (data.assessmentId && data.assessmentId !== targetId) {
+        // User clicked a DIFFERENT assessment. Wipe the old one so they can start fresh.
+        reset();
+      } else if (runtimeState === 'GOAL_SELECTION') {
+        setAssessmentId(targetId);
+      }
+    } else if (!targetId && runtimeState === 'GOAL_SELECTION') {
         router.push(AssessmentRegistry.getDirectoryRoute());
     }
-  }, [searchParams, runtimeState, setAssessmentId, router]);
+  }, [searchParams, runtimeState, data.assessmentId, setAssessmentId, reset, router]);
 
   useEffect(() => {
     if (runtimeState === 'REPORT_READY') {

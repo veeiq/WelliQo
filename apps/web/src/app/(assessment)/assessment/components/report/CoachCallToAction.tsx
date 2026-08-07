@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAssessmentStore } from '../../../../../store/assessment-store';
-import { PhoneCall, MessageCircle, Mail, User, Globe, Award } from 'lucide-react';
+import { PhoneCall, MessageCircle, Mail, User, Globe, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@welliqo/ui/components/button';
 import Link from 'next/link';
 
@@ -38,24 +38,30 @@ export function CoachCallToAction() {
 
   return (
     <>
-      <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-3xl p-6 sm:p-8 mt-12 border border-emerald-100 dark:border-emerald-900/50">
+      <div id="coach-cta" className="bg-emerald-50 dark:bg-emerald-950/30 rounded-3xl p-6 sm:p-8 mt-12 border border-emerald-100 dark:border-emerald-900/50 scroll-mt-24">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex-1 space-y-4 text-center sm:text-left">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-2">
               <PhoneCall className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-              Need expert guidance?
+              Need help reaching your goals?
             </h2>
             <p className="text-slate-600 dark:text-slate-300">
-              Connect with a certified Wellness Coach.
+              Talk to a real person. Connect with a certified Wellness Coach for personalized nutritional support and a step-by-step action plan.
             </p>
           </div>
           <div className="w-full sm:w-auto">
-            <Button 
+            <button 
               onClick={() => setIsOpen(true)}
-              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-200 dark:shadow-none font-semibold text-lg px-8 py-6 rounded-2xl"
+              className="relative group w-full sm:w-auto font-bold text-lg px-8 py-4 md:py-5 rounded-2xl overflow-hidden shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_0_60px_-15px_rgba(16,185,129,0.7)] transition-all duration-300 transform hover:-translate-y-1"
             >
-              View Coaches
-            </Button>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:scale-105 transition-transform duration-500"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] transition-opacity mix-blend-overlay"></div>
+              <div className="absolute inset-0 w-full h-full border border-white/20 rounded-2xl"></div>
+              <div className="relative flex items-center justify-center gap-2 text-white">
+                View Coaches
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </button>
           </div>
         </div>
       </div>

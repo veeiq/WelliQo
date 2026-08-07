@@ -21,7 +21,7 @@ export default function ReportPage() {
   }
 
   return (
-    <div className="flex-1 flex flex-col pt-8 md:pt-16 px-6 overflow-y-auto hide-scrollbar h-full">
+    <div className="flex-1 flex flex-col pt-8 md:pt-16 px-6 overflow-y-auto hide-scrollbar h-full print:block print:h-auto print:overflow-visible">
       <ReportDashboard />
     </div>
   );

@@ -4,7 +4,8 @@ import { ScoreWidget, ScoreWidgetSkeleton } from './widgets/ScoreWidget';
 import { FocusWidget, FocusWidgetSkeleton } from './widgets/FocusWidget';
 import { AdaptiveActionWidget, NextBestStepSkeleton } from './widgets/NextBestStepWidget';
 import { BreakdownWidget, BreakdownWidgetSkeleton } from './widgets/BreakdownWidget';
-import { TrendsWidget, HealthLibraryWidget, GoalsWidget } from './widgets/Placeholders';
+import { HealthLibraryWidget, GoalsWidget } from './widgets/Placeholders';
+import { HistoryWidget } from './widgets/HistoryWidget';
 import { HeroOnboardingWidget } from './widgets/HeroOnboardingWidget';
 import { getDashboardState } from './actions';
 
@@ -31,7 +32,7 @@ export default async function DashboardPage() {
               <GoalsWidget state={dashboardState} />
             </div>
             <div className="flex flex-col gap-6">
-              <TrendsWidget state={dashboardState} />
+              <HistoryWidget state={dashboardState} />
             </div>
           </div>
         </>
@@ -60,7 +61,7 @@ export default async function DashboardPage() {
             <Suspense fallback={<BreakdownWidgetSkeleton />}>
               <BreakdownWidget state={dashboardState} />
             </Suspense>
-            <TrendsWidget state={dashboardState} />
+            <HistoryWidget state={dashboardState} />
             <GoalsWidget state={dashboardState} />
           </div>
         </div>

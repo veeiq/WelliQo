@@ -2,6 +2,19 @@ import { prisma } from '@/lib/prisma';
 import { AssessmentResult } from '@prisma/client';
 import { CalculatedMetrics } from '@/store/assessment-store';
 
+/**
+ * Robustly extracts the CalculatedMetrics object from a database clinicalReport.
+ * Handles both legacy formats (where clinicalReport IS the metrics) 
+ * and V1 formats (where it's { clinical: metrics, experience: blocks }).
+ */
+export function extractMetrics(clinicalReport: any): CalculatedMetrics | null {
+  if (!clinicalReport) return null;
+  if (clinicalReport.clinical && typeof clinicalReport.clinical === 'object') {
+    return clinicalReport.clinical as CalculatedMetrics;
+  }
+  return clinicalReport as CalculatedMetrics;
+}
+
 export class AssessmentRepository {
   /**
    * Retrieves the most recent assessment result for a user
@@ -19,7 +32,7 @@ export class AssessmentRepository {
   static async getLatestMetrics(userId: string): Promise<CalculatedMetrics | null> {
     const result = await this.getLatestAssessment(userId);
     if (!result) return null;
-    return result.clinicalReport as unknown as CalculatedMetrics;
+    return extractMetrics(result.clinicalReport);
   }
 
   /**
@@ -40,7 +53,7 @@ export class AssessmentRepository {
     return results.map(r => ({
       id: r.id,
       date: r.createdAt,
-      score: (r.clinicalReport as unknown as CalculatedMetrics).overallScore
+      score: extractMetrics(r.clinicalReport)?.overallScore || 0
     })).reverse(); // oldest to newest for charts
   }
 }

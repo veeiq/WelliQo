@@ -58,7 +58,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
   const isFirstQuestion = currentQuestionIndex === 0;
 
   return (
-    <div className="min-h-[100dvh] flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-900 bg-slate-50 dark:bg-slate-950">
+    <div className="min-h-[100dvh] flex flex-col font-sans selection:bg-emerald-100 selection:text-emerald-900 bg-slate-50 dark:bg-slate-950 print:block print:min-h-0 print:h-auto print:overflow-visible">
       {/* Premium running bar at top */}
       <div className="fixed top-0 left-0 right-0 h-1.5 bg-slate-200 dark:bg-slate-900 z-50 overflow-hidden">
         <div
@@ -70,7 +70,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
       {/* Header */}
       <header className="w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 sticky top-1.5 z-40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="relative h-9 w-9 flex items-center justify-center">
               <img 
                 src="/logo.jpg" 
@@ -81,7 +81,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
             <span className="font-semibold text-lg tracking-tight text-slate-900 dark:text-white">
               Welli<span className="text-emerald-500">Q</span>o
             </span>
-          </div>
+          </Link>
 
           <button 
             onClick={() => setShowExitDialog(true)}
@@ -189,7 +189,7 @@ export default function AssessmentLayout({ children }: { children: React.ReactNo
         )}
       </header>
 
-      <main className="flex-1 flex flex-col min-h-0 bg-slate-50 dark:bg-slate-950">{children}</main>
+      <main className="flex-1 flex flex-col min-h-0 bg-slate-50 dark:bg-slate-950 print:block print:min-h-0 print:h-auto print:overflow-visible">{children}</main>
 
       {/* Exit Dialog */}
       {showExitDialog && (

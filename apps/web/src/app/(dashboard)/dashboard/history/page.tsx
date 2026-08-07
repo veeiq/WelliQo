@@ -2,6 +2,7 @@ import { getUserHistory } from "../actions";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
 import { AssessmentRegistry } from "@/assessments/registry";
+import { extractMetrics } from "@/repositories/assessment-repository";
 
 export default async function AssessmentHistoryPage() {
   const history = await getUserHistory();
@@ -40,13 +41,10 @@ export default async function AssessmentHistoryPage() {
           let duration = '18 min'; // Placeholder for now, could be stored in DB later
           
           try {
-            if (assessment.clinicalReport && typeof assessment.clinicalReport === 'object') {
-              if ('overallScore' in assessment.clinicalReport) {
-                score = (assessment.clinicalReport as any).overallScore;
-              }
-              if ('scoreMeaning' in assessment.clinicalReport) {
-                status = (assessment.clinicalReport as any).scoreMeaning.split(' - ')[0] || (assessment.clinicalReport as any).scoreMeaning;
-              }
+            const metrics = extractMetrics(assessment.clinicalReport);
+            if (metrics) {
+              score = metrics.overallScore || 0;
+              status = (metrics.scoreMeaning || '').split(' - ')[0] || metrics.scoreMeaning || 'Completed';
             }
           } catch (e) {
             // ignore

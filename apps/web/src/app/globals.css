@@ -63,6 +63,34 @@ body {
   }
 }
 
+@layer utilities {
+  .animate-slow-spin {
+    animation: spin 12s linear infinite;
+  }
+}
+
+@media print {
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 18mm 15mm;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: white !important;
+  }
+
+  /* Force headers and footers defined by browser print dialog to be hidden or standard if we provide our own */
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }

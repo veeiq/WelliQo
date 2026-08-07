@@ -26,7 +26,7 @@ export function SaveReportModal({ isOpen, onClose }: SaveReportModalProps) {
       <div className="relative w-full max-w-md animate-in zoom-in-95 duration-300">
         <button 
           onClick={onClose}
-          className="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition-colors z-10 shadow-sm"
         >
           ✕
         </button>
