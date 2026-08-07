@@ -88,6 +88,15 @@ export interface CalculatedMetrics {
     bmi: string;
     bmiCategory: string;
     healthyWeightRange: string;
+    targetWeight: number;
+    bodyFatEstimate: string;
+    leanMass: number;
+    fatMass: number;
+    fatToLose: number;
+    metabolicAge: number;
+    idealWaist: string;
+    waistRisk: string;
+    daysToGoal: number;
     bmr: number;
     tdee: number;
     targetCalories: number;

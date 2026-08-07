@@ -26,6 +26,14 @@ export class NutritionIntelligenceProvider {
     // Process Protein
     if (this.mappingData.nutrients.protein) {
       const pData = this.mappingData.nutrients.protein;
+      let difficulty = 'Easy';
+      if (proteinGap > 20) difficulty = 'Moderate';
+      if (proteinGap > 40) difficulty = 'Hard';
+      
+      const bowlsDal = Math.round(proteinGap / 8); // ~8g per bowl of dal
+      const scoopsProtein = Math.round(proteinGap / 20); // ~20g per scoop
+      const foodEquivalent = `≈ ${bowlsDal} bowls of dal or ${scoopsProtein} scoop(s) of protein`;
+
       nutrients.push({
         id: pData.id,
         label: pData.label,
@@ -34,6 +42,8 @@ export class NutritionIntelligenceProvider {
         gap: `${proteinGap}g`,
         status: proteinGap > (targets.protein * 0.3) ? 'red' : 'yellow', // Red if >30% missing
         whyItMatters: pData.whyItMatters,
+        difficulty,
+        foodEquivalent,
         foods: pData.foods[preference] || pData.foods['veg'],
         companionSupport: pData.companionSupport
       });
@@ -42,6 +52,13 @@ export class NutritionIntelligenceProvider {
     // Process Fiber
     if (this.mappingData.nutrients.fiber) {
       const fData = this.mappingData.nutrients.fiber;
+      let difficulty = 'Easy';
+      if (fiberGap > 10) difficulty = 'Moderate';
+      if (fiberGap > 15) difficulty = 'Hard';
+
+      const apples = Math.round(fiberGap / 4.5); // ~4.5g per apple
+      const foodEquivalent = `≈ ${apples} apples`;
+
       nutrients.push({
         id: fData.id,
         label: fData.label,
@@ -50,6 +67,8 @@ export class NutritionIntelligenceProvider {
         gap: `${fiberGap}g`,
         status: fiberGap > (targets.fiber * 0.3) ? 'red' : 'yellow',
         whyItMatters: fData.whyItMatters,
+        difficulty,
+        foodEquivalent,
         foods: fData.foods[preference] || fData.foods['veg'],
         companionSupport: fData.companionSupport
       });
@@ -66,6 +85,9 @@ export class NutritionIntelligenceProvider {
         if (m === 'b12' && (preference === 'vegan' || preference === 'veg' || preference === 'jain')) status = 'red';
         if (m === 'vitamin_d') status = 'red'; // universally deficient
         
+        let difficulty = 'Moderate';
+        if (status === 'red') difficulty = 'Hard';
+
         nutrients.push({
           id: mData.id,
           label: mData.label,
@@ -74,6 +96,8 @@ export class NutritionIntelligenceProvider {
           gap: 'Evaluate',
           status: status as 'green' | 'yellow' | 'red',
           whyItMatters: mData.whyItMatters,
+          difficulty,
+          foodEquivalent: null,
           foods: mData.foods[preference] || mData.foods['veg'],
           companionSupport: mData.companionSupport
         });

@@ -241,6 +241,22 @@ export class ReportBuilder {
 
     // --- NEW INTELLIGENCE BLOCKS ---
     const targetFiber = Math.round((dailyCalories / 1000) * 14); // 14g per 1000 kcal
+    
+    // Extended Body Intelligence Math
+    const fatMass = (fatPercentage / 100) * baseline.weight;
+    const leanMass = baseline.weight - fatMass;
+    
+    // Ideal body fat: Men 15%, Women 22% (approx)
+    const idealFatPercentage = baseline.gender === 'male' ? 15 : 22;
+    const idealFatMass = (idealFatPercentage / 100) * baseline.target_weight;
+    const fatToLose = Math.max(0, fatMass - idealFatMass);
+    
+    const metabolicAge = fatPercentage > 25 ? baseline.age + Math.round((fatPercentage - 25) / 2) : baseline.age;
+    
+    const idealWaist = baseline.gender === 'male' ? '< 94 cm (37 in)' : '< 80 cm (31.5 in)';
+    const waistRisk = bmi > 25 ? 'Elevated due to BMI' : 'Low to Moderate';
+    
+    const daysToGoal = weightDifferenceKg > 0 ? Math.round((weightDifferenceKg / 0.5) * 7) : 0; // 0.5kg/week healthy pace
 
     const bodyIntelligence = {
       age: baseline.age,
@@ -249,6 +265,15 @@ export class ReportBuilder {
       bmi: bmi.toFixed(1),
       bmiCategory: bmi < 18.5 ? 'Underweight' : (bmi > 24.9 ? 'Overweight' : 'Ideal'),
       healthyWeightRange: `${Math.round(minIdealKg)} - ${Math.round(maxIdealKg)}`,
+      targetWeight: baseline.target_weight,
+      bodyFatEstimate: fatPercentage.toFixed(1) + '%',
+      leanMass: Math.round(leanMass),
+      fatMass: Math.round(fatMass),
+      fatToLose: Math.round(fatToLose),
+      metabolicAge: metabolicAge,
+      idealWaist: idealWaist,
+      waistRisk: waistRisk,
+      daysToGoal: daysToGoal,
       bmr: Math.round(bmr),
       tdee: Math.round(metrics['FORMULA_TDEE'] || 2000),
       targetCalories: dailyCalories,

@@ -197,7 +197,12 @@ export const ScoreBlockUI = ({ block }: { block: ScoreBlock }) => (
             Today's<br/>Baseline
           </span>
           <div className="w-px h-10 bg-slate-200 dark:bg-slate-800"></div>
-          <span className="text-4xl font-black text-slate-900 dark:text-white">{block.data.overallScore}</span>
+          <span className={cn(
+            "text-3xl md:text-4xl font-black",
+            block.data.overallScore >= 90 ? "text-emerald-500" : block.data.overallScore >= 75 ? "text-green-500" : "text-slate-900 dark:text-white"
+          )}>
+            {block.data.overallScore >= 90 ? '🌟 Excellent' : block.data.overallScore >= 75 ? '✅ Great' : block.data.overallScore}
+          </span>
         </div>
       )}
     </div>
@@ -213,27 +218,83 @@ export const BodyIntelligenceBlockUI = ({ block }: { block: BodyIntelligenceBloc
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">A snapshot of your current biometrics and clinical targets.</p>
       </div>
       
-      <div className="bg-slate-900 dark:bg-slate-950 rounded-3xl p-8 border border-slate-800 text-white shadow-xl shadow-slate-900/20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-          <div>
-            <div className="text-slate-400 text-sm font-medium mb-1">BMI</div>
+      <div className="bg-slate-900 dark:bg-slate-950 rounded-3xl p-6 md:p-8 border border-slate-800 text-white shadow-xl shadow-slate-900/20">
+        
+        {/* Top 4 Hero Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+          <div className="bg-slate-800/50 p-4 rounded-2xl">
+            <div className="text-slate-400 text-xs uppercase tracking-wider font-medium mb-1">Body Mass Index</div>
             <div className="text-2xl font-bold">{m.bmi}</div>
-            <div className="text-xs text-slate-500 mt-1">Goal: {m.healthyWeightRange} kg</div>
+            <div className="text-xs text-slate-500 mt-1">{m.bmiCategory}</div>
           </div>
-          <div>
-            <div className="text-slate-400 text-sm font-medium mb-1 flex items-center gap-1"><Flame className="w-4 h-4"/> Target Calories</div>
+          <div className="bg-slate-800/50 p-4 rounded-2xl">
+            <div className="text-slate-400 text-xs uppercase tracking-wider font-medium mb-1 flex items-center gap-1"><Flame className="w-3 h-3"/> Target Calories</div>
             <div className="text-2xl font-bold text-orange-400">{m.targetCalories}</div>
             <div className="text-xs text-slate-500 mt-1">kcal / day</div>
           </div>
-          <div>
-            <div className="text-slate-400 text-sm font-medium mb-1 flex items-center gap-1"><ActivitySquare className="w-4 h-4"/> Protein</div>
+          <div className="bg-slate-800/50 p-4 rounded-2xl">
+            <div className="text-slate-400 text-xs uppercase tracking-wider font-medium mb-1 flex items-center gap-1"><ActivitySquare className="w-3 h-3"/> Target Protein</div>
             <div className="text-2xl font-bold text-blue-400">{m.targetProtein}g</div>
             <div className="text-xs text-slate-500 mt-1">per day</div>
           </div>
-          <div>
-            <div className="text-slate-400 text-sm font-medium mb-1 flex items-center gap-1"><Droplets className="w-4 h-4"/> Water</div>
+          <div className="bg-slate-800/50 p-4 rounded-2xl">
+            <div className="text-slate-400 text-xs uppercase tracking-wider font-medium mb-1 flex items-center gap-1"><Droplets className="w-3 h-3"/> Target Water</div>
             <div className="text-2xl font-bold text-cyan-400">{m.targetWater}L</div>
             <div className="text-xs text-slate-500 mt-1">per day</div>
+          </div>
+        </div>
+
+        {/* Detailed Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 pt-6 border-t border-slate-800 mb-8">
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Metabolic Age</div>
+            <div className="text-lg font-semibold text-slate-200">{m.metabolicAge} yrs</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Est. Body Fat</div>
+            <div className="text-lg font-semibold text-slate-200">{m.bodyFatEstimate}</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Lean Body Mass</div>
+            <div className="text-lg font-semibold text-slate-200">{m.leanMass} kg</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Fat Mass</div>
+            <div className="text-lg font-semibold text-slate-200">{m.fatMass} kg</div>
+          </div>
+          
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Target Weight</div>
+            <div className="text-lg font-semibold text-slate-200">{m.targetWeight} kg</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Healthy Range</div>
+            <div className="text-lg font-semibold text-slate-200">{m.healthyWeightRange} kg</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Fat to Lose</div>
+            <div className="text-lg font-semibold text-slate-200">{m.fatToLose} kg</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Pace (Days)</div>
+            <div className="text-lg font-semibold text-slate-200">{m.daysToGoal} days</div>
+          </div>
+
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">BMR</div>
+            <div className="text-lg font-semibold text-slate-200">{m.bmr} kcal</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">TDEE</div>
+            <div className="text-lg font-semibold text-slate-200">{m.tdee} kcal</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Ideal Waist</div>
+            <div className="text-lg font-semibold text-slate-200">{m.idealWaist}</div>
+          </div>
+          <div>
+            <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">Waist Risk</div>
+            <div className={cn("text-lg font-semibold", m.waistRisk === 'Low to Moderate' ? 'text-emerald-400' : 'text-amber-400')}>{m.waistRisk}</div>
           </div>
         </div>
 
@@ -290,7 +351,7 @@ export const NutritionIntelligenceBlockUI = ({ block }: { block: NutritionIntell
               <div className="text-sm font-bold text-slate-700 dark:text-slate-300">{n.current}</div>
             </div>
             <div className={cn(
-              "rounded-xl p-2",
+              "rounded-xl p-2 flex flex-col justify-center",
               n.status === 'green' ? "bg-emerald-50 dark:bg-emerald-900/20" : n.status === 'yellow' ? "bg-amber-50 dark:bg-amber-900/20" : "bg-red-50 dark:bg-red-900/20"
             )}>
               <div className={cn(
@@ -300,9 +361,17 @@ export const NutritionIntelligenceBlockUI = ({ block }: { block: NutritionIntell
               <div className={cn(
                 "text-sm font-bold",
                 n.status === 'green' ? "text-emerald-700 dark:text-emerald-300" : n.status === 'yellow' ? "text-amber-700 dark:text-amber-300" : "text-red-700 dark:text-red-300"
-              )}>{n.gap}</div>
+              )}>
+                {n.status === 'green' ? '✅ Excellent' : n.gap}
+              </div>
             </div>
           </div>
+          
+          {n.foodEquivalent && (
+            <div className="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/30 py-2 rounded-xl border border-slate-100 dark:border-slate-800">
+              {n.foodEquivalent}
+            </div>
+          )}
           
           <div className="bg-blue-50/50 dark:bg-blue-900/10 p-4 rounded-2xl mb-4 flex-grow">
             <div className="text-xs font-bold text-blue-800 dark:text-blue-400 uppercase tracking-wider mb-2">Why it matters</div>
@@ -380,6 +449,25 @@ export const CompanionNutritionBlockUI = ({ block }: { block: CompanionNutrition
           
           {/* Right: Companion Support */}
           <div className="p-6 md:w-1/2 bg-slate-50 dark:bg-slate-900/50 flex flex-col justify-center">
+            
+            {/* Difficulty Rating */}
+            {n.difficulty && (
+              <div className="mb-6 bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Difficulty to meet via food</div>
+                  <div className={cn(
+                    "px-2 py-0.5 rounded-full text-[10px] font-bold uppercase",
+                    n.difficulty === 'Easy' ? "bg-emerald-100 text-emerald-700" : n.difficulty === 'Moderate' ? "bg-amber-100 text-amber-700" : "bg-red-100 text-red-700"
+                  )}>
+                    {n.difficulty === 'Easy' ? '🟢' : n.difficulty === 'Moderate' ? '🟡' : '🔴'} {n.difficulty}
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                  Food alone can absolutely meet your needs, but consistently reaching this amount every day may be {n.difficulty.toLowerCase()} depending on your routine.
+                </p>
+              </div>
+            )}
+
             <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Nutrition Support Options</h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Discuss these options with your coach to help fill your {n.label.toLowerCase()} gap.</p>
             <ul className="space-y-3">

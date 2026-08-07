@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PillarScore } from '../../../../../store/assessment-store';
 
 interface HealthWheelProps {
@@ -6,6 +6,14 @@ interface HealthWheelProps {
 }
 
 export function HealthWheel({ pillarScores }: HealthWheelProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Delay slightly to ensure transition triggers after render
+    const timer = setTimeout(() => setMounted(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Sort to ensure consistent order (Nutrition, Movement, Recovery, Mindset)
   const order = ['Nutrition', 'Movement', 'Recovery', 'Mindset'];
   const sortedScores = [...pillarScores].sort((a, b) => order.indexOf(a.label) - order.indexOf(b.label));
@@ -42,12 +50,14 @@ export function HealthWheel({ pillarScores }: HealthWheelProps) {
           <div key={pillar.id} className="space-y-2">
             <div className="flex justify-between items-center text-sm font-semibold">
               <span className="text-slate-700 dark:text-slate-300">{pillar.label}</span>
-              <span className={getTextColorClass(pillar.score)}>{pillar.score}/100</span>
+              <span className={getTextColorClass(pillar.score)}>
+                {pillar.score >= 90 ? '🌟 One of your strengths' : pillar.score >= 75 ? '✅ Excellent' : `${pillar.score}/100`}
+              </span>
             </div>
             <div className="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
               <div 
                 className={`h-full transition-all duration-1000 ease-out ${getColorClass(pillar.score)}`}
-                style={{ width: `${pillar.score}%` }}
+                style={{ width: mounted ? `${pillar.score}%` : '0%' }}
               />
             </div>
           </div>

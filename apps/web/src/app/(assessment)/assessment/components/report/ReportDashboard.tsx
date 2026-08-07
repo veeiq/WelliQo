@@ -87,7 +87,14 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
 
   return (
     <>
-      <div className="w-full max-w-4xl mx-auto space-y-2 pb-32 animate-in fade-in slide-in-from-bottom-8 duration-700 relative">
+      {/* Premium WelliQo Watermark for PDF/Web */}
+      <div className="fixed inset-0 pointer-events-none flex items-center justify-center opacity-[0.02] dark:opacity-[0.04] z-0 overflow-hidden">
+        <span className="text-[15rem] font-black tracking-tighter text-slate-900 dark:text-white rotate-[-30deg] select-none whitespace-nowrap">
+          WelliQo
+        </span>
+      </div>
+
+      <div className="w-full max-w-4xl mx-auto space-y-2 pb-32 animate-in fade-in slide-in-from-bottom-8 duration-700 relative z-10">
       
       {/* The Experience Engine controls the UI sequence completely */}
       {experienceBlocks.map((block) => (
@@ -105,6 +112,20 @@ export function ReportDashboard({ hideActions = false }: { hideActions?: boolean
           </button>
         </div>
       )}
+
+      {/* Legal Disclaimer Footer */}
+      <div className="mt-20 pt-8 border-t border-slate-200 dark:border-slate-800 text-center pb-12">
+        <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
+          This report was built from your answers.<br />
+          <br />
+          It is designed to educate, not diagnose.<br />
+          <br />
+          If something doesn't feel accurate, your coach can help refine your plan.
+        </p>
+        <div className="mt-8 flex justify-center">
+           <div className="h-1 w-12 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+        </div>
+      </div>
       </div>
 
       {/* Sticky Save Action Bar */}
