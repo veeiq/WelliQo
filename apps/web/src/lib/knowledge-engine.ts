@@ -1,8 +1,76 @@
-import { allKnowledgeContent } from '@/data/knowledge';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import { prisma } from '@/lib/prisma';
 import { KnowledgeContent, KnowledgeType, JourneyStage } from '@/types/knowledge';
+import { ContentFrontmatterSchema } from '@/data/content/schema';
+
+// Helper to get all MDX content
+export function getAllKnowledgeContent(): KnowledgeContent[] {
+  const contentDir = path.join(process.cwd(), 'src/data/content/mdx');
+  const allContent: KnowledgeContent[] = [];
+  
+  if (!fs.existsSync(contentDir)) return [];
+
+  const folders = ['articles', 'guides', 'recipes', 'habits', 'exercises'];
+  
+  for (const folder of folders) {
+    const folderPath = path.join(contentDir, folder);
+    if (!fs.existsSync(folderPath)) continue;
+    
+    const files = fs.readdirSync(folderPath).filter(file => file.endsWith('.mdx'));
+    
+    for (const file of files) {
+      const filePath = path.join(folderPath, file);
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = matter(fileContent);
+      
+      try {
+        const frontmatter = ContentFrontmatterSchema.parse(data);
+        
+        allContent.push({
+          id: file.replace('.mdx', ''), // Use filename as ID
+          title: frontmatter.title,
+          type: frontmatter.type as KnowledgeType,
+          category: frontmatter.category,
+          summary: frontmatter.summary,
+          thumbnail: frontmatter.thumbnail || '',
+          tags: frontmatter.tags,
+          goals: frontmatter.goals,
+          findings: frontmatter.findings,
+          medicalConditions: frontmatter.medicalConditions,
+          foodPreferences: frontmatter.foodPreferences,
+          assessmentIds: frontmatter.assessmentIds,
+          priority: frontmatter.priority as any,
+          journeyStage: frontmatter.journeyStage as any,
+          estimatedMinutes: frontmatter.estimatedMinutes,
+          evidenceLevel: frontmatter.evidenceLevel as any,
+          difficulty: frontmatter.difficulty as any,
+          featured: frontmatter.featured,
+          published: frontmatter.published,
+          relatedContent: frontmatter.relatedContent,
+          coachRecommended: frontmatter.coachRecommended,
+          version: frontmatter.version,
+          status: 'PUBLISHED',
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          articleData: {
+            author: frontmatter.author,
+            readTimeMinutes: frontmatter.estimatedMinutes,
+            htmlContent: content // For now, passing raw markdown to be handled by MDX renderer
+          }
+        });
+      } catch (e) {
+        console.error(`Error parsing frontmatter for ${file}:`, e);
+      }
+    }
+  }
+  
+  return allContent;
+}
 
 export async function getRecommendationsForUser(userId: string, limit: number = 10): Promise<KnowledgeContent[]> {
+  const allKnowledgeContent = getAllKnowledgeContent();
   const profile = await prisma.profile.findUnique({ where: { userId } });
   
   if (!profile) {
@@ -34,6 +102,7 @@ export async function getRecommendationsForUser(userId: string, limit: number = 
 }
 
 export async function getRecommendationsForAssessment(goals: string[], findings: string[]): Promise<KnowledgeContent[]> {
+  const allKnowledgeContent = getAllKnowledgeContent();
   const scored = allKnowledgeContent.map(content => {
     let score = 0;
     if (content.goals.some(g => goals.includes(g))) score += 10;
@@ -65,6 +134,7 @@ export async function getRecommendationsForAssessment(goals: string[], findings:
 }
 
 export async function getDailyFocus(userId: string) {
+  const allKnowledgeContent = getAllKnowledgeContent();
   const profile = await prisma.profile.findUnique({ where: { userId } });
   const goals = profile?.goals || [];
   const primaryGoal = goals.length > 0 ? goals[0] : null;
@@ -86,6 +156,7 @@ export async function getDailyFocus(userId: string) {
 }
 
 export function searchContent(query?: string, filters?: { type?: string, goal?: string, category?: string }) {
+  const allKnowledgeContent = getAllKnowledgeContent();
   let results = allKnowledgeContent;
   
   if (query) {
@@ -109,5 +180,6 @@ export function searchContent(query?: string, filters?: { type?: string, goal?: 
 }
 
 export async function getKnowledgeContentById(id: string) {
+  const allKnowledgeContent = getAllKnowledgeContent();
   return allKnowledgeContent.find(c => c.id === id) || null;
 }

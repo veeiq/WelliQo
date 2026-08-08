@@ -17,11 +17,13 @@
     "@sentry/nextjs": "^10.69.0",
     "@supabase/ssr": "0.8.0",
     "@supabase/supabase-js": "2.95.3",
+    "@tailwindcss/typography": "^0.5.20",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.2",
     "@welliqo/ui": "workspace:*",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^13.0.0",
+    "gray-matter": "^4.0.3",
     "html-to-image": "^1.11.13",
     "jspdf": "^4.2.1",
     "lucide-react": "0.475.0",
@@ -51,6 +53,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "prisma": "^7.9.1",
+    "sharp": "^0.35.3",
     "tailwindcss": "4.1.18",
     "typescript-eslint": "^8.65.0"
   }

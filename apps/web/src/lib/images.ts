@@ -1,27 +1,20 @@
 import type { KnowledgeContent } from '@/types/knowledge';
 
-export function getTopicImage(content: Pick<KnowledgeContent, 'category' | 'tags' | 'goals'>, isHero: boolean = false): string {
-  const aspect = isHero ? 'landscape' : 'portrait';
-  const str = (content.category + ' ' + content.tags.join(' ') + ' ' + content.goals.join(' ')).toLowerCase();
-  
-  if (str.includes('protein') || str.includes('nutrition') || str.includes('diet') || str.includes('carb') || str.includes('sugar')) {
-    return `/images/topics/nutrition-${aspect}.webp`;
+export function getTopicImage(content: KnowledgeContent, isHero: boolean = false): string {
+  // If the content already has a thumbnail defined (from the MDX frontmatter), use it.
+  if (content.thumbnail) {
+    return content.thumbnail;
   }
-  if (str.includes('sleep') || str.includes('recovery')) {
-    return `/images/topics/sleep-${aspect}.webp`;
-  }
-  if (str.includes('stress') || str.includes('mind') || str.includes('mental')) {
-    return `/images/topics/mental-health-${aspect}.webp`;
-  }
-  if (str.includes('heart') || str.includes('hydration') || str.includes('sodium') || str.includes('blood')) {
-    return `/images/topics/heart-${aspect}.webp`;
-  }
-  if (str.includes('gut') || str.includes('fiber') || str.includes('digestion')) {
-    return `/images/topics/gut-health-${aspect}.webp`;
-  }
-  if (str.includes('exercise') || str.includes('fitness') || str.includes('muscle')) {
-    return `/images/topics/fitness-${aspect}.webp`;
-  }
-  
-  return `/images/topics/nutrition-${aspect}.webp`; // Fallback
+
+  // Fallback map for when a specific thumbnail isn't provided.
+  // These are all strictly locally hosted files in /public/images/topics/
+  const map: Record<string, string> = {
+    "Nutrition & Fuel": "/images/topics/nutrition-landscape.webp",
+    "Sleep & Recovery": "/images/topics/sleep-landscape.webp",
+    "Movement & Physiology": "/images/topics/fitness-landscape.webp",
+    "Mind & Neuroscience": "/images/topics/mental-health-landscape.webp",
+    "General": "/images/topics/general-landscape.webp"
+  };
+
+  return map[content.category] || "/images/topics/general-landscape.webp";
 }

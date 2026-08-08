@@ -7,8 +7,12 @@ import { prisma } from "@/lib/prisma";
 import { BookmarkButton } from "./BookmarkButton";
 import { ShareButton } from "./ShareButton";
 import { DownloadButton } from "./DownloadButton";
-
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from 'next';
+import { MDXComponents } from "@/components/mdx/MDXComponents";
+import { searchContent } from "@/lib/knowledge-engine";
+import { ArrowRight } from "lucide-react";
+import { getTopicImage } from "@/lib/images";
 
 export async function generateMetadata(props: { params: Promise<{ type: string, id: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -59,6 +63,10 @@ export default async function KnowledgeDetailPage(props: { params: Promise<{ typ
     isSaved = !!existing;
   }
 
+  // Fetch related articles
+  const primaryTag = content.tags[0];
+  const relatedContent = primaryTag ? searchContent(primaryTag).filter(c => c.id !== content.id).slice(0, 3) : [];
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-12 px-4">
       <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -73,7 +81,7 @@ export default async function KnowledgeDetailPage(props: { params: Promise<{ typ
         {/* Hero Section */}
         <div className="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 relative">
           <div className="aspect-video md:aspect-[21/9] bg-slate-100 dark:bg-slate-800 relative">
-            <img src={content.thumbnail} alt={content.title} className="w-full h-full object-cover" />
+            <img src={content.thumbnail || getTopicImage(content, true)} alt={content.title} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
               <div className="flex items-center gap-3 mb-4">
@@ -100,10 +108,6 @@ export default async function KnowledgeDetailPage(props: { params: Promise<{ typ
           
           <div className="p-4 md:px-10 border-b border-slate-100 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-slate-900">
              <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
-                <div className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
-                  {new Date(content.createdAt).toLocaleDateString()}
-                </div>
                 {content.articleData?.author && (
                   <div>By {content.articleData.author}</div>
                 )}
@@ -121,8 +125,8 @@ export default async function KnowledgeDetailPage(props: { params: Promise<{ typ
           <div className="p-6 md:p-10 prose prose-slate dark:prose-invert max-w-none prose-emerald">
             {/* Specific Type Rendering */}
             
-            {content.type === 'ARTICLE' && content.articleData && (
-               <div dangerouslySetInnerHTML={{ __html: content.articleData.htmlContent }} />
+            {content.articleData?.htmlContent && (
+               <MDXRemote source={content.articleData.htmlContent} components={MDXComponents} />
             )}
 
             {content.type === 'RECIPE' && content.recipeData && (
@@ -208,6 +212,40 @@ export default async function KnowledgeDetailPage(props: { params: Promise<{ typ
                  </div>
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Conversion Zone */}
+        <div className="space-y-12 mt-12 border-t border-slate-200 dark:border-slate-800 pt-12">
+          {relatedContent.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Continue Reading</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {relatedContent.map(item => (
+                  <Link href={`/health-library/${item.type.toLowerCase()}/${item.id}`} key={item.id} className="group block bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                    <div className="aspect-video bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+                      <img src={item.thumbnail || getTopicImage(item, false)} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="p-5">
+                      <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-2">{item.category}</div>
+                      <h3 className="font-bold text-lg mb-2 line-clamp-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{item.title}</h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">{item.summary}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="bg-emerald-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+             <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-10 mix-blend-overlay"></div>
+             <div className="relative z-10 max-w-2xl mx-auto">
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to take control of your health?</h2>
+               <p className="text-emerald-100 text-lg mb-8">Take our free comprehensive assessment to get a personalized action plan tailored to your exact goals and symptoms.</p>
+               <Link href="/assessment" className="inline-flex items-center justify-center gap-2 bg-white text-emerald-900 font-bold py-4 px-8 rounded-full hover:bg-emerald-50 transition-colors text-lg">
+                 Start Free Assessment <ArrowRight className="w-5 h-5" />
+               </Link>
+             </div>
           </div>
         </div>
 
