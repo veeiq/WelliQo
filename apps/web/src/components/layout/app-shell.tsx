@@ -17,13 +17,13 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
         {children}
       </main>
       
-      <footer className="w-full bg-slate-950 text-slate-400 py-16 px-4 md:px-8 text-sm leading-relaxed border-t border-slate-900 mt-auto">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <footer className="w-full bg-slate-950 text-slate-400 py-6 px-4 md:px-8 text-sm leading-relaxed border-t border-slate-900 mt-auto">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8">
           
           {/* Left Column (Brand & Socials) */}
-          <div className="lg:col-span-5 space-y-8 pr-8 flex flex-col h-full">
+          <div className="lg:col-span-5 space-y-6 pr-8 flex flex-col h-full">
             <div>
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="relative h-12 w-12 flex items-center justify-center group">
                   <img src="/logo.jpg" alt="WelliQo" className="w-full h-full object-contain rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-300" />
                 </div>
@@ -32,7 +32,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
                 </span>
               </div>
               
-              <p className="text-emerald-500 text-[17px] leading-relaxed max-w-sm font-medium mb-12">
+              <p className="text-emerald-500 text-[17px] leading-relaxed max-w-sm font-medium mb-4">
                 Helping people understand their bodies before trying to change them.
               </p>
 
@@ -69,9 +69,9 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
           <div className="lg:col-span-7 flex flex-col h-full pt-2">
             
             {/* Menus Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-6">
               <div>
-                <h3 className="text-white font-medium mb-6 tracking-wide">Explore</h3>
+                <h3 className="text-white font-medium mb-4 tracking-wide">Explore</h3>
                 <ul className="space-y-4">
                   <li><Link href={AssessmentRegistry.getDirectoryRoute()} className="text-slate-400 hover:text-emerald-400 transition-colors">Assessments</Link></li>
                   <li><Link href="/goals" className="text-slate-400 hover:text-emerald-400 transition-colors">Goals</Link></li>
@@ -81,7 +81,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
               </div>
 
               <div>
-                <h3 className="text-white font-medium mb-6 tracking-wide">Company</h3>
+                <h3 className="text-white font-medium mb-4 tracking-wide">Company</h3>
                 <ul className="space-y-4">
                   <li><Link href="/about" className="text-slate-400 hover:text-emerald-400 transition-colors">About</Link></li>
                   <li><Link href="/contact" className="text-slate-400 hover:text-emerald-400 transition-colors">Contact</Link></li>
@@ -89,7 +89,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
               </div>
 
               <div>
-                <h3 className="text-white font-medium mb-6 tracking-wide">Resources</h3>
+                <h3 className="text-white font-medium mb-4 tracking-wide">Resources</h3>
                 <ul className="space-y-4">
                   <li><Link href="/privacy-policy" className="text-slate-400 hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
                   <li><Link href="/terms" className="text-slate-400 hover:text-emerald-400 transition-colors">Terms of Service</Link></li>
@@ -100,7 +100,7 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
             </div>
 
             {/* Inline CTA (next to socials, below menus) */}
-            <div className="mt-auto pt-8 border-t border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div className="mt-auto pt-4 border-t border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1.5">Still thinking about your health?</h4>
                 <p className="text-slate-400 text-sm">Take the free 5-minute assessment and get your baseline.</p>
@@ -117,8 +117,8 @@ export async function AppShell({ children }: Readonly<{ children: ReactNode }>) 
         </div>
 
         {/* Bottom Bar */}
-        <div className="max-w-7xl mx-auto mt-12 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
-          <div className="max-w-xl space-y-4">
+        <div className="max-w-7xl mx-auto mt-6 pt-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-start gap-6">
+          <div className="max-w-xl space-y-3">
             <p className="text-slate-300 text-[15px] font-medium leading-relaxed">
               WelliQo doesn't replace your doctor. It helps you better understand your daily habits so you can make informed decisions about your health.
             </p>
