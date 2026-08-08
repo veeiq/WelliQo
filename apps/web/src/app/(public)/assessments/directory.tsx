@@ -175,10 +175,12 @@ export function AssessmentDirectory({ initialGoal }: { initialGoal?: string }) {
                 <Clock className="h-4 w-4" />
                 <span>3 min</span>
               </div>
-              <div className="flex items-center gap-1.5 font-medium text-emerald-600 dark:text-emerald-400">
-                <span>Start</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
+              {assessment.status !== 'coming-soon' && (
+                <div className="flex items-center gap-1.5 font-medium text-emerald-600 dark:text-emerald-400">
+                  <span>Start</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              )}
             </div>
           </Link>
         ))}
