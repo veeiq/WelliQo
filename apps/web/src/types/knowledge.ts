@@ -1,4 +1,4 @@
-export type KnowledgeType = 'ARTICLE' | 'RECIPE' | 'HABIT' | 'EXERCISE_GUIDE' | 'MEAL_PLAN' | 'SHOPPING_LIST' | 'FAQ' | 'COACH_TIP' | 'VIDEO' | 'DOWNLOAD' | 'CHALLENGE';
+export type KnowledgeType = 'ARTICLE' | 'GUIDE' | 'RECIPE' | 'HABIT' | 'EXERCISE_GUIDE' | 'MEAL_PLAN' | 'SHOPPING_LIST' | 'FAQ' | 'COACH_TIP' | 'VIDEO' | 'DOWNLOAD' | 'CHALLENGE';
 export type ContentStatus = 'DRAFT' | 'REVIEW' | 'PUBLISHED' | 'ARCHIVED';
 export type ContentPriority = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 export type JourneyStage = 'BEGINNER' | 'IMPROVING' | 'CONSISTENT' | 'ADVANCED';
