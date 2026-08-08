@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: 'WelliQo | Evidence-Informed Wellness',
     description: 'Discover your wellness baseline and get a customized nutrition plan.',
     type: 'website',
-    images: ['/opengraph-image.jpg'],
+    images: ['/opengraph-image.jpg?v=2'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'WelliQo | Evidence-Informed Wellness',
     description: 'Discover your wellness baseline and get a customized nutrition plan.',
-    images: ['/twitter-image.jpg'],
+    images: ['/twitter-image.jpg?v=2'],
   },
   manifest: '/manifest.json'
 };

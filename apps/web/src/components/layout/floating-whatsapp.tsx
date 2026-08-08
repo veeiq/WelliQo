@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function FloatingWhatsApp() {
-  const phoneNumber = '+919337616265';
+  const phoneNumber = '+919114211911';
   const rawMessage =
     'Hi, I was exploring WelliQo and would like some guidance regarding my wellness journey.';
   const message = encodeURIComponent(rawMessage);
